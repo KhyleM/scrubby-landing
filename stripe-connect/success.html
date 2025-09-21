@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stripe Connect Success - Scrubby</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            text-align: center;
+            padding: 50px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            min-height: 100vh;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            max-width: 400px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+        .checkmark {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+        h1 {
+            margin: 0 0 20px 0;
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+        p {
+            margin: 0 0 30px 0;
+            opacity: 0.9;
+            line-height: 1.5;
+        }
+        .btn {
+            background: #4CAF50;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+        .btn:hover {
+            background: #45a049;
+            transform: translateY(-2px);
+        }
+        .fallback {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="checkmark">✅</div>
+        <h1>Setup Complete!</h1>
+        <p>Your Stripe Connect account has been successfully configured. You can now receive payments through Scrubby.</p>
+        
+        <a href="scrubby://stripe-connect/success" class="btn" id="openApp">
+            Return to Scrubby App
+        </a>
+        
+        <div class="fallback">
+            <p>App didn't open? Make sure Scrubby is installed on your device.</p>
+        </div>
+    </div>
+
+    <script>
+        // Attempt to redirect to app immediately
+        window.onload = function() {
+            // Try to open the app
+            window.location.href = 'scrubby://stripe-connect/success';
+            
+            // Fallback: If app doesn't open in 3 seconds, show the manual button
+            setTimeout(function() {
+                document.getElementById('openApp').style.display = 'inline-block';
+            }, 3000);
+        };
+        
+        // Handle button click
+        document.getElementById('openApp').onclick = function(e) {
+            e.preventDefault();
+            window.location.href = 'scrubby://stripe-connect/success';
+        };
+    </script>
+</body>
+</html>
