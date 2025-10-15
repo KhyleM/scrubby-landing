@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply to Join Scrubby - Provider Application</title>
+    <meta name="description" content="Apply to join Scrubby and start growing your grooming business with our free CRM and booking platform.">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .apply-hero {
+            margin-top: 80px;
+            padding: 60px 0 40px;
+            background: linear-gradient(135deg, var(--bg-light) 0%, var(--white) 100%);
+            text-align: center;
+        }
+
+        .apply-hero h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .apply-hero p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .apply-section {
+            padding: 60px 20px;
+            background: var(--white);
+        }
+
+        .form-container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .form-group label .required {
+            color: var(--secondary-color);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.875rem;
+            border: 2px solid var(--bg-light);
+            border-radius: 10px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .checkbox-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .checkbox-item input[type="checkbox"] {
+            width: auto;
+            cursor: pointer;
+        }
+
+        .checkbox-item label {
+            margin: 0;
+            font-weight: 400;
+            cursor: pointer;
+        }
+
+        .form-note {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-top: 0.5rem;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white);
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        .submit-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .benefit-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: var(--bg-light);
+            border-radius: 12px;
+        }
+
+        .benefit-item .icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .benefit-item h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .benefit-item p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .success-message {
+            display: none;
+            text-align: center;
+            padding: 3rem;
+            background: var(--bg-light);
+            border-radius: 20px;
+            margin: 2rem 0;
+        }
+
+        .success-message.show {
+            display: block;
+        }
+
+        .success-message .icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .success-message h2 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .apply-hero h1 {
+                font-size: 2rem;
+            }
+
+            .form-container {
+                padding: 2rem 1.5rem;
+            }
+
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <a href="/">
+                        <img src="images/scrubby_logo_full.png" alt="Scrubby" class="logo-img">
+                    </a>
+                </div>
+                <div class="nav-links">
+                    <a href="/">Home</a>
+                    <a href="/#features">Features</a>
+                    <a href="/pricing.html">Pricing</a>
+                    <a href="/#comparison">vs Competitors</a>
+                    <a href="/support">Support</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="apply-hero">
+        <div class="container">
+            <h1>Apply to Join Scrubby</h1>
+            <p>We're currently onboarding groomers in the NYC area. Fill out the form below and we'll get back to you within 24 hours.</p>
+            
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="icon">🆓</div>
+                    <h3>Free to Start</h3>
+                    <p>$0/month, 10% per booking</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="icon">⚡</div>
+                    <h3>Quick Setup</h3>
+                    <p>Get started in minutes</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="icon">📱</div>
+                    <h3>Full CRM</h3>
+                    <p>Manage clients & bookings</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="icon">💳</div>
+                    <h3>Fast Payouts</h3>
+                    <p>Weekly (24hr available)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Application Form -->
+    <section class="apply-section">
+        <div class="container">
+            <div class="form-container">
+                <form id="applicationForm" action="https://formspree.io/f/xnnglpqn" method="POST">
+                    <div class="form-group">
+                        <label for="name">Your Name <span class="required">*</span></label>
+                        <input type="text" id="name" name="name" required placeholder="John Doe">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="businessName">Business Name <span class="required">*</span></label>
+                        <input type="text" id="businessName" name="businessName" required placeholder="Paws & Claws Grooming">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address <span class="required">*</span></label>
+                        <input type="email" id="email" name="email" required placeholder="you@example.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number <span class="required">*</span></label>
+                        <input type="tel" id="phone" name="phone" required placeholder="(555) 123-4567">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="city">City <span class="required">*</span></label>
+                        <input type="text" id="city" name="city" required placeholder="Brooklyn">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="state">State <span class="required">*</span></label>
+                        <select id="state" name="state" required>
+                            <option value="">Select State</option>
+                            <option value="NY">New York</option>
+                            <option value="NJ">New Jersey</option>
+                            <option value="CT">Connecticut</option>
+                            <option value="PA">Pennsylvania</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Service Type <span class="required">*</span></label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="salon" name="serviceType" value="salon">
+                                <label for="salon">Salon/Shop Grooming</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="mobile" name="serviceType" value="mobile">
+                                <label for="mobile">Mobile Grooming</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="currentBooking">How do you currently manage bookings?</label>
+                        <select id="currentBooking" name="currentBooking">
+                            <option value="">Select one</option>
+                            <option value="phone">Phone calls only</option>
+                            <option value="square">Square Appointments</option>
+                            <option value="moego">MoeGo</option>
+                            <option value="gingr">Gingr</option>
+                            <option value="spreadsheet">Spreadsheet/Calendar</option>
+                            <option value="other">Other software</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="hearAbout">How did you hear about Scrubby?</label>
+                        <select id="hearAbout" name="hearAbout">
+                            <option value="">Select one</option>
+                            <option value="google">Google Search</option>
+                            <option value="social">Social Media</option>
+                            <option value="referral">Referral from another groomer</option>
+                            <option value="ad">Online Ad</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Anything else you'd like us to know?</label>
+                        <textarea id="message" name="message" placeholder="Tell us about your business, any questions you have, etc."></textarea>
+                    </div>
+
+                    <p class="form-note">
+                        By submitting this form, you agree to our <a href="/terms" style="color: var(--primary-color);">Terms of Service</a> and <a href="/privacy" style="color: var(--primary-color);">Privacy Policy</a>.
+                    </p>
+
+                    <button type="submit" class="submit-btn">Submit Application</button>
+                </form>
+
+                <div id="successMessage" class="success-message">
+                    <div class="icon">✅</div>
+                    <h2>Application Submitted!</h2>
+                    <p>Thank you for applying to join Scrubby. We'll review your application and get back to you within 24 hours at the email address you provided.</p>
+                    <p style="margin-top: 1.5rem;">
+                        <a href="/" style="color: var(--primary-color); text-decoration: none; font-weight: 600;">← Back to Home</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3 class="footer-logo">Scrubby</h3>
+                    <p>Built for groomers, by people who care</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Company</h4>
+                        <a href="https://globalnexus.llc">About Us</a>
+                        <a href="mailto:support@scrubby.app">Contact</a>
+                        <a href="/privacy">Privacy Policy</a>
+                        <a href="/terms">Terms of Service</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>For Providers</h4>
+                        <a href="/apply.html">Apply Now</a>
+                        <a href="/pricing.html">Pricing</a>
+                        <a href="/terms/#provider-terms">Provider Terms</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Support</h4>
+                        <a href="/support">Help Center</a>
+                        <a href="/support/faq">FAQs</a>
+                        <a href="mailto:support@scrubby.app">Email Support</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Global Nexus Enterprises LLC. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Form submission handling
+        const form = document.getElementById('applicationForm');
+        const successMessage = document.getElementById('successMessage');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const submitBtn = form.querySelector('.submit-btn');
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Submitting...';
+
+            try {
+                const formData = new FormData(form);
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    form.style.display = 'none';
+                    successMessage.classList.add('show');
+                } else {
+                    throw new Error('Form submission failed');
+                }
+            } catch (error) {
+                alert('There was an error submitting your application. Please try again or email us directly at support@scrubby.app');
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Submit Application';
+            }
+        });
+
+        // Service type validation - at least one must be checked
+        const serviceCheckboxes = document.querySelectorAll('input[name="serviceType"]');
+        serviceCheckboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', () => {
+                const anyChecked = Array.from(serviceCheckboxes).some(cb => cb.checked);
+                serviceCheckboxes.forEach(cb => cb.required = !anyChecked);
+            });
+        });
+    </script>
+</body>
+</html>
+
