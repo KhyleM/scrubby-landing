@@ -42,7 +42,7 @@
             margin: 0 auto;
             background: var(--white);
             padding: 3rem;
-            border-radius: 20px;
+            border-radius: var(--radius-lg, 20px);
             box-shadow: var(--shadow);
         }
 
@@ -67,10 +67,17 @@
             width: 100%;
             padding: 0.875rem;
             border: 2px solid var(--bg-light);
-            border-radius: 10px;
+            border-radius: var(--radius-sm, 12px);
             font-family: 'Poppins', sans-serif;
             font-size: 1rem;
-            transition: border-color 0.3s ease;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            background: white;
+        }
+
+        .form-group input:hover,
+        .form-group select:hover,
+        .form-group textarea:hover {
+            border-color: rgba(107, 70, 193, 0.3);
         }
 
         .form-group input:focus,
@@ -78,6 +85,15 @@
         .form-group textarea:focus {
             outline: none;
             border-color: var(--primary-color);
+            box-shadow: 0 0 0 4px rgba(107, 70, 193, 0.1), 0 4px 12px rgba(107, 70, 193, 0.15);
+            transform: translateY(-1px);
+        }
+
+        .form-group input:focus-visible,
+        .form-group select:focus-visible,
+        .form-group textarea:focus-visible {
+            outline: 2px solid var(--primary-color);
+            outline-offset: 2px;
         }
 
         .form-group textarea {
@@ -100,12 +116,32 @@
         .checkbox-item input[type="checkbox"] {
             width: auto;
             cursor: pointer;
+            width: 20px;
+            height: 20px;
+            accent-color: var(--primary-color);
+            transition: all 0.2s ease;
+        }
+
+        .checkbox-item input[type="checkbox"]:hover {
+            transform: scale(1.1);
+        }
+
+        .checkbox-item input[type="checkbox"]:focus {
+            outline: 2px solid var(--primary-color);
+            outline-offset: 2px;
+            box-shadow: 0 0 0 4px rgba(107, 70, 193, 0.1);
         }
 
         .checkbox-item label {
             margin: 0;
             font-weight: 400;
             cursor: pointer;
+            transition: color 0.2s ease;
+        }
+
+        .checkbox-item:has(input:checked) label {
+            color: var(--primary-color);
+            font-weight: 500;
         }
 
         .form-note {
@@ -120,7 +156,7 @@
             background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             color: var(--white);
             border: none;
-            border-radius: 50px;
+            border-radius: var(--radius-full, 50px);
             font-size: 1.1rem;
             font-weight: 600;
             cursor: pointer;
@@ -128,14 +164,24 @@
             font-family: 'Poppins', sans-serif;
         }
 
-        .submit-btn:hover {
+        .submit-btn:hover:not(:disabled) {
             transform: translateY(-2px);
             box-shadow: var(--shadow);
+        }
+
+        .submit-btn:focus {
+            outline: 3px solid rgba(107, 70, 193, 0.4);
+            outline-offset: 3px;
+        }
+
+        .submit-btn:active:not(:disabled) {
+            transform: translateY(0) scale(0.98);
         }
 
         .submit-btn:disabled {
             opacity: 0.6;
             cursor: not-allowed;
+            transform: none;
         }
 
         .benefits-grid {
@@ -149,7 +195,7 @@
             text-align: center;
             padding: 1.5rem;
             background: var(--bg-light);
-            border-radius: 12px;
+            border-radius: var(--radius-sm, 12px);
         }
 
         .benefit-item .icon {
@@ -173,7 +219,7 @@
             text-align: center;
             padding: 3rem;
             background: var(--bg-light);
-            border-radius: 20px;
+            border-radius: var(--radius-lg, 20px);
             margin: 2rem 0;
         }
 
@@ -203,6 +249,31 @@
             .benefits-grid {
                 grid-template-columns: 1fr;
             }
+
+            /* Touch target optimization */
+            .submit-btn {
+                min-height: 48px;
+                padding: 1.1rem 2rem;
+            }
+
+            .form-group input,
+            .form-group select,
+            .form-group textarea {
+                min-height: 44px;
+                padding: 1rem;
+            }
+
+            .checkbox-item input[type="checkbox"] {
+                width: 24px;
+                height: 24px;
+            }
+
+            .checkbox-item label {
+                padding: 0.5rem 0;
+                min-height: 44px;
+                display: flex;
+                align-items: center;
+            }
         }
     </style>
 </head>
@@ -223,9 +294,30 @@
                     <a href="/#comparison">vs Competitors</a>
                     <a href="/support">Support</a>
                 </div>
+                <div class="mobile-menu-btn" id="mobileMenuBtn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
         </div>
     </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-links">
+            <a href="/">Home</a>
+            <a href="/#features">Features</a>
+            <a href="/pricing.html">Pricing</a>
+            <a href="/#comparison">vs Competitors</a>
+            <a href="/support">Support</a>
+        </div>
+        <div class="mobile-menu-buttons">
+            <a href="https://web.scrubby.app" class="btn-outline">Log In</a>
+            <a href="/apply.html" class="btn-primary">Apply Now</a>
+        </div>
+    </div>
 
     <!-- Hero Section -->
     <section class="apply-hero">
@@ -400,13 +492,53 @@
     </footer>
 
     <script>
+        // Mobile menu toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+            const mobileMenuLinks = document.querySelectorAll('.mobile-menu-links a');
+
+            function toggleMobileMenu() {
+                mobileMenuBtn.classList.toggle('active');
+                mobileMenu.classList.toggle('active');
+                mobileMenuOverlay.classList.toggle('active');
+                document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+            }
+
+            if (mobileMenuBtn) {
+                mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+            }
+
+            if (mobileMenuOverlay) {
+                mobileMenuOverlay.addEventListener('click', toggleMobileMenu);
+            }
+
+            // Close mobile menu when clicking a link
+            mobileMenuLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    toggleMobileMenu();
+                });
+            });
+
+            // Navbar scroll effect
+            const navbar = document.querySelector('.navbar');
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+        });
+
         // Form submission handling
         const form = document.getElementById('applicationForm');
         const successMessage = document.getElementById('successMessage');
 
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
-            
+
             const submitBtn = form.querySelector('.submit-btn');
             submitBtn.disabled = true;
             submitBtn.textContent = 'Submitting...';

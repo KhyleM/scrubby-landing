@@ -1,14 +1,59 @@
 // Mobile menu toggle
 document.addEventListener('DOMContentLoaded', function() {
-    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-    const navLinks = document.querySelector('.nav-links');
-    
-    if (mobileMenuBtn) {
-        mobileMenuBtn.addEventListener('click', function() {
-            navLinks.classList.toggle('active');
-            this.classList.toggle('active');
-        });
+    // Create scroll progress indicator
+    const progressBar = document.createElement('div');
+    progressBar.className = 'scroll-progress';
+    document.body.prepend(progressBar);
+
+    // Update scroll progress
+    window.addEventListener('scroll', () => {
+        const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = (window.pageYOffset / windowHeight) * 100;
+        progressBar.style.width = scrolled + '%';
+    });
+
+    // Handle lazy image loading
+    const lazyImages = document.querySelectorAll('.lazy-image');
+    lazyImages.forEach(img => {
+        if (img.complete) {
+            img.classList.add('loaded');
+        } else {
+            img.addEventListener('load', () => {
+                img.classList.add('loaded');
+            });
+            img.addEventListener('error', () => {
+                img.classList.add('loaded'); // Still fade in even on error
+            });
+        }
+    });
+
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+    const mobileMenuLinks = document.querySelectorAll('.mobile-menu-links a');
+
+    function toggleMobileMenu() {
+        mobileMenuBtn.classList.toggle('active');
+        mobileMenu.classList.toggle('active');
+        mobileMenuOverlay.classList.toggle('active');
+        document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
     }
+
+    if (mobileMenuBtn) {
+        mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+    }
+
+    if (mobileMenuOverlay) {
+        mobileMenuOverlay.addEventListener('click', toggleMobileMenu);
+    }
+
+    // Close mobile menu when clicking a link
+    mobileMenuLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            toggleMobileMenu();
+        });
+    });
     
     // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -27,15 +72,22 @@ document.addEventListener('DOMContentLoaded', function() {
     // Add scroll effect to navbar
     let lastScroll = 0;
     const navbar = document.querySelector('.navbar');
-    
+
     window.addEventListener('scroll', () => {
         const currentScroll = window.pageYOffset;
-        
+
+        // Add scrolled class for backdrop blur effect
+        if (currentScroll > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+
         if (currentScroll <= 0) {
             navbar.classList.remove('scroll-up');
             return;
         }
-        
+
         if (currentScroll > lastScroll && !navbar.classList.contains('scroll-down')) {
             navbar.classList.remove('scroll-up');
             navbar.classList.add('scroll-down');
@@ -48,8 +100,8 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Animate elements on scroll
     const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -100px 0px'
+        threshold: 0,
+        rootMargin: '0px 0px 100px 0px'
     };
     
     const observer = new IntersectionObserver((entries) => {
@@ -60,14 +112,33 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }, observerOptions);
     
-    // Observe all feature cards
-    document.querySelectorAll('.feature-card').forEach(card => {
+    // Observe all feature cards with staggered delays
+    document.querySelectorAll('.feature-card').forEach((card, index) => {
+        card.style.transitionDelay = `${index * 0.03}s`;
         observer.observe(card);
     });
-    
-    // Observe steps
-    document.querySelectorAll('.step').forEach(step => {
+
+    // Observe steps with staggered delays
+    document.querySelectorAll('.step').forEach((step, index) => {
+        step.style.transitionDelay = `${index * 0.05}s`;
         observer.observe(step);
+    });
+
+    // Observe pain cards with staggered delays
+    document.querySelectorAll('.pain-card').forEach((card, index) => {
+        card.style.transitionDelay = `${index * 0.03}s`;
+        observer.observe(card);
+    });
+
+    // Observe pricing options with staggered delays
+    document.querySelectorAll('.price-option').forEach((option, index) => {
+        option.style.transitionDelay = `${index * 0.05}s`;
+        observer.observe(option);
+    });
+
+    // Observe section headers
+    document.querySelectorAll('.section-header').forEach(header => {
+        observer.observe(header);
     });
     
     // Add animation classes
@@ -77,45 +148,27 @@ document.addEventListener('DOMContentLoaded', function() {
             transform: translateY(-100%);
             transition: transform 0.3s ease;
         }
-        
+
         .scroll-up {
             transform: translateY(0);
             transition: transform 0.3s ease;
         }
-        
-        .nav-links.active {
-            display: flex;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            right: 0;
-            background: white;
-            flex-direction: column;
-            padding: 2rem;
-            box-shadow: var(--shadow);
-        }
-        
-        .mobile-menu-btn.active span:nth-child(1) {
-            transform: rotate(45deg) translate(5px, 5px);
-        }
-        
-        .mobile-menu-btn.active span:nth-child(2) {
-            opacity: 0;
-        }
-        
-        .mobile-menu-btn.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(7px, -6px);
-        }
-        
+
         .feature-card,
-        .step {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
+        .step,
+        .pain-card,
+        .price-option,
+        .section-header {
+            opacity: 0.3;
+            transform: translateY(10px);
+            transition: opacity 0.25s ease, transform 0.25s ease;
         }
-        
+
         .feature-card.animate-in,
-        .step.animate-in {
+        .step.animate-in,
+        .pain-card.animate-in,
+        .price-option.animate-in,
+        .section-header.animate-in {
             opacity: 1;
             transform: translateY(0);
         }
