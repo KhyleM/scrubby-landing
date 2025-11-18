@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scrubby - Modern CRM & Booking for Pet Groomers</title>
-    <meta name="description" content="The grooming business platform built for you. Free CRM, online booking, automated payments. Start free—pay only 10% per booking or upgrade to Pro for 0% on your own clients.">
-    <meta property="og:title" content="Scrubby - Modern CRM & Booking for Pet Groomers">
-    <meta property="og:description" content="Free CRM, online booking, automated payments. Start free—pay only 10% per booking or upgrade to Pro for 0% on your own clients.">
+    <title>Scrubby - Complete Pet Services Platform for Grooming, Boarding & Daycare</title>
+    <meta name="description" content="The complete pet services platform with grooming, boarding, and daycare. Save 20-50% on driving time with smart route planning, automated customer retention, 15+ email automations, and 200+ features from booking to analytics.">
+    <meta property="og:title" content="Scrubby - Complete Pet Services Platform for Grooming, Boarding & Daycare">
+    <meta property="og:description" content="Save 20-50% on routes, win back at-risk customers, boarding with daily updates, automated marketing, and complete business management for modern pet service providers.">
     <meta property="og:image" content="https://scrubby.app/images/scrubby_logo_full.png">
     <meta property="og:url" content="https://scrubby.app">
     <meta name="twitter:card" content="summary_large_image">
     <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="preload" as="image" href="images/scrubby_logo_full.png" fetchpriority="high">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -20,16 +21,18 @@
         <div class="container">
             <div class="nav-content">
                 <div class="logo">
-                    <img src="images/scrubby_logo_full.png" alt="Scrubby" class="logo-img">
+                    <img src="images/scrubby_logo_full.png" alt="Scrubby" class="logo-img" loading="eager" fetchpriority="high">
                 </div>
                 <div class="nav-links">
                     <a href="#features">Features</a>
+                    <a href="#analytics">Analytics</a>
                     <a href="#pricing">Pricing</a>
                     <a href="#comparison">vs Competitors</a>
                     <a href="/support">Support</a>
+                    <a href="https://web.scrubby.app" class="btn-outline">Log In</a>
                     <a href="/apply.html" class="btn-primary">Apply Now</a>
                 </div>
-                <div class="mobile-menu-btn">
+                <div class="mobile-menu-btn" id="mobileMenuBtn">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -38,37 +41,53 @@
         </div>
     </nav>
 
-    <!-- Hero Section - Provider Focused -->
+    <!-- Mobile Menu -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-links">
+            <a href="#features">Features</a>
+            <a href="#analytics">Analytics</a>
+            <a href="#pricing">Pricing</a>
+            <a href="#comparison">vs Competitors</a>
+            <a href="/support">Support</a>
+        </div>
+        <div class="mobile-menu-buttons">
+            <a href="https://web.scrubby.app" class="btn-outline">Log In</a>
+            <a href="/apply.html" class="btn-primary">Apply Now</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
     <section class="hero">
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <h1 class="hero-title">Stop Losing Money to No-Shows & Admin Work</h1>
-                    <p class="hero-subtitle">Scrubby is the all-in-one platform for independent groomers and mobile grooming businesses. Free CRM, automated booking, instant payments—without the enterprise price tag.</p>
+                    <h1 class="hero-title">The Complete Pet Services Platform Built to Run Your Whole Business</h1>
+                    <p class="hero-subtitle">Grooming, boarding, and daycare—all in one marketplace. Get discovered by new customers, automate every booking, and save 20-50% on routes with intelligent optimization. Stop juggling tools and run everything from one place.</p>
                     <div class="hero-stats">
                         <div class="stat">
-                            <strong>24/7</strong>
-                            <span>Online booking</span>
+                            <strong>Save 20-50%</strong>
+                            <span>On Driving Time</span>
                         </div>
                         <div class="stat">
-                            <strong>24hrs</strong>
-                            <span>Payouts available</span>
+                            <strong>200+ Features</strong>
+                            <span>Booking to Analytics</span>
                         </div>
                         <div class="stat">
-                            <strong>$0</strong>
-                            <span>Setup fees</span>
+                            <strong>15+ Automations</strong>
+                            <span>Working 24/7</span>
                         </div>
                     </div>
                     <div class="hero-cta">
-                        <a href="/apply.html" class="btn-primary-large">Apply to Get Started</a>
-                        <a href="/pricing.html" class="btn-secondary-large">See Pricing</a>
+                        <a href="/apply.html" class="btn-primary-large">Get Started</a>
+                        <a href="#features" class="btn-secondary-large">See How It Works</a>
                     </div>
-                    <p class="hero-note">✓ Currently accepting new providers  ✓ Free plan available  ✓ No long-term contracts</p>
+                    <p class="hero-note">✓ Grooming, Boarding & Daycare ✓ Smart Route Planning ✓ Automated Customer Retention ✓ iOS & Android Apps</p>
                 </div>
                 <div class="hero-image">
                     <div class="phone-mockup">
                         <div class="phone-screen">
-                            <img src="images/splash_icon.png" alt="Scrubby Provider Dashboard" class="app-logo-display">
+                            <img src="images/splash_icon.png" alt="Scrubby Provider Dashboard" class="app-logo-display lazy-image" loading="lazy">
                         </div>
                     </div>
                 </div>
@@ -100,7 +119,7 @@
                     <div class="pain-icon">💸</div>
                     <h3>Waiting Days for Payment</h3>
                     <p>Chasing down payments, dealing with bounced checks, waiting for Square to pay out</p>
-                    <div class="solution">→ <strong>Fast payouts</strong> (24-hour available, weekly default)</div>
+                    <div class="solution">→ <strong>Automated payouts</strong> (2-7 business days)</div>
                 </div>
                 <div class="pain-card">
                     <div class="pain-icon">📝</div>
@@ -112,43 +131,89 @@
         </div>
     </section>
 
-    <!-- Features Section - Provider Benefits -->
+    <!-- Platform Features -->
     <section id="features" class="features">
         <div class="container">
             <div class="section-header">
-                <h2>Everything You Need to Run Your Business</h2>
-                <p>Built specifically for independent groomers—not adapted from restaurant software</p>
+                <h2>Everything You Need to Run Your Pet Services Business</h2>
+                <p>Save time, boost revenue, and delight customers—from booking to payout.</p>
             </div>
             <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">📋</div>
-                    <h3>Complete Client Management</h3>
-                    <p>Track every client, pet, service history, and notes in one place. Tag VIPs, flag difficult pets, set custom pricing—all free.</p>
+                <div class="feature-card align-left">
+                    <div class="feature-icon">🗺️</div>
+                    <h3>Cut Driving Time by 20-50%</h3>
+                    <p>Intelligent route planning shows the fastest path between appointments, tracks fuel costs, and exports to Google/Apple Maps with one tap.</p>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">📅</div>
-                    <h3>Smart Scheduling & Calendar</h3>
-                    <p>Set your availability once. Clients book online 24/7. Automatic reminders reduce no-shows by 80%. Mobile groomers get route optimization.</p>
+                <div class="feature-card align-left">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Win Back At-Risk Customers</h3>
+                    <p>Automatically identify customers who haven't booked recently and trigger personalized re-engagement campaigns before they leave for good.</p>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">💳</div>
-                    <h3>Automated Payments & Deposits</h3>
-                    <p>Require deposits to lock in bookings. Accept cards, Apple Pay, Google Pay. Fast payouts—faster than Square's 3-5 days.</p>
+                <div class="feature-card align-left">
+                    <div class="feature-icon">🧭</div>
+                    <h3>Get Found by New Customers</h3>
+                    <p>Pet parents discover you through our iOS/Android consumer app—the only pet services marketplace with native mobile apps.</p>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">💬</div>
-                    <h3>In-App Messaging</h3>
-                    <p>Message clients directly through the app. Automated booking confirmations, reminders, and follow-ups keep everyone in sync.</p>
+                <div class="feature-card align-left">
+                    <div class="feature-icon">🏨</div>
+                    <h3>Boarding & Daycare Done Right</h3>
+                    <p>Multi-night stays with daily photo updates to owners, package discounts up to 20%, and automated check-in/check-out workflows.</p>
                 </div>
-                <div class="feature-card">
+                <div class="feature-card align-left">
+                    <div class="feature-icon">✉️</div>
+                    <h3>15+ Emails Running on Autopilot</h3>
+                    <p>Thank-yous, review requests, rebooking reminders, birthday credits, and win-back campaigns send automatically—no manual work.</p>
+                </div>
+                <div class="feature-card align-left">
+                    <div class="feature-icon">🗓️</div>
+                    <h3>24/7 Online Booking</h3>
+                    <p>Customers book appointments anytime with multi-pet intake, deposits, promo codes, gift cards, and optional consultations—all in one flow.</p>
+                </div>
+                <div class="feature-card align-left">
+                    <div class="feature-icon">🎁</div>
+                    <h3>Turn Customers into Regulars</h3>
+                    <p>4-tier loyalty rewards, $20 referral credits for both sides, and automatic milestone celebrations keep them coming back.</p>
+                </div>
+                <div class="feature-card align-left">
+                    <div class="feature-icon">🚨</div>
+                    <h3>Safety & Compliance Built In</h3>
+                    <p>Digital waivers with e-signatures, SOS emergency button with GPS logging, vaccination tracking, and incident reporting—no extra tools needed.</p>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 3rem;">
+                <p style="color: #666; margin-bottom: 1rem;">Plus 190+ more features including QuickBooks sync, inventory management, staff scheduling, and payroll tools</p>
+                <a href="https://calendly.com/khyle-scrubby" class="btn-secondary">See Full Feature Tour →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Analytics Section -->
+    <section id="analytics" class="features analytics">
+        <div class="container">
+            <div class="section-header">
+                <h2>Know Exactly What's Working</h2>
+                <p>Real-time dashboards show revenue, route efficiency, customer retention, and marketing performance.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card align-left">
                     <div class="feature-icon">📊</div>
-                    <h3>Revenue Dashboard</h3>
-                    <p>See exactly what you're earning. Track bookings, cancellations, and payouts. Export to QuickBooks (Pro plan).</p>
+                    <h3>Revenue by Service & Location</h3>
+                    <p>Track which services and locations drive the most revenue, forecast future earnings, and see exactly when payouts arrive.</p>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🚐</div>
-                    <h3>Mobile Groomer Tools</h3>
-                    <p>Service radius mapping, travel fee calculator, route optimization, and transit buffer management. Built for groomers on the go.</p>
+                <div class="feature-card align-left">
+                    <div class="feature-icon">🗺️</div>
+                    <h3>Route Efficiency Reports</h3>
+                    <p>See exactly how much time (20-50%) and fuel costs you're saving with shareable reports showing distance and CO2 reduction.</p>
+                </div>
+                <div class="feature-card align-left">
+                    <div class="feature-icon">📉</div>
+                    <h3>Customer Retention Metrics</h3>
+                    <p>Identify customers at risk of leaving, track loyalty tier growth, and measure the success of your win-back campaigns.</p>
+                </div>
+                <div class="feature-card align-left">
+                    <div class="feature-icon">💰</div>
+                    <h3>Marketing Campaign Results</h3>
+                    <p>See which emails drive bookings—track opens, clicks, conversions, and revenue from loyalty, referral, and re-engagement campaigns.</p>
                 </div>
             </div>
         </div>
@@ -164,16 +229,16 @@
                     <div class="price-option">
                         <h3>Free Plan</h3>
                         <div class="price">$0<span>/month</span></div>
-                        <p>10% per booking</p>
-                        <p class="price-detail">Full CRM, calendar, deposits, weekly payouts</p>
+                        <p>10% commission per booking</p>
+                        <p class="price-detail">Full CRM, calendar, deposits, AI optimization, and all platform features</p>
                     </div>
                     <div class="price-divider">OR</div>
                     <div class="price-option popular">
                         <span class="badge">Most Popular</span>
                         <h3>Pro Plan</h3>
-                        <div class="price">$39<span>/month</span></div>
-                        <p>0% on BYO (bring-your-own) clients</p>
-                        <p class="price-detail">Advanced messaging, invoices, QuickBooks export, 2 staff seats</p>
+                        <div class="price">$40<span>/month</span></div>
+                        <p>0% commission on all bookings</p>
+                        <p class="price-detail">All features included—best for providers processing $400+/month in bookings</p>
                     </div>
                 </div>
                 <a href="/pricing.html" class="btn-secondary">See Full Pricing Details →</a>
@@ -185,8 +250,8 @@
     <section id="comparison" class="comparison">
         <div class="container">
             <div class="section-header">
-                <h2>How Scrubby Stacks Up</h2>
-                <p>See why groomers are switching from Square, MoeGo, and Gingr</p>
+                <h2>Why Providers Choose Scrubby</h2>
+                <p>Features that save time and grow revenue—that Square, MoeGo, and Gingr simply don't have</p>
             </div>
             <div class="comparison-table-wrapper">
                 <table class="comparison-table">
@@ -201,50 +266,8 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Free CRM & Client Management</td>
-                            <td class="highlight">✅ Yes</td>
-                            <td>❌ $99/mo minimum</td>
-                            <td>⚠️ Basic only</td>
-                            <td>❌ $150/mo+</td>
-                        </tr>
-                        <tr>
-                            <td>Online Booking (24/7)</td>
-                            <td class="highlight">✅ Included</td>
-                            <td>✅ Yes</td>
-                            <td>✅ Yes</td>
-                            <td>✅ Yes</td>
-                        </tr>
-                        <tr>
-                            <td>Payout Speed</td>
-                            <td class="highlight">✅ Weekly (24hr available)</td>
-                            <td>⚠️ 2-3 days</td>
-                            <td>⚠️ 2-5 days</td>
-                            <td>⚠️ 3-5 days</td>
-                        </tr>
-                        <tr>
-                            <td>Deposit Protection</td>
-                            <td class="highlight">✅ Automated</td>
-                            <td>✅ Yes</td>
-                            <td>❌ Manual only</td>
-                            <td>✅ Yes</td>
-                        </tr>
-                        <tr>
-                            <td>Mobile Groomer Features</td>
-                            <td class="highlight">✅ Route optimization</td>
-                            <td>⚠️ Basic</td>
-                            <td>❌ None</td>
-                            <td>❌ None</td>
-                        </tr>
-                        <tr>
-                            <td>In-App Messaging</td>
-                            <td class="highlight">✅ Included</td>
-                            <td>✅ Yes</td>
-                            <td>❌ No</td>
-                            <td>✅ Yes</td>
-                        </tr>
-                        <tr>
-                            <td>Monthly Cost (Solo Groomer)</td>
-                            <td class="highlight">✅ $0 or $39</td>
+                            <td>Monthly Cost (Solo Provider)</td>
+                            <td class="highlight">✅ $0 or $40</td>
                             <td>❌ $99-299</td>
                             <td>✅ $0</td>
                             <td>❌ $150+</td>
@@ -252,13 +275,58 @@
                         <tr>
                             <td>Commission on Bookings</td>
                             <td class="highlight">✅ 10% or 0%*</td>
-                            <td>❌ None (but higher monthly)</td>
+                            <td>❌ None (but $99+/mo)</td>
                             <td>⚠️ 2.9% + $0.30</td>
                             <td>❌ None (but $150/mo)</td>
                         </tr>
+                        <tr>
+                            <td>Marketplace Discovery & Consumer App</td>
+                            <td class="highlight">✅ iOS/Android apps</td>
+                            <td>❌ None</td>
+                            <td>❌ None</td>
+                            <td>❌ None</td>
+                        </tr>
+                        <tr>
+                            <td>Intelligent Route Optimization (20-50% savings)</td>
+                            <td class="highlight">✅ 3 optimization modes</td>
+                            <td>❌ None</td>
+                            <td>❌ None</td>
+                            <td>❌ None</td>
+                        </tr>
+                        <tr>
+                            <td>Automated Customer Win-Back Campaigns</td>
+                            <td class="highlight">✅ Identifies at-risk customers</td>
+                            <td>❌ None</td>
+                            <td>❌ None</td>
+                            <td>❌ None</td>
+                        </tr>
+                        <tr>
+                            <td>Boarding & Daycare with Daily Updates</td>
+                            <td class="highlight">✅ Photos + packages</td>
+                            <td>❌ None</td>
+                            <td>❌ None</td>
+                            <td>⚠️ Basic</td>
+                        </tr>
+                        <tr>
+                            <td>Free CRM & Client Management</td>
+                            <td class="highlight">✅ Full-featured</td>
+                            <td>❌ $99/mo minimum</td>
+                            <td>⚠️ Basic only</td>
+                            <td>❌ $150/mo+</td>
+                        </tr>
+                        <tr>
+                            <td>15+ Marketing Automations</td>
+                            <td class="highlight">✅ Email + in-app + AI</td>
+                            <td>⚠️ Email blasts</td>
+                            <td>❌ None</td>
+                            <td>⚠️ Email only</td>
+                        </tr>
                     </tbody>
                 </table>
-                <p class="table-note">*Pro plan: 0% on BYO (bring-your-own) clients, 10% on marketplace bookings</p>
+                <p class="table-note">*Pro plan ($40/mo): 0% commission on all bookings. Best for providers processing $400+/month.</p>
+                <div style="text-align: center; margin-top: 2rem;">
+                    <p style="color: #666;">Want a detailed walkthrough? <a href="https://calendly.com/khyle-scrubby" style="color: #4A90E2; text-decoration: underline;">Schedule a demo →</a></p>
+                </div>
             </div>
         </div>
     </section>
@@ -269,13 +337,14 @@
     <section class="final-cta">
         <div class="container">
             <div class="cta-content">
-                <h2>Ready to Take Back Your Time?</h2>
-                <p>Join the groomers who are ditching phone tag and admin headaches</p>
+                <h2>Ready to Run Your Entire Pet Services Business from One Platform?</h2>
+                <p>Whether you offer grooming, boarding, or daycare—apply today and we'll migrate your clients, services, and pricing so you launch without downtime.</p>
                 <div class="cta-buttons">
-                    <a href="/apply.html" class="btn-primary-large">Apply to Get Started</a>
-                    <a href="https://calendly.com/khyle-scrubby" class="btn-secondary-large">Book a 10-Min Demo</a>
+                    <a href="/apply.html" class="btn-primary-large">Get Started</a>
+                    <a href="https://calendly.com/khyle-scrubby" class="btn-secondary-large">Request a Walkthrough</a>
                 </div>
-                <p class="cta-note">✓ Currently accepting new providers  ✓ Quick setup  ✓ No long-term contracts</p>
+                <p class="cta-note">✓ Save 20-50% on routes ✓ Automated customer retention ✓ Free migration support ✓ No long-term contracts</p>
+                <p class="cta-login">Already onboarded? <a href="https://web.scrubby.app">Launch the web app →</a></p>
             </div>
         </div>
     </section>
@@ -325,4 +394,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-
