@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opening Scrubby - Staff Invitation</title>
+    <meta name="description" content="Accept your staff invitation to join your team on Scrubby">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #5B86E5;
+            --secondary-color: #36D1DC;
+            --gradient-premium: linear-gradient(135deg, #5B86E5, #36D1DC);
+            --text-dark: #2D3748;
+            --text-body: #4A5568;
+            --text-light: #718096;
+            --bg-light: #F7FAFC;
+            --white: #FFFFFF;
+            --shadow: 0 10px 30px rgba(0,0,0,0.1);
+            --radius-lg: 20px;
+            --radius-full: 50px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--gradient-premium);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            color: var(--text-body);
+        }
+
+        .container {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 48px 40px;
+            max-width: 540px;
+            width: 100%;
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+
+        .logo-container {
+            margin-bottom: 32px;
+        }
+
+        .logo {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto;
+            display: block;
+        }
+
+        h1 {
+            font-size: 32px;
+            color: var(--text-dark);
+            margin-bottom: 16px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        p {
+            font-size: 18px;
+            color: var(--text-body);
+            line-height: 1.6;
+            margin-bottom: 32px;
+        }
+
+        .spinner {
+            width: 48px;
+            height: 48px;
+            margin: 0 auto 32px;
+            border: 4px solid var(--bg-light);
+            border-top: 4px solid var(--primary-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--gradient-premium);
+            color: var(--white);
+            padding: 16px 40px;
+            border-radius: var(--radius-full);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 18px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 14px rgba(91, 134, 229, 0.4);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(91, 134, 229, 0.5);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        .btn-secondary {
+            display: inline-block;
+            background: transparent;
+            color: var(--primary-color);
+            padding: 14px 32px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            margin-top: 16px;
+            border: 2px solid var(--primary-color);
+            border-radius: var(--radius-full);
+            transition: background 0.2s, color 0.2s;
+        }
+
+        .btn-secondary:hover {
+            background: var(--bg-light);
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .info-box {
+            background: var(--bg-light);
+            border-left: 4px solid var(--primary-color);
+            padding: 20px;
+            margin-top: 32px;
+            text-align: left;
+            border-radius: 12px;
+        }
+
+        .info-box p {
+            margin: 0 0 12px 0;
+            font-size: 16px;
+            color: var(--text-dark);
+        }
+
+        .info-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        .info-box strong {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 18px;
+        }
+
+        .info-box ol {
+            margin: 12px 0 0 20px;
+            padding: 0;
+        }
+
+        .info-box li {
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 32px 24px;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            p {
+                font-size: 16px;
+            }
+
+            .btn {
+                font-size: 16px;
+                padding: 14px 32px;
+            }
+
+            .logo {
+                width: 100px;
+                height: 100px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo-container">
+            <img src="images/scrubby_logo_full.png" alt="Scrubby" class="logo">
+        </div>
+
+        <div id="loading-state">
+            <div class="spinner"></div>
+            <h1>Opening Scrubby...</h1>
+            <p>If the app doesn't open automatically, tap the button below.</p>
+            <a href="#" id="openAppBtn" class="btn">Open Scrubby App</a>
+        </div>
+
+        <div id="install-state" class="hidden">
+            <h1>Install Scrubby</h1>
+            <p>You need to install the Scrubby app to accept this invitation.</p>
+            <a href="https://testflight.apple.com/join/aQv2Ud64" class="btn">Install from TestFlight</a>
+
+            <div class="info-box">
+                <strong>After installing:</strong>
+                <ol>
+                    <li>Open the Scrubby app from TestFlight</li>
+                    <li>Return to your invitation email</li>
+                    <li>Click the invitation link again</li>
+                </ol>
+            </div>
+
+            <a href="#" id="retryAppBtn" class="btn-secondary">I already have the app</a>
+        </div>
+    </div>
+
+    <script>
+        // Get the token from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const token = urlParams.get('token');
+
+        if (!token) {
+            document.getElementById('loading-state').innerHTML =
+                '<h1>Invalid Link</h1><p>This invitation link is invalid or has expired. Please contact your team administrator.</p>';
+        } else {
+            // Deep link URL for users who have the app installed
+            const deepLink = `scrubby://accept-invite?token=${token}`;
+
+            // Update button hrefs
+            document.getElementById('openAppBtn').href = deepLink;
+            document.getElementById('retryAppBtn').href = deepLink;
+
+            // Attempt to open the app immediately
+            window.location.href = deepLink;
+
+            // If user is still here after 2.5 seconds, they probably don't have the app
+            const timeout = setTimeout(function() {
+                document.getElementById('loading-state').classList.add('hidden');
+                document.getElementById('install-state').classList.remove('hidden');
+            }, 2500);
+
+            // Handle visibility change - if user comes back, assume app didn't open
+            document.addEventListener('visibilitychange', function() {
+                if (!document.hidden) {
+                    setTimeout(function() {
+                        clearTimeout(timeout);
+                        document.getElementById('loading-state').classList.add('hidden');
+                        document.getElementById('install-state').classList.remove('hidden');
+                    }, 500);
+                }
+            });
+
+            // Handle page blur (app opened)
+            let blurred = false;
+            window.addEventListener('blur', function() {
+                blurred = true;
+                clearTimeout(timeout);
+            });
+
+            // If they return after blur, show install screen
+            window.addEventListener('focus', function() {
+                if (blurred) {
+                    setTimeout(function() {
+                        document.getElementById('loading-state').classList.add('hidden');
+                        document.getElementById('install-state').classList.remove('hidden');
+                    }, 300);
+                }
+            });
+        }
+    </script>
+</body>
+</html>
