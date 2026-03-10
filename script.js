@@ -1,4 +1,4 @@
-// Mobile menu toggle
+// Scrubby Landing Page
 document.addEventListener('DOMContentLoaded', function() {
     // Create scroll progress indicator
     const progressBar = document.createElement('div');
@@ -10,21 +10,6 @@ document.addEventListener('DOMContentLoaded', function() {
         const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
         const scrolled = (window.pageYOffset / windowHeight) * 100;
         progressBar.style.width = scrolled + '%';
-    });
-
-    // Handle lazy image loading
-    const lazyImages = document.querySelectorAll('.lazy-image');
-    lazyImages.forEach(img => {
-        if (img.complete) {
-            img.classList.add('loaded');
-        } else {
-            img.addEventListener('load', () => {
-                img.classList.add('loaded');
-            });
-            img.addEventListener('error', () => {
-                img.classList.add('loaded'); // Still fade in even on error
-            });
-        }
     });
 
     // Mobile menu toggle
@@ -54,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
             toggleMobileMenu();
         });
     });
-    
+
     // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
@@ -68,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-    
+
     // Add scroll effect to navbar
     let lastScroll = 0;
     const navbar = document.querySelector('.navbar');
@@ -97,13 +82,13 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         lastScroll = currentScroll;
     });
-    
+
     // Animate elements on scroll
     const observerOptions = {
         threshold: 0,
         rootMargin: '0px 0px 100px 0px'
     };
-    
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -111,36 +96,23 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }, observerOptions);
-    
-    // Observe all feature cards with staggered delays
-    document.querySelectorAll('.feature-card').forEach((card, index) => {
-        card.style.transitionDelay = `${index * 0.03}s`;
-        observer.observe(card);
+
+    // Observe animatable elements with staggered delays
+    const animateSelectors = [
+        '.service-card',
+        '.why-card',
+        '.hero-feature-card',
+        '.step',
+        '.section-header'
+    ];
+
+    animateSelectors.forEach(selector => {
+        document.querySelectorAll(selector).forEach((el, index) => {
+            el.style.transitionDelay = `${index * 0.03}s`;
+            observer.observe(el);
+        });
     });
 
-    // Observe steps with staggered delays
-    document.querySelectorAll('.step').forEach((step, index) => {
-        step.style.transitionDelay = `${index * 0.05}s`;
-        observer.observe(step);
-    });
-
-    // Observe pain cards with staggered delays
-    document.querySelectorAll('.pain-card').forEach((card, index) => {
-        card.style.transitionDelay = `${index * 0.03}s`;
-        observer.observe(card);
-    });
-
-    // Observe pricing options with staggered delays
-    document.querySelectorAll('.price-option').forEach((option, index) => {
-        option.style.transitionDelay = `${index * 0.05}s`;
-        observer.observe(option);
-    });
-
-    // Observe section headers
-    document.querySelectorAll('.section-header').forEach(header => {
-        observer.observe(header);
-    });
-    
     // Add animation classes
     const style = document.createElement('style');
     style.textContent = `
@@ -154,20 +126,20 @@ document.addEventListener('DOMContentLoaded', function() {
             transition: transform 0.3s ease;
         }
 
-        .feature-card,
+        .service-card,
+        .why-card,
+        .hero-feature-card,
         .step,
-        .pain-card,
-        .price-option,
         .section-header {
             opacity: 0.3;
             transform: translateY(10px);
             transition: opacity 0.25s ease, transform 0.25s ease;
         }
 
-        .feature-card.animate-in,
+        .service-card.animate-in,
+        .why-card.animate-in,
+        .hero-feature-card.animate-in,
         .step.animate-in,
-        .pain-card.animate-in,
-        .price-option.animate-in,
         .section-header.animate-in {
             opacity: 1;
             transform: translateY(0);
