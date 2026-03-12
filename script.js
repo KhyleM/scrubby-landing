@@ -101,6 +101,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const animateSelectors = [
         '.why-card',
         '.step',
+        '.step-phone',
         '.section-header'
     ];
 
@@ -126,6 +127,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         .why-card,
         .step,
+        .step-phone,
         .section-header {
             opacity: 0.3;
             transform: translateY(10px);
@@ -134,6 +136,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         .why-card.animate-in,
         .step.animate-in,
+        .step-phone.animate-in,
         .section-header.animate-in {
             opacity: 1;
             transform: translateY(0);
