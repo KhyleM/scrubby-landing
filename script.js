@@ -99,9 +99,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Observe animatable elements with staggered delays
     const animateSelectors = [
-        '.service-card',
         '.why-card',
-        '.hero-feature-card',
         '.step',
         '.section-header'
     ];
@@ -126,9 +124,7 @@ document.addEventListener('DOMContentLoaded', function() {
             transition: transform 0.3s ease;
         }
 
-        .service-card,
         .why-card,
-        .hero-feature-card,
         .step,
         .section-header {
             opacity: 0.3;
@@ -136,9 +132,7 @@ document.addEventListener('DOMContentLoaded', function() {
             transition: opacity 0.25s ease, transform 0.25s ease;
         }
 
-        .service-card.animate-in,
         .why-card.animate-in,
-        .hero-feature-card.animate-in,
         .step.animate-in,
         .section-header.animate-in {
             opacity: 1;
