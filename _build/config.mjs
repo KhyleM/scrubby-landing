@@ -53,6 +53,16 @@ for (const [slug, config] of Object.entries(SERVICE_TYPES)) {
   }
 }
 
+// Schema.org additionalType mapping for JSON-LD
+export const SCHEMA_ADDITIONAL_TYPE = {
+  groomers: 'https://schema.org/PetGroomer',
+  vets: 'https://schema.org/VeterinaryCare',
+  boarding: 'https://schema.org/LodgingBusiness',
+  training: null, // falls back to LocalBusiness
+  walkers: null,
+  sitters: null,
+};
+
 // US state abbreviations for address parsing
 export const STATE_ABBREVS = new Set([
   'AL','AK','AZ','AR','CA','CO','CT','DE','FL','GA','HI','ID','IL','IN','IA',

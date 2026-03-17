@@ -33,7 +33,7 @@ async function fetchAllListings() {
       `?is_hidden=eq.false` +
       `&latitude=not.is.null` +
       `&or=(business_status.is.null,business_status.neq.CLOSED_PERMANENTLY)` +
-      `&select=id,google_place_id,business_name,address,phone,website,rating,review_count,primary_type,types,photos,business_hours,current_opening_hours,price_level,description,extracted_data,external_ratings,payment_options,latitude,longitude` +
+      `&select=id,google_place_id,business_name,address,phone,website,rating,review_count,primary_type,types,photos,business_hours,current_opening_hours,price_level,description,extracted_data,external_ratings,payment_options,latitude,longitude,claimed_provider_id` +
       `&order=rating.desc.nullslast,review_count.desc.nullslast` +
       `&limit=${PAGE_SIZE}&offset=${offset}`;
 

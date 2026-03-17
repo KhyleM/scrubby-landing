@@ -2,7 +2,7 @@
 
 import { SERVICE_TYPES, SITE_URL, WEB_APP_URL } from '../config.mjs';
 import {
-  renderHead, renderNavbar, renderFooter, jsonLdLocalBusiness,
+  renderHead, renderNavbar, renderFooter, jsonLdLocalBusiness, parseAddress,
   renderStars, renderPriceLevel, getPhotos, getFirstPhoto, escapeHtml,
 } from './partials.mjs';
 
@@ -17,7 +17,7 @@ export function renderBusinessPage({ listing, serviceSlug, cityName, stateAbbrev
   const pageTitle = `${listing.business_name} - ${service.singular} in ${cityName}, ${stateAbbrev} | Scrubby`;
   const pageDesc = buildDescription(listing, service, cityName, stateAbbrev);
   const firstPhoto = getFirstPhoto(listing);
-  const jsonLd = jsonLdLocalBusiness(listing, canonicalUrl);
+  const jsonLd = jsonLdLocalBusiness(listing, canonicalUrl, serviceSlug);
   const photos = getPhotos(listing, 5);
 
   const extracted = listing.extracted_data || {};
@@ -42,6 +42,8 @@ ${renderNavbar()}
 
             ${renderPhotoGallery(photos, listing.business_name)}
 
+            ${renderClaimBanner(listing)}
+
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>${escapeHtml(listing.business_name)}</h1>
@@ -52,7 +54,7 @@ ${renderNavbar()}
                         ${renderPriceLevel(listing.price_level)}
                     </div>
 
-                    ${listing.description ? `<p class="detail-description">${escapeHtml(listing.description)}</p>` : ''}
+                    <p class="detail-description">${escapeHtml(pageDesc)}</p>
 
                     <div class="detail-info">
                         ${listing.address ? `<div class="info-row">
@@ -93,12 +95,79 @@ ${renderFooter(SERVICE_TYPES)}`;
 }
 
 function buildDescription(listing, service, cityName, stateAbbrev) {
-  let desc = `${listing.business_name} is a ${service.singular.toLowerCase()} in ${cityName}, ${stateAbbrev}.`;
-  if (listing.rating) desc += ` Rated ${listing.rating}/5`;
-  if (listing.review_count) desc += ` from ${listing.review_count} reviews.`;
-  else if (listing.rating) desc += '.';
-  desc += ' Book an appointment free on Scrubby.';
+  const addr = parseAddress(listing.address);
+  const street = addr ? addr.streetAddress : '';
+
+  let desc = `${listing.business_name} is a ${service.singular.toLowerCase()} located at ${street} in ${cityName}, ${stateAbbrev}.`;
+
+  if (listing.rating > 0 && listing.review_count > 0) {
+    desc += ` Rated ${listing.rating} stars based on ${listing.review_count} reviews.`;
+  }
+
+  const hours = listing.business_hours?.weekdayDescriptions || listing.current_opening_hours?.weekdayDescriptions;
+  const hoursSummary = summarizeHours(hours);
+  if (hoursSummary) {
+    desc += ` Open ${hoursSummary}.`;
+  }
+
   return desc;
+}
+
+function summarizeHours(weekdayDescriptions) {
+  if (!Array.isArray(weekdayDescriptions) || weekdayDescriptions.length === 0) return null;
+
+  const openDays = [];
+  let commonTime = null;
+  let allSameTime = true;
+
+  for (const desc of weekdayDescriptions) {
+    const colonIdx = desc.indexOf(':');
+    if (colonIdx === -1) continue;
+    const day = desc.substring(0, colonIdx).trim();
+    const time = desc.substring(colonIdx + 1).trim();
+
+    if (/closed/i.test(time)) continue;
+
+    openDays.push(day);
+
+    if (commonTime === null) {
+      commonTime = time;
+    } else if (time !== commonTime) {
+      allSameTime = false;
+    }
+  }
+
+  if (openDays.length === 0) return null;
+
+  if (openDays.length === 7) {
+    return allSameTime && commonTime ? `7 days a week, ${commonTime}` : '7 days a week';
+  }
+
+  // Check for consecutive day ranges
+  const dayOrder = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+  const indices = openDays.map(d => dayOrder.indexOf(d)).filter(i => i !== -1).sort((a, b) => a - b);
+
+  if (indices.length >= 2) {
+    const isConsecutive = indices.every((val, i) => i === 0 || val === indices[i - 1] + 1);
+    if (isConsecutive) {
+      const range = `${dayOrder[indices[0]]} through ${dayOrder[indices[indices.length - 1]]}`;
+      return allSameTime && commonTime ? `${range}, ${commonTime}` : range;
+    }
+  }
+
+  return `${openDays.length} days a week`;
+}
+
+function renderClaimBanner(listing) {
+  if (listing.claimed_provider_id) return '';
+  return `
+            <div class="claim-banner">
+                <div class="claim-banner-content">
+                    <h3>Are you the owner of ${escapeHtml(listing.business_name)}?</h3>
+                    <p>Claim your free listing to update your info, add services, and manage bookings.</p>
+                    <a href="${WEB_APP_URL}/claim?placeId=${encodeURIComponent(listing.google_place_id)}" class="btn-primary claim-btn">Claim This Business</a>
+                </div>
+            </div>`;
 }
 
 function renderPhotoGallery(photos, name) {

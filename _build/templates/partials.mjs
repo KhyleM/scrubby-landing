@@ -1,6 +1,6 @@
 // Shared HTML partials for SEO pages
 
-import { SUPABASE_URL, SUPABASE_ANON_KEY, SITE_URL, WEB_APP_URL } from '../config.mjs';
+import { SUPABASE_URL, SUPABASE_ANON_KEY, SITE_URL, WEB_APP_URL, SCHEMA_ADDITIONAL_TYPE } from '../config.mjs';
 
 /**
  * Build photo proxy URL from a Google Places photo reference.
@@ -130,25 +130,124 @@ ${browseLinks}
 }
 
 /**
+ * Parse a formatted address string into structured components.
+ * Handles: "1561 Powell St, San Francisco, CA 94133, USA"
+ *          "123 Main St Suite 4, Memphis, TN 38104, USA"
+ */
+export function parseAddress(address) {
+  if (!address) return null;
+  const parts = address.split(',').map(s => s.trim());
+  if (parts.length < 3) return null;
+
+  // Find the part with state abbreviation + zip
+  for (let i = 2; i < parts.length; i++) {
+    const match = parts[i].match(/^([A-Z]{2})\s+(\d{5}(?:-\d{4})?)$/);
+    if (match) {
+      return {
+        streetAddress: parts.slice(0, i - 1).join(', '),
+        addressLocality: parts[i - 1],
+        addressRegion: match[1],
+        postalCode: match[2],
+        addressCountry: 'US',
+      };
+    }
+  }
+
+  // Fallback: try without zip
+  for (let i = 2; i < parts.length; i++) {
+    const match = parts[i].match(/^([A-Z]{2})$/);
+    if (match) {
+      return {
+        streetAddress: parts.slice(0, i - 1).join(', '),
+        addressLocality: parts[i - 1],
+        addressRegion: match[1],
+        addressCountry: 'US',
+      };
+    }
+  }
+
+  return null;
+}
+
+/**
+ * Parse weekdayDescriptions into OpeningHoursSpecification objects.
+ * Input format: ["Monday: 9:00 AM – 5:00 PM", "Tuesday: Closed", ...]
+ */
+export function parseOpeningHours(weekdayDescriptions) {
+  if (!Array.isArray(weekdayDescriptions) || weekdayDescriptions.length === 0) return [];
+
+  const specs = [];
+  for (const desc of weekdayDescriptions) {
+    const colonIdx = desc.indexOf(':');
+    if (colonIdx === -1) continue;
+
+    const dayName = desc.substring(0, colonIdx).trim();
+    const timeStr = desc.substring(colonIdx + 1).trim();
+
+    if (/closed/i.test(timeStr)) continue;
+    if (/open\s*24\s*hours/i.test(timeStr)) {
+      specs.push({ '@type': 'OpeningHoursSpecification', dayOfWeek: dayName, opens: '00:00', closes: '23:59' });
+      continue;
+    }
+
+    // Match time ranges like "9:00 AM – 5:00 PM" or "9:00 AM - 5:00 PM"
+    const rangeMatch = timeStr.match(/(\d{1,2}:\d{2}\s*(?:AM|PM)?)\s*[–\-]\s*(\d{1,2}:\d{2}\s*(?:AM|PM)?)/i);
+    if (rangeMatch) {
+      const opens = to24h(rangeMatch[1].trim());
+      const closes = to24h(rangeMatch[2].trim());
+      if (opens && closes) {
+        specs.push({ '@type': 'OpeningHoursSpecification', dayOfWeek: dayName, opens, closes });
+      }
+    }
+  }
+  return specs;
+}
+
+/**
+ * Convert 12-hour time to 24-hour format. "9:00 AM" → "09:00", "5:00 PM" → "17:00"
+ */
+function to24h(timeStr) {
+  const match = timeStr.match(/^(\d{1,2}):(\d{2})\s*(AM|PM)?$/i);
+  if (!match) return null;
+  let hour = parseInt(match[1], 10);
+  const min = match[2];
+  const period = match[3]?.toUpperCase();
+
+  if (period === 'PM' && hour !== 12) hour += 12;
+  if (period === 'AM' && hour === 12) hour = 0;
+
+  return `${String(hour).padStart(2, '0')}:${min}`;
+}
+
+/**
  * Render JSON-LD LocalBusiness structured data for a single listing.
  */
-export function jsonLdLocalBusiness(listing, canonicalUrl) {
+export function jsonLdLocalBusiness(listing, canonicalUrl, serviceSlug) {
   const ld = {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
     name: listing.business_name,
     url: canonicalUrl,
   };
-  if (listing.address) ld.address = listing.address;
+
+  // Structured address
+  const addr = parseAddress(listing.address);
+  if (addr) {
+    ld.address = { '@type': 'PostalAddress', ...addr };
+  }
+
   if (listing.phone) ld.telephone = listing.phone;
   if (listing.website) ld.sameAs = listing.website;
-  if (listing.rating != null) {
+
+  // Only include aggregateRating if meaningful
+  if (listing.rating > 0 && listing.review_count > 0) {
     ld.aggregateRating = {
       '@type': 'AggregateRating',
       ratingValue: listing.rating,
-      reviewCount: listing.review_count || 0,
+      reviewCount: listing.review_count,
     };
   }
+
   if (listing.latitude && listing.longitude) {
     ld.geo = {
       '@type': 'GeoCoordinates',
@@ -156,16 +255,27 @@ export function jsonLdLocalBusiness(listing, canonicalUrl) {
       longitude: listing.longitude,
     };
   }
+
   const firstPhoto = getFirstPhoto(listing);
   if (firstPhoto) ld.image = firstPhoto;
+
+  // Opening hours
+  const hours = listing.business_hours?.weekdayDescriptions || listing.current_opening_hours?.weekdayDescriptions;
+  const hoursSpec = parseOpeningHours(hours);
+  if (hoursSpec.length > 0) ld.openingHoursSpecification = hoursSpec;
+
+  // Service-specific additionalType
+  const additionalType = serviceSlug && SCHEMA_ADDITIONAL_TYPE[serviceSlug];
+  if (additionalType) ld.additionalType = additionalType;
+
   return ld;
 }
 
 /**
  * Render JSON-LD ItemList structured data for a city page.
  */
-export function jsonLdItemList(listings, pageUrl) {
-  return {
+export function jsonLdItemList(listings, pageUrl, listName) {
+  const ld = {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
     url: pageUrl,
@@ -177,6 +287,8 @@ export function jsonLdItemList(listings, pageUrl) {
       url: l._pageUrl,
     })),
   };
+  if (listName) ld.name = listName;
+  return ld;
 }
 
 /**

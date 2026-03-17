@@ -19,7 +19,7 @@ import {
 export function renderCityPage({ serviceSlug, cityName, stateAbbrev, citySlug, listings, otherCities }) {
   const service = SERVICE_TYPES[serviceSlug];
   const pageTitle = `${service.label} in ${cityName}, ${stateAbbrev} | Scrubby`;
-  const pageDesc = `Find the best ${service.label.toLowerCase()} in ${cityName}, ${stateAbbrev}. Browse ${listings.length} businesses with ratings, hours, and photos. Book an appointment free on Scrubby.`;
+  const pageDesc = `Browse and book ${listings.length} ${service.label.toLowerCase()} in ${cityName}, ${stateAbbrev}. Compare ratings, read reviews, and request appointments — all without picking up the phone. 100% free for pet parents.`;
   const canonicalUrl = `${SITE_URL}/${serviceSlug}/${citySlug}/`;
 
   // Assign page URLs to listings for JSON-LD
@@ -27,7 +27,8 @@ export function renderCityPage({ serviceSlug, cityName, stateAbbrev, citySlug, l
     l._pageUrl = `${SITE_URL}/${serviceSlug}/${citySlug}/${l._slug}/`;
   }
 
-  const jsonLd = jsonLdItemList(listings, canonicalUrl);
+  const listName = `${service.label} in ${cityName}, ${stateAbbrev}`;
+  const jsonLd = jsonLdItemList(listings, canonicalUrl, listName);
 
   const cards = listings.map(l => renderCard(l, serviceSlug, citySlug)).join('\n');
 
@@ -54,6 +55,8 @@ ${renderNavbar()}
                 <h1>${escapeHtml(service.label)} in ${escapeHtml(cityName)}, ${stateAbbrev}</h1>
                 <p class="city-count">${listings.length} ${listings.length === 1 ? 'business' : 'businesses'} found</p>
             </header>
+
+            <p class="city-intro">Browse and book ${listings.length} ${service.label.toLowerCase()} in ${escapeHtml(cityName)}, ${stateAbbrev}. Compare ratings, read reviews, and request appointments — all without picking up the phone. 100% free for pet parents.</p>
 
             <div class="business-grid">
 ${cards}
