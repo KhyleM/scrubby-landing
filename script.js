@@ -1,5 +1,14 @@
 // Scrubby Landing Page
 document.addEventListener('DOMContentLoaded', function() {
+    // Smart link: route iOS/iPadOS users to App Store, everyone else to web app
+    var isIOS = /iPhone|iPad|iPod/.test(navigator.userAgent) ||
+        (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+    if (isIOS) {
+        var appStoreUrl = 'https://apps.apple.com/app/scrubby-pet-care/id6753985366';
+        document.querySelectorAll('[data-smart-link]').forEach(function(link) {
+            link.href = appStoreUrl;
+        });
+    }
     // Create scroll progress indicator
     const progressBar = document.createElement('div');
     progressBar.className = 'scroll-progress';
