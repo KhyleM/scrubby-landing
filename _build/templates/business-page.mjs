@@ -99,6 +99,9 @@ ${renderNavbar()}
                                 </select>
                             </div>
                             <div class="form-row">
+                                <input name="breed" placeholder="Breed (e.g. Golden Retriever)">
+                            </div>
+                            <div class="form-row">
                                 <input name="preferred_date" type="date">
                                 <select name="preferred_time_window">
                                     <option value="any">Any time</option>
@@ -156,6 +159,7 @@ ${renderFooter(SERVICE_TYPES)}
           phone: fd.get('phone') || undefined,
           pet_name: fd.get('pet_name') || undefined,
           pet_type: fd.get('pet_type') || undefined,
+          breed: fd.get('breed') || undefined,
           service_type: fd.get('service_type'),
           preferred_date: fd.get('preferred_date') || undefined,
           preferred_time_window: fd.get('preferred_time_window') || undefined,
