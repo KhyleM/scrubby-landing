@@ -121,9 +121,46 @@
                     
                     
 
-                    <section class="detail-cta">
-                        <a href="https://web.scrubby.app/discover?placeId=ChIJvffKjjJ8j4ARy94C0Fr8N_A" class="btn-primary-large" data-smart-link>Book an Appointment</a>
-                        <p class="cta-sub">100% free for pet parents. No fees, no commission.</p>
+                    <section class="detail-cta" id="book">
+                        <h2>Book an Appointment</h2>
+                        <form id="bookingForm" class="booking-form">
+                            <input type="hidden" name="listing_id" value="acdb6f38-18eb-49c6-876e-8da2770d9a05">
+                            <input type="hidden" name="service_type" value="dog walker">
+                            <div class="form-row">
+                                <input name="name" placeholder="Your name" required>
+                                <input name="email" type="email" placeholder="Email" required>
+                            </div>
+                            <div class="form-row">
+                                <input name="phone" type="tel" placeholder="Phone (optional)">
+                            </div>
+                            <div class="form-row">
+                                <input name="pet_name" placeholder="Pet's name">
+                                <select name="pet_type">
+                                    <option value="">Pet type</option>
+                                    <option value="dog">Dog</option>
+                                    <option value="cat">Cat</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-row">
+                                <input name="preferred_date" type="date">
+                                <select name="preferred_time_window">
+                                    <option value="any">Any time</option>
+                                    <option value="morning">Morning</option>
+                                    <option value="afternoon">Afternoon</option>
+                                    <option value="evening">Evening</option>
+                                </select>
+                            </div>
+                            <textarea name="notes" placeholder="Anything we should know? (optional)" rows="2"></textarea>
+                            <button type="submit" class="btn-primary-large booking-submit">Book an Appointment</button>
+                            <p class="cta-sub">100% free for pet parents. No account needed. No fees, no commission.</p>
+                        </form>
+                        <div id="bookingSuccess" class="booking-success" hidden>
+                            <div class="success-icon">&#10003;</div>
+                            <h3>Request Received!</h3>
+                            <p>We'll confirm your appointment at Sniff and Go: BetteR+ Dog Walks and email you the details.</p>
+                        </div>
+                        <div id="bookingError" class="booking-error" hidden></div>
                     </section>
                 </div>
 
@@ -187,3 +224,62 @@
     <script src="/script.js"></script>
 </body>
 </html>
+    <script>
+    (function() {
+      var form = document.getElementById('bookingForm');
+      if (!form) return;
+      var btn = form.querySelector('.booking-submit');
+      var successEl = document.getElementById('bookingSuccess');
+      var errorEl = document.getElementById('bookingError');
+      var endpoint = 'https://anltnskudvrymdqoubez.supabase.co/functions/v1/seo-booking-submit';
+
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        errorEl.hidden = true;
+        btn.disabled = true;
+        btn.textContent = 'Submitting...';
+
+        var fd = new FormData(form);
+        var payload = {
+          listing_id: fd.get('listing_id'),
+          name: fd.get('name'),
+          email: fd.get('email'),
+          phone: fd.get('phone') || undefined,
+          pet_name: fd.get('pet_name') || undefined,
+          pet_type: fd.get('pet_type') || undefined,
+          service_type: fd.get('service_type'),
+          preferred_date: fd.get('preferred_date') || undefined,
+          preferred_time_window: fd.get('preferred_time_window') || undefined,
+          notes: fd.get('notes') || undefined
+        };
+
+        fetch(endpoint, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        })
+        .then(function(res) { return res.json().then(function(d) { return { ok: res.ok, data: d }; }); })
+        .then(function(result) {
+          if (result.ok) {
+            form.hidden = true;
+            successEl.hidden = false;
+          } else {
+            errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
+            errorEl.hidden = false;
+            btn.disabled = false;
+            btn.textContent = 'Book an Appointment';
+          }
+        })
+        .catch(function() {
+          errorEl.textContent = 'Unable to connect. Please check your internet and try again.';
+          errorEl.hidden = false;
+          btn.disabled = false;
+          btn.textContent = 'Book an Appointment';
+        });
+      });
+    })();
+    </script>

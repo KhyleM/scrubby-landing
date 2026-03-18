@@ -5,6 +5,9 @@ export const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiO
 export const SITE_URL = 'https://scrubby.app';
 export const WEB_APP_URL = 'https://web.scrubby.app';
 
+// US prod project — source of truth for bookings
+export const BOOKING_API_URL = 'https://anltnskudvrymdqoubez.supabase.co';
+
 // Map URL segments to Google Places primaryType values
 export const SERVICE_TYPES = {
   groomers: {
