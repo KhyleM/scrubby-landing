@@ -1,7 +1,7 @@
 // SEO page generator configuration
 
-export const SUPABASE_URL = 'https://mzjwgvwirdrhvsaxavgf.supabase.co';
-export const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im16andndndpcmRyaHZzYXhhdmdmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjMyMDE3MDQsImV4cCI6MjA3ODc3NzcwNH0.SB0CQpRriZ3lllqMIjSCdAkqxHHmuwyTVSEwfYAzo80';
+export const SUPABASE_URL = 'https://anltnskudvrymdqoubez.supabase.co';
+export const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso';
 export const SITE_URL = 'https://scrubby.app';
 export const WEB_APP_URL = 'https://web.scrubby.app';
 
@@ -56,14 +56,60 @@ for (const [slug, config] of Object.entries(SERVICE_TYPES)) {
   }
 }
 
-// Schema.org additionalType mapping for JSON-LD
+// Additional primary_type → service mappings for less-specific Google types.
+// These are checked when the primary_type is unambiguously a pet service.
+// Generic types like 'pet_care', 'service', 'store' are intentionally excluded
+// here — they require name/secondary-type inference (handled in classifyListing).
+Object.assign(TYPE_TO_SERVICE, {
+  // Vet-adjacent types
+  'animal_hospital':    'vets',      // already in SERVICE_TYPES but belt-and-suspenders
+  'veterinary_pharmacy': 'vets',
+  // Boarding-adjacent types
+  'hotel':              'boarding',  // pet hotels
+});
+
+// Types in the `types` array (secondary types) that can classify a listing
+// when primary_type is generic (pet_care, service, store, establishment, etc.).
+// Checked in priority order — first match wins.
+// Higher-specificity types come first to avoid mis-classification.
+export const SECONDARY_TYPE_PRIORITY = [
+  // Tier 1: Highly specific Google Places types (directly map)
+  { type: 'pet_groomer',            service: 'groomers' },
+  { type: 'dog_trainer',            service: 'training' },
+  { type: 'dog_walker',             service: 'walkers' },
+  { type: 'pet_sitter',             service: 'sitters' },
+  { type: 'dog_day_care_center',    service: 'boarding' },
+  { type: 'kennel',                 service: 'boarding' },
+  { type: 'pet_boarding',           service: 'boarding' },
+  { type: 'pet_boarding_service',   service: 'boarding' },
+  { type: 'animal_hospital',        service: 'vets' },
+  { type: 'veterinary_care',        service: 'vets' },
+  { type: 'veterinary_pharmacy',    service: 'vets' },
+  // Tier 2: Broader types that suggest a category but are less certain
+  { type: 'spa',                    service: 'groomers' },
+  { type: 'lodging',                service: 'boarding' },
+];
+
+// primary_type values that should always be skipped (not pet service providers)
+export const SKIP_PRIMARY_TYPES = new Set([
+  'cemetery',
+  'dog_park',
+  'zoo',
+  'shopping_mall',
+  'department_store',
+  'food',
+  'corporate_office',
+]);
+
+// Schema.org @type mapping for JSON-LD
+// Uses official schema.org types where available; falls back to LocalBusiness.
 export const SCHEMA_ADDITIONAL_TYPE = {
-  groomers: 'https://schema.org/PetGroomer',
-  vets: 'https://schema.org/VeterinaryCare',
-  boarding: 'https://schema.org/LodgingBusiness',
-  training: null, // falls back to LocalBusiness
-  walkers: null,
-  sitters: null,
+  groomers: 'LocalBusiness',
+  vets: 'VeterinaryCare',
+  boarding: 'LodgingBusiness',
+  training: 'LocalBusiness',
+  walkers: 'LocalBusiness',
+  sitters: 'LocalBusiness',
 };
 
 // US state abbreviations for address parsing

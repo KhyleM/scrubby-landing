@@ -8,6 +8,7 @@ import { fileURLToPath } from 'node:url';
 
 import {
   SUPABASE_URL, SERVICE_TYPES, TYPE_TO_SERVICE,
+  SECONDARY_TYPE_PRIORITY, SKIP_PRIMARY_TYPES,
   STATE_ABBREVS, PAGE_SIZE, SITE_URL,
 } from './config.mjs';
 import { renderCityPage } from './templates/city-page.mjs';
@@ -67,6 +68,8 @@ async function fetchAllListings() {
 
 function parseCity(address) {
   if (!address) return null;
+  // Only process US addresses
+  if (!/(USA|United States)\s*$/.test(address) && !/\b[A-Z]{2}\s+\d{5}\b/.test(address)) return null;
   // Typical format: "123 Main St, Memphis, TN 38104, USA"
   const parts = address.split(',').map(s => s.trim());
   if (parts.length < 3) return null;
@@ -111,27 +114,49 @@ function dedupeSlug(slug, usedSlugs) {
 
 // ─── Classify listing into service type ────────────────────────────────
 
+// ─── Classify listing into service type ────────────────────────────────
+//
+// Tiered classification strategy:
+//   1. Direct match on primary_type (specific Google Places types)
+//   2. Skip known non-service types (cemeteries, parks, zoos, etc.)
+//   3. Check secondary `types` array using priority-ordered mapping
+//   4. Infer from business name using keyword patterns
+//   5. If nothing matches, skip the listing
+
 function classifyListing(listing) {
-  // Direct match on primary_type
+  // Tier 1: Direct match on primary_type (highest confidence)
   if (listing.primary_type && TYPE_TO_SERVICE[listing.primary_type]) {
     return TYPE_TO_SERVICE[listing.primary_type];
   }
 
-  // Check types array
+  // Tier 2: Skip known non-service primary types
+  if (listing.primary_type && SKIP_PRIMARY_TYPES.has(listing.primary_type)) {
+    return null;
+  }
+
+  // Tier 3: Check `types` array against priority-ordered secondary type mapping
   if (Array.isArray(listing.types)) {
-    for (const t of listing.types) {
-      if (TYPE_TO_SERVICE[t]) return TYPE_TO_SERVICE[t];
+    for (const rule of SECONDARY_TYPE_PRIORITY) {
+      if (listing.types.includes(rule.type)) {
+        return rule.service;
+      }
     }
   }
 
-  // Infer from name
+  // Tier 4: Infer from business name — handles generic types like pet_care, service, store
   const name = (listing.business_name || '').toLowerCase();
-  if (/groom/.test(name)) return 'groomers';
-  if (/vet|animal\s*hosp/.test(name)) return 'vets';
-  if (/board|kennel|daycare|day\s*care/.test(name)) return 'boarding';
-  if (/train/.test(name)) return 'training';
-  if (/walk/.test(name)) return 'walkers';
-  if (/sit/.test(name)) return 'sitters';
+  const desc = (listing.description || '').toLowerCase();
+  const text = `${name} ${desc}`;
+
+  if (/\bgroom|\bsalon|\bspa\b|\bparlou?r|\bbath|\bfur\s*cut|\bpet\s*styl|\bcuts\b/.test(text)) return 'groomers';
+  if (/\bvet|\banimal\s*hosp|\banimal\s*clinic|\bveterinar|\banimal\s*care\s*center|\bpet\s*hosp/.test(text)) return 'vets';
+  if (/\bboard|\bkennel|\bdaycare|\bday\s*care|\bpet\s*hotel|\bdog\s*hotel|\bpet\s*resort|\bdog\s*resort|\bpet\s*lodge|\bcottage|\bretreat|\bcastle|\bsleep\s*over/.test(text)) return 'boarding';
+  if (/\btrain|\bobedien|\bk-?9\b|\bcanine\b|\bdog\s*(academy|school|class|universit)|\bpuppy\s*(prep|academy|school|class)/.test(text)) return 'training';
+  if (/\bsit(?:t(?:er|ing))|\bpet\s*sit|\bhouse\s*sit|\bin-?home\s*pet/.test(text)) return 'sitters';
+  if (/\bwalk|\bexcursion|\bhik/.test(text)) return 'walkers';
+
+  // For pet_care primary type with no name match, default to groomers (most common)
+  if (listing.primary_type === 'pet_care') return 'groomers';
 
   return null;
 }
