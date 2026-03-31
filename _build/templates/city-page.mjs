@@ -19,7 +19,7 @@ import {
 export function renderCityPage({ serviceSlug, cityName, stateAbbrev, citySlug, listings, otherCities }) {
   const service = SERVICE_TYPES[serviceSlug];
   const pageTitle = `${service.label} in ${cityName}, ${stateAbbrev} | Scrubby`;
-  const pageDesc = `Browse and book ${listings.length} ${service.label.toLowerCase()} in ${cityName}, ${stateAbbrev}. Compare ratings, read reviews, and request appointments — all without picking up the phone. 100% free for pet parents.`;
+  const pageDesc = `Browse and book ${listings.length} ${service.label.toLowerCase()} in ${cityName}, ${stateAbbrev}. Compare ratings, read reviews, and book appointments — all without picking up the phone. 100% free for pet parents.`;
   const canonicalUrl = `${SITE_URL}/${serviceSlug}/${citySlug}/`;
 
   // Assign page URLs to listings for JSON-LD
@@ -56,7 +56,7 @@ ${renderNavbar()}
                 <p class="city-count">${listings.length} ${listings.length === 1 ? 'business' : 'businesses'} found</p>
             </header>
 
-            <p class="city-intro">Browse and book ${listings.length} ${service.label.toLowerCase()} in ${escapeHtml(cityName)}, ${stateAbbrev}. Compare ratings, read reviews, and request appointments — all without picking up the phone. 100% free for pet parents.</p>
+            <p class="city-intro">Browse and book ${listings.length} ${service.label.toLowerCase()} in ${escapeHtml(cityName)}, ${stateAbbrev}. Compare ratings, read reviews, and book appointments — all without picking up the phone. 100% free for pet parents.</p>
 
             <div class="business-grid">
 ${cards}
@@ -71,7 +71,7 @@ ${cards}
 
             <section class="cta-banner">
                 <h2>Book an Appointment — Free, No Phone Calls</h2>
-                <p>Pick a time and request your appointment in minutes. 100% free for pet parents.</p>
+                <p>Pick a time and book your appointment in minutes. 100% free for pet parents.</p>
                 <a href="${WEB_APP_URL}/signup" class="btn-primary-large" data-smart-link>Get Started Free</a>
             </section>
         </div>
@@ -103,6 +103,7 @@ function renderCard(listing, serviceSlug, citySlug) {
                         </div>
                         ${listing.address ? `<p class="card-address">${escapeHtml(listing.address)}</p>` : ''}
                         ${tagsHtml}
+                        <span class="btn-book-now">Book Now</span>
                     </div>
                 </a>`;
 }

@@ -16,7 +16,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"General Pet Hospital","url":"https://scrubby.app/vets/tujunga/general-pet-hospital/","address":{"@type":"PostalAddress","streetAddress":"6934 Foothill Blvd","addressLocality":"Tujunga","addressRegion":"CA","postalCode":"91042","addressCountry":"US"},"aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":1},"geo":{"@type":"GeoCoordinates","latitude":34.2476694,"longitude":-118.283053},"additionalType":"VeterinaryCare"}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"General Pet Hospital","url":"https://scrubby.app/vets/tujunga/general-pet-hospital/","address":{"@type":"PostalAddress","streetAddress":"6934 Foothill Blvd","addressLocality":"Tujunga","addressRegion":"CA","postalCode":"91042","addressCountry":"US"},"telephone":"(818) 957-4444","aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":1},"geo":{"@type":"GeoCoordinates","latitude":34.2476694,"longitude":-118.283053},"additionalType":"VeterinaryCare"}</script>
 </head>
 <body>
     <nav class="navbar">
@@ -93,7 +93,10 @@
                             <span class="info-label">Address</span>
                             <a href="https://www.google.com/maps/search/?api=1&query=6934%20Foothill%20Blvd%2C%20Tujunga%2C%20CA%2091042%2C%20USA" target="_blank" rel="noopener">6934 Foothill Blvd, Tujunga, CA 91042, USA</a>
                         </div>
-                        
+                        <div class="info-row">
+                            <span class="info-label">Phone</span>
+                            <a href="tel:(818) 957-4444">(818) 957-4444</a>
+                        </div>
                         
                     </div>
 
@@ -104,7 +107,7 @@
                     
 
                     <section class="detail-cta" id="book">
-                        <h2>Book an Appointment</h2>
+                        <h2>Book Appointment</h2>
                         <form id="bookingForm" class="booking-form">
                             <input type="hidden" name="listing_id" value="0694dcf6-2ed8-49c7-b352-16ee79062c30">
                             <input type="hidden" name="service_type" value="veterinarian">
@@ -130,20 +133,20 @@
                             <div class="form-row">
                                 <input name="preferred_date" type="date">
                                 <select name="preferred_time_window">
-                                    <option value="any">Any time</option>
-                                    <option value="morning">Morning</option>
-                                    <option value="afternoon">Afternoon</option>
-                                    <option value="evening">Evening</option>
+                                    <option value="">Preferred time</option>
+                                    <option value="morning">Morning (8am - 12pm)</option>
+                                    <option value="afternoon">Afternoon (12pm - 4pm)</option>
+                                    <option value="evening">Evening (4pm - 7pm)</option>
                                 </select>
                             </div>
                             <textarea name="notes" placeholder="Anything we should know? (optional)" rows="2"></textarea>
-                            <button type="submit" class="btn-primary-large booking-submit">Book an Appointment</button>
-                            <p class="cta-sub">100% free for pet parents. No account needed. No fees, no commission.</p>
+                            <button type="submit" class="btn-primary-large booking-submit">Book Now</button>
+                            <p class="cta-sub">100% free. No account needed.</p>
                         </form>
                         <div id="bookingSuccess" class="booking-success" hidden>
                             <div class="success-icon">&#10003;</div>
-                            <h3>Request Received!</h3>
-                            <p>We'll confirm your appointment at General Pet Hospital and email you the details.</p>
+                            <h3>Appointment Requested!</h3>
+                            <p>We'll confirm your booking at General Pet Hospital and email you the details within 24 hours.</p>
                         </div>
                         <div id="bookingError" class="booking-error" hidden></div>
                     </section>
@@ -257,14 +260,14 @@
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;
             btn.disabled = false;
-            btn.textContent = 'Book an Appointment';
+            btn.textContent = 'Book Now';
           }
         })
         .catch(function() {
           errorEl.textContent = 'Unable to connect. Please check your internet and try again.';
           errorEl.hidden = false;
           btn.disabled = false;
-          btn.textContent = 'Book an Appointment';
+          btn.textContent = 'Book Now';
         });
       });
     })();

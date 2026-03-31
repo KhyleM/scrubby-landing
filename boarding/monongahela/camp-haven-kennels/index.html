@@ -16,7 +16,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Camp Haven Kennels","url":"https://scrubby.app/boarding/monongahela/camp-haven-kennels/","address":{"@type":"PostalAddress","streetAddress":"1907 Rte 2023","addressLocality":"Monongahela","addressRegion":"PA","postalCode":"15063","addressCountry":"US"},"aggregateRating":{"@type":"AggregateRating","ratingValue":4.6,"reviewCount":29},"geo":{"@type":"GeoCoordinates","latitude":40.186006,"longitude":-79.942418},"additionalType":"LodgingBusiness"}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Camp Haven Kennels","url":"https://scrubby.app/boarding/monongahela/camp-haven-kennels/","address":{"@type":"PostalAddress","streetAddress":"1907 Rte 2023","addressLocality":"Monongahela","addressRegion":"PA","postalCode":"15063","addressCountry":"US"},"telephone":"(724) 258-9110","sameAs":"https://camphavenkennels.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.6,"reviewCount":29},"geo":{"@type":"GeoCoordinates","latitude":40.186006,"longitude":-79.942418},"additionalType":"LodgingBusiness"}</script>
 </head>
 <body>
     <nav class="navbar">
@@ -93,8 +93,14 @@
                             <span class="info-label">Address</span>
                             <a href="https://www.google.com/maps/search/?api=1&query=1907%20Rte%202023%2C%20Monongahela%2C%20PA%2015063%2C%20USA" target="_blank" rel="noopener">1907 Rte 2023, Monongahela, PA 15063, USA</a>
                         </div>
-                        
-                        
+                        <div class="info-row">
+                            <span class="info-label">Phone</span>
+                            <a href="tel:(724) 258-9110">(724) 258-9110</a>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Website</span>
+                            <a href="https://camphavenkennels.com/" target="_blank" rel="noopener nofollow">camphavenkennels.com</a>
+                        </div>
                     </div>
 
                     
@@ -104,7 +110,7 @@
                     
 
                     <section class="detail-cta" id="book">
-                        <h2>Book an Appointment</h2>
+                        <h2>Book Appointment</h2>
                         <form id="bookingForm" class="booking-form">
                             <input type="hidden" name="listing_id" value="68d35b20-62e3-4160-8e8f-758a0ee41dc3">
                             <input type="hidden" name="service_type" value="pet boarding">
@@ -130,20 +136,20 @@
                             <div class="form-row">
                                 <input name="preferred_date" type="date">
                                 <select name="preferred_time_window">
-                                    <option value="any">Any time</option>
-                                    <option value="morning">Morning</option>
-                                    <option value="afternoon">Afternoon</option>
-                                    <option value="evening">Evening</option>
+                                    <option value="">Preferred time</option>
+                                    <option value="morning">Morning (8am - 12pm)</option>
+                                    <option value="afternoon">Afternoon (12pm - 4pm)</option>
+                                    <option value="evening">Evening (4pm - 7pm)</option>
                                 </select>
                             </div>
                             <textarea name="notes" placeholder="Anything we should know? (optional)" rows="2"></textarea>
-                            <button type="submit" class="btn-primary-large booking-submit">Book an Appointment</button>
-                            <p class="cta-sub">100% free for pet parents. No account needed. No fees, no commission.</p>
+                            <button type="submit" class="btn-primary-large booking-submit">Book Now</button>
+                            <p class="cta-sub">100% free. No account needed.</p>
                         </form>
                         <div id="bookingSuccess" class="booking-success" hidden>
                             <div class="success-icon">&#10003;</div>
-                            <h3>Request Received!</h3>
-                            <p>We'll confirm your appointment at Camp Haven Kennels and email you the details.</p>
+                            <h3>Appointment Requested!</h3>
+                            <p>We'll confirm your booking at Camp Haven Kennels and email you the details within 24 hours.</p>
                         </div>
                         <div id="bookingError" class="booking-error" hidden></div>
                     </section>
@@ -257,14 +263,14 @@
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;
             btn.disabled = false;
-            btn.textContent = 'Book an Appointment';
+            btn.textContent = 'Book Now';
           }
         })
         .catch(function() {
           errorEl.textContent = 'Unable to connect. Please check your internet and try again.';
           errorEl.hidden = false;
           btn.disabled = false;
-          btn.textContent = 'Book an Appointment';
+          btn.textContent = 'Book Now';
         });
       });
     })();

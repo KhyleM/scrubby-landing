@@ -104,7 +104,7 @@
                     
 
                     <section class="detail-cta" id="book">
-                        <h2>Book an Appointment</h2>
+                        <h2>Book Appointment</h2>
                         <form id="bookingForm" class="booking-form">
                             <input type="hidden" name="listing_id" value="c2fde3b8-e952-4fd1-9bc6-5097f9560039">
                             <input type="hidden" name="service_type" value="veterinarian">
@@ -130,20 +130,20 @@
                             <div class="form-row">
                                 <input name="preferred_date" type="date">
                                 <select name="preferred_time_window">
-                                    <option value="any">Any time</option>
-                                    <option value="morning">Morning</option>
-                                    <option value="afternoon">Afternoon</option>
-                                    <option value="evening">Evening</option>
+                                    <option value="">Preferred time</option>
+                                    <option value="morning">Morning (8am - 12pm)</option>
+                                    <option value="afternoon">Afternoon (12pm - 4pm)</option>
+                                    <option value="evening">Evening (4pm - 7pm)</option>
                                 </select>
                             </div>
                             <textarea name="notes" placeholder="Anything we should know? (optional)" rows="2"></textarea>
-                            <button type="submit" class="btn-primary-large booking-submit">Book an Appointment</button>
-                            <p class="cta-sub">100% free for pet parents. No account needed. No fees, no commission.</p>
+                            <button type="submit" class="btn-primary-large booking-submit">Book Now</button>
+                            <p class="cta-sub">100% free. No account needed.</p>
                         </form>
                         <div id="bookingSuccess" class="booking-success" hidden>
                             <div class="success-icon">&#10003;</div>
-                            <h3>Request Received!</h3>
-                            <p>We'll confirm your appointment at Bartram Trail Veterinary Hospital and email you the details.</p>
+                            <h3>Appointment Requested!</h3>
+                            <p>We'll confirm your booking at Bartram Trail Veterinary Hospital and email you the details within 24 hours.</p>
                         </div>
                         <div id="bookingError" class="booking-error" hidden></div>
                     </section>
@@ -257,14 +257,14 @@
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;
             btn.disabled = false;
-            btn.textContent = 'Book an Appointment';
+            btn.textContent = 'Book Now';
           }
         })
         .catch(function() {
           errorEl.textContent = 'Unable to connect. Please check your internet and try again.';
           errorEl.hidden = false;
           btn.disabled = false;
-          btn.textContent = 'Book an Appointment';
+          btn.textContent = 'Book Now';
         });
       });
     })();

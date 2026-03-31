@@ -16,7 +16,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"All Dog Training","url":"https://scrubby.app/training/sacramento/all-dog-training/","address":{"@type":"PostalAddress","streetAddress":"7960 Bar Du Ln","addressLocality":"Sacramento","addressRegion":"CA","postalCode":"95829","addressCountry":"US"},"aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":18},"geo":{"@type":"GeoCoordinates","latitude":38.4713027,"longitude":-121.3424414},"additionalType":"LocalBusiness"}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"All Dog Training","url":"https://scrubby.app/training/sacramento/all-dog-training/","address":{"@type":"PostalAddress","streetAddress":"7960 Bar Du Ln","addressLocality":"Sacramento","addressRegion":"CA","postalCode":"95829","addressCountry":"US"},"telephone":"(916) 798-8222","sameAs":"http://www.allbehaviors.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":18},"geo":{"@type":"GeoCoordinates","latitude":38.4713027,"longitude":-121.3424414},"additionalType":"LocalBusiness"}</script>
 </head>
 <body>
     <nav class="navbar">
@@ -93,8 +93,14 @@
                             <span class="info-label">Address</span>
                             <a href="https://www.google.com/maps/search/?api=1&query=7960%20Bar%20Du%20Ln%2C%20Sacramento%2C%20CA%2095829%2C%20USA" target="_blank" rel="noopener">7960 Bar Du Ln, Sacramento, CA 95829, USA</a>
                         </div>
-                        
-                        
+                        <div class="info-row">
+                            <span class="info-label">Phone</span>
+                            <a href="tel:(916) 798-8222">(916) 798-8222</a>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Website</span>
+                            <a href="http://www.allbehaviors.com/" target="_blank" rel="noopener nofollow">www.allbehaviors.com</a>
+                        </div>
                     </div>
 
                     
@@ -104,7 +110,7 @@
                     
 
                     <section class="detail-cta" id="book">
-                        <h2>Book an Appointment</h2>
+                        <h2>Book Appointment</h2>
                         <form id="bookingForm" class="booking-form">
                             <input type="hidden" name="listing_id" value="b00a4b74-5cff-4ecf-95bf-d52455a0615e">
                             <input type="hidden" name="service_type" value="dog trainer">
@@ -130,20 +136,20 @@
                             <div class="form-row">
                                 <input name="preferred_date" type="date">
                                 <select name="preferred_time_window">
-                                    <option value="any">Any time</option>
-                                    <option value="morning">Morning</option>
-                                    <option value="afternoon">Afternoon</option>
-                                    <option value="evening">Evening</option>
+                                    <option value="">Preferred time</option>
+                                    <option value="morning">Morning (8am - 12pm)</option>
+                                    <option value="afternoon">Afternoon (12pm - 4pm)</option>
+                                    <option value="evening">Evening (4pm - 7pm)</option>
                                 </select>
                             </div>
                             <textarea name="notes" placeholder="Anything we should know? (optional)" rows="2"></textarea>
-                            <button type="submit" class="btn-primary-large booking-submit">Book an Appointment</button>
-                            <p class="cta-sub">100% free for pet parents. No account needed. No fees, no commission.</p>
+                            <button type="submit" class="btn-primary-large booking-submit">Book Now</button>
+                            <p class="cta-sub">100% free. No account needed.</p>
                         </form>
                         <div id="bookingSuccess" class="booking-success" hidden>
                             <div class="success-icon">&#10003;</div>
-                            <h3>Request Received!</h3>
-                            <p>We'll confirm your appointment at All Dog Training and email you the details.</p>
+                            <h3>Appointment Requested!</h3>
+                            <p>We'll confirm your booking at All Dog Training and email you the details within 24 hours.</p>
                         </div>
                         <div id="bookingError" class="booking-error" hidden></div>
                     </section>
@@ -257,14 +263,14 @@
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;
             btn.disabled = false;
-            btn.textContent = 'Book an Appointment';
+            btn.textContent = 'Book Now';
           }
         })
         .catch(function() {
           errorEl.textContent = 'Unable to connect. Please check your internet and try again.';
           errorEl.hidden = false;
           btn.disabled = false;
-          btn.textContent = 'Book an Appointment';
+          btn.textContent = 'Book Now';
         });
       });
     })();

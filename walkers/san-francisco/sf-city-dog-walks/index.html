@@ -16,7 +16,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Sf City Dog Walks","url":"https://scrubby.app/walkers/san-francisco/sf-city-dog-walks/","address":{"@type":"PostalAddress","streetAddress":"518 Missouri St","addressLocality":"San Francisco","addressRegion":"CA","postalCode":"94107","addressCountry":"US"},"aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":2},"geo":{"@type":"GeoCoordinates","latitude":37.7593467,"longitude":-122.3964741},"additionalType":"LocalBusiness"}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Sf City Dog Walks","url":"https://scrubby.app/walkers/san-francisco/sf-city-dog-walks/","address":{"@type":"PostalAddress","streetAddress":"518 Missouri St","addressLocality":"San Francisco","addressRegion":"CA","postalCode":"94107","addressCountry":"US"},"telephone":"(408) 761-6066","aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":2},"geo":{"@type":"GeoCoordinates","latitude":37.7593467,"longitude":-122.3964741},"additionalType":"LocalBusiness"}</script>
 </head>
 <body>
     <nav class="navbar">
@@ -93,7 +93,10 @@
                             <span class="info-label">Address</span>
                             <a href="https://www.google.com/maps/search/?api=1&query=518%20Missouri%20St%2C%20San%20Francisco%2C%20CA%2094107%2C%20USA" target="_blank" rel="noopener">518 Missouri St, San Francisco, CA 94107, USA</a>
                         </div>
-                        
+                        <div class="info-row">
+                            <span class="info-label">Phone</span>
+                            <a href="tel:(408) 761-6066">(408) 761-6066</a>
+                        </div>
                         
                     </div>
 
@@ -104,7 +107,7 @@
                     
 
                     <section class="detail-cta" id="book">
-                        <h2>Book an Appointment</h2>
+                        <h2>Book Appointment</h2>
                         <form id="bookingForm" class="booking-form">
                             <input type="hidden" name="listing_id" value="0efd356b-75ea-4802-b123-f08a2eb721d6">
                             <input type="hidden" name="service_type" value="dog walker">
@@ -130,20 +133,20 @@
                             <div class="form-row">
                                 <input name="preferred_date" type="date">
                                 <select name="preferred_time_window">
-                                    <option value="any">Any time</option>
-                                    <option value="morning">Morning</option>
-                                    <option value="afternoon">Afternoon</option>
-                                    <option value="evening">Evening</option>
+                                    <option value="">Preferred time</option>
+                                    <option value="morning">Morning (8am - 12pm)</option>
+                                    <option value="afternoon">Afternoon (12pm - 4pm)</option>
+                                    <option value="evening">Evening (4pm - 7pm)</option>
                                 </select>
                             </div>
                             <textarea name="notes" placeholder="Anything we should know? (optional)" rows="2"></textarea>
-                            <button type="submit" class="btn-primary-large booking-submit">Book an Appointment</button>
-                            <p class="cta-sub">100% free for pet parents. No account needed. No fees, no commission.</p>
+                            <button type="submit" class="btn-primary-large booking-submit">Book Now</button>
+                            <p class="cta-sub">100% free. No account needed.</p>
                         </form>
                         <div id="bookingSuccess" class="booking-success" hidden>
                             <div class="success-icon">&#10003;</div>
-                            <h3>Request Received!</h3>
-                            <p>We'll confirm your appointment at Sf City Dog Walks and email you the details.</p>
+                            <h3>Appointment Requested!</h3>
+                            <p>We'll confirm your booking at Sf City Dog Walks and email you the details within 24 hours.</p>
                         </div>
                         <div id="bookingError" class="booking-error" hidden></div>
                     </section>
@@ -257,14 +260,14 @@
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;
             btn.disabled = false;
-            btn.textContent = 'Book an Appointment';
+            btn.textContent = 'Book Now';
           }
         })
         .catch(function() {
           errorEl.textContent = 'Unable to connect. Please check your internet and try again.';
           errorEl.hidden = false;
           btn.disabled = false;
-          btn.textContent = 'Book an Appointment';
+          btn.textContent = 'Book Now';
         });
       });
     })();

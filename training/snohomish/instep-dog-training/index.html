@@ -16,7 +16,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"InStep Dog Training","url":"https://scrubby.app/training/snohomish/instep-dog-training/","address":{"@type":"PostalAddress","streetAddress":"19625 99th Ave SE","addressLocality":"Snohomish","addressRegion":"WA","postalCode":"98296","addressCountry":"US"},"aggregateRating":{"@type":"AggregateRating","ratingValue":4.9,"reviewCount":10},"geo":{"@type":"GeoCoordinates","latitude":47.8186149,"longitude":-122.097145},"additionalType":"LocalBusiness"}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"InStep Dog Training","url":"https://scrubby.app/training/snohomish/instep-dog-training/","address":{"@type":"PostalAddress","streetAddress":"19625 99th Ave SE","addressLocality":"Snohomish","addressRegion":"WA","postalCode":"98296","addressCountry":"US"},"telephone":"(206) 799-1115","sameAs":"http://instepdogobedience.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.9,"reviewCount":10},"geo":{"@type":"GeoCoordinates","latitude":47.8186149,"longitude":-122.097145},"additionalType":"LocalBusiness"}</script>
 </head>
 <body>
     <nav class="navbar">
@@ -93,8 +93,14 @@
                             <span class="info-label">Address</span>
                             <a href="https://www.google.com/maps/search/?api=1&query=19625%2099th%20Ave%20SE%2C%20Snohomish%2C%20WA%2098296%2C%20USA" target="_blank" rel="noopener">19625 99th Ave SE, Snohomish, WA 98296, USA</a>
                         </div>
-                        
-                        
+                        <div class="info-row">
+                            <span class="info-label">Phone</span>
+                            <a href="tel:(206) 799-1115">(206) 799-1115</a>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Website</span>
+                            <a href="http://instepdogobedience.com/" target="_blank" rel="noopener nofollow">instepdogobedience.com</a>
+                        </div>
                     </div>
 
                     
@@ -104,7 +110,7 @@
                     
 
                     <section class="detail-cta" id="book">
-                        <h2>Book an Appointment</h2>
+                        <h2>Book Appointment</h2>
                         <form id="bookingForm" class="booking-form">
                             <input type="hidden" name="listing_id" value="d98f8b91-ae34-4488-b29e-6b32b90edfe6">
                             <input type="hidden" name="service_type" value="dog trainer">
@@ -130,20 +136,20 @@
                             <div class="form-row">
                                 <input name="preferred_date" type="date">
                                 <select name="preferred_time_window">
-                                    <option value="any">Any time</option>
-                                    <option value="morning">Morning</option>
-                                    <option value="afternoon">Afternoon</option>
-                                    <option value="evening">Evening</option>
+                                    <option value="">Preferred time</option>
+                                    <option value="morning">Morning (8am - 12pm)</option>
+                                    <option value="afternoon">Afternoon (12pm - 4pm)</option>
+                                    <option value="evening">Evening (4pm - 7pm)</option>
                                 </select>
                             </div>
                             <textarea name="notes" placeholder="Anything we should know? (optional)" rows="2"></textarea>
-                            <button type="submit" class="btn-primary-large booking-submit">Book an Appointment</button>
-                            <p class="cta-sub">100% free for pet parents. No account needed. No fees, no commission.</p>
+                            <button type="submit" class="btn-primary-large booking-submit">Book Now</button>
+                            <p class="cta-sub">100% free. No account needed.</p>
                         </form>
                         <div id="bookingSuccess" class="booking-success" hidden>
                             <div class="success-icon">&#10003;</div>
-                            <h3>Request Received!</h3>
-                            <p>We'll confirm your appointment at InStep Dog Training and email you the details.</p>
+                            <h3>Appointment Requested!</h3>
+                            <p>We'll confirm your booking at InStep Dog Training and email you the details within 24 hours.</p>
                         </div>
                         <div id="bookingError" class="booking-error" hidden></div>
                     </section>
@@ -257,14 +263,14 @@
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;
             btn.disabled = false;
-            btn.textContent = 'Book an Appointment';
+            btn.textContent = 'Book Now';
           }
         })
         .catch(function() {
           errorEl.textContent = 'Unable to connect. Please check your internet and try again.';
           errorEl.hidden = false;
           btn.disabled = false;
-          btn.textContent = 'Book an Appointment';
+          btn.textContent = 'Book Now';
         });
       });
     })();

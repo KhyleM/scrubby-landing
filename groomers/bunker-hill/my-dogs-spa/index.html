@@ -16,7 +16,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"My Dog's Spa","url":"https://scrubby.app/groomers/bunker-hill/my-dogs-spa/","address":{"@type":"PostalAddress","streetAddress":"2110 Ness School Rd","addressLocality":"Bunker Hill","addressRegion":"IL","postalCode":"62014","addressCountry":"US"},"aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":10},"geo":{"@type":"GeoCoordinates","latitude":39.0296317,"longitude":-89.903101},"additionalType":"LocalBusiness"}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"My Dog's Spa","url":"https://scrubby.app/groomers/bunker-hill/my-dogs-spa/","address":{"@type":"PostalAddress","streetAddress":"2110 Ness School Rd","addressLocality":"Bunker Hill","addressRegion":"IL","postalCode":"62014","addressCountry":"US"},"telephone":"(217) 615-3703","sameAs":"https://localvetservices.net/explore/my-dogs-spa/","aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":10},"geo":{"@type":"GeoCoordinates","latitude":39.0296317,"longitude":-89.903101},"additionalType":"LocalBusiness"}</script>
 </head>
 <body>
     <nav class="navbar">
@@ -93,8 +93,14 @@
                             <span class="info-label">Address</span>
                             <a href="https://www.google.com/maps/search/?api=1&query=2110%20Ness%20School%20Rd%2C%20Bunker%20Hill%2C%20IL%2062014%2C%20USA" target="_blank" rel="noopener">2110 Ness School Rd, Bunker Hill, IL 62014, USA</a>
                         </div>
-                        
-                        
+                        <div class="info-row">
+                            <span class="info-label">Phone</span>
+                            <a href="tel:(217) 615-3703">(217) 615-3703</a>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Website</span>
+                            <a href="https://localvetservices.net/explore/my-dogs-spa/" target="_blank" rel="noopener nofollow">localvetservices.net</a>
+                        </div>
                     </div>
 
                     
@@ -102,9 +108,13 @@
                     
                     
                     
+                    <section class="detail-section">
+                        <h2>Payment Options</h2>
+                        <div class="tag-list"><span class="tag">Credit Cards</span></div>
+                    </section>
 
                     <section class="detail-cta" id="book">
-                        <h2>Book an Appointment</h2>
+                        <h2>Book Appointment</h2>
                         <form id="bookingForm" class="booking-form">
                             <input type="hidden" name="listing_id" value="93ffb15a-4ebc-41b5-a5bb-e5aae303b7cb">
                             <input type="hidden" name="service_type" value="pet groomer">
@@ -130,20 +140,20 @@
                             <div class="form-row">
                                 <input name="preferred_date" type="date">
                                 <select name="preferred_time_window">
-                                    <option value="any">Any time</option>
-                                    <option value="morning">Morning</option>
-                                    <option value="afternoon">Afternoon</option>
-                                    <option value="evening">Evening</option>
+                                    <option value="">Preferred time</option>
+                                    <option value="morning">Morning (8am - 12pm)</option>
+                                    <option value="afternoon">Afternoon (12pm - 4pm)</option>
+                                    <option value="evening">Evening (4pm - 7pm)</option>
                                 </select>
                             </div>
                             <textarea name="notes" placeholder="Anything we should know? (optional)" rows="2"></textarea>
-                            <button type="submit" class="btn-primary-large booking-submit">Book an Appointment</button>
-                            <p class="cta-sub">100% free for pet parents. No account needed. No fees, no commission.</p>
+                            <button type="submit" class="btn-primary-large booking-submit">Book Now</button>
+                            <p class="cta-sub">100% free. No account needed.</p>
                         </form>
                         <div id="bookingSuccess" class="booking-success" hidden>
                             <div class="success-icon">&#10003;</div>
-                            <h3>Request Received!</h3>
-                            <p>We'll confirm your appointment at My Dog&#39;s Spa and email you the details.</p>
+                            <h3>Appointment Requested!</h3>
+                            <p>We'll confirm your booking at My Dog&#39;s Spa and email you the details within 24 hours.</p>
                         </div>
                         <div id="bookingError" class="booking-error" hidden></div>
                     </section>
@@ -257,14 +267,14 @@
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;
             btn.disabled = false;
-            btn.textContent = 'Book an Appointment';
+            btn.textContent = 'Book Now';
           }
         })
         .catch(function() {
           errorEl.textContent = 'Unable to connect. Please check your internet and try again.';
           errorEl.hidden = false;
           btn.disabled = false;
-          btn.textContent = 'Book an Appointment';
+          btn.textContent = 'Book Now';
         });
       });
     })();

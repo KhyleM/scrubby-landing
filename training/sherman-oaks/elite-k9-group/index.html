@@ -113,8 +113,8 @@
                     <section class="detail-section">
                         <h2>Hours</h2>
                         <table class="hours-table">
-                        <tr class="today"><td>Monday: 9:00 AM – 5:00 PM</td></tr>
-                        <tr><td>Tuesday: 9:00 AM – 5:00 PM</td></tr>
+                        <tr><td>Monday: 9:00 AM – 5:00 PM</td></tr>
+                        <tr class="today"><td>Tuesday: 9:00 AM – 5:00 PM</td></tr>
                         <tr><td>Wednesday: 9:00 AM – 5:00 PM</td></tr>
                         <tr><td>Thursday: 9:00 AM – 5:00 PM</td></tr>
                         <tr><td>Friday: 9:00 AM – 5:00 PM</td></tr>
@@ -128,7 +128,7 @@
                     
 
                     <section class="detail-cta" id="book">
-                        <h2>Book an Appointment</h2>
+                        <h2>Book Appointment</h2>
                         <form id="bookingForm" class="booking-form">
                             <input type="hidden" name="listing_id" value="7eada110-6c9b-4b94-a26f-6fb34d11a1e9">
                             <input type="hidden" name="service_type" value="dog trainer">
@@ -154,20 +154,20 @@
                             <div class="form-row">
                                 <input name="preferred_date" type="date">
                                 <select name="preferred_time_window">
-                                    <option value="any">Any time</option>
-                                    <option value="morning">Morning</option>
-                                    <option value="afternoon">Afternoon</option>
-                                    <option value="evening">Evening</option>
+                                    <option value="">Preferred time</option>
+                                    <option value="morning">Morning (8am - 12pm)</option>
+                                    <option value="afternoon">Afternoon (12pm - 4pm)</option>
+                                    <option value="evening">Evening (4pm - 7pm)</option>
                                 </select>
                             </div>
                             <textarea name="notes" placeholder="Anything we should know? (optional)" rows="2"></textarea>
-                            <button type="submit" class="btn-primary-large booking-submit">Book an Appointment</button>
-                            <p class="cta-sub">100% free for pet parents. No account needed. No fees, no commission.</p>
+                            <button type="submit" class="btn-primary-large booking-submit">Book Now</button>
+                            <p class="cta-sub">100% free. No account needed.</p>
                         </form>
                         <div id="bookingSuccess" class="booking-success" hidden>
                             <div class="success-icon">&#10003;</div>
-                            <h3>Request Received!</h3>
-                            <p>We'll confirm your appointment at Elite K9 Group and email you the details.</p>
+                            <h3>Appointment Requested!</h3>
+                            <p>We'll confirm your booking at Elite K9 Group and email you the details within 24 hours.</p>
                         </div>
                         <div id="bookingError" class="booking-error" hidden></div>
                     </section>
@@ -281,14 +281,14 @@
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;
             btn.disabled = false;
-            btn.textContent = 'Book an Appointment';
+            btn.textContent = 'Book Now';
           }
         })
         .catch(function() {
           errorEl.textContent = 'Unable to connect. Please check your internet and try again.';
           errorEl.hidden = false;
           btn.disabled = false;
-          btn.textContent = 'Book an Appointment';
+          btn.textContent = 'Book Now';
         });
       });
     })();

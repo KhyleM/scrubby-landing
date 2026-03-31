@@ -16,7 +16,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Veterinary Clinic in Orlando, FL","url":"https://scrubby.app/vets/orlando/veterinary-clinic-in-orlando-fl/","address":{"@type":"PostalAddress","streetAddress":"12200 Menta St","addressLocality":"Orlando","addressRegion":"FL","postalCode":"32837","addressCountry":"US"},"aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":1},"geo":{"@type":"GeoCoordinates","latitude":28.3880133,"longitude":-81.4242228},"additionalType":"VeterinaryCare"}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Veterinary Clinic in Orlando, FL","url":"https://scrubby.app/vets/orlando/veterinary-clinic-in-orlando-fl/","address":{"@type":"PostalAddress","streetAddress":"12200 Menta St","addressLocality":"Orlando","addressRegion":"FL","postalCode":"32837","addressCountry":"US"},"telephone":"(407) 203-0741","aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":1},"geo":{"@type":"GeoCoordinates","latitude":28.3880133,"longitude":-81.4242228},"additionalType":"VeterinaryCare"}</script>
 </head>
 <body>
     <nav class="navbar">
@@ -93,7 +93,10 @@
                             <span class="info-label">Address</span>
                             <a href="https://www.google.com/maps/search/?api=1&query=12200%20Menta%20St%2C%20Orlando%2C%20FL%2032837%2C%20USA" target="_blank" rel="noopener">12200 Menta St, Orlando, FL 32837, USA</a>
                         </div>
-                        
+                        <div class="info-row">
+                            <span class="info-label">Phone</span>
+                            <a href="tel:(407) 203-0741">(407) 203-0741</a>
+                        </div>
                         
                     </div>
 
@@ -104,7 +107,7 @@
                     
 
                     <section class="detail-cta" id="book">
-                        <h2>Book an Appointment</h2>
+                        <h2>Book Appointment</h2>
                         <form id="bookingForm" class="booking-form">
                             <input type="hidden" name="listing_id" value="79c0a633-e6c7-41b5-9b8b-536bf545388c">
                             <input type="hidden" name="service_type" value="veterinarian">
@@ -130,20 +133,20 @@
                             <div class="form-row">
                                 <input name="preferred_date" type="date">
                                 <select name="preferred_time_window">
-                                    <option value="any">Any time</option>
-                                    <option value="morning">Morning</option>
-                                    <option value="afternoon">Afternoon</option>
-                                    <option value="evening">Evening</option>
+                                    <option value="">Preferred time</option>
+                                    <option value="morning">Morning (8am - 12pm)</option>
+                                    <option value="afternoon">Afternoon (12pm - 4pm)</option>
+                                    <option value="evening">Evening (4pm - 7pm)</option>
                                 </select>
                             </div>
                             <textarea name="notes" placeholder="Anything we should know? (optional)" rows="2"></textarea>
-                            <button type="submit" class="btn-primary-large booking-submit">Book an Appointment</button>
-                            <p class="cta-sub">100% free for pet parents. No account needed. No fees, no commission.</p>
+                            <button type="submit" class="btn-primary-large booking-submit">Book Now</button>
+                            <p class="cta-sub">100% free. No account needed.</p>
                         </form>
                         <div id="bookingSuccess" class="booking-success" hidden>
                             <div class="success-icon">&#10003;</div>
-                            <h3>Request Received!</h3>
-                            <p>We'll confirm your appointment at Veterinary Clinic in Orlando, FL and email you the details.</p>
+                            <h3>Appointment Requested!</h3>
+                            <p>We'll confirm your booking at Veterinary Clinic in Orlando, FL and email you the details within 24 hours.</p>
                         </div>
                         <div id="bookingError" class="booking-error" hidden></div>
                     </section>
@@ -257,14 +260,14 @@
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;
             btn.disabled = false;
-            btn.textContent = 'Book an Appointment';
+            btn.textContent = 'Book Now';
           }
         })
         .catch(function() {
           errorEl.textContent = 'Unable to connect. Please check your internet and try again.';
           errorEl.hidden = false;
           btn.disabled = false;
-          btn.textContent = 'Book an Appointment';
+          btn.textContent = 'Book Now';
         });
       });
     })();
