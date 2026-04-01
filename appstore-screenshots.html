@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scrubby App Store Screenshots</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #1a1a2e;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+            gap: 40px;
+        }
+
+        .instructions {
+            color: #fff;
+            text-align: center;
+            max-width: 600px;
+        }
+        .instructions h1 { font-size: 1.5rem; margin-bottom: 8px; }
+        .instructions p { opacity: 0.7; line-height: 1.6; font-size: 0.9rem; }
+
+        /* Wrapper scales frames down for preview */
+        .screenshot-wrapper {
+            /* Scale: 0.25 means 1290px becomes ~322px wide on screen */
+            width: 322px;  /* 1290 * 0.25 */
+            height: 699px; /* 2796 * 0.25 */
+            overflow: hidden;
+            border-radius: 5px;
+            position: relative;
+        }
+
+        .screenshot-wrapper .screenshot-frame {
+            transform: scale(0.25);
+            transform-origin: top left;
+        }
+
+        .slide-label {
+            color: rgba(255,255,255,0.4);
+            font-size: 13px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-top: -30px;
+        }
+
+        /* Actual frame at App Store size: 1290x2796 */
+        .screenshot-frame {
+            width: 1290px;
+            height: 2796px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 100px 90px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Background variants */
+        .bg-1 { background: linear-gradient(165deg, #4ECDC4 0%, #3dbdb5 40%, #2d9e97 100%); }
+        .bg-2 { background: linear-gradient(165deg, #3dbdb5 0%, #4ECDC4 50%, #A8E6CF 100%); }
+        .bg-3 { background: linear-gradient(165deg, #2C3E50 0%, #3d5468 50%, #4ECDC4 100%); }
+        .bg-4 { background: linear-gradient(165deg, #A8E6CF 0%, #4ECDC4 50%, #3dbdb5 100%); }
+        .bg-5 { background: linear-gradient(165deg, #4ECDC4 0%, #2C3E50 100%); }
+
+        /* Subtle glow decoration */
+        .screenshot-frame::before {
+            content: '';
+            position: absolute;
+            top: -20%;
+            right: -15%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        /* Caption text */
+        .caption {
+            text-align: center;
+            z-index: 1;
+            margin-bottom: 50px;
+        }
+
+        .caption h2 {
+            font-size: 104px;
+            font-weight: 800;
+            color: #fff;
+            line-height: 1.1;
+            letter-spacing: -0.03em;
+            margin-bottom: 24px;
+            text-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+
+        .caption p {
+            font-size: 44px;
+            font-weight: 400;
+            color: rgba(255,255,255,0.85);
+            line-height: 1.4;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* Phone mockup */
+        .phone {
+            width: 1100px;
+            height: 2390px;
+            background: #000;
+            border-radius: 86px;
+            padding: 18px;
+            box-shadow:
+                0 60px 120px rgba(0,0,0,0.3),
+                0 20px 60px rgba(0,0,0,0.2),
+                inset 0 0 0 2px rgba(255,255,255,0.15);
+            z-index: 1;
+            flex-shrink: 0;
+        }
+
+        .phone-inner {
+            width: 100%;
+            height: 100%;
+            border-radius: 68px;
+            overflow: hidden;
+            background: #fff;
+            position: relative;
+        }
+
+        .phone-inner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top center;
+        }
+
+        .placeholder-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #4ECDC4;
+            font-size: 32px;
+            font-weight: 700;
+            text-align: center;
+            line-height: 1.4;
+        }
+
+        /* Export button */
+        .export-btn {
+            background: #4ECDC4;
+            color: #fff;
+            border: none;
+            padding: 12px 28px;
+            border-radius: 50px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+        .export-btn:hover { opacity: 0.85; }
+    </style>
+</head>
+<body>
+
+    <div class="instructions">
+        <h1>Scrubby — App Store Screenshots</h1>
+        <p>
+            Previews scaled to 25%. To export full-size (1290x2796):<br>
+            Right-click a frame → Inspect → select <code>.screenshot-frame</code> →<br>
+            right-click in DevTools → <strong>Capture node screenshot</strong>
+        </p>
+    </div>
+
+    <!-- Screenshot 1: Browse -->
+    <div class="screenshot-wrapper">
+        <div class="screenshot-frame bg-1" id="slide-1">
+            <div class="caption">
+                <h2>Every Groomer<br>Near You</h2>
+                <p>Plus vets, boarders, and more — all in one place.</p>
+            </div>
+            <div class="phone">
+                <div class="phone-inner">
+                    <img src="images/ProviderBrowse.png" alt="Browse">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="slide-label">Slide 1 — Browse</div>
+
+    <!-- Screenshot 2: Provider Detail (placeholder) -->
+    <div class="screenshot-wrapper">
+        <div class="screenshot-frame bg-2" id="slide-2">
+            <div class="caption">
+                <h2>Know Before<br>You Book</h2>
+                <p>Reviews, hours, and prices — no calling needed.</p>
+            </div>
+            <div class="phone">
+                <div class="phone-inner">
+                    <img src="images/ProviderDetail.png" alt="Provider Detail">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="slide-label">Slide 2 — Provider Detail</div>
+
+    <!-- Screenshot 3: Book Appointment -->
+    <div class="screenshot-wrapper">
+        <div class="screenshot-frame bg-3" id="slide-3">
+            <div class="caption">
+                <h2>Book in<br>Seconds</h2>
+                <p>Pick your pet, set a budget, choose a date. Done.</p>
+            </div>
+            <div class="phone">
+                <div class="phone-inner">
+                    <img src="images/BookAppointment.png" alt="Book">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="slide-label">Slide 3 — Book Appointment</div>
+
+    <!-- Screenshot 4: Confirmed -->
+    <div class="screenshot-wrapper">
+        <div class="screenshot-frame bg-4" id="slide-4">
+            <div class="caption">
+                <h2>Confirmed.<br>Just Show Up.</h2>
+                <p>Track your booking from request to appointment.</p>
+            </div>
+            <div class="phone">
+                <div class="phone-inner">
+                    <img src="images/BookingConfirmed.png" alt="Confirmed">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="slide-label">Slide 4 — Confirmed</div>
+
+    <!-- Screenshot 5: Pet Dashboard -->
+    <div class="screenshot-wrapper">
+        <div class="screenshot-frame bg-5" id="slide-5">
+            <div class="caption">
+                <h2>All Your Pets,<br>One App.</h2>
+                <p>Passport, bookings, and reminders — all here.</p>
+            </div>
+            <div class="phone" style="transform: translateY(80px);">
+                <div class="phone-inner">
+                    <img src="images/PetDashboard.png" alt="Dashboard">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="slide-label">Slide 5 — Pet Dashboard</div>
+
+</body>
+</html>

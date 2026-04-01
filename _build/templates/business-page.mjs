@@ -1,6 +1,6 @@
 // Individual business detail page template
 
-import { SERVICE_TYPES, SITE_URL, WEB_APP_URL, BOOKING_API_URL } from '../config.mjs';
+import { SERVICE_TYPES, SITE_URL, WEB_APP_URL, BOOKING_API_URL, SUPABASE_ANON_KEY } from '../config.mjs';
 import {
   renderHead, renderNavbar, renderFooter, jsonLdLocalBusiness, parseAddress,
   renderStars, renderPriceLevel, getPhotos, getFirstPhoto, escapeHtml,
@@ -101,10 +101,11 @@ ${renderNavbar()}
                             <div class="form-row">
                                 <input name="breed" placeholder="Breed (e.g. Golden Retriever)">
                             </div>
+                            <label class="form-label">Preferred appointment date &amp; time</label>
                             <div class="form-row">
                                 <input name="preferred_date" type="date">
                                 <select name="preferred_time_window">
-                                    <option value="">Preferred time</option>
+                                    <option value="">Time of day</option>
                                     <option value="morning">Morning (8am - 12pm)</option>
                                     <option value="afternoon">Afternoon (12pm - 4pm)</option>
                                     <option value="evening">Evening (4pm - 7pm)</option>
@@ -133,6 +134,66 @@ ${renderNavbar()}
 
 ${renderFooter(SERVICE_TYPES)}
     <script>
+    (function() {
+      var claimBtn = document.getElementById('claimToggleBtn');
+      var claimForm = document.getElementById('claimForm');
+      var claimBanner = document.getElementById('claimBanner');
+      var claimSuccess = document.getElementById('claimSuccess');
+      var claimError = document.getElementById('claimError');
+      var claimEndpoint = '${BOOKING_API_URL}/functions/v1/seo-claim-request';
+
+      if (claimBtn && claimForm) {
+        claimBtn.addEventListener('click', function() {
+          claimBtn.hidden = true;
+          claimForm.hidden = false;
+          claimForm.querySelector('input[name="owner_name"]').focus();
+        });
+
+        claimForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          claimError.hidden = true;
+          var submitBtn = claimForm.querySelector('.claim-submit');
+          submitBtn.disabled = true;
+          submitBtn.textContent = 'Submitting...';
+
+          var fd = new FormData(claimForm);
+          var payload = {
+            google_place_id: fd.get('google_place_id'),
+            listing_id: fd.get('listing_id'),
+            owner_name: fd.get('owner_name'),
+            owner_email: fd.get('owner_email'),
+            owner_phone: fd.get('owner_phone') || undefined,
+            owner_role: fd.get('owner_role') || undefined
+          };
+
+          fetch(claimEndpoint, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ${SUPABASE_ANON_KEY}' },
+            body: JSON.stringify(payload)
+          })
+          .then(function(res) { return res.json().then(function(d) { return { ok: res.ok, data: d }; }); })
+          .then(function(result) {
+            if (result.ok) {
+              claimForm.hidden = true;
+              claimBanner.querySelector('.claim-banner-content').hidden = true;
+              claimSuccess.hidden = false;
+            } else {
+              claimError.textContent = result.data.error || 'Something went wrong. Please try again.';
+              claimError.hidden = false;
+              submitBtn.disabled = false;
+              submitBtn.textContent = 'Send Claim Request';
+            }
+          })
+          .catch(function() {
+            claimError.textContent = 'Unable to connect. Please check your internet and try again.';
+            claimError.hidden = false;
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Send Claim Request';
+          });
+        });
+      }
+    })();
+
     (function() {
       var form = document.getElementById('bookingForm');
       if (!form) return;
@@ -168,7 +229,7 @@ ${renderFooter(SERVICE_TYPES)}
 
         fetch(endpoint, {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
+          headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ${SUPABASE_ANON_KEY}' },
           body: JSON.stringify(payload)
         })
         .then(function(res) { return res.json().then(function(d) { return { ok: res.ok, data: d }; }); })
@@ -261,12 +322,32 @@ function summarizeHours(weekdayDescriptions) {
 function renderClaimBanner(listing) {
   if (listing.claimed_provider_id) return '';
   return `
-            <div class="claim-banner">
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of ${escapeHtml(listing.business_name)}?</h3>
-                    <p>Claim your free listing to update your info, add services, and manage bookings.</p>
-                    <a href="${WEB_APP_URL}/claim?placeId=${encodeURIComponent(listing.google_place_id)}" class="btn-primary claim-btn">Claim This Business</a>
+                    <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
+                    <button type="button" class="btn-primary claim-btn" id="claimToggleBtn">Claim This Business</button>
                 </div>
+                <form id="claimForm" class="claim-form" hidden>
+                    <input type="hidden" name="google_place_id" value="${escapeHtml(listing.google_place_id)}">
+                    <input type="hidden" name="listing_id" value="${listing.id}">
+                    <div class="form-row">
+                        <input name="owner_name" placeholder="Your name" required>
+                        <input name="owner_email" type="email" placeholder="Email" required>
+                    </div>
+                    <div class="form-row">
+                        <input name="owner_phone" type="tel" placeholder="Phone (optional)">
+                        <input name="owner_role" placeholder="Role (e.g. Owner, Manager)">
+                    </div>
+                    <button type="submit" class="btn-primary-large claim-submit">Send Claim Request</button>
+                    <p class="claim-sub">We'll verify your ownership and email you next steps within 24 hours.</p>
+                </form>
+                <div id="claimSuccess" class="claim-success" hidden>
+                    <div class="success-icon">&#10003;</div>
+                    <h3>Claim Request Sent!</h3>
+                    <p>We'll verify your ownership of ${escapeHtml(listing.business_name)} and email you next steps within 24 hours.</p>
+                </div>
+                <div id="claimError" class="claim-error" hidden></div>
             </div>`;
 }
 
