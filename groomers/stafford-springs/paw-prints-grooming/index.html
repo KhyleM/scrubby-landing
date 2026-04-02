@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Paw Prints Grooming","url":"https://scrubby.app/groomers/stafford-springs/paw-prints-grooming/","address":{"@type":"PostalAddress","streetAddress":"191 W Stafford Rd Unit B","addressLocality":"Stafford Springs","addressRegion":"CT","postalCode":"06076","addressCountry":"US"},"telephone":"(860) 684-2198","sameAs":"https://pawprintsgroomingsalon.top/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.9,"reviewCount":79},"geo":{"@type":"GeoCoordinates","latitude":41.9702914,"longitude":-72.3558551},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJq3x4pTXt5okRS1-6LcB3T9s%2Fphotos%2FAU_ZVEED1VJbHb51ZNBHOvJI3vyDyAueaoNoevhnIa8ZPj9A5786MQQ7AkM9jOzCZETgahJzshDW7sy46VoxJtW8Qnx5xdgaQ2Elk6fzc-D3k0uab4GT8KaGkSrVmLx9f14QtsEYKW0VN0kXjhWpICzWxQlfijAK4YDyUxAsM0pDQYvQJnwpAlravEoiAn38gXC6Jqziqqj0ijuE42H8t1uN_PV2hLzg5N-gqJt0JIrF3iJIa_hC0Y9ZkVi-6kB19UUzgTghlGkr-FsCKg0wXoSmwjqs7ZnZmvJWlJptTt7LJcJSEg&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:30","closes":"14:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:30","closes":"14:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:30","closes":"14:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:30","closes":"14:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"14:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

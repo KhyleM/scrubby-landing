@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Kingston Springs Animal Hospital","url":"https://scrubby.app/vets/kingston-springs/kingston-springs-animal-hospital/","address":{"@type":"PostalAddress","streetAddress":"170 Luyben Hills Rd","addressLocality":"Kingston Springs","addressRegion":"TN","postalCode":"37082","addressCountry":"US"},"telephone":"(615) 952-4556","sameAs":"https://www.kingstonspringsanimalhospital.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":236},"geo":{"@type":"GeoCoordinates","latitude":36.0816151,"longitude":-87.0954807},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJz5S4gFuQZIgRNZuZekAmt8U%2Fphotos%2FAU_ZVEFQyZjQcAFgrDoPlNGq_WHAs-s85km9ktEHltrlPGnOJluquWr3x_1ZTOFpCpYRcsZ2-qWMAooDUA4eRZMbfCMadnw8BMuQnTU3-MSwZ0OiAB8TAuIq4sImzyEnq-DaTfMToWYihVENf2Vr9iXW17sx0pAkzNimuwxldJxlcHdnByrjVVYPHsvpH1knRtQ3tUC03c2nWIcK5ObVPUnGLuxSQ7a3Obl5ofCbYXacvndHgGygCvDLJqs9eg2ypnkl1Ziv5D1V0UwNWp25bnFSdO0R9g0_rSDoDNDFtW04R08zWQ&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:30","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:30","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:30","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:30","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:30","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"12:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

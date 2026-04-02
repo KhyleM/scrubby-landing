@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Fur Real Dog Grooming","url":"https://scrubby.app/groomers/miami/fur-real-dog-grooming/","address":{"@type":"PostalAddress","streetAddress":"11961 SW 176th St","addressLocality":"Miami","addressRegion":"FL","postalCode":"33177","addressCountry":"US"},"telephone":"(561) 510-1778","aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":7},"geo":{"@type":"GeoCoordinates","latitude":25.6050784,"longitude":-80.3869809},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJifEwp53D2YgRSPX2wctoOQo%2Fphotos%2FAU_ZVEGxD05O5e2C_plUBu2uQN8EjIGjbcuSfG6X6tX8Yh9AvlDXfdyWk4AVeLoDKuSlnAD5sr4xKsWsUedxtflJuhu28VTyY_9UOn5Gh3vEvGrcu364VJAFYIfScj3zs9c_pZyvwyz0enlL2fNvo1Fl6XR1eIkAvKFXiPq8W3w4pG-3MWTXwzzUSEgy68jrDe5sK-HG653fWYYpAmn3gCO1WX5BTd56-2Dp6zafsMEAnhX_6huG-qkJmUg3ActQ2yGGnBDuWqhvSrQ6_OWdSGwqN_EhXoOvKdMKmsucyvBME1DTDQ&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"09:00","closes":"17:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -359,6 +367,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -394,6 +403,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

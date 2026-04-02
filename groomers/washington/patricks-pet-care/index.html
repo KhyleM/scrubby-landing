@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Patrick's Pet Care","url":"https://scrubby.app/groomers/washington/patricks-pet-care/","address":{"@type":"PostalAddress","streetAddress":"3509 12th St NE","addressLocality":"Washington","addressRegion":"DC","postalCode":"20017","addressCountry":"US"},"telephone":"(202) 630-7387","sameAs":"https://www.patrickspetcare.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":395},"geo":{"@type":"GeoCoordinates","latitude":38.9328574,"longitude":-76.9908067},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJc_BJmu3Ht4kR9F-XuYRW4ao%2Fphotos%2FAU_ZVEEHC-C_hcPN6b0Ubv27GI-hzOEmXZXWcW13wXmnV5J9ZuN1TjY3a0NQapZOBCI3pG9tnD4iBbPV1F63OC1woNZOIES5wCBl96U2Rc4bvBU3JZ2FoMo9PRzBxtsSHi34NEyI-bwS8IuUq8w4LNVaF6__pc7cgQmDjCWSTVchZE77Hvl3Gv_-0O3pIy3acwj9c9fOv-Vv0jrAaNnjF5LhBwwO19c_yn1mhnMrdc45T6CtJF3KwsHW23kvOkA6K7pq9mQVibRzG_tcNxIL6BP_yJEc5YBTecUNutHtXt_BLSf8dQ&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"13:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"16:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

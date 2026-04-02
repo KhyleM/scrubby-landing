@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Leander Veterinary Clinic","url":"https://scrubby.app/vets/leander/leander-veterinary-clinic/","address":{"@type":"PostalAddress","streetAddress":"1300 S Bagdad Rd","addressLocality":"Leander","addressRegion":"TX","postalCode":"78641","addressCountry":"US"},"telephone":"(512) 260-0400","sameAs":"http://leandervetclinic.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.5,"reviewCount":461},"geo":{"@type":"GeoCoordinates","latitude":30.5569822,"longitude":-97.859198},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJI7mtsvwrW4YRkYPM3su5kK8%2Fphotos%2FAU_ZVEELxDx-3wHWjFtpI4L0lMvUG3ecpD_icbGpbq9kpQ8d_W7kxjWEyqzzAabf6fHoRPPeYf9SAtw8_VWB5FESwy2n-QIBQENZTGAoC24Zhdg25gPo26scBtpI8w6HAd52QNudt-oyveuTuA9-z_k6_DQ7LM49xKSdj8OiMXllFzNwdQ9v9HiPThRCm4D2UBDdK3b_3s8qYELvFCi8iZo6ieF__jnKO5nX1UPBTFnzwqiRjIu1XL-vKHqJnwVg3Rsh5dQb7ldyaitaH0y8Y50NhP_keh70uXhLlWYrExym5Jy-aQ&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"07:30","closes":"13:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

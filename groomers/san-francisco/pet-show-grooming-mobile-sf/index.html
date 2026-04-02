@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Pet Show Grooming Mobile #SF","url":"https://scrubby.app/groomers/san-francisco/pet-show-grooming-mobile-sf/","address":{"@type":"PostalAddress","streetAddress":"101 Jersey St","addressLocality":"San Francisco","addressRegion":"CA","postalCode":"94114","addressCountry":"US"},"telephone":"(650) 931-7674","sameAs":"https://petshowgrooming.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":21},"geo":{"@type":"GeoCoordinates","latitude":37.7507669,"longitude":-122.4276116},"image":"https://places.googleapis.com/v1/places/ChIJBSuHvt9_j4ARtO5fW_TESAI/photos/ATCDNfWOX8MrRvfEPUPlWyj3A53m5SkCn2km0cvNErvRmJlcAlSn0iBFPGuZqv48SkFHn_-g1dQqa6s83M9a1VWZFVw_oo-HuZOdNHxxVJMja5cTtR5skg_1EXDBFKJcM7Dy-88ChriEfaHBej8uOhQ6xO0hXp4Seq7nLntMaqhB1fHvYVqlRywteSRpVt9CEJD3ODhr8ZMWcPIhEyYEFMTWjJng9rh-xMgs6PXpJcDMFGcxT-_Ic4nM_K_7felWKtyhzFX5ucdjtyFcjq0vAcl-UkwJYn_6QtnmLM4YOBp5i6o-KQ/media?maxHeightPx=400&maxWidthPx=400&key=AIzaSyCpmbfD6svBtJL5OpHfeph6xPVzLlf7F-g","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"07:00","closes":"19:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -358,6 +366,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -393,6 +402,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

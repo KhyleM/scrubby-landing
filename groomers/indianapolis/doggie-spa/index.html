@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Doggie Spa","url":"https://scrubby.app/groomers/indianapolis/doggie-spa/","address":{"@type":"PostalAddress","streetAddress":"9930 E 10th St","addressLocality":"Indianapolis","addressRegion":"IN","postalCode":"46229","addressCountry":"US"},"telephone":"(317) 897-7900","sameAs":"https://www.doggiespaindy.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.4,"reviewCount":160},"geo":{"@type":"GeoCoordinates","latitude":39.7825872,"longitude":-85.9912592},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJl7X-XOdIa4gR2ILGKe4piAk%2Fphotos%2FAU_ZVEF-Nxd6Mc2JSb67r-MDBaAX2556X6P8MdYYzZSToFqcDXC662tFnV_Qnd-TSxFujP2_sz4HmEnaple2jJxNDKll4QfaOig_VMafSF2u_PZPNMMbHGkEgEqF5y4Vlfs4jxiOGCjOHA-VRZ-roz6mT3g6cGnX9DYKf1MhD_Edf9p1jjU6ApAojmaLJ5elJPKnLDax4hpI4pGSsCpzlQJvsY_x0LqijqMtbD0PE0P4BzSsPKxho3JJC5B-b8NhWN6muQ2tHBYuM5_vN_d0NqlFVyYYfvXLkTeIv0iXzwrgwi7gp5-UiA-i4KnABEcTklEbCfpcgFBORZfEF5VJK8Vhf4i4tTUFQSDr9pCxkd5pMIY2-igG2M651RFgKA4ghCIhbM0QXHAv_ubASnbhmKuRs2JLKrBWl71xld7VxXRM8XCDrlY&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"09:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"16:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

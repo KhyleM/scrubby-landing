@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"En Vogue Pet Grooming","url":"https://scrubby.app/groomers/san-francisco/en-vogue-pet-grooming/","address":{"@type":"PostalAddress","streetAddress":"841 Jones St","addressLocality":"San Francisco","addressRegion":"CA","postalCode":"94109","addressCountry":"US"},"telephone":"(415) 361-1551","sameAs":"https://thegroomingempire.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":3,"reviewCount":2},"geo":{"@type":"GeoCoordinates","latitude":37.7892573,"longitude":-122.4137515},"image":"https://places.googleapis.com/v1/places/ChIJVY_y4SGBhYARBxoCbt-kMFE/photos/ATCDNfWgcnrpVBWtnL74-_nQhH_H7_8QxywPc1-yDaM-7loQO3IMLjo5gWoeWVg3T1GbbkYn014vBFGnHEr-ilCLhJdePhKzvMKtaj5G0jFzX6Z-GuP6pjoNomMnIT_vsqkZrId-JqNQx8JI9eTHffq9yzL6HJlcozn9ObbACo8CKWHWgq0MAj_mXF4Dz5VyKRz8Y0TKRY2UPgx6vj23390_PsOcihj8iRpFXCQt4gOLWMoI3QQM7H-XrhH8RrKBq09kcGQngG_wBnlGlJ7VpP-hpnUDlxNYOHbpCblyA74wpaU/media?maxHeightPx=400&maxWidthPx=400&key=AIzaSyCpmbfD6svBtJL5OpHfeph6xPVzLlf7F-g","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"22:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"22:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"22:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"22:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"22:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"22:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"09:00","closes":"17:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -358,6 +366,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -393,6 +402,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

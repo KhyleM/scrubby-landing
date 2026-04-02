@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Mountain West Veterinary Specialists","url":"https://scrubby.app/vets/layton/mountain-west-veterinary-specialists/","address":{"@type":"PostalAddress","streetAddress":"908 Main St","addressLocality":"Layton","addressRegion":"UT","postalCode":"84041","addressCountry":"US"},"telephone":"(801) 683-6201","sameAs":"http://mtnwestvet.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":3.8,"reviewCount":672},"geo":{"@type":"GeoCoordinates","latitude":41.0733573,"longitude":-111.9787696},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJC8K9KioDU4cReSWTyRqq3NQ%2Fphotos%2FAU_ZVEF5CRFSXAy0994cbflC9XzY4LL64McYNU5VQkE_BM6y5F0DEM6ujn1gtYyQMRV-ww07o-9kFiZP4Lh1c8-3Ic1DDF_5whjaD6fWdOapuzhrQirrlC7y6iGEFGOUpika2bAUZExK3uLygqF8T-dJjnxGDZ_Oymua9ZEhY1VsSA9MCzS07QUZD8Tz4-0LYLw9dLxyVeDIXzCyXK-UsJOmpC6sdJI4J6jIvoUmBYzMMbgw06DqecKmaqhexgW5NPAd8SWltsU5_tYdB9RybDE-vbwjzTzoYbn59ZGzlfJXvGhg1A&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"00:00","closes":"23:59"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -370,6 +378,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -405,6 +414,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

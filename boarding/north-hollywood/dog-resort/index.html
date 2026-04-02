@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Dog Resort","url":"https://scrubby.app/boarding/north-hollywood/dog-resort/","address":{"@type":"PostalAddress","streetAddress":"11911 Vose St","addressLocality":"North Hollywood","addressRegion":"CA","postalCode":"91605","addressCountry":"US"},"telephone":"(818) 255-5551","sameAs":"http://www.resort4dogs.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.3,"reviewCount":374},"geo":{"@type":"GeoCoordinates","latitude":34.1985855,"longitude":-118.3925247},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJvfcmDyqUwoARMRj6l1V0HG8%2Fphotos%2FAU_ZVEHUkvKpEZg0tCrJjhqJNUxwzsv9YGIJAjMObokZaVFCL_xbpYCizMT4UJgOJJTYvkro7h_gABb8duPOtCT3EvxsBc6JiErndrOp68DyxkPgHp5VWrAg73gRe2t3nMCC31lvv4tvCUUH0nK43y6MhVFsT_048rUWAQKNiqDZNSbVryc52Sc4sAt-b1iX44kg7vPteydXo7dRhozWKwA5BPxXElN-NeFqpJtWwh-YDOjIt3Dui3fL7zlt7p7WkZuaa0uIMcpg0EfOs5LTFzL2JfmMqIMSe3nu3uux-9rrQPiT7w&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"07:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"09:00","closes":"17:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

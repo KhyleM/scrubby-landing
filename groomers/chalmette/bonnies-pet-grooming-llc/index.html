@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Bonnie's Pet Grooming llc","url":"https://scrubby.app/groomers/chalmette/bonnies-pet-grooming-llc/","address":{"@type":"PostalAddress","streetAddress":"2201 Paris Rd","addressLocality":"Chalmette","addressRegion":"LA","postalCode":"70043","addressCountry":"US"},"telephone":"(504) 407-3434","aggregateRating":{"@type":"AggregateRating","ratingValue":4.5,"reviewCount":91},"geo":{"@type":"GeoCoordinates","latitude":29.9388666,"longitude":-89.9650008},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJm3_1LwMdnogRDjanDu_8TqI%2Fphotos%2FAU_ZVEHaGEfHPxXBQcQF2DUHA6Ig6VPX2WKZ0xrV4FD0cS7VkvonchnY00iD7MuptaailaUrAVPX0Y7rBlTT50OvDXXvZqwCBSBbU8b8v4v-Uquk63uQot2P7mGrZQ556SV7e_XvKNsO0ZLMfU5mQ_VXKYje7Q12heCK4Hxn4cX1qIfCjG_lYD99S0qAhzjmoELLvjv91zKR5yKLkkxm7bQweez__O72NazinYrzKwXqggzFHacPOk5GzMMujdrx8Cd0l7QuyRj3J00End_HNXlJqcnX2IWI66wW-NYpxwUbD_LUBA&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"07:00","closes":"15:30"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -363,6 +371,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -398,6 +407,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

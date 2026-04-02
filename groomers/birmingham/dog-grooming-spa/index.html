@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"DOG GROOMING SPA","url":"https://scrubby.app/groomers/birmingham/dog-grooming-spa/","address":{"@type":"PostalAddress","streetAddress":"3150 Overton Rd","addressLocality":"Birmingham","addressRegion":"AL","postalCode":"35223","addressCountry":"US"},"telephone":"(205) 382-0486","aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":7},"geo":{"@type":"GeoCoordinates","latitude":33.4673654,"longitude":-86.7328915},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJf0KPizQXiYgRruRwo25U2JU%2Fphotos%2FAU_ZVEEEVpd4KgH9Bdw6PgtVV2VGBrTTKdOqlRhN-SdCybRmQ5NOSODUJ76oD03upnY5HNNtMoSOIJ59jc4Tmv6muKCG7iNGxuWQIA99GBYt3eyRwGcFHGiVlXURhXade_uhK8ITPNkz0gXuwY-OKgxkQrs5ahdZSsErS9hIpsw0zDy6jqhYpubkHwTW_tR7pBgGw20ZdPQZo1OqCyJnYubTKXNatKKG44tuIYHkhV8Fuu574OVaLdpiCwkQb5qFL8dA2jfm1jvxsiJ14n6Llb2RPP9LFIjRDZLSQZT3Kqzz48lgL-P9s3fwkHrVrvnT7LrnPK2-IBQK5UPHFTjn7Zg-mMSwgI7xS6LuO6Kb9B1UavLn7mX46oTU98_i8IKTOsZCqUFSKW0ERcZw-24cm-0ks9xdTd9AygLPOCCZ3mgMRcj6fo8Mli7TCod8zdsx4r4J&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"07:00","closes":"14:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -363,6 +371,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -398,6 +407,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

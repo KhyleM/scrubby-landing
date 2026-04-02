@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Hoof & Paw Animal Clinic","url":"https://scrubby.app/vets/belleville/hoof-paw-animal-clinic/","address":{"@type":"PostalAddress","streetAddress":"6204 W Main St","addressLocality":"Belleville","addressRegion":"IL","postalCode":"62223","addressCountry":"US"},"telephone":"(618) 233-2800","sameAs":"http://hoofandpawanimalclinic.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.6,"reviewCount":702},"geo":{"@type":"GeoCoordinates","latitude":38.5519706,"longitude":-90.0382234},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJibXH7HWp2IcRUpBV67ky8I0%2Fphotos%2FAU_ZVEGmo2TbfmgPZ2pAD1sc_mcJg5ebNhswjNs0gG4xSA3Qi9_RnaKwZPh1iUFwHBYVSkAYGMxL4rXcuNh6kr1IcFxK7F48N53sFa4gpPj1js8pU39XiiK62K98OlgYN4gRVcCg2UZ8Dg9jR8cUd_ZzhNt6Z70nypJNaT1hiOcefl81kbsTtiRR_k84snEx7d-WIg9e3atHNC5o5GYKbuK0EwpuivHWFuITEZpsIN05DwxB1YZMuL2nqEJomRbgp7zP81JAnBl45y7UkbFOPlRbb8gjlZHw2wgyJJy7zM0rMim81oRSXZUr42zmNIQGHDLQVqid_2YI6iHuxZFjoFssVsD6F51P45ULwlflkUKU9epDbKAUERUTwY7Y3TML4G0MvhCCxFEIIfgCXycs0SIlvjhF2NlHW1hs1cOfxDoEMyDyov_p&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"15:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Royalton Kennels LLC","url":"https://scrubby.app/boarding/louisville/royalton-kennels-llc/","address":{"@type":"PostalAddress","streetAddress":"8620 Old Bardstown Rd","addressLocality":"Louisville","addressRegion":"KY","postalCode":"40291","addressCountry":"US"},"telephone":"(502) 239-0827","sameAs":"https://www.royaltonkennelky.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":127},"geo":{"@type":"GeoCoordinates","latitude":38.1193496,"longitude":-85.5743956},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJK05yuxGnaYgRPdKPjjvgrmw%2Fphotos%2FAU_ZVEE9Z8viBGlRA8ElwEy3oLSUG8nVAUePgJMexrrz3XaQrg1OQG6UYjdCbT6eQcJyY0MH5ZgRf8JNgMV5jGbDU9CqaMIBfV-bY6CPcYmBUj0sPSjMkTUuC3vE4_UJemYsJ26zbt3o5R7Aet1nqrb83HwM7V83hN7PJ-rtaWSKnhp4Gw7LzHCgu6i8WdRRJw0biHQHH4nhm4gWs7pt45AJmL6XBRsoCgWB4A_SJmFAuxE-IvQlDXdJhI4eWI6KGtr-Lbdfz9JuZRA76zAh08kBtatOPXEpcwjLJVqEgf-yb2Qerw&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"16:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

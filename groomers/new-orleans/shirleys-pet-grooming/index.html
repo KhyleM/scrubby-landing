@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Shirley's Pet Grooming","url":"https://scrubby.app/groomers/new-orleans/shirleys-pet-grooming/","address":{"@type":"PostalAddress","streetAddress":"7300 Read Blvd","addressLocality":"New Orleans","addressRegion":"LA","postalCode":"70127","addressCountry":"US"},"telephone":"(504) 242-7387","aggregateRating":{"@type":"AggregateRating","ratingValue":4.4,"reviewCount":89},"geo":{"@type":"GeoCoordinates","latitude":30.0417741,"longitude":-89.9802411},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ-wfFa0ACnogRcqKz1n5sjNk%2Fphotos%2FAU_ZVEHOgQaCmVjc1bP5WvOIpcDDC5znN_XhbJpJRA_9yy2wvRruwYbJ5ddV65CuYGTPeNVVPzcBaIysylpJDBmZlmRT22SdigXDeOJmC9oEIvKoC3mEVuYXaM5k2PCYduOdcPV04gg8u9wL4evTKTNyocz6kmLGbamZRiUgtEqLSpqslNSkCIOf4uPYjKEItDZwWZV8JyCvzcQztkV1dR0oHRv0hKa2bRRmICj0GTb1ALpotYb34RKPOhAFctdArBadiaSzZueKuVkafF7gPsNCKchUmWHbSdUH8CLHIdW5j6CBHZpvLYozhCkJs0bnJclaunUl20FoiEU5nsSpfFYJiAR8pAnFEKN7HZcqrjNe8rCp1UC7Ubhe8rmDHV-6VCSzRlrbRPn_jYw_UU9XDeEIM1Q2UqhvqDiy5ec610j0JIrQu873&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"16:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"16:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"16:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"07:30","closes":"17:30"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -359,6 +367,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -394,6 +403,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

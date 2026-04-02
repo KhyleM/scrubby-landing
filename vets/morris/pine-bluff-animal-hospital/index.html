@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Pine Bluff Animal Hospital","url":"https://scrubby.app/vets/morris/pine-bluff-animal-hospital/","address":{"@type":"PostalAddress","streetAddress":"7995 E Pine Bluff Rd","addressLocality":"Morris","addressRegion":"IL","postalCode":"60450","addressCountry":"US"},"telephone":"(815) 942-5365","sameAs":"http://www.pinebluffvet.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":564},"geo":{"@type":"GeoCoordinates","latitude":41.3453663,"longitude":-88.2681385},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJB2FF_WCDDogRelwk5ng90PY%2Fphotos%2FAU_ZVEGctfHXGMBRV6g0b2j59DYcXMZ8oz1X6uSmdnj0AQNOGNv4uT18iS-CKXSAI-spxZoiLa90eb20brdMXAVt8Ld8SO5GJJ7v9FlDOYbFvM0ia_d_KjMY_LM4L2KfLuVQ6351Uanmh3b4nt8IBZah5-APQLO-orcLobNXfe2YQLZjcTRXcQ8ysl7_geem7K1dSNEvDRu_kE4OpdD0cy3Nrye7TrKt5hmYdTNPEaHSZM09SUl2Mwt6c9VhSHBq0wzsxSPcoiVhGRy6XZVnVM2wfAM0n1z6VdSxe5BKGcK6tY86-Q&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"12:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

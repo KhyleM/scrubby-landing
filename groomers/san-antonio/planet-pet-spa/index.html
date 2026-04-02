@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Planet Pet Spa","url":"https://scrubby.app/groomers/san-antonio/planet-pet-spa/","address":{"@type":"PostalAddress","streetAddress":"6750 Tezel Rd ste. 109","addressLocality":"San Antonio","addressRegion":"TX","postalCode":"78250","addressCountry":"US"},"telephone":"(210) 251-2401","sameAs":"http://planetpetspa.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.9,"reviewCount":891},"geo":{"@type":"GeoCoordinates","latitude":29.495449,"longitude":-98.6620787},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJTRn2wZ1DXIYR3dGSTX14KO0%2Fphotos%2FAU_ZVEFuFpC6YdJZL58Nb6QDwUFoqjuMn1ezSq72fqnFinpCB1YMJh4pgcdYeGwODUYOnQCTk6oZTxF6IlOEBwfI1cAX7BIPPzygjqvB5tJQj-85bmeNbAQBYpUf13mH2RT3rMVFNWn9VFGj1dJEpEszvK5YiJShbGkosHdtxXvPIfbUDsqUIuHp2NyRk9MHLyXwxKm5B21mU-QQrlEjVkHb9i-rh7uemJhyqzjBGDVDSj5tobQIFMkgs_SriannmW7lxvQ5hN-p4TjdlIxvoFuHqatGiWUmD8YZZPqKhe_AfuOCzA&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"15:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"15:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"15:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"15:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"15:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"15:30"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -370,6 +378,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -405,6 +414,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"The Local Bark","url":"https://scrubby.app/boarding/rancho-cordova/the-local-bark/","address":{"@type":"PostalAddress","streetAddress":"3201 Fitzgerald Rd","addressLocality":"Rancho Cordova","addressRegion":"CA","postalCode":"95742","addressCountry":"US"},"telephone":"(916) 638-3880","sameAs":"http://www.localbark.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.9,"reviewCount":466},"geo":{"@type":"GeoCoordinates","latitude":38.58674,"longitude":-121.258971},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJrbkSu_nnmoAR-XmZorOEyBY%2Fphotos%2FAU_ZVEFkdk4dwe0aXwakhaXlXuXKjqQPnZWxswdGYB28EunRqqoosMUNrJ-k5uza5N85fehBJp6TcRY1msK4o08PJJCW6NitnsE1fVP49w2JN4kRAShsVSCTK7oHc_AFTCM9iswFhCK0Bc43kS3NWwkfCv3JPZa0PyMEkWlxxyo2Vv4sBfLHlVxDtvrw3hH94NtbsNJ9WBv1Yd7TLjLggXCLEA8f1PSd15wKsKJGQpgFAEPGlzhphuXvkmrrEX1BsPkSVo0lSyglqA7WWa6EamzEy2W0_4c-O_hlZBVkEf3hmWGEvg&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"06:30","closes":"18:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"06:30","closes":"18:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"06:30","closes":"18:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"06:30","closes":"18:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"06:30","closes":"18:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:30","closes":"16:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"12:00","closes":"18:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -368,6 +376,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -403,6 +412,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

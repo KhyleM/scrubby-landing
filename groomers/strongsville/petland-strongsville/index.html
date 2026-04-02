@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Petland Strongsville","url":"https://scrubby.app/groomers/strongsville/petland-strongsville/","address":{"@type":"PostalAddress","streetAddress":"1148 Southpark Center Suite 400","addressLocality":"Strongsville","addressRegion":"OH","postalCode":"44136","addressCountry":"US"},"telephone":"(440) 636-4553","sameAs":"https://www.petlandcleveland.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":3.4,"reviewCount":847},"geo":{"@type":"GeoCoordinates","latitude":41.3081037,"longitude":-81.8213803},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJkRefb9bBMIgRdUwjC3ISO9E%2Fphotos%2FAU_ZVEHL81Y_05pblNpeSLWH9zSx8SBXXLps2s3SZFTVpVcyPLC7jKCJZBFsucqDv9nn89vQsTj57XS5q8vw9hEcogaJyxGpJcoRPsCSI32D42M5JbC2s02iydyv5ME7LhhcyhstcV5UF7QimWcD5FAHcuFpS2qvOmE9VTQEoQepz04j_JkVftQAWKWguJ_SpPJRs8Wub1xZoWd_rhY0ySyrQOytE_D-Ll-lULMBwhh_2P3k4yNOynyAFQ4vnub_Tsn3ftFBrp8m1PE-lRDnTE18qSB92VwPqbZQ-AK5e4DchSag2Ho_hO3AO_3vlD-r_C7TElrJyHWu5oJRkxKoIABw6OazKHvKibW4vo7mccC0nlYTZOVhYN8od5x3WUI1wm5GZ3vgM0SsxtOY1tC4rVo_3UBbNUeoEqp1XcyNHgXMeYAcE9PY&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"10:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"10:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"10:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"10:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"10:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"10:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"12:00","closes":"18:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -370,6 +378,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -405,6 +414,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Groovie Grooming","url":"https://scrubby.app/groomers/dupo/groovie-grooming/","address":{"@type":"PostalAddress","streetAddress":"212 N Main St","addressLocality":"Dupo","addressRegion":"IL","postalCode":"62239","addressCountry":"US"},"telephone":"(618) 286-3000","sameAs":"https://www.facebook.com/grooviegrooming","aggregateRating":{"@type":"AggregateRating","ratingValue":4.9,"reviewCount":14},"geo":{"@type":"GeoCoordinates","latitude":38.5209255,"longitude":-90.2098102},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJeVYixH6x2IcRf46pMqwF3NM%2Fphotos%2FAU_ZVEElb76URy3ylh3hXQ7ExDD0hbgkIl6fsN7ZN2NuiZM7zT041pK8j_Qt6gqPWEtLGnTzHapio_i3z6T1qM1CaKf0h9TVF7v5VeIE45jxx9BpDtjVV2Bsw-BW_0dVVxJY1xfQYxJpBQeZvtvcIOfX4V1xT69nI6OhJ03daMtLevsyUGwG2ruj-khNoRtRa7TH33nKJDFX3tCCU5EiLMxs3IqcnWl8RQfE2XoMVHMXldR03RqNYuhl9OA4ZlH3Cr8A-GgoZM1Uq3Dd3dU4T8nS21_Av2j6EBgQOG9tW8IOFVEOuCtZ6Kv5SN4ey8-hmXN4JRI_dC9JV5etUMh0QYmSW8emgamYoEkj2mZ5zcY5K8dF6RrD3-u9QA8_hfmzjpps-T5EMXO4EyS5CG4H-f8sV6KW4OMCODSv1S96PKHmtZte2NzlA2N_O4GWqtI1ZA&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"15:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

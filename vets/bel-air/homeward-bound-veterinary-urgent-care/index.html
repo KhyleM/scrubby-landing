@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Homeward Bound Veterinary Urgent Care","url":"https://scrubby.app/vets/bel-air/homeward-bound-veterinary-urgent-care/","address":{"@type":"PostalAddress","streetAddress":"319 S Main St","addressLocality":"Bel Air","addressRegion":"MD","postalCode":"21014","addressCountry":"US"},"telephone":"(443) 371-9421","sameAs":"https://homewardboundurgentcarevet.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.9,"reviewCount":66},"geo":{"@type":"GeoCoordinates","latitude":39.5336553,"longitude":-76.3458014},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJn6IKFfbdx4kRx5Di_JAuAuk%2Fphotos%2FAU_ZVEFdqcWscH76UmGLliQL8dTgklHQSleCfWKgXJ7R7rRy-N7sImgMpxF3sPDbl_O3sFn_vRlGiWlkbjJGULFVNyZUwgvi14hsKyIVcEbiTfhsM5trxfvquVeOkIA7Ny9-79kzrZ60QE9pp9YHe1w1o6cURA4USbzpdwEaqBQloKyHo_htHvfmfpZTMqJu6RC25ROw7knBm2ARW6UN6gz8NGUDtYRhOcKUuJqSDA4UHf75fUJZWJyP4bTVAr32PKzny7-6_DMpTMgL5yXBZch789plIHLx21NRIP1U4RYTWlRU-Trcx9EQhx0rLydXLXQSAGZri3igxJkyfez3o1dIXLyFchK7dC9Nc7f5UOr8QhRaFfZcqczUsGLmZWlXKGL4DGATDF3X2HoQzLxTLZ8O9bxeqsp0aOfqQem55D-ViMIFCCmAGZyFrq1eRhkgVNku&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"10:00","closes":"22:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"10:00","closes":"22:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"10:00","closes":"22:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"10:00","closes":"22:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"10:00","closes":"22:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"08:00","closes":"17:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

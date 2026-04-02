@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"PetHotels","url":"https://scrubby.app/boarding/long-beach/pethotels/","address":{"@type":"PostalAddress","streetAddress":"236 Pine Ave","addressLocality":"Long Beach","addressRegion":"CA","postalCode":"90802","addressCountry":"US"},"telephone":"(562) 689-6165","sameAs":"https://pethotels.com/us/ca/los-angeles/long-beach/pet-boarding","aggregateRating":{"@type":"AggregateRating","ratingValue":3.7,"reviewCount":3},"geo":{"@type":"GeoCoordinates","latitude":33.7700617,"longitude":-118.1920796},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJg1PlRGUx3YAR4JuxelkbOc4%2Fphotos%2FAU_ZVEEn6uno7NhJsr6roCctT6H9qeoZbbCIKh_b5Z18urDz7MAsFiYYEQxCzRAtc_ytFgGucv6uqcZbPc79JLOkUw48u8ZHVTSBi62C44XPCz1L3YAg3GyGh5M7kqXITD4T6bAu-O4s1DZpnof7UyvQ4Kbe1OdvsFRK1vH6NQ0dR5n4VGL1LBUqCBVp7ZSDeWNsmmUi3oum_Hkv6tH8zxtamfyVPdDjU_3dbMZ5EjH8I3mTsSNQrEOxXzUcMYRpPHwZYdmqCfXNipAJ1ZL4HZ4JSlyiko-FUdTrMzGscsMyz8O9K2_MQp_yeffdl73YNz6old_ZDdYWT8s14FsO_C7iYD1SbthGWNOCKWP7qJ5cq9mbwhmoBAhJadv6tGUxZhGf3j3tL_YsJycJnOkbFGKaj7behNDqYH42tGOCxSlH2ThsyZE5&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"00:00","closes":"23:59"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -356,6 +364,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -391,6 +400,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

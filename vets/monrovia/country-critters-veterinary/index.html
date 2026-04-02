@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Country Critters Veterinary","url":"https://scrubby.app/vets/monrovia/country-critters-veterinary/","address":{"@type":"PostalAddress","streetAddress":"3016 W Glacier Dr","addressLocality":"Monrovia","addressRegion":"IN","postalCode":"46157","addressCountry":"US"},"telephone":"(317) 996-2727","sameAs":"https://countrycrittersvetclinic.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.5,"reviewCount":264},"geo":{"@type":"GeoCoordinates","latitude":39.5751392,"longitude":-86.4852665},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJCaAYpmqWbIgRL8RAe-e-n8E%2Fphotos%2FAU_ZVEFGTxEG50In2FGAsUp8hahAQa0tJ_hToUraZ9-QkeGpDAasNKEbyzQeuV6DDsaAICTEwicZoS_85-npUg-p2_f1yTbAuc2j47AkCD3YBe6WqDD6fvg-DzILNmDk7SZMgG6v8469KC8nPwV6LYqXT2s5aQh4HothV9XMyxwQuPUWJ4QrRjxaWMHlDY3cEaywQ1JZwmYzHGGSVry_iOESYcF8tFjExOrzY_dGwBJxfdcSjVhPzYUBhwbpDHO3dfTMrugGoeT7DvJj9ESrJG2SKPrntJ-M7dP3FFPkD3uw-nldMu0WkDJfiATHIU0DY6oqD-K3nrhqi8nx13KcjSjmy3XKCY1lGRqxjI0B10toq6S-pgNDB3GsazIaF9025BOt2FWzgei6OxgGZUCdieo6mn5WhsLPP-lCHyNW-Ady3dgPRQ&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"12:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"12:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"12:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"12:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"12:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"LOVING PET CARE","url":"https://scrubby.app/boarding/austin/loving-pet-care/","address":{"@type":"PostalAddress","streetAddress":"Williamsburg Cir","addressLocality":"Austin","addressRegion":"TX","postalCode":"78731","addressCountry":"US"},"aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":25},"geo":{"@type":"GeoCoordinates","latitude":30.3666655,"longitude":-97.753638},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ-cGg4nSriG4R7WcyCT4Z9DQ%2Fphotos%2FAU_ZVEHET73TTeDhrFHgRaXsfL2vj9QXkPQ4jXVbQh6_lXEtXRi_xHwbW7rPzpNcrfUXRVuXs805ZcXWQjxFMZ5CfmfRq8b4jS6IIIhfs2rDqGXkBx0VHoMUE8t4OIRupCWnw0C2wMs-keBrh_ytZDCBkF2ZEMssHxpsM9rgw33AQYNQIkdHE4KC_b3pYVZ4y5x5unh5wFmU54fz8-KrgVdKJvvT0_asn3Jy6Ia5KAdMsLFJYtphrkxP4JSubxm9cK82DxOj3jy5s3mJk_APnIPfSQPRM7ZgCFh4-Gg-yZt3w-GXaQ&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -342,6 +350,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -377,6 +386,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

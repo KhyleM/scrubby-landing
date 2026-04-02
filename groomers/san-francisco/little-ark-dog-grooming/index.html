@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Little Ark Dog Grooming","url":"https://scrubby.app/groomers/san-francisco/little-ark-dog-grooming/","address":{"@type":"PostalAddress","streetAddress":"748 14th St","addressLocality":"San Francisco","addressRegion":"CA","postalCode":"94114","addressCountry":"US"},"telephone":"(415) 626-7574","sameAs":"http://www.littlearkgrooming.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":86},"geo":{"@type":"GeoCoordinates","latitude":37.7677652,"longitude":-122.4299684},"image":"https://places.googleapis.com/v1/places/ChIJvcy24B1-j4AR_C5TYll96N8/photos/ATCDNfXKUqMjSEBh3eCL3vkEVCiiwoyVDxysQ-UyyjasS4FLgdmUxoqx9CxLHIwnTmJFiqB2Zmf7s476rG70edmA-9-NBhqfic1FO6_-p3KKEK7I_tB4hS3PxdNaey1wstDgxLTNHdGL-emrlI5bWkpxEXTEW8d4ow9NN5FO1QcQJR8FK3PAY7lXLg0Ps2_D91afIDz3Ux-dlN8EIkNgoiWntlM9hXVjnplPp5khHUsoV_VDClX8zrTit1LOZOK4K1s9ZxmyoWmL-arXIOWuQ1nUoxG3fshCiaxR-vPGF90kGBvP9Q/media?maxHeightPx=400&maxWidthPx=400&key=AIzaSyCpmbfD6svBtJL5OpHfeph6xPVzLlf7F-g","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"17:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

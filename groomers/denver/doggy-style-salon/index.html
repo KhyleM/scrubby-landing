@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Doggy Style Salon","url":"https://scrubby.app/groomers/denver/doggy-style-salon/","address":{"@type":"PostalAddress","streetAddress":"2041 E Virginia Ave","addressLocality":"Denver","addressRegion":"CO","postalCode":"80209","addressCountry":"US"},"telephone":"(720) 778-5122","sameAs":"https://booking.moego.pet/ol/landing?name=DoggyStyleSalon","aggregateRating":{"@type":"AggregateRating","ratingValue":4.9,"reviewCount":280},"geo":{"@type":"GeoCoordinates","latitude":39.7076796,"longitude":-104.9631003},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJnVJEB21_bIcRib4zsm9q1Rc%2Fphotos%2FAU_ZVEEBA8_2ruOHcZA59LmDWZbqSc9G9D4hbsi61pbq_zA7H8oUDQpeu39Nfc-Q7HmWrYVAR4U_711bf_tW9D8c0w5eJ8Q3lasaPjPkPWrN5Z1vkZBEhOadRv-HYGrsPjFeuLAjgbdPgCw0h4aSnycRDn62qffd5ceWx9bQYwGhd2qLHIdW-9Xs0TDASee_CZYFale9jvfT9HftRTTkwLPCNkRT8vQusGP6dquLzrbyqEtdG6TCtygeRofUVN2F61OQqUsE4eudTre-N7Y4AKoeMPS5FJmoWh_JPXM7fWTrrzZYbg&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"00:00","closes":"23:59"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

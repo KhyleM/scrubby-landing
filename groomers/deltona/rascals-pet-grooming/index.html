@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Rascal’s Pet Grooming","url":"https://scrubby.app/groomers/deltona/rascals-pet-grooming/","address":{"@type":"PostalAddress","streetAddress":"756 Elkcam Blvd suite f","addressLocality":"Deltona","addressRegion":"FL","postalCode":"32725","addressCountry":"US"},"telephone":"(386) 532-2650","aggregateRating":{"@type":"AggregateRating","ratingValue":4.4,"reviewCount":150},"geo":{"@type":"GeoCoordinates","latitude":28.925651,"longitude":-81.2554755},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJo_6jOR8X54gRdg6QpBFnnIE%2Fphotos%2FAU_ZVEHznU4CYikJmK7o07AkBtMj1YTIRPYgmNrZFu-AfE8KwgGkNpJ05qwe4QXrcrnEDk0zGvzGTzzUqd2Lj1D5jg1zEIBHO-0tlCNbC5uh4kUfWiwUro_pJybKCjcfyppe3NFns45BJVhZ4u3MVDlUP0ryaWPvad9I3AoYgBofXJM78xSRWw0v8jEaNPMXOL9fC3tVIH0J5RaBsWlKt4JxtE7km-s8JeWhu03d12-cYxNEmKkVQYMacuOszYgAPc5lIHWHFD82sqXmKGC-B4xmN_Wuz8rUtKhXZ0tU7dJeohgNTg&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"09:00","closes":"15:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:00","closes":"15:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"09:00","closes":"15:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"03:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"15:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -363,6 +371,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -398,6 +407,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

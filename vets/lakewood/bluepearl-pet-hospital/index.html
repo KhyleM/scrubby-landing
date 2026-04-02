@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"BluePearl Pet Hospital","url":"https://scrubby.app/vets/lakewood/bluepearl-pet-hospital/","address":{"@type":"PostalAddress","streetAddress":"2510 S 84th St Ste. 30D","addressLocality":"Lakewood","addressRegion":"WA","postalCode":"98499","addressCountry":"US"},"telephone":"(253) 474-0791","sameAs":"https://bluepearlvet.com/hospital/tacoma-wa/?utm_source=maps&utm_medium=google&utm_campaign=gbp","aggregateRating":{"@type":"AggregateRating","ratingValue":3.9,"reviewCount":1409},"geo":{"@type":"GeoCoordinates","latitude":47.1800269,"longitude":-122.4702102},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJLZNaCQ0AkVQRFCjizZB1u8A%2Fphotos%2FAU_ZVEG7gdKah2SxOa8k48xPRjBTYMgSMev_Zl01UW95VRJN9gQ1Spxrg8Ku5ujoNEL5VIrSZZiw2UrsEYqQAHhWGwOx1GziWFmO-1Ba0cbhAU3iyPhsonxpdHLYl3U2p2-6_OYjuYppBpGBkk-BMBS7QwFRyjntOqOTsIAeNu1FSJ2RDvwAnHGE3fAgUBD605qeotkw0pVTStoqYG82n8xAla6MpvAPkTa_E-2X4dU6Cd1n61_DwW_gujxqTFNiORmRAClBkJy7Xz_47YeCXWlqIn1naxZYZxdU4DtHTI9Y78Me_Eybz_UX0Rx9pR2Z2ZjGb66XHuRQbH-xlmuFCNMJsPSW_kRR7A5axSHn3QMdalLtwRmsfWIorcPun7tBYaxYi007B6QEAyX0TB-kYCbUMWSuev-IFsiqzdTIwTrQj95zwWKy&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"00:00","closes":"23:59"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

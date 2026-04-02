@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Plainfield Veterinary Clinic","url":"https://scrubby.app/vets/plainfield/plainfield-veterinary-clinic/","address":{"@type":"PostalAddress","streetAddress":"24000 Dayfield Dr #102","addressLocality":"Plainfield","addressRegion":"IL","postalCode":"60586","addressCountry":"US"},"telephone":"(815) 439-8700","sameAs":"https://www.plainfieldvetclinic.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.4,"reviewCount":266},"geo":{"@type":"GeoCoordinates","latitude":41.5825381,"longitude":-88.2015276},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJTTzdT9GKDogRfBQyxeEW2GI%2Fphotos%2FAU_ZVEHsIu-Nmk-Ix2dL67jkpfKpM7fV1Ft3GlBjMnduFROActCQBosjBii_szTdTlK8Okk97qfHQULoGuJUO5DM6PERi7PVYtr3wU6Hk0Kkrvw9BqAb4O_v12fRhVXgQ_N8y_GPgfZ8XdAx7FCwnOGGnocjvOgef8ZjCsXJWUgraT1nMA8DZYLB--s9f47vCQU4IhFhLGr4w6YmRZxJHdoJg1z9mAcQdQf2jrucwj4kJhGVbmnHv7Prpq6izEetIUiR4eQwlXzf7-XChfkNhdFeDpAk99wVSFwwrg9PVDLaUgqQLai61lTowhxYC5fytM3bDawTrQL6CSKVPP9c9BILYerNnheqZVXrNU7n4rRg_OipGUhckVOZCWMuKiXIdHIpcEItVPJDbIpGFuLlc1bEFZ_l03G0JDrnizGbROonrdC9Mdvc&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"07:00","closes":"14:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

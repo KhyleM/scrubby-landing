@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Allie's Doggie Day Camp","url":"https://scrubby.app/boarding/san-jose/allies-doggie-day-camp/","address":{"@type":"PostalAddress","streetAddress":"562 N 20th St","addressLocality":"San Jose","addressRegion":"CA","postalCode":"95112","addressCountry":"US"},"telephone":"(408) 489-4550","sameAs":"https://www.alliesdoggiedaycamp.com/join-the-pack/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.9,"reviewCount":129},"geo":{"@type":"GeoCoordinates","latitude":37.3557597,"longitude":-121.8792071},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ64VqtYzMj4ARFGCQdGcwFc8%2Fphotos%2FAU_ZVEGDik60hoUlCjI7vbXOvHIgmOFzNp831HHMMYkUrGOv8AO-udp2edWJmn0Owe685pcJ8bC8u_3XtY564SrGxlQeNwyBnmIc9PTfhL4emH4RZLMD1MHWTjqmNnUu291crOVuMAeSC5E5oo4XZ2p5p0DjRK_qIVm37OIoc6DF95tmZCRDdt4PmpP-Bw3ftO5sUaXISYQSvkYmxsGjtUAqNM4ruO9RE_Ix78y4XETaoIdYOolgLlTwVv7S1jRe-nWmyRUmFxY470IP10JPevy9MbW9c5Bw32MXkUdF3YT8WohTOg&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"06:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"06:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"06:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"06:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"06:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"06:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"06:00","closes":"17:30"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

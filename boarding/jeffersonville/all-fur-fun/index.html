@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"All FUR Fun!","url":"https://scrubby.app/boarding/jeffersonville/all-fur-fun/","address":{"@type":"PostalAddress","streetAddress":"5513 IN-62","addressLocality":"Jeffersonville","addressRegion":"IN","postalCode":"47130","addressCountry":"US"},"telephone":"(812) 820-9481","sameAs":"http://www.allfurfun.net/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":123},"geo":{"@type":"GeoCoordinates","latitude":38.3590072,"longitude":-85.7016967},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJX1320CNxaYgRptJNir02kGA%2Fphotos%2FAU_ZVEEzhGaS7YJxLseFsQU_8QAuqNWqPryrL8KS0cAUZ5d2U0mbMb5aFStvlTmpvTe2uzqp5zFPrVnPMvUehx6I8xBbLJHR0oNtodhpp7n32SbmGnKccZYNyUsWoIOLDZ7hJxTbSXI580Dsy4DxI2lx0cTBC-NafkIU0ZTtetraK9iZarlThHXW9Z6V-FYTj3UihO2NY74hLGsu-HqJuSuwJSCCdGs3MCFGCMfrbfO7k5WbW6ao9KZVjJNU0Upfa7_yk2t4pgD-2CTL8wBXI5VAoF2HcxlQ-x3A99vlOSX-_EhTrco-WLmiLFeUqGswW7s33GEN2PCD047AO78CDF3nRX7pqBhOHgICswEWn21RptCr0UhX69ar07NEt39OaKvtItQKd032660Rrkyo5sZL19OMrb5_eSIpyckrwHgEbreT8zNkamRkzLOx551au_Cv&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"11:00","closes":"14:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

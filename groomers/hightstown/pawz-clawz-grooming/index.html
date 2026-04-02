@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Pawz & Clawz Grooming","url":"https://scrubby.app/groomers/hightstown/pawz-clawz-grooming/","address":{"@type":"PostalAddress","streetAddress":"140s S Main St","addressLocality":"Hightstown","addressRegion":"NJ","postalCode":"08520","addressCountry":"US"},"telephone":"(609) 619-3790","sameAs":"http://pawzandclawzdayspa.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":74},"geo":{"@type":"GeoCoordinates","latitude":40.2683877,"longitude":-74.5242992},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJFzI8iR3cw4kREjsCQj_CEEk%2Fphotos%2FAU_ZVEGrR7w4usifROJEjrSTnnzGtMUP9iCO2P6-C39kbqUF_37igQ1hfqRNmkrLlfrtp49EP66lAVjgVC9RdYSuJIlVWJzeD8KNFOntDRGRrdQB_z8-T6LxUh1i-5LobQn_QFltqfhOzfwL4yvIfLXmv6Epe9JclomezIWjU6fXHxfINdfou5TWmkMeWD7Q4YXIoH-3TAndTlwbr-fvnyObWiGO1itALUCSz5iKUqR9RPHBbzDEiJmatf_kqPkETu53efdCeLtZTbeaTQvonXRnmL0QvJNpikVIagW90Wx2I_MA2JjaVLSGh3lOC8OmYxYo0RMx9jMIzvyMjdqJEgwbEhw_tmAF8Bq2hd5-19g_qZcXqoHmxHcs9y5Mv6EeY8vXVVwk8tScFXwp91xkxrJN3J1uNEIyCPbTkHIADA5Il93mCqc&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"10:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"10:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"10:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"10:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"10:00","closes":"16:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

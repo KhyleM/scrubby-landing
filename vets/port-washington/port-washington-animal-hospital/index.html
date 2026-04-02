@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Port Washington Animal Hospital","url":"https://scrubby.app/vets/port-washington/port-washington-animal-hospital/","address":{"@type":"PostalAddress","streetAddress":"16 Willowdale Ave","addressLocality":"Port Washington","addressRegion":"NY","postalCode":"11050","addressCountry":"US"},"telephone":"(516) 883-2005","sameAs":"http://www.portwashingtonanimalhospital.net/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.4,"reviewCount":100},"geo":{"@type":"GeoCoordinates","latitude":40.8252809,"longitude":-73.6839575},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJV7zipM6IwokRD6u91rVRRjg%2Fphotos%2FAU_ZVEHz2KtX-WVBqaZgXXuN9zboEmqYx4MQbylaJB8aGidrmfAB2phwiOcyTTOPwP5zo_ILIQeFs4R63wE4g8fDFySbg5tuyMghyVRtHJRS941psdb8iU9kHkUQO6Q85w4Z_o80LZSjD2dDlYVOExEX-SJxYmiQSHh877t74Qs3Q5N8hWd23UgTxNm-uXpBXO6PU7S78SvbkbsHI1taUsh758hrHjPNgvxyoXkeRdHbqmowHV_KwkzUTJRe4RM53qSVMmNC_yZQRqBmZEHHg6tb9PS5ElLbErGdhCn-J6MN8bT-qLLyeeBcttPMgXjGV6t8tBYub2rxbUvU_R4NHwWG4sLgtgi4JiIGlq0aFzl3zSNADbu621m53V0oZEe9KQUcCn1hOmNAgWE9IxWzZPCSyVbQWNeHloS_QYdxYKeWZPiQ5xI&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:30","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:30","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:30","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:30","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:30","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:30","closes":"16:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

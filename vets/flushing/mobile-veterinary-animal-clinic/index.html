@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Mobile Veterinary Animal Clinic","url":"https://scrubby.app/vets/flushing/mobile-veterinary-animal-clinic/","address":{"@type":"PostalAddress","streetAddress":"105-06 Metropolitan Ave","addressLocality":"Flushing","addressRegion":"NY","postalCode":"11375","addressCountry":"US"},"telephone":"(718) 575-5152","sameAs":"https://foresthillsanimalclinic.dorik.io/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.4,"reviewCount":164},"geo":{"@type":"GeoCoordinates","latitude":40.7098598,"longitude":-73.8478914},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJUaj3ihtewokRjilnycm8eLM%2Fphotos%2FAU_ZVEGY2aMAu2dpatdVH9FnuLqE-IiRXN_fhdw5TMt0IsiLBY_IR1oL4-z_NixffEnnOjrgq7uFc9rVcdenQNwaEjTtr9R24RQ0uYX99HmhKlbmWLS7VjpGpp32_MjrCwCcMPJGyO-HkXWVnUl3yrreNSelchOj6DCy9psWexcqnELxHFkdU8JuIJ4wNvXuulBF_imoft9MFKCXUzHvD83KzBCTPoAylPQOQ-bu1G6A7dhzbFCqbysJrBK98KJ6_JiEGhTJ_P_L5PVS1PcsEQ3i2twX30jCAXjNSKGvW9Iy1BoS0wgG6XmhvsS6JUcC27-lhGMDJsWiGv4Eyf2XsX1RsSm4pdQezt7rzsrZ1zcyVVvcGUggIxYS1SteABA24CZIIMiiREd3c07HzeqvZ32jr1uT6kvgMcL_GGVw4cbd2UFtjyQ&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"10:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"10:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"10:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"08:00","closes":"12:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

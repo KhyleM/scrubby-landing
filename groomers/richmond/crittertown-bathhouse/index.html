@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"CritterTown BathHouse","url":"https://scrubby.app/groomers/richmond/crittertown-bathhouse/","address":{"@type":"PostalAddress","streetAddress":"2819 Hathaway Rd","addressLocality":"Richmond","addressRegion":"VA","postalCode":"23225","addressCountry":"US"},"telephone":"(804) 320-1096","sameAs":"http://www.crittertown.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":161},"geo":{"@type":"GeoCoordinates","latitude":37.538509,"longitude":-77.518332},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJJSD8UAgTsYkRUa4Rk4oM6H8%2Fphotos%2FAU_ZVEEabnreF2Pb2-16jGpSECDyECPxvdGTsT71KZ5EXZuhBXT3DxeX_ILYH81mR1xVacovz5vJWVwwXfkvqmoOAJUope1_UqKET_Wl2m_3AZ0lcwziFBUbG4e_5au8KZIjvS12OIpDD6PphI50hDOfPD3IoILhhIC-FWiKFrPlzuxBhNMLDz9RWLZj3umvkF0WbY7MnTbI6qdD6mi9ZG02wnu-zE81f2iV_a2EsXjMHPDRENqFtJf6nNgdqag88IoyLcleh4dFMbzxqWsfW3GlwekBTJWU8R9PlVM2_eoXpsFnSpuqPCaDQ0R40OFZy9cGennf964NWHZsCSPpXMm9ASHqXKZFkuh0SGFLk_vcKPW-ds0WXmxKmUlujtw4KbQWRqlQLVb5af2-jAh1t9oWuKvo4V7CZQS6HETWXmR9ipFoBKn5&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"10:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"10:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"10:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"10:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"11:00","closes":"17:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

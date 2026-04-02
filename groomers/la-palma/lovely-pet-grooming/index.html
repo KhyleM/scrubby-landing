@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Lovely Pet Grooming","url":"https://scrubby.app/groomers/la-palma/lovely-pet-grooming/","address":{"@type":"PostalAddress","streetAddress":"7002 Moody St Ste 103","addressLocality":"La Palma","addressRegion":"CA","postalCode":"90623","addressCountry":"US"},"telephone":"(562) 860-7876","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":78},"geo":{"@type":"GeoCoordinates","latitude":33.8577669,"longitude":-118.0455454},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJXyLGqEMs3YARtvVg7Gf1Ir8%2Fphotos%2FAU_ZVEG5uBzlHiouPIJjMeaKmkF42FSb73kufTJb1tKTL8E16ZSX8XK4WJFDjXtSd9nfDNhuCY9k7ma_1E8uZbOIofmaJjtmq9GrNCemnQxre07ZDbHU_IWtKQp5lEig26T9sYt5wth1mJuGeT-Z7pRP6ooKCKW0iRsjzt5cOO-7HCB0b73O3s_hzQwdGVIAfLUX_hCi77ZOspf6Xr01FEP3LKXc_e5Bz-fKUcY215pHTt2nL3MMkohupPJhi6JRmKWzQOF8shNRgE_koT-7O0wDxSacqfYLd4TragYRZHl4Lko6yclE-E3ls6xMN9QRQXGGftlJJAqi6eSqKS4md_wTVcCFFo7vS6ohRLVdb06cSOqx1oqGsMn-Zfa9dQsljRsKOO4RAup2wag7rTZsCqIAa5b44eVhH6RQxz4AY6hQd1T31a47EEBsbNzeYnBHD2gm&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"09:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"18:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -359,6 +367,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -394,6 +403,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

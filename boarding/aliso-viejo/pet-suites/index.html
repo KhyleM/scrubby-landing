@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Pet Suites","url":"https://scrubby.app/boarding/aliso-viejo/pet-suites/","address":{"@type":"PostalAddress","streetAddress":"19 Journey","addressLocality":"Aliso Viejo","addressRegion":"CA","postalCode":"92656","addressCountry":"US"},"telephone":"(949) 425-0700","sameAs":"http://www.petsuites.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":518},"geo":{"@type":"GeoCoordinates","latitude":33.566195,"longitude":-117.727521},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJGxySk1rv3IARf9cdSirTWNU%2Fphotos%2FAU_ZVEGwbzGTbJsnLAsCBNX2dpkeCxnQlj2GC8k6tikwdo611c6nbE2ltdN7lOg-eamqyLIeielsaP-j0lhgJlDddkn3Eb5oMK8MrNVTxDdaP5v0JfE-zX9xgr-GHXDUYJXzKecR5kbPW0i55qnsOSzKIZj8T3OtDLVOshycoSVnWZwJ8NgOMWK1otcIhuIEt2c75b0TKudHc2qCuxbF1Q29usKlTHNhPiGdXCx8IDIVYn5uYUZHkRTtAaomVtJtdeeHanG3r8g5SDi96WUX7I2uQi16jCwJxh4cJacfUpp9QOBZ92HeviKPPMs_E4e1qe0fHoIv0O7Nle_CffWjPgrw5o3Ga3j8hzMR8vFmIjM5845DVpuXUZjHka6vWb3BLlquZw_5FYflvAHS29yb8CHZy4EZl244mwlnx1DvVSGf0LPeUw&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"08:00","closes":"17:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -368,6 +376,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -403,6 +412,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

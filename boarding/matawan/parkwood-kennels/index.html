@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Parkwood Kennels","url":"https://scrubby.app/boarding/matawan/parkwood-kennels/","address":{"@type":"PostalAddress","streetAddress":"295 Gordon Rd","addressLocality":"Matawan","addressRegion":"NJ","postalCode":"07747","addressCountry":"US"},"telephone":"(732) 583-9218","sameAs":"http://parkwoodkennels.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":29},"geo":{"@type":"GeoCoordinates","latitude":40.4333109,"longitude":-74.2605933},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJA-BGOYHMw4kRv9tW5jEs_II%2Fphotos%2FAU_ZVEFHPJDfSI82DGkPy2C5kGH-q2_YZzhd48iCBlHIob2Fgse_LnTVF7xLMc6Tgj3wG1bPeZv9N550gC6SqiqW--hlqvTzdA00fqDrYBd-YigeyKWEXnquRnimqf2tbspduS_O8ZonypdZjrg-1W9A1Sa2oBl_kVtbjiuvdX8o8xxbORXjfk7weoeZ3Adc6A6dQDJ7xwxBy4CszsVoK6YouhX_5pBqQF4oB3wR84vHQ2Kk5LhgTOidmOhCHfzSKqRh3ndXibJ4uOMOheo4QrHgxkBY-wtg7LMnXbCHcvH3ghLqHg&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"09:00","closes":"12:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:00","closes":"12:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"09:00","closes":"12:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"12:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"12:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"12:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

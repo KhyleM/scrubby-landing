@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Amy's Royal Treatment","url":"https://scrubby.app/groomers/saddle-brook/amys-royal-treatment/","address":{"@type":"PostalAddress","streetAddress":"390 Market St","addressLocality":"Saddle Brook","addressRegion":"NJ","postalCode":"07663","addressCountry":"US"},"telephone":"(201) 909-0960","sameAs":"http://www.amysroyaltreatment.com/contactus.aspx","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":238},"geo":{"@type":"GeoCoordinates","latitude":40.8967673,"longitude":-74.0975945},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJT3ADU9z7wokRaD-CM4L8SJc%2Fphotos%2FAU_ZVEFUsAWDsgZmCXe704PW0C55qSbp3n6vAPlH13KeOmUyUl-cV9YUskf-M_P4JAkWS0Najhn4_sGCwn7F8-Pok9IjrG2mPY4DbHoG7rVblV3-VCBFqKBLGXJ0T0MT30hmoT1TAH5V9A1Kqn1ME-pLj-eeqckGhN86A0b_9CcL1DWgL_X3jafwMPMWntkK7dO-QdR493MWlyN7EM9FWZ9tpHWR145JvMtaHC-PFw7XCVenTefkQ5zd8pZHqThMT4W9IcbJBL073NXT9rapAZDGToH2ByfMmp1uvtWYuD6Mo_k9sMXA-SLSLge3oPgK9OyVW29IeSR8MPgvVZ-M0VhlPPEz5_rMu0Y0NiWhME6VYZTzTIoTZWPIR0HF72crJgcY4IcWzXP_d-QnbgjH6DJUxghgRUd4PBSpGigfTPL8qZY7Fz_B&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"10:00","closes":"21:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:30","closes":"18:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

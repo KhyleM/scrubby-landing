@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Woof Lodge - Home of Project Second Chance","url":"https://scrubby.app/boarding/monroe/woof-lodge-home-of-project-second-chance/","address":{"@type":"PostalAddress","streetAddress":"2400 N Dixie Hwy","addressLocality":"Monroe","addressRegion":"MI","postalCode":"48162","addressCountry":"US"},"telephone":"(734) 639-1010","sameAs":"https://www.wooflodgemonroe.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.1,"reviewCount":14},"geo":{"@type":"GeoCoordinates","latitude":41.932752,"longitude":-83.334408},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJqSHvVABtO4gRT1zdVk3FDV0%2Fphotos%2FAU_ZVEFGChxftBoZthAKwhxzr8C0wNWOX05FA2-2ddTEYNxZME9j01TDCwO4bHNsvvjZEIfP9MGlYJ218QGnVqv04Ru9ESxOcL-r1UpuSIjk76BV37rKIr_I-kzZ67hmnaog5j8IGB5vdomejknytF7BUUlph0eFDB1Vn7c-MUONK0bmbBLFzG2eraRiRWeUzPVtF2W7VhddIcUUT2_4NOIkXYGwLEyefJlA46rAmXgqOmy-HTL6UmRnCSXiSMFMaCi0LSuQJFZLbh5dTpdWeIsykYcXRHCKHIkRL82xURbw9S2A0wNdiUnrzIMCe1FchIX1wesZphnOGz6uXpAxij6ydPvsOllVCu9D_vsGCLUB3OTjb0O5lqtqgvrYmvJy50GaydoI2xruPtBhE8koEE4WEsY06oOt1naRNzWPUP1nLjsHQ53iU7Lsctm43liDhA&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"07:00","closes":"19:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

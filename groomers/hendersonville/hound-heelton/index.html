@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Hound Heelton","url":"https://scrubby.app/groomers/hendersonville/hound-heelton/","address":{"@type":"PostalAddress","streetAddress":"125 Walton Ferry Rd","addressLocality":"Hendersonville","addressRegion":"TN","postalCode":"37075","addressCountry":"US"},"telephone":"(615) 824-1883","sameAs":"https://www.houndheelton.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.9,"reviewCount":74},"geo":{"@type":"GeoCoordinates","latitude":36.3019938,"longitude":-86.6196871},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJzVuy4yFHZIgR-y_SzMyDe-E%2Fphotos%2FAU_ZVEEWtCQU-CN86SK3jhAIG9x7uPh3GRXVLAplb0q3dXKCJVtiR3mwLQd1VX4Nu6whm3j7pIMr6sWYaPv7GV03QKOpKSrBep_DoA_Sw5l6qiGoF6vKGy792MZl3R0WDiS8jA1t1O3jNh_UNbKBJgshnRGK-lBrGc8q6oS3s6uAdObTpSKaeSqxEaVKT-qk0MiHUc_rzMmtToBdvXBsUknKN-TbkAYweA2MnlFfLflrRs_ib3BnabszGx7ZWj3BbyJk4CtJisYlLM_8F5b9yZubcf7Aav-8N1MzNs4vXxIBfs7pEw&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"06:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"06:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"06:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"06:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"06:00","closes":"18:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

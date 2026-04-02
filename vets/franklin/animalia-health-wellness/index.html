@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Animalia Health & Wellness","url":"https://scrubby.app/vets/franklin/animalia-health-wellness/","address":{"@type":"PostalAddress","streetAddress":"1973 New Hwy 96 W","addressLocality":"Franklin","addressRegion":"TN","postalCode":"37064","addressCountry":"US"},"telephone":"(615) 595-7100","sameAs":"https://animaliawellness.com/?utm_source=gmb&utm_medium=organic","aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":588},"geo":{"@type":"GeoCoordinates","latitude":35.9307698,"longitude":-86.9259004},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJEzYc6dR4ZIgRwy1IKd4s0Z8%2Fphotos%2FAU_ZVEE0thGHpjaSWu3hkUO7M1ClGXJOnGFA0WdSsnQ0i4b3GyJrtH_mpI4Z9SFeDRgvYFloQkI7kd6zmse76zSNsN-BEYiUTW3ZKmsYpp_ES7RHz1fYz63Qv2AQBcNxs_Pb4x6oSxuiLgB1u6MpysQw749vyuoO_ZXPTqY1bditnjmOWr1KeHLFtLZDDBWMpSZERyt5TxDg1sLoohm8H4myqr-LAeu2z9U0iKZCYaUVz23vf7UQUphrw1zGLiOUfWUjtqrtbgEE-luGNXS9VzPCxo2DrD20Ig8xfz9xrB6Q3d04vQ&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"18:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"The Paw Spa","url":"https://scrubby.app/groomers/phoenix/the-paw-spa/","address":{"@type":"PostalAddress","streetAddress":"3961 E Chandler Blvd #109","addressLocality":"Phoenix","addressRegion":"AZ","postalCode":"85048","addressCountry":"US"},"telephone":"(480) 706-7085","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":73},"geo":{"@type":"GeoCoordinates","latitude":33.3033524,"longitude":-111.9977527},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJLStJxmEEK4cR39iE4WIEtfo%2Fphotos%2FAU_ZVEFmh28FqWpwvTxJFaErVm9d5DCO9NsIP6cYCScWbabNG76dWmByEXr4bog23q53lSZdOcwcV_PmY4h3T2F3j_bP7d_kznGOihjXlDko55P7ILjsG5aucD4D4xRUr2OdRMpcNWQbZ_uLlmoe52S9ohWHwdjGAaZ6E-rAimsmqJvhtoU1dpgo8O4pI6Jdo5C_1Fc8FnRP2_hRl4lQW9qgUFHB21MgBlmKlpVfb_FGt3FK3ZjiCfYpt111ra11tqHw5IvmDAyxEXlD87AjwcHrm5R7kE2eRvaiaUuX5H1byyRvag&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -351,6 +359,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -386,6 +395,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

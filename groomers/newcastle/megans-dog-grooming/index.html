@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Megan's Dog Grooming","url":"https://scrubby.app/groomers/newcastle/megans-dog-grooming/","address":{"@type":"PostalAddress","streetAddress":"708 S Main St","addressLocality":"Newcastle","addressRegion":"OK","postalCode":"73065","addressCountry":"US"},"telephone":"(405) 764-6764","aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":33},"geo":{"@type":"GeoCoordinates","latitude":35.2409616,"longitude":-97.5996279},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJyzBDeZ9tsocRPofqqKLB7eI%2Fphotos%2FAU_ZVEHVwetAEKbEgIWTl26uzilr0YYtflDTAY2CRfi1fq4_mGbGImt5-QbVYaz7uFGwYo-JI3t60WUdI0E5EbCyjfdF6auRVzvj1oKzFa_cNvtDNkDCEKD-kshvWriS5tPpW8adMGbfkxrRwBxbtgvBDIdXI0IjjzciYceOEzT7SvZ7DJfCwZcQVkZ3EbXhuziiHQ2vRxoW8PLcD-KPs3kqyLUXlqGH6xsHprGYT-f3WIuhZ-WQLjt-GmAGSFsXchArOFmubkvwW_yoosb7Ys6jT0VmwyLzFx09l4D5IPuwZ3LxWEOBfPVjH8l5V8OgP88SUPY5MtDVs4EpFD2K8dhdpMCxhnpDXqDCDLwbXhkBhVLF3pPqFCpRx3EMLC_ZYVh5PQoKXHIcCgzJtfZaIZGjMDD5xFPyzXrSf3ESFdlmWhvDWQg&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"17:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -363,6 +371,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -398,6 +407,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

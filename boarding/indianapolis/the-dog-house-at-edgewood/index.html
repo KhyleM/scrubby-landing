@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"The Dog House at Edgewood","url":"https://scrubby.app/boarding/indianapolis/the-dog-house-at-edgewood/","address":{"@type":"PostalAddress","streetAddress":"9512 E Edgewood Ave","addressLocality":"Indianapolis","addressRegion":"IN","postalCode":"46239","addressCountry":"US"},"telephone":"(317) 500-2598","aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":53},"geo":{"@type":"GeoCoordinates","latitude":39.6825149,"longitude":-85.9992737},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJqaFvW9pHa4gRLOBmw6ahwwE%2Fphotos%2FAU_ZVEEJH2jF9XA29DBRnmQ_8OEFgx0pc1cVy0mzqpI5Ht8KSOBDmIl7e4063SctrbuQuB9I74IltKm_wJW0AIQgjqdihjwu8ztoYPZpRDK2yyYPZPUT7hkzCyU0rx9_bqmB2LBUcZHjuhPKhmzPYwY1MKG_pJx1oa8bBJ8u6nzfOo5GPtU0azxCZCywP9K8gooTy4yXKuZwpSBfTL8b9UV4wTJthJmpdsUKfzau0ef72Uuk2Z9h2MREBiGFc1aqGmg98_8_90aD7EGS4aDsPQXX9GlAdUlP6YvM2jJS5WUGxqX1hw&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:30","closes":"20:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:30","closes":"20:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:30","closes":"20:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:30","closes":"20:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:30","closes":"20:30"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -357,6 +365,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -392,6 +401,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

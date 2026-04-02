@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Polk Street Animal Hospital","url":"https://scrubby.app/vets/san-francisco/polk-street-animal-hospital/","address":{"@type":"PostalAddress","streetAddress":"1830 Polk St","addressLocality":"San Francisco","addressRegion":"CA","postalCode":"94109","addressCountry":"US"},"telephone":"(415) 877-1555","sameAs":"http://polkstreetah.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.4,"reviewCount":177},"geo":{"@type":"GeoCoordinates","latitude":37.7938409,"longitude":-122.4211603},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJn5wOb36BhYARUn6_wG1lTr4%2Fphotos%2FATCDNfURce_JhWkz2eM-164qnyaV1jeW5cE8J3NQh393FtTIo9POMXrPgy-iy1b2Z-JglVYLssWOlFnMO2L6wTuBIg64WJH9dbUqfy2zQQw5vvnqF3sBwjhpAfehkTUkyKSP-1b0N1v606LpPGwTCwWr_ja2k0y7L9yZ4bfb6wEO4b45xAgj15uFp5fxv_m2oSc8xMNy90HnuIZsjJSuqYtiwfYecjF5w--HZKwdkLOllwr3YEHYPMNCQcxTjOcf4pFdlz_84It6FQSvhF7n8qPKyMJSWRjfpC_3zEmdr_F8yDt7a0u090EC9SgSWlEL1cCOpzbFpFQufJOht1orijShrCVdIyy23qAfVY4622_4ySncT8CBd3V1m6tL5n1Vdc2DOczGZT3F00n7JFHGC6m0kta1OeU4Y1PFVAA6kf4OUElJfRs&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"16:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Pet Care Veterinary Clinic","url":"https://scrubby.app/vets/henderson/pet-care-veterinary-clinic/","address":{"@type":"PostalAddress","streetAddress":"9340 S Eastern Ave #100","addressLocality":"Henderson","addressRegion":"NV","postalCode":"89123","addressCountry":"US"},"telephone":"(702) 228-4000","sameAs":"https://petcarehenderson.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":5},"geo":{"@type":"GeoCoordinates","latitude":36.0189618,"longitude":-115.1180897},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJjeZP3UbPyIARBSFOLOWbC8U%2Fphotos%2FAU_ZVEEuwi5WuuhVDN4bhyWqqN_WFFS2paYGx2SaDeOIvBAW1eYnvJLJ8e3irJ3DlHWnJDi6zWf2qBhPakYw4Jvp4Epu0ml2ok1Y4VB3PJQZIjBKZR4HwVyvrNXYaWvrvAmdPrV75K9qNL-ukqujZjkkRfw0yiBH3yAxhpB2zSRQgqoVprmIemBU3E7Afamc3DH_c3lpIqQLlVUBQpuzpvOqa4XzBAHJN7eGEj8Mdg4UjtyrxabHUkprDcD4icEe2pkBccm04sE4oG1uYHdpAr5UkzHe8dAHLV0UBgMv13AdS-IDvQ&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:30","closes":"18:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -359,6 +367,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -394,6 +403,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

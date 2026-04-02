@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Christina's Furry Friends, LLC","url":"https://scrubby.app/boarding/st-augustine/christinas-furry-friends-llc/","address":{"@type":"PostalAddress","streetAddress":"77 Greenway Ln","addressLocality":"St. Augustine","addressRegion":"FL","postalCode":"32092","addressCountry":"US"},"telephone":"(571) 214-5949","sameAs":"http://www.christinasfurryfriends.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":11},"geo":{"@type":"GeoCoordinates","latitude":30.0172455,"longitude":-81.5069159},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJjVV65Ti8-U8RzO2QKRzirIA%2Fphotos%2FAU_ZVEHArAMzmiVbJBC22_wNjMfS3fYsWhAr8LY9s6yX27CbyodyULUznq6C3noQA2dEjd7gqC93xhyvmjpF8mWzhaIgBvX0QxmE8iRt1b4yol2MYiPLE3VtN5ZWhu_y0F4L0ywE8SHpkKtx8mkYyNcZxj-UYoZ2KFfBo2myvG_xlhAWWp8frV6gWjUsVB_e9f7_sDQolxh83LDrtczDDiQTnEV1O3pKnTs0ynHs88N3KC75Ee4Oud1Gbw5a22OdujC_JBZzcYBT21p0gaQ4ov2KbLjkKjscKkKLVH_hhrI9XuLePA&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"00:00","closes":"23:59"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

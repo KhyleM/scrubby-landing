@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"New England Animal Medical Center Primary Care","url":"https://scrubby.app/vets/west-bridgewater/new-england-animal-medical-center-primary-care/","address":{"@type":"PostalAddress","streetAddress":"20 Pleasant St","addressLocality":"West Bridgewater","addressRegion":"MA","postalCode":"02379","addressCountry":"US"},"telephone":"(508) 894-7922","sameAs":"https://www.neamcpc.com/?y_source=1_MTAzMjc1OTAxNi03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":194},"geo":{"@type":"GeoCoordinates","latitude":42.0120508,"longitude":-71.0477143},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJDffF3FmP5IkRzBIXVrI9fqE%2Fphotos%2FAU_ZVEEYJnEg0MzcvYHI0C7N7VYcLFRVRDcdB91OC-orPeM4Te1Fv9goi-5ZyaS8oNHnHinc8YIcg-IJw1sr6huOEvrMqqesJZItX56F_Ma6lxDt5_4nyD8RJ6C1_4gT4FERFfnWK9DtJr-_dkyeH6Br1ue8IqBthspnkDrLBaFYlhQrDn71cjQZwXEDtrZKBQKOVaRZr-3pq1OeiDk2Z0FeQx6V9X8y4PZsZn8_LXg5Gj0pkB1Lrmv8Pv4z4vB7k3tJLCNH5mrZtkyMe5IxBL0P5esnN6TVzjbzpoQeO_ZgOHmktw&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"13:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

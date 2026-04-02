@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"The Bone Inn","url":"https://scrubby.app/groomers/austin/the-bone-inn/","address":{"@type":"PostalAddress","streetAddress":"2005 Southern Oaks Dr","addressLocality":"Austin","addressRegion":"TX","postalCode":"78745","addressCountry":"US"},"telephone":"(512) 350-2985","sameAs":"https://www.theboneinn.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":68},"geo":{"@type":"GeoCoordinates","latitude":30.2185713,"longitude":-97.7961957},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJt3QUSSBLW4YRTevhhN9GNrw%2Fphotos%2FATCDNfX4vKLfXHXWP2CvAwgs2pDws5rMPCIpNkTsxEG-YOrNZToFcPrMQRVsKROzWzyEQmgyTXHTBH1u2gNbmu_sgxh_CkN-uco6UEm9ThgINHIk01CyPnoizs7fKKxoGLKN_22hLNHFm5f-gVrIxU_swHJsxYovFT8a1amSyMxDxyODdqCFwl552K81xJcyTttYqSYIiEjZmqOhnukBCZP9Pik2pwJ5o_nBvexjUUCoBE4kQj2eEttqzow5t3dyIfl-zRHVx0YpiHoZDqI7cx6R-ZwY0FkNnv2zxYgx7k0svBWUO3BfUi1ydX4nQm1PZq10tlD3nYGM6AFhYXPer3yDgrN8YuDDkhDLfMg3NAhnRowYZiy4eqAibKEycLhiLBZt9CrA9OIiI3wI2FvzmXVd1leNgoRzUdiumv4B1t4ufVIqxRzs&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"06:30","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"06:30","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"06:30","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"06:30","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"06:30","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"09:00","closes":"16:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

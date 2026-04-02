@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"5 Paws Hotel & Salon","url":"https://scrubby.app/boarding/kissimmee/5-paws-hotel-salon/","address":{"@type":"PostalAddress","streetAddress":"1040 Plaza Dr","addressLocality":"Kissimmee","addressRegion":"FL","postalCode":"34744","addressCountry":"US"},"telephone":"(407) 344-1006","sameAs":"https://5pawshotel.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.3,"reviewCount":214},"geo":{"@type":"GeoCoordinates","latitude":28.3228955,"longitude":-81.3391404},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJX0V-yKCI3YgRC9O0Z3536TA%2Fphotos%2FAU_ZVEFUhRjkSDPiOSKVyMDuf520eJJw8DqUUS7p4XB3xIvaU6pQ438NKbbx5fgxY3xtSjRbP8I7qPjUkvlCdbHj27mpfpjWhy2_9WKfilXJvNbxJ92kmOmBY2teWvcOcNMNOALS5LOWy6j2uKu8TL37Rex5enIQq8dhVJzVhm4M0ULxWfCK1sSzEYAfvmXaV8IiGMtCTEVBlke9OIkZlq8fm3ibKB4koMjKzcRlGt_w_Ek6MLNRPI42VEoFUAPrVxGaO5d_gYSJMpcCy1Er0tncxChG_TI8GOyjQLz96I0l8RKBnw&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"09:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"09:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"16:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

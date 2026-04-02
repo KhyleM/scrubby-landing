@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"THE Grove City Veterinary Hospital","url":"https://scrubby.app/vets/grove-city/the-grove-city-veterinary-hospital/","address":{"@type":"PostalAddress","streetAddress":"4350 Grove City Rd","addressLocality":"Grove City","addressRegion":"OH","postalCode":"43123","addressCountry":"US"},"telephone":"(614) 875-4321","sameAs":"https://grovecityvet.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":257},"geo":{"@type":"GeoCoordinates","latitude":39.8825982,"longitude":-83.1081641},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJqavbsxObOIgR4IR0SXaj6wc%2Fphotos%2FAU_ZVEEVd5SwKpX36MIQLOIOQiv7KLJef6pRj8ID9MHGCqg-ERw0Xc45PVMEF1wJYumhF_jzT1Xxr-VtChCyQiPg5NV1fTcWGyF3y4EjUeushloafjmyJ_ouwueBocadibQEs4e9ngiR2GKBZ0in29hLL2CC3mKlupLbSGGTa81O6exGv9v6Xi70hdzUDev1Tfcg27o43j6iE7hhVebjm17LNto4wxMN5BY5s27mLMm5SicuPOw4V9GXFKJDvjQ49ayTDZMm7gqhHUKtkcClOAaa0wk6w4VBQ1GStQWvwPlT1Ji9YA&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"13:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"13:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"09:00","closes":"13:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"13:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"13:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

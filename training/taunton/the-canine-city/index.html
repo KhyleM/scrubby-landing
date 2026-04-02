@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"The Canine City","url":"https://scrubby.app/training/taunton/the-canine-city/","address":{"@type":"PostalAddress","streetAddress":"35 Wilbur St","addressLocality":"Taunton","addressRegion":"MA","postalCode":"02780","addressCountry":"US"},"telephone":"(508) 622-9347","sameAs":"http://www.thecaninecity.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.9,"reviewCount":75},"geo":{"@type":"GeoCoordinates","latitude":41.913656,"longitude":-71.0849721},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJSys7fKHOskcRtO31pzVsuwg%2Fphotos%2FAU_ZVEG9PzxkZqp5erpCGCkLjRvwsnT4QoSwwBpWLLrfEueG7NFOyaNG2X5WcQyFld3iFcuKN0ivkRSNcYavbIupOeEjCrAWG-slt-Sc04OrrjH5YQEEcSDWhR16fSwyC6J5ria80WghUE5xY25rBoy_bFmj_DDYek2Wgcu4akQsrXvao4Nb96PvpArRSQM1DD4b1tSPyHcynr7aKXMxyeh7Z51ip1XyEkF4Mn5_lTY1QozzL67SG4df_J05SgERQah2foosJneVPyRHzSC6inoT5aAanWjoyg483R9f3kw1593IILIQaNW8ZkIcAShmzIqn6qRj8KO6xNXRZWPaPXO1UV3c_tvWCCtNhWKDmTd44VMuyRQTVk-Z6-b18Ne0QJicD1U4Ep8Tdu4DMfmeJdKLH_Uuq0HOKJZ4Y5QB8DqBqyok5YiHQJOye1hJM6hJCqOF&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"09:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"09:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"19:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

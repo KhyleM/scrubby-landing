@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Calaveras Veterinary Clinic","url":"https://scrubby.app/vets/milpitas/calaveras-veterinary-clinic/","address":{"@type":"PostalAddress","streetAddress":"105 Serra Way","addressLocality":"Milpitas","addressRegion":"CA","postalCode":"95035","addressCountry":"US"},"telephone":"(408) 262-7200","sameAs":"https://calaverasvetclinic.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.3,"reviewCount":335},"geo":{"@type":"GeoCoordinates","latitude":37.427971,"longitude":-121.9091085},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ_V_mwynJj4ARpALiYnT-gPU%2Fphotos%2FAU_ZVEECoVeTG-30uIzS5CKNONBslZOlGC8nPz-4_YoLcsj7lNBcQbxjxWLSe5Z8IhW5tAuOpUi5hDwnqGw2E454Ndg8ZAxCAMElNeQGmvjo_-zBB3PZr74dDsCecQB835-Mi7U8C0ea1eCUu7yHqhhB5p737EoKCUurWZagtMKPt8WzgeeFAGN8J7dOIW6HQg-hnO7U9F3MQAq-jamGfrnHgcKzzwzbZ3qbKmpMQxGRdQ5H-E3ss5__YnkMoR7OMLIPxgz-6RiqKHe1AO4jE0MPAAJXe4e5i3tafnbj6phL1770oZQ_CQJiJ_IJn5NXg6DHa5SRljPB5RWzvs8zFbPLx_mUb-IYiFSz51izNjKbnZlT0Y0vGSv86c8NRhMPuEdOvYU9D5xjaVS8ujjdZk9WfwTSn8Ha70HET5HVCv8s9ySVJAqTpnYaylfXTwo5j4re&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"09:00","closes":"17:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

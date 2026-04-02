@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Ramsey Animal Clinic","url":"https://scrubby.app/vets/ramsey/ramsey-animal-clinic/","address":{"@type":"PostalAddress","streetAddress":"5 S Franklin Turnpike","addressLocality":"Ramsey","addressRegion":"NJ","postalCode":"07446","addressCountry":"US"},"telephone":"(201) 934-4000","sameAs":"http://www.ramseyanimalclinic.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.6,"reviewCount":131},"geo":{"@type":"GeoCoordinates","latitude":41.057788,"longitude":-74.1323207},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJsU01RlnhwokRDdoLOl8Evm8%2Fphotos%2FAU_ZVEFBrxBdjEw9wOFIUVwVcIsck1aaXozjmU_bgZIyqIw2ivy6JSrBwGwCdW7c1Z3FP_X2j5Gb7pR7fkHmu2-CYH4ax0IuLzZj_fwMPUWFEkXlU7pF7VQWpU8Si72z_KrTv9ZTg0sBhIsonr50588h1G_LXl5s3XTcEJtjQff6cCGAjt7EP_IP65OA3XiJibhKzQu1cKuzsY_RvniRlwVQRNm7EZjshkOkg0mWHaxZ90o0mn6jq5CBF1GCXyxUBIbfNHLTlq9JIKgG6o1NQwU0TOhhVtip9sEarSW7pCAcpO2S8w&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"09:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"09:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"13:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

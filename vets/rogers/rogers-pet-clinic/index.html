@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Rogers Pet Clinic","url":"https://scrubby.app/vets/rogers/rogers-pet-clinic/","address":{"@type":"PostalAddress","streetAddress":"13860 Northdale Blvd","addressLocality":"Rogers","addressRegion":"MN","postalCode":"55374","addressCountry":"US"},"telephone":"(763) 428-8688","sameAs":"https://rogerspetclinic.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":188},"geo":{"@type":"GeoCoordinates","latitude":45.2063597,"longitude":-93.5549714},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJo4NUMLVDs1IRVsFZgeYZn_I%2Fphotos%2FAU_ZVEHOj8IUX3QIhvsu63BF4GtOg1Zw0s8ldGKPEDuK9hW7QJeWTEhIeYO36yMukOo7k7gC-9yg7riMqNg9he1Ty3gWu3lkx9eSW872IYeWcpxW_5TB_j6Wb-kouPJOdun9BZbsO1Af-IIjRGfQbtWaX1u1bdnTFAYoGvIoaDjHH_aBL98iC3DgvGihcNuSJR7SOrCe_O6_CvPvgrqUN0QC9LFK4TdsF2yGciVQzC1eDd7pLh20tiIazLia2oOQFfzeUY6FQRMkslbdM2VVc5AEpQBtmU4yOmE-ZPVs1ER9QZYdErbm2KjGPnNiPl3UZ8E0N6BE_1Ewg-DgQK7boefpmibIHMqfyVLmyaVKCIi4omBXhCjsq3nB-bFmcAxc8Tzz2cYjeMRHO-pK0FQROICNut-yYVzq3MS9-wDMAl5qfdMujd8R&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"17:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

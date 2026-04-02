@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Urban Pet Grooming","url":"https://scrubby.app/groomers/imperial-beach/urban-pet-grooming/","address":{"@type":"PostalAddress","streetAddress":"1258 Imperial Beach Blvd","addressLocality":"Imperial Beach","addressRegion":"CA","postalCode":"91932","addressCountry":"US"},"telephone":"(619) 930-9616","sameAs":"http://www.urbanpetgrooming.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":185},"geo":{"@type":"GeoCoordinates","latitude":32.5770221,"longitude":-117.106674},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ4Y7vl2tM2YARCCQCTaGsZHw%2Fphotos%2FAU_ZVEF-GE58dsBfBZNQNTZyK2i9MFZgXlt36hrV6BNFEJRMNK8k3e1zyK2tszg1xujQhF0c8tfHI_pUHt-k6gflbBTe86vlAxC44Lz8jXzhhHEJHotAkx3CfiAWcrB62OOj3ozyVSgzd0X6oYOEPJMGC35WpmKOg8pl-rsfl9KEnCO9azRP7S4MHlJuTcrab7161Ny-OMnkc2MPjoLxWuSl_bBfBVV-ul1BJIizmkg1KpTMxLOFOJz8UyxbHlgZUYhTBvbWTPA7kngR49m_VPeKvr8MyLiF7OepNUEizCc5YeHgYA&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"09:00","closes":"13:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:00","closes":"13:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"09:00","closes":"13:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"13:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"13:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"13:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"The Sparkly Spot","url":"https://scrubby.app/groomers/norman/the-sparkly-spot/","address":{"@type":"PostalAddress","streetAddress":"3770 W Robinson St Suite 116","addressLocality":"Norman","addressRegion":"OK","postalCode":"73072","addressCountry":"US"},"telephone":"(405) 701-1008","sameAs":"http://thesparklyspot.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.3,"reviewCount":47},"geo":{"@type":"GeoCoordinates","latitude":35.2320905,"longitude":-97.4967618},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJD6dv2W5psocRskHG4DZSLOY%2Fphotos%2FAU_ZVEEcN6VG1VSQxwn0cJnNIrWclpE756DvkpqA7yK11n5OWlio4gb3gscG1ODWwrFGezKPUGbg2uHflVGhgr-FwklIcWNpySbZeBsR9IHR0z7RdU7jVJzoB01Y6ivRAJJ30Bez5n62YK6Bhb_ezLGOhEZ5usUTaExG2XFKQB4bhRwNf11jD9Tp8t0XjWLYQO638jubxVT06ikda0UqzOzVqI1dm0jyM2FMVcV7Hiy2ErpIUTp1gjZbTEVasYqdBDVJzLkjinks4QMhY5hu7EpAwVXez90qXUtDInvQUjIvSH5sjE3WTZqr1vwpEGq9liFRJiaH87ipu0eIDmYrFSW8jdpZp_h28bSwPphJdRyW_Ps4wlnunYIU2r-y_8JCgXSarannNA2j19v8fH8z10uYjYG3-gzv93z8Dhh90H8LO9AzV07YW-WgCzBCpaVh1A&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"07:30","closes":"18:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

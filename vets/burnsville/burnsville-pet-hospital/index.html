@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Burnsville Pet Hospital","url":"https://scrubby.app/vets/burnsville/burnsville-pet-hospital/","address":{"@type":"PostalAddress","streetAddress":"13748 Nicollet Ave","addressLocality":"Burnsville","addressRegion":"MN","postalCode":"55337","addressCountry":"US"},"telephone":"(952) 890-9696","sameAs":"http://burnsvilleanimalclinic.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":384},"geo":{"@type":"GeoCoordinates","latitude":44.7542525,"longitude":-93.2785419},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ5T7E0Wk69ocRQBN1ZtJGQ5o%2Fphotos%2FAU_ZVEFCTP-IT4mqQKR-JDCQ-Xzt5jlCvcmgUoZ3ZFIadxSXoDc9MGSuNUJXmK81VLzEOPfDytDqQG26LuEFHdgnN3Acsm3NVpSm-CYhFf3-We0rqHY-Zji_32h-E9RrDloISIDPdV_sdc9I3QPj5ZntzBANtnWKkzvCLJRNpkJkDmhgnam833HNUJjGBmGx-y60L8e9bMSuUmTnARQ7ZLLHh0qClElcACdRgNkcwdlpbuMSmlTewiPqeaDHUgIQtEd9bt8fAEGWq5Fo3ZxBvktNZEG5UVra1pUcS6sPeEVD-KTZ1YPE08T17oe_dcCCUZTpqx2HEqifWkDgbbru3taQKW6ZK4nQW0ur5t64nlKAvvKGJCN265kRGYyyr1uMhKYo4cgAgUatNu21YaDYK-v8tknWQI9-5XqxAbJcYq2MvvqUbWwUEjJXjExwSIrwxQ&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"14:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

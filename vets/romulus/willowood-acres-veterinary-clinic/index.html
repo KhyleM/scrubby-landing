@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Willowood Acres Veterinary Clinic","url":"https://scrubby.app/vets/romulus/willowood-acres-veterinary-clinic/","address":{"@type":"PostalAddress","streetAddress":"29490 Sibley Rd","addressLocality":"Romulus","addressRegion":"MI","postalCode":"48174","addressCountry":"US"},"telephone":"(734) 753-4424","sameAs":"http://willowoodvet.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.4,"reviewCount":340},"geo":{"@type":"GeoCoordinates","latitude":42.16677,"longitude":-83.326293},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJo6GLN3tGO4gRDKUwBtb-oig%2Fphotos%2FAU_ZVEE2ZZJxZFHwBiZZzgJ2kcCllJ4ISZUPwEyafvF3wuQ_OWN1bjIl0vXCiEJ08D9SXf0xZvkvxynLHepc0oYqkJPcNBbkFdCdTwVL7aVx6qcP48CfuxxYW-R8lS9gUPI1ERqMrnF1Y7btF_j3DgfTmLtPjplbG92EePN7hCbwLhaaBMeXAr8r__Z139hBl8srs9TPc2iPPyc0rs4Ez-F-vlo9BX56hCIzRr3PMU8lPv_YdGCB0kwosiTMs-FlTMc1oJREI7M1lPz76UDaFMR5LsN9t1JdugQZrybWjt2tQztUBv_AUqeYWHOIfUZcMvnIUlu7fd07bykxixFpgazSd_6p1r-PNaoDyt7E_V6fryLb5ZbwKYHt5-xezHCESXpjs1mgYsHmQFdWX-cRKdBvuzZlwpFxw7BuDDesEYOHpqFaURb_qw-m1TVd4Cv6peb2&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"09:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"09:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"18:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

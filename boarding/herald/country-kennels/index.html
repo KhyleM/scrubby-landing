@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Country Kennels","url":"https://scrubby.app/boarding/herald/country-kennels/","address":{"@type":"PostalAddress","streetAddress":"11764 Kirkwood Rd","addressLocality":"Herald","addressRegion":"CA","postalCode":"95638","addressCountry":"US"},"telephone":"(209) 748-5613","sameAs":"http://countrykennels.org/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.9,"reviewCount":29},"geo":{"@type":"GeoCoordinates","latitude":38.3299527,"longitude":-121.1457729},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJH4gBQeqQmoARihvih_5TFIs%2Fphotos%2FAU_ZVEFYBkW4qo1-XkTTHbkwCP9r6pJg9iBYDs_3_lKj1mJ6DVYxN3Q86hsjmdHJOiyYKodAmczYWhU_0-hNxUYCOnbFtnJJxX1TlyhPaxxzgMtQ2MKYogHGa9oKnE-YExJl7FmFedDMq9--kSH4h2Y0Rgjz-mtW-oaz3ZIzg8NisknakqhXBImNrJJ7EmV_YKPDWY5e2NUKHWhgo-HGQO_olaf2kVHqheayMLffQOuatMAvi1_oND1Lhr80DQ_GiSpNADxd2731DYFnnz7Cn8QShS41Kkz5eqx-Y5ID7e4I1MF_9ppPjSYKrQQH6y4Zwigc5nyWCcHw3Ar6Su6CfHZDG3zJ99MEluyMNRDSlpRy-4YxMs1gG9R-EJq_sT9BwrIHGlXroZZDn1WGap6s9ODlcSCBuT-iwBEVRuQl-f6pjw&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:00","closes":"10:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:00","closes":"10:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:00","closes":"10:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:00","closes":"10:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:00","closes":"10:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"07:00","closes":"10:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"06:30","closes":"20:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -359,6 +367,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -394,6 +403,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

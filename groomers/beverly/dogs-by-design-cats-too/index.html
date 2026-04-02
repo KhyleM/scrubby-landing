@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Dogs by Design & Cats Too!","url":"https://scrubby.app/groomers/beverly/dogs-by-design-cats-too/","address":{"@type":"PostalAddress","streetAddress":"Moved directly across the street from previous location, 132 Dodge St","addressLocality":"Beverly","addressRegion":"MA","postalCode":"01915","addressCountry":"US"},"telephone":"(978) 998-7620","sameAs":"http://www.dogsncatsbydesign.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.5,"reviewCount":46},"geo":{"@type":"GeoCoordinates","latitude":42.5822803,"longitude":-70.8851267},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJr5Owv90W44kRe47LuZPARpI%2Fphotos%2FAU_ZVEEJUC20vCM8J53ma-bNuXX7kGamxQuAtjrWxqG0eelORbxUILHiGiOV7qNNBrO2bly-Yv5Rnz0714hTNOpzmGN5RK82A2hEsM-13N8Y6uRAsrSlt_eaMBvpcoejlXh5G1G9NYbJkmKyv-las3oWJD8ntr4xWCepjpQJIrE8tNNCVF9FXfO_Cj3B4RwCXjwiuJJW5Yjiw5BzWhGKCPnib-uVe0Eww3RRCXuNT3acnQ1Ubw0b_ZOyHWVVSdgmgrORqxW5dvQoR24u-SAg3C7LiEsm4aDiPwiDYJpozLZEuuJ5cg&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -354,6 +362,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -389,6 +398,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

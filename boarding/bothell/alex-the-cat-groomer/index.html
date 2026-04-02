@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Alex The Cat Groomer","url":"https://scrubby.app/boarding/bothell/alex-the-cat-groomer/","address":{"@type":"PostalAddress","streetAddress":"17510 Bothell Way NE Suite #B","addressLocality":"Bothell","addressRegion":"WA","postalCode":"98011","addressCountry":"US"},"telephone":"(206) 714-2539","sameAs":"http://alexthecatgroomer.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":297},"geo":{"@type":"GeoCoordinates","latitude":47.7551766,"longitude":-122.21203},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJJR3GA38OkFQRj4ZhsneeT3w%2Fphotos%2FAU_ZVEHLiLM26vAJqh-_nhpWd906pPasT41lTjbjtwwB0AXj5RqhwaozYl49UwUbCou1tXx7kpAL5hSREjGea6-FEzHW0f3oZR1hoCCDsgEi1en6prGbEpGEvntkC4EYch1l3GFC4qTZId8O_9lb18BvPbh1QEZJ_eM_sjZqmmfa4PXdOJcZK2Mt-LxyoXoGV_R0KHKaJ8_fi1Np3iBFLSrh7RM3AcltsVNPJ1LOywm6LshKMN5qB1UCdnNvmu_Xbkot1VUgRpD267Ke1sYeilshZUXW4Q3qdbuECHQ7mxIC927tpA&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -352,6 +360,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -387,6 +396,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

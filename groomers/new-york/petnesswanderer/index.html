@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"PetnessWanderer","url":"https://scrubby.app/groomers/new-york/petnesswanderer/","address":{"@type":"PostalAddress","streetAddress":"247 Audubon Ave","addressLocality":"New York","addressRegion":"NY","postalCode":"10033","addressCountry":"US"},"telephone":"(917) 261-4565","sameAs":"https://petnesswanderer.shop/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.5,"reviewCount":290},"geo":{"@type":"GeoCoordinates","latitude":40.8461918,"longitude":-73.9340416},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJW2uWtM9ZwokR52L2tpaI7rQ%2Fphotos%2FAU_ZVEFm9-_DdJAxOxw3s6dRXYYDuTivol8fwZ4j1ccUqEx-l9XQVSU3moRY9OmUYDix3FHiuTAqLsxiX8s97LBsYGZmL3JsRxrMikC8hp5Ckow7_NsP1tQPUYeYkKS-jtfKZ6l-bBhoxgG9wTjme5QJCQkfpw3WK1sWENfe5uPYx3BwJ29J8P1N2o4Pbd3SHoQT96Jgq4jVymDyFEotCWH3QjlxYWWGg0cV5kXgu5qm5Efwliymf9jxWkSwCMjh-GPLYllYs-3VXq8AhffeWSv9NZVOmTB7l0-q6khrrs9pLLft3gbfM-jS1hLsa74p6FOg-TxdhRCv1NPI79z2ZInTWUI9PsNjY1LQvownvSyVZD3XG1XwDxFknRs-UyNJxYKVpGSF_GXiMKTfLNS7xooo2u6egRohfboQaD-UWlOP6zGd2w&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"09:00","closes":"17:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

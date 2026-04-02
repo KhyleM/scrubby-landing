@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Ballantyne Veterinary Clinic","url":"https://scrubby.app/vets/indian-land/ballantyne-veterinary-clinic/","address":{"@type":"PostalAddress","streetAddress":"9725 Red Stone Dr Suite 500","addressLocality":"Indian Land","addressRegion":"SC","postalCode":"29707","addressCountry":"US"},"telephone":"(704) 926-7000","sameAs":"http://www.ballantynevet.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":263},"geo":{"@type":"GeoCoordinates","latitude":35.0009569,"longitude":-80.8545721},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJtT15z96CVogRNYloxBmX-yc%2Fphotos%2FAU_ZVEHyUh2danClcLrDBKPZzN5fjw0NxQWsdF4fGaFHywv3cGKX-ymUwiGZwRU80kJxwLtUJln-w0kUC4R6WcD36r2LmGRBRNa6b5pTBMPhUZfKIjKDZ3s-bnQPtoSmnV6-ib3fu6YIW2kCInDZtu1GcH2N8tHDbSMpZkLh-Y4KbSrC6A1-OzI2FJgcvBwEq432LgsQ-zv8NxnoOR608oVOIYTqgSc2VvvUzYke1IgVKnKehQoTyo28P4hchguR3m5HLKC87iGM2VYpBVmMEzUp2MC30J3AXBwGFLbZCzkIMdx6KQ&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"13:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

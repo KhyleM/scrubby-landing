@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"The Dandy Dog","url":"https://scrubby.app/groomers/chula-vista/the-dandy-dog/","address":{"@type":"PostalAddress","streetAddress":"1421 Hilltop Dr","addressLocality":"Chula Vista","addressRegion":"CA","postalCode":"91911","addressCountry":"US"},"telephone":"(619) 392-2196","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":98},"geo":{"@type":"GeoCoordinates","latitude":32.6035531,"longitude":-117.0511985},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJA9dk8u1O2YARbAa_ih3KxR4%2Fphotos%2FAU_ZVEGwPNw2i9v2Y5BcoGlJHl2wbWF_NRHu_MXAqRjJZ2SisFf8A0aj-CCErEn_z4LlTEe79FLcZmTkOAUjYlvxI9HybfhhWq9dHtvqnZjQ1cjKgPYiHubEjWxoS98-vJVQ4KN6unJl0EiqBulPrEd5SbIdzr_GyTLTLh15KETn1orTTSsrv0kdZ1UUFQ_wdQ8cpXF4dIo3hJPxM7kBu09DQAodw5HksINOO_F7ZhjRbk7E6pXF4Toar6d7bjVCIFZWp68qk1u5qjEgXVVSTpyfURG-aOFETjjMG8TvIylF04blEYCKfI1W52hMdL6TcW1DnrmOFodLFCC0nHo-YK1uQSDPmyDBrgg9AwdjuL105Wqoxv00S82YQG97zcz6GqAshAmE24aUb_ysEvvr-dJ4bG82gymSGrjH1zPA2OSb6_4L6Lm7wqB_utt75lyejfaC&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"09:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"15:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -363,6 +371,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -398,6 +407,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

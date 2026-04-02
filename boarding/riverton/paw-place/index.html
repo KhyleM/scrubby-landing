@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Paw Place","url":"https://scrubby.app/boarding/riverton/paw-place/","address":{"@type":"PostalAddress","streetAddress":"4453 Mankato St","addressLocality":"Riverton","addressRegion":"UT","postalCode":"84096","addressCountry":"US"},"telephone":"(801) 209-0261","sameAs":"http://www.pawplace.fun/","aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":13},"geo":{"@type":"GeoCoordinates","latitude":40.5282342,"longitude":-111.997079},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ5RNDLn2FUocRs9NH9cnRH_g%2Fphotos%2FAU_ZVEHDKy6ItM76Ttz7Uj1W1bAdJVvu7zm8cGzow-WfTGI3-EnphrhuhmdKuHBc8z9094mqoojNYaB26p2nCWqh7VVxyn0_Ko-XpryqKMUuFZ9ZO6riThc6CHCljR6sF6gPBaNof55duq0CGmcrN6nd3eX77F1OWNmEhH-vtycu-7h42Dc3GeDTLub8ft9TlKVH7mRj2__t31l8sN_qFMq_oGeyi0_7Vfn8CTxndPNd5RW0DOuGPqY6YBUjzcj4pl55W64D0nXWVulm2j0yJYGPZ2Q0SzwSglCVuG63pPAR9OpEtA&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -348,6 +356,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -383,6 +392,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

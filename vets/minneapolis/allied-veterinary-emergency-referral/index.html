@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Allied Veterinary Emergency & Referral","url":"https://scrubby.app/vets/minneapolis/allied-veterinary-emergency-referral/","address":{"@type":"PostalAddress","streetAddress":"5754 Nicollet Ave","addressLocality":"Minneapolis","addressRegion":"MN","postalCode":"55419","addressCountry":"US"},"telephone":"(952) 521-3030","sameAs":"https://www.alliedervet.com/locations/minneapolis","aggregateRating":{"@type":"AggregateRating","ratingValue":4.5,"reviewCount":337},"geo":{"@type":"GeoCoordinates","latitude":44.8980037,"longitude":-93.2783646},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ8xnISBgn9ocRhFC9-6iNKek%2Fphotos%2FAU_ZVEG7WUdfLJPgiwa6zdLFs_OyqOvqyXcI1jRQY1I-TKggr8IpXPQMr5Yx4MKpV7PwWjYMtRpRqDu-TCEXBaxXBcp5DVWyRsp9XigcIoKaIU3QEIQIJxr4ZAkdMGsaQ-yWvN3wwlNdnVI6HLvKagOjfcd6xl5ySmcfLU2iOVjd5IT6w_n_ON0VRMDMeIOMcFX1C6Y9qK4RryliWTH3hTlH2fi2zxPPMamoMuHJ4o6sfjkTH7XVQ7IAir24RHenlgUldqCS-aXxGEZZUJ5Q44GmPnN1lcW4GnTY7X_mrRcrzhGrn15wJMquP9PfuzM9c9tRXphnXTc5i7f_Y4ArNGiuw-n5uj5G0Wkv0b1osE68k8_F70NsOxmcLMXzYSbbw4ACBZqShHR_qC7HNMqBV0qeGODIIPJiIqtZegvKjR38WzcArcZk&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"00:00","closes":"23:59"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

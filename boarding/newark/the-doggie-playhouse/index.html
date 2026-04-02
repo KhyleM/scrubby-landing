@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"The Doggie Playhouse","url":"https://scrubby.app/boarding/newark/the-doggie-playhouse/","address":{"@type":"PostalAddress","streetAddress":"18 Shea Way Suite 114","addressLocality":"Newark","addressRegion":"DE","postalCode":"19713","addressCountry":"US"},"telephone":"(302) 456-3647","sameAs":"http://thedoggieplayhouse.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":92},"geo":{"@type":"GeoCoordinates","latitude":39.6542205,"longitude":-75.7263412},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJZ0DeBumpx4kRaiyjzMN5fsE%2Fphotos%2FAU_ZVEEWEdT6yUJKC-Q8xdKLy_eMM67UiTywPzgsVNG7Hs5kAdXakFkg-8As2lfGqgQbcmClPLut9lQUcHLZrQ2g5rLX-qEyksDKhgtXco_6k1M5D3HcPmLnbK_l3riH6y9v5UPmsYue3wrkHcj7iaeF5FGNxytVTV_phuD-1Iw6T76jyyizurSHZss-pNE_R4gVKU-MVhd4vfdtqH9daTGRw9YBfBTdE12Y57ozUoy0Run109YRYCBDSeRyErGCXUhC9OUQETvQCwAW-uyUVOIC-3bkeFjM1UFhvf9ER94HCpchKg&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"06:30","closes":"12:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"06:30","closes":"12:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"06:30","closes":"12:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"06:30","closes":"12:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"06:30","closes":"12:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"07:30","closes":"15:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

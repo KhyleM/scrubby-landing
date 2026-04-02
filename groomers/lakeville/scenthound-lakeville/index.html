@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Scenthound Lakeville","url":"https://scrubby.app/groomers/lakeville/scenthound-lakeville/","address":{"@type":"PostalAddress","streetAddress":"17702 Kenwood Trail","addressLocality":"Lakeville","addressRegion":"MN","postalCode":"55044","addressCountry":"US"},"telephone":"(952) 395-3352","sameAs":"https://www.scenthound.com/lakeville","aggregateRating":{"@type":"AggregateRating","ratingValue":4.5,"reviewCount":47},"geo":{"@type":"GeoCoordinates","latitude":44.6933334,"longitude":-93.2817271},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ3fp3uOc59ocRk6Jdd28K9TU%2Fphotos%2FAU_ZVEGE2zonNxRmwkXWOU7qsB_ujUl24fR-CIurf_DNyP33T37nLhglt1kLVTa4jr4_Vu_6TrI0GQN0ZqwoI1CobKTRWSBKjnW3Ea2au2Ak6d3RNGxjA6IkVoA-vaaGghs3G-gzAWncjd58nCsyGozCYk7i-x3DD6hiKwliF935frJx_eC95997_xhiIx_xoQ0i57AxShKmy8gACgiL3aWKp1apyLRuAuMN9v4LJpE4KMaqFPfLdSbQZ1-ILaY7zdqGNo5Y_OG0vmbGeLWAibAyX1XU2XdTe6eYBPnldwqZCScqTwNLJYt0Di_GoSb1szwBHSNzpKqq23eofRAW36JPQgcOKj2GTXIxFGXideJD3IwiiyLyV2i65HCFLJ2QjMl2ZqVQ-WRfb_yziYcH8uQM4bsOsGzyWHKaQI9M3IoZqlGv0Mj39gQNzZeGmgogjbuk&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"17:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

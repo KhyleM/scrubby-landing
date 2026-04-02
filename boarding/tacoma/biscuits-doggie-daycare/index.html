@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Biscuits Doggie Daycare","url":"https://scrubby.app/boarding/tacoma/biscuits-doggie-daycare/","address":{"@type":"PostalAddress","streetAddress":"6802 6th Ave","addressLocality":"Tacoma","addressRegion":"WA","postalCode":"98406","addressCountry":"US"},"telephone":"(253) 447-0729","sameAs":"http://www.biscuitsdoggiedaycare.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.6,"reviewCount":189},"geo":{"@type":"GeoCoordinates","latitude":47.2552751,"longitude":-122.5275512},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJpU_YdC6rkVQRcoYJzxyZnwg%2Fphotos%2FAU_ZVEG4up_ujkimErH47cr33Gz0sMGxnhlRf6v0iyD78kQQT6TJMZAJ_IXsAKFuZbATnGctmld7Z5ZA3_HjixV-_bEQJ_F3ULJFci8tfcgWyJOLTjij4ltbklpPueJBdjCq8j1T_vm6-myXqE7ol6593siDCQta-Cqrz0KLdFTeyEGPpSOQu27MqpHtyUVhttUGsxfOqDLJzabdHzNwXBo60lz02TPKFa6eMgE7tOedanRFev38O76Q62KA_wyDL5zucevsWwx6KXSRJB6EqhFb7U_my73twwK8gZ1-PTvB3RDAqQ&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"06:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"06:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"06:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"06:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"06:00","closes":"19:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

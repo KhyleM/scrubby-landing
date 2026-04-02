@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Lex Pets Grooming and Services","url":"https://scrubby.app/boarding/rye/lex-pets-grooming-and-services/","address":{"@type":"PostalAddress","streetAddress":"623 Milton Rd","addressLocality":"Rye","addressRegion":"NY","postalCode":"10580","addressCountry":"US"},"telephone":"(347) 657-8309","sameAs":"https://booking.moego.pet/go/?name=LexPetsGroomingandServices","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":64},"geo":{"@type":"GeoCoordinates","latitude":40.9585329,"longitude":-73.6886362},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJozBEirGRwokRIk1ohc_oDh4%2Fphotos%2FAU_ZVEFhq031HV8xzRC1vw1P27g2Hwqswm32xW8XrJhbDbeYy2zVt9UD-KeTfeu_gSDppS1E1nb1wPJlRBpglMrM5iEGxU-W-ST5edSyrMm2Lvhzgw816qxFsVWBucimTK3vjnlCDwXnBGeoQmMz-2NLhQ0B53Dsj4hsxY38E85SUYSw2WbiLkLUl-0cZUip-8XaMJ5eDu0WNqaD8hR7cr8Ec6RZq929vSHM3UNymhR7lhCjuiGat3Byt8mnI0Gmt6-DCmdliH7ZHmWK2gfiAQ7E2J4Co3LRmJxzUBiP3lELcJ_KIQ&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"16:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -364,6 +372,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -399,6 +408,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

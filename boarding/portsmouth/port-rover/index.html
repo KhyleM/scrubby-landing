@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Port Rover","url":"https://scrubby.app/boarding/portsmouth/port-rover/","address":{"@type":"PostalAddress","streetAddress":"3114 Tyre Neck Rd","addressLocality":"Portsmouth","addressRegion":"VA","postalCode":"23703","addressCountry":"US"},"telephone":"(757) 657-8060","sameAs":"https://www.portrover.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.9,"reviewCount":45},"geo":{"@type":"GeoCoordinates","latitude":36.8587481,"longitude":-76.3965561},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ2RHU1OefuokRlQKnILP3Xnc%2Fphotos%2FAU_ZVEE4Jm0lNqF6UOMgbmxdQf0oCtRGEz2n8kBSxAzLDV23H-18_xChNB6lWLsnQ-C3cbIImDJhVXB2JIeOB9IAeI6z3oOdKiIJJX28A-kYkID91s04G1Hac84__FDAEsYZ6dwYwU8PUtTatCiN2V2t00yqa6hx9n4Zn0oVT7qWmkj07M3D6YIEKNz2G5_NKLrXIyPxA_O7k3gP1BqX2leMWXEZH_TgrvKZB3sSH3xjksSXRkR3MibqXTSiCaT3Y6IpXNPgKDQdFJAa_7Jpx51hLD8HbmE9UH_GcXhnDl0iurzwTQ&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"06:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"06:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"06:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"06:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"06:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"05:00","closes":"19:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

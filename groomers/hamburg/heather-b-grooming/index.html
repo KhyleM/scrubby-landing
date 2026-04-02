@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Heather B Grooming","url":"https://scrubby.app/groomers/hamburg/heather-b-grooming/","address":{"@type":"PostalAddress","streetAddress":"164 Buffalo St","addressLocality":"Hamburg","addressRegion":"NY","postalCode":"14075","addressCountry":"US"},"telephone":"(716) 392-5379","sameAs":"https://www.facebook.com/profile.php?id=100090028586205&mibextid=ZbWKwL","aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":13},"geo":{"@type":"GeoCoordinates","latitude":42.7200918,"longitude":-78.8280551},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJWcmKuhoH_yAR0fFuCqCJ_k4%2Fphotos%2FAU_ZVEE5ZaiN0kAafaDqVbH-lGVXlli-lyrB2Ml39fb7EK3PQE8GIeMD_dHsFL4LxUFxNWPhLLnqCDg17qwjPk2h5b2W1KlYnsoMl0VxOry2Estipe7KNnl5LxYCNYqhOPuOBjlDDoyBy5rlZ0deYBZ5AXQbTC_Nyk2cG6C5W9kWwmf3CgwMz3o_dd1rdrU8H7l6DETdDC9J40y8yU88gJmvL0mtIQACtnGJOoRgKRXpzhLS0j4bKgEM-74O1SFllVZJeLkjQpiwmx_GhyJZbPlaELoEl6SUn8huqe7sDNABuJBClw&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"09:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"16:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Down to Earth Dogs","url":"https://scrubby.app/boarding/san-diego/down-to-earth-dogs/","address":{"@type":"PostalAddress","streetAddress":"3440 Taos Pl","addressLocality":"San Diego","addressRegion":"CA","postalCode":"92117","addressCountry":"US"},"telephone":"(619) 379-5039","sameAs":"http://downtoearthdogs.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.9,"reviewCount":59},"geo":{"@type":"GeoCoordinates","latitude":32.8159134,"longitude":-117.2102002},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ0ecIlI0A3IAR9NH5JdP1SOs%2Fphotos%2FAU_ZVEGiL7ts9l7ZXYZBA3q-_zAAV1FR6tvo_WksXvix2xn41tWlYCpkoV4sxeR3ljkL0Tw3wRjQo1GckShL4_O33jYD23fGvP4ETbiUcnHJiRpDRr97wgQ74mdtJzpxNz1wgkRmc_tHWuvsjQy1WOnznCTESRMGgHrq5sFjZG8RwHJ6qWw4Eq0IkY-W9WLtpVH6jqfUvcWvi4w7TztHBChXOtMfthH2VWFc6s07ZjKk-oAoP27rKBRfQ5A9sqXay4hIDT5loYAn7zRC2y1JYwhylyzXluAhBrvpvDwdwbA8XiCuIA&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"16:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

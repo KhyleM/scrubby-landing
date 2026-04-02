@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"The Animal Doctors of Mission Viejo","url":"https://scrubby.app/vets/mission-viejo/the-animal-doctors-of-mission-viejo/","address":{"@type":"PostalAddress","streetAddress":"27855 Santa Margarita Pkwy suite g","addressLocality":"Mission Viejo","addressRegion":"CA","postalCode":"92691","addressCountry":"US"},"telephone":"(949) 472-3555","sameAs":"https://theanimaldoctorsoc.com/mission-viejo/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":95},"geo":{"@type":"GeoCoordinates","latitude":33.6535113,"longitude":-117.6442046},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJkd_5wDrq3IARuSnNoa7U8ms%2Fphotos%2FAU_ZVEHwNcqMZkA1MEPmTo4g2zNS61aGRyzo3UWdp_QWR5DN1aUcS9agCb34VmP523Jl5taHxxGdVzh5B9doDt4B51mT57mohi-fhOrkm4-Vq9MAptXPGw0F1Prvx0030AQ8qgK52PpAl2c8DwmMcFtcoc9G0gXgTuQrlvmUsbhA1B6V9Ls4FUb1kD4hr41STFmUEFt2lT3z6dy9nPDshLunVbzMHkdRxksm8RhsYLwvcb-8f-CRv5Co9VkSSuAUtnqgtioEItumQGyH5z4twbY3VPb4NZvMO6WBaaaig7jlzxjtGg&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -350,6 +358,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -385,6 +394,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

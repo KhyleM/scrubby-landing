@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"The Barking Lot","url":"https://scrubby.app/groomers/hamburg/the-barking-lot/","address":{"@type":"PostalAddress","streetAddress":"5640 Maelou Dr","addressLocality":"Hamburg","addressRegion":"NY","postalCode":"14075","addressCountry":"US"},"telephone":"(716) 649-4109","sameAs":"https://www.barkinglotwny.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.5,"reviewCount":68},"geo":{"@type":"GeoCoordinates","latitude":42.7342529,"longitude":-78.8337097},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ241eJdEE04kRXe4g6Lqk_yk%2Fphotos%2FAU_ZVEGZRabFbKQydFLpBo-ylcCrtxbvcvPPwIyKkIILP3-fJe6gaYdd9L2zj6-xUkaJ7-4e5vKEE-FcNKY_Q9rLyAuR3iDNwuPMnAuJOFXfFKbaSU6uNBy3kj-pi52vEZI97bVXpeCEdn5ZoyX0dTR_JAJ6-AIh5WQaLiVWner-OrisDRSZYebwDgRsXxqb236LAiHA1hUuCw53o_CTmZmsKx_uko8OTxfpmVIRPhbWU_cvnvgYojHxCqOIjFkux9pbUu3f_BBfPHwA8fnX_8alCgbzTJEmjI02dEqWXlB-SfG79Vt-37ec91NDaeGkikg9KRXmygH-Fd2xqYHWXQ0acOJJTLU1SXp9Ee5bGo_4s4LIEaKpNRBr_nFaYyHdDeL-VoscuLBDhbjPJ6Lbc8hDHRK7uI7oxSuM4zTTGB6xxlQ&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:00","closes":"18:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

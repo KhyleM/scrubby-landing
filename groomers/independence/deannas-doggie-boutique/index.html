@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Deanna's Doggie Boutique","url":"https://scrubby.app/groomers/independence/deannas-doggie-boutique/","address":{"@type":"PostalAddress","streetAddress":"3501 S Sterling Ave","addressLocality":"Independence","addressRegion":"MO","postalCode":"64055","addressCountry":"US"},"telephone":"(816) 252-2528","aggregateRating":{"@type":"AggregateRating","ratingValue":4.9,"reviewCount":177},"geo":{"@type":"GeoCoordinates","latitude":39.0582443,"longitude":-94.446711},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJj3CPPh79wIcRV82JVxieons%2Fphotos%2FAU_ZVEGDbmfKIWvXwjxDzYbpMRILzTT9pOeGPv4b6UW8rtfR4XTgzDUkc36R2GpuDAjue8ECq9MHIJeuovxn1WL7A9YWJ4wJUud1ru5uhti_diwm8E0BZEVoM6laxaG348o2NlwSdS1h2UknaxWjSDvGRv2nBy9OxJHAVJfQNLGwd0rk2Wm0le1efBRmfwfPB1yzfF2D_KslVlI85FJNgPPuFCq146qzNUno3oIDS4MUPs1pcb9K7pwj8wCI716ZbyqpUAu7T7hES_-kpt997yxYv9xHBXSMA4zIDIfNjxW_xAowpTt8nFb2c7jUj5p_YI-l7pVmgZMmv2oHKS2WZyGlX5pIHxK_k4O2lBHJHBN1dMGtKXzvfEJrFLlJyhlx4uz36_qyKUiZU1oe51u0rTxtSsIqo1XK2iAqoF9GtQn2_In8ysVj&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"15:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -363,6 +371,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -398,6 +407,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

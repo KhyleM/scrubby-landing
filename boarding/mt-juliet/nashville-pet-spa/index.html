@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Nashville Pet Spa","url":"https://scrubby.app/boarding/mt-juliet/nashville-pet-spa/","address":{"@type":"PostalAddress","streetAddress":"12007 Lebanon Rd","addressLocality":"Mt. Juliet","addressRegion":"TN","postalCode":"37122","addressCountry":"US"},"telephone":"(615) 939-5757","sameAs":"https://www.nashvillepetspa.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":444},"geo":{"@type":"GeoCoordinates","latitude":36.2314049,"longitude":-86.5273654},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJS27jc_E_ZIgRCNT69Jhv7bs%2Fphotos%2FAU_ZVEEGIgFEHz8_1KKBC6C-6HJm0D979JI1O8waC8m_YI5g2tzzMmq5YT3PLvhKmLIOEALCSeAF404C_EbSY9qXslpQewrOJof802qfE1iyHHxNe1FulZVvoxnlL0l5Fe_z5jv3u9ZLNLTpdLIVdBqsYH_KSNfrAPYBmJ_SBor-t3_lBpKwk6ARk5WDLTTJolJtSWCfxd5s2xx0q_fGXUgh3BPQRV4Y7LgGw_MRyLpGCnFrBnhZHvhNOWYuLpyxLwCbGSzdwOvU6jXZ7zkHItL1TWrQC9X5ESN8mYPsSpZ0g6kTpg&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"06:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"06:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"06:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"06:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"06:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"07:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"08:00","closes":"10:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -364,6 +372,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -399,6 +408,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

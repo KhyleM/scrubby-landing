@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Joyful Acres","url":"https://scrubby.app/boarding/woodstown/joyful-acres/","address":{"@type":"PostalAddress","streetAddress":"15 Williams Rd #3317","addressLocality":"Woodstown","addressRegion":"NJ","postalCode":"08098","addressCountry":"US"},"telephone":"(856) 769-5471","sameAs":"http://www.joyfulacres.net/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.6,"reviewCount":87},"geo":{"@type":"GeoCoordinates","latitude":39.6086886,"longitude":-75.3075829},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJgWHEKjsix4kRVQ233sbUkXo%2Fphotos%2FAU_ZVEEHrNIStDKgpJeDMf_wfxJi2Ootk2ScdcQyPd9KkUOJvbSMxCDQYHcO7fucYqJ_Lu9zjQICneeyjao_CqfC7jyyzXOk2rMgWCxM9kifU7plQ__2CItcPGB91Nk1VCNuXDGDtTf9Ws4Scljmmqiv6m5RrDa7l2rU3RoDxmRe-pvCv-9IyAf9f3jiTCaDU4w5ob265zV1GOwiwSSw8J9hPq2R043IXtfGlFrVQOFAQelOGMaHAMvUiPi_uGPvgWquOf6DPfyjMEhX9tbwcUbIfASEhASuSgWPMVNJwxucGMSfNQ&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"10:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"10:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"10:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"10:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"10:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"10:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"04:00","closes":"18:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

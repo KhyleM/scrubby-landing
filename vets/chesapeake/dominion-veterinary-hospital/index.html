@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Dominion Veterinary Hospital","url":"https://scrubby.app/vets/chesapeake/dominion-veterinary-hospital/","address":{"@type":"PostalAddress","streetAddress":"780 Vincek Way","addressLocality":"Chesapeake","addressRegion":"VA","postalCode":"23323","addressCountry":"US"},"telephone":"(757) 548-5950","sameAs":"http://dominionvethosp.vetstreet.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":269},"geo":{"@type":"GeoCoordinates","latitude":36.7080833,"longitude":-76.315675},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJHxq1Ku-kuokRW_KVx9C9KJs%2Fphotos%2FAU_ZVEHuOkT-cvoU7NEJw3OjaHS1aPtUYWTLUWdp93jOpJA7s_OdnM88xyAxzMcAhNO6Tl57qZocVMGfMGBc8wVfn6tg_w0Vi19Josuivay5zRtGNqJ1sgQyYaAzDPf1SkaVhCEI9i1PZSY9UwsxGcZGcRo5DpYNuouGUYRWxpepmZdgSzSwx0m_t7mRLh-Axml18jQF49Doiehyi_WLH5nngeLQOqUtdEcZWOXARJ_gTWuVfKJrqbw8_Ehj7wuXHwQO9TvamgtSjH1yKPGQFuGsFTVxKSz48ky2p_8r_HvSFMrOf5rDqwlw-U5VkzGN_3o0fw3mz2FPm_xEa3uSnnBicej7iiARKgv0Jq8aSMtvbzJ53HKvu535SoU_YaKPIRFBF1txGFYk8l5atMiIpDoRq8uHZoMQLJCgvBXhjYE8FON7Wg&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"07:00","closes":"12:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Happy Tails Pet Lodge","url":"https://scrubby.app/boarding/west-greenwich/happy-tails-pet-lodge/","address":{"@type":"PostalAddress","streetAddress":"1050 Fish Hill Rd","addressLocality":"West Greenwich","addressRegion":"RI","postalCode":"02817","addressCountry":"US"},"telephone":"(401) 258-3228","sameAs":"https://thehappytailspetlodge.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":13},"geo":{"@type":"GeoCoordinates","latitude":41.658312,"longitude":-71.653681},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"06:30","closes":"18:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"06:30","closes":"18:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"06:30","closes":"18:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"06:30","closes":"18:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"06:30","closes":"18:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"06:30","closes":"18:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"06:30","closes":"18:30"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -354,6 +362,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -389,6 +398,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"North Kingstown Animal Hospital","url":"https://scrubby.app/vets/north-kingstown/north-kingstown-animal-hospital/","address":{"@type":"PostalAddress","streetAddress":"3736 Quaker Ln","addressLocality":"North Kingstown","addressRegion":"RI","postalCode":"02852","addressCountry":"US"},"telephone":"(401) 295-9777","sameAs":"http://www.nkanimalhospital.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.4,"reviewCount":246},"geo":{"@type":"GeoCoordinates","latitude":41.5960167,"longitude":-71.4966148},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJFwmVwha05YkRkt7u6Foj4QA%2Fphotos%2FAU_ZVEG_vtKqpNf6YtLmRD3fRGuCbPO2iBZy36bFZj8a8ANQhr_de0pRb7pfScil0wPX6YeCei9CY0z0J6LVeXUkpzst5qlXWleyrW96P5EA2qs_pOPxOULyzm-XUv3Lonhjk1CUa0BAXmCsYdhwAUEIHlAsBDpLI9qIRbDKcXckmiqTSzA487KIci_QyAWsZLuC62S2BmN1Fdls8vkNCrp5O6K74p_DG3BpwW9WeldoBIpXvuY-tQMJniHV_FujoN7NN3xZ1nrA2lr67Knc96TeDlS6Whby-oeU-wQMoIrVTwE2RA&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"14:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"10:00","closes":"14:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

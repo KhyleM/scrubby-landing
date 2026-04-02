@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Independence Animal Hospital","url":"https://scrubby.app/vets/independence/independence-animal-hospital/","address":{"@type":"PostalAddress","streetAddress":"300 S Noland Rd","addressLocality":"Independence","addressRegion":"MO","postalCode":"64050","addressCountry":"US"},"telephone":"(816) 254-4282","sameAs":"http://independenceanimalhospital.vet/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":2428},"geo":{"@type":"GeoCoordinates","latitude":39.0894519,"longitude":-94.4138827},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJm2fYgkH9wIcReKRdkTvMpjE%2Fphotos%2FAU_ZVEHwtc8MzDxZCtvZVIPXB_lV48eU4NxhgdVQOM0qkujkBJWegKxADnBxm4mFsxX-jbDEttxSJCpmjLoGZm8cJka3idG8qrK2gDaWSLiEw_94bDbJ2948aS5yFzruUMBsviu-64PyBsVBxz01ILzYP1WdsdvK07Mbj9bVi9-K-i30vXHD9M3UHqxi6iu4apMcach1MsIsRCXIJgrspqzyahVR27lP3AQjNmQuyCxewGnrhsPsRkyN0Bid3dF798qaALzfgt5EUK_yM_Eyhr7vkl-aS9DWGW40GlW3Og2wNkPrJA&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:30","closes":"15:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:30","closes":"15:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:30","closes":"15:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:30","closes":"15:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:30","closes":"15:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

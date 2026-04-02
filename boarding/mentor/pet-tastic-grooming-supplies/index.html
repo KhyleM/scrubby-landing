@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Pet-Tastic Grooming & Supplies","url":"https://scrubby.app/boarding/mentor/pet-tastic-grooming-supplies/","address":{"@type":"PostalAddress","streetAddress":"8691Twinbrook Road","addressLocality":"Mentor","addressRegion":"OH","postalCode":"44060","addressCountry":"US"},"telephone":"(440) 205-1899","sameAs":"http://www.pet-tasticinc.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.9,"reviewCount":97},"geo":{"@type":"GeoCoordinates","latitude":41.6878501,"longitude":-81.3277768},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ77nBx-2lMYgRw7VClquxvzY%2Fphotos%2FAU_ZVEHqxsu84d75blSJ_lFM43ZTFCGePdy-048a9KlEWDlbrV9fJw7K-ICbBKBS-Mia2LaeVssrjwqQUB-ayzutZOD20mIfZF3MzsU1MxsxIuQG7VLZvi4uwAE9MBoIBBRN99uwwTf8orFxx6KMOfkbN3DMw7eVBW7MYCGUk1OXK7qsx2jSi4fCvnZqXPB2alCNUQ1cd85whdHORqILtt8WM6n1sVMXGAQbBoYMmtlCC1nLY9DVJmrB-Te0746s9vPBtZd3CQduYJbZhrjUmYkhhmjQgwoFUaJZamcA4EeqJkhvr88FAV9-jdBmiJwwYs9j4R1PmFY1vl0b8XGXZ6yiMlGdOFAvjCJa23d8pkWAL4o6ZlJ48L7nlP2ComROmLIbXCtQfZlVoYQgNXKwr6qhJPy7Dvx7vm4N5rMVytvAH3pQ2evz&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -352,6 +360,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -387,6 +396,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

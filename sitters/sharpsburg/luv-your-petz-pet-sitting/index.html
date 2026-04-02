@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Luv Your Petz Pet Sitting","url":"https://scrubby.app/sitters/sharpsburg/luv-your-petz-pet-sitting/","address":{"@type":"PostalAddress","streetAddress":"1011 Bob Smith Rd","addressLocality":"Sharpsburg","addressRegion":"GA","postalCode":"30277","addressCountry":"US"},"telephone":"(678) 469-4921","sameAs":"http://www.luvyourpetz.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":32},"geo":{"@type":"GeoCoordinates","latitude":33.3740882,"longitude":-84.6424639},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJS096ra7B9IgR9NcUyjTpK5U%2Fphotos%2FAU_ZVEE1LaJ_WKcTfDBsRHfG6hgaNRWODcDimue8rbIOv2afkwahAcdCprMNQ6L69O97M5pF0ZutpLyoB3DERzbWjc0RCWRq_WXNLj96AFHkc0JXydyteI1Z8InjORCdQNA8HPlo4zGj3TEtOIChjILPWwyhnCTZqMmtnM5T1WXs1SPAoersCOj847e_UfidTAg3pgcLpiR8J2C9gP-fn-vlpficatfQGSsn8S12CfIvZumslTumygwQ1wBFaKd1b-NMHf9aa-m5Jj-hn32XLoPgdKjrSZ_np594LNoH8wH7Hci8iw&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"17:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

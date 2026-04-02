@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Bergen Veterinary Hospital","url":"https://scrubby.app/vets/teaneck/bergen-veterinary-hospital/","address":{"@type":"PostalAddress","streetAddress":"1154 Teaneck Rd","addressLocality":"Teaneck","addressRegion":"NJ","postalCode":"07666","addressCountry":"US"},"telephone":"(201) 837-3470","sameAs":"https://bergenvet.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.6,"reviewCount":611},"geo":{"@type":"GeoCoordinates","latitude":40.8931631,"longitude":-74.0025839},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJRbYTmPHwwokRmySyMm0eSqU%2Fphotos%2FAU_ZVEHv8bAEbySagIMlaZo_RVdKEe8cG6vzFKH-pZLtFMuf5SopHUvK87x5gmWPwwuZW6Pi3IoaBeRu67LKyCtemojUwIiU7gAl40LzfnrqkDobU69Qh3S51QQa1ZOp9SqwHcetthVUKN2gD5gllQZUqvLSek8RBk9_XZtcCw-db9JK3cjcyc5ax-zixKrSwjagc9ICg_Ckypg-ha1hxw1xH0AQk-xDYwj_neC6ZAmMfG4r9Z-Y6yjXM16PTDPlgTTYg4LMzSov09Dbua7ZGX9fZmfPWHMTvTnMHNE4kqi7kG6SLTxTqOeBYk1_fwC1UeIZFEJ0xJZQRljTUDiSedXmHgTjH5npuwfe2ncEt7aGZCF-y9k6-7ONJULfySTog-cAa2UvY-j3CmlqVvYxdZfYSjbX_56iT12e0i4sDfx1BCDLKQLBtuZnWdJP4oJ7WXhK&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"19:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

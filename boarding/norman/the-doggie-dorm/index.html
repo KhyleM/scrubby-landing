@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"The Doggie Dorm","url":"https://scrubby.app/boarding/norman/the-doggie-dorm/","address":{"@type":"PostalAddress","streetAddress":"2820 72nd Ave NW","addressLocality":"Norman","addressRegion":"OK","postalCode":"73072","addressCountry":"US"},"telephone":"(405) 301-4161","sameAs":"http://www.doggiedormboarding.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":44},"geo":{"@type":"GeoCoordinates","latitude":35.2529146,"longitude":-97.5474391},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJe5GZvUJtsocRB1wDy-7ZKsg%2Fphotos%2FAU_ZVEFwzXOQ27XDEbDmHJ_XvoNI8yap8GGv72qnjTQ_zMxAMrthRdSkB8uTs4X9fMV5Wnn5KybDTopuG2E6QOODyCyX2bJamSSaUDvTxIPvKf_hfEkJleEXDYqRwEWFmOOIq4GqEjxjmj5bxweZCBgfooOFolK_P_GkkxY6pzK-kxxvSE1WEYaNuAIqdGx9ZQrrzLNAYKx7YA-TFwVOAKEGZq_wecQZk41nx4jkZsnkKSZH48EnTe-AgfLT-RNj17BwYPw7MTZ1wYqaO_tmGfW7981uIoG5TRixoyJ86z6XA1KJoctcBChfOy8h7Qt4mKWonZPIFocUPMotzi-XS6JPcqPRMYqwI5vNUm7wM5ZH6x5zRaQRwKwf14ar6k5XjJ9RStljCnUimdz3asxWB112-qLvo1TOO-kkr_yDO8tVVwH4fTQ&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"00:00","closes":"23:59"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

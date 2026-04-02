@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"All Dog Adventures","url":"https://scrubby.app/boarding/richmond/all-dog-adventures/","address":{"@type":"PostalAddress","streetAddress":"4111 W Clay St","addressLocality":"Richmond","addressRegion":"VA","postalCode":"23230","addressCountry":"US"},"telephone":"(804) 355-7737","sameAs":"http://www.alldogadventures.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.6,"reviewCount":140},"geo":{"@type":"GeoCoordinates","latitude":37.5759986,"longitude":-77.4839708},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ5c8yNhAUsYkRHNAuJWmz-4A%2Fphotos%2FAU_ZVEHcbKbbv2xs350paug7KxSQgAniwga69MQpFz_kxYINmq6wR88V6UPrRu5YeTtCnoqZYmw3T-oEb5XqEqLnJt6Wj_HoGA2j1cezl72icxV31O6yhglJ_x21PImfc8ecLrwoTXpNxP_eFw8ReM_MdtDgCcyz9VxLAIcnSRXvfW6gG4F-vOK4X5dkeCOmINdhj0UJGBymXgjw5PBQ-ZK_U7bg5ykjhi-0S19zliXU6uvq-8o522LONQpwa3WVcQ9O-38AFnwE0f5iOZzvxCRZoWVBPN_a3p9AcO7uQXY6JE2y4G5GhTsWaB_SGOrTBLd8ZFpBozYLhZhPPFNMvj5BDN1gLJ0oxgJUy7wmoY5HQFAgPrsXpKenshd2JbBfsIofKL0Bz3gqlRitIo3r8UZ6HoE-P266UZabSkFHsbqz-ojkQg&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"14:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"09:00","closes":"14:30"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

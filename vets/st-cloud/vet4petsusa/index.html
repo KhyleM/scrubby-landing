@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Vet4PetsUSA","url":"https://scrubby.app/vets/st-cloud/vet4petsusa/","address":{"@type":"PostalAddress","streetAddress":"215 13th St","addressLocality":"St Cloud","addressRegion":"FL","postalCode":"34769","addressCountry":"US"},"telephone":"(407) 378-5283","sameAs":"http://vet4petsusa.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.9,"reviewCount":160},"geo":{"@type":"GeoCoordinates","latitude":28.2455424,"longitude":-81.2718858},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJRVkqGblvHy4RzxXsfyVzh0I%2Fphotos%2FAU_ZVEGf6y3qNCp5B4QuQ50Yhy3VNZ6vo4K8Ft4DziZaWVZaUWrWUhBrLSf7c-wES69g8q5aXEYTkJmLh6-gYcR1m4s_R7T-DiwyBJZNzO0Fz3cx8Cl6iNU2keXHRP8tI-6kUnFjwrFMfLzqPdtuyf31ew7sKN0USV23VPXQr-O7hegSCBA2vxBCs5tBkkckY9VMuDXeEySRId1lOPgz0uezrO9rn6_STQGp2-p2K5wryPbExvdJ7j-68rFp-ZzV5WYu0-vB8sdbRj86ylaTTfNXCO-GBOHStlXYFsFkzCOQoNvt7w&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"12:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"12:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"12:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"12:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"12:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"12:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

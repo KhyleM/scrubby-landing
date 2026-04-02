@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Primary Veterinary Care","url":"https://scrubby.app/vets/gretna/primary-veterinary-care/","address":{"@type":"PostalAddress","streetAddress":"90 Westbank Expy","addressLocality":"Gretna","addressRegion":"LA","postalCode":"70053","addressCountry":"US"},"telephone":"(504) 367-9270","sameAs":"http://www.primaryveterinarycare.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":339},"geo":{"@type":"GeoCoordinates","latitude":29.9118258,"longitude":-90.0515287},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ17SzIeymIIYRVPnplrBlMs4%2Fphotos%2FAU_ZVEGhbbIqdlzvphlascYdYQhmoE7DcaLHQX8BANww9LZ6DJGIyJhjxpXz4G_AIL25O8q43zV4sPhDl0Uu26LNCDN4MM-wgRVRdXe7EZg5qIv-4et0iwPCbui_k3r34Ei7qKPQ5rFEKjRvseTJplNOzesM-0Mb6gbG8B0-0Pl3nHn40-rH4TViQgf4xZOxMywFBMUc_CvC1H8Jzf7zOJmEbc1uEZXUsqlWXnJ_zIAFaNqs0EL2QcQcYrKE5TCAhNa_jEfIiF_3NTa3T0b7VXyOs8OlMfd185PgdiDrfPTAg_ZMNQ&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:30","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:30","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:30","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:30","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:30","closes":"17:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

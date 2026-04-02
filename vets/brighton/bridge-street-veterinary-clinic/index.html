@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Bridge Street Veterinary Clinic","url":"https://scrubby.app/vets/brighton/bridge-street-veterinary-clinic/","address":{"@type":"PostalAddress","streetAddress":"1245 E Bridge St","addressLocality":"Brighton","addressRegion":"CO","postalCode":"80601","addressCountry":"US"},"telephone":"(303) 659-7533","sameAs":"https://bridgestreet.vet/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.4,"reviewCount":245},"geo":{"@type":"GeoCoordinates","latitude":39.9870614,"longitude":-104.8063759},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ0RN4viNtbIcREriGiwPclvg%2Fphotos%2FAU_ZVEHfbF6OjDD8hTMj1pKzGYTNMvtDi04v3kZcxkN4ZtrctYdFTm7tXklECGpEYhMi8CLHTbIZWXsdyTccVEIGx5gORAzad-1vIZ2N8juixprYZ-ml-iWDfivBgT5NR6bAwUWN4Z6JuP8IvBspJ3TzAlIxqcaXrd_hZ0PjovlPYgtSlCwewfzxzURuZbRlSXrqgdSN9ZAxzulBeepSz2V410bMvURID_ORDFamEy9Ysxo4C3XnFmM6lakh0-PbybJSu4DR5kz1Ow-q2Dt6l5QN-ROgHTUa5GD4xPtjyd8EBmyw5niT7srSdn4u2iI9LS25X-VRLt-z5w_FxJ2pkxJDyBcwZDqJnRkb0j-HtfelO0Q3p9re5PmR1i2vLI_z1We0wbqHpXtXFdeWnLy19mRpASZEa-P4n5VQFTgWnocCJNd8LHBp&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"12:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

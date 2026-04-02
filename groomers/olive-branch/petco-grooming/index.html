@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Petco Grooming","url":"https://scrubby.app/groomers/olive-branch/petco-grooming/","address":{"@type":"PostalAddress","streetAddress":"7509 Goodman Rd","addressLocality":"Olive Branch","addressRegion":"MS","postalCode":"38654","addressCountry":"US"},"telephone":"(662) 890-3660","sameAs":"https://stores.petco.com/ms/olivebranch/full-service-grooming-olivebranch-ms-1542.html","aggregateRating":{"@type":"AggregateRating","ratingValue":4.4,"reviewCount":87},"geo":{"@type":"GeoCoordinates","latitude":34.9605343,"longitude":-89.8554766},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJyZRtoQSOf4gR6Pc4iI_zeNc%2Fphotos%2FAU_ZVEECSJWjBOhkcgmEjUt3qvQ_nBS80h_3Q31GHIF-aUiJ85HBQJu-PLC4uNAAjwvNYOLGJQ1LyJApYojb4uOJW4McjvDZplse9kBtRZJ3OjI7vM1VybwXSgbk85Th_PfoNJP6X0QRNqaSPzA54q4-SBuUmrV05rkqRTz1MiuuoV2NN5qlRXUxutMDTsUfbHFBNaELG6TKsApz2UfCmIcEcNgRYaXu5e3hNUj2KYW4W5b5OjM0rZPpf_hkPvY2ERMX5v92XXncjlvuzIph7WoRAkVScnVbirfQXNFcEw9ZEzLENw&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"09:00","closes":"18:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

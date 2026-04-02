@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Cape Ann Veterinary Hospital","url":"https://scrubby.app/vets/gloucester/cape-ann-veterinary-hospital/","address":{"@type":"PostalAddress","streetAddress":"462 Essex Ave","addressLocality":"Gloucester","addressRegion":"MA","postalCode":"01930","addressCountry":"US"},"telephone":"(978) 283-3238","sameAs":"https://www.capeannvet.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":131},"geo":{"@type":"GeoCoordinates","latitude":42.6197423,"longitude":-70.724997},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJH-mI5GYj44kR972KiyYZiCE%2Fphotos%2FAU_ZVEH1rl4_X03V4kq6z1k3rVv0UPAIGb9wCEFdShk0GFy51CT9a5mFiQtUG5oQ0xhhas7PeS_GNGyBzrZrzsvR1oZ--mL1q4mvxZxDC0_sG15f24D5PkM-jRbOI1uigWcBn8yU0s625ZMQcvHKphlFmvbX8O0BkT1ZIri1jTTyTM1mrGuvMWbnVUT6EXV0jnjaALuj_ziLqKDPXO9rQ5S5FQg6j4vH4H4R8SnKuzAi4unSIZcCbhg-UnqLQgtRm7eDWBLQOwLSBgJ1vVHFgZ1YxEDOEJG5ifHSM7pBg7RS3elJiQ&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"12:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

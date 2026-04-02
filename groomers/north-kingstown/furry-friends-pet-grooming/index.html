@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Furry Friends Pet Grooming","url":"https://scrubby.app/groomers/north-kingstown/furry-friends-pet-grooming/","address":{"@type":"PostalAddress","streetAddress":"7440 Post Rd #3217","addressLocality":"North Kingstown","addressRegion":"RI","postalCode":"02852","addressCountry":"US"},"telephone":"(401) 294-7777","aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":15},"geo":{"@type":"GeoCoordinates","latitude":41.5954785,"longitude":-71.45563},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJq6Cwyeqz5YkRwKBPhUtDzDg%2Fphotos%2FAU_ZVEEOpcQ7rTtXi3kNxnmbOooTmv6fm-kip256rXIv1bCqR1bxZd-MfxKXDKiV-jyPlstrJZvNoHzGRRkUuhhhi0WiBprN2TicM7L_zB3rbyPdc8xRxW-lLCf0qg0vO5JrS0CDpO1mOBT3KjPPWgZdcO9niyMFxk1AFNdwiQjZ7DG1FKJBhVcyom4M_lvWz2-7RHVVDA4m4wtOQWTaRXSeEXhwX05UC41j_DDQzcbW6mUvPpHboFD5stV6wT9RVaqTrlegWjOs1XwdgUs69sI5Vx3hIJk-V7KKBaZ3BuuQNDPJ2UWcYw8XOEwzzWbaYum6UaZor5Fx6yhF7hitLljBRwI4uR4Jb_zz_6kHrJz41CBxM7qznkOxbEa4WEgK1u3UCRwumGDc0eRYKJNzN8tWfzEIniVwZjkHrfBxRx0xesjlZ7Q18oOAjMwgCeQoRH4k&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"12:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"12:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"12:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"12:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"12:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"12:30"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -359,6 +367,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -394,6 +403,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

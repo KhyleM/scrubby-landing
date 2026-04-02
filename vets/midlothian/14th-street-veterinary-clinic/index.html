@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"14th Street Veterinary Clinic","url":"https://scrubby.app/vets/midlothian/14th-street-veterinary-clinic/","address":{"@type":"PostalAddress","streetAddress":"420 S 14th St","addressLocality":"Midlothian","addressRegion":"TX","postalCode":"76065","addressCountry":"US"},"telephone":"(972) 723-2072","sameAs":"https://14thstreetvetclinic.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":455},"geo":{"@type":"GeoCoordinates","latitude":32.4786408,"longitude":-96.9869683},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJzTb53J_zToYR1_H7CXGmPfE%2Fphotos%2FAU_ZVEEmO3V8h-1Ty9hwAYMLIXBoSR3jixK6Fg1ZJOt8Tm-vMw0l9kKk3ekg-G5RojUHfS7o3n6sinbi3HmfPUEm-XZpOtQiEMJxtDQBBSB-hMyrsS4JXsO6uFO7hNVWr_h4MUEv_xc6AzNWrmFoCaNZijysm-tNrliPEfniTgUlhAKb0veZzbWPZpmvdlHltaKIkDJim1Zpz2dy56Xg_dqf3uhllDqAHwvPouEao27kzZCFlwsRjjBZqTrj6fLt1Ox3luBux1SaGDpU9PCG2EZvLrjoykQBjbhJotPx_UnhancL12fCSF4uYJQnxxCfIAHqwC6FAWBbnuJ_pYFo-Pn07uF1HrU1NaH2DczbcR0By-Hs8zW9kRhfZTYq5YPUjOt-N6m0H47yz7-4o-fsW4VlzkDCGsc1zEhXyz5KI-qj68_PRw&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"12:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"12:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"12:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"12:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"12:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

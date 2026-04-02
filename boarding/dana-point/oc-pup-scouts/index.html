@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"OC Pup Scouts","url":"https://scrubby.app/boarding/dana-point/oc-pup-scouts/","address":{"@type":"PostalAddress","streetAddress":"24551 Del Prado Ave #57","addressLocality":"Dana Point","addressRegion":"CA","postalCode":"92629","addressCountry":"US"},"telephone":"(949) 629-0932","sameAs":"https://www.joinpupscouts.com/locations/orange-county?utm_source=google&utm_medium=GMB&utm_campaign=GMB","aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":144},"geo":{"@type":"GeoCoordinates","latitude":33.4658897,"longitude":-117.7007617},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJKR9hXQXg3IAR19QP4zFBF8I%2Fphotos%2FAU_ZVEFcS_PqpoQxY5Equt_ApzFRljP_fGmCm1L04OFu3lPBO_4iehVLEACDcSACnFi04EFO_F0SiPl-RFD9pYdBAUwJuIhhjwTYX-iQBJGfu3p1PL8d6NjBpZpCwaCHwDIR1JjopdQn0etWirRn5tQBhOOnsvcp6gHpAzD6FWM5NRtxrp1_jHRS7NbGo275nE_rW_P-l1SdJdFg9vVSzQkXuaqeZGxSvTTRJbDXFYUHypJM_dhz2WLeYG8EO4sYYf2stZxXbNNjMKROCYcHHR-dk7Ci-ZY9_4mjh1L5iM_YqlJYtg&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"09:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"09:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"16:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -364,6 +372,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -399,6 +408,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

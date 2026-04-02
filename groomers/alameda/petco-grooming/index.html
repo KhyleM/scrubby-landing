@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Petco Grooming","url":"https://scrubby.app/groomers/alameda/petco-grooming/","address":{"@type":"PostalAddress","streetAddress":"2310 S Shore Center","addressLocality":"Alameda","addressRegion":"CA","postalCode":"94501","addressCountry":"US"},"telephone":"(510) 864-1844","sameAs":"https://stores.petco.com/ca/alameda/full-service-grooming-alameda-ca-372.html","aggregateRating":{"@type":"AggregateRating","ratingValue":4.6,"reviewCount":84},"geo":{"@type":"GeoCoordinates","latitude":37.7559918,"longitude":-122.2503897},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ7ZiTwqSGj4ARdtkyjjHiwNA%2Fphotos%2FAU_ZVEF9lBZ6ny460e2E822t0mSHPf4pzFTlV-t2qLdb-bDrmGEqNlT8lyiJRIkXYiDAGDTeRXPXyasCBBNaN4mDqXIZVNXG1O44in0eoHWCTl5zX9sJQXuwzSVxmiQrb04ZZPPZ-GXIhlDb8bxRNRAEBplmRMIo3hz2tjJh0hPjSIW7V3Im-2-ltyhGE9liBEkjWXZsuIeM37EsJ-LICmDCI1O0C1AfNvVwn2u-iBg61NNuRJwNcesgQSxUxQ-rJOcbeCHatUHHuSkYjboxeAYWf_fBqX2Uoasrnvt-dnyKMPuIdw&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"08:00","closes":"19:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Los Altos Veterinary Clinic","url":"https://scrubby.app/vets/los-altos/los-altos-veterinary-clinic/","address":{"@type":"PostalAddress","streetAddress":"1150 Riverside Dr","addressLocality":"Los Altos","addressRegion":"CA","postalCode":"94024","addressCountry":"US"},"telephone":"(650) 948-8287","sameAs":"http://losaltosvet.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":188},"geo":{"@type":"GeoCoordinates","latitude":37.3620995,"longitude":-122.0990832},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJwU5fBOWwj4ARxcyqHXqT-Nc%2Fphotos%2FAU_ZVEH0DttXJjbbqtOAOktTgviBBgqzuVrQQEh5hAVvEnWHlw3R7SNgt2_jP8Lfy5t8oco0q5ZQ-B_45jcjwMileFK-9EA7V0rcHYatONjWEf1PbEfhYRbxurJpP0iFAkOMgIe0Ku7dZcnUFChrxDJRcadtvU5t93-eEPVXKUl5AxnX-Kd5_yQA4a652ImdBOMyTeG76qLW4rc-yfk4iCF0BZtJfCoSd8GwQZGY73r4BK3EmneUMwg7BBuIriDLQmFSkQO_cKQVY6E3D-TxIJBxZebNzxQg8EJ5V0jyr5WKrpaMGw&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"16:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

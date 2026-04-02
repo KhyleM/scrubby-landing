@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Groomer Gregg's","url":"https://scrubby.app/groomers/greenwood/groomer-greggs/","address":{"@type":"PostalAddress","streetAddress":"4800 W Smith Valley Rd","addressLocality":"Greenwood","addressRegion":"IN","postalCode":"46142","addressCountry":"US"},"telephone":"(317) 215-4165","aggregateRating":{"@type":"AggregateRating","ratingValue":4.2,"reviewCount":86},"geo":{"@type":"GeoCoordinates","latitude":39.6056542,"longitude":-86.1933351},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJJ84i2hVea4gRUni9PJ1iawc%2Fphotos%2FAU_ZVEHvS0GQAdUy2RkrQHA1OKB4KszF4G9SuAI21WMFCchJ0RvZDTshuvf6Gjux_LKtSzmeIyraguEAdIAco0raIrqStXje4tdh0hSktDazrxfrIzFvIabxQGB7W7c8RZqegM0l5Mhzlan6n_mVCKP9JrT7wq0a0sbRfk8A28x9TUsnSZypxh8IGEOk1GEfA1h1iZZ8QT-zhHl8r0ZP_pf9zW1eprH8ArFMZmUsMhzeBWxVo9qzheiPIczU43goDS8llh-4qZgJVPU0V08IeufFByu6Am0U8PmNE8dhlQG4wNhZaolEBvg95mEqz0fDZqwqRU5FWVZqjep8Ge8mYryHwegdKWydnnH26vzXv-UCR-cNhTm2eZ0JxvLH8FeAWxUG9JQ4Az4OK1llE8KDwgJriZy6x_C0RVKqJTQ0kOhdo294Bg&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"16:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -363,6 +371,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -398,6 +407,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Lakeside Veterinary Care","url":"https://scrubby.app/vets/cypress/lakeside-veterinary-care/","address":{"@type":"PostalAddress","streetAddress":"8649 Barker Cypress Rd Unit B","addressLocality":"Cypress","addressRegion":"TX","postalCode":"77433","addressCountry":"US"},"telephone":"(832) 240-3758","sameAs":"https://lakesideveterinarycare.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":136},"geo":{"@type":"GeoCoordinates","latitude":29.902879,"longitude":-95.6856807},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ0xi99h3XQIYRsZllymUvGTg%2Fphotos%2FAU_ZVEGUgEVRjteahqP8aWwkLhIt0RTZRAjFeIx8KYrps0aVOYhCtig25FAN--pCkzPHvipyzaFYHrdAhTV0e_VXxhcmwX3TMjy8vozGnIJKstztbwvB8442TOm41LHNEEJqM04AwC29E3RrU0q6_ygbSKTleTeACBIL0VCZvL3vxFc9oID0qf4Xi760PhL1H9RVFOpII_fVVX2S-dCO5j9JS6hd8sBLfZO-qN0cqqeN8TfBBq63bMScxYfqHb-kEE3plJmBovfk4tPO1M6Zqg1EawmLCaYantrMovp6vxS1_UMGw6hQSwNdcw4u_wRc6197xuwjnpxOaP_SPFKOooJwaMspZc7E5JOJhdTfO0UE-1TuRcbJt1PF0puNuH9-DsaBpvLFXOQTBmmmxySxB-Hpl6a8uczTTdeHADdehoBZd_AsSkb1&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"12:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"12:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"12:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"12:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"12:30"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

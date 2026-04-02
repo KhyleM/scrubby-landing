@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Pick of the Litter","url":"https://scrubby.app/boarding/godfrey/pick-of-the-litter/","address":{"@type":"PostalAddress","streetAddress":"7222 Herter Industrial Dr","addressLocality":"Godfrey","addressRegion":"IL","postalCode":"62035","addressCountry":"US"},"telephone":"(618) 466-4311","sameAs":"https://pikofthelitter.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.6,"reviewCount":76},"geo":{"@type":"GeoCoordinates","latitude":38.9752003,"longitude":-90.184823},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJW5dc64hC34cR11oeqz6kQ-s%2Fphotos%2FAU_ZVEF6zmHyZmgXgXwaZunpi2-GE0ZRosozFk0Ga611p6RSskmqShV16J8dwZrJyW-qQF8FIVYfiD0d88DfaHjngoWtsfcT8xsaaJVVcVdHQiV6ykopcnE0Rsycfwq-Ec85U4ArUpPNEzYNeMcTp-L316NEQHUA-5vkctBtT3EL3gPqzAYSzxBwnRCZ6m7iWIdIoSMN5C1zhc94BjnY1l5PbEXav5JxT7x1aBkMxtfvgoFPew87d_9EzTbiUnRvI6onaXbsWI_BO-qdMuaT3cRN2SfLJA9SAt6ev1ppiO4n-EhtRA&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"08:00","closes":"17:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

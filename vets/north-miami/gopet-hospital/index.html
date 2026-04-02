@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"GOPET Hospital","url":"https://scrubby.app/vets/north-miami/gopet-hospital/","address":{"@type":"PostalAddress","streetAddress":"12870 Biscayne Blvd","addressLocality":"North Miami","addressRegion":"FL","postalCode":"33181","addressCountry":"US"},"telephone":"(305) 891-5116","sameAs":"http://www.gopethospital.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.4,"reviewCount":254},"geo":{"@type":"GeoCoordinates","latitude":25.895671,"longitude":-80.1629743},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ8-tbHZKt2YgRul00nVC6jYg%2Fphotos%2FAU_ZVEFi1_dL7SZpzA5oIvN_d33JWxBMQZyFa_68sAFeRrEwNBmCPth-X8UnElpGIbOMDJ8chSqN5BaxXdeOQ7SFXhownCon62Iw2-8HpLbBE6Vvp61NkPCqZNpUb--1Ek_AkNMIfo1qh93zIbz8FOGBvS5Cb4pjHGasBrwlZDGR2G5Y3T8uIeBFw204VSPNT28fyhE08ugbF0Sa9pUc1IQawsrvvbS65i9MyEOif0QbZbmQshwx03oz6iUsOdb7pjr92XWx15a339XyQtzNte3FjaHcsgQ3TkVq4IdLhPqQakRqOg&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"14:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Critter Connection","url":"https://scrubby.app/groomers/mt-washington/critter-connection/","address":{"@type":"PostalAddress","streetAddress":"9089 KY-44","addressLocality":"Mt Washington","addressRegion":"KY","postalCode":"40047","addressCountry":"US"},"telephone":"(502) 538-4422","sameAs":"https://www.critterconnectionky.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.6,"reviewCount":316},"geo":{"@type":"GeoCoordinates","latitude":38.0372368,"longitude":-85.5656598},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJw3k2K1moaYgRFwEjDGzWkvI%2Fphotos%2FAU_ZVEGoxFUOp2aoxGrQki9yjjc6g4XRgFhKmfjnkuHU6yZ11fWR7x-ucRynbTnMOockgrSTGS7bcW8iXj0vIxz5w6lRVgFm_goSjsjDMK3FEzauJwhraBk0ep_nkn9XkZEGbykEdbeD95Whh-Mu0UBnUuuZ5eMTffR4XBGs_J7rd-Ri6k26LUDFsXbinn5i8Pr75za2ELaSkaNKjNgldSenD1yo5WzS-V0RipLWZdzelJmJpIdVGU_OFtaXrEpBio_4CmhjZDjJJhSk_8Td0v28C7CznZdzhdE3PJSlrm6c-LGUzi54uGlj6hV2fmefbpCW2Cy_Vn_8CFtldtxx1ZLARqzuTlv6ZJVtL5kYfgKlU4-U933jZeIWPBm4YN34Sn6Nn6hsb9PX7o2CGKVcBwJ-ZypAimpd2fBjsEYFy25knh9U1bL32uR3jqkwoP3HEg&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"18:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

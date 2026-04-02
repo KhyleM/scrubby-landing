@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Kent Farms Animal Hospital","url":"https://scrubby.app/vets/alabaster/kent-farms-animal-hospital/","address":{"@type":"PostalAddress","streetAddress":"2259 Kent Dairy Rd","addressLocality":"Alabaster","addressRegion":"AL","postalCode":"35007","addressCountry":"US"},"telephone":"(205) 564-5740","sameAs":"http://kentfarmsanimalhospital.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.4,"reviewCount":132},"geo":{"@type":"GeoCoordinates","latitude":33.214645,"longitude":-86.8246551},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJx1isP4UpiYgRdR_ULdrn0es%2Fphotos%2FAU_ZVEFqsURikyr5pdPoOfodsVnelpSRROhXYxnRyp2mt3UgvnB9AGiOOgxQYGK6sfg2EDxsEThT48OFnbVvlYZQmLIeh_PBX9SeZZgQlD-Qe6lSFl4CrDFWp2MhxH45kd9Q1APC5951d1F9B5A1065luEtwi6akVRTZpK5PsNboSjiBaAY26jTNabPe4gxrKt_Gj02qiXmB5lbeclEMR0-Vr8vIK7KU03BgIOCdrKu28vFYZgw2YcOcvVvmzq3lfC_Bt4M7iXasQxkZy9Zu2ta8FL2IK5MT2f5a6cOMzPr8Ea0ipw&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"07:00","closes":"12:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

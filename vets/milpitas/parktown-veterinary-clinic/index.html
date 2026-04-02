@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Parktown Veterinary Clinic","url":"https://scrubby.app/vets/milpitas/parktown-veterinary-clinic/","address":{"@type":"PostalAddress","streetAddress":"1393 S Park Victoria Dr","addressLocality":"Milpitas","addressRegion":"CA","postalCode":"95035","addressCountry":"US"},"telephone":"(408) 263-3990","sameAs":"https://www.parktownvet.com/?utm_source=google&utm_medium=gbp&utm_campaign=gbp","aggregateRating":{"@type":"AggregateRating","ratingValue":4.4,"reviewCount":401},"geo":{"@type":"GeoCoordinates","latitude":37.4166224,"longitude":-121.8755269},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJpzwfN5TOj4ARWw6t_zyeBSo%2Fphotos%2FAU_ZVEGjj2yyktN2PoZEP0LaaFym86YpQXs3xZkCkCNeiTCgg7k0j8ORK1c4wtMiF-9gkYXQxSzHs1aasAJ9Hu7LiHHJbz6HK0Hce5M4z6TwcR0dJshMV_0A_OzOHzI_l1aj9ksdQH8Q14TQVxLWTu0Oh9TYt6fG79uoeDuRZsw1AkLsXQTiWX6923_WDjl4o9xj9ewCoksOMfZsWGw3zfDb1PjTWVI6Ii0JvrYkPsU4KwEVF9UKmSYH5li911vzPBrYpynz0NzbTV1iAN5lHpeJ4TQSJDzuSdSjr1q6Ur4HNhmWxg&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"14:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

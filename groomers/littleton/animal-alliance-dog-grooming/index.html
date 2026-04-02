@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Animal Alliance Dog Grooming","url":"https://scrubby.app/groomers/littleton/animal-alliance-dog-grooming/","address":{"@type":"PostalAddress","streetAddress":"5500 S Simms St","addressLocality":"Littleton","addressRegion":"CO","postalCode":"80127","addressCountry":"US"},"telephone":"(303) 948-1780","sameAs":"http://www.animalalliancedoggrooming.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":110},"geo":{"@type":"GeoCoordinates","latitude":39.6146594,"longitude":-105.1278145},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ8zDvEst4a4cRN_vmzZh3WNQ%2Fphotos%2FAU_ZVEHwNArUwiWuli1m7U3wVolSrTNcZ-VzramyFpNxPQfWggNOl65W-v2-3y6pEWRCWhldPodQa5nzTPRqL6bUoecYYfK86_cipGUXId12VTG8XNitDUpV_D3vqupkUwkaoToMtWUO3ValqkVIOrK7zH_eoq4rc21xD8bCx_lh7oczWDp70FDapA7AzeAd_YrdaMbQigI8Y-L5UI7ARNQ4Jw0VrarnXgOjUhJtL5GUR2dQBSMBFrSHQop7em0ZxFfQSuIszn4nyJ2pxtE_F9jYRsePmjHGJEnyWVwAIzwS5BPCfABskDoly8az9ifhPQg1_KCLQvGlIdKdHPJmTj6dEHuicAdrNPhqzOekQYgsGbBfooY_AbLR4iZ7zPUPBM_f7EMBg4bYph-lRHnxbNIK_3vvg_QMePmkiyRUCAKetwe1UN3SB6pXi_jwMJl5rE_V&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"16:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

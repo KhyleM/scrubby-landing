@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Chesapeake Animal Clinic","url":"https://scrubby.app/vets/owings/chesapeake-animal-clinic/","address":{"@type":"PostalAddress","streetAddress":"9825 Old Solomons Island Rd unit 1","addressLocality":"Owings","addressRegion":"MD","postalCode":"20736","addressCountry":"US"},"telephone":"(301) 855-5166","sameAs":"http://chesapeakeanimalclinic.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":199},"geo":{"@type":"GeoCoordinates","latitude":38.7167976,"longitude":-76.6031355},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ_xmRu4aPt4kRSdmOQkGGmsU%2Fphotos%2FAU_ZVEHK_p9WxtOuHQji724dUTbyKkK1u8alP-1gHr_McuYHEbWRqrfd6XnHg12r6zd_S8fXv5yqYr6400IQL7HeREt-UaHLrN4z959J8s53iCHzUePWWrMNvw-6fquHZV4_KK3LvvRImOPEbaa-OrbSbO9lwHY_e5sfWKSl5msRS5k_XeqiWabyC6G1VBacqsOipIPlVuuT9tmQUflOGJgKbU9p7cqurUXFNuQUbKV8iyZeP13iSSx5v40ELOZ-K8FI_R9ZN-n9RPPPgBrbb29-Qgxzw7tzpmDSFvikGmNFNNKshA&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"17:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

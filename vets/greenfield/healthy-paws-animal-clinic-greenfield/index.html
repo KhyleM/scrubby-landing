@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Healthy Paws Animal Clinic-Greenfield","url":"https://scrubby.app/vets/greenfield/healthy-paws-animal-clinic-greenfield/","address":{"@type":"PostalAddress","streetAddress":"4805 S 74th St","addressLocality":"Greenfield","addressRegion":"WI","postalCode":"53220","addressCountry":"US"},"telephone":"(262) 415-5880","sameAs":"http://www.healthypawsclinics.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.4,"reviewCount":198},"geo":{"@type":"GeoCoordinates","latitude":42.957194,"longitude":-88.006691},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJVd3vNdERBYgRK_-hKJlcetw%2Fphotos%2FAU_ZVEGknRjtoZ9wkLG-Ydallyck9di0C2_CYdqkH2eed6g0xTW6xKGxQV6ABsLkzS3sgNvWuubGJ2vnzoqlFrcbhETdJdk8FF5jC5UzJIFc0G_iiErQt2Oa7DKvWll5d216wIt-E3HkI1ouds6I7Tj61D1oXe489HsR1O8BhXPbcEWyL0MI789nMPs2LDv-zwsSo8RKeEsMGlSOuXFMhR_Udixc65tp6u1fTpYwAwcUv4n0m_dtn3EeoTRH_p4O7Ktzi3JexRvoKfhNeVPwSmutY7aJ91nCITOuMd0AntQsDfZkBPrg1lK8hLXqYF0glq-7tEYhxjDYUJ6Lw1gT_uT-5LrrUGOlVycN14CEZr2omU5st--h7FCH4kz0hPk0e0eYJjcDdnAl5Tmea9OvXBFbY1H_WpjX1ih_5fgy3KvwcGJcRQ&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -350,6 +358,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -385,6 +394,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

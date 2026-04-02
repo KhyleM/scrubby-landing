@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Whiskers & Tails","url":"https://scrubby.app/groomers/hamilton-square/whiskers-tails/","address":{"@type":"PostalAddress","streetAddress":"2614 Whitehorse Hamilton Square Rd","addressLocality":"Hamilton Square","addressRegion":"NJ","postalCode":"08690","addressCountry":"US"},"telephone":"(609) 586-4046","sameAs":"http://www.whiskersandtailsnj.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":194},"geo":{"@type":"GeoCoordinates","latitude":40.2294119,"longitude":-74.663606},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJT-N9xshYwYkRwxN8XnkPIG0%2Fphotos%2FAU_ZVEHPj27_jEQ-IYZ0CEc1xWSjpogBbD4T4RSo34ZZliB0eU5BTNca4XnRevSZjralMzZ-85HHwXbbURg_6sQbjVohN5XWFXkkp46Kz2w4GbpD1DKN-x_A6YJXoaG-x35O3kxmqSUQXtkWWAvvk91RUnRIW_k1Hxvq9q0EH8XGOItSgWe2ki6UmKxKPVuT3PbjF16R1ryBm1pZrHxot0QV5NlLZ4IjSjm_z1-g8pG4flZkSErORsdiIOdo1UxLlQOU-gIHh0mughRYU8c59ZmbKN9rFOslZzdf02RGT1DvU9dbnhx8j1cxnocQuXuah0US4pNjgXQbiXtrwhiwaIpsHdYouyBwotHSnol4cgMYhz62RVjKTMY7KH8rktSutNNLBt9xPk2sqDqEVJE_tvgdQ8JfYPWSKEgISyh_-EOa0izhPLAs&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:30","closes":"16:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:30","closes":"16:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:30","closes":"16:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:30","closes":"16:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:30","closes":"16:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"16:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

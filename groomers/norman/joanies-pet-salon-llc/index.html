@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Joanie's Pet Salon LLC","url":"https://scrubby.app/groomers/norman/joanies-pet-salon-llc/","address":{"@type":"PostalAddress","streetAddress":"1258 N Interstate Dr","addressLocality":"Norman","addressRegion":"OK","postalCode":"73072","addressCountry":"US"},"telephone":"(405) 928-5090","sameAs":"http://www.joaniespetsalon.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.5,"reviewCount":47},"geo":{"@type":"GeoCoordinates","latitude":35.2340377,"longitude":-97.4871179},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ2T4E0nBpsocRVfQMkmRFPH8%2Fphotos%2FAU_ZVEHusQRKR0M4FOx2-EaSjHsYQudeym9m2_6gsfcoo3RvAY2g5a-O6dUTzGkh3oFzN_2C-o0VxiM4JzjlLmTWSyEB_XgBzqSjVHgo2A6zn0JY5-mQAK4uqTI_8HePiqf7OGZIitPn3Z7xRJc19GQJLVgSkoix-ozvSgBIuypsvLCW4jmP33QlTqeHTPcDqjPjZnjdrExKzcP17P3oXhaH6hdTG1RA6k9uZhmm1ACvHnO9MCx6yAf6L6pfLPmUh2OUnsVeHIOm9rZCEKOvBRKt0GFxjTasOjzIVVSvD1GXkRPpKg&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:30","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:30","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:30","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:30","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:30","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"13:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

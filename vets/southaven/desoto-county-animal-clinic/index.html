@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Desoto County Animal Clinic","url":"https://scrubby.app/vets/southaven/desoto-county-animal-clinic/","address":{"@type":"PostalAddress","streetAddress":"8330 US-51 North","addressLocality":"Southaven","addressRegion":"MS","postalCode":"38671","addressCountry":"US"},"telephone":"(662) 342-4899","sameAs":"https://desotoanimalclinic.net/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":491},"geo":{"@type":"GeoCoordinates","latitude":34.982601,"longitude":-90.01521},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJAV5bkmhi1YcRN4jqChVG_D0%2Fphotos%2FAU_ZVEEPiBoTweUX8Fa7qiXn-1cjJV6yf6o2sWu5IjY3BfSXYQt1-mKoLQ3L51yUSHNqt4tOGBiI_ufqzHywfdXwTvDG20jsQI94l8xXMGTs2Uq0_mTI2pQWFhsNdXWgSUAFJwHjF-ykT4srN5uQYm-cCoh92wRbLoeM4WbV_0H2rfcKoGp6lw7txUCMuxXxFZQuV-uLeY3b5--HOco6IOlqCyBc-NCHBDRULku09jv8cv6xhEbMRv5kH_-HaHaT9XnkqBkxM_rMQwtdPmsoby0Na7JZCmE_atHQe5YRpQ984t8aPw&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:00","closes":"12:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:00","closes":"12:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:00","closes":"12:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:00","closes":"12:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:00","closes":"12:30"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

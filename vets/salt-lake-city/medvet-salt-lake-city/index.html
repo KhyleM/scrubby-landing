@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"MedVet Salt Lake City","url":"https://scrubby.app/vets/salt-lake-city/medvet-salt-lake-city/","address":{"@type":"PostalAddress","streetAddress":"331 W Bearcat Dr","addressLocality":"Salt Lake City","addressRegion":"UT","postalCode":"84115","addressCountry":"US"},"telephone":"(385) 341-4444","sameAs":"https://www.medvet.com/location/salt-lake-city/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.1,"reviewCount":2151},"geo":{"@type":"GeoCoordinates","latitude":40.7191329,"longitude":-111.9001756},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJtQbBfbKLUocR8emVKiCUAn8%2Fphotos%2FAU_ZVEF8t8jUXahFfe9Lqf_fJZ2Z8PFVbF0Qq1-DiKrYOIsgo0A7PfGf44NMoGIaygyg6qj1hlMt_oDftMJHtlw3dWxkw2EsH86_K4ssMZHICbyMs-9VLJ-mQiWlCgyHYre_p4sh9YRADhVR8-aKTMkGEauEP-aT54wzEfE8PHLf5TaSeUbKpT57mtEQKmE1-7aCcitgd8nBOlFQCF3s7yfAxJ9X55As4S6fexMEf4NZ924YOfirwNigQWKgUI7p89Rwkhs2OUglOJoMgvVcgDhmkKyhxDSCj08265QLgO9ckTBrkA&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"00:00","closes":"23:59"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

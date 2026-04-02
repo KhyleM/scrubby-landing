@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Schramm's Country Kennel","url":"https://scrubby.app/boarding/macomb/schramms-country-kennel/","address":{"@type":"PostalAddress","streetAddress":"53431 Card Rd","addressLocality":"Macomb","addressRegion":"MI","postalCode":"48042","addressCountry":"US"},"telephone":"(586) 949-9026","sameAs":"https://schrammscountrykennel.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":105},"geo":{"@type":"GeoCoordinates","latitude":42.6887446,"longitude":-82.8994605},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ40tBoS8eJYgRR7vkODaL4iI%2Fphotos%2FAU_ZVEH6bBUxFiMZ6kgFBLVA8rHqrnUQI4o5OSYrWPhtZh5s1K4_vLhJYde4Pg8orWK38THoOmrGeUWuacQD3F2DYxjUMYqhau6Tg-qDxam8kSbCTObWyUaCjslK9mdmyjCOwbCF98R7FmXlXjZlXg0y0hQu9nfeXNTW2ONU56GxyqBF4yQa9lPVWtX-c2c_0Neixs0Kc_wFxwp9jNRX81ZwLF29zUZEDIfbW_CIWLciV1TfoN2fvBlYkROwo3chY3JVot0VEUnOJ6ytjcmVrbo4MCDiNUpEyMYdgjvZZKRMQ2MZ4EEPSHRLI1_PXv_kwrpghjOqvgtfGyIGkxLAlU6DUEppbyxQtyv1LwwjqzRGZcV4rsOYh1OJ65aK0Aqre_FnUH9Eh0VLtZqMKnr-BilgXrM5-6nAkgOfv2AobYElVE7C5A&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"12:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

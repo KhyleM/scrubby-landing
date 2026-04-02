@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"New Hope Animal Hospital","url":"https://scrubby.app/vets/new-hope/new-hope-animal-hospital/","address":{"@type":"PostalAddress","streetAddress":"3709 Winnetka Ave N","addressLocality":"New Hope","addressRegion":"MN","postalCode":"55427","addressCountry":"US"},"telephone":"(763) 593-1004","sameAs":"https://newhopeanimalhospital.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":373},"geo":{"@type":"GeoCoordinates","latitude":45.0244035,"longitude":-93.3807881},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJGVic0Ck0s1IROAaLNt3WakQ%2Fphotos%2FAU_ZVEG1LvBAMf-xqH0EFb8bEksX-tRJgNPJpSR_Z6kQncXORm2UKmm_XrdtKyPTgLbjed9SvlWp8Q0xtE4fVLKmi2OZggVAzDZwsfhr8k2XbqcKn2auYlem_ChCF_DJ2Amgi3_qSGwbK4Zxe5WlKtW35ll6Sh4FpfK-don8vJhQAGlyGxohe0948YoLFioZUX2bMRW9Tt4wJFxGMa8oDIa2W70AArw-gUoTcyXAe2PUjuBu0cqzqw4Eu-rotGmxJ1Y24XIGoCfuCy5vCoyRrockdEms0p6cUz3q5PVLIpymqoyXLKJ6O0EhifPNY3Zklg157R78-ca97I92-uW8J2KIedC1W9hnkZWUzELrHqsadHFpzhbx5LVmiNZFFPKszKhqpDG_tQR0jPK0vYeVLXs3CbMOC976Cp1Kb_EMUjIPbYFlQTM&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:30","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:30","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:30","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:30","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:30","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"07:30","closes":"13:30"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"DMV Capitol Kennel","url":"https://scrubby.app/boarding/washington/dmv-capitol-kennel/","address":{"@type":"PostalAddress","streetAddress":"2300 Good Hope Ct SE","addressLocality":"Washington","addressRegion":"DC","postalCode":"20020","addressCountry":"US"},"telephone":"(800) 893-1316","aggregateRating":{"@type":"AggregateRating","ratingValue":2,"reviewCount":3},"geo":{"@type":"GeoCoordinates","latitude":38.8608928,"longitude":-76.9728961},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ_Z2FOMC5t4kRmURRa-u9BQY%2Fphotos%2FAU_ZVEE-F2ZCohKrpufKgVEc8P9ET1xhX2fTcK4iVu36qgHMbx01BVzNyAbERlwkW6obSjb0vi5veCsTIiLwBM3GU1b1SRFDn4V6m7n6vPBy0YWd4PFk_jqZzq4M1AqzEx8INZonYtbJ8vIhrOrPUscdC3XotqYkCJm-8yzJBF3OPC8E6trd5XGpHdUwowSI1Yc86fJIJqf1aSl2sPimDbiRiMPif2J74XGXNNSzagArBkdaArBblQkTh5yxQHrdup_qJb8QO-2boblLrtQcibJNKvZuTseuxAJtpzei11KMuSznIQ&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"00:00","closes":"23:59"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -354,6 +362,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -389,6 +398,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

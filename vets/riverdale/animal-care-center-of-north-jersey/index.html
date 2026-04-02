@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Animal Care Center of North Jersey","url":"https://scrubby.app/vets/riverdale/animal-care-center-of-north-jersey/","address":{"@type":"PostalAddress","streetAddress":"62 Hamburg Turnpike","addressLocality":"Riverdale","addressRegion":"NJ","postalCode":"07457","addressCountry":"US"},"telephone":"(973) 835-3733","sameAs":"https://animalcarecenternj.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.5,"reviewCount":286},"geo":{"@type":"GeoCoordinates","latitude":40.998622,"longitude":-74.3037509},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJf7hK3awcw4kRTF7tknjeujs%2Fphotos%2FAU_ZVEE2vuomRBO0TQvjltAF4XOWgNkXvfbq3jQm93UnVY2-t9DKTiMQujR3bt6a41c9X_pLbueFiADpwXy4rb9it0dx6GpMR_6Ejc-DunkTMWdm2WP3NJuJYMbWZ5OqilCg2v_kaDZ__hTTPoMPp1ujesCOZWaPWsYRVR2S-OpA7VIkVq7B4QJEAC6_GfV3qAiCwRsCVJHXQYdonj9fX4V7j08Qi8KMp6VSmj1jx2rus78wC8WouUScSH_vEiRMsE0XFQr9rXbwtvvBVDUeySAtBTml31d-ngj1bHbC-sZRw4orcUqMPJKeLkEXnv_0fDJbYhUIS4XmNGPE9-PbIZTl2yxujzIRy9gmiVCgfzOpUrsy_v5Ygp7iee-vO405YgXhXCRjK8z0AhSTguBiEgT2BaDykWn19HhcLrp0Pr27Vgn9JXWh&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"00:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"00:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"14:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Champion Pet Care","url":"https://scrubby.app/groomers/raynham/champion-pet-care/","address":{"@type":"PostalAddress","streetAddress":"1259 Hill St","addressLocality":"Raynham","addressRegion":"MA","postalCode":"02767","addressCountry":"US"},"telephone":"(508) 880-7111","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":35},"geo":{"@type":"GeoCoordinates","latitude":41.9058108,"longitude":-71.0153323},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ8cKUmEKN5IkRBX_WZDjFA1k%2Fphotos%2FAU_ZVEFSWzhKO4yerWsDPclQzMiqfncYZEM2ZD4fZWpdWRu5RZAjiQGBVe7opjyCLyCIVik_F7Y4SSe4kHbqVGfwnY-Ki7IC8QSsM7MBe3bSjKwWPBXY-hBa62NdIJkO9wgCLVXYXW27iazHi093BN-z-va58CbWSBBlYiodGnywQvW19jVMRyrQCYrAEEitqtUtnqJUcO0UgnBhZxKyF5i66BfHVjBPv6bSunsUlmh8-AX2AG7UImgWz4DD89vs1vckUcfmh5kOj1iamv5IPWtP-C4Y8MHmWlkvqhhWdACNxjP2s2f7_zYRQ-6hg2PoWke8NOm9DwCPa_cvE7yYRB6ZmrS6FZCGxNneQO-qty6Yo3LjmEIFJi6NBpegwY2yop_jWSUueHXgzuESfo4gehqhW_NrL4kjRCcwJDzSKdZmgB_PQHE&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -346,6 +354,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -381,6 +390,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

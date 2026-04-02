@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Amy's Pet Grooming","url":"https://scrubby.app/groomers/aurora/amys-pet-grooming/","address":{"@type":"PostalAddress","streetAddress":"21527 OR-99E","addressLocality":"Aurora","addressRegion":"OR","postalCode":"97002","addressCountry":"US"},"telephone":"(503) 678-1213","sameAs":"https://www.facebook.com/AmysPetGroomingLlc/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.6,"reviewCount":62},"geo":{"@type":"GeoCoordinates","latitude":45.2309078,"longitude":-122.7562813},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJM308nhRmlVQRzl-_Ik7yp78%2Fphotos%2FAU_ZVEEL8_134luwxtKKxJUqEO0Q8L278CyqbGUAdo3BnyobezAngrKTpf0ZuJo3pVwY5i34sUmnASRBjto2bCNcnF_JlV_oiEIXR9Coen6GJJI7sD8SmoOAiCD7zFlZhsHRDmQMwr5L90qpLjRbRWVz__w4ExfrRqrEWXjaLlTaW_0yYIyEtayjdIhPsiei-mL2owyaVLFMckh5OTncZCLxAIE1xMWzTJlsi77UAfR_kbUdrN9aCvU8egYaLiQDonOTH2wZSwg3xLAuecJxXLmiwQwa12La4OP05pMHYPVh6BfRFNy_VzlYLzP-D3IjYDHJJi-cECBQ-KbsJ6QVxhF85aS-1pkgmL7QMRJo6w03K1rd3RrXbL7ojEFmeB0q0CzH36nulHbweecBy3e0_c9bcJMPn61QHsFSiUsat4PNqKl0Tdszg-mMlrAkWJljzBAY&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:30","closes":"14:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:30","closes":"14:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:30","closes":"14:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:30","closes":"14:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:30","closes":"14:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

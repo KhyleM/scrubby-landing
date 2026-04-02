@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Davidsonville Veterinary Clinic","url":"https://scrubby.app/vets/davidsonville/davidsonville-veterinary-clinic/","address":{"@type":"PostalAddress","streetAddress":"3725 Tanglewood Ln","addressLocality":"Davidsonville","addressRegion":"MD","postalCode":"21035","addressCountry":"US"},"telephone":"(410) 956-5733","sameAs":"http://www.davidsonvillevet.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.5,"reviewCount":71},"geo":{"@type":"GeoCoordinates","latitude":38.9060592,"longitude":-76.6550674},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJBcc8TGjtt4kRt0x3fZWkjEA%2Fphotos%2FAU_ZVEE4ILxoUzJkotrsJH5YIp9xHWWQ553nE20S8eM11ljNxJWWaOAjGJdA42Hvy3239ZL4R0OHUFLWxVVaq4NvKk_ojR3s6ErcvJRfVRGFpIbhwNL219VeyBScImZmhfU4DhM3NMeQLsZ_1wjalvP0Uk48YTyGuWpcZw6wW10H01x4t04ZOAqDOgto-uf8RQltEKK8F3p5dCJMW7gjpWsZvZ0lVrDV_2HweKYOpygi8p2nqDZ1lPzy891VyRPjH3bWM_Vvs4K76iEoPdd0qBSvw9LRhMsFL2TjNQZJWQJYIZPaTxFdI3pdp8PVnvSHJgNnWpaECSKu7jZLUJtkmiy3wtrS0CO9R4HPvNJnOhVytSjVKNezNcdr5L7ufNXMYsX6Jzwmj5NhI_WOlRsW94cgR22Pmzk7DBZ3mew47xfK8k_NTaYi7kitHj2GvVbKb1xc&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"09:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"09:00","closes":"15:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"15:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

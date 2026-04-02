@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Phoenix Veterinary Referral & Emergency Center","url":"https://scrubby.app/vets/phoenix/phoenix-veterinary-referral-emergency-center/","address":{"@type":"PostalAddress","streetAddress":"4015 E Cactus Rd","addressLocality":"Phoenix","addressRegion":"AZ","postalCode":"85032","addressCountry":"US"},"telephone":"(480) 264-9715","sameAs":"https://phoenixvrec.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.1,"reviewCount":443},"geo":{"@type":"GeoCoordinates","latitude":33.5967666,"longitude":-111.9953912},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJFYLEgy1zK4cR4zQ5VWkO_Zk%2Fphotos%2FAU_ZVEHIH0bV6evL0dgCnFDvJYMOfclwTHKtF7KiQnSZUnm9oRPoZHxXsKaetAUwGu38dy8ZoegZORMrSpsNPkoAyJLkr9q_731IKWHsSYs5fEodl-nV5wp1lGrgy1hTMBOPMswcQEioYKel6Q3auRmyDigSoArqwB5W_GhE3Cr5_H5JC99HOs2u1lVTNh5ITSNoXYQqDQ5P4juvzADdVgcNL4X4dP6dErOpx0ecl6eubeUrMwsqLnP4a4arEV-CuYDLzvS_RJZwnOY5PWS2yBJSlKmYABq888qsaf85U7SoXzm9w8zRXnV4jWNgzaZ31eQpVKUCiiS07cQJVvQF532gI2yeWXVorW_p86XpnBPd_qzBMZKqt_da-3AEhSQ5puvFM-5AbGK5CXaJUjzRaeRhS7QtMiGOkno0nOdcn5Ogs0YJD0B2TTJLfMZj67FsyvfF&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"00:00","closes":"23:59"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

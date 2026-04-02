@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Island Veterinary Services Inc","url":"https://scrubby.app/vets/portsmouth/island-veterinary-services-inc/","address":{"@type":"PostalAddress","streetAddress":"2477 E Main Rd","addressLocality":"Portsmouth","addressRegion":"RI","postalCode":"02871","addressCountry":"US"},"telephone":"(401) 683-6500","sameAs":"http://islandvetservices.com/","geo":{"@type":"GeoCoordinates","latitude":41.5974149,"longitude":-71.2508629},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ1ZV3zBmr5YkRQ1NFUZNgEWg%2Fphotos%2FAU_ZVEEUOU8sJSX6NxiYYVbhtcVHRIyaSJYiWOpS9lOSOH3kH34nhXCbEobuyDoxZ0s2DrhAM08GCvBq-1pOyxm2BFKSVnTy91HA6dYnB0zWc8A5L-x1-3YTUPDmBUWbEpM7i9DUjznlWPpNjhZWBypH3PrXFWIX6sqoVRPLwdOsUBQWt6KqXmzFxiAMFCH4To70nAfdzKmiPUCB9RAdzwIhXgG3AwnzzRHqHwi1XsmP0w5kPJZtUjllKk8-MvJXgZ-yKAYOh1TTUeaHJd6o3c3XxWlR-hiJJOJC8vQoJumFbMnoREEUz9Cd7A3gl2e4-Lfh3_AABhbZKJRK_TBT-w2m9tUjNwUspCN9aVCrTENUuSoslrIi4UgzPfhRTxN3ai-UCA5j7SJwuispTJntow_g8O0bCRnhbrIhDxZXGyvR0maETSzz&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"12:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"12:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -358,6 +366,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -393,6 +402,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

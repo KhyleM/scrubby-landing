@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Annie's Ruff House","url":"https://scrubby.app/boarding/norman/annies-ruff-house/","address":{"@type":"PostalAddress","streetAddress":"1043 N University Blvd","addressLocality":"Norman","addressRegion":"OK","postalCode":"73069","addressCountry":"US"},"telephone":"(405) 310-3084","sameAs":"http://www.anniesruffhouse.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":158},"geo":{"@type":"GeoCoordinates","latitude":35.2285284,"longitude":-97.4497339},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ_S6KcuhpsocRPYgziRJY0q4%2Fphotos%2FAU_ZVEFuPjIos335z4Vn9yBaKahOPJrCjQ20Y3-E7zZskBLDq_Jgx3-ALkBtDRlZUBDyp_ljscvwY6WfKgVuKpa1AGehvPKdEBlh4v1EieWULu9sO8tGtPMrrjhCzIcu65cnv7528ZCoIBwCXGR8x-V3pA0uiQQP4WC_tFbQZEvTkbC_B-qohQ5Vg5nkZ_3-vHhBBN7A2vuhagqtn77cpm_dhyWQCvmsNUyq9nNoGqEknQc4x4bQSWFXShoi0Vi8wmLExMfOj3kx4i3T5H2b9anrOsQyttI6mMRqbUlkgNeERxUF5EGWtkLx9pOAagZFkbSMrxkQ2KVd4GQ40F01X8KXjXojvL0NGXZXvcboshd6ecW_U_5b98i5o8JeKbHCnjw4Xg_FHMisMP_2pm-BvK29cmvmlvjE_ykd4zM20aM5kkwvk23P&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:00","closes":"10:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:00","closes":"10:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:00","closes":"10:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:00","closes":"10:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:00","closes":"10:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"07:00","closes":"10:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"03:00","closes":"18:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

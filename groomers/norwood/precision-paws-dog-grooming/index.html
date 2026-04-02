@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Precision Paws Dog Grooming","url":"https://scrubby.app/groomers/norwood/precision-paws-dog-grooming/","address":{"@type":"PostalAddress","streetAddress":"607 Washington St","addressLocality":"Norwood","addressRegion":"MA","postalCode":"02062","addressCountry":"US"},"telephone":"(617) 580-0720","sameAs":"https://www.facebook.com/PrecisionPawsGrooming/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.9,"reviewCount":45},"geo":{"@type":"GeoCoordinates","latitude":42.1944277,"longitude":-71.2008278},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJj0HINHx_5IkR_n4D6A94CQc%2Fphotos%2FAU_ZVEGB5Jn1Z37GfdbGMWoczMe1QkQcgapPEihTJD7iXA2OFa4EwPKBh9B9gvGKWcS4_AUMQ5BlPwmJDCxZASDluLe-ECNuSQSMynvj3pjYYZQjL_7t_BBbdS6PAjKy3Wg3uMIa2ypGzTjDZ1xmZpD0YAqLJIiOA08K4jN7_TzvIuClzk1-80ijfWGfrG6pkLrZZbKNN4T_Y0RZpRInStEB3zn2jAjA4aN4jjv7BTTfRCvqQ_hMrbEY9A3vCg2kgnNvaC9lpc3SN9Yeqz4Z7WmkE0YYSNPvMnGsxjgYWMu_aHSsww&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:30","closes":"14:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:30","closes":"14:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:30","closes":"14:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:30","closes":"14:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"07:30","closes":"14:30"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Michelle's Professional Pet Grooming","url":"https://scrubby.app/groomers/maricopa/michelles-professional-pet-grooming/","address":{"@type":"PostalAddress","streetAddress":"21842 Balboa Dr","addressLocality":"Maricopa","addressRegion":"AZ","postalCode":"85138","addressCountry":"US"},"telephone":"(602) 568-1047","sameAs":"https://michellespropetgro.wixsite.com/grooming","aggregateRating":{"@type":"AggregateRating","ratingValue":4.5,"reviewCount":98},"geo":{"@type":"GeoCoordinates","latitude":33.0783007,"longitude":-112.0332452},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJC_eW0Dr7KocRAL0K5jnK664%2Fphotos%2FAU_ZVEF4EGw9ThYbAwcbYc01Hbbag6s4eaeMcsBWVX1VxtDVVC4oyVqLJR5qxm4tipZRGoW98sErMOYCOh58V7GkJqo1TyJCqhZ7kmQC1k6G76cdF0PuXZ8JtRQkGfsDPhDnYBesZv6w6SC6N-mZfkqcXycRR8iFDZ-ZHGPwa7ORYxiu2pAd-sURT4rAr4ix3xp9tPc7oOihRCK1Gl765E9WzfcdF8RnsuZRqcXKT_GsB7GO87FV93_bU9KnWe40AXZXK_Q1BwSigEVDmfJFw1AD_HtJ9FikG0essHpTFOUFJS0aIw&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"09:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"19:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

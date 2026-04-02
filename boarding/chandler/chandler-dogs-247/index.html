@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Chandler Dogs 24/7","url":"https://scrubby.app/boarding/chandler/chandler-dogs-247/","address":{"@type":"PostalAddress","streetAddress":"6145 W Chandler Blvd # 1","addressLocality":"Chandler","addressRegion":"AZ","postalCode":"85226","addressCountry":"US"},"telephone":"(833) 364-7247","sameAs":"http://www.chandlerdogs.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":436},"geo":{"@type":"GeoCoordinates","latitude":33.3037036,"longitude":-111.9486397},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ-0bU3KgGK4cRhWc3rI1FFng%2Fphotos%2FAU_ZVEFTwhl2K1lmF6hCY3aiX6gtuLKvr-eHmyc1sQ9H1ta4waDh3vHurJrcQGnQQtcRJ9kpuIuPvS4woo-gGr73xDQ25QQynFTT5qB93I0OspwL5UA1e0QfyAb4Y8XbvpNA0K85byuezEyJ3xCQilnqD9QOaxmTXvOhXOFIglRyYL6Kg3NsTPCfOp2KfoCJ5SdZwxM3M6j9rNtso45GYEWB3HETGtmEBu1_Q9ouRB5MAVz16h5O1873fiCKhCVsUQt-9usHirLg83GL-ArAsPdnQak-Y8-x-HRI5UP9MRb8LtZoYg&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"00:00","closes":"23:59"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -364,6 +372,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -399,6 +408,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Barks n Meows","url":"https://scrubby.app/groomers/hamburg/barks-n-meows/","address":{"@type":"PostalAddress","streetAddress":"6086 Southwestern Blvd","addressLocality":"Hamburg","addressRegion":"NY","postalCode":"14075","addressCountry":"US"},"telephone":"(716) 980-6545","sameAs":"http://barksnmeows.net/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.9,"reviewCount":83},"geo":{"@type":"GeoCoordinates","latitude":42.7214919,"longitude":-78.8991807},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJSYFl0LIb04kRGBBTizOde4s%2Fphotos%2FAU_ZVEH7Q1qZ8nOldYXGyd4jb9SeBC2LCalNVB_rB0IDmFyq9XRaRY2j7nvRKII0oLEZTq4hv0XdIoY743WKomNKUckrK7pm3pUFDEe52EgXP91N5LHCabeFJZwtC8ZLTTJt-8EFts6eK7T7e77HKO9Xv2gk8R5gD7vmOZpXLL-Q6bm6xWDnQk6vLR6_ql2n7vYTaqG2XlZblYjTmh9xb9GD4G-x-y12sXiDLgQIyf4QqZGJLZcTEEEZqulD3QEWG2l4KZrjIekzSRV9970kLV6BZVj019_0hYjibDHhAaK-alR-eg&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"11:00","closes":"18:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"11:00","closes":"18:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"16:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

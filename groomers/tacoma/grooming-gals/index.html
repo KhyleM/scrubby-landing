@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Grooming Gals","url":"https://scrubby.app/groomers/tacoma/grooming-gals/","address":{"@type":"PostalAddress","streetAddress":"11006 Pacific Ave S","addressLocality":"Tacoma","addressRegion":"WA","postalCode":"98444","addressCountry":"US"},"telephone":"(253) 537-5373","sameAs":"https://www.groominggals.net/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.9,"reviewCount":202},"geo":{"@type":"GeoCoordinates","latitude":47.1573856,"longitude":-122.4361076},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJiXCJp9ABkVQRyAAhPDwNyiw%2Fphotos%2FAU_ZVEEIOTzMjQmCo89FZ1C_jgcnEZE2MBCCPSEIAa7Jt3BXSINPKnCVChfVz8O_UBDI-5oC6kCdnwKDLXwbJN5fV4QbOFTuXSKRW0FpkFErNYqwig3Fk4v2QWrKeldtLPVVVdIyUMuRVPl-oRyqf6VwG8vuhyIMBZI8fyGTXTdvfEKnnQCCD9wi2LvrAlphHtEJS8VBQpP8vnDiUvSdJLgiVF-LX1w2myCIJ89bYa6LhYvNoU5vh5MU_WP2rRpSTBu5V7h44S5FlT5hWEpSAn1r8ABx9t1QgAtvIny5LGGnamkoz161X_HqpHtLUBpwHjTKerVe4xbKKItPqoHbp7But3tvo59wKy9ZtdTaPCdsfuUHPC1ud5573NSN2g-vW5dF63vXAoioZ1Comupl5XjLBM9SWZesTILXzhzD7OP5xdYh-Foo&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"15:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"15:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"15:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"15:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"15:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

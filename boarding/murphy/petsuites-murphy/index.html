@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"PetSuites Murphy","url":"https://scrubby.app/boarding/murphy/petsuites-murphy/","address":{"@type":"PostalAddress","streetAddress":"415 E Farm To Market 544","addressLocality":"Murphy","addressRegion":"TX","postalCode":"75094","addressCountry":"US"},"telephone":"(469) 722-7718","sameAs":"https://murphy.petsuitesofamerica.com/?utm_source=gmb&utm_medium=organic&y_source=1_MTE2NjkwNzktNzE1LWxvY2F0aW9uLndlYnNpdGU%3D","aggregateRating":{"@type":"AggregateRating","ratingValue":4.4,"reviewCount":403},"geo":{"@type":"GeoCoordinates","latitude":33.012805,"longitude":-96.601722},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJtRu6LtcbTIYRBH6BLk0vsCc%2Fphotos%2FAU_ZVEFRggJkqOk1vnwXf_Y9x7DFyHsXO5rLghyUjPQayWzmFAAgjdEiVG24nnkAEy3EAqa9FGHgNe5iiPA1nMfy71-IPs2PLw_CCK_i_eP-eT7MF8X8PQhlFdJAs6kS2a1AWMFO3kgCbeHMOtSf3kGxH_LavctmVamtxuCPxd4ahlQU2yR1PEUt430tBD-bOjTRv0_sFQ9gEczcLE75CxlrqtuoLl6dDZ1jslmKzypfsmC0F1OZB-Z03AhI9YXMJlWvZI0ZpGq9qpnrjzebs4isBGOg9vAUGczHNSl6F_l3HhuQPQ&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"06:30","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"06:30","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"06:30","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"06:30","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"06:30","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"07:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"07:00","closes":"17:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

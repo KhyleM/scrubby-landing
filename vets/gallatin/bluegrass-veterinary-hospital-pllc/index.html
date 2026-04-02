@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Bluegrass Veterinary Hospital PLLC","url":"https://scrubby.app/vets/gallatin/bluegrass-veterinary-hospital-pllc/","address":{"@type":"PostalAddress","streetAddress":"390 Devon Chase Hill","addressLocality":"Gallatin","addressRegion":"TN","postalCode":"37066","addressCountry":"US"},"telephone":"(615) 795-0070","sameAs":"http://bluegrassvet.net/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":128},"geo":{"@type":"GeoCoordinates","latitude":36.3671785,"longitude":-86.4611353},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJK6ji-pE7ZIgRW82x1oJouq0%2Fphotos%2FAU_ZVEFGpXnXDzDj_ibYjrhAD5j5nB37XuOEjETMJXY3TNRxID5-bw32wCAmRMaAgrhFKpnK9oUFb1d948pP7Pnz_V7BRHdXi_5A6R4hOqftzXShnU9FJLRP_UUila5OL6IESe9XCeT7xyUrI6zJoGy5motGCVQK4pbAZEiVwknjG4ANDpMdpqNJVQ8lUIPgrwJoHprvbGOZkjxsNHQQP0SZVy7o_Ktnw8QH7SZu8JFRwd-wH8N68MggbCEzq3TexrIRjB04yZunplDqswxFnue8-s0Shk6c7PV3LD2el7qo20bUUA&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"17:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

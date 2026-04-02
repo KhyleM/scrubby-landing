@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Kindred Animal Hospital","url":"https://scrubby.app/vets/kyle/kindred-animal-hospital/","address":{"@type":"PostalAddress","streetAddress":"22510 I-35 suite 109","addressLocality":"Kyle","addressRegion":"TX","postalCode":"78640","addressCountry":"US"},"telephone":"(737) 208-0778","sameAs":"https://kindredanimalhospital.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":233},"geo":{"@type":"GeoCoordinates","latitude":29.9900494,"longitude":-97.8732098},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ2WKs9EZXW4YRYiQ3VjOvvrg%2Fphotos%2FAU_ZVEF2qvWPpB2J0XqMeEx20keDZWFIbDAvdF4N2Ne7Aw-5XiqmbN_BrAIrMLGdcBmRgBTiAJd_Yhf7NSDKo5O-Ql1WXNEd7VkF-B1PGrUF7L_p64rfU5ccayu2vRrDLHCeSTNsLoLUOwCsuG24SHxMRzpc_aXJI1YxRHPCB3HVpmgqWQqIiSFVzmaooNS4OU2bsOYZ49ObRy_oMWmxdDf249eGhg3yclEWQOM1-7McSNvnq47YY9tWv_FvJrOMWF0V9Q7PGPCjK0EZf5wG2jA3oK483mwo1QW1SbXEFE4tR9hbJw&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"18:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"UrgentVet","url":"https://scrubby.app/vets/peachtree-city/urgentvet/","address":{"@type":"PostalAddress","streetAddress":"321 Commerce Dr","addressLocality":"Peachtree City","addressRegion":"GA","postalCode":"30269","addressCountry":"US"},"telephone":"(678) 394-3800","sameAs":"https://urgentvet.com/location/peachtree-city-ga/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.4,"reviewCount":160},"geo":{"@type":"GeoCoordinates","latitude":33.3979139,"longitude":-84.5907854},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJLdL2ua3r9IgR6yyJns7R7m4%2Fphotos%2FAU_ZVEH3L7DuEFamMr4-Kmn5s6aXuJZC55OsDjSABWd1brZX4SK1p1isFPzOMAeG4B0qt-jx2e3yMJsvs4pGpRGTjrwHDakHwIRNrsVWMSbGI8ld4j-r8fA-NDIqMZ6jgpyfKARLmXDUu8WvohLDou3uu_LVA5dEgX0nmwYpfdAtUmfb47bcSFzO0hYeWWU0G9-SrX2uaRxZvMhXKXmuv10Ws19Rl1Q6TAV7Ibc9njmwv1xW4VUcJTbARm2CT0J5sAGe2XX2fuWKFfEvxdR4jZZXRkn-8HewSUNP0ZdZ8oYUSlKsopJ8daqVW8ibpL2O_pcZiU-WDHVvIQYk2DtaTuobRzMs-g51JeI1nJajYNxxZx1I19BucAzw9-7iU_pALg7vhrW5JZqd7UcmyLV-D_Ad_AH1KZTNoRDeuoUIKNhjsqC7vBNr327NDaMFhMbJ50Vw&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"03:00","closes":"23:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"03:00","closes":"23:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"03:00","closes":"23:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"03:00","closes":"23:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"03:00","closes":"23:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"10:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"10:00","closes":"20:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"UC Davis Veterinary Hospital - Small Animal Clinic","url":"https://scrubby.app/vets/davis/uc-davis-veterinary-hospital-small-animal-clinic/","address":{"@type":"PostalAddress","streetAddress":"Visitor Parking Lot 50, 944 Garrod Dr","addressLocality":"Davis","addressRegion":"CA","postalCode":"95616","addressCountry":"US"},"telephone":"(530) 752-1393","sameAs":"https://www.vetmed.ucdavis.edu/hospital/small-animal","aggregateRating":{"@type":"AggregateRating","ratingValue":4.4,"reviewCount":1321},"geo":{"@type":"GeoCoordinates","latitude":38.5321258,"longitude":-121.7642534},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJH48LPx0phYARbvUFnyIOQ4o%2Fphotos%2FAU_ZVEF-ce_4zL5E-jcDEdqgX8R_B6iq6yphZOD3vC9Noy8zTfCJ8QYTEqDig9HaZlpSzkBZw52yFjv0wdlGm6d9A0HUQVLmKrMrNGqYKHURoQUHX1Nctt-SNDH3U3Hy8OY0NeQKkI18oMZS2gw-vQxRWny6rqoIWoL8SJXCEVfzXb2gVAj21n8msFn_C9VjLCKI-jvvQIRyoi_puID78cvZzoJ07-gR-RxFTm-vKb-MME9Rqn2orFruYLa67VvZ6sIpG7gEeAcsAou9gMpmkJGOS9JMAQ8hGql4IDsPGrFj19F06VQRG5Sw8kUfHkQS5CO8ix5U2ImwqzppwLTZFjgTUh2I-x4L26OI_vo6so2CxDhA-TrBKrI29VTXeXMZeE1iC0JBZHRmqSohYX_jHz8RHX1Mh0xFWpTBjMJIz90jnrHqzAI&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"00:00","closes":"23:59"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

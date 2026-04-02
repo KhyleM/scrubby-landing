@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Midland Park Veterinary Hospital","url":"https://scrubby.app/vets/midland-park/midland-park-veterinary-hospital/","address":{"@type":"PostalAddress","streetAddress":"70 Goffle Rd","addressLocality":"Midland Park","addressRegion":"NJ","postalCode":"07432","addressCountry":"US"},"telephone":"(201) 445-0030","sameAs":"http://www.midlandparkvet.com/?utm_source=local&utm_campaign=eii","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":88},"geo":{"@type":"GeoCoordinates","latitude":40.9837075,"longitude":-74.1409576},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJm9cQUU_jwokRsyTNXXFbkr8%2Fphotos%2FAU_ZVEEFnCirJR2w3mj1kBL9A2_OacLp29I0cmJZHl0LyIxsQ3xCnnKmlHw2FoQ4HMzNmj_9TKZaJHkNl76K1sL2F7p32z6CUhqaqOmro4NMKaU78GQX2KG30ZvH40SUxrUX0d2UA20pVupMt2S6JcQ8Z_XrBCkzpXqmNepwQmegNN_sWdlKGuFLB0L1lYMytJazxu8z38QSK5FzquZiWS6yHUBnEBm3aeH1FzNEWbrnSDBzJMv8oEZMCPuyTwGXNyAYbO-CDiYtV3tRx17YZmQNzxZ4WXPyD-Z8B5nxBKteduCP-A&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"17:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

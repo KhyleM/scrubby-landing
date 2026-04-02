@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"The Golden Leash","url":"https://scrubby.app/groomers/wyandotte/the-golden-leash/","address":{"@type":"PostalAddress","streetAddress":"4450 13th St","addressLocality":"Wyandotte","addressRegion":"MI","postalCode":"48192","addressCountry":"US"},"telephone":"(313) 401-9884","aggregateRating":{"@type":"AggregateRating","ratingValue":4.9,"reviewCount":57},"geo":{"@type":"GeoCoordinates","latitude":42.1879993,"longitude":-83.1693476},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJQaX_prkwO4gRHTekqC1FSCk%2Fphotos%2FAU_ZVEFkSsyPuX4_oseEuw_v5iArACw-CYzKoLOT09cwPrJ-4zvS5pDLuwNzY3RL-ZXNMMYkVLCGV_eGilQYjTe5nTZA8SxyjB7KiIv8Ti8JztP1j4cxteKy3-Qd7d9FgCUcKg6ax3mpJ9Z7wA94eVf6pg_f8y9t2GkzugtP_b0t_7n-0m_8-GCA3i9zh55dA-dpbNTyeyB4M7oqXC9dv_x5X0VzbwzKA7LgXjRDLriJSO9UEA0J4Ovy03jN4iYQ48_xifg3xLw5Jpe8_0nnRX4N-s2yZHpEbg71ngau0hGIYbYJlg0XR1XnHmZAd_W0_Wd7ekg5T56I3MV5JCfUmdfvwUbsvPeF8HlT5tFMxlwUNbDCQbrHoyp-RvhO2Rlvr4_4fK6nkmlZ89XuM_yACVKZRVbhSIwXXlC4MdVRL1CDWKjhXHoCkpjahNbqf4IoVjDY&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"17:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -359,6 +367,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -394,6 +403,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

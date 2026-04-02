@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"PAW Veterinary Center","url":"https://scrubby.app/vets/redondo-beach/paw-veterinary-center/","address":{"@type":"PostalAddress","streetAddress":"1436 Aviation Blvd","addressLocality":"Redondo Beach","addressRegion":"CA","postalCode":"90278","addressCountry":"US"},"telephone":"(310) 928-8387","sameAs":"https://pawveterinarycenter.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.9,"reviewCount":211},"geo":{"@type":"GeoCoordinates","latitude":33.8675938,"longitude":-118.3831962},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJRSX4jHS1woAROp0euMpzkKA%2Fphotos%2FAU_ZVEG38RGvqKz_qUjYhmOsuykrrIar1NC4xaVwy3LU9kHuDRqX7TPoQEDGSyHwLpFcFtcJJu9Sys7fndKS0OBYtYCjR8qTFos1nuC3zMczpl0k_voXx9JR41TGt4O6Cy9T7Hz6zgYRFWHWd1w_uxvgEmP5vDOHrny1vNST9ohegH3yoDkIaM-pyiQsQ3lPb2Pn2_63q0_itpVrq_RWys2Rx_m0PzMSjsv-YBFn0Q1WPrsnZBufx2p4I-hnLcsxXjPnXobbbic_W_Axarz83Q6tGnkBQNg90rUkYkAFyYfIJNXeqw&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"16:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Princeton's Place - A Resort Style Dog Boarding","url":"https://scrubby.app/boarding/fayetteville/princetons-place-a-resort-style-dog-boarding/","address":{"@type":"PostalAddress","streetAddress":"140 Bailey Ct","addressLocality":"Fayetteville","addressRegion":"GA","postalCode":"30215","addressCountry":"US"},"sameAs":"https://www.rover.com/members/stephan-kelly-g-resort-style-dog-boarding/","aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":1},"geo":{"@type":"GeoCoordinates","latitude":33.4097147,"longitude":-84.4068636},"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -339,6 +347,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -374,6 +383,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

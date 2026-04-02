@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"The Dog Lounge","url":"https://scrubby.app/boarding/carlton/the-dog-lounge/","address":{"@type":"PostalAddress","streetAddress":"OR-47","addressLocality":"Carlton","addressRegion":"OR","postalCode":"97111","addressCountry":"US"},"telephone":"(503) 884-0660","sameAs":"https://thedoglounge.my.canva.site/thedoglounge","aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":3},"geo":{"@type":"GeoCoordinates","latitude":45.2941943,"longitude":-123.1769899},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ6QPcVKA5lVQRYvORfGMWWxM%2Fphotos%2FAU_ZVEEny1jTgrHQyTN_ioTBU1mABE_WeF2xpyAWyTrwimkPxzSRbJ4rhnMhGrRXgqV8de_HmmsKn6m6URqJDG4bgfA1815sfRw5GdfxSmpaShnpZc-fFgwhgFhiH1FuUBwxhju8fFpvmXDM_x95L7v_ffkpd1LPJwii2F6-SjGPNF_obmnHEzLqPDTQIfhJA9-qJizcHKZlqYNn8QzUpivXVQb_uevoziWlerBNwb-zduR7e0fQlzT9bACFQ0VLMRd3W4VCq9mUMCGBVj0ZbG5VCrm4LDuy-s9BQpX8uGOoxEQ&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"07:00","closes":"19:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -356,6 +364,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -391,6 +400,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

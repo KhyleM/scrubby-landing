@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Petchester Veterinary","url":"https://scrubby.app/vets/eastchester/petchester-veterinary/","address":{"@type":"PostalAddress","streetAddress":"309 White Plains Rd","addressLocality":"Eastchester","addressRegion":"NY","postalCode":"10709","addressCountry":"US"},"telephone":"(914) 771-7387","sameAs":"http://www.petchesterveterinary.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":384},"geo":{"@type":"GeoCoordinates","latitude":40.9503697,"longitude":-73.8176902},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ3xDzj-qSwokRJcLU2YYAGno%2Fphotos%2FAU_ZVEGlKADvN1pskd7CUteuyJUMNHKWPKBV_4uM-FrjOc48l2F2ymiN1j4A4TWL5dnfbg--5NtZvOAqAbZSL1ll9f09Hyf2DcVF38t9rAqzxOqlJUOhJ7VTg3dNE0RdC_7rqcw9o-DqFxJnpa8ETd_hjEz7UMDzkuG6q6FCn4JHHiHMONT5gDQvgmtWyx7jjqqbYpD8BYCg0YwT88wCn1Qq_Rl-FIzFboQi5Kl8r-dtTgR81kLuE-oO5i5KYp1B0ED0SaByNrzSfh8eyDrWxcHLOxEzw7G4xN34Ue0FhGXkEfipDQ&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:30","closes":"13:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

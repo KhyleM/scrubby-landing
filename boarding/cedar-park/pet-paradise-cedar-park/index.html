@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Pet Paradise Cedar Park","url":"https://scrubby.app/boarding/cedar-park/pet-paradise-cedar-park/","address":{"@type":"PostalAddress","streetAddress":"1204 Arrow Point Dr","addressLocality":"Cedar Park","addressRegion":"TX","postalCode":"78613","addressCountry":"US"},"telephone":"(737) 587-3100","sameAs":"https://www.petparadise.com/cedar-park.htm","aggregateRating":{"@type":"AggregateRating","ratingValue":4.1,"reviewCount":211},"geo":{"@type":"GeoCoordinates","latitude":30.532415,"longitude":-97.801039},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ_f_ijhEtW4YR-LyVu1CFkwI%2Fphotos%2FAU_ZVEGCFN-3fXJyJTh_XuF6PBeFJawHJhehhhRequG_OoZtAPqs7ldN-s9s7pA6uf06yDuSX8-5mdUWdbgafHUnOXWtQVdTNFZYPc7JQLuALSngwhYUU4ap-_k8teVBTYk49Iu_VIu9CCTT_e5qbXkinJkhmEJrCg1Q-6m0wHehY5ormiAu6gAp1P8u_Rt3wvnRy-cxgaowpvud-dRbyzXpt1-UroWj46N1Uotu372mYdwLBmiFzlaNJSWJFpBkHkySq_vO_P5ffD2J8wa8a1G_42fScfG9qtbJwTJYzT7cnKmmOQ&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"06:30","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"06:30","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"06:30","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"06:30","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"06:30","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"09:00","closes":"17:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

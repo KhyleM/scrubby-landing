@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Country Kennels","url":"https://scrubby.app/boarding/lakeside/country-kennels/","address":{"@type":"PostalAddress","streetAddress":"16922 Rio Maria Rd","addressLocality":"Lakeside","addressRegion":"CA","postalCode":"92040","addressCountry":"US"},"telephone":"(858) 748-5771","sameAs":"http://www.countrykennels.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.9,"reviewCount":63},"geo":{"@type":"GeoCoordinates","latitude":32.9581271,"longitude":-116.9622792},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJL6R9uMLk24ARSb2KMSgA57k%2Fphotos%2FAU_ZVEFENc6M-7Utdc3p2ytJc-GdU-onYnm14xp3MbJde8QRedy1gnQjK_wonR0WxZm9BmS1iIiUZRnwaJlO6YvMHNWHGhNzQ2nGjz0tU8OtrVglP6f1jca9RZ2ptrYzwXhaC0EuedxGmVrgL0OAAGmq1MoWhpYg5efvX15xRTo_zD5d4ucPwpBwjwZczJcrnbLxxbX1vtTeNTzchf_hj5jkV8bbnlmbrilCESDbQSFf40f95OeUrrOzgSg8HxOh8uTRwLjj0scdFwTr4Fz-e7IJ9-i8TY9Grs8LAAfemaC02mpQ4w&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"09:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"09:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"16:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

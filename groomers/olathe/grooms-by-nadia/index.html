@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Grooms by Nadia","url":"https://scrubby.app/groomers/olathe/grooms-by-nadia/","address":{"@type":"PostalAddress","streetAddress":"12419 S Seminole Dr","addressLocality":"Olathe","addressRegion":"KS","postalCode":"66062","addressCountry":"US"},"telephone":"(913) 398-5643","sameAs":"https://groomsbynadiakc.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":19},"geo":{"@type":"GeoCoordinates","latitude":38.9033891,"longitude":-94.7668731},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJS40mImAkpIwR036BLDdUsYE%2Fphotos%2FAU_ZVEFlpq2SPt0sj6GNdd16ac7fEiD-7Ur0-jRCorEcaDx4J_bs0R0uFiMkSsCOvDoaF_V0H__Jw9gnZbhMLA0c8G7GuaK0FgQxXl3RGct4d-keecI_iAcNgwoRNamy_fWgg0J6KFQbnwDWV8D84Z-EdkxF8hm1NLovLi7BIZA7bgU1FVKU_DuG_r2f81RbyezSv-d0-lY1Wss1yc4iUcF9_qBonvNFD7DF8r2NZMunwePulGDS2KJAmXqct0y359bgJre0eOf5IU_uAG35Y4zGtieZzu1kZbT8hYHRpzVkSH5Eaw&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"10:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"10:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"10:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"12:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"10:00","closes":"16:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

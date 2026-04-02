@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Animal Care Clinic","url":"https://scrubby.app/vets/el-cajon/animal-care-clinic/","address":{"@type":"PostalAddress","streetAddress":"2650 Jamacha Rd #159","addressLocality":"El Cajon","addressRegion":"CA","postalCode":"92019","addressCountry":"US"},"telephone":"(619) 670-8700","sameAs":"https://www.animalcareclinicsandiego.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":517},"geo":{"@type":"GeoCoordinates","latitude":32.745314,"longitude":-116.9321246},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJa2M82LVb2YARzduRZ4PBnQo%2Fphotos%2FAU_ZVEGSU_QktIs4hk33gueIvHcXT-tWtshSKQUQWCPPrhJEhc3yN_aFU96IsmOMyMX9n8O5TOd_mXvdD0Nc-XA2qOBEZ9a5_zMOCIYiGSfBdjTgVRYxRUhV0mI0qzIgbG6E2movwZxUmXr4K_6n9D6DDdtvQU_1HJ_FaNgp6Wu2ugEB0WxZODRSZ8tKgNsEHenr1qP9dJX_Ti0MX76EUR4US7r8eifVpvdIjRu2PZbNymKmPngXl1VOH_AQotNjo7Wcr6ZkJm5KbcZfg63ERk1l8Jg4bxHBghu1dAmccpNWVWK3RQ&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:30","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:30","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:30","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:30","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:30","closes":"19:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

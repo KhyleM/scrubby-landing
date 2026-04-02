@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Tidy Tails","url":"https://scrubby.app/groomers/bristol/tidy-tails/","address":{"@type":"PostalAddress","streetAddress":"500 Metacom Ave UNIT 4","addressLocality":"Bristol","addressRegion":"RI","postalCode":"02809","addressCountry":"US"},"telephone":"(401) 253-8245","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":48},"geo":{"@type":"GeoCoordinates","latitude":41.687485,"longitude":-71.261819},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJj8sKPj1U5IkRsPX9VtyD8sY%2Fphotos%2FAU_ZVEEgP5jcUKGAPRuMizM4fznPLuWE-qosixVOz5EJvIZZjtshwsmVkkOpSLmQBhcnhaXhhwyj1X5aI7RUhEHKRX_ozMwgfBVDQ4LJZJoK9A04aEHxEk6IcKV9qLZbF6zvJmhcCn8xenFTicR1klJwRuWF1DxnPrD2c_OvHfATscDIz2nwMGkKUYR6ag-4iz2yg9v5v8FFTxS0GcG2ViLT9R7rGx6rGZKUDmi4Ze3nIuqTrTfCVSJU7Uqzo0kBEMl6jb6P-8-ytgtVJx6UDOymJMZMRUVK96f-Ny4b3fDuICFWIBZKQhkmpx1XQy78xiw3J-MkkKUNskLDwquf9CcAQpiE8-h6LLeLJt8m3E910Ip70m-M-POs00fejsWT_UZjdlRy4voqc3zucr60-qZOY7ySM7XHlDdcxomUUbjgihyMZg&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -347,6 +355,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -382,6 +391,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

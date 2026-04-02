@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Gertie’s Doghouse","url":"https://scrubby.app/boarding/oklahoma-city/gerties-doghouse/","address":{"@type":"PostalAddress","streetAddress":"3600 NE 50th St","addressLocality":"Oklahoma City","addressRegion":"OK","postalCode":"73121","addressCountry":"US"},"telephone":"(405) 588-7017","sameAs":"http://gertiesdoghouse.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":69},"geo":{"@type":"GeoCoordinates","latitude":35.5214207,"longitude":-97.4478174},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJk5oSRf4bsocRIgQofNi2vcE%2Fphotos%2FAU_ZVEHgKvPG1TwUCwYdX0DQTFd_-Zg_EvEccfd99vt7UsmpSEqs19ZI27bQWRBd8uwZ0GrUggeh2nxXHPpRvMZU1iUYOEP2rTGoFzqDRu25Gjdr28amrQMc-I2X01VJ7p9U0zeeUMp0mpEgVPcb25gbPBQfW91hPqR2XGvIh0TzKUjlVbrnF1FD7XfwomTbFpWTL2zfm0w1djf5_7R1Nda-ErqeonqZY7pu7Wf9pKiaXqbL5em_luBrhjftv3m5rbAFsMBQLYYJ2d3aKyT4ZcHnHIFIgJHpV4ue6wwNZfV7TW_zYw&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:00","closes":"18:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Pet Camp Cat Safari","url":"https://scrubby.app/boarding/san-francisco/pet-camp-cat-safari/","address":{"@type":"PostalAddress","streetAddress":"3233 Sacramento St","addressLocality":"San Francisco","addressRegion":"CA","postalCode":"94115","addressCountry":"US"},"aggregateRating":{"@type":"AggregateRating","ratingValue":4.9,"reviewCount":106},"geo":{"@type":"GeoCoordinates","latitude":37.7881512,"longitude":-122.4461936},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJm6XKr8yAhYARjg3rMK9uk4I%2Fphotos%2FATCDNfVZwj0p_4X7GILV3rmpVy3mvxUaQf-mO3RfiT40RRw5wMPwzlpWO-BckYfB5BXczV4ABNtE2yWTWP90HAVlHpM3uiJmpCaidADO3tzpTJCjrel_tby-Nkul5Y2e3oZW0kK_dPzTvtRIcfbSfrNbCIhqivhW2wkioYxkaS5eLyoC6bJAhs6SGq-mZg5X4DXRYhyoDQk244R3OvdNDnuC7XYQhgmAIBmgm7B_TAEehMedS6sIpFWPxMM3UXqQ2sA7c6_mQJ5RN0knHXyTa6xxSsufcQ9G8acAMB9uGQCTtCSmgw&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"11:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"03:00","closes":"18:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -358,6 +366,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -393,6 +402,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

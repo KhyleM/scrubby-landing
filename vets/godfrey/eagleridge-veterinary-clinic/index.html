@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Eagleridge Veterinary Clinic","url":"https://scrubby.app/vets/godfrey/eagleridge-veterinary-clinic/","address":{"@type":"PostalAddress","streetAddress":"2309 W Delmar Ave","addressLocality":"Godfrey","addressRegion":"IL","postalCode":"62035","addressCountry":"US"},"telephone":"(618) 467-0320","sameAs":"https://eagleridge-clinic.edan.io/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.6,"reviewCount":60},"geo":{"@type":"GeoCoordinates","latitude":38.9356473,"longitude":-90.2337923},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJBa0GB3BB34cRP7rAvjvCZ_E%2Fphotos%2FAU_ZVEGUKI_NAr8S4Q9jaR6ezuikJjDsf4bRZc3egqtl-l9UjM56r0jz81wC4_YUhcgE4qYvtMLxALbUh6C4nzjWVFrcFdmmLpOacpP1tnuxlsVlsLBTK6djIZKVpETxNLeu5KpJlrp8fHnkd8MdYi-HFulhF7KrXOSupRLsU7H56RFEikx4mq72tvGcQU4BTGu2q2iFo6Jx2djTVxowfCXYc14MA8IVHynfxb3Qu4B0p9iQp6OqOC0sq1G6-pHCAJPioN9qJpBHlug7VNLYrAPM8tqfSWXJpwr_dRcTRxizwtrZwYXI4FmxcXW8IpbgQZGN4nEiKlBZ1W4Af4dn2mJF0jeB6EJ3AkIVM6oKl0lpLww89qY9kbciJLL4HX6onarwki4gVFlPMFWzTcZx_EI265u8qc5acT4D-CBpY-DSfCfHdgJY&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -349,6 +357,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -384,6 +393,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

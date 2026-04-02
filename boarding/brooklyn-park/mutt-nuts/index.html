@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Mutt Nuts","url":"https://scrubby.app/boarding/brooklyn-park/mutt-nuts/","address":{"@type":"PostalAddress","streetAddress":"7224 Winnetka Ave N","addressLocality":"Brooklyn Park","addressRegion":"MN","postalCode":"55428","addressCountry":"US"},"telephone":"(763) 535-3333","sameAs":"http://www.mutt-nuts.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.4,"reviewCount":66},"geo":{"@type":"GeoCoordinates","latitude":45.0869343,"longitude":-93.3807768},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJMXukyG43s1IR5AMNwQcuxG0%2Fphotos%2FAU_ZVEH7l_jZ3K87THw0mZ3eAD9s2yLjid42cpH2z99lombwkH9kHmmUrxkC9ZWp53AD4WbKuPDvtQrmApqfuFSFeRUrXKeB4Xs9Wa1bOsLkA19vq-RqEyxeKgoxgXOPuc8Rk0_pnZncbbyMy9dX_yrFe2LIrO6h-8NYxSNIy-xpoD3RySDK9she47uhpQBxrYibLvHYQKMkMawBVfH6NLxnFOxCXUMn697EoVVEA0QhTivnNfTXod5vgFfTx7xa7UNlSIYe-bkXHUAVjvDNKGdW49JY5OmD3o1giV2jZoMobgGSHw&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:00","closes":"18:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

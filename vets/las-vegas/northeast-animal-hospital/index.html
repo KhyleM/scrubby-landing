@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Northeast Animal Hospital","url":"https://scrubby.app/vets/las-vegas/northeast-animal-hospital/","address":{"@type":"PostalAddress","streetAddress":"4805 E Lake Mead Blvd","addressLocality":"Las Vegas","addressRegion":"NV","postalCode":"89115","addressCountry":"US"},"telephone":"(702) 437-1374","sameAs":"https://www.neahlasvegas.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.5,"reviewCount":764},"geo":{"@type":"GeoCoordinates","latitude":36.1957025,"longitude":-115.0686778},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJjRJDRujcyIARV8NZoJCeq3w%2Fphotos%2FAU_ZVEGxRj_Ug8Q9URwIfh2VYeWU9OCe81ntw_1eqMc4kR06ngYlSOBgxxahavl3l_SiB8a8g-LhQ1FjOMymUKFFJ6ZLJAajF0ZASf_dbw2jViPBmEj6BcRoozPRNlMW0ItgJCF99B2ArWv1n9dnvfZAjz-M7TiWIleV-SzttXt--sMqKPRWnlqUMyZ31Rcc-Q3S1pCgQk99bKW18B5ryauSo2BVRu6lxRlyDIb2VJkcrbZvYS6us9DAhJ4zXxEVia7xD3XKyIVi0JRpKOXJS3XKJrBjaexCJO6hejZ6N1XCcwi5yCyUywuRgq-YQnq1jPou7R-G_PmWBkREzeYNo-m7NdtSF3mQzhWEA3S7bLCNF4x7O1AiIU4GXvC6UVcojSTVefkdTvjMi06SVD9nE7q6_Kgbb-95NFfxWmFqxf6Mp5l1LA&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:00","closes":"16:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

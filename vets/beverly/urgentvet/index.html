@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"UrgentVet","url":"https://scrubby.app/vets/beverly/urgentvet/","address":{"@type":"PostalAddress","streetAddress":"55 Dodge St Suite A-205A","addressLocality":"Beverly","addressRegion":"MA","postalCode":"01915","addressCountry":"US"},"telephone":"(978) 955-7500","sameAs":"https://urgentvet.com/location/beverly-ma/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":165},"geo":{"@type":"GeoCoordinates","latitude":42.5757441,"longitude":-70.8901891},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJmyo3nsEX44kRYZc2vTaJKSQ%2Fphotos%2FAU_ZVEFHtSGlXS5M0w8AJXRcN9gSSUaF272zNdeWv8VxXrUkta2VMt_Kd2_VlK2xXmDp0C_bbfxMTksI3r94j2CyP-NLjT7c62SIb6nJjn8hCr8q5zTLNCJOvmXSNONE2GUSErinDN7wjAMiOOuM4NOmq3mqGkIDsZW5mKquTtfwgwKpqtqjk5_V5Dbt2HrMPEa8XtKTP5eRuNWe3-jVXGOHp78WYDXqoYLsY-kDJVcdPss-yMLUcRgJZMFw-d8-gfhi1q7k_V8JvsfurGOvYqjZlA2suczF_qJHjYY042QG8c1E2g&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"03:00","closes":"23:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"03:00","closes":"23:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"03:00","closes":"23:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"03:00","closes":"23:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"03:00","closes":"23:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"10:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"12:00","closes":"20:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

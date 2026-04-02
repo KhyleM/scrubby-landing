@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Wesley's Grooming 911","url":"https://scrubby.app/groomers/la-plata/wesleys-grooming-911/","address":{"@type":"PostalAddress","streetAddress":"305 Centennial St 305 A","addressLocality":"La Plata","addressRegion":"MD","postalCode":"20646","addressCountry":"US"},"telephone":"(240) 229-1405","sameAs":"https://wesleysgrooming911.groomore.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.9,"reviewCount":76},"geo":{"@type":"GeoCoordinates","latitude":38.527697,"longitude":-76.975689},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJMdBxzXzmXKMRsnhXWB-ZusA%2Fphotos%2FAU_ZVEEhMwJGKA_tghcL9GC3j3YOBPvVWVHSTG30uFCI_5t4D-kMHUtIB1v5yHyh83610pEyYIh-kjtOytUXcd933hlsZUDZrvqk-3B8qVp01m0UesHbrQi4X6fK2x4taWRAitri8YiiDiouDXVKMGaeyPAWZRkgon10TZm2q5Chz39AZX9AlV2YmtyEbg3YFbNy3kL3mU-9VBK03BpTSKjxvrJSXmd1bQbLt2FyEL-edyH2eqDhsLb1Kp7mMAVwec6X8bEsdXZoO-pZUwp6cDp8nEuw4jv7fyTUaoOVoT7wBtLtkg&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:30","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:30","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:30","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:30","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:30","closes":"16:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

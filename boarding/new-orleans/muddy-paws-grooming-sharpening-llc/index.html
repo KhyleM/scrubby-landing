@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Muddy Paws Grooming & Sharpening LLC","url":"https://scrubby.app/boarding/new-orleans/muddy-paws-grooming-sharpening-llc/","address":{"@type":"PostalAddress","streetAddress":"936 N Broad St","addressLocality":"New Orleans","addressRegion":"LA","postalCode":"70119","addressCountry":"US"},"telephone":"(504) 222-7371","aggregateRating":{"@type":"AggregateRating","ratingValue":4.6,"reviewCount":180},"geo":{"@type":"GeoCoordinates","latitude":29.9725156,"longitude":-90.0808637},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJo1115h2mIIYRHL1BfgTLEWM%2Fphotos%2FAU_ZVEEV8A5YiJSoVkV5veWaWz_Gs3Cl0EbN5dlHjRUPpIUV1qGgi8xZSvGmQSeFcfs6eWFBXO2lCRJhLpSS5lspRQwt2jxFLEwhVjDLrEHGmFSNMuAg3sq7dvgwXiwDPXffhwwgucPOg178XPZxrBn4s0fTTNL3sLBPL7y66ryzYoe1syB_akgTgcDY-rQLcbH8tLBxJwZedkOKIl6VzCV3s08HZzrqEhkdol1CiWcbVCF8Fos1Hdmmub4OOCiVa1f6peq_ukCQ7uQHNhloT7sxMU8BU4-Zxh7UMqaL7mlNWXbmww&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"17:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -361,6 +369,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -396,6 +405,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

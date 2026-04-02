@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"North Shore Animal Hospital","url":"https://scrubby.app/vets/lynn/north-shore-animal-hospital/","address":{"@type":"PostalAddress","streetAddress":"1 Neptune Blvd","addressLocality":"Lynn","addressRegion":"MA","postalCode":"01902","addressCountry":"US"},"telephone":"(781) 596-0510","sameAs":"https://www.nshoreanimalhospital.com/?y_source=1_MzU2MDE5NDAtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D","aggregateRating":{"@type":"AggregateRating","ratingValue":4.5,"reviewCount":395},"geo":{"@type":"GeoCoordinates","latitude":42.4613455,"longitude":-70.9531349},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJq-mLi4Vt44kRW_GIKUhhAco%2Fphotos%2FAU_ZVEHMeGpyyNIPvslnoFOd3nwGL3MY6lRkiZoxwzn14KxdnhKavDcZwEWUswkCevFuur7rrj1_R0YhfsDAWDr976Khxs53AogiSVwtH48RUJ01mAvzB9O5AppElLwyH-oIEl0BQWKWRBkd0ljs8HVOpLJfN3o91gc9bczxlv__mhNB14tWqwDbZmEwO3BIJRF1heMPdFZtaHx754ewJfe9DJ5IuXiP3gZihqduWE2splemzpBqkm9Alm3ZjJWX2oH2QxYcuLKvNLpKlQzehfXaBIagKHAc18WvSHCY-YaCXgOmfoUqdQrOGMYzgo3cA-3OAC-1mi19bRSk0vQLGmkg_6rQOwo6Pi-eM9_BL0-vXfHNbLGBal36TN7vpi7cZjYMHgZB-cvVOhIQnOhb29jmaUKivchgKtFQFLrr-WFBePOhloxw&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"17:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

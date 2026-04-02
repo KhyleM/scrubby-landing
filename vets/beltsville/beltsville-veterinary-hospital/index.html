@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Beltsville Veterinary Hospital","url":"https://scrubby.app/vets/beltsville/beltsville-veterinary-hospital/","address":{"@type":"PostalAddress","streetAddress":"4246 Powder Mill Rd","addressLocality":"Beltsville","addressRegion":"MD","postalCode":"20705","addressCountry":"US"},"telephone":"(301) 478-8797","sameAs":"http://www.beltsvillevet.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.6,"reviewCount":394},"geo":{"@type":"GeoCoordinates","latitude":39.0503564,"longitude":-76.9204985},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJE4DJT5zEt4kR05onfCtbOiU%2Fphotos%2FAU_ZVEFxg6CATZg5wEc_qCefQ0juH7VhYKrfv3ARzyCiqAqNJEtDqAU-5Mcmrt4OovjNNS5uC145q2zZQY2StTy13KDntU7R7Qp0CCt4UssLhJr-U3AoUxVQg52jeLQ4hTqWaGe7jYuNEKC8y3rGnU7mQQ5dHix1Mro1z52I_rdoUEcBd_7iLiF95TNTZUeN_dMAq92J5zcpm0dDt6KS0F9rSCLj4--awGWlpqqB2jdILKrBygA3WbO_5gUnR1JeNWFzwx5UEEFSdG0QPnEkqov754jdjWLzNKZhKONcsH9SaIBaIg&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"14:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

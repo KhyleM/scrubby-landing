@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Fluffy Friends","url":"https://scrubby.app/groomers/sun-valley/fluffy-friends/","address":{"@type":"PostalAddress","streetAddress":"9641 Stonehurst Ave","addressLocality":"Sun Valley","addressRegion":"CA","postalCode":"91352","addressCountry":"US"},"telephone":"(747) 609-5701","sameAs":"http://www.lafluffyfriends.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":26},"geo":{"@type":"GeoCoordinates","latitude":34.244867,"longitude":-118.3677469},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJf3r5kIlvU24RvlTC8b2QyKw%2Fphotos%2FAU_ZVEFK4wt7zy53we0iBnUxmDI-5Aw09kOlnMebICj6upqOrQRjOizGvfIYy7dIrAPBwkBIk6peU_0iKFCb4SsYCoeB6vG4HYZyfvQis7nTCCSeyw8-9SdBao-ddISPg28jFWcAFbMQPGCD04NJSOBjGEYvpOvgdYQo7GMOizoQ_TEk_1fSReg-0d09DkY-iPVIRKbIilZWQP11fbFHwWv9vvas2J8vYo9RFhzIlE10l23j0pGmzVZbPeNBpYuv3__K33Cx7bE5IDDwYd5tUdydzIXfaJlzUZeWZIVq1fTdFuFqPw&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:30","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:30","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:30","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:30","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:30","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"09:00","closes":"17:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

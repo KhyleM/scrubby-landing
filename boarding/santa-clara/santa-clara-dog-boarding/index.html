@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Santa Clara Dog Boarding","url":"https://scrubby.app/boarding/santa-clara/santa-clara-dog-boarding/","address":{"@type":"PostalAddress","streetAddress":"759 Robin Dr","addressLocality":"Santa Clara","addressRegion":"CA","postalCode":"95050","addressCountry":"US"},"telephone":"(650) 770-5526","aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":1},"geo":{"@type":"GeoCoordinates","latitude":37.3419097,"longitude":-121.961801},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJcVeQsIrLj4ARSfVH2OTMZ2E%2Fphotos%2FAU_ZVEGYiP11VyR2jItCjGT_U72Df9m1NOkCfyMPq2mb0UkfxV7D6NSIgluWcf1Qf9vT7C-XB3uu4s8uIYOLOkXKsbOHRtMvsgFUlOfnpOBQ3Y2RcOkJaChf5UdqUKnWJpd-w9rRBlglJRwcu9bT-agFLBSQP-onakvEcCap5t6W1N5b2xJtbDguD0m1LfwJdwjD1uAiaPWZv17seHkT7wfWT9GWX-Q-4oAg64e1Wuq3OOxDcVFegomhMqoHqMKVcmH64yZmyWQLgIhOi6-IcnSaxRvCej3Q9fo5IoFHvGXI6fUrczBdtbz1AFmOMadJR9OPEoZVOLur38ms9z8Yi-eev8_t-FHQDESP1-J5HZnPZYQ6pEx6G7_pUXIWGBqRHE8AvM7LT2PkQ32MuCHn36rSFVUUrlH5fM6d3IuXu_EuRuBuHB1uM8z2-4QpORzZdNv4&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"00:00","closes":"23:59"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -353,6 +361,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -388,6 +397,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

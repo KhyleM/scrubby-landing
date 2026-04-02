@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Millbrae Pet Hospital","url":"https://scrubby.app/vets/millbrae/millbrae-pet-hospital/","address":{"@type":"PostalAddress","streetAddress":"128 Park Pl","addressLocality":"Millbrae","addressRegion":"CA","postalCode":"94030","addressCountry":"US"},"telephone":"(650) 583-1500","sameAs":"https://www.millbraepethospitals.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.5,"reviewCount":180},"geo":{"@type":"GeoCoordinates","latitude":37.6133429,"longitude":-122.4057453},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJDTfTa3d3j4ARzihfE495G9A%2Fphotos%2FAU_ZVEHR7G5ty5uQ4FC9r-yFRY-R_BLXgbHjCk5dCBcWCplY2jGOnyA2CzNRJWzMLMJTcqjwOj1K9gN6fIxBBB1f8X_eczh7gjDs4fdfFSIAsCAui1mdER-GX-6cyUcOLGd6b8dJzVzXa0foxvheX8RPjQudmx3Av6cRoqg5lBZoJOHflpf-svCRHWF9XwUW9qVbTx5PKWSlL4VBfRJCaZZOnqyXtYDU1D4BC1ciJv0cD-02neL1Ta-Fsac6ARZxsfFMGPhWZYOr9hrPxVMa9SCc9eQneqZgWQj7zb1Xmwyxss6W3qvcCDf1QHPXzVHV8a7uHZzJ_k7spx7GEvxkQbkVdkT37uyj5meIRBkcZYnkMlh2amsvdX3ZG7rbjVvE5Wdb26FOEAEFSDcXjfWO3IcZ8THUyYVJAlD73kYE6jlYR7ETs1qQ&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"09:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"09:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"09:00","closes":"20:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

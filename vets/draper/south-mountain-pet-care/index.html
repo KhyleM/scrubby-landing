@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"South Mountain Pet Care","url":"https://scrubby.app/vets/draper/south-mountain-pet-care/","address":{"@type":"PostalAddress","streetAddress":"132 E 13800 S","addressLocality":"Draper","addressRegion":"UT","postalCode":"84020","addressCountry":"US"},"telephone":"(801) 987-3639","sameAs":"https://www.southmtnpet.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.6,"reviewCount":342},"geo":{"@type":"GeoCoordinates","latitude":40.5004298,"longitude":-111.8867941},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJq6qqqrqAUocR4uadogHUEdk%2Fphotos%2FAU_ZVEElHwy853TTWcguDl5mBKaTxy4dEK_HjFVVFIonGWrcQzFJGDr_N-nFo1zMmH7MXWCDLp6do_y2lQdurrr5K8oy5jl99zK3EGqX87AgCl71oX5Ul_2DzpJaRy6C_QcrYen5paBGLv4uT0dG_5B4T768JhlOStTrj28Opnzd4SbUxoojCBcY3_ROoeaykFZUXeNGoMP1pq_NF17Vv_4WsBPj6gBHHvaaVbqaqcfgH5r-BbejfmTNhFfXdvYP9-DrfIB35MjQv9Kh1AveTUha0lQ9mdglREYFiIzgx5paqYDEKbkvkiDT8uUaUy_R6B1zX7G-2sKu2WOg9wIxHLiCZYRrhnNiCQbdR5Q1hA0ouGe2G5XfJlBHhUdv900IIUOMiRrO8BY77-s2xc1-ELehCzj59GqNZ_ScfJj1vC7U1CdX1oA&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"17:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

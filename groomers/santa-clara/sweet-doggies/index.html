@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Sweet Doggies","url":"https://scrubby.app/groomers/santa-clara/sweet-doggies/","address":{"@type":"PostalAddress","streetAddress":"1800 De La Cruz Blvd","addressLocality":"Santa Clara","addressRegion":"CA","postalCode":"95050","addressCountry":"US"},"sameAs":"http://www.sweetdoggies.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.6,"reviewCount":42},"geo":{"@type":"GeoCoordinates","latitude":37.3594939,"longitude":-121.9414893},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ4x8OxcbLj4ARRCOpZ7yGfXc%2Fphotos%2FAU_ZVEGosyG6-ss6xq7_0-tlZuTSK-3CDqqtsgIfQfpUJhCVwGHRxM-oNYhWte588vav71MEjiR9XjjnvVLHGejA1C5NqeI-edPQ7qxJmRgfjqU7Npl10q53jFUFB3ViZq3Mo_Nd9YDg1lHANorhwUzirr1HnE17zHJihGqPTUbQP05S-JPkPUxq8A5rymJ92fdzY0rRtYGgcRk_eyVQ7s6A7v1XsulVZM5xTWG95-AtbJxDoYwqrfciFi8Xr7sSQNhz2dp0_QGWcsUQLoVpyDXB8WyFW98MLD3o3R2249nS0U8XNloZf4OOiWSV8A1CSsVXs8zrByM2ZoZbxFKQ6NheUVtxtNfP7RzPloNvFCIa31tue1eGZzfoYXkadV3yONe_-wUTCXLl67r98Q5w0hwiFp5XWdG1t_Z_9pbcCBbso0V3Rw&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:00","closes":"19:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -359,6 +367,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -394,6 +403,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

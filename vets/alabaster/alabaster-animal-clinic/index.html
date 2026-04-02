@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Alabaster Animal Clinic","url":"https://scrubby.app/vets/alabaster/alabaster-animal-clinic/","address":{"@type":"PostalAddress","streetAddress":"1378 1st St N","addressLocality":"Alabaster","addressRegion":"AL","postalCode":"35007","addressCountry":"US"},"telephone":"(205) 663-6530","sameAs":"http://alabasteranimalclinic.net/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":106},"geo":{"@type":"GeoCoordinates","latitude":33.2612244,"longitude":-86.8114445},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ-6XXZc0liYgRtCKU2qMK_zU%2Fphotos%2FAU_ZVEHBMya1QN528_MNfmcLUf2dYPv1PNIypktzH7OY5-Z8ScypeKTMerg5k_XRWjFWZbh0v8rD1L-d_i3IV4BjMK4lWAPYbl6xf1H7bpb1jv8MKkssiWOaoMGwvaaadRZZLxvuJ3VDJLf_UxM9aYq15M0lBDXZmbL42ExQ5p1TVZ8kKlVLBQr6cxUQxaalRmWVx_kSlbhsDQCoDFyWYkUDllnP7U9S3SdKMYLLoCmVmcSgy7O0DUZh3iaSQHIQeePP9_Ib0voj0TBt8rhfwQxwtS1jIWuTBtVNh_IJWUkyyIDlLRBsz1pBb2CibwP6Ix_ib9q4hzccX8C935U6-zPMmVtZb54S0bn7ef_9yvkOIJP4q9Wh_qdoUp9znU-BdEZSS6JgW-cHXRaI2VsLtP8V8zBi8Lj35lplbxWa1jzTotA&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"07:00","closes":"12:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -361,6 +369,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -396,6 +405,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

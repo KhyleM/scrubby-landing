@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Dirty Paws","url":"https://scrubby.app/groomers/long-beach/dirty-paws/","address":{"@type":"PostalAddress","streetAddress":"4501 E Carson St Suite 102","addressLocality":"Long Beach","addressRegion":"CA","postalCode":"90808","addressCountry":"US"},"telephone":"(562) 420-2277","sameAs":"https://www.dirtypawslb.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":142},"geo":{"@type":"GeoCoordinates","latitude":33.832907,"longitude":-118.1410263},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJAQJw7kMy3YARMXeQMK7Ac5s%2Fphotos%2FAU_ZVEEPO1DAD3wSKoxb4w0zgZbZhOJqhPxm-FUY3WKn43FIQcV8impQ4FRRzJitbDv6nKpacOZ9MqambKECQsVjE5URfX-p2ENTKqJ2moCPRTak5U0ejzQQeLLghxwr-3WN-VfHlQf-7_dKpVctx3f8wbIwifGaJlnfASHAEjs4XtytqJUPYFvH5tY0TYVmfFwZ8YtoYBtrl9Y-kV7l2uUe0rUQPP47yi6P-cEFwl9pIaMFpZQIIk0Mvk8mnr5PMnNVk0be3izxp5HYKsCoZR_zAd6nNmyVX9xEopTueHJ4jMgt_vRPvq1eUgZo39I6nHYARTUpDv9pZ7OyIlpMCrOnBX4V7wr1XjZ47HGHPkFEoOktmKTXKHYd3e6O3t374Or5QTdCNbsRV-gW4V-FF5AdaNB42p9xLBG9lMPg9iwsO9tuof-UWg5_2vem6T3UCNaT&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"10:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"10:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"10:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"10:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"10:00","closes":"17:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

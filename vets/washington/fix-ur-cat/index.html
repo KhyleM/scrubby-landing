@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Fix 'Ur Cat","url":"https://scrubby.app/vets/washington/fix-ur-cat/","address":{"@type":"PostalAddress","streetAddress":"222 Hall Ave","addressLocality":"Washington","addressRegion":"PA","postalCode":"15301","addressCountry":"US"},"telephone":"(724) 416-3265","sameAs":"http://fixurcat.org/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":252},"geo":{"@type":"GeoCoordinates","latitude":40.1729665,"longitude":-80.254043},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJCeMt-n9UNIgRo8V_7ca2Gd8%2Fphotos%2FAU_ZVEGy-r6f2cMVwh56N_FCEoCKus8oK2qv7EZ7N9Csfv8F535iOcLvj4h3koNosGfGPZjajMfvcWnN0084_nZ7Sw9I1Gr72R_MIS-5TQuLNK2PFSVs05iihv9YAvSrhKKmv2LyE9bEFjXSRreeSxCHSzyccQ9ILqHLGuf9zBSOPmQyW5EXeY-tXBrmwgd7eR3HhjmajGzmdb1j7tbg9yMhFMigNF9CEgajfSF8h_8PMAViYHP4ch1_4Cv0M4R1Xw3FSRGckGwF2BcPn44vrBV_jNWzclj7GR2RvXLhUmOx4Nn0yWw390zE2BhHVCnxORbTOUwWqifi4PO-8YjlNtYFcw3Lt6urQaz1fQFBwH1QDsnu9RX2aLxajVaQehpt6MIm1ecu3llx71nRtnoLF4TqeA6K8nqhLeRIaUc2_ihsnL-jGg&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"09:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"09:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"15:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

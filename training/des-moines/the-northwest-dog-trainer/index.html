@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"The Northwest Dog Trainer","url":"https://scrubby.app/training/des-moines/the-northwest-dog-trainer/","address":{"@type":"PostalAddress","streetAddress":"22659 Pacific Hwy S SUITE 201","addressLocality":"Des Moines","addressRegion":"WA","postalCode":"98198","addressCountry":"US"},"telephone":"(253) 332-2131","sameAs":"https://www.nwdogtrainers.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.9,"reviewCount":130},"geo":{"@type":"GeoCoordinates","latitude":47.3974007,"longitude":-122.2963907},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ2WCKqW1bkFQReMWDM5J1g6c%2Fphotos%2FAU_ZVEEXAthlsbQ2AJcCyU-P6X07KzV-9qSmIvgzVFC_ectaq8kwQ9EP3cWAz1TWSoOz0MUJh77PmgYQXY5ZVTPZCbVTzvFZjGvBszrJji8WbkCGR-_eieeO4ia3LHl2F2vbDc8frtzJhW6DgGLOAFq3qqUw8Ej81joqizH96LjzFRgzIOitNhbpGSXAf-6WGtuli2DawH1aSb1syIkzhpFBTTfSqYrKEI5ysrGvV_Wy0-A5VjQ6RnYHgSiVfsvArCVFTeQBb5KWdPuIViG1mSP76mccFdIrrdNeDUne_7onFHzoDw&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"16:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

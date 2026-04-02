@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"A Joyful Dog Inc.","url":"https://scrubby.app/boarding/kenmore/a-joyful-dog-inc/","address":{"@type":"PostalAddress","streetAddress":"1599 Kenmore Ave","addressLocality":"Kenmore","addressRegion":"NY","postalCode":"14217","addressCountry":"US"},"telephone":"(716) 876-3647","sameAs":"http://ajoyfuldogbuffalo.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.6,"reviewCount":114},"geo":{"@type":"GeoCoordinates","latitude":42.9588774,"longitude":-78.8773799},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJdYMBLyJt04kRahCNaSV7IrU%2Fphotos%2FAU_ZVEFuQbc3Vg47tgXN4AI8J-Q8UW4TpQrIp4XCaXEb6jvcjvRpiecZr5DMWTaBhvU0W5sBGJbHIqxw_K9JBuHt8DVd_CH7gpb9pNk6gKR4KdqJd9eiJb3R7wW8BJoIDtCrqaZd_OUd37Ib2QEyjcSEB7HBCYt-Wv49NEt8P_Li7jllzdPAGdIgqb7zX85LnlAtqg99x3zezVa7SDj1SlY8wGw5GeaQxF0aPM7cOLcWRLHgeBMijEfWyW9pJuL5mNIy2yixaYRy8dfs9QTNRyZJVsedCjiZG03iMVu1K_IS0bJsWA&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"06:30","closes":"18:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"06:30","closes":"18:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"06:30","closes":"18:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"06:30","closes":"18:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"06:30","closes":"18:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"10:00","closes":"14:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"10:00","closes":"14:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

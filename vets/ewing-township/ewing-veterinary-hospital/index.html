@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Ewing Veterinary Hospital","url":"https://scrubby.app/vets/ewing-township/ewing-veterinary-hospital/","address":{"@type":"PostalAddress","streetAddress":"38 Scotch Rd","addressLocality":"Ewing Township","addressRegion":"NJ","postalCode":"08628","addressCountry":"US"},"telephone":"(609) 882-8090","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":115},"geo":{"@type":"GeoCoordinates","latitude":40.2664124,"longitude":-74.8006891},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJBXfh0OZXwYkRATB5cs9Ti7I%2Fphotos%2FAU_ZVEHSiNj90qg8WUQhnij0Vuj7C9TSVvtY4uSr-Fucm-1biUAScgFTlh9bMvQImfVIAfTvQckveAqiHo-pdxlCNXnXy_cvAKIbhkOG8sc_XwlcmBg1lYA1TWJmn4nILWxyX02711IB8QyulNPYdBcHEqaFFwjQjDEgBJX9i35Y_vjia9u1MaWPf2S7Ia7C1nUoUNyP4oqODIhZ79LY3Zbbb8sdzjIYqzIHqPybsTql9SQV8FZKQHye02SlUaKYSCbktUVWfD2d4ucF-k4STxj7bxf3wBwKVt5YTTahT6ZLhCXgJQFjFrRIgtt3fFQm4GT3kbixOkjCmWiQp1b6mc9uwm50Jb3apr-sPfcH1-ZRtZSDH7122hBeQil1hWRcjz2B5EcqwK1ru3zl6r3r0fvpQDTpqNEy6XbD9hmu30mEx12VHA&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"09:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"02:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"15:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"12:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -359,6 +367,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -394,6 +403,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

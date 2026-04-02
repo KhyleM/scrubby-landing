@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Running Pond Acres","url":"https://scrubby.app/boarding/washougal/running-pond-acres/","address":{"@type":"PostalAddress","streetAddress":"34909 SE 20th St","addressLocality":"Washougal","addressRegion":"WA","postalCode":"98671","addressCountry":"US"},"telephone":"(360) 835-7387","sameAs":"https://www.runningpondacresbedandbiscuit.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":69},"geo":{"@type":"GeoCoordinates","latitude":45.6061473,"longitude":-122.3146945},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJofLUrI6-lVQRRzNPLKQ0rv8%2Fphotos%2FAU_ZVEHXvzwP-gDV2XkUqlV7u68qgqFbDF0yF7C4O46Mt2pkxNpdmfWS8tGZDZ801ymW1Vb1KRhzt38HLu_JogG4KaxhSwE8MU-W9phJ5OG_5agJZhLg2qcJUcXXqp7ya1crQCpn8TVOIGnKssFzLHqpPIorWGmqCYXXj6_SAF5sRf0TxgucGwDxKkYXBAM_t85nCAOEX0V9m26Z-BpJ__ivwirwubSpEZdSVhxbK8hTjIxb8PGctoVJTOuANiOA_kPdPKcdsgtk35prZAH6jOEJ8U3e1X6KimWrVEeZgxsZSw6NWeKp5gHqytghTmBwJA5p1sRz6QnTyIVHjsfMQVGZSekTLMyNm792qJaZyyK3Jck6UBFXUac98sB0SJKyZpmV68OYaK9x1T8YlGi3yIepWHzbFzvtTwQ6RaXyv1UnKFm0XQD5RimPEuhlCli08Z_i&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"11:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"11:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"11:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"11:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"11:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

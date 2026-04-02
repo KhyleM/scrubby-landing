@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Camp Bow Wow St. Clair Shores","url":"https://scrubby.app/boarding/st-clair-shores/camp-bow-wow-st-clair-shores/","address":{"@type":"PostalAddress","streetAddress":"19795 E 9 Mile Rd","addressLocality":"St Clair Shores","addressRegion":"MI","postalCode":"48080","addressCountry":"US"},"telephone":"(586) 500-7244","sameAs":"https://www.campbowwow.com/st-clair-shores/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":395},"geo":{"@type":"GeoCoordinates","latitude":42.465905,"longitude":-82.918282},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ9VVvNsPXJIgR0uMlQM3Zsb4%2Fphotos%2FAU_ZVEF4lAtAQVCUcGb7P1RdZNROAVk8cELj9F2YiM3fDqLk2Y0UhX2RzD-gd7ATmvLYWeKqPigR26cg8JTG4SHGVua_Dn8FbGy2CxnTg9Uo4vI5Cp_u72ZuE9H07LDPSasOe0MrPrhGWyan3AFqogJhuG-DsG52ZfQTRd8l-37jghT_NCd_BIuMDpuApmX6tbbOP1gDRJ9rEj8dQxjuRXyfCZlUW7wktX_JqxB85v2kujzobaDq60EmrfzfyHvyBFXYLp3BPtCJQbdogge2yoZ4JQsZSXx6KxJGvl7kDdr9GfstPQ&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"07:00","closes":"19:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

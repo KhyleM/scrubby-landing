@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"HappyPaw Dog Boarding","url":"https://scrubby.app/boarding/new-york/happypaw-dog-boarding/","address":{"@type":"PostalAddress","streetAddress":"35 St Nicholas Terrace #44","addressLocality":"New York","addressRegion":"NY","postalCode":"10027","addressCountry":"US"},"telephone":"(646) 712-0563","aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":3},"geo":{"@type":"GeoCoordinates","latitude":40.813481,"longitude":-73.951725},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJHTOtR2z2wokRdBxqOfOy8R0%2Fphotos%2FAU_ZVEGf8Fn3lRnTjSP4v7bjGxa8303RBKffrf9PtMF3EK-a-0Qt0tycCndb-DruRygrGzQnwfObXmJ3ukOcUzHqjm5iESymdrwSBY0a7j1n5TuL8vL_HgG-P12IVBf9_JVFovM9IIRWQQ4VIWgfExMJXJzCwTWFRjpGGfYIZq5eDglahwcQBWQwwgljeHsyHYrCYJbVItIApCBnIwN0i2Y-mJH-1ZR36Da6nuGqpvyvFA8ADoPsI9VYZrgsTGZlgo07xlnSytbaIO25ffUU9QHECdPzyy5jlKDq0NfuD9wY0JcyVg&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"00:00","closes":"23:59"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -357,6 +365,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -392,6 +401,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Fowl Mouth Kennel","url":"https://scrubby.app/boarding/bunker-hill/fowl-mouth-kennel/","address":{"@type":"PostalAddress","streetAddress":"9047 Rust Rd","addressLocality":"Bunker Hill","addressRegion":"IL","postalCode":"62014","addressCountry":"US"},"telephone":"(618) 806-2097","aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":11},"geo":{"@type":"GeoCoordinates","latitude":39.0179756,"longitude":-89.9807872},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJvxhnr5KKdYgRl99BB5U5YDI%2Fphotos%2FAU_ZVEGjOA_a7mjbeyjJgyRvnE9dSIbCKUt94TT6AuQI5DnwmgoJQ5ES5iZgrVO7bwpjg9hzmUNyQnWZUr-fWzzsaYYufzfvL1VWVEUxJK8ad2FK-bdtgzMAVqLJ1y2X41EpVTpzVl-c6NnrbMuvxlqULxzVbpf-3TAOMb-6PsA0IZ0umYF8k_kli8ipfMyKEPYgynOdj8LkzX3lAyC8wEYfaEZ47MHCMOf8jQ4MFAetoGZq2Ln7-296gQ5YG-UaO4uaxSZaALzYp66awpgEkhqnSouIeXVkom_2EUZJ09Epb8s7ln07ImK9RyUvGKMUp2lf6Ibkqbe8yOgsFdqsgU8a1SN8W47DE0k3tE3BMbkSkyS4JD1F-0KQo6G3hKnL5s5k4FhLA2Twh2ByoVE3-_W__igR4NBlXcj1WugPKrJExqmZ989k&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -342,6 +350,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -377,6 +386,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

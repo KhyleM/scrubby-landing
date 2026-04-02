@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Buddy’s Bed and Biscuit","url":"https://scrubby.app/boarding/stallings/buddys-bed-and-biscuit/","address":{"@type":"PostalAddress","streetAddress":"3702 Smith Farm Rd","addressLocality":"Stallings","addressRegion":"NC","postalCode":"28104","addressCountry":"US"},"telephone":"(704) 977-5197","sameAs":"https://www.facebook.com/BuddysBedandBiscuit/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.9,"reviewCount":37},"geo":{"@type":"GeoCoordinates","latitude":35.0843444,"longitude":-80.6746372},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJZ61tMK8lVIgR7Ef7ttIJPMQ%2Fphotos%2FAU_ZVEFF-LWBXAs8xj5j7rMxyw9BuoTM6prJVsKmJ65ZtX7PungDycMsv0VP9ODQ4EOYSRFIKlEkw4U3tInjZKP_Sl8KR03kYREdaCnSizVg3dyaQHvUikro7TwJnvq7ISEpDFH7nzFu3gbqkpTuF1GAytWiUJjioUigj_nEYmeuBLZePEg0s6G3SzuuZZt8mlRihP78miCcgp_sgpskdgslpPTK-8WSXRlKhMIUMo-gns1-S-SdrfeIhkijlwXQA0fJSOo2MOXsjbOC_cNNF5Mm3DKfu9sliifsaMiHCgH-JXUYr08OJPQ3qEjTJt_ohSmS9SgW7lfLPnOBRr6GgSJ-fs8_HHEWPBy5wEjHVPVyuB2cS1JY39-KiiKHBhk7NzUG7INWsLq2I7S2w9V6qU2bkXg3KsVz6QFCxu5IOFtWTmoPCQ&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:00","closes":"10:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:00","closes":"10:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:00","closes":"10:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:00","closes":"10:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:00","closes":"10:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"07:00","closes":"10:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

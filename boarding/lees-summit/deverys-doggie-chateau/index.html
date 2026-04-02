@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Devery's Doggie Chateau","url":"https://scrubby.app/boarding/lees-summit/deverys-doggie-chateau/","address":{"@type":"PostalAddress","streetAddress":"14350 Blue Pkwy","addressLocality":"Lee's Summit","addressRegion":"MO","postalCode":"64063","addressCountry":"US"},"telephone":"(816) 554-7220","sameAs":"http://doggiechateau.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":78},"geo":{"@type":"GeoCoordinates","latitude":38.9526939,"longitude":-94.4149396},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJn5AuU_IfwYcRCuK0djU7Wnw%2Fphotos%2FAU_ZVEF8-aOOEi34lGAuI_Acko_SnoCJbdERjI2F-85EmuFHfv8MgsWviw5CN_d4DVedSRMI5TTtXTYSFpu96vBlRsni_UVyVvf8vzg2AbIKhn9Weej-10ZkAITiPXmPIt91_HL24ib_N-OWPrvqQPory6IQ26rIGMwHGYoxHq11-iy7UEM-wFkA_VjSH52VZjgpmCJZUBFC1lQJpOptf_7TfQAwgsOwJIvk9SNg-VGICjZhs5v2Q9rroh4PjqEIQau7oHgsdyoDD73LuQ_9NfuWC4HapZNxCyiSbq8uNYu6g3t9qQ&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"11:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -364,6 +372,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -399,6 +408,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

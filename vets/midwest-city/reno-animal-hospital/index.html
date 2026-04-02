@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Reno Animal Hospital","url":"https://scrubby.app/vets/midwest-city/reno-animal-hospital/","address":{"@type":"PostalAddress","streetAddress":"6400 E Reno Ave","addressLocality":"Midwest City","addressRegion":"OK","postalCode":"73110","addressCountry":"US"},"telephone":"(405) 733-3346","sameAs":"https://renoanimalhospital.net/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":487},"geo":{"@type":"GeoCoordinates","latitude":35.463615,"longitude":-97.414011},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJZQOYK6I9socRdAxY3D38RqM%2Fphotos%2FAU_ZVEF-AVlb975jPDdLVFb-i4w9wzveTvtEIFNnIraXDkVIZYrO9Kea2_h0Wee0xMghrSRgowcZDtH1Graa-cUTHhBlqVPGd6dIh6_V7suc7mZkBvVFi95qHqgCpHbsnOwLTjgUyZyY6tpKatxC9y3dFzG0KH4fs9DyfbO2mQOPMY9wCrCCJ_pktCusWX2gi3er8oHbCVDQ73O_lh7oTKUAVrj6-UNGBXUJtxTpcO4cZ0JYQOHRGGk7i-RGgtxXb5zm8Fju51_3JEncBr7kjdOUceuB3E65at40cYWh4udd7acT0ucV3B_AXNu5w0FuSDCSYH-n5_xor9Pw7eSN0-L6AZe28-YprGqvGzKt5VF0mKXFt_2BZLPWn1qIl6yyyPtT5uxmH2EH0vjYEzdNKXwiq2OpatCjRI8z0s7e_sfpsTez1ymLiqhlKFAaEDa7aIuY&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"12:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

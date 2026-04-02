@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Pampered Pups Salon","url":"https://scrubby.app/groomers/st-clair-shores/pampered-pups-salon/","address":{"@type":"PostalAddress","streetAddress":"21921 Greater Mack Ave","addressLocality":"St Clair Shores","addressRegion":"MI","postalCode":"48080","addressCountry":"US"},"telephone":"(586) 601-5053","aggregateRating":{"@type":"AggregateRating","ratingValue":4.9,"reviewCount":60},"geo":{"@type":"GeoCoordinates","latitude":42.4556744,"longitude":-82.9027763},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJyZdSOykoJYgRIQElBZsZV4Y%2Fphotos%2FAU_ZVEHOM_gcduChuXIw8o38GBT-9dpv000gpguFyrXjioawySWAU5StS9KTbVc4D03OAnsZCHo7aGKSPH7G5Uk7RMq8wiVzgnqJDiol-UYl3rMN-Lz9njdPQuXffURQm52lSbbGsUlaIQqc7zUuEIIJk7-JTe5br7l3PxBeIAnXaZKXPlou8WcfvON8_0VJdTeItT7YvfUCZ9VRZxzsN3tJf4Cn5O3-xlMzPC-4Hiz5-ZMFM3kplVhrO0FOJYeDaj9AeC28-8egK6_jtjtQ3aeOra2k88WEc12EhUUY0COinH_eFg&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"16:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -359,6 +367,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -394,6 +403,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

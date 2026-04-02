@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"VIPets Franklin Animal Clinic","url":"https://scrubby.app/vets/franklin/vipets-franklin-animal-clinic/","address":{"@type":"PostalAddress","streetAddress":"5070 Carothers Pkwy #112","addressLocality":"Franklin","addressRegion":"TN","postalCode":"37067","addressCountry":"US"},"telephone":"(629) 230-2117","sameAs":"https://vipetsfranklin.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":60},"geo":{"@type":"GeoCoordinates","latitude":35.9262482,"longitude":-86.8144466},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJxW2gPjZ5ZIgRurmqPHOdgaI%2Fphotos%2FAU_ZVEHTJOStyX9NH6biJgVGjAZilcn3ti6KQG9RQN8b_rYwJlRHBvpRjTa31bURdT5fqGDDJIOd0_2kzvDUhgVZxp9L64NH5t2TAyVvBdnnxG_wokZZnSesfftWg6v94Qhz9cpOSrSACZ0lhm68p-5V1wgKtOGNq1-zOjKg1ujUdtLbJTZx47yj-CoeqwSxReAKcxeLsVnGrVzJUwvEpZ0KrR3DinnjT0wo8TcMy867Day7R9A1scZHvt8tzDfPQu20VhWeKXxfGJcLoErHIU1M0U8SBv661PvsvrfU2qHR_Y_1yr5gwyB1Gr6enC5hwqiFhojF4mzKqISfdmMzKkmu2MCF2j0uKRg8alifWzk6YCHcwPkmkXjwxEqCEK3yGMsngiooxso3EZTpL8jgB7-peo6TgR92PWwdEzKLa7ZFLUL6rmo9PZmYEXCS-FMolej5&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"17:30"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

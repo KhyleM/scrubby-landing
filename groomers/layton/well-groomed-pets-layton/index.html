@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Well Groomed Pets - Layton","url":"https://scrubby.app/groomers/layton/well-groomed-pets-layton/","address":{"@type":"PostalAddress","streetAddress":"1986 N Hill Field Rd #6","addressLocality":"Layton","addressRegion":"UT","postalCode":"84041","addressCountry":"US"},"telephone":"(435) 200-1471","sameAs":"https://wellgroomedpets.com/layton/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":156},"geo":{"@type":"GeoCoordinates","latitude":41.0888278,"longitude":-111.9726639},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ20iyuAwDU4cRkkyl3YKhvW8%2Fphotos%2FAU_ZVEEPwq-HxAHPL-6t1j8ULKyucwwR3KsozTxj5XLkfSZOWrLh4W0aU0GM0oBabX_QH4ODV-ElxWDz3III1CUshrONa1XF-c_kkNKV2sWUa3Zp5CO30DWkPibjc01u05FYKbg01vhjvt2UcHp4UMGazQSm7oa4tMi8ISCu0eirBJV0qLTj8MAIUEWwqPSY-R8SCBKy90IvxIhKKooK3o0FWk44_nYa_i75eVSZd7rxyii6hNLf7OSBP3id3nlsjVjj1N5a3qfSOGXeurbcQBvE7oQ5JlvNlCzJQQAniMERiPMfFg&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"09:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"09:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"18:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

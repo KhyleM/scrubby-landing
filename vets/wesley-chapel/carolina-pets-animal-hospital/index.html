@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Carolina Pets Animal Hospital","url":"https://scrubby.app/vets/wesley-chapel/carolina-pets-animal-hospital/","address":{"@type":"PostalAddress","streetAddress":"5828 Waxhaw Indian Trail Rd","addressLocality":"Wesley Chapel","addressRegion":"NC","postalCode":"28104","addressCountry":"US"},"telephone":"(704) 220-0226","sameAs":"http://www.carolinapetsanimalhospital.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":306},"geo":{"@type":"GeoCoordinates","latitude":35.0046339,"longitude":-80.698815},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJYTyIqCIvVIgRjQ7WWD_DC0g%2Fphotos%2FAU_ZVEEJ6IaFmySCZ9pAE6JjulyfxefNSWi6wjJCkKFX2fmj-PZOz3HknU9g4aUN7N4Xz0k5MzUdjqXCFlbHPa3s-7i5xipkHySVBmboo05YOcRZKlCqh7KivZElESv9T8_9fl10dLEsykgiZVW_A3XJJdXz76Fi7IxsiEEuEPE44VVJ3uWupWL-DFmjEgXHaV3eZmCpHPr7yKK3LxnaXwuTK5l0l9mCnaKgOyXorASVLMJnnmP5a0SEB5DIigqR815lCdUZtvQyMBdIJZuAfylO5kWDIS5gdU8_1EJMy16pi9G2gg&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:00","closes":"19:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Petco Grooming","url":"https://scrubby.app/groomers/annapolis/petco-grooming/","address":{"@type":"PostalAddress","streetAddress":"2319 Forest Dr D","addressLocality":"Annapolis","addressRegion":"MD","postalCode":"21401","addressCountry":"US"},"telephone":"(410) 224-8323","sameAs":"https://stores.petco.com/md/annapolis/full-service-grooming-annapolis-md-770.html","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":90},"geo":{"@type":"GeoCoordinates","latitude":38.9777179,"longitude":-76.5445619},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ_2qHXHv3t4kRnjR0ziH7h40%2Fphotos%2FAU_ZVEF6qmunni3NwMiVzp87YPxv-OhDu_P4LV9vKqYDgFC43u1E4S1ptmeequpDP2hFv3qlLBFS9QfLLd-bI_0GPPbDTfRuIECHQr9GcQ2vQRfeOT7XRcrhzFH6BHcD1SYT2kwkc6bbuFpGLX4SoqcsVUcV2we_qEI2p3F4s-uh8DCxGM452EHPkeaj-10Ijes2-O0tFNf9lM5BH1Q0oDIApnLhaPOzWVt520QzmU8KUD76-qu4lmNhfXN2y-8Dc5h6YDrMbH6ND_ksdfmc8D6sj2t-Y7aN3FOd1nWLWSAxs8n7lQ&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"09:00","closes":"18:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

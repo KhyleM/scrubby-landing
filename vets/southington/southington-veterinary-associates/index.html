@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Southington Veterinary Associates","url":"https://scrubby.app/vets/southington/southington-veterinary-associates/","address":{"@type":"PostalAddress","streetAddress":"35 Darling St","addressLocality":"Southington","addressRegion":"CT","postalCode":"06489","addressCountry":"US"},"telephone":"(860) 621-9328","sameAs":"http://southingtonvet.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.3,"reviewCount":183},"geo":{"@type":"GeoCoordinates","latitude":41.6119393,"longitude":-72.8741634},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJv69oFgm354kRVDb1-4GCQzI%2Fphotos%2FAU_ZVEFN4eRq4N0bdPTOSO3u4xkSIdZlESuT4Reu1sD0T9GCRukKV_x5g4Xn-Ebs1tcom46yYZQQGATqm1iQO3fd7JuygqNOrRgDP0l5C9PjbskwoRLfeT9cGOo6Gyn9zQEjx_09UxZYIX1nLR7icri3r4uvB--flnV2ouwLcOmueXD_rk3iq18-ezGulO5-bfzp2dkhw9TYyvdIJvAW9ssmzlBA82RNbQvfNt5RSvjsqYkaGP-aQR6TvC8V2FX_OlHZSl50UbcPKwEhQiQKnrR5P2HrtYRk6ulXlRcF2GaUcGcOjg&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"12:30"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

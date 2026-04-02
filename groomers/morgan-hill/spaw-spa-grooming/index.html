@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Spaw Spa Grooming","url":"https://scrubby.app/groomers/morgan-hill/spaw-spa-grooming/","address":{"@type":"PostalAddress","streetAddress":"17815 Del Monte Ave","addressLocality":"Morgan Hill","addressRegion":"CA","postalCode":"95037","addressCountry":"US"},"telephone":"(408) 987-1152","sameAs":"https://www.spawspa.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":7},"geo":{"@type":"GeoCoordinates","latitude":37.1326693,"longitude":-121.6597028},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJB8d6YIEhjoARTxcKh3I0fD8%2Fphotos%2FAU_ZVEGRj8Ns0UsV6Vm41fj5504MPADdmrDKrhso1vPfosZ6DhFD8XfEnP2qXoP4r0I-KcPbbdPQ3d1qyTCdD5R_toVIOw7vXkzJX55CklD8RM7nGuszalnygi6HXFmUxdTHpWdVqYIeYuYEmqiUiP_pX9F6boHKimSaJa5W4M4c_jgsiq-a4cVooDC5Z5yy1fWQOuTtH7UvE9zWFvCjFk1oL1nBPqdcXA24CO8iKHkxpqlRKIK5lxD0TReoHPNPzlmKtQruRKEzSF_lP6qxLMA6x6n3H4fRhAd_ao3pZd0Td5aI5A&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"19:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

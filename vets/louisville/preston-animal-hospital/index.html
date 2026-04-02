@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Preston Animal Hospital","url":"https://scrubby.app/vets/louisville/preston-animal-hospital/","address":{"@type":"PostalAddress","streetAddress":"7311 Preston Hwy","addressLocality":"Louisville","addressRegion":"KY","postalCode":"40219","addressCountry":"US"},"telephone":"(502) 964-7729","sameAs":"http://www.prestonanimal.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":264},"geo":{"@type":"GeoCoordinates","latitude":38.1458569,"longitude":-85.6903563},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJxcVTj64OaYgRqU-foltv_-Q%2Fphotos%2FAU_ZVEGG2Um8v7gQBow0eFiAo2X2h0EKvTPYpIUnjL180xkBgyKegjrazcdTJll9TkcJZ8TOTyNiMYqfqIV-NHbfuEFyB2w9_4uEO2oIVFAufXR87TdKSuOTlJDlxt16R1Fp9euhpmGOcPgqt9D7W9eomGsfLPAQgnKaJeIwx5YDdVJOBCwgKf5aOINZPPHUVMG7n8xIvNkoDCn_m8ECK3Hl9KpreEPHOh25A0wb--1sKWHH7twibxq-QGYSfvTx6qVlAMR9Esovo-GmqfRlOrEb8J9Tkc2JA0Tx_d8BTR9KoC4BW6H5hbH24eTTEHROipfCYFag1FyvnyCQqaaofn1C08-limCbjB_5b4962EckLpqxiZroD_Yhhn3fFQwLTQ__zSoCoGCIQrwtUUe4V6wu2bQAa8TvOP-46CVr3R-s8MwvOHWzBwjr6kmPVgGR2YQ_&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:30","closes":"19:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:30","closes":"19:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:30","closes":"18:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

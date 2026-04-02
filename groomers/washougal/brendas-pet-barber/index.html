@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Brenda's Pet Barber","url":"https://scrubby.app/groomers/washougal/brendas-pet-barber/","address":{"@type":"PostalAddress","streetAddress":"1212 B St","addressLocality":"Washougal","addressRegion":"WA","postalCode":"98671","addressCountry":"US"},"telephone":"(360) 334-1170","sameAs":"http://brendaspetbarber.net/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.4,"reviewCount":49},"geo":{"@type":"GeoCoordinates","latitude":45.5783461,"longitude":-122.3585451},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ78bvOrC9lVQR1Ys6ls61rKw%2Fphotos%2FAU_ZVEHimwNWTPw5IvuO7up43Tyn6wdQvucstIHWbGGBlHJegyB_MBBXyyNrLIJ_ltTywEGWAnyLMg2E2q1Mfmwd9JT59SU2qV929VgpONKdXRilkYmShu211h42hDAzJGt-jfNFbGAZeiq4WE181piQdG98vGqCskCXRuh1SPWzl9wx4JNBtVpElcOPcKiC8FTbZ-2ORF65snFTRMobDl8W9t86mQyw84BJ0QI1qarRfy_D9cH-M7mNocOSeGK9-YMbnvpzxCEOa_Cu94CDQTkMBdtp3zgftnpQldhKyIk2HEKR8UVy_Y6KJ2fzcHh2nIGQAYwGt0CaFpyoJvts50sc5PM97giOaoECXBr5tyb57yjh5bBMVvo7IxD5GmP4nwUaVU7R1c7aPt6-SiODuXM_lgHuDbzbP9ky6gnoe0vT5_WF6N8i&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:30","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"09:30","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:30","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:30","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:30","closes":"17:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Allie's Walkabout","url":"https://scrubby.app/boarding/erlanger/allies-walkabout/","address":{"@type":"PostalAddress","streetAddress":"2844 Crescent Springs Pike","addressLocality":"Erlanger","addressRegion":"KY","postalCode":"41018","addressCountry":"US"},"telephone":"(859) 486-2196","sameAs":"http://www.allieswalkabout.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":330},"geo":{"@type":"GeoCoordinates","latitude":39.0373935,"longitude":-84.5900471},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJjQ6qRcS3QYgRLPHjN--VHnc%2Fphotos%2FAU_ZVEGfc11zB_I4_jkWCdv39sT0ddaP_RacfO7PBQk5wj_g6nnvkuhOPbrxSmwsXaFE6sxge-Kt9uJsOAGKXNIBidt5Ln8Vo4icgaZo9Hso3Gkyo8sJGTx85sfd_hpKOKT2YEXR_pb-K0siggudsVFdP-WID99s63jZYK62ZSsK2BEeKtIVN9dwKHQHaWy6z-rkGuP-Ahu63kxcYHZtIqDMemGLHrPEgiLXn_cJLF8GHwQrD_gNJtDFWG4-MlES4B90FQHzZ08Aytr6Lar2mq0gt7-0HW0lNFRoxCYBt8DSlIwgow&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"06:30","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"06:30","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"06:30","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"06:30","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"06:30","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"17:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

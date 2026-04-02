@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Abbys Pet Grooming","url":"https://scrubby.app/groomers/brandywine/abbys-pet-grooming/","address":{"@type":"PostalAddress","streetAddress":"4001 Accokeek Rd","addressLocality":"Brandywine","addressRegion":"MD","postalCode":"20613","addressCountry":"US"},"telephone":"(301) 705-7776","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":46},"geo":{"@type":"GeoCoordinates","latitude":38.6786482,"longitude":-76.93712},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ-3uPvxmkt4kRwOaSJJFr6js%2Fphotos%2FAU_ZVEFBr1CAs4fkiWBH0ikNzG7IQVIINweFFegbuTTwsZmikYDJq-YgDo3hnMMByqgTrknrMWMBifIOcdUvAMjQGjMRgv4Jn8VQg99bUU5mownFUoR4Tjx4arG1DsvDSZlUm2scxENk6mbe_eLTdUDpIzhAwpcj7cZ9ZJB3jYuhnP-DNn_GkzlhStz28bsHgZb0FJjxhwEX3yka0UR9jv17o_PL-AhDq2RBswsvtLk8PqpTCajseb-KBn5KN-x5mZaSzWhDyPRO3Ot2SKoH0xlFdyGvUnW0vxrC1oovKkmVGqgTvJXsGpYCRPQZ4uqQbkJS0zHRGRY_zG8aq_os8RIjDbfE5YADKOeduadExk0lDMF9mp_Xss88q4SJXFLy5fFF4Q8vSx5QlvgYg1F3YvYj_47eiLfmhPuJKkB0KwRCAMg1Srg&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -347,6 +355,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -382,6 +391,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

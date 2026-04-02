@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Countryside Kennel","url":"https://scrubby.app/boarding/brush-prairie/countryside-kennel/","address":{"@type":"PostalAddress","streetAddress":"14306 NE 144th St","addressLocality":"Brush Prairie","addressRegion":"WA","postalCode":"98606","addressCountry":"US"},"telephone":"(360) 903-0530","sameAs":"http://www.countrysidekennelnw.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":40},"geo":{"@type":"GeoCoordinates","latitude":45.7266355,"longitude":-122.5262051},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJT-j3rkGxlVQRN5QrvlzF1mU%2Fphotos%2FAU_ZVEHS1t06KO3inacqxm2M-cQpHmP6d1zBUFpDtowHxvBontwd-EmWqNQHBeU_4UNkE-InG9b5eAKy5t7eeTKy9kSq6O254a699kqtPZJKDFyZTRFMUX_ES4o6_5gNADRK4k_OfagTjPRw8oMajBPG4RIku08fU0TESIya7bqfTRlWXTktfFeE0I6WecIkEeKPSODZdfQFOq9GkiG0cW5DVf8WWTfIM7tsFsM28YBHHoHHuQuFpQP5CqEsj_0EzOp-L6Edi1hIanVGUrQ1JjqGcQgiGggD0fWvVcUiZ-fDl4E0GkOGyc4VsJdk0ivsDv6qWcdPhRLrYXupUVj9fuFZBLXKIP87yrhzfl7Jwcd6FS6RHVgvuPvGomrtqxfnToL6VRY4EtD8WK_ktKxUOueMy371V8YQPZFd7EmHPyieUDmOibj1&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"17:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

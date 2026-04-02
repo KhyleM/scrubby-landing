@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Barks & Bubbles","url":"https://scrubby.app/groomers/greenwich/barks-bubbles/","address":{"@type":"PostalAddress","streetAddress":"60 Pemberwick Rd A","addressLocality":"Greenwich","addressRegion":"CT","postalCode":"06831","addressCountry":"US"},"telephone":"(203) 640-6656","sameAs":"http://www.barksnbubblesct.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.9,"reviewCount":57},"geo":{"@type":"GeoCoordinates","latitude":41.0180309,"longitude":-73.6549167},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJgen8432XwokRdM5LSD9B7oc%2Fphotos%2FAU_ZVEFrud1jjv7C_4bDLJ2w8IfD27ZNuRbZDB5DjAxKk6p30zpnXN9DYw62Q7eJL9JQN5uajrduk-Mis7-soFpEJ3qva4f0VtUyBX_QhEs8fixmhlJ9QOAnwpe-fhEDktEZ-_aEJtodPd0xEJ8sMEK0ZBctUZo41hbbZahC14-bNUs3IjiebPU6f5oMJ05Agu8Mg6Q6az6V1Z-k9QJUKLyiHGdbXutOS7vgm1ybL_U_c61DfJhmaJ2Ya0z2Mi05NjqK3baLx-FnCV0t9WbdB3kK0oi0MVF6uEs3nOZ6MqazFIdF5KpL8GyxaM05dnC7WC2LmGo9cJTe-nFYb1kADzK1MlH6G890lqviOTGg6_0oXUdlbn2CRz9LmI3OHpib4aK8CMVEuFYPgIHmjb3xdmwafZRAziuf9zXgEQWyABc-SyOdU9TB&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -354,6 +362,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -389,6 +398,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

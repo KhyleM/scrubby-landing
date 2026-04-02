@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Rocky Mountain K9 | Dog Boarding, Daycare, Training, & Grooming American Fork","url":"https://scrubby.app/boarding/american-fork/rocky-mountain-k9-dog-boarding-daycare-training-grooming-american-fork/","address":{"@type":"PostalAddress","streetAddress":"94 S 700 E St","addressLocality":"American Fork","addressRegion":"UT","postalCode":"84003","addressCountry":"US"},"aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":26},"geo":{"@type":"GeoCoordinates","latitude":40.3744256,"longitude":-111.7799007},"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -336,6 +344,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -371,6 +380,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"VetXpress Veterinary Clinic","url":"https://scrubby.app/vets/colonial-heights/vetxpress-veterinary-clinic/","address":{"@type":"PostalAddress","streetAddress":"241 Charles H Dimmock Pkwy # 5","addressLocality":"Colonial Heights","addressRegion":"VA","postalCode":"23834","addressCountry":"US"},"telephone":"(804) 520-2000","sameAs":"https://vetxpress.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4,"reviewCount":238},"geo":{"@type":"GeoCoordinates","latitude":37.2474532,"longitude":-77.3848064},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJwesT1UemsYkRZZ8HaoqGEUo%2Fphotos%2FAU_ZVEHCMegFwDKfysy-1j04PiSKONafJI7PYCC8WXKA3A627Vu-jjzYmauXWQ0lh3DEs-b-FNyUOKRatVqD8Vf0Yb1DxdSc0HiyfU9ghSz7SP_BdLr37RXlIptuWYhsse6LXNq4pMGFcz85uX5gJXekt0LxzCbyFaWuYyae3KchmkmjoReMwrqlQjftEw3kG5Pmb0Ipp6NPf_TWmtEVlPNDjgxtBWP0k85eVAxnGkQ3fY2LFq9YU1a-TsX1aj1XtsifBejDyldJv3CGjOMYvfKHQ1csFTlEUHQ_e8OAtSW6BAPq4w&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"16:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

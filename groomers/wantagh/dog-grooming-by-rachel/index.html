@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Dog Grooming By Rachel","url":"https://scrubby.app/groomers/wantagh/dog-grooming-by-rachel/","address":{"@type":"PostalAddress","streetAddress":"2912 Merrick Rd","addressLocality":"Wantagh","addressRegion":"NY","postalCode":"11793","addressCountry":"US"},"telephone":"(516) 679-5976","sameAs":"http://groomingbyrachel.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":183},"geo":{"@type":"GeoCoordinates","latitude":40.6633131,"longitude":-73.5186666},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ62CMANx-wokRpB0ZAxYJt68%2Fphotos%2FAU_ZVEE9BXZAzYuGazSwis6gSf8WPLdK8tG8xRry7b8ux730nJPr00kvZ2C32KSWVMt5ALPD8zpE6W1I-ixOGWTS3gC_YYNSIolaQJXtrRUaD4DugtSXGr1q3Xt6L09YmudSb34ccrdPCaHrdvx_OGRnh_fVGBq9NQzg80FYMHzV52S6Geb6sfav0pb8XGf25VOd1CsgBGQNPdifY4rlA-ix3omfbjulT1QNuOJTsiCfJaB3kVven7uH5amt_HOZaiv6Onq9kUgtHFEEpZyo5VauJtYqpjVhbtdza5F3CutIlN1EWA&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"07:00","closes":"17:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Good Shepherd Veterinary Services","url":"https://scrubby.app/vets/bargersville/good-shepherd-veterinary-services/","address":{"@type":"PostalAddress","streetAddress":"250 IN-135","addressLocality":"Bargersville","addressRegion":"IN","postalCode":"46106","addressCountry":"US"},"telephone":"(317) 422-8448","sameAs":"http://www.goodshepherdvet.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.4,"reviewCount":155},"geo":{"@type":"GeoCoordinates","latitude":39.517556,"longitude":-86.158132},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJO6Mv6Lxma4gRAeM8ffZyytg%2Fphotos%2FAU_ZVEHnU7HR5f7X_Bic_yeXtOsuXw0Ya5Yegw7CktOnb8fAi5m2zu6AO4EFlwB7TH1bvNDOal8lo3g32650XmDduIjM-O3KDFeREXbwT1q9rS6eYWfYa5YZB81-_fldkwA1yqZUAUNSEybQD5FFCiRbuuckXsoGaZFw4-0WuV48vqy0MSjYIs88iwbGjSoCq451FbOwfvACLyP4APO1NcbAHxPxNxEuMIEKwPqWvdHaw8cLFAfIUzPt5Yde5HSL55Pxn1ZIYcMXXrCBR3eLj1LO7iiMvcKyFDX-vBdtlRyNfZ2f-3Di1cIqhuVkLFbI2OtdbD9r9vOpdD9_V_ZmK73ApqtEWaXwu70KgIgNDCIWA62zX0UaTUKf2kIbTZ1zkcMgJyAXpc88ifYWY0aymkN3rlPohm07PYgAfoIxkYDr6nw&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:30","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"12:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"12:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

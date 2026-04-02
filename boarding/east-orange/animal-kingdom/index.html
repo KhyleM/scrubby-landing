@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Animal Kingdom","url":"https://scrubby.app/boarding/east-orange/animal-kingdom/","address":{"@type":"PostalAddress","streetAddress":"436 Main St","addressLocality":"East Orange","addressRegion":"NJ","postalCode":"07018","addressCountry":"US"},"telephone":"(973) 673-1252","sameAs":"http://www.animalkingdompets.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.3,"reviewCount":708},"geo":{"@type":"GeoCoordinates","latitude":40.7639397,"longitude":-74.2143127},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJkbneZbRUwokR-Wl4nXHSO18%2Fphotos%2FAU_ZVEFOVDdtSyy8OD62g06pSgbqZFPk9-cGgA8zmIsM_O2W8UmH6lyUxYDi-30b2ffQKavUmwNfvJZvXrqvoFA8pitQ_UDX7K2YjyoYTekMaLPCS8XyRJN3WobkERXknA_24H6pUiGbEBe8pdXWi2vwYLc7Odf8zhyVkRAu9yfTxhdgEcndWP8IoQ7tCq3UXPRmtUJlOwxPox-osrMTIz3sX3pikIzSW7W0Iy-sFzsNuOWuUZwJHLgqr_gBkDWAQksww8RMJLSREtA8f7jORhf5N6Rzz_6E9ZBmn50i76C3xhZgT0C5Ddz5EIygF4xJek_sfxfqWsm5VvKPUc2WqugVypW7yGe8ajqxGDu2RZC01rf5vzUsb9Che-KrxUj6RgqRikoKPrxJI9OYQUhIXJcgceIVappxuZtPuRyI2zhtDdsH6UEV&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"18:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -364,6 +372,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -399,6 +408,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

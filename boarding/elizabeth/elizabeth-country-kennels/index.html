@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Elizabeth Country Kennels","url":"https://scrubby.app/boarding/elizabeth/elizabeth-country-kennels/","address":{"@type":"PostalAddress","streetAddress":"6213 CO-86","addressLocality":"Elizabeth","addressRegion":"CO","postalCode":"80107","addressCountry":"US"},"telephone":"(303) 646-8400","sameAs":"http://elizabethcountrykennels.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":55},"geo":{"@type":"GeoCoordinates","latitude":39.36151,"longitude":-104.547493},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJw9gSiznCbIcRDngUWWQjn5M%2Fphotos%2FAU_ZVEF47-_ODRF3kgZUaz6Z_MkydnldudFQn2NOTvLmjDSz6HxTUE4C5HFYWV6hIW0Jh61biyEtbaBw7yrY9bb96OT861UvmSXEcokt5fvxYiNn8YMxRgriVzXnj8sqYGV4oo3XoZzS8LToTQ6efOgAoFwMTyzcgonxqnZEUdbS95-2OmVG3Iiu8ptUa3vyhBXyMhXgPwTq4AtBrwwfEoD4aVR1ldth_m9ncgPBzp_hkhZc4fCCU4AdweSXsJ4vQgfytKWOur2hZxqe_9qFnQg8XVF_g5q9WFOx2R53onHOslLxdA&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:30","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:30","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:30","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:30","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:30","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"07:30","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"12:00","closes":"17:30"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

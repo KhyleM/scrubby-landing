@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Playful Pack","url":"https://scrubby.app/boarding/midlothian/playful-pack/","address":{"@type":"PostalAddress","streetAddress":"13711 Village Mill Dr","addressLocality":"Midlothian","addressRegion":"VA","postalCode":"23114","addressCountry":"US"},"telephone":"(804) 893-3789","sameAs":"https://playfulpack.com/locations/richmond-va","aggregateRating":{"@type":"AggregateRating","ratingValue":4.9,"reviewCount":40},"geo":{"@type":"GeoCoordinates","latitude":37.5030692,"longitude":-77.6546282},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJLZovgOdvsYkR5joqIZJjstU%2Fphotos%2FAU_ZVEHZmICiBoDs4sNnLiFxl7D87UFE0jrj2bvqQUGMjsXk3lKFxxOFmzv-7eadBlKmMdh0flUshIv28CWUSrYLbHvMMYnddf6yHEL88YWAsZQiEVUSSyOFHE09G2GWZP2_CktNtcbxzAgpx72pi9jsLFvEvdFFZstMJGhUAaRGC2jv4CIygFAqDP5g9Fn8nr3nMCdfqvJ80Mmu6cmTNTuN8yMwgPEER_s4eMi_7O3z7w1Yx-h2sOORaX0EfnYMmA05LpAZIPgpHLSgwnT2l9HARHQkmGs29Ymotrcb7aBc_SBXMjLx5_-X1pQKEEw92flZqZVLwIVAW6BWT1IzcJonPvU2VUwYw-ZkLl2alYu1qJ0KU2CM00iSQD2h2HDafSZYglkDHAgI__cXgSGxs8GfB8XOQEEhEdnmH-iN28Ju_9RKY7bKF4KAzQ-Xg-IKmSgZ&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"06:30","closes":"19:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"06:30","closes":"19:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"06:30","closes":"19:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"06:30","closes":"19:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"06:30","closes":"19:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"06:30","closes":"19:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"06:30","closes":"19:30"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

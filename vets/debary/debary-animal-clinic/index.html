@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"DeBary Animal Clinic","url":"https://scrubby.app/vets/debary/debary-animal-clinic/","address":{"@type":"PostalAddress","streetAddress":"30 US-17 #92","addressLocality":"DeBary","addressRegion":"FL","postalCode":"32713","addressCountry":"US"},"telephone":"(386) 668-8371","sameAs":"https://www.debaryanimalclinic.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.1,"reviewCount":228},"geo":{"@type":"GeoCoordinates","latitude":28.8885091,"longitude":-81.3079698},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJt6IK968R54gRu1wJRKiBges%2Fphotos%2FAU_ZVEEB_8N7R11VOQGqiDLvC3PF8OLT5BAVPDnzfeEQgJPUmN0_p-P6XQCJWLLQR75wsLqwoZ7I7XbLXF8gyLSqqA3DCAGLL8S-nLBWOIqooYaAr-b1l2llxqy3fudbES3kBV7D05cgy-NzAWHJHrYVK6xgr4ntuda2GYFE96MyqogBpmFjwiNldqaqXz4XhfU1idOMf8UUfXYGv5mvwefT9iPaXEhv60APUvSb5nhbRFUKGXsBIICc4S0UE_F7mAnbZhokaJ48S18Wa-5XQjJBBzjjvjGav99t35nFkdcD8hmghUfl0iJuqoBp7tnVAd2sOl2hVBXqSbFNPym0aNs7YzIcckOK-fj9pWwcs611L9Mw0RScvWMpSeTwMtVS7ByGnNdbCGRRvUa1NJv_JtuAIRkvvSV7XRfQgroNQCcOK8Ragrcb&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"17:50"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"17:50"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"17:50"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:30","closes":"17:50"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"17:50"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

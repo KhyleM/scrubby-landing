@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Express Your Pet","url":"https://scrubby.app/groomers/rocky-hill/express-your-pet/","address":{"@type":"PostalAddress","streetAddress":"945 Cromwell Ave # M","addressLocality":"Rocky Hill","addressRegion":"CT","postalCode":"06067","addressCountry":"US"},"telephone":"(860) 563-7387","sameAs":"http://www.expressyourpet.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4,"reviewCount":50},"geo":{"@type":"GeoCoordinates","latitude":41.6446479,"longitude":-72.679067},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJi1wOEO9M5okRynFOXl0uj8w%2Fphotos%2FAU_ZVEFMaX0F44WmMCus8ZjfPzHTapSUIGfoC_VRgLbp68XIWqebLk_MxIp8E4r2MyBLPh44w2eGigk5sdFrfZd57qbctz9FKn0tjvMnZjdmiYQGSRLVG6uw3cXJqSxWVrpgf_OWw6O9DVpKRc8enctAvqG4ZA7UzSC0J6CfRHcyXiWPiK5cIB0UBAvnAPgHYqrytwFKIrvGpKvGQuF4f9OweBtHTJIyesXOKhNj0XtchpgG-zHObgO_KMoIyAQ4qFnxqhdhI6-08LaBHnLQbRDNOTxWptQVzPs3ZCZuuF2vQfJ77etjuUwd2h1qV6kt5AXgF3euXmQA0fPzkkdWE_yA2LKOdVZCJ45u6KQxHi-V3d6sK4d6UDweTS256c4LE6KabcbXqNr4hNJ5WfsYE4VApbSr1vjXsBw1lwZhxpEvwr2eBA&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:30","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:30","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:30","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:30","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"11:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

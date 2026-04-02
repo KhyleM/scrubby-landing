@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Sanford Veterinary Hospital","url":"https://scrubby.app/vets/sanford/sanford-veterinary-hospital/","address":{"@type":"PostalAddress","streetAddress":"600 W 27th St","addressLocality":"Sanford","addressRegion":"FL","postalCode":"32773","addressCountry":"US"},"telephone":"(407) 322-2634","aggregateRating":{"@type":"AggregateRating","ratingValue":4.6,"reviewCount":396},"geo":{"@type":"GeoCoordinates","latitude":28.7786584,"longitude":-81.2734444},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJZSoIekcT54gR3HRaXUJWKIo%2Fphotos%2FAU_ZVEG1mCviaqbU3B4rKC5Et9nGyzMQsB0s4VqOOdlT9igTL6dycXgqMKLsrIKaH9ZDyAs3cNyjLwvxILeunAHTVUIhcL-gcEIFchf5yy34zhWeQ3mtNjVewMMomukiHZ10nPqQk3vu0S4J5Or6VUNcbL7Mmq6vINxBjQ0Q3gU8U2tIWeg1efjIlntr5KlEQpjLhM1bMUA-eq2wFbrJSVd_8TtmB8H3JfQxS-WGFiz2ijggcxalCGOtVkkRFliZAJJyz-OHhB9_C4vnwV2tcL-sUBl47i8NgjBWWEb3C_P6Bcg8jQdm44YUm4L0CVdneIKzCrLR-0zIvDuoIF5sbNi4_Xsv1zvvb4o2VMtfqyzeogQF7X4QWDNPZuG0XHlDnmCdYkT50JSXpSXHuR7L30MqY-tCdv7hOFSrrOpzj53OWJ2aBQ&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:30","closes":"13:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:30","closes":"13:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:30","closes":"13:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:30","closes":"13:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:30","closes":"13:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:30","closes":"13:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -359,6 +367,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -394,6 +403,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

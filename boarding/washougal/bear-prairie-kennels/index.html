@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Bear Prairie Kennels","url":"https://scrubby.app/boarding/washougal/bear-prairie-kennels/","address":{"@type":"PostalAddress","streetAddress":"3211 NE 397th Pl","addressLocality":"Washougal","addressRegion":"WA","postalCode":"98671","addressCountry":"US"},"telephone":"(360) 837-2774","sameAs":"http://www.bearprairiekennels.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":40},"geo":{"@type":"GeoCoordinates","latitude":45.646633,"longitude":-122.264136},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJS224EqK_lVQRC_-rOyRk800%2Fphotos%2FAU_ZVEEmRDIFyXjEabDW4nrL03Ta9FM81AGWZc487_fU5y6LN2TmIIX2FIDozW55DvVDQ7jJj0CyiAJPrBtj3f7vYWyOWpCRN0CGlXMi7344epLL0_ZQZXuCwfWeTuXhKOq1GmZjKexzowS6lgklM3V7_yvB15tP07j181FRGlSiyEH-ANHSCEY2L3XxRh35RJaklk5I0XZh9fe42ZL9ZJNvbOQUvdvAZX8940J-x_lzI0YvKQR-RMywHdFuCkOgT7b0uEXxu9KOBOOnnu8hJ-VdUN8bdAploNpGSo8E_rk4BRZvVEOup1rbQVn_z5gsXTYyltX0aX8bu326-0Q8hnhoKUBBwmzfbwgapH9t4IJNcecKaRjFIzr4TPHtIie-IAOYLdBstkUrEPDvwI-thWxsezTFjuDwLOt-G4uIVVYmScmpoo0&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"09:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"09:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"09:00","closes":"18:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -358,6 +366,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -393,6 +402,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

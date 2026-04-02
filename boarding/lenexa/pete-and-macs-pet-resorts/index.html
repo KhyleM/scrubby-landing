@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Pete and Mac's Pet Resorts","url":"https://scrubby.app/boarding/lenexa/pete-and-macs-pet-resorts/","address":{"@type":"PostalAddress","streetAddress":"8809 Monrovia","addressLocality":"Lenexa","addressRegion":"KS","postalCode":"66215","addressCountry":"US"},"telephone":"(913) 888-8889","sameAs":"https://petemac.com/location/lenexa-ks/?utm_source=google_my_business&utm_medium=organic","aggregateRating":{"@type":"AggregateRating","ratingValue":4.6,"reviewCount":360},"geo":{"@type":"GeoCoordinates","latitude":38.968921,"longitude":-94.727713},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJAYsvNVPrwIcRjcRSj2lC_ns%2Fphotos%2FAU_ZVEGCcwfVrSNi50tArgBXGZZ5UtW4hYQGcpOHF-VxwtM5ltyKVuSO-vxNzHsPxJWbVwtCAxF8zgLfULGNPRY0-Yl6CmwT4b66vmSLyZkf_g8tBT7rNMazNNk5LNganH7VO38qcbP88eBrgg29QA3ChuRavZDIppVPpBiJt_hcO-J5irh_ElQD8gqVOpGq3qBfdJjMZIyW5abFwFpUwPEYSxvmVJ30RV0rHbtTMq1OV-MnKlm1LClm9mBJdQZ78k3ESRlXrhvJC3QVCoPauT2H7Of9Qn2b2fUpMXWG36XAfZqI1aQezCvhVjv2fid5zrdfEorb-h-LzeEpUfkG0-uq18lcOemOXZinYfSal_COSiF1wZ7iSdNSAWJIVEGpiV42DbNXVEhVQl055NJA0l2cWN824kZZvJ7ifalYcBWvZURiOhN-yO0QVfwt-oeNr9s-&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"06:30","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"06:30","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"06:30","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"06:30","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"06:30","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"08:00","closes":"18:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Fur Paws Pet Salon","url":"https://scrubby.app/groomers/carleton/fur-paws-pet-salon/","address":{"@type":"PostalAddress","streetAddress":"12750 Maxwell Rd","addressLocality":"Carleton","addressRegion":"MI","postalCode":"48117","addressCountry":"US"},"telephone":"(734) 299-3608","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":167},"geo":{"@type":"GeoCoordinates","latitude":42.0599344,"longitude":-83.3993242},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJC0DIJo5CO4gRGapfnK5Sm4A%2Fphotos%2FAU_ZVEHRPstKA4Jk7IMi5NES5eVmvcFVDJkIe1MryqhGLonpRIDH3JzGqVuLRJuTrDjaQHabOPQ1hcP2BBg_dJatLM2ecIL6bpXulTzYdfqkdg5GfNO9drSG0qrcL7bblTMwkNc6xPQW98JHX07Twts1P2oktLRP5pGzot3LOdwvWKSi5kF0nk9vesrXhxpAs9ci60lOVDpS28G6udNfXmLA_rA-aVSavleTYv4pw1c4hlKV19sl6cQm8SLEyt3jMyUIQm60sYIKV_L_roTzVqTX7OegjYCsXW2UeG9GnvJRzTlhxYxXyIrJCfyO5dSUEt55NpQ5LHW5nUB5jbWxwBjHJ0guvWAsI_-nnUanOqNjrvJgW9djHByWY3WLNB0s8oC-IcqNjLeBQyWkKx2fQIA4ppx07ghdO3wo6KSv6bI4UT4Nfk92&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"11:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"10:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"10:00","closes":"17:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -363,6 +371,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -398,6 +407,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

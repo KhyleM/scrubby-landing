@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Cedar Grove Dog Boarding","url":"https://scrubby.app/boarding/fairburn/cedar-grove-dog-boarding/","address":{"@type":"PostalAddress","streetAddress":"8530 Cedar Grove Rd","addressLocality":"Fairburn","addressRegion":"GA","postalCode":"30213","addressCountry":"US"},"telephone":"(801) 369-8597","sameAs":"https://www.cedargrovedogboarding.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":50},"geo":{"@type":"GeoCoordinates","latitude":33.613031,"longitude":-84.6672736},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJlbqK_ajf9IgRBlBunWEQpos%2Fphotos%2FAU_ZVEHlqVOiDZfT34KKgFIbxEjplT2nlgQ87deqLJjqzd851AB70tMCwAtJMuFcONEICMe3Rh7zrR793duPwaQgW2PWMSMQeBaQqajE_HJButuASR1YNC8ALPpRL9bjvLnPpaqWMHOH00IPtJ1Cp8EOwm0oO8xMczz1SYA5IRJqJ4wcbNB4FruN9b2w9bYNMHcAeHAy5147W52p2X5tm6Vc2NDauSjVYzWTrkF23T9fHsARx8-JCwTqzG2h3g1A6Siwr1CaOJi65lw1Cky3IdlRclbpA0ANVZ3uBA75fnOkhmZl3w&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:00","closes":"11:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:00","closes":"11:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:00","closes":"11:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:00","closes":"11:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:00","closes":"08:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"07:00","closes":"11:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

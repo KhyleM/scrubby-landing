@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Natalia's Pet Grooming","url":"https://scrubby.app/groomers/scotts-valley/natalias-pet-grooming/","address":{"@type":"PostalAddress","streetAddress":"2936 Granite Creek Rd","addressLocality":"Scotts Valley","addressRegion":"CA","postalCode":"95066","addressCountry":"US"},"telephone":"(831) 266-5959","aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":10},"geo":{"@type":"GeoCoordinates","latitude":37.0571872,"longitude":-121.9981408},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJs4pYZdlHjoARoga5m8HAZj0%2Fphotos%2FAU_ZVEGvZmZEwoh2oBL7IpEnTHvqYxRzF89gqR_lRtp3Dl3HXKXzzSoWXek_a6wTw5xmMnOxBUpgYIvBT0djh88qqW1rxaX1LHgvMCZDFDz5JPJQiKW2nQVCqoa8JY-OAEbw7vHZiDbLRq2EuUYD8_lHlcBvTT451XD-uM2-vGf7iF7HNThLAD71w99owB86E0N_c9GrczJGz3waFScNd0ABVTF1hRPdUnvIqkZMOhHWKBIXVyLA_5im9-Fds0bGoSdkb-RF0JZQmfmZ5O9_dsOZ-vhk3QRZx0p-61RqzCbaJfZ0pA&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"09:00","closes":"14:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:00","closes":"14:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -359,6 +367,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -394,6 +403,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

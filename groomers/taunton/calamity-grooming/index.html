@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Calamity Grooming","url":"https://scrubby.app/groomers/taunton/calamity-grooming/","address":{"@type":"PostalAddress","streetAddress":"384 Bay St","addressLocality":"Taunton","addressRegion":"MA","postalCode":"02780","addressCountry":"US"},"telephone":"(508) 536-1005","aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":12},"geo":{"@type":"GeoCoordinates","latitude":41.9218959,"longitude":-71.097631},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJQ9097m-L5IkRYoe93KHBxpE%2Fphotos%2FAU_ZVEFTmD7jLA9493WcrVYQDCUtkHGZ8DpAkfyueX1FFBt9xCUnBx1XCx5dPuuGPa8EWymsFF8VZGfml7JpNjcMUx6OcwnCMj741WwhR_TmtS5xn-nt9KD6loahQCnqGLEY3PlE6ZD59Jq4SIaobk38e_cyM84FZ3ip5Wn_7saFpJ7JEmEyEITqWUosB_e4N9WFvQsGcaavwGP1JHbPz1HPuzRzU7GN_bJw9_5KoPnATwPIR-omdUYEFgEErLdWVmAx4skJUI2W9oSiXxJBXF5dUkfffTEEKwfEn-QSovZJqs1slP7afFtNtSQ5euiN4eBChypnMt_CiVqzx5cb7RZJ0vowTAfayd3KLY4yXnkzjHj-29o1h8kFvvH_yjLd-YI7QCH6ZzLKRqBEAd6Ge7sankP7I_uihmcZpRTie9N_6TzSXA&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"00:52","closes":"00:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"00:52","closes":"00:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"00:52","closes":"00:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"00:00","closes":"23:59"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -356,6 +364,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -391,6 +400,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

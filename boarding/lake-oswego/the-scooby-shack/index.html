@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"The Scooby Shack","url":"https://scrubby.app/boarding/lake-oswego/the-scooby-shack/","address":{"@type":"PostalAddress","streetAddress":"17620 63rd Ave","addressLocality":"Lake Oswego","addressRegion":"OR","postalCode":"97035","addressCountry":"US"},"telephone":"(503) 850-4451","sameAs":"http://scoobyshack.com/?utm_source=googlemb&utm_medium=organic&utm_campaign=weblink&utm_content=home","aggregateRating":{"@type":"AggregateRating","ratingValue":4.6,"reviewCount":133},"geo":{"@type":"GeoCoordinates","latitude":45.3983575,"longitude":-122.7408399},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJQRziX-ZylVQRnCtg9ednmUE%2Fphotos%2FAU_ZVEGerpKFPABI0l9Z3pbk5ej3x6Nmhj_l6i_T3QOsiCCXzyn6_LjfGAJTBd_ehg4oymoixfw5zhBlp3_Ydb6sCgnkEw-j8NHihd-T2ZmmOTIDT_gHnUxrJfkgbt1kFB0lT1FQLJ3GtKe8C0kECUxlVzPVsy_b94Tam-Ai-sjsC10cCMY39L-Zu0e--0kXpAHttGwIUyeJOeU9C6gPSm_I07VqzIgFJF4DPsut5-JAPAoF6ybjh-rEH_QgHC2S60sEL_gL3BtkY0c-0ogrXem9g_4gxhLktlbog6F3s4z_QekKzw&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"06:30","closes":"18:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"06:30","closes":"18:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"06:30","closes":"18:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"06:30","closes":"18:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"06:30","closes":"18:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"17:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Allan's Pet Center - West LA","url":"https://scrubby.app/boarding/santa-monica/allans-pet-center-west-la/","address":{"@type":"PostalAddress","streetAddress":"3330 Pico Blvd","addressLocality":"Santa Monica","addressRegion":"CA","postalCode":"90405","addressCountry":"US"},"telephone":"(424) 832-3009","sameAs":"https://allanspetcenter.com/allans-pet-center-west-los-angeles/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":549},"geo":{"@type":"GeoCoordinates","latitude":34.0271869,"longitude":-118.4542965},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ1dDD5Om6woARAAh5wZXhTdw%2Fphotos%2FAU_ZVEHqzkZ8I08Qip6yYIVgsSeogci5VV1r8vf2aC5WPj3pu3JSl3XgIsze6sxHrUfWFvrxv5ZTZzDmhSBOwuwtHM7ZoavWqu2C3fct2j76D5npxXb-orj1H5JsaiQ2x-2yJbm1sKKXDtdg5UnGCbIbG81Ll4PTioNU7EE-f9k3jHQAjvItvCw7SGnQ3kCCRnoJ81C6It18JJmRXMbsL3noM9YNUXGb4IsFveiV55iQ4NDB6eOx1T1gI1i414D5GYTdM19ZwLoP2NmHkspskXj6ATMQszS5nQE6K8T9i_Fb91eIag&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"11:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"11:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"11:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"11:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"11:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"11:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"11:00","closes":"20:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -364,6 +372,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -399,6 +408,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"St Cloud Veterinary Clinic","url":"https://scrubby.app/vets/st-cloud/st-cloud-veterinary-clinic/","address":{"@type":"PostalAddress","streetAddress":"20 E 13th St","addressLocality":"St Cloud","addressRegion":"FL","postalCode":"34769","addressCountry":"US"},"telephone":"(407) 892-3415","sameAs":"http://stcloudvet.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.5,"reviewCount":431},"geo":{"@type":"GeoCoordinates","latitude":28.2464755,"longitude":-81.26787},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJXa5EGGSO3YgROH8DAHeL1tI%2Fphotos%2FAU_ZVEFJnqQWaXwKh0xcy8pTEIvVJTnGSE2MN9ZCo61mV_QdBKIJ83FWhYesmRjhzs4L42figcNproz6ly0JB_dG5G2-XL7j5LFZkFRaeX4INwoZDMG7XzouLzYOvUNarBi0APR-8LSRBNbX4cm5as6BmrBtN5jX49qvmaF7gwIBHP7EefUisBMuxgDVc4_XnkS-jCn8HnzzT62y2vFwaM-BrG2YEP0ydqn6Vj-fsDWzza8wjlMixAv9d4i0vycboWUVtcezTCOVwWvu0c8_wR-Mqkd4o4TVaKXCrMMEPacEeIkz1A&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"12:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

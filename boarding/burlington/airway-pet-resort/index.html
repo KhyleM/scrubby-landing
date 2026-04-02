@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Airway Pet Resort","url":"https://scrubby.app/boarding/burlington/airway-pet-resort/","address":{"@type":"PostalAddress","streetAddress":"4035 Easton Ln","addressLocality":"Burlington","addressRegion":"KY","postalCode":"41005","addressCountry":"US"},"telephone":"(502) 525-3935","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":12},"geo":{"@type":"GeoCoordinates","latitude":39.0325218,"longitude":-84.7808049},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ1fmdKqnaQYgR3QH-LNfN8Qw%2Fphotos%2FAU_ZVEE7y95xWF--reID1Y_mlY4vVA6slULd7bAYHrk221BFnS33XCL2O-sLiVCGxUfeWu8X83pWwdkluJ2ucdP82mCgglrfqRgnXwGFR7lisqk8hUApvFjAI_KzO7MkfRB5hB1BKOc_nAJy1KKYTkwzgUVfJ8lx4jmcEsJNr9ikkkHlOI8lCAIVWa-97asIesNaAWlaPUiI5FVFXnv6alIo4LiclA0VN9LGQBo4QbfITznab23zyg1zt2ePU05dkCodPDhq2hNktzqbr5kWaX5MPdocH6eIatcS2LJdfVqwIq_qOw&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -345,6 +353,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -380,6 +389,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

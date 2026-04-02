@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Midlothian Veterinary Clinic","url":"https://scrubby.app/vets/midlothian/midlothian-veterinary-clinic/","address":{"@type":"PostalAddress","streetAddress":"840 E Main St","addressLocality":"Midlothian","addressRegion":"TX","postalCode":"76065","addressCountry":"US"},"telephone":"(972) 775-2901","sameAs":"https://midlothianveterinaryclinic.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.4,"reviewCount":382},"geo":{"@type":"GeoCoordinates","latitude":32.4778022,"longitude":-96.9842987},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJsy5YPKDzToYRqg3advy4tMc%2Fphotos%2FAU_ZVEF9aS3ad2JzyjxAFdLGEAQHY_flu--ZdnxOebB-WzyW9JE6TYnP1AuGUBfLh83SwMn2cg7KYwh_DbIJky96AePdGXI3l7yytCbB-B-q-fSVrMZjDjA3WsLikUcb16xdvw85TEP95dB3K0ReZGBY2_Q1kbVOBWO2Cevb0KJPrwXVHf328m6XTCLGdMReRVK9_cj51l5HuV5ekdRkfzvjkAnC_Q6kLIJBd5jIzNA_Bc56tODH9dpC99fBZdNiR6-oH5I6qHbvGLfn8-3tF5Tq5Xns4tjHJTGvQLoe9s9DjECPbA&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"16:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

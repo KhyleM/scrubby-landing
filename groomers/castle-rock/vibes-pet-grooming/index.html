@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Vibes Pet Grooming","url":"https://scrubby.app/groomers/castle-rock/vibes-pet-grooming/","address":{"@type":"PostalAddress","streetAddress":"967 Park St","addressLocality":"Castle Rock","addressRegion":"CO","postalCode":"80109","addressCountry":"US"},"telephone":"(303) 498-0899","sameAs":"http://vibespetgrooming.myonlineappointment.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":93},"geo":{"@type":"GeoCoordinates","latitude":39.3794209,"longitude":-104.8670777},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJYZg4hRqZbIcRExstaD1tYQc%2Fphotos%2FAU_ZVEH8l8Zlrzldqpn-DSMeHC-1E0AP5atuNQGqWLQfbqM4jEDK47qUjmRocTjTwWhsx16YoTeDuy-_4kvYNmKvmeJgMGKHtWP_pvFDuxfeIzjX0lBYzKrCgucbeQC6toyI76pDqgIX9oAmzxL5rhJlbEpvsn-a0khF079VZfNpNeiy8th6ZfHW_S_H2F2qXeDA-Rlpo-9QtgBLj6FVlS3N_e6ZLTswNSevqHtGtWxrolgAJhf3zUH0YuxsvJC6ryGX6BGo6QvYQxsjqSan4wZFsSQO-YmTbec-ty4GjV43CABZOz8TR-XTRKiTK4Y_jdJiKDfZ97IYh0WXCoc34idlsagXAvPTvKaHbr5TIBHr2cVycU7K15VQMQzd8qm64qw0FiD-yBj7y_XA3oI9CRAJu5obl2OmpKuWAXUiaDop26AA6NE&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"16:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

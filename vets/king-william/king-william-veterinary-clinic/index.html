@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"King William Veterinary Clinic","url":"https://scrubby.app/vets/king-william/king-william-veterinary-clinic/","address":{"@type":"PostalAddress","streetAddress":"1242 Sharon Rd","addressLocality":"King William","addressRegion":"VA","postalCode":"23086","addressCountry":"US"},"telephone":"(804) 769-3200","sameAs":"http://www.kingwilliamvet.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":90},"geo":{"@type":"GeoCoordinates","latitude":37.7461364,"longitude":-77.1308633},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJY0LGg6TZsIkRr3EtAVDMDNU%2Fphotos%2FAU_ZVEEasvxctjGfcPHfX84l9aTa26B3MWE9gio95xvUFNRrD41N-gPeFsx2eGrYsCrB91-eGTgeE7b8hltY5Y7ET42eWV8tkiwX_r86gl3J1OKHn93ezcm8Xr4qvlCkPAETpOBwrpj97DAHM3-leqIEjRVNaruuZiQ8_nYldssxcJZASgtdlafUEUBM_iRhs8uaXfU_xtgz2dIZCr7RcwHoDZGgKzRtN0vTpOfgqgALzGYGoPTNRbkWbTk1JIfWcLnK7eAg_j0g-Es39eCg_6PcPaUVZ5xQqUjpg3aAvydsQugZMQwguszPQnk_PWaIh-A_6ysqYQe4OpV8SUwvBq6DZqIQMsqpkfoJFRapYqrzrzfPRulzjTH4OHNUfzFY8XJornBtAyFZuTSWXnjb9sfZZgTnS_PY3Fjg9eaeGBNCCYk&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"18:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

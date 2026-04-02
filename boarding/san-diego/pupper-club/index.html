@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Pupper Club","url":"https://scrubby.app/boarding/san-diego/pupper-club/","address":{"@type":"PostalAddress","streetAddress":"161 14th St","addressLocality":"San Diego","addressRegion":"CA","postalCode":"92101","addressCountry":"US"},"telephone":"(619) 344-0101","sameAs":"https://www.pupperclub.co/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":142},"geo":{"@type":"GeoCoordinates","latitude":32.7071977,"longitude":-117.1517028},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJv308uvhT2YAR9L3Bh-yaW4Y%2Fphotos%2FAU_ZVEGQjcRn_mqaoDVrIWz-GeE6evyAMk5MC-5H9EXJhpur_gRtxXaTj-OfbrXKkb7Ti7kA1cyJVqGW4ybXcVT0r5lJBer6cS6DD37H8fcXp2l54dRe0M9uM4x2NGYdomE7Zflq1IOrd5IzpzwSZaDftmdIONaH1bEezxe6QLAJvsaa9oDoGtHX-PZuOrfJ5WRq157wMZ2yVF9WQuRcWO5zhdB2BAmJEgMkSwaXB5Xl9GXzThFxssdDYIX_XAc6FEAaj0dG13CZztqdVwrgxh2-1OIURHcBqg9_fGLNsC4JwyUcH3YGz-f8j_sBNakWvgGFQTH7F1fYlkGV3yX6yS6fnJkpDObRkL2QCgGC8Xj_nHDJleVyW88qS3TJ6WU6cn7e3bn70ZLHohU3VEYyiiWQE2_ap7zh0b43XjbgYqoacudMEM8&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"08:00","closes":"18:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

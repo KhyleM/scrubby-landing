@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Flora Family Vet","url":"https://scrubby.app/vets/kissimmee/flora-family-vet/","address":{"@type":"PostalAddress","streetAddress":"2229 Fortune Rd","addressLocality":"Kissimmee","addressRegion":"FL","postalCode":"34744","addressCountry":"US"},"telephone":"(407) 348-4840","sameAs":"http://www.florafamilyvet.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":1112},"geo":{"@type":"GeoCoordinates","latitude":28.3047936,"longitude":-81.3536034},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJfxt5iuKF3YgRfIw1PDlnww8%2Fphotos%2FAU_ZVEHM_kYBywzNuzoGb1tqmezS4MdBoed7z1gKpvLp2sSjqZtdss-XtdyNJ9oc2dgezhe7nP0CXX3vyu-uqflCGNA87BYwfS1pjnFx1AK5SqhksQZEqNJwPoFemn1lV2CL2AlcFD--ZPbAiQ22gBJDfZUiKAfmVyMhCq_-RyGI-5G1wW1-6cx_wH5yw3qf_MSpGddx9RvwMM_J7vtzvI6tEoDIYBfDvH5w12-2gGBwWN5ciacLy5livbXyvCENFFkAQBD97ptKhSVc8UtFaFTwewkvB_oAr7wIUkM6283qIwY6lA&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"18:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Edwardsville Pet Hospital","url":"https://scrubby.app/vets/edwardsville/edwardsville-pet-hospital/","address":{"@type":"PostalAddress","streetAddress":"423 S Buchanan St","addressLocality":"Edwardsville","addressRegion":"IL","postalCode":"62025","addressCountry":"US"},"telephone":"(618) 656-7656","sameAs":"http://edwardsvillepethosp.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":253},"geo":{"@type":"GeoCoordinates","latitude":38.806792,"longitude":-89.951864},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJWR5VusX5dYgRQHxheBuHapY%2Fphotos%2FAU_ZVEGChE04nkjxSKDlTlnV-kB_E3xtTEBItb5wrlp3QpK65fGLaRpdQDWaHuEha48I9gTWc2CaX39DtFwphnyTrhg_K1gpUcodUOeVJ-tMvCrs3-MRJm8WMQgHLS_A19BSmKHvSYn1n7NmXr_6Jm5nPyT-SUFLePu_p_c1355zuOKgwem5w3BqJ2uY-vs9QVEsa5dmGXhyrJHnUuqBGf2nNxEG3XMJtiiRl0-ICZSvbvZ-zdIgigtk4m_4fDfgWlbvoMl_UvVnY2D4pCzHBb_XEOzfCX81oSIjhAlsFx7gT3v_Yg&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"12:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

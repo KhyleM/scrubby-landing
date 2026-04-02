@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Tipsy Dog Training","url":"https://scrubby.app/training/moore/tipsy-dog-training/","address":{"@type":"PostalAddress","streetAddress":"920 SW 4th St","addressLocality":"Moore","addressRegion":"OK","postalCode":"73160","addressCountry":"US"},"telephone":"(405) 905-8477","sameAs":"http://tipsydogtraining.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":11},"geo":{"@type":"GeoCoordinates","latitude":35.3336597,"longitude":-97.5078743},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJJVwE1wsVsocRhWLcOyX-m2g%2Fphotos%2FAU_ZVEEEB6YNmRwoBZCQEix4Bi4n1WN3WaB1Z70KZIMMgYA-r4dGB0tqcBx6yyfvQ4RHemLG0DS4lVnsRt9JfjPD5O8GxYgWcw9KCbqYBFkGHzditF6sJORdyeCwv-abdt29mvx-pJE3eJAoY_QEw1dZ8wcFCLxJyMcS8q6pLEAPGOKlBvadEBgXkeByoUc1zDxVUgE7NSCtmk9yFxk6eSNGOn4bHwSFUy2EQfNbPLY-Rs8IKJVu_KqtfV9l6emqCbvDGsYuZbiffjSnZU0ZbTr4A5NQXDLZFRrH5iYReQbRFVFHHv4D7HZUOKQ9lmjlmueytFpquCGaFNF-tcsmaUYB_g2_98I-C0jNL71XVH_BzJaOrs6I-Aw3nxDbfXpFeTBCpv4r6_pTYCwMHwrHeTXmv7e7KtuLv891KI3bNke0CJ2XKpKL&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -349,6 +357,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -384,6 +393,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

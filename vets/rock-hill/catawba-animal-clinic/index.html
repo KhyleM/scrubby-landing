@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Catawba Animal Clinic","url":"https://scrubby.app/vets/rock-hill/catawba-animal-clinic/","address":{"@type":"PostalAddress","streetAddress":"2241 India Hook Rd","addressLocality":"Rock Hill","addressRegion":"SC","postalCode":"29732","addressCountry":"US"},"telephone":"(803) 366-8188","sameAs":"https://catawbaanimal.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.6,"reviewCount":422},"geo":{"@type":"GeoCoordinates","latitude":34.9718604,"longitude":-81.0297977},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ14oSzyqPVogRL_13Bqp6zZw%2Fphotos%2FAU_ZVEGxmd2MTh1MVQGrHM-w8SQ_W00NHhtr0Bi6zdxgaZtNs3r0kN0ngNLuiW5RvqD_71uQdQFWHxgShBQbHdCTthDfC9ceVz57x0qV6MR_HYvL6EYiR7XXbWvQS33lGz1fQ8VFgu2rH6r--qGah_byvKP6A1Ozp9okXQISDwkuauBhkFy0qdwVcvKzCpOEA-G0NjGJvC-MOnsRvlzYQFsqAQtotz6sguiL9wyVWbRuTcaVxNTgJTpxRwDVJmNqJSF58TpCZEJ_fNEDMwPzwauhldv9g3rcIqB7a1EFb20HavnrAA&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"13:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

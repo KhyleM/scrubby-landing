@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Pet A Groom Inc","url":"https://scrubby.app/groomers/ramsey/pet-a-groom-inc/","address":{"@type":"PostalAddress","streetAddress":"25 N Spruce St Walgreens","addressLocality":"Ramsey","addressRegion":"NJ","postalCode":"07446","addressCountry":"US"},"telephone":"(201) 818-2554","aggregateRating":{"@type":"AggregateRating","ratingValue":4.4,"reviewCount":45},"geo":{"@type":"GeoCoordinates","latitude":41.0586507,"longitude":-74.1411194},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJR1lGUFnhwokRFHwN2fQ0r-c%2Fphotos%2FAU_ZVEGcOOfvgYSZs6fMQJuOrX1iWUEE1vwON8O379R4IsgkCt1ZYD0ElhnYEawwM30Nmx2OTEtfXwg7vFE3Wqq48qDpgZefZigR9TNcmuc_uALPm6-xhF_7fnES33GnUqACFBvhoSsuPcAL0FtBeAKdT64pQZP6gFS3HA0sPHJQva8T8slhNl2vD7Ly4nFEOxyRLcLZIMy6cTJQaHdaHwW4zgmSUnvqbZRvLmwXX_L03f60mq7qPocNPD1qtT9iQmv-g0jSCzcAXlSUX76HcVOCQ05zJxs8Fo4qyLlY1KcrFs_QYs7kmkfU2_68RZBipNUBU-tky40K2GkpOsM-PUizhyHlYLlibN_wfadN3tf2jNW6gUEmxQ8E50Cl4Brno8dHPlDivY7B2_kJYd509uevsj8aAtsVLJSq0ABwM8MSUPb5qp6E&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -351,6 +359,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -386,6 +395,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

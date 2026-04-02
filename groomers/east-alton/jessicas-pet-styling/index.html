@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Jessica's Pet Styling","url":"https://scrubby.app/groomers/east-alton/jessicas-pet-styling/","address":{"@type":"PostalAddress","streetAddress":"609 E Airline Dr #1913","addressLocality":"East Alton","addressRegion":"IL","postalCode":"62024","addressCountry":"US"},"telephone":"(618) 259-9004","aggregateRating":{"@type":"AggregateRating","ratingValue":4.6,"reviewCount":77},"geo":{"@type":"GeoCoordinates","latitude":38.8859959,"longitude":-90.0714608},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ86uP815Z34cRsyXw0vN7DUs%2Fphotos%2FAU_ZVEF-gcUsHPIJXFYjAJIkEzINNFeykDSImgrNK5Y0SJzfjrY36oQFu2oN5E0lzh38Q3kBVFRGTH8rJRs47JszZc_msKx2wPxJ8vSiSztaJcHkoOqyXb2BEzU61-MVqc9eQJUDxKdoGvm0guvVX2z2zLGM7bWdN6v_VIr97tCai4_CoKIO7scWKfzfYHpP6A84kBWE2kQVvJAqllvOq6AlpMAcV8ZTSq8jODCyuJDRw118BrPtX_xsV46caEfDgwnuMwgBUIK2nBVlEc3MY48WghVHaBcB2ycgrh3MLYrn7reqHW8FLypoq-8pPlwnmMEqNay6iBPVWx0fNlLOf0GfLm6O2kVqiCBYGqQYF9RkpvxdhvpuNYPNoUP2m2MdkOk23eSS_mkg-b9-IlYif1zaM0tgszPxgSz0SDbyRz8pCPVDBWJq&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"18:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -357,6 +365,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -392,6 +401,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

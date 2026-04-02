@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Hercules Paw Spa","url":"https://scrubby.app/groomers/joshua/hercules-paw-spa/","address":{"@type":"PostalAddress","streetAddress":"1527 S Broadway St","addressLocality":"Joshua","addressRegion":"TX","postalCode":"76058","addressCountry":"US"},"telephone":"(817) 933-5650","sameAs":"http://herculespawspa.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":25},"geo":{"@type":"GeoCoordinates","latitude":32.4382177,"longitude":-97.3836028},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJNzPTwKJBToYRq-5IRFUC75E%2Fphotos%2FAU_ZVEFy9TLDWUAgvI4REvfuqDdDNbqM8-IGU2-c17LOLi4KkKBe7hM-qaVR81yFZwfLlHPpUOze667Tw33WFQsBvgVrLvfgAC-zHxd4iO0bC4NTiQ510ToERrZwT5jdeM4IqJItHKqEofLn5pHAonvyi983AbocjIfxJIHLyB1QlAYtp2SZc2Fa0jKR2611Avi40FKoBjUndiwCCmxrYDZsnop-yv76aKHHhP4pRG2VqXr-_TTRRBWXR5w2XZPZsAUj5ruL34BfoJtSH6WvADIkakyyz01se_W16YovD4os6pDGqQ&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"16:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

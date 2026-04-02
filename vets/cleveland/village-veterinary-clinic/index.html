@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Village Veterinary Clinic","url":"https://scrubby.app/vets/cleveland/village-veterinary-clinic/","address":{"@type":"PostalAddress","streetAddress":"6529 Wilson Mills Rd","addressLocality":"Cleveland","addressRegion":"OH","postalCode":"44143","addressCountry":"US"},"telephone":"(440) 461-2226","sameAs":"http://www.villageveterinaryclinic.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":524},"geo":{"@type":"GeoCoordinates","latitude":41.539168,"longitude":-81.44322},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJjZ8VIUcBMYgRQec7x5iQDws%2Fphotos%2FAU_ZVEH0GmyOC_0LuiAUKKpiiARXHkY8iWIi4ZCAGMrT782RI2kt9uDBZi81GFxN70ox7-r5rmrL3ALuc_aQV2g7PdRlAaOiHQZfon4L_098ugZa4CEz3-QXEYmnnICjgbQl31el-Exyy-S-jQesRTK_RFJ5mBb8gJRvcD9NyziiSHviwquTaN_Y8uJyhOVSf0TVD5yCrqWzF1a7J5MCFAXBxSBjI9YurlcHgYaNO9j-5Wy7ZW4mQ7Y7EP1UjJLhWNkCiPrHSnyE_RPUTM_zVDijRXJr2LqFWNpEW8YJtL6TxBFT_EfraCCMkOGeNThHb5UUA1sbh7_iROdDJw6JxZi9HbZh47TmdaxU2DBZapT-Pvy7w1GTRt5Fvd9acTNtceNmyL5Wh-Y_HSrtnJyjRk5chGHraotJaADlnYNhsHTgy9PZKmgvFbmymVT4kFayRLdQ&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:30","closes":"12:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

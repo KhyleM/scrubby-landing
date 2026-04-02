@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"pet time spa grooming","url":"https://scrubby.app/groomers/san-francisco/pet-time-spa-grooming/","address":{"@type":"PostalAddress","streetAddress":"1817 Powell St","addressLocality":"San Francisco","addressRegion":"CA","postalCode":"94133","addressCountry":"US"},"telephone":"(415) 659-8886","aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":19},"geo":{"@type":"GeoCoordinates","latitude":37.801362,"longitude":-122.4112871},"image":"https://places.googleapis.com/v1/places/ChIJb1NPGJ2BhYARQZVyAQAgCbg/photos/ATCDNfUtb1-kDLtmkxD52AJnbvTfTwgv6CP-sBOVXXMd8KZxEkHUxxzpeUm7X49nM7DoIWDb3OAH_cn0z78QUtlChC8R0Z19XkoRzP_YX_5Fc-coGZqjMsrj6LOEkP5ttgKFzzPHg6y3jXHvYsK-srPQ0Zn6SOZY2ZNmvduzm4FeBNZAbecoBAtroKMDx9V-Q0P_l3tIOaBmJ6Y21LbUjqDmTfE9sClPhyfuooDwouf47dkcHCLTRH0culvz3NemoUTfJOr9o59wWnQt8EoiEn0p5gn9U6BZtbONB6eqAeqgL6YCVw/media?maxHeightPx=400&maxWidthPx=400&key=AIzaSyCpmbfD6svBtJL5OpHfeph6xPVzLlf7F-g","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"10:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"10:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"10:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"10:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"10:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"10:00","closes":"17:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -359,6 +367,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -394,6 +403,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Pet Supplies Plus Gallatin","url":"https://scrubby.app/groomers/gallatin/pet-supplies-plus-gallatin/","address":{"@type":"PostalAddress","streetAddress":"207 Maharris Dr Suite J","addressLocality":"Gallatin","addressRegion":"TN","postalCode":"37066","addressCountry":"US"},"telephone":"(615) 488-4502","sameAs":"https://www.petsuppliesplus.com/store/tn/gallatin/4514-gallatin/4514","aggregateRating":{"@type":"AggregateRating","ratingValue":4.6,"reviewCount":205},"geo":{"@type":"GeoCoordinates","latitude":36.364639,"longitude":-86.444069},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJwVrG7AY7ZIgRx2klNOasVY0%2Fphotos%2FAU_ZVEHOh8ZqZY1eI355b9SLEGKE5NgdiiXFJHPCT1gk1HyYgeY0k5NB8-V-mCnZwDKWRNDMrxFWg5T7-inLYO95De79QU1YCtPW9Zrqa4e_Fh0UIx9-uT8c0FnADCb_acVIZVPHJYwI_tL0LM0kOwVzW1ldh6JdgaOQSVotB8sMt_FH1JQ33DlpWHQp7F82ZkwOIEfQB57THdI0JddI7jayhvY01cGApDME6rxSejAznElXK7hswVbHVEOgeIFRlH6UJ63OxF3OwaFPt3pQwk-UmivrNuTABkaOO916-aTh2BbA4bPLUvytxXoLWEF4sqfd4Ge-XHLdM9mCLoC7V6pQDHzAhNyQLySLhHp2mLbaVnPiCDkNxbKf-igKJv7Op7f0NhKjawGm4eIup153GoVowvxIlFq_PgPuv2XPJF-MswkmPMA&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"09:00","closes":"21:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:00","closes":"21:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"09:00","closes":"21:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"21:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"21:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"21:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

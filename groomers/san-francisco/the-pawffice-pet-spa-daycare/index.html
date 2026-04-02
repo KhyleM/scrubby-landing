@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"The Pawffice Pet Spa & Daycare","url":"https://scrubby.app/groomers/san-francisco/the-pawffice-pet-spa-daycare/","address":{"@type":"PostalAddress","streetAddress":"1102 Valencia St","addressLocality":"San Francisco","addressRegion":"CA","postalCode":"94110","addressCountry":"US"},"telephone":"(415) 961-6804","sameAs":"https://thepawfficeco.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.9,"reviewCount":33},"geo":{"@type":"GeoCoordinates","latitude":37.7550702,"longitude":-122.4212674},"image":"https://places.googleapis.com/v1/places/ChIJKfVOnJh_j4ARAvuKLJeKqtU/photos/ATCDNfWOiFKx3Kl7ULYE0eQJUrz0XUFqX51uLtkfywtGNFOiaTHbtrlOEG3ely-X64XpDjJ19CzBOSRMoRtIETR7g2SXmiYT3n5vB5odhOxag0GVesc4bin94031jfTEEjZa0EcOGgsQC19y9PjjWioQDBs_jG7u-lZHOg2HY5OO3L2cN9gCCZgYU44s41l0yMMbLNdronpJewYFZOZ20iimTCn8bBVZN9KJvE0N5RUX4mtQib991kTzj2JdfzgI6vgQMSPJ94OCckUTA_jEyxIDPNx1OoySC4jYPHs3Q5X8bh8aRA/media?maxHeightPx=400&maxWidthPx=400&key=AIzaSyCpmbfD6svBtJL5OpHfeph6xPVzLlf7F-g","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"18:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"18:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"18:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"18:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"18:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"09:00","closes":"16:30"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

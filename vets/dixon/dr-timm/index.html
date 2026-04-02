@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Dr. Timm","url":"https://scrubby.app/vets/dixon/dr-timm/","address":{"@type":"PostalAddress","streetAddress":"7925 Pedrick Rd","addressLocality":"Dixon","addressRegion":"CA","postalCode":"95620","addressCountry":"US"},"telephone":"(707) 678-2377","sameAs":"https://sites.google.com/view/dixonvetclinic","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":38},"geo":{"@type":"GeoCoordinates","latitude":38.4507713,"longitude":-121.8050994},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ36FQ_IMvhYAR3zos4xtZoCU%2Fphotos%2FAU_ZVEF7FoqMJkWOE3qxRqoInCkY1W5sgbhipu-wPa6Jsn6Xjky0zFyEwrnaW4dauM49F2IeySzAm9CoRoeuzTd6Q3uimb2e5bTglop7MY53fUnteqSxpOYl-AFiqcrToPF3DtD6_r8eDwr4-9E84M1eMkklcxESh6A82nP2UmqRUspvs1FGFjikoXtSFyzAHN8HdVPMkWGF7ReIfW5-DlkJawhr2YQV2Mk3gg3Qjw5cFqO5Zs3FyyI6ztHrrXCuj9bZTMNYYaMmIqz-W0Qj2gncbWTUhCXmiRRbFQWxlCCw7SoT92iCt1N4TVa__97VCg6eYApskrMTEoc90iUXInAoBrunlY9-INZHrNjbyu0gBhGKM65egcQfzPpK-bdcHNcNH56KlyksAqirARUIcxOwi3AM0l8Bbx7cjlp8hj1iuI5W-ynK&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -350,6 +358,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -385,6 +394,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

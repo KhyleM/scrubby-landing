@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Upper Marlboro Veterinary Hospital","url":"https://scrubby.app/vets/upper-marlboro/upper-marlboro-veterinary-hospital/","address":{"@type":"PostalAddress","streetAddress":"15222 Marlboro Pike","addressLocality":"Upper Marlboro","addressRegion":"MD","postalCode":"20772","addressCountry":"US"},"telephone":"(301) 627-7387","sameAs":"http://www.uppermarlboropets.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":589},"geo":{"@type":"GeoCoordinates","latitude":38.8233117,"longitude":-76.7420345},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJJQy-CA-Ut4kREv7E8d6ENuY%2Fphotos%2FAU_ZVEEI3WIOIiw7omDRKqVjvllJ-rGpqrE17P3RhCtXdLl8Sv6lNny_53Xzj7Z5Lj7GM2GP2w8Hge8Jj8ik0C7wYamuA9kCDRnMW-khKHDKfEMGWUcyFbqnv4p6YZYmBG48zEfRBV3dsdLK0on6Cgm6GM5zEn21EGMCKHh9Zfl3YNhYCxJHysiM0Gz-iYnz7brNpvnUSGBqrvYeeNsd12Jm8SZpmeeO5ME-DULR3GxkUoBWDMuI0Wu5IB5coaFlMYIcYjZ8bJ99Inw5_PYkCk-W6bnAKXJlDR3GIk9zFEh-qMSknA&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"15:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

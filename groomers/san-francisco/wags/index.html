@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"WAGS","url":"https://scrubby.app/groomers/san-francisco/wags/","address":{"@type":"PostalAddress","streetAddress":"1840 Polk St","addressLocality":"San Francisco","addressRegion":"CA","postalCode":"94109","addressCountry":"US"},"telephone":"(415) 409-2472","sameAs":"https://www.sfwags.com/bathing-and-grooming","aggregateRating":{"@type":"AggregateRating","ratingValue":4.6,"reviewCount":112},"geo":{"@type":"GeoCoordinates","latitude":37.7939021,"longitude":-122.4212395},"image":"https://places.googleapis.com/v1/places/ChIJTVxFS-qAhYAR3j2CRPDLBY8/photos/ATCDNfXcdzsY2UWY9W4HY_j9rgQqfIONrFZDfk_Vp1gVE-8CLK7Ii7Sbpz-Q1J_TZodur80wpqHlXRcUaYso9xFjmVHnU4_LIFjYXpcOAxpviZSdEXWN5gD8-MO0UDcdfS9eDhns1VMazATGrZxDZ_mWcebtruigd11fqU_0wzNCsP9VIlS2JWGIiMCYuAA_oLL6EKUqRVVOyaZZBZqqAax5HJwu_Fwdzpg8Th2OosY6wKH2F3L1zzcos8nsTyxTVrjv5PHjmv4ROGIySkuQV2_pFSYB-eMyMcVGpuef-DZHUXTzyfcuN3wElfOkvL5qZyq2tJhbVDEyYCMleFxcYL8r81P3efZ3RQBxdGZjJgjVrLNpPLynE5mVrC8iii7WuSRBESacasRJ-UOZkM1yPc2ix1tN0pHJSLT5M7F1v_qLTLH-JEj4/media?maxHeightPx=400&maxWidthPx=400&key=AIzaSyCpmbfD6svBtJL5OpHfeph6xPVzLlf7F-g","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"09:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"16:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

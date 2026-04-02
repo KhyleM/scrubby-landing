@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Best Friends Pet Salon","url":"https://scrubby.app/groomers/ellenton/best-friends-pet-salon/","address":{"@type":"PostalAddress","streetAddress":"3412 US-301 N, #102","addressLocality":"Ellenton","addressRegion":"FL","postalCode":"34222","addressCountry":"US"},"telephone":"(941) 479-4974","sameAs":"https://bestfriendspetsalon.wixsite.com/website","aggregateRating":{"@type":"AggregateRating","ratingValue":4.6,"reviewCount":149},"geo":{"@type":"GeoCoordinates","latitude":27.5234104,"longitude":-82.5297733},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJi3jySiQ9w4gRpNJYCgzYvCM%2Fphotos%2FAU_ZVEEzrdOS7YKJSPH1AmBw5DXVE54ypid8CbkVgxW1H65hP9sWE2kiT-qGLSeiIm7NH0AJTMf2ufPK0HRn5FPOV9uUIeHrDZiAvKA6CW0SG1P-80gePQf7cdIBReJnAxAWguemVbIIgrW-UFBp_4w7UyS06SdQkV-R-k5GC2OADqz0P7H-NuTR6ErwC4JjEPs7ZQjgJJE59AJAkJQnMcH0qsAT0ay4YK4cczZkk-AbsQgEpos5rQhiZtCvdn_50QMrkiexqhF07eZu4sr9AGcOW1j2SAsEy8092qnXSVm9CMNM_w&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"09:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"09:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"17:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

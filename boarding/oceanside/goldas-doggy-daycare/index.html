@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Golda's Doggy Daycare","url":"https://scrubby.app/boarding/oceanside/goldas-doggy-daycare/","address":{"@type":"PostalAddress","streetAddress":"3121 Brower Ave","addressLocality":"Oceanside","addressRegion":"NY","postalCode":"11572","addressCountry":"US"},"telephone":"(516) 784-9909","aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":12},"geo":{"@type":"GeoCoordinates","latitude":40.6378886,"longitude":-73.6233578},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJycC_ORF7wokRK3Kw-ZAKyVc%2Fphotos%2FAU_ZVEGfs90VgL1iA8UPcdsw-kU4iv60iSlkuz_j2VIqt_TWagUTNMhbRccdSfI0UBNYPVlEp3NOIjSUDii1cZ1mL8iEuEG0VcpadcrVfzpyEBND4NvF1ILoqqRS8vx4D_SkW9nPi3fis6VCEKmCDXKVcIa6QtRR9QnbPry2hn2rJ2wQ1VOeZhfIJuwCMZhJPjY82-QgcRWNhjSU18sIXCTo2FaXxDaQ4v3oMOW8C5Yk5ajGrK-EubvB_FOLfggPvKYNvVrocUOjbm4ALggMsVDu_unEhFyZsPd7pSXNlk_AphZElQ&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"08:00","closes":"20:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -357,6 +365,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -392,6 +401,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

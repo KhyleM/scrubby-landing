@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"San Diego Pet Boarding","url":"https://scrubby.app/boarding/san-diego/san-diego-pet-boarding/","address":{"@type":"PostalAddress","streetAddress":"2176 Chatsworth Blvd Unit C","addressLocality":"San Diego","addressRegion":"CA","postalCode":"92107","addressCountry":"US"},"telephone":"(858) 752-0265","sameAs":"https://www.sandiegopetboarding.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.9,"reviewCount":48},"geo":{"@type":"GeoCoordinates","latitude":32.739398,"longitude":-117.2281802},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJCWbizkqr3oARYHGfKoaCKug%2Fphotos%2FAU_ZVEEijEge7Nj0lOYZTFOKvryAtrm3fpT4ji7kO2twf08K3lH_T_FNNNAtT60ohmOOhTJq74HR3fZHD3OmUte1h6HfuSebkzq5pkJxv9HI6FXJpozqy8dqIeDXTVcII54j-azebhg9U1D2nZTzk5jhX4AH7ybhcLfc8LU3HpJimwsMvj_a1dyvuCvvenHC3pvmQe1U5ePr0cNc3P0XxEm56UduLHhRQ9hTWbDgkloMO3vuGaPbg5UR3aeVnPsgVygPHrbdZTY0uAQowEzRq7oSzL4IkbbwPM80wkpCUsL7Wk7k3g&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"00:00","closes":"23:59"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

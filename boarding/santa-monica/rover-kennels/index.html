@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Rover Kennels","url":"https://scrubby.app/boarding/santa-monica/rover-kennels/","address":{"@type":"PostalAddress","streetAddress":"2116 Main St B","addressLocality":"Santa Monica","addressRegion":"CA","postalCode":"90405","addressCountry":"US"},"telephone":"(310) 450-0705","sameAs":"http://roverkennels.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.1,"reviewCount":93},"geo":{"@type":"GeoCoordinates","latitude":34.0056395,"longitude":-118.4881435},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ4y0bliqlwoAR4x_K3Q3whX8%2Fphotos%2FAU_ZVEE25aMLuG35KMkBQytmHToCyXl98SdV1nz_boDoHI22LPIpSs3-IDMDfcv1iMiSh4ZMpemIUQH6dIOHzgu8Ehc5OmM5W5ZSfZTplQpurHopDLHF1xk9_FabmuAMl1PW_A17-_JjzXvEZ-9aTQqjwEfvVV5OdbetfGXa5lAOVVMPg-bYNBZAO8_RfiY6FkZS2HTD0gjk5VtsCZpbRUzg2CAAdyOyPA8lx9SPp8rfWNf38XG1rJDgQxWlKKSolu8btQsQC8DS53ujUgCP_h2j-4JGryhR81_z4PFYVSyZpjEJcw&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:00","closes":"21:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:00","closes":"21:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:00","closes":"21:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:00","closes":"21:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:00","closes":"21:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"21:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"10:00","closes":"18:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

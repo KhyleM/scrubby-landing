@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Sit ‘n Stay Training","url":"https://scrubby.app/training/severn/sit-n-stay-training/","address":{"@type":"PostalAddress","streetAddress":"1507 Wampanoag Dr","addressLocality":"Severn","addressRegion":"MD","postalCode":"21144","addressCountry":"US"},"telephone":"(540) 455-2180","sameAs":"https://www.sitnstaytraining.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":23},"geo":{"@type":"GeoCoordinates","latitude":39.089979,"longitude":-76.6795929},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJq6pOJ3DOt4kR41JSPkv05-g%2Fphotos%2FAU_ZVEHWT7TKgZKhGE8mAM0hAR3ooPg3jqEEumaaNe-cNEEWPQWl6pzMNfeKGpdN55qi8I2-OoGU0iJmt5m4NiaKF74X_4SnXNDNQpriYik6FsQY7T1fDHkbN9lX6kq3yQFviZs5PCB-fx0ONYbeQJMSa1Wk0uEjFMoUZmw-AYIF1IGcaAtSz_sCD1EZc7jHnXp95R303Qmn3rENb7IAchm_VLMgf13lWyY67E5zwyB4sFMsLyzTUZFQO2uls-ySp23ZmJRolFeOBcGSBZGexxMjFmhYnqc1yE8qP2J4tekWcrMf3Q&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"09:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"09:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"18:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

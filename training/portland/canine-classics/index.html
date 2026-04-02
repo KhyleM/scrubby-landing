@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Canine Classics","url":"https://scrubby.app/training/portland/canine-classics/","address":{"@type":"PostalAddress","streetAddress":"180 Marlborough St","addressLocality":"Portland","addressRegion":"CT","postalCode":"06480","addressCountry":"US"},"telephone":"(860) 342-4033","aggregateRating":{"@type":"AggregateRating","ratingValue":4.9,"reviewCount":13},"geo":{"@type":"GeoCoordinates","latitude":41.5702284,"longitude":-72.6330363},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJAZBrdS1K5okRxVwDSCqMA7w%2Fphotos%2FAU_ZVEHzTlugTsbAXwkHXpgPX_fitHw6NyimsjcSVJ3N8jv9mev6tC1v9YwCUK9AOc34YhpynM94sib8r-gGDz1uYOj0GuKUNmBp0Vv5T-b_SBHDWlJkr4rU96v5QD9ZDhlRBlzeQXMWiEYHegYyqLWaXs5EzZYiYMzk0L0A4EFhJ0HySZL20-Xg6hB2ytMHksVwypCokkOrT3qbQkg6pPPJn3M4ms9SLD9oNLmpnYzpujuSPwVfMVsmZ4BqsejRixDewNSwnRlYHM_ACsKF4YWP6sccHQOIRAYX80CzFmGC4fAjETTtqrzY9TzxkB34VdmveDGvgjR1LUo27u6VPmgT9_cnccrQ3FuaAbfAms6yLLgzclklDcQcv9BGaP3rZ_eQvBDMR-03xOfHENRwoawikcjK4bHfKFcO5eKGPvoUbD51qvSK&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -346,6 +354,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -381,6 +390,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

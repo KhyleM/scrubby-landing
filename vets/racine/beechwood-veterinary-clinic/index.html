@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Beechwood Veterinary Clinic","url":"https://scrubby.app/vets/racine/beechwood-veterinary-clinic/","address":{"@type":"PostalAddress","streetAddress":"2911 Rapids Dr","addressLocality":"Racine","addressRegion":"WI","postalCode":"53404","addressCountry":"US"},"telephone":"(262) 634-3130","sameAs":"https://beechwoodvetclinic.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.6,"reviewCount":302},"geo":{"@type":"GeoCoordinates","latitude":42.7498052,"longitude":-87.8148841},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJBzzgWstDBYgRsYOw5sw4i0I%2Fphotos%2FAU_ZVEEQW_Y6OtaEGVlFC1ry6JdxfY7ksYeBT0Qi-ieuFqUZpiBcM2kvjZCIad_4x8YcoFH0FbCFlEISDGjxpotdjLthsZ8rI-82NaivYwd9ZIvSQSDQTjk-w1rpP-7MDSOVFJf2AYVwXBkVggNITEyJ2SL4cH8PI0m5okhi0kU9M7JXbiF3ME11dCIDca1Qd1hj_2VHgJ-_mRyjVd6SHoky2U2jwBJC9OHUhHxgtRRdrRWDF0RkCY3ks3zc6En2kI_5HpeBkm2h1xMUmJpWb3vMQ6RCki0Z1EDnZxUGaFt0yKQb3StriKuph1W9ZWT9k8ouNRgPh2v7ASN1PWj7OfXZBJdESsfjV-8Zq0rlMpgfq3e4fQpkEp1UNdJOqvezZrswLnpL8YFAs-DI-gwzRRUwjLiPgeLZo3E2bRRYIAqLGNq9Kg&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"12:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

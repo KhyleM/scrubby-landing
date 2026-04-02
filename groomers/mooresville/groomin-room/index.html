@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Groomin Room","url":"https://scrubby.app/groomers/mooresville/groomin-room/","address":{"@type":"PostalAddress","streetAddress":"329 Indianapolis Rd","addressLocality":"Mooresville","addressRegion":"IN","postalCode":"46158","addressCountry":"US"},"telephone":"(317) 766-0651","aggregateRating":{"@type":"AggregateRating","ratingValue":4.4,"reviewCount":20},"geo":{"@type":"GeoCoordinates","latitude":39.6173511,"longitude":-86.3650768},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJSSI0zD6jbIgR9RLEbEyP8Io%2Fphotos%2FAU_ZVEE_tGrCLqfACMJzQYDH5QjBmfzhyneyLCUtNdxsmClKvRMaCu9ASpTmObDuiMYHQrJrP5Kx7PUrkn3c_v6f_VqXglV70uIit_lCVV5DlnQyaIbYDH7yflU9aUNccuSkaiWXM-sNPffVb5zveJQrc_A3bJ07KzTIP9Jj5gRAPH2hG7B34vPhjmAWEfkbJ9H38H_gh5QxL2SvabcZkgyrPKknaFfXg_T6OAeCP2JriA9Up5KIGq9A_Z4tg_U2ySzIHR_IyAWqJ2nPYaCbHXDxvOh_TyTc3_WRvDcNMQVQ4CCFGTU-Zh6dk3u-ntEtIkaItyaUYZ1CqSJyZphvRkELkS_uKB5p_cMzRyJWT6BBkrVVwcuNjHd0vaIUxBM8NQtFEB-zeOKt6ZlB6ag5dIRdG9iYIJMBYWTqJBMNS-pwwSWvzw&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"15:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"15:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"15:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"15:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"15:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -363,6 +371,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -398,6 +407,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

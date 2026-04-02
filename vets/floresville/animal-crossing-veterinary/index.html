@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Animal Crossing Veterinary","url":"https://scrubby.app/vets/floresville/animal-crossing-veterinary/","address":{"@type":"PostalAddress","streetAddress":"6655 US-181","addressLocality":"Floresville","addressRegion":"TX","postalCode":"78114","addressCountry":"US"},"telephone":"(830) 393-3421","sameAs":"http://animalcrossingvh.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":917},"geo":{"@type":"GeoCoordinates","latitude":29.2256766,"longitude":-98.2429885},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJz3Wb_b7jXIYR1_iH3NWzIxA%2Fphotos%2FAU_ZVEEGDl2YCX0QypCd2eK6fzzp2jTYLThxh-4KMmfSbc0Edg9-3a_3m3XpPaf41hvIWsv8Q2AlgAaF9CjwTLuiq2_c8TGv56KH4d3pIgjDe5w5YPnQwp4kJyJXdKUFwOYkv3AeiL3-nZh8-6vTmEWhtVN1d84bn0rpIKVQ3PioKH3E5Y7V2umXaMeUJSIPJ7JRd29yrBDG_HemE-CEM9PB13CZ-uOJjz0qtteQYx1tEdizHWBvdlHdbXSIAS7P_mU6AHdWHl3vO7EH0T60rN7UwN485aV2fB8dzhCOMOqPn6_hQeO_BAqrzperoCfWqyimicG7Qj1c_GfURje479XsybdzDIV2SxDLgc_LIGdPKGsCWHo44Il5ng8rJ9J5fzyA06JBlU_pQeYw6gKUM_EpAHkwtFRvarH1GvPvX0EPPdI&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:30","closes":"12:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:30","closes":"12:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:30","closes":"12:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:30","closes":"12:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:30","closes":"12:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"12:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

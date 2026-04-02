@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Westside Veterinary Hospital","url":"https://scrubby.app/vets/gretna/westside-veterinary-hospital/","address":{"@type":"PostalAddress","streetAddress":"91 Westbank Expy suite 540","addressLocality":"Gretna","addressRegion":"LA","postalCode":"70053","addressCountry":"US"},"telephone":"(504) 324-8629","sameAs":"http://www.westsidevetgretna.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":133},"geo":{"@type":"GeoCoordinates","latitude":29.9177928,"longitude":-90.0509609},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJa__uYwqnIIYRvtjyVa6_igM%2Fphotos%2FAU_ZVEFEzSgYkiXaJvw_F_XjASXEmeQplmgdLHqCu7NOR4KJKtpU40EMQm4wxnUmAVLXRoFrT7paT3s2PcXt77OQzVtBRhGzo8jTO9SqS8NQ1g0HBiUxuel5LvCmr_M4t1muLbTvn0NRXE7SoUS4sT2trhm4ANwV4hVKR9q2pUlKPL6CfbC7hSP_6dzVbZ68VXVrm7qxEWR2dVY5NM-B9coMKrt6idhKEh_CZzS6senB8XXsp99JZXmwLUj2b33k4SWhZ4wZUQ9o24RYPCiRxfFVsxUtqzxkm4a8NNk-fV1giQWYTg&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"12:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

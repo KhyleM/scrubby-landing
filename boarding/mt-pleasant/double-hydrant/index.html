@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Double Hydrant","url":"https://scrubby.app/boarding/mt-pleasant/double-hydrant/","address":{"@type":"PostalAddress","streetAddress":"142 Airport Rd","addressLocality":"Mt Pleasant","addressRegion":"PA","postalCode":"15666","addressCountry":"US"},"telephone":"(724) 757-0855","sameAs":"https://www.facebook.com/Double-Hydrant-Bed-Biscuits-357471531055907/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.9,"reviewCount":35},"geo":{"@type":"GeoCoordinates","latitude":40.1098737,"longitude":-79.5507543},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJCfO-wZooNYgRZ8MhEpNrOUg%2Fphotos%2FAU_ZVEEJr0HR9RNZmIxLKtC7OsNhz35jRWs-5GVoRuWbeGH54ymIXPAbQfoimG30PCiikv113xGJGEwpK_swHXLbR4w7zRCyxgr7Y5VizPevroAPgDnatNYCgntkyiSvyf_BM2lldvQmOTSn8jaW5fIarCN1V95iA3cQubdDuasSx-elxACoBEikbRg0KUIFOWD6Z_ZBxBL-5IDZV4ZpK6PSzozdF2o9yWzGLPD7t3DIWgRQBAmoMECuHGVHtT4Bsg8U_yhFSiWu8wwn6qSy7aXEPX4CuEqWk2kOaw0WjODghe12Mw&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"09:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"09:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"09:00","closes":"04:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

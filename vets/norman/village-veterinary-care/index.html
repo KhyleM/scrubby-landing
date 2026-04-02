@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Village Veterinary Care","url":"https://scrubby.app/vets/norman/village-veterinary-care/","address":{"@type":"PostalAddress","streetAddress":"3750 W Robinson St #160","addressLocality":"Norman","addressRegion":"OK","postalCode":"73072","addressCountry":"US"},"telephone":"(405) 310-2345","sameAs":"http://www.villagevetnorman.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":176},"geo":{"@type":"GeoCoordinates","latitude":35.2316319,"longitude":-97.4966166},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJsUYRwm5psocRwi7ZdehFyOE%2Fphotos%2FAU_ZVEEM5QBsQdRIGcZlVyia-wM-BUcE7X3UuG1UNGYY-sL6D55X6gv_vVcdGhnKP4aI9Ll3ahfRc5i7FjdtygWAFWa_jn49FC8OKE34YNiWRZFDrqyK1yvejIGznaSB7zOKNjVNn-tAT_W2gZStEdHOVGUe1rbRtwZZsjXR7zGeDVu7_9942N9-iqurkrVh6DifuHgJldnjIBhQEzVaSDidQwB5BroDlrP2bwmF9MEXf_phAcSR1c7lC3JMtiXtejTNhSOpXra0bkEnklgMLBSaQT40QU3A-xaoGkH9MzVki97Aidq5OQiAuJbIsci0--HVhhL78NnSqANuuBA7KwzkauGBbirk9FrY08Rbf2eySwchiIkug2qm76t1hek94t7AQVZadfgz3Gu_YDyCJsRB1pVpDxHavRP9Tm4Vv4G3Zy5-w3Um&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"17:30"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

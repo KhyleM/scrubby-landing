@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Silver Creek Kennel","url":"https://scrubby.app/boarding/novelty/silver-creek-kennel/","address":{"@type":"PostalAddress","streetAddress":"8801 Kinsman Rd","addressLocality":"Novelty","addressRegion":"OH","postalCode":"44072","addressCountry":"US"},"telephone":"(440) 557-9035","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":65},"geo":{"@type":"GeoCoordinates","latitude":41.4622038,"longitude":-81.3293289},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJCWn9g9oPMYgRfNeAJvVm7sY%2Fphotos%2FAU_ZVEGdWq7WoOAW0HCHweo1ZzTXo2CauACP9amZR-d1kuDiysuToACTcHkR-ElSWRVM-c5K1INubl3jXyJvlPZvEsdbKhgSr1wB4XaScEkQWvtDiAZNtPjFA798nO6G4NqwQ1mxKxl4vK4NUMA6My3-I_prOa9a9Q9S6H6asugOGfK6gDtELN5E7d1Md52UwS2dQ0H9cxvOgunidUa5PAi3rhJ8f2R_6o3sUvWm4Yjx7noGty3ZrKPq_YY43JhWWq3T5Ue0-fegpfBlGW01f0Jjfq0ljdgMujAZBI6dLOdZXfjuHg&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"09:00","closes":"11:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:00","closes":"11:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"09:00","closes":"11:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"11:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"11:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"11:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"05:00","closes":"19:30"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -357,6 +365,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -392,6 +401,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

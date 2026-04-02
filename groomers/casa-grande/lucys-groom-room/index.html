@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Lucy's Groom Room","url":"https://scrubby.app/groomers/casa-grande/lucys-groom-room/","address":{"@type":"PostalAddress","streetAddress":"9906 N Faldale Rd","addressLocality":"Casa Grande","addressRegion":"AZ","postalCode":"85122","addressCountry":"US"},"telephone":"(520) 705-2899","sameAs":"https://lucysgroomroom.myonlineappointment.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":10},"geo":{"@type":"GeoCoordinates","latitude":32.9699114,"longitude":-111.783195},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJuYBxbu8yMqQROK-ByGVa-24%2Fphotos%2FAU_ZVEEoD8v3-ZL76sjiSb9Axs4b6aJl_goqn9kUOd-Pb0QHJP-W6e46AKKSURXUBZiKDBbvWHIw04TYuI0WmIsYM3Hr98zGE7gayq0MyuvvPLc4v_n58ggznfhE9O0bVUwrUKPR4f4Y8Pj3y4b6lNvoLtFyjdHedTHs0Gx1fxFTI06J-sMok5_r_ZVDdMy6Ee_0IyRdjWrSDjoO_i28GIt4CNvo5sUzYXHb_h9IQG81tVZb64g4b7efROEZMs-xm5i_2BQKhN_uF68gqUOhjCS1CVI_J6JnYEyNts9wuEEh_L-lmg&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"17:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

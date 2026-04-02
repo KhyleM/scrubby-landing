@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Joint Base MDL Veterinary Clinic","url":"https://scrubby.app/vets/fort-dix/joint-base-mdl-veterinary-clinic/","address":{"@type":"PostalAddress","streetAddress":"3259 Gettysburg Ave","addressLocality":"Fort Dix","addressRegion":"NJ","postalCode":"08640","addressCountry":"US"},"telephone":"(609) 562-6636","sameAs":"https://gomdl.com/vet-clinic/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.6,"reviewCount":76},"geo":{"@type":"GeoCoordinates","latitude":40.0276828,"longitude":-74.6309767},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJy9YWJjZCwYkRMX4tIEt8Pt8%2Fphotos%2FAU_ZVEHNYhdlN3TTI_KCCUsg6e-Gl2GMYrdf1ru03YRjS78MONfvnaaJmDX2kYn2xcvdPFDu2jUUYNv7yd-gt59yMdlgJnaOuAEWFxpY5kXAtt8Z-EYDq-LeDcpvJtYNEqM3xj5e_7ByceO2GstBf-gleqVGIrnDlIlDsvuE2BnVE1jKbQOvnoa6QGbJaNgNS-MlXysjmpnzOhCsIH5bgQkwed1IPFsYS24X7lPT8tubZfbBvj7pmu_PcTUK5t6GjeWxDr50R5E5QoMaHjDkq2rgJ85qrf0RoapgquBzL-pXvINb1w&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:30","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:30","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:30","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:30","closes":"16:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -359,6 +367,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -394,6 +403,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Veterinary Center of Liberty","url":"https://scrubby.app/vets/liberty/veterinary-center-of-liberty/","address":{"@type":"PostalAddress","streetAddress":"1127 W Kansas St","addressLocality":"Liberty","addressRegion":"MO","postalCode":"64068","addressCountry":"US"},"telephone":"(816) 781-0778","sameAs":"http://www.vetcenterofliberty.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.6,"reviewCount":368},"geo":{"@type":"GeoCoordinates","latitude":39.243864,"longitude":-94.4392219},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJi1hJfIJVwIcR-KMoKdlyZMQ%2Fphotos%2FAU_ZVEE7mn19g4R2EU6gFDNOO06uwsFimMqCtmDYno_xsFOF1B6knu-s4G-MvfbCvdoA6Kq7pSOB7eKqvMt1OF6ULPfc0YEox6pCvex5RS7xhyESqZp1XFig296DwMvkrlSZz1Mzj5KN5mc1IDh8dGYce2P9I1OSw6Ijq76zqrxzyg8NejktyR5t1bZ_1L6MNWhCrgTFYxnm3tthMqTLKmAgZ57F7rMVotY-dJFzMEsuwAE0Habk4fLCRiwVUobYpke5GGeso2oEM8rigL8a0-nlWSXgbS3k1q1YCYJFzn7KzB0UQlaLlFmQWd3rj2bp2KSUR-h1js53noH4D2jYvtX11EfUuds_i2g5sdlniOEh3oCZ-TOEeBNK44qhLus1c646a_8eK8jBnFg47718O92stnDccOkBL5qSkjhQibZijiIA2x7V&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"13:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

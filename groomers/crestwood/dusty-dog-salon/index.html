@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Dusty Dog Salon","url":"https://scrubby.app/groomers/crestwood/dusty-dog-salon/","address":{"@type":"PostalAddress","streetAddress":"6306 Hwy 329","addressLocality":"Crestwood","addressRegion":"KY","postalCode":"40014","addressCountry":"US"},"telephone":"(502) 618-0062","aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":38},"geo":{"@type":"GeoCoordinates","latitude":38.3247763,"longitude":-85.4737125},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJh5Uis1ibaYgRkzxxZtw05xo%2Fphotos%2FAU_ZVEHJSmONG6iQA-Ck8x6ik8CL4TCsSTKFGb8h_2RlSExvIw0EmEgq3APlMv6gryB2tSwoYDpAut1Bv3WvfJP1rzYiRQzuuQ396jLyG-6uAmMsf2_TALCHEoZPLp-4aqunPvLevdfEqNKarqKnM1vSdQp6xJ4B_8MmQDFbz0d8gx8lytsdFDqb2yeAoq2RNKQQ-HMX-fLI6JwZKRAhT-Y4uU9xfprK2i_LAFB5gtxdWQXv4QA0QtCgktFznpdPgYh5L7o0hGyopCfv9eWhWERgkz8k_efJg8pLjw92kRjRHOI0-w&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"16:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -363,6 +371,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -398,6 +407,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"American Boarding Kennel","url":"https://scrubby.app/boarding/burnsville/american-boarding-kennel/","address":{"@type":"PostalAddress","streetAddress":"1102 State Hwy 13 E","addressLocality":"Burnsville","addressRegion":"MN","postalCode":"55337","addressCountry":"US"},"telephone":"(952) 894-5100","sameAs":"http://www.americanboardingkennel.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.6,"reviewCount":219},"geo":{"@type":"GeoCoordinates","latitude":44.7841946,"longitude":-93.2617089},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJu_8_t5869ocRvNsd1u5ZVWc%2Fphotos%2FAU_ZVEHABxia1DmnIcrbwWkc3uX5Lr6uHSQwPAAH0ufwzxDV8A-p8Uba7oVjfxNmOzBG_iPg0kDCqeTGjh9ArLrgHAUuWLApkia2WOAKXiFY1R_5la92bRZMiUeFNyGaWyX6ysRll3WTksrke8GjMEXCPOjDuR9T-f2J9CQnSmt2lrxwUcBfixLYItJcSLZ7HbVertv8CqcTa-AbAy4srR1cuA2igoZR9Kt8YG7T9V_DS-7H16zZzN6nRbexsFvVPvvTDeuLOo_PWnkhNpd7Fjg9awLlANl6Yi7ZiR_6KHajdZ3S_A&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"13:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"12:00","closes":"17:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

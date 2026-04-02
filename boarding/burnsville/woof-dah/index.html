@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Woof Dah!","url":"https://scrubby.app/boarding/burnsville/woof-dah/","address":{"@type":"PostalAddress","streetAddress":"12250 Portland Ave","addressLocality":"Burnsville","addressRegion":"MN","postalCode":"55337","addressCountry":"US"},"telephone":"(952) 213-0179","sameAs":"https://woofdah.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":403},"geo":{"@type":"GeoCoordinates","latitude":44.7821456,"longitude":-93.2689417},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJXcoRZZc69ocRHj07K_7VaPM%2Fphotos%2FAU_ZVEGNCnsjQcPgyn0C2Mr40hLEihdhusBXpUxL6ZT4-O5ZQJBGK47Jn8AJHfS5yKHcT75Mvnc8Y6eUPbSRCImtGoqmjGE--bJY4EcM_axx3JdIoOmSqpLbUoXzuDhkF6imJ_IPhlRS6R3QAfHAQ04u6GkDsJEu4KFLTY3BwwFZmWl2tIbHnIt3jwQshcC7S-V2C9NGVPE0CrnDnCg6B8HFtrYmn9fEnoxvyNFfQdwLA54UB7SqKLXb_ENePCm6A0j0CHdq_LtOG3BMZeuBXFs3srkPJpuR5w29ToNl95zbBCY3LQ&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"06:30","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"06:30","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"06:30","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"06:30","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"06:30","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"08:00","closes":"19:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

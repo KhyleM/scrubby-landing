@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Pet Supplies Plus Littleton","url":"https://scrubby.app/groomers/littleton/pet-supplies-plus-littleton/","address":{"@type":"PostalAddress","streetAddress":"151 W Mineral Ave #107","addressLocality":"Littleton","addressRegion":"CO","postalCode":"80120","addressCountry":"US"},"telephone":"(303) 736-2965","sameAs":"https://www.petsuppliesplus.com/store/co/littleton/4209-littleton/4209","aggregateRating":{"@type":"AggregateRating","ratingValue":4.3,"reviewCount":225},"geo":{"@type":"GeoCoordinates","latitude":39.5755275,"longitude":-104.9904559},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJW6eoAXKDbIcRJw3vb2BvWfU%2Fphotos%2FAU_ZVEHlwP24SreS1hK9-_ZrClWivkarhlZOpXd2IFQlxamWKrTtB5aX8mVsbc_sNjj1Hel4hVU6Z-QcCMoM1IMHkxi2-oov8Bmssl6mI6zq02FyJF3e3ddfDNTYIhmm5E0QU4iSXCfGFqfDt1KySh8Yn2Ep2W_vvuf9JCGf3TEsjyoXu07FtIMU_V_S4oJcv9d1fSUxkkr_D_Z3U5o1hEEXt_t9TMAxnFb4-m3v5WQL59CdLTjywNaQdyzSLcYCNoYpYqYJTBr1PS6y8DE3Nfj0h51Rhwm3VGGy0EeMEJEX7nHeYA&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"09:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"09:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"09:30","closes":"19:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

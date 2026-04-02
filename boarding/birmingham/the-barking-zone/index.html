@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"The Barking Zone","url":"https://scrubby.app/boarding/birmingham/the-barking-zone/","address":{"@type":"PostalAddress","streetAddress":"5196 Caldwell Mill Rd","addressLocality":"Birmingham","addressRegion":"AL","postalCode":"35244","addressCountry":"US"},"telephone":"(205) 296-0855","sameAs":"http://www.thebarkingzone.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":47},"geo":{"@type":"GeoCoordinates","latitude":33.384864,"longitude":-86.739919},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ23YBnFI9iYgRvjrr00keK14%2Fphotos%2FAU_ZVEGXNV9P6pV9bKK9-eBYIY5qRF4Kbdgu7V3K1gT2LzD5cYNuCCxh73LzVtLn0L-2LjKaLRD5CvlpNfTh7Jw19PpSs2GfNynxC6bZgkdmLK-mgbUWly1MO0zgrJ1NCoe5lWx5Mj-xmlwEfelBJGAldbTzkPf0n52iSE4hfjLxCwbAX0MVys0fWkcP6PQbO3H2xq0YQgHlHUjwVOlAfP19LzCQxS0EHu-R__7Bv3OMnq1lz3yv9zt6p4fJZM0q1WW9zLYY3mKjRvWoxNzroMJDeM8wHxyObiA2o2YNCIrdB7mRcv353aFQ0cdetVHAlpxJeg0MdGm1FSLwSnTZU2mSxtvFL-3b83QsAtloaFoSl6zwQTvthU2bnPJxdeAit7f4VI_k1mUIctZdorSIoCGEkAoetKU9PqSs1ugdgef0n6C_cg&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:00","closes":"18:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

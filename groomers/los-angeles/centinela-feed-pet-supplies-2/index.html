@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Centinela Feed & Pet Supplies","url":"https://scrubby.app/groomers/los-angeles/centinela-feed-pet-supplies-2/","address":{"@type":"PostalAddress","streetAddress":"8655 Lincoln Blvd","addressLocality":"Los Angeles","addressRegion":"CA","postalCode":"90045","addressCountry":"US"},"telephone":"(310) 342-0239","sameAs":"http://www.centinelafeed.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.6,"reviewCount":125},"geo":{"@type":"GeoCoordinates","latitude":33.9583637,"longitude":-118.4187057},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJHQhLMOqwwoARZtvtiWKu8BQ%2Fphotos%2FAU_ZVEHU30-pd_SFbsY-TdxZR4Z9XhujqEyYIFJ76e9p9R2JsYGQF0DNXaPfgU1NJXDOV5YchuK3Dtw7NdMf1RsoQX4y5H7_mX0DUvZaGIUfZOVgq-tpGpVjwxiYr6fadTSMKiG-0yiqO4cWBlWKYiSH04EEp07k8Wp5af3ododZjwuTJAF7Da73M8iIpLQJQgsADsvOU_GJX672WSzYbflg6rov0mq4nRvWTQCu8VZdK3MwNheoW7Vk3HcbVd2OvpZjMH2miX6wn7Zbjvxu2PxR0xzkBCPFdn_zo94BY6RuO6g&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"10:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"10:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"10:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"10:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"10:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"10:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"10:00","closes":"19:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

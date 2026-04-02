@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Crescent City Veterinary Hospital","url":"https://scrubby.app/vets/new-orleans/crescent-city-veterinary-hospital/","address":{"@type":"PostalAddress","streetAddress":"524 Jefferson Ave","addressLocality":"New Orleans","addressRegion":"LA","postalCode":"70115","addressCountry":"US"},"telephone":"(504) 894-0752","sameAs":"http://crescentcityvet.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.9,"reviewCount":179},"geo":{"@type":"GeoCoordinates","latitude":29.917071,"longitude":-90.116556},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJQXff8PmkIIYRBy74BTnV-UQ%2Fphotos%2FAU_ZVEEJZolokOSSByxY75dqttV2U_YRlJdxMr9t3m6zRO77-Oa1rCb16Kj88yrLTYkTq-TAj9nQvlAAoWHP7LVoK8EmtZE6sBeMBW0qqCwF-frV19ukgGeesEd4l_S2eeC7pKq8VH36WNTwzJCzCfpMIUTbkwRehcrGlf9CXja6_c40wvojD_o9-qS6rCq1fLdpL5FIFqFnm4AaoAktMqHHrH2yqUiq4sCWiDHI0VgGggY6YphgFh-pHADuFNf2qpjnAJFlNo6J2sdyMqllAVCjhGwLtPAMITuq2IUc05IC9Y4WyA&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"12:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

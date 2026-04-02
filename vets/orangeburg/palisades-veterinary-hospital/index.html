@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Palisades Veterinary Hospital","url":"https://scrubby.app/vets/orangeburg/palisades-veterinary-hospital/","address":{"@type":"PostalAddress","streetAddress":"37 Hunt Rd","addressLocality":"Orangeburg","addressRegion":"NY","postalCode":"10962","addressCountry":"US"},"telephone":"(845) 398-7387","sameAs":"https://pal-vet.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.9,"reviewCount":849},"geo":{"@type":"GeoCoordinates","latitude":41.0428015,"longitude":-73.9864693},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJGb-8h1zpwokRWs1Pu-uHRgE%2Fphotos%2FAU_ZVEHYFh4bDEHJFItyedccG2Elhgs_PVYH4Esv2dk_-Ylg9zJaN9uPKyqdI1WAjECHIEqFH_bBeAn840YtEXVVMJZ4lkRVXqLpEEX7NnExg3I_H-ygsRviQ8gSuZs5ax2OpR0m6bHnHRSbq5wuavFXLOFYyiJFTM09wQScqIywX4TmKX2nabYkjpC0200eily-dHqLesM3JzpnYk1yhjYcEOEi3RJ8x5trIGzcc-tZGnuIKBrqXA6cbFU_f1MiF9pN1J98-5baNjGAkA9Tyx4ACWSfUgPMKFYaEj37ihn-7miAfg&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"12:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

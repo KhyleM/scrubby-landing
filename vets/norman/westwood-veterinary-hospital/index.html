@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Westwood Veterinary Hospital","url":"https://scrubby.app/vets/norman/westwood-veterinary-hospital/","address":{"@type":"PostalAddress","streetAddress":"111 N Mercedes Dr","addressLocality":"Norman","addressRegion":"OK","postalCode":"73069","addressCountry":"US"},"telephone":"(405) 364-1100","sameAs":"https://westwoodvet.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.5,"reviewCount":226},"geo":{"@type":"GeoCoordinates","latitude":35.2192116,"longitude":-97.4679595},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ4UyODLtpsocRCGIprHuxtCg%2Fphotos%2FAU_ZVEGjj6jy2_AQJtV4ZwDoLHmi5zJcVXAyeulFHdPgE7xijpvsGVGubQFp5AxXPZMLMwkKlOjsv-_HaIjnpJaCgoSO6lk0828groxk2Qj2DhL77ZtyN5GYTsbI3zznB0IA8X9g_ARgvoQVE5IHfUIxFo0fhm0_T8dPCrS5JVykW0fLVQjvVepfy5xOGPcVAo8hQFKXYqHZ2ycgRDaTcH9KdVir3Xc0Tw2lHto_Sxt2soy9tISHC7LnjD5LglNkQSuFgzUlQw1SYuUTh7-ItnTo-03ePrUx_1zP4e5v_t3F39JSEA&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:30","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:30","closes":"18:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

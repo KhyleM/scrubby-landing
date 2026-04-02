@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Pawsitive Pet Care","url":"https://scrubby.app/groomers/san-francisco/pawsitive-pet-care/","address":{"@type":"PostalAddress","streetAddress":"Market and, Octavia St","addressLocality":"San Francisco","addressRegion":"CA","postalCode":"94103","addressCountry":"US"},"telephone":"(858) 337-4100","sameAs":"https://bit.ly/pawsitivepetcare","aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":1},"geo":{"@type":"GeoCoordinates","latitude":37.7717835,"longitude":-122.4236761},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJa_4RXPjQgaIRQP5zZbW_2Ak%2Fphotos%2FAU_ZVEGOJxvAaOmV4YwCF_OFaAuYXxxACdUfQttuaAYN3aj6XCFV9Q8krm2MxBZom6WumVqZtNSPVOSw_hf_nJbV3F7ikjwHZ5aSuBS261oTdYG0VKOjOWroX6JLAUUY6ccU4pRQDqRjHLU9ZZEOy1Ho-5h252MbY9d5wuY208fKO_hlGHVSojJC_Hcx1M4Czka6gVCwbhP4DookQ1l_by1u1_mBTJjdUYqEWhdwijJDTcxXLK9oV-NBJ2E3TlFc0yQAj_sWy3BE5hZbHznlQHQDn4DUYJirfrRsAaHyUQD1WAjejw&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -347,6 +355,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -382,6 +391,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

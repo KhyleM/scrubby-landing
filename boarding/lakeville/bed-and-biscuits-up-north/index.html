@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Bed and Biscuits Up North","url":"https://scrubby.app/boarding/lakeville/bed-and-biscuits-up-north/","address":{"@type":"PostalAddress","streetAddress":"17457 Iceland Trail","addressLocality":"Lakeville","addressRegion":"MN","postalCode":"55044","addressCountry":"US"},"telephone":"(612) 599-3274","sameAs":"https://www.bedandbiscuitsupnorth.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":17},"geo":{"@type":"GeoCoordinates","latitude":44.6978089,"longitude":-93.2522488},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJA69_wrg39ocRaCZwS7H2hZE%2Fphotos%2FAU_ZVEEfhiGOJxptA3gBtKP9OGVzRKa0Bv45Azx9UweAQ3-y6zbL87qqEwEIrf96HLru_bazjKM6ZN87t3Ut10QNQmtLsSkCE2LoQxWIdHkPC9DYLl5kxasM8U-bH4HjFzUWsgngRALByRlkLfd_pHtge95VHhlREdPH0s1gDtKBiRBmwyeU_9zNB13gz7ZgcHnoNBg-3nCixuiOvS1vMluoQI3v1bRSFN2YMKw5JRzzBWzMCPUfBJ30CzdqRzsyDCDL7Bxvp_-2ZuKAalgy6UuNCslHnv4ntwgZ14qpoFMl3Nt0dg&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -348,6 +356,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -383,6 +392,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

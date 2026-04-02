@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Happy Dog Walking SF","url":"https://scrubby.app/walkers/san-francisco/happy-dog-walking-sf/","address":{"@type":"PostalAddress","streetAddress":"500 Hayes St","addressLocality":"San Francisco","addressRegion":"CA","postalCode":"94102","addressCountry":"US"},"telephone":"(415) 574-1096","sameAs":"http://www.happydogwalkingsf.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":5},"geo":{"@type":"GeoCoordinates","latitude":37.7767753,"longitude":-122.4247974},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJPwH8Rr6BhYAR2nIZIwfEONw%2Fphotos%2FAU_ZVEGbIibI-T1s-YqKPOTVDqWmaTMj91TO7Mg52F7iHnk7V6m1oy99Sq6ywgZNbmVShG2ef0PuWFL0POt7EWUScQL3iZ4iL4FXOxRAQgq8_77oOxrTPPFL_CX07pCVSqN4k0c3VthO466EWyy5sE-jtAcsUZ1e_nCNtX0K-0Y9JQLlAnaM7Q7Iy1iGB5bje2G1DD-Qg2r3bZKyBYnswK43bBoBSgbREnnehV6vhIpv1kE25Cws8QPDIHcZkS12Vzt1soeNPyjhG71NMDPmx1n1LffnogamMN_4kkTpN_mrim9h0Xd9SOPUAkZMsyPiKU8AcdkrjTd59alSEwGwzgo6ya2g79RuRzeSOnTnmmNijopiSMEd2XWe93Kgpx8vgVFllhiXvJg0arRehQ8Q9dWky7bygq3SKVGsrd99brXXPVg&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -345,6 +353,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -380,6 +389,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

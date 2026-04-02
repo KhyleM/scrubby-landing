@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Mascotas","url":"https://scrubby.app/groomers/san-francisco/mascotas/","address":{"@type":"PostalAddress","streetAddress":"691 China Basin St","addressLocality":"San Francisco","addressRegion":"CA","postalCode":"94158","addressCountry":"US"},"telephone":"(415) 944-9042","sameAs":"https://linktr.ee/morethanmascotas","aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":5},"geo":{"@type":"GeoCoordinates","latitude":37.771653,"longitude":-122.3927296},"image":"https://places.googleapis.com/v1/places/ChIJ8Zh3nV17GkYRIyfnlX8FmUE/photos/ATCDNfWYdkoVBEqWnf6Kd6O8BGojLpo9Nw6WFAO7tO9vyNPYKKD5YgM3x6JfA8GIfbaj5Ue1pnQvY_Z4ipePfuLKodGFhzhZww9GmNSpXhbQNQm30u_CuxkF1gRlNzM9WUFIzYjYMeayFtrRrfWUFigYYwAECweHe3z6IH5QeeDQs8Linad1l744S-YOlOx0Fv1LVlS4QCo6ddWppFRhIX1jEp9BXACc5mg2KIF6ZhZ3Cwh8ZZHEBNxaQ_ZBtOo_p9KQ1WudyuOxMFej92VNHLTFVh1diWsWVTaXsb3kKsRcT_7ykw/media?maxHeightPx=400&maxWidthPx=400&key=AIzaSyCpmbfD6svBtJL5OpHfeph6xPVzLlf7F-g","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"00:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"00:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"00:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"00:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"00:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"00:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"00:00","closes":"16:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

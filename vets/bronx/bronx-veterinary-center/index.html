@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Bronx Veterinary Center","url":"https://scrubby.app/vets/bronx/bronx-veterinary-center/","address":{"@type":"PostalAddress","streetAddress":"2460 Webster Ave","addressLocality":"Bronx","addressRegion":"NY","postalCode":"10458","addressCountry":"US"},"telephone":"(718) 933-1002","sameAs":"http://www.bronxvetcenter.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.4,"reviewCount":2200},"geo":{"@type":"GeoCoordinates","latitude":40.8599761,"longitude":-73.8927934},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJSXZKbn_0wokRRTsrdvVtrY4%2Fphotos%2FAU_ZVEFrO5sj6QdTkksTZsiIp_w3Op-Q8H5kghiQQ6Wmmf7ynBq5vpP8Tw1k-a8Q4QqR4pOWdEDVSCoLsxnljNAiv3qP-K-07-7QEQaal45ldpzp0Gww_jWh177ehT2tFIviUPtjKbOeWO6VkHMhcpnHBGSLD3yI8LJQhCyvplK6suu_wyDGkR9B1T3TTJGk91yF43ZCYwa4cGtCjkVSNRyx-jSs-xiqZ6CD3A0NedvU_4CUZNpXP2MOc4kvK6Npw6Yk6kS2K8eAYMTQDR_0yFSM2KmFpamXlarBN5nLAg-pq0FLbg&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"09:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"09:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"15:30"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

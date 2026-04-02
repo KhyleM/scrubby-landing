@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Monongahela Animal Hospital","url":"https://scrubby.app/vets/monongahela/monongahela-animal-hospital/","address":{"@type":"PostalAddress","streetAddress":"321 Hazel Kirk Rd","addressLocality":"Monongahela","addressRegion":"PA","postalCode":"15063","addressCountry":"US"},"telephone":"(724) 258-8406","sameAs":"https://monongahelavet.com/?utm_source=google&utm_medium=organic&utm_campaign=gmb&utm_term=website","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":208},"geo":{"@type":"GeoCoordinates","latitude":40.1934727,"longitude":-79.9711572},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJN-TXknsCNYgRHJ_E4Y88L4U%2Fphotos%2FAU_ZVEGIy42ZBlAkleTJQlMWrUkSKqOBlW92XjXUYMTbE2EDvKwdE3-WWJ0e4uXvCCZC6OZWCtr2ejdMRC2mE-FVfI1SR1XFj0dI9bWe8uB0sHH0qQDbqbAhhouES8VRljNE0lVFkycECA4UNQS7YXHFsKZS4PmUN6J4hlYzgDiFBmkBAFX-6Q9HcXnglfGjV1l3qS-WdnA0q0ChsgeePi1ldjynTBYpu3FbQtaFhwEsS8M7772GUlsM2B9SYWY4Fqv6Puz-LuawQ_UUqc1IsJmgZMrLlvJloK4scXcdi-g-SjSqCA&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:30","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:30","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:30","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:30","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:30","closes":"15:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

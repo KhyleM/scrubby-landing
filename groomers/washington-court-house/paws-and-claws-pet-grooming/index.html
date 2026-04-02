@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Paws and Claws Pet Grooming","url":"https://scrubby.app/groomers/washington-court-house/paws-and-claws-pet-grooming/","address":{"@type":"PostalAddress","streetAddress":"9094 US-62","addressLocality":"Washington Court House","addressRegion":"OH","postalCode":"43160","addressCountry":"US"},"telephone":"(740) 335-6301","aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":15},"geo":{"@type":"GeoCoordinates","latitude":39.6360688,"longitude":-83.3434975},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJhSVp-EtJR4gRZM7qAN9gn6Y%2Fphotos%2FAU_ZVEHlgDjtX329I47b5O1hW5JTOsyTrM3Miv_C0_-295ah2CCYcc16Y8WYNzDI9NjZqhlfilg1k-8SLL8YVbVBx1xsEfn1Gw_jSc2RF0NeR_cKt77a17Rmw8qqxVKv_HFjZ5svNkxwBf3X2uA3_NCx976x1TPZp29tDsapf3T7lIafpXQBrECGsghc0SizYXfmjnexCtv8lyhs2dcBjPDNr-SwLEQyek_tV-iGDo87Mc5nVBrsBDX0FOCW_y8UX9RSEF8HkuzKOyQPonGMjY-fdL9cnjK9Z2gKk209MD1qTWrj1w&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"10:00","closes":"15:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"10:00","closes":"15:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"10:00","closes":"15:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"10:00","closes":"15:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"10:00","closes":"15:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -359,6 +367,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -394,6 +403,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

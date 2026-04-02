@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"BarksBnb","url":"https://scrubby.app/boarding/bradenton/barksbnb/","address":{"@type":"PostalAddress","streetAddress":"9709 9th Ave NW","addressLocality":"Bradenton","addressRegion":"FL","postalCode":"34209","addressCountry":"US"},"telephone":"(941) 744-6486","sameAs":"https://www.barksbnb.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":41},"geo":{"@type":"GeoCoordinates","latitude":27.5069166,"longitude":-82.6591043},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJB8d6ddAQw4gRkQZUm3t2ukg%2Fphotos%2FAU_ZVEG8eNeKSynx2DpGiq1nKOuA4Xg_aup1sfMOv187fxKIFyq04PXgVaBB_hxnVWcyILeBMLCcO3NDaxH0mGKlUbYHNW597-fKdM8kq-vf-4dEaM3d7MmUsUnxMWoRRH85V_47ubqaj30_1uXUvnpRT2TqrCXc9KmxQ4c0wuIyc5EJXdIX5bz8Cqe3PS_9pfkgj013feK7OSpVeElNUGBa9nFk-Tc05ShlWrFKKnP2HRwuYvAM52suCSS46uPvUCbanKAZHrptqXDpp7vXgRQC-6RsxhEoO2skjGEYfJk3efHTsg&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"10:00","closes":"15:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"10:00","closes":"03:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"10:00","closes":"15:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"10:00","closes":"15:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"10:00","closes":"15:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"10:00","closes":"15:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

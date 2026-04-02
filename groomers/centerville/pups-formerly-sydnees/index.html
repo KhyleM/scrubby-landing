@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Pups (formerly Sydnee's)","url":"https://scrubby.app/groomers/centerville/pups-formerly-sydnees/","address":{"@type":"PostalAddress","streetAddress":"663 N Marketplace Dr","addressLocality":"Centerville","addressRegion":"UT","postalCode":"84014","addressCountry":"US"},"telephone":"(385) 777-5683","sameAs":"http://www.pupsslc.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.5,"reviewCount":145},"geo":{"@type":"GeoCoordinates","latitude":40.9192488,"longitude":-111.8895329},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJTRKhWdT5UocRCzUzlcX2WWI%2Fphotos%2FAU_ZVEFL-KFCKHJ5lVcG2C58rrcJ2lhD6P8GKF1tvBGaV84TWVOV94jiRWje0NUpJp6KWNMpwSQk905UQTXgz3DTrFundPOzUYxB8XXTnocuKK6jdzm7CnfpMaPKTxOqGdB25zCo8PlI1uS2x80FKJ7BKPKkpQQJoVSYv-T6EQfpkcNVEFAYbaI-6gUva_mC1K4CN0TMr8W1njQe6zG2DRXMlR6qfmld2AulbMWlx0rxQkCv12PKqkLwzyo9GrjANyM5OBxUlSRe_pN2-EvgRpwtC9nyAduM-NTLyA2E8-CzrxeXWw&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"09:00","closes":"16:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

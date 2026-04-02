@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Barataria Animal Hospital","url":"https://scrubby.app/vets/marrero/barataria-animal-hospital/","address":{"@type":"PostalAddress","streetAddress":"2657 Barataria Blvd","addressLocality":"Marrero","addressRegion":"LA","postalCode":"70072","addressCountry":"US"},"telephone":"(504) 340-6936","sameAs":"http://www.baratariaanimalhospital.vetstreet.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":91},"geo":{"@type":"GeoCoordinates","latitude":29.8536857,"longitude":-90.1071938},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJL0rF4aOjIIYRxj-F14qWDNY%2Fphotos%2FAU_ZVEHeO-UlQROLSBTxgJY53VutfjIFlaa3x1TmPA3-sTtKLpKBrZVc_noi9mIgglsy23DL4C1lfHgDKGkNh8X5OHdcIoGBWb-dof-gc5CrL_r4oRh14C_vEDL3ygMEYFpU3qXMoj8mDD0p33UkZSTK0ZifBq53bLf2pB0nH9ogvILjVAO_ahlwbpH9uoAy5AZg6UPlnACG3Aggrto05s5iFVYaaEvVsnYoSCyQ1U_kHJ5WIbeJNbp4HoeE7Dg0Bwh1yqLl3uuWI7k1Jzi3KU-4RHuH2RvHtmZCyNB-p3MD7YFiqA&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"18:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -361,6 +369,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -396,6 +405,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

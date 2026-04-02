@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Metropolitan Veterinary Center","url":"https://scrubby.app/vets/sterling-heights/metropolitan-veterinary-center/","address":{"@type":"PostalAddress","streetAddress":"36759 Mound Rd","addressLocality":"Sterling Heights","addressRegion":"MI","postalCode":"48310","addressCountry":"US"},"telephone":"(586) 726-5200","sameAs":"https://metropolitanvetcenter.com/?utm_source=gmb&utm_medium=organic","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":975},"geo":{"@type":"GeoCoordinates","latitude":42.5636298,"longitude":-83.0497732},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJmx-h-uPcJIgRbR2sCgYcgkU%2Fphotos%2FAU_ZVEFvySo6zAkDTilYgjYu1YHHx1EpPbAoayHZCLpzcpIszIxvICpYy3P1es6Pd206Xb_PpS3jmCWCDwI5Ghl4BN2Hs33sn6FizDicURlu_WPFfqbkSBoFu_JaotJ31TRQVIorPLwrn12PRNHGFUubElwb8QKkAY8lx8mstF_pwM3tD4Y9wmnZgE33mIBv_L6A2b8fUzXe8sijDWDG6yVLNpAUJzFxhlQFKLpIX2Zj5pLq_WXt4tY8nBXk6xGEncej6im9tWDM-jTGqYJGKHQNHIYvGsVnZzo0jHwkmG1cdSk&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"13:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Grayson Valley Pet Clinic","url":"https://scrubby.app/vets/birmingham/grayson-valley-pet-clinic/","address":{"@type":"PostalAddress","streetAddress":"5632 Chalkville Mountain Rd","addressLocality":"Birmingham","addressRegion":"AL","postalCode":"35235","addressCountry":"US"},"telephone":"(205) 856-3804","sameAs":"https://graysonvalleypets.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.5,"reviewCount":148},"geo":{"@type":"GeoCoordinates","latitude":33.6499354,"longitude":-86.634616},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJETRTPW4MiYgRSMwqPupN_m4%2Fphotos%2FAU_ZVEH_Gnub8zfSl_JPNHMNQAeDKpvcPxJQO7Bsn6v8lpr0IYT9nWfZT0HaVnc-rzw6pfn_kG5jjPOsuue-XRkGMf2Rv-zFMbaS6NL7oWxG--CSYQ44ieTasVNVn_LM0sX-_FgQMGeeesqwnBP4Hx5rWIUZN-E7IKG-rm0V4By2cI1Pw2Damxspyy4gNOgoaD_k6M8kOWrctkCmWGlvvuYpDDlU_qf83L-oyP1JHeQN8jiSOB0Nk0db8S8LDfiSv4RhV5wHf2OFqPs5aRyaWHFODPyow4AmnTwU06igcQ3uMick_RZhdM6rph8im_5k7Ty9GsD9yull2CLkvo9mzVY7UpAfFdMP1howTFFc7R0J5kEHSXB37xEs2bXuCqzeAC1T5uJm63NHUGW4VEeyFDdNw6NJRIy9csL0hHqcLqEauif2eTW2&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"07:00","closes":"11:30"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

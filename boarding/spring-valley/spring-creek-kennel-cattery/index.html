@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Spring Creek Kennel & Cattery","url":"https://scrubby.app/boarding/spring-valley/spring-creek-kennel-cattery/","address":{"@type":"PostalAddress","streetAddress":"9279 Campo Rd","addressLocality":"Spring Valley","addressRegion":"CA","postalCode":"91977","addressCountry":"US"},"telephone":"(619) 463-1722","sameAs":"http://www.springcreekkennel.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":201},"geo":{"@type":"GeoCoordinates","latitude":32.749947,"longitude":-116.997221},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ62i5f7JQ2YARWrD1lNU900U%2Fphotos%2FAU_ZVEFhPrboKsvPa_QghNUE2i-LxBFG7x2solms_SEP8jppYXeYD__e8sfCFqGK2zq9zgvOdAym3OeFlTrtOaOaCxDJGhbeHpIHHMdv0hLYFpaPUBXVbTjyOG3y3siQDhgybH1iDD_7fuEGQWOcBa50FypzSfAIXG3GyagEftv-BeLAJTHcur5tBHHGjFd4IIFRVl40Fdid2J_IuGst7GJrI-FcWVI6gk2wbeilLIdmvCPkoElPSAuezLcfHi7Gtf5cHQCKc4PYECCS23Mi81HigQ787_JrPGM_fNg6SMnLVZLQAA&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"17:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

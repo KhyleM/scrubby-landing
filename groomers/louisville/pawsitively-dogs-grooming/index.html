@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Pawsitively Dogs Grooming","url":"https://scrubby.app/groomers/louisville/pawsitively-dogs-grooming/","address":{"@type":"PostalAddress","streetAddress":"1821 Brownsboro Rd","addressLocality":"Louisville","addressRegion":"KY","postalCode":"40206","addressCountry":"US"},"telephone":"(502) 644-5423","sameAs":"http://www.pawsitivelydogsgrooming.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.9,"reviewCount":79},"geo":{"@type":"GeoCoordinates","latitude":38.2601255,"longitude":-85.7156323},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJvYGzIiFzaYgRg9RbiKuftv8%2Fphotos%2FAU_ZVEFH_UJtQ-4UtazyKqqkOKoBAv5PGxddfKg4R0-pVj00KPIbOsVo7MmtrnGx3qkAWqqKT_2dFxW4X2oFbVaGF3d75h0K32YjGW_4RngcLJErqqZD2LexxuUDNwA-wmoHM90zgJJhsS53VW2QPxdEOUXQQBWjF5D4JsWBB4gw2lUW2E11xdLIYD4l7358Ic2dsrky6x6tPRJ_P3QD22ky0_YxYltXQghA0iubs7Xky14oECVlzb4ufKcHQtzBxGhRXGWlsGphYnPfS2dElg3N8hsLBj0Zt2vFBlYppXJerWRhEQ&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:30","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:30","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:30","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:30","closes":"19:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

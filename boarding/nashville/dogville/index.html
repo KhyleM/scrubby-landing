@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Dogville","url":"https://scrubby.app/boarding/nashville/dogville/","address":{"@type":"PostalAddress","streetAddress":"6268 Nolensville Pk","addressLocality":"Nashville","addressRegion":"TN","postalCode":"37211","addressCountry":"US"},"telephone":"(615) 645-9931","sameAs":"https://dogville-nashville.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":141},"geo":{"@type":"GeoCoordinates","latitude":36.017936,"longitude":-86.7072927},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ0ddeiwlvZIgRU87gFY-TLpk%2Fphotos%2FAU_ZVEGUKAZ7nW8pqXgHNPkP3z-qjz0fGX2asjyZfAHdgUMMxBWFMn8Nhpx2CSaByzkRZBf2soRGRQkOxDxoQLLJJuz8PoScjZ1uJxsJffKnTbH7GAlI8CIM3JUIDnASFPRESTR3-410fSiqkjYxAXVmT-5wTYDgK0M2vTEebXR42BhCogHRGqtF9C9TGxhPdYG3H_V6OdKn3eepg91ku0o-h_EsQ4yazZz0OqmJmGdYtLtkuBVZ4VC2dw1vWGkjWPZx4t_AFCHZ8YHA93-lSDAgpc6GK01L2sd2Ho7USIU56aA5YNs06EXSS_AH7UC6G1mcL9tLaxNw_B9hXNqH3nmT8tI2UzDo1XCc6S2IU4u6xJfh2qhwj9ORtibwgFxgyeqyL8hUQSnqP8BbgoTBlBkFT48gRZinqDmTsIyY677Ueca1Hg&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"06:30","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"06:30","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"06:30","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"06:30","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"06:30","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:30","closes":"17:30"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

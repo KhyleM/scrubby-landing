@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Bermuda Hundred Animal Hospital","url":"https://scrubby.app/vets/chester/bermuda-hundred-animal-hospital/","address":{"@type":"PostalAddress","streetAddress":"13237 Rivers Bend Blvd","addressLocality":"Chester","addressRegion":"VA","postalCode":"23836","addressCountry":"US"},"telephone":"(804) 530-1513","aggregateRating":{"@type":"AggregateRating","ratingValue":3.6,"reviewCount":61},"geo":{"@type":"GeoCoordinates","latitude":37.3487523,"longitude":-77.3543955},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ4fsx6DcGsYkRfJXU41liJ5Y%2Fphotos%2FAU_ZVEFVBViSkFMuTMInl-wVOt2EcJqJKll-domkR9XfUNEoN6pMgQw4Td-CwxFmvR4XrqOfcFoseTHqdBaU4-wreVsX2m_BSSp5golmemeGSkoNeCYLe0c7iPn8Y1TRUt6t0IZHcGYp6sre2fRPlKkLwHeMMJelBpCPw0ZPzUSvd2yBzm2km0yFJPbD5mKRnVN4iDVgZqY8SQgOkXUNTgq-k_0X22486-r3OBOpqveHEUsRZbs-XlIv9_GiWt_BquhDtcvpfs2kbVBCMC4J27S8u-jX6_PXQXCEK0BZhWlxrOqahg&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:30","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:30","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:30","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"12:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -359,6 +367,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -394,6 +403,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

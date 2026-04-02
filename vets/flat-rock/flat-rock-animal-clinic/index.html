@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"FLAT ROCK ANIMAL CLINIC","url":"https://scrubby.app/vets/flat-rock/flat-rock-animal-clinic/","address":{"@type":"PostalAddress","streetAddress":"27116 Telegraph Rd","addressLocality":"Flat Rock","addressRegion":"MI","postalCode":"48134","addressCountry":"US"},"telephone":"(734) 782-7000","sameAs":"http://www.flatrockanimalclinic.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.2,"reviewCount":320},"geo":{"@type":"GeoCoordinates","latitude":42.1077296,"longitude":-83.2865946},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJDTdDQtpAO4gRMZeEI69TAMo%2Fphotos%2FAU_ZVEE90HNJVEQFyVHoza3EYjtIIRnjsoWRF5VM6oH8K8qEYxKryrWAZG4yzSpFAs8YC4MkQx2hI9kKwPqivwdYtyuZFcPrpYHyXNr-jFvUGgYK9lYTkTPdidZeUpmScBa8EhPPSQTSJpKj82_UdlifSoZnW-qicZ7Jo9iAhYkkFyJRF3AA0H8b5Fa5G9_K8TXhr_Jb8xiD7EUoDkwBvQxBTzjc-jcnDlQ9wapjgCJcV9wZU6cyjY96XqHFiBY9wNDuyyYdA-lCq2u1oT_8cHwUBGpPz7GQDRRxi5gKPzsyg7qa8roNUvJ886kiPtKqFvIfSXluJiKlcga3EyrGvlcVBV8OPNNfZm7OIEAIUs3QiiHRznuLuQmWrG_1LkfugfC3uoY8uiZF6_EQ1KPrixXZFT6QaDEYXHD_oec24yjPnQpgJ6g&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:30","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:30","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:30","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:30","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:30","closes":"17:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

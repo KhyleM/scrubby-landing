@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Armstrong Ranch Kennels","url":"https://scrubby.app/boarding/ramsey/armstrong-ranch-kennels/","address":{"@type":"PostalAddress","streetAddress":"8404 161st Ave NW","addressLocality":"Ramsey","addressRegion":"MN","postalCode":"55303","addressCountry":"US"},"telephone":"(763) 427-1777","sameAs":"http://armstrongranchkennels.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":282},"geo":{"@type":"GeoCoordinates","latitude":45.261341,"longitude":-93.4827378},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJn6FteZNqs1IRm9SQnSMNSAM%2Fphotos%2FAU_ZVEFOKMtV1PvlBim85tw5W6ltVNSFMY3egCrTgnq_7qjh8jLtuoyY8jh0GgyRp5QvEpWyVVnp8KB3zXNB7gn2Iqj2rHf1wDEGDXRp68JLGrpVOkvhAhD6XsjUWufO1Jwz7ohd3VuwTztlXnwmbedui0IaJqnj0fJ4baVz0xKwcLaYybxgFGCAQBcuk3_DRfHeEB3StwjktItCcbmV0a8JFUVQxhpBiZA_HutSIHudbv-hs-Sytq-kcmnzIcKpfkhg0Z0_gH71z_YF6KM2qg_y99viUG9p3IZI3MLtGYttuslukg&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"12:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

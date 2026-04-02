@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Fig & Friends","url":"https://scrubby.app/groomers/waldorf/fig-friends/","address":{"@type":"PostalAddress","streetAddress":"2250 Old Washington Rd","addressLocality":"Waldorf","addressRegion":"MD","postalCode":"20601","addressCountry":"US"},"telephone":"(240) 419-3770","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":136},"geo":{"@type":"GeoCoordinates","latitude":38.6482949,"longitude":-76.8837095},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJh-LKH26ht4kRKpmgJYdw38o%2Fphotos%2FAU_ZVEHzkZm1tr9tqQOOaBovTil6-enQaU17cNqWH_sgUT7r2zeMdqW_hz-9o1-UAYLKyNNCBZG2B7zaLhDT3q8Qyxwc1YVBZl2WXfVzmOsWaLHURJe3iQsycngWm-gEaZBTgrweQQS6kXZbl6EwUg06_I4UjFX3WQDNbJiRXw91lA4VXFEW73kJQZPKZ8uw3BPMYTnJxhPhWtghMXjmBC1tGY0PPZDzpJ7GuNwwG8mkWmSB5UwzqPOSy7RHdQIJxVIy7ycUrSsyE28hMbXurTJAHTq_Fz1G0m5fkBRjuN_ScMzSlJSkvc1cBTbAN4lyd1Y6eYWLaaliyQUbi-Kumva8ZFWzvfTCO5JfXpJfeYbEXqoCt-9oV0aHjvLD8c8SO3Vbn5odFXHjTXqgGmFkCyjSyhiWet-3JjINKsJBUCziAbz8aICNXtrzbC5Vt6Or5s9C&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"07:00","closes":"17:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -363,6 +371,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -398,6 +407,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

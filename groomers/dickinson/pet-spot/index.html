@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Pet Spot","url":"https://scrubby.app/groomers/dickinson/pet-spot/","address":{"@type":"PostalAddress","streetAddress":"2826 FM 517 Rd E","addressLocality":"Dickinson","addressRegion":"TX","postalCode":"77539","addressCountry":"US"},"telephone":"(281) 691-2292","sameAs":"http://petspotdickinson.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.6,"reviewCount":142},"geo":{"@type":"GeoCoordinates","latitude":29.460769,"longitude":-95.0487679},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ69iPRZ19P4YRJYvu1tLQktM%2Fphotos%2FAU_ZVEEhVi9yFOHio8rCZfzA_y4PrDRx_7XBtgeSWbP8xJoKhDywGVIvis6W4B8yjRy4xMKZjS2gvhuQGXllMpOrbEBZtLZwA2NzV14f5N6ChJCdeoENyFUdbWg_MFdehahTnW34OyWFjxRdgYSpy0hEE8DCHnk_sSCYh4hACf7QhTfyEmeymt1T3a3bxU93jiC70L0LwiJdRsRquiieIkjWGGTG6FTjJFlBC9pqO7u-Pn8N3jm88lOrCcEZDwc7zrHF_LeZwHRULv8IfviTF1Dg1KWCk2ZmBpy38TwZpkzHXJmaQdfjv3yjoHfbHNylp_Ar2D1HfLDAz1CSZ-Z4WwrbQSrw1uaC1rsqt1hFN1HVwxZCtwkk0DXhACSsTlGMMNG30qAuej_qj0b6-o1nHERzPuhbDK4XzGk1GOTjeosXSSq1MQ&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"09:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"09:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"17:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Pawsome Inn","url":"https://scrubby.app/boarding/waukesha/pawsome-inn/","address":{"@type":"PostalAddress","streetAddress":"S64W22150 W National Ave","addressLocality":"Waukesha","addressRegion":"WI","postalCode":"53189","addressCountry":"US"},"telephone":"(262) 679-0234","sameAs":"https://pawsomeinn.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":78},"geo":{"@type":"GeoCoordinates","latitude":42.9272791,"longitude":-88.1919703},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJacnbkQihBYgRcW46jvLIY4o%2Fphotos%2FAU_ZVEGM59WLP33mk5EkYlDqR5hIuTyoME9MjG2XQNm9I1fN_ZurVP8wkLU-Y88jUIKZ2sInRtcxZqky--xOM2Uv6ZBoVtIDFY4NdG-q94HVahEc5RecbMe_3QvAMeAwJtaAEJnMzBv5k5gQtbjPU7m6NsFmEM4oW0ZSQbRMaSWFTqllmLzH7QT2r8OHfDmcvAID8BOcO2VqcwiCIM1uwhHvPf27Pz1TUtDYEICGx1KIxan9zpQUXjKADsMSuIaXxMwYPltAUQ0yvOSnRE9eY_coQUqbwjsq0_pjd7n55Z-CmyAf6Q&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:00","closes":"09:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:00","closes":"09:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:00","closes":"09:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:00","closes":"09:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:00","closes":"09:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"07:00","closes":"09:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

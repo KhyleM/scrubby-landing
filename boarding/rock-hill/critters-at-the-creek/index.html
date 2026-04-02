@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Critters at the Creek","url":"https://scrubby.app/boarding/rock-hill/critters-at-the-creek/","address":{"@type":"PostalAddress","streetAddress":"3343 Kingsfield Rd","addressLocality":"Rock Hill","addressRegion":"SC","postalCode":"29732","addressCountry":"US"},"telephone":"(803) 616-7228","sameAs":"https://www.facebook.com/Critters-at-the-Creek-110686038392568/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.9,"reviewCount":12},"geo":{"@type":"GeoCoordinates","latitude":34.9809618,"longitude":-81.0474693},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJR9tPWM6PVogRp3CYL0Ei0ZI%2Fphotos%2FAU_ZVEHaFFA-Rj6_TWyIJMDJ84PNVMI2O_otdsBjSxawBBUNRP1Kc_P7LeWoLskt_3xV4XMATHXP7W29U94ItMc0WgjSQ1kpty6pkgWUIaHUZRnl-YB_21P0aQKdMgBNeVo0ekKT2m1CCWiLF9Dof4oV_qsLqiXyKinc5CA45ONbkpWpObfC9j8uqO3XTpJ-zpA5aR3mbdSIv5Mh5lP3ZXMjVZxPFSJTLcnSh-CcPJnwoNYxGig9QM12BceDrUyGq_qOvbEYZwu8hbupQh1Y1tVIxpjmdC4OHQKOZGgFWlfS_qmKJHH5rNqW1mY1JBhCIW4_b4vwfN89pQFRSF_gSMGVuZHDbvhXdZjNlsTuZpZYUWYR3XKr3JtFCiGJQwU5ovHabC-lr6ZMr0aLvIC3xZ8O5IQ7c79jQE-SqVWWUtRQceyhJAq1&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"09:00","closes":"18:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

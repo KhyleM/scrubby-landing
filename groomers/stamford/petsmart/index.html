@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"PetSmart","url":"https://scrubby.app/groomers/stamford/petsmart/","address":{"@type":"PostalAddress","streetAddress":"288 West Ave","addressLocality":"Stamford","addressRegion":"CT","postalCode":"06902","addressCountry":"US"},"telephone":"(203) 353-9807","sameAs":"https://www.petsmart.com/stores/us/ct/stamford-store1867.html?utm_source=google&utm_medium=organic&utm_campaign=google-my-business","aggregateRating":{"@type":"AggregateRating","ratingValue":4.2,"reviewCount":775},"geo":{"@type":"GeoCoordinates","latitude":41.0434394,"longitude":-73.5578334},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ87D1WVOfwokRVHpw40mDsYQ%2Fphotos%2FAU_ZVEGLpqyDPNUoFqZq6RJU0GBJTeJ7YPlVrxlO_j5dKFYsYUI1YmnbnT4lvcEL7OMXI1TPUWu9oFC14COtLBKbD8Ym9ah6rbcTaODr8g5Kb9epS7O7NytVhQSRELEm3H4Yf-cWWjnvq9Lj1fBEHCkdlnyhqG9D-YWUhhUjO1AVLUEsTNKVTVklICJ77f8TcRPBVS61CNcV5ryv07W8HN6hTsJYaeGecAq_IXh5lLKKN9MPLllL-HbfNtliwcNfo6TddbSX-c9biX0TaC8LwpiFy0ViIZN4mHlHuVH25Ymyh3jW734Sypsd6MQoCQOdXltMadZa4KqaTnpWIzbrnflHTJRQV90f_rhqwOwN1yrCBPhjxStmi1-jes86pR243OncN6wpXBcqil0kY5VUytrCSScZJSTdprR8UgynC6NcNLV6oyI&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"09:00","closes":"21:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:00","closes":"21:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"09:00","closes":"21:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"21:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"21:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"21:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"11:00","closes":"18:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

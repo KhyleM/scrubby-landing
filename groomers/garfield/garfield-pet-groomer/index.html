@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Garfield pet groomer","url":"https://scrubby.app/groomers/garfield/garfield-pet-groomer/","address":{"@type":"PostalAddress","streetAddress":"185 Palisade Ave","addressLocality":"Garfield","addressRegion":"NJ","postalCode":"07026","addressCountry":"US"},"telephone":"(201) 757-2031","sameAs":"https://www.instagram.com/garfield_groomer?igsh=MThtaWF1ZHk4bnB1dA==&utm_source=qr","aggregateRating":{"@type":"AggregateRating","ratingValue":4.9,"reviewCount":83},"geo":{"@type":"GeoCoordinates","latitude":40.8703398,"longitude":-74.1086947},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJfQ6EsVb5wokRrmcAK5dryw0%2Fphotos%2FAU_ZVEEuftthoX11fR7p9669GytjizIf2vTPxCypk5ja2I4h0MgvszEa7w9ZUSl8jdtFHY_SfMk4djUAFA4LLn7J9EFg1Z-dn3-emO2-nhZt7UAh5-BCOTe2VKbPLAWyYmu1_AKVV_xhIq6raIQwIIAqPCb2MVxMPASpc9_dNSrY0YX7DLDszBGJ8g3kfsJCSy_K81Sav8zJ1x-9WbI5Ettq0sg36p6o26RjeGBIvE3KQFoXdVNpBxOjsbJBISk7Q7Dthc1flcdFl_h7lQJ4Xv39QH8bVHXHwC41BMU__rMarecNaQ&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"09:00","closes":"17:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

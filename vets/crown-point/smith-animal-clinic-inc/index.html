@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Smith Animal Clinic Inc","url":"https://scrubby.app/vets/crown-point/smith-animal-clinic-inc/","address":{"@type":"PostalAddress","streetAddress":"4720 W 109th Ave","addressLocality":"Crown Point","addressRegion":"IN","postalCode":"46307","addressCountry":"US"},"telephone":"(219) 663-0113","sameAs":"http://www.smithanimal.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.2,"reviewCount":57},"geo":{"@type":"GeoCoordinates","latitude":41.4210218,"longitude":-87.3910652},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ2Xyq5E_lEYgROO5PJOBy4iU%2Fphotos%2FAU_ZVEHBxVq3H0alcRpvzRsvKLlCS8YAxSe5jQdaCYfQrSGBC4FJZDqbm9uxsHB0EG5HVwZEcWVGJuSsac1COUq0VNRPyKbavJ8r3E-LQdaAsN2h9oY-8P0EJMixeYb26ZhRq80UX1B90hULWJr-7TICsLXxRpulmma_kfLgzgM6HmIIvHJB_UTaaikQEEG2w2IIvxxfZKznlIkFL90XSk6-eK5Y0HBeNdWJWWeaX1YfXQN9PyOC5tUeDsAIkP4TJPday3gMRDASoSThx6PPiTrwpreI20FVvddJRpuDJ4q9TLYY5HGzOessOhWHB7f9rYRcep5qwv7Uw7JKVMVnE5BPkGxZzmc9MLvg2ElNBOR2Tk4r6Qge5VM3JjMs3un3LzkSFG5BraFyiZspkCHCnTBmy4nXUBxF2eAiYepjz3PpHsHkuw&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"12:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -359,6 +367,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -394,6 +403,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

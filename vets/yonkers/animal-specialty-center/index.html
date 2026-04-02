@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Animal Specialty Center","url":"https://scrubby.app/vets/yonkers/animal-specialty-center/","address":{"@type":"PostalAddress","streetAddress":"9 Odell Plaza","addressLocality":"Yonkers","addressRegion":"NY","postalCode":"10701","addressCountry":"US"},"telephone":"(914) 457-4000","sameAs":"https://www.animalspecialtycenter.com/?y_source=1_MTE2Njg5NDctNzE1LWxvY2F0aW9uLndlYnNpdGU%3D","aggregateRating":{"@type":"AggregateRating","ratingValue":4.2,"reviewCount":1494},"geo":{"@type":"GeoCoordinates","latitude":40.9676257,"longitude":-73.8804722},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJV18RrgXtwokR1SFKWkPxEhw%2Fphotos%2FAU_ZVEGuLtK3fyuDIJRC_eJaYcWLBkQdU61R4Z_GkS5HApPjQem7rKP7916zJINvRBWhVvoEgYNfUKlXKBp9D2fQZdn0Z__EiKeLT2VNxRSiKmEbCCFSNfyP7jtbRgdkOgF22pOzzLytYTfNMbNvTG3GS5qNgXISJLKPk7WlRdGqrJWVB9lli9rZXGjPf8BzHz-rGrnIl5vp0Nhlu5wiiGDyF7CYXgMVmFrSOUCoOb_ybwxfJem70hTc-v7B9FZ5hYUlOWKByBLKfeJOmDLKM_YOw0yO9-hDlZMbxXgUeUWO6NSu2Q&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"00:00","closes":"23:59"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

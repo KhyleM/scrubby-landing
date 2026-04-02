@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Newcastle Animal Hospital","url":"https://scrubby.app/vets/newcastle/newcastle-animal-hospital/","address":{"@type":"PostalAddress","streetAddress":"113 S Main St","addressLocality":"Newcastle","addressRegion":"OK","postalCode":"73065","addressCountry":"US"},"telephone":"(405) 387-5684","sameAs":"http://newcastleanimalhospital.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.4,"reviewCount":225},"geo":{"@type":"GeoCoordinates","latitude":35.2460085,"longitude":-97.600621},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ2V_AyeRtsocRjskYrsQtWIM%2Fphotos%2FAU_ZVEFZ3l3umxrlezzsluwuHXDWt12oYG41DUGJbhhDdbbqJHRvO0TjNNaDgKO8G0Txre6Y_qJVhzJBXX2_EhLRzBEwMwOID_GV8y6qgOueFx3oKZ5J6Z1nG5uYMensWxylDiWfGrVuSCvCdUEYFF7XqwuA_5q63IrL8jWtyxgVw0nX-e1TioobAKZl5pDiSl8jaPN7XIhMhJ1CFRk_p_bHbR1fkWGkeInkHeY9ZF3ZqFEWZKjitsOGCqsX5MEGLko51rRUr_RB8Eo-Iy_41QmrFIoxwq3udKHjRolukNM_1x1Nixi-ZFv5eO7vNQdpAO-NpFT7eZDzCyCD2QB1lp0l_ZcCV4EBfDR5S4kwk9n5EAtc9__ddZJ2UQ-Fi9EtC6VVht6MtYD6OvW9MBfWrRYEt_EyW6-nEqB_zPfjX_vk1Bo&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"12:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"12:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

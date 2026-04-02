@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Lion's Mane pet grooming","url":"https://scrubby.app/groomers/lake-view/lions-mane-pet-grooming/","address":{"@type":"PostalAddress","streetAddress":"5401 Lake Shore Rd","addressLocality":"Lake View","addressRegion":"NY","postalCode":"14085","addressCountry":"US"},"telephone":"(716) 980-6089","aggregateRating":{"@type":"AggregateRating","ratingValue":4.6,"reviewCount":9},"geo":{"@type":"GeoCoordinates","latitude":42.7353351,"longitude":-78.9166921},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJaYr7NJsb04kRysaYlSEKhw8%2Fphotos%2FAU_ZVEEVl1DKsNInlONC6nhCfaDAtxj6nmByYl0Uit_8EG-nXxVXPnHXucIiZNPn0daJzSADA9F3F6PXyh5RE3CC5Qb7I1ip1d8wJFT3f0KqKtFzEZe9CkcKWx0jkvawkcPpo0IqSRM1Ggld_e-RKqjiAQyX86xgRnYdjEXrPkXmuhaikXpeyx_MLaG-Bg9fhE1fTa3EQAvAeu1XZcksAQy6WRgYOVIwvHvk3fh29RX8CpKwCcnaSumqWHMa_vZY4aL_XU2MDux2sacXzORLTbRrbGWF1MNcRQO9uqspBYwn6tNaJ4t3WAcHxz6IRq_-Tzt3CJc_xr3yMEozBfOf_qXUVhP4ret428q4bxhcb5kBqJ1-fUT0m2zBJFewYnUEQqkwJqbLVRl6zfMqfjm524rwGozoEyzlNBAQyC8VzqCIvH-nANbO&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -343,6 +351,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -378,6 +387,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

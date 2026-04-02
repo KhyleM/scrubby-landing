@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"K & L Grooming","url":"https://scrubby.app/groomers/canby/k-l-grooming/","address":{"@type":"PostalAddress","streetAddress":"24540 Pacific Hwy E","addressLocality":"Canby","addressRegion":"OR","postalCode":"97013","addressCountry":"US"},"telephone":"(503) 263-6764","aggregateRating":{"@type":"AggregateRating","ratingValue":4.4,"reviewCount":16},"geo":{"@type":"GeoCoordinates","latitude":45.2515541,"longitude":-122.7188678},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJM4VqqZJllVQRHn56eidXy3I%2Fphotos%2FAU_ZVEHwhxi9SwH8E9BbQF7atmmGFAOaeWdwyB23-DeKeEyCAWrbyJMUBvtX_29jdSu2rzl-EUyEKTFXyIgdHwCjSz2V-DPIPk6957u1VciVbR_lrBHlW5yS4152CRtIKqiYnUXLAMdmwlbQjaIKa4cr1hYH2xhPucp0P6XxjPjXWgDa8jcZg3UNiLHHaKDZLANcmiObsZEuocIarf4SfmSOfGb0PQb9ms5qREpWutNINg3A9uF2QzDZuxL3wdROov4FsAapBlAdwpZX6szS7z_Omp2gbQoFy_RP8cU2T_jV3uIe1WTwKXoBuShnV7Gnzuy5f-JgGPG8A5HpJfAF1HvN5-xhsUTHJkg0JMNcUSu29k4k_8lAc8EFmpAZ5M04sF9SiMKaXvpLwJt_XISk3bSX5Dkq6_Ux0uPShNj-84dngIuaFA&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -343,6 +351,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -378,6 +387,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

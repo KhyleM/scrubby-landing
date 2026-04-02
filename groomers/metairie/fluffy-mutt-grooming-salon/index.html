@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Fluffy Mutt Grooming Salon","url":"https://scrubby.app/groomers/metairie/fluffy-mutt-grooming-salon/","address":{"@type":"PostalAddress","streetAddress":"610 E William David Pkwy","addressLocality":"Metairie","addressRegion":"LA","postalCode":"70005","addressCountry":"US"},"telephone":"(504) 828-6888","sameAs":"http://www.fluffymutt.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":85},"geo":{"@type":"GeoCoordinates","latitude":30.0023218,"longitude":-90.1336891},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJhxKCL8GvIIYRXqlBk08fNSM%2Fphotos%2FAU_ZVEFhiHFnSS4pe1HycDSJtbMKv1S1PI8JlB9Uxv1oT0hOp10Uq22kZtkMblluUogEOxJumDJbNtibhPTPjJH8SlZ9Fqpd9Nzdy7hTNvFgw9H6tPyo9j_YGaWuWmr9Wyz1lfW1L0VE_XaEkO6ZuGOwOAGdiZsAHktjBMZ3CXMoaFCOSrjrCtzTx9sX2EbP3EpRZNhKA_ehbfjeV_seB_BVGWMU18kDAgarBhFaMLJIzphecIw-gVWlBRGVO0aTAQcuo1Nq74zoQHQy_TLihqsDNsDcdzJRw621NodvBzoDDVqvgw&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"17:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

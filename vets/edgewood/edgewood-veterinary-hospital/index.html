@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Edgewood Veterinary Hospital","url":"https://scrubby.app/vets/edgewood/edgewood-veterinary-hospital/","address":{"@type":"PostalAddress","streetAddress":"2007 Pulaski Hwy","addressLocality":"Edgewood","addressRegion":"MD","postalCode":"21040","addressCountry":"US"},"telephone":"(410) 676-7800","sameAs":"http://edgewoodveterinaryhospital.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.5,"reviewCount":267},"geo":{"@type":"GeoCoordinates","latitude":39.4355395,"longitude":-76.310703},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ9_Mv9l3mx4kRxwXxgTLrkR0%2Fphotos%2FAU_ZVEHJzkFEUZhNOkDBR1O0hUBDSXhP6JdM_C9viaOUJdTtgf8ss2Q2CbH_DSh3FfeXwR3gGfIWpxykA0S_wAvfmfDI8cwPsYovpoojdCK9ZsDRUARhuCA7WY1DaRSZS_dTIcDnqu7W2qzVVX-8KfFDp02m6iTBWuc3J-E-fWeQUkU_1Sdm7mZ0PQgwSF1G4b36MgW3IDJNDbACarFtqOuyJf3bINdQeFyJI9UjgVi50JOEIELuwtWcWMhLIZ_wQKP2NLD0GRVTvE5gSlNcqhHFZRH8ELTVTrDqF9SUWXtlruHr69_py8j1zorlsY_TgHFAq812HiZlsrQryMpXNvWD8DYwWwb6-NKxRM06IYt_xgFxz3tLD1yjQf4kUHNKAihmK7wPWUHADeceQcZTu2ctDodXYG7wMTSReXV1OlCYZB0sdJ-B&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:30","closes":"18:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:30","closes":"18:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:30","closes":"18:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:30","closes":"18:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:30","closes":"18:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"12:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

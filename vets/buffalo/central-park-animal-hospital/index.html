@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Central Park Animal Hospital","url":"https://scrubby.app/vets/buffalo/central-park-animal-hospital/","address":{"@type":"PostalAddress","streetAddress":"2715 Main St","addressLocality":"Buffalo","addressRegion":"NY","postalCode":"14214","addressCountry":"US"},"telephone":"(716) 835-3369","sameAs":"http://www.centralparkah.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.9,"reviewCount":101},"geo":{"@type":"GeoCoordinates","latitude":42.9407965,"longitude":-78.8366679},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJBZwXQqpy04kRhgjO0HVcPnk%2Fphotos%2FAU_ZVEFtDSbR4f4fxJ8bbcEy00IboV96JRrHyv9Y0P6muRJta1GoyPXZfq-3lT_374-jYHor_hdIqzEC8jiY3UuDJrqRUFQpjHVV-umTE6HnORC5FzXYJZMP1L0-hS1c8qGN_zFAbAa-aQTMnz2-RV_6rPBIWtywA-GRYBVSZ6evtqEHdhCWN2H1-SiZkllOEn9DSKZ-Qc2D3ej_EVHQ-BDaBK0W7mH-XQrXMGFRc1oo2UQCEWeBOIXIRYaAEGdOUBhZ5GymbKWMVDK_c_vnw5agzgsmFpwdZKxJKpPeNywqYfMMqf0v7sisGZBky5an0OdUv1tNH1-O9-n5A7b1E7tBRdBYmzd9cDX9Dgm4uuMrhHiErp-xTqrrtWKYsKwD7jbWwfiJLhR9Mybzpqa8ibmTYD6WBdJtREVME8ElWRGrbJ4l0Qg&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"09:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"17:30"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

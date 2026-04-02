@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Day Hill Kennels","url":"https://scrubby.app/boarding/windsor/day-hill-kennels/","address":{"@type":"PostalAddress","streetAddress":"136 Addison Rd","addressLocality":"Windsor","addressRegion":"CT","postalCode":"06095","addressCountry":"US"},"telephone":"(860) 688-2370","sameAs":"http://www.dayhillkennels.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.5,"reviewCount":147},"geo":{"@type":"GeoCoordinates","latitude":41.8678436,"longitude":-72.6745529},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJC7Ps9Jf_5okRuA5pfQ3uQkM%2Fphotos%2FAU_ZVEHmZYz6UmfRaAs6FZ1661a4cvcno5kVxUnxL2WNSXPUXAAF3umFBdnib9rMxesE4rj2X-Ypf_nUoKvsp6j8_QRgslgCdkgWXLXeI0hAprz6zhbmgMEoyJKCuqrhOn-6JaSqQ8Ib2YsPnVVq5PveEuNU3ZiaKwSsc26lO--q1r3Tton14V0sqM1ixUOLPe5l4RM5IJG2AXGxZnCAkgFdsVAtFw42m66Rxira3Ga1gtVDpTNkzEjR1gtnsDrXnrKr07mYUikK3-PwNMwJ4bXsXwSLCiWIH--AKmT1EvSOhqNeRw&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"07:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"07:00","closes":"17:30"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

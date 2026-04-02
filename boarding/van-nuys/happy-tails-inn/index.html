@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Happy Tails Inn","url":"https://scrubby.app/boarding/van-nuys/happy-tails-inn/","address":{"@type":"PostalAddress","streetAddress":"6031 Kester Ave Unit C","addressLocality":"Van Nuys","addressRegion":"CA","postalCode":"91411","addressCountry":"US"},"telephone":"(818) 497-3626","sameAs":"https://happytails.la/","aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":46},"geo":{"@type":"GeoCoordinates","latitude":34.1803823,"longitude":-118.4579071},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJbZRkQS-XwoARdQUXdbCo58I%2Fphotos%2FAU_ZVEF2wtM4M8HTO3VuE55M2pb6qwCmg3mZdKU8tOSQ1wn_kvq6B7KAOuvWXX-1aPBD8LlnWyCcrT7-eg2AZn6yAX77yqBW_Ztn8bDGna8pk9eegW6JV7ak5Fofkt9ETBkJTOXGaot-ggsYHhCiLaB7IOPlWv_HFKpTm3SrwoBaiNFZ9UV313uUHonZyYKidLheRidEtOseftpbKP1_MUcuXTnKB6SLEKVEzFSbVToczXX0zgAeIF6bu5I7lRiHJ-ZjWS3gSCodSKA9VkCtPt61iGjbztO4TWDQOEJ_UFEL8X-R5w&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"07:00","closes":"19:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

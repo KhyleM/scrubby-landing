@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Chrissy's pet grooming","url":"https://scrubby.app/groomers/glen-cove/chrissys-pet-grooming/","address":{"@type":"PostalAddress","streetAddress":"184 Glen Cove Ave","addressLocality":"Glen Cove","addressRegion":"NY","postalCode":"11542","addressCountry":"US"},"telephone":"(516) 656-7689","aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":18},"geo":{"@type":"GeoCoordinates","latitude":40.8513419,"longitude":-73.6348368},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ43cIXTSFwokRxxRXgWl3i9Q%2Fphotos%2FAU_ZVEG19XCBHwTR_yoL8AF4L9h-_YxwtXGMoOKPdbMAEsx2Q11JBg2POzIf1WBtDYiTUAavkwv8BLAdRyMRoH-MolNx23d_M20vaHeRje5KjE0CYTQyeSY4YUTYrO1Gxsd1WkIrFxiiWk_9x4hW7hXYYnPlkuR-oCnWaCRp9LLJ6WuUEqFS4g1vho2sOn0hRbh36cIZcQZOeqDWWuVyoKGk4WLV8NhhgaG2TryejuxtA0V5Sb6-TNlKs_RlalcTivzG5bla3n2ZyYsTqWyRSea6KQepFi3ATj3l3cRFolkisPEefg&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -347,6 +355,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -382,6 +391,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

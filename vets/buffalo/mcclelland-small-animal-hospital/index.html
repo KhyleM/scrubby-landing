@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"McClelland Small Animal Hospital","url":"https://scrubby.app/vets/buffalo/mcclelland-small-animal-hospital/","address":{"@type":"PostalAddress","streetAddress":"455 Ellicott St","addressLocality":"Buffalo","addressRegion":"NY","postalCode":"14203","addressCountry":"US"},"telephone":"(716) 847-0181","sameAs":"https://mcclellandsah.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":473},"geo":{"@type":"GeoCoordinates","latitude":42.8907443,"longitude":-78.8700021},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJE93HBUUS04kRvGD6gjqG8AQ%2Fphotos%2FAU_ZVEHu8-OLtDfEqnrKEZr6-Wl9J0FmRgGmdwmMmkZUsymvZHqpPoHxw_G_nLCjenTfAgWCX7xnq66WtzPeoYNktbUu4NKOgoOTz8E6Fn-_197n2nER0pWnbFtlhUsGxJnEFULs1r0-ek_36eZcB4XxWswvQZNzx8L2aINRsHV2oJvfOXiu11A6JIdNYO3jej9MIJ--uKMLVVc9JjU2gDCIl7wC28E_MVqmwlKUUjpdyMzll9LudEs6NfFSzaicvC0Mfy0yeio_1ed0BGTBMmIE0T3EkcgyQYC9awbs3jD7UlO2do7j9V_porT6rfgVwIjWxKqthIn-hEyILxr0X7suNico0egCCR4acIGP0Apa3wZ7D-wXF_c4xB-i0V00S5xHmvk0P79-RGzNw0harCWa0o96RMsSWOTFfipowV-brjTzXkA&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"12:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

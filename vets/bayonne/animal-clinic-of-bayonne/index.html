@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Animal Clinic of Bayonne","url":"https://scrubby.app/vets/bayonne/animal-clinic-of-bayonne/","address":{"@type":"PostalAddress","streetAddress":"926 Broadway","addressLocality":"Bayonne","addressRegion":"NJ","postalCode":"07002","addressCountry":"US"},"telephone":"(201) 437-6666","sameAs":"http://www.animalclinicofbayonne.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.1,"reviewCount":297},"geo":{"@type":"GeoCoordinates","latitude":40.67917,"longitude":-74.105066},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ5RkNvZZRwokREwVF4hBwADg%2Fphotos%2FAU_ZVEHkrJcT8_LhTwKS0ax2rrw6eLrkRupjC0DgbJsbo_hQsiiKZhcvyBwXF2bHoNjg4daa8dAiW69k8tJD2tHKOjtVVQ1uHNn-HAn5DNPo_4b1RewABPZgthqUaNuZtOHottdt90I3B-B7_BzS4bdxwPw1CSA6DWCQfGIz7e1Km7ugePb9T7X7kYRtsEBPUF8WxeheB8z9XgSaOO0cXWvnRPYGygWqqDeFv602bngJontAaWU_HTkRloylxfqGgS3kKXQrnuHefp9kKEauSbRGZJ6vsEmJ-AbKYmQoNGW7f69a1w&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"15:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"14:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"08:00","closes":"14:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

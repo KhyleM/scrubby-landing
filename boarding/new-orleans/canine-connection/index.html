@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Canine Connection","url":"https://scrubby.app/boarding/new-orleans/canine-connection/","address":{"@type":"PostalAddress","streetAddress":"4920 Tchoupitoulas St","addressLocality":"New Orleans","addressRegion":"LA","postalCode":"70115","addressCountry":"US"},"telephone":"(504) 218-4098","sameAs":"http://www.canineconnectionnola.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":212},"geo":{"@type":"GeoCoordinates","latitude":29.916448,"longitude":-90.1088025},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJX-gh0uelIIYRfqw9p224dqQ%2Fphotos%2FAU_ZVEFXLparU2ftlEteahID4RImyx2IDH4vS4BZxfhQcgyyfpmn1MVihwfXnmC-RskJ4cv7hb0RssAsl5mPFOz2GqWJhUAu0tST9dRjhgXBC7TF-z_to0okH3x9tO2CYgB0lAjXBJgpHnZ0W0U6PMTdccsij3l-SbzxZ8ehdaO3EjF7ZIpcjIZxAAFyiMZohJzEW4yd5K7l8lGEBOxhpyAacdw9oFcq_ezdECgddJxwAnb5TK4pe_kJ3R5lvWMSEsh-1zqe0RL0YTCRplMHKPOs4YPLyz7dApKkCrd07mDNNwi4uH80QTmTng2AId4PLfEjrJAeZ1VY9E8WBzbXDLrwV-6fWCKEx7zHO-kt2xH91ak7KyMZg85CeaHdZYuzVPTDjin0FgyYZAWhGj3fArgDx_VPq_fAxQkSUymm5S1DP-8JGhmI&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"06:30","closes":"19:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"06:30","closes":"19:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"06:30","closes":"19:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"06:30","closes":"19:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"06:30","closes":"19:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"07:00","closes":"10:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Republic Veterinary Hospital","url":"https://scrubby.app/vets/kyle/republic-veterinary-hospital/","address":{"@type":"PostalAddress","streetAddress":"154 Elmhurst Dr Ste C","addressLocality":"Kyle","addressRegion":"TX","postalCode":"78640","addressCountry":"US"},"telephone":"(512) 269-0738","sameAs":"https://kylepetvet.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":199},"geo":{"@type":"GeoCoordinates","latitude":29.999325,"longitude":-97.861457},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJvX0AARpUW4YRTHE0JUJ4-wo%2Fphotos%2FAU_ZVEFaZIl3XS3gIx8enF1_-GA4AlRZ-QipM7JJqqd3HgsKlfvmlluhGqdPNIK_uXQv7BEaTUSE2i-tZqUbqgtzBvHdQ5_AMhMliL9wFg4JhCdQ-C_Bh6YJNCsc6ynUiacyN_mG29Qch38ILM-bdnDissY3lpsJo2CzMK63I_gsAhuYul_mjC-OPXoH8eC5XqahqCFtUl9H090a4lAMqe2I1cOgi25H5n9OTs2xl5FZpP8yU-9IMV1OBJL_ws6B-CAr03qRs2n6oPHmpipTSZPqasKjh7P6vhcW0zZa1anuGfWKXQ&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"13:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

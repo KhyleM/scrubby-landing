@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"April's Pet Grooming","url":"https://scrubby.app/groomers/red-oak/aprils-pet-grooming/","address":{"@type":"PostalAddress","streetAddress":"600 Methodist St #2130","addressLocality":"Red Oak","addressRegion":"TX","postalCode":"75154","addressCountry":"US"},"telephone":"(972) 576-1777","sameAs":"http://www.aprilspetgrooming.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.5,"reviewCount":174},"geo":{"@type":"GeoCoordinates","latitude":32.5310276,"longitude":-96.8052057},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJceNfTjLrToYRNgMxSYU0oOA%2Fphotos%2FAU_ZVEFepjUVIPurgxIDrjBzOy5klsTO89yn3Bf0d3N2E19uOeolmEOXgI4Mby6R4_ylY-tkj28a6sKdDUEUXUdLl6X6OHdF-QRKLZ1pzxylx96UtQCjOyS-uSOH71QFBKD24pMzX2Tw4DdtM6wk-aL1snIrwEL_5m-svZreizZxEXy4G6lDAXAq3botUEp1SyQIZ1gvy3x4jy7dx5bshXcFVU_y0B6Csq2_jqJiuxzLGFTaLmrVK5cfUMfq_GksnFBCogKeYPrtF72PmdWgINxwyLqWZvCf7oPI55rXnvdT_wAGWJYcdVtmt3vVL7AHYJNgnR61AR8pKnBJuq0WHURRs6u1rNzYP4LsPo4MmkxckoOmByXTi2ocI-KbsKOt5MDoMQVDC5JCE2Rf5Y-MxapAdk27SV6vmKXK6S4W5xJuKQ5AjKeN&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:30","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:30","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:30","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:30","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:30","closes":"16:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

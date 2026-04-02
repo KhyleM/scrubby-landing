@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Grooming Tails","url":"https://scrubby.app/groomers/mamaroneck/grooming-tails/","address":{"@type":"PostalAddress","streetAddress":"731 W Boston Post Rd","addressLocality":"Mamaroneck","addressRegion":"NY","postalCode":"10543","addressCountry":"US"},"telephone":"(914) 381-2929","sameAs":"https://rymap.org/business/grooming-tails-xuycup","aggregateRating":{"@type":"AggregateRating","ratingValue":4.9,"reviewCount":58},"geo":{"@type":"GeoCoordinates","latitude":40.9428046,"longitude":-73.7401309},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJxdCfl46RwokRBIPMSFxTYZY%2Fphotos%2FAU_ZVEE0JipSGcbe2cABf5yvOXSBG-EfDgPUf6Y5VfONB742LjhIL5ld0nTyiO9_MFvj_bSZxnwDsGjNz6dkWL_o5utLiyjfUjGqxElftUktcog8Fx2qYIZ8PBg3h-vrAnB8coY0n4qwL08tOAxv3NxDnn2TB0zB-aqoqzKFlbs5QW0u-bfv4NaJFLN-nrd1m2hjIzCKDu59AuBBE5wW3VrBlyXMtLQfqV2orJAfcpuTLp-XTKh3ah7zdx5GLjwq1-RZWbgKb5lYtwYKf4hiTD2dQmxLYvs73JRymki_7tp6jMlOZw&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -354,6 +362,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -389,6 +398,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"River Dogs Resort","url":"https://scrubby.app/boarding/west-sacramento/river-dogs-resort/","address":{"@type":"PostalAddress","streetAddress":"2835 Hart Ave","addressLocality":"West Sacramento","addressRegion":"CA","postalCode":"95691","addressCountry":"US"},"telephone":"(916) 952-3647","sameAs":"https://sacriverdogs.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":39},"geo":{"@type":"GeoCoordinates","latitude":38.5456115,"longitude":-121.5498166},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJZ1jkRsPTmoARPu6uOO3rSho%2Fphotos%2FAU_ZVEHk6sblB8-n1whFKA4PhSyZ3BIA-O5nqS4H1MabX6QEe0vbzAg4FMEeRmx2ze1SNJddrz0roEZwSerqiqjwVgV0zAGdz9LXoVF83eibgboBDc2dExbOePHmFJzhFMa23fgyEIToa5ZuFaiKi_-YGybaN01BQZri6pLQIZ_q7KYFMXks-w4Mt51NqrWxE88O-Fo8nwL7KJT8N8VunC3gG8c5o7TuqJ1qzp38itlBdCxmlGoUJia-pkmj40ozCWMWQloQ1b7NUvs-p41DxDG2hG8HQTZxTD6yBaI1kOt3NIrHERik5i5aS5C1oj7jaZj8j2WoBu8qw5WGdB_D-Bg0WU2T7TEDt49iNGZrHNn7VXFosXJ4nrWHzWEThb-htx4eIW00isgk69tskt7c-jS8f9Nx2OFzLcQey6kZXBMBCs4vyFlwGlYATL1FEMSIDFWC&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"07:00","closes":"19:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

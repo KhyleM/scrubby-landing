@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Wash The Dog","url":"https://scrubby.app/groomers/puyallup/wash-the-dog/","address":{"@type":"PostalAddress","streetAddress":"115 W Meeker","addressLocality":"Puyallup","addressRegion":"WA","postalCode":"98371","addressCountry":"US"},"telephone":"(253) 841-9988","aggregateRating":{"@type":"AggregateRating","ratingValue":4.6,"reviewCount":328},"geo":{"@type":"GeoCoordinates","latitude":47.1910736,"longitude":-122.2946371},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJA1BbQAL8kFQR5AgKvMY8fI0%2Fphotos%2FAU_ZVEHP_y9KZFUWZkEV979rOsH6mntxeCutN-COZV9S547p7PKm13Nscf4tKdJI4zP8WLl3O3OjHT55X7AqFbLkfD6qb48Hen6zGSOJ3NjPsQqoa4fOviMJcE82DeLaqmeY-o8cCpevmcz2fj5OL_XGoTN2v0EExc8ktbfwTMlTmcnFrAK1bT7fB3_JcQJz5-BZdITUezS4gyEsjMtb4J_me0z8yNSD5hBLC0-XjVu__VfEBf6CX3P9Dh8RTnYUjCxxXhLracKXjp6hN9khycU2Eng5ZIiezvhAE6gzHLX1uT-xJIcjKgN8u8lR0bSIt_B2LMX3diWDeRnpccm99kHvw1nrMmWSCNZsTqeaY6Hl2C_9gwwEQItpVOM4nYkRpFa-LFVqHvw6FHeaEHzVb1QOOGD23DdxnJYCzorR-3F6TJJyy0RD-yx7FwZ7tcmIcDWZ&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"11:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"11:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"11:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"11:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"10:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"10:00","closes":"17:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -363,6 +371,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -398,6 +407,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

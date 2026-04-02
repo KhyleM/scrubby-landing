@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Upper Arlington Veterinary Hospital","url":"https://scrubby.app/vets/columbus/upper-arlington-veterinary-hospital/","address":{"@type":"PostalAddress","streetAddress":"1515 W Lane Ave","addressLocality":"Columbus","addressRegion":"OH","postalCode":"43221","addressCountry":"US"},"telephone":"(614) 481-8014","sameAs":"https://www.uavethospital.com/?utm_source=gmb&utm_medium=organic","aggregateRating":{"@type":"AggregateRating","ratingValue":4.9,"reviewCount":1207},"geo":{"@type":"GeoCoordinates","latitude":40.0067362,"longitude":-83.0502744},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJUWyy62-OOIgROF-PT5I_ic4%2Fphotos%2FAU_ZVEEOuEAxda0pp6kfk6ngbMArNvOSuAULq7LqRki8SMSoN7jtDBMUm38iJ6FL5dopvmMsOxfkgfTXIUwpqIYvxQNUEQ7sRTjKpY-3JdoG5YSw9SD-d_FbNh2CAA_TZ9V34q5QCBXz3mXxJOtG9VC4LIf1Vyqv-FlBkW3RMD8IUTK6ExYg8tB22Q8jeMQ23_jbcNIYQJttRkeJmo9pm0f5_c5oLyGzbzRJN-MQ0fuUGQqtQVp7Vp_o3dhBkeTIocRMhuUWKlk0KOVrWW8WDr0_ONXryI8uJJlyIYTXqdIpg-fWSg&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"13:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

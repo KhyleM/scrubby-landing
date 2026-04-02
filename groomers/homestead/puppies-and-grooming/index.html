@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Puppies and Grooming","url":"https://scrubby.app/groomers/homestead/puppies-and-grooming/","address":{"@type":"PostalAddress","streetAddress":"28858 S Dixie Hwy","addressLocality":"Homestead","addressRegion":"FL","postalCode":"33033","addressCountry":"US"},"telephone":"(305) 247-2447","sameAs":"http://www.puppiesandgrooming.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.5,"reviewCount":174},"geo":{"@type":"GeoCoordinates","latitude":25.4978828,"longitude":-80.4486388},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJLXKrRnnd2YgRzze20Q_rm5E%2Fphotos%2FAU_ZVEHO0Y8pbC3QW-P35RV93YkymLOrq-w3CRZC7qBo5ErMie7z0JkcadPb-KnYwky_wqhpOHoCtW-UEcU7AyLmSz0Hm0JRiDw22SWWHGptC8hBU6xqffHij8tWQm0a1dU9HRpbF_yGCONv_g1JlhRG_jnGDL6c5L6wdhrgnZZH_vIo_lpTrr_85F_DtNcuxsqH2AOfMpYlD4G7hksj2X5wMcQ7DiOXa7uChqBFpSuUEvL7IlQkDGVS0Gne-VIKR2NpPzXHyGB54BTqLb3xKuyaU8V5_59ZTk11_JOf8JiFT7znl4F-hckQkT1Ui83Vt-xmyCRjpyWs1uJORjE8YZNhElg4jFAikeL0-l1YsoGWBopb8Bvn2YCm3toK4dxta4lE25E2mQtf8AkkwC6C9CB8H3eXPdGMAMxJZf5KFi9Y52BQC7ez_k4QEz5ACt833w&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"15:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

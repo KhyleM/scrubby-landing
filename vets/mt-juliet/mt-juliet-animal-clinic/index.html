@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Mt Juliet Animal Clinic","url":"https://scrubby.app/vets/mt-juliet/mt-juliet-animal-clinic/","address":{"@type":"PostalAddress","streetAddress":"11161 Lebanon Rd","addressLocality":"Mt. Juliet","addressRegion":"TN","postalCode":"37122","addressCountry":"US"},"telephone":"(615) 758-8333","aggregateRating":{"@type":"AggregateRating","ratingValue":4.6,"reviewCount":173},"geo":{"@type":"GeoCoordinates","latitude":36.2313312,"longitude":-86.5120366},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJZ-uI4RI-ZIgR1itHyBA9pus%2Fphotos%2FAU_ZVEFaH-aqZaH4rJsyKnrH4L6gM6mhQdvz_o7DMQtW7MfOJCXusVwEBAcWDj6hv4bWWEdXcBGftu89K3pJYSMHXSeym55ydZy8miMo3VusCBcMahbpS5T-BQRDxPOCMXhvHFZyiRPbvJ1zB7yGtWqmLxAkzgtLDOnVPiac_M9Z19TvoHBMa8-LvBbVtWNxl1pBrGcWBxJZvQLw69p-D9graDPnY4Qoqs7YNRHnj_Fv6NAc7zsuS0f9zFYwsFXetV7DyI_tDnSy9rtP6dmeoFgGcbmtz9401mJSB9HkoVbMLf0WWDQUpBrbZtFvREI1D7nqA3LXv0Rzfox7rn9xTQQgnE4cLMD0csvqXboUyKKKTYP_sw9RfEgb_bXpicdTkqQi4pIB0vcChT-dVPPEoXUYy2WCIkRjt5nJmzPKF1h93krS0nkYEzIf3KswGgXPku3W&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:30","closes":"16:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:30","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:30","closes":"16:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:30","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"12:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -359,6 +367,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -394,6 +403,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

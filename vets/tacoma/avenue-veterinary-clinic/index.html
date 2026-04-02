@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Avenue Veterinary Clinic","url":"https://scrubby.app/vets/tacoma/avenue-veterinary-clinic/","address":{"@type":"PostalAddress","streetAddress":"5039 Pacific Ave","addressLocality":"Tacoma","addressRegion":"WA","postalCode":"98408","addressCountry":"US"},"telephone":"(253) 472-3359","sameAs":"https://www.avevetclinic.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.5,"reviewCount":358},"geo":{"@type":"GeoCoordinates","latitude":47.2102171,"longitude":-122.4337112},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJE2bcDsL_kFQRFQbxzXOtz-o%2Fphotos%2FAU_ZVEGgVbT4OGpqh8nYFmvvN0ZL3BnuXiTynvdVqz7Za62yaPBG8bn8l_OBgyOENLE84ZBvajGBGwd4XnV_eY6w1yCkgIIJPaE_f49mJTEtixwHMQ3lK6t61ieG6P7_UJjfjvjklCh72AZjLD6W8i0UERr3Fxq21NVWa6o1B2ACQOegd0KhQxxJztpKRZbG6MQPl6KEaD8zJXkC454YiQKWyDrUfFT1UMr-K03Kcg71hR34VU7chcrtTuw0Mjty5jXUOo97Pq83DIzDTIXezM1wiWAgHT-dNvZfzhtaCCTDrDJMTwyDWOaLMqaFS08b3-Ol2-TpmiQYIkQH00lWo_G6Ibua52aDjr9slvlpf_uCZCmBQFy9sy-zM7xU3M5PK3Yg8P0kg9soJz3xjEk8dtvEVPKeVDB-oflQAUxaw4HvQYibzCc&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"12:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"12:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"12:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"12:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"13:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

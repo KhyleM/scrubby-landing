@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Gagnon's Pet Grooming","url":"https://scrubby.app/groomers/fall-river/gagnons-pet-grooming/","address":{"@type":"PostalAddress","streetAddress":"2046 S Main St","addressLocality":"Fall River","addressRegion":"MA","postalCode":"02724","addressCountry":"US"},"telephone":"(508) 674-2349","sameAs":"https://gagnonspetgrooming.top/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":261},"geo":{"@type":"GeoCoordinates","latitude":41.6802275,"longitude":-71.1778274},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ3yF0yU3_5IkR9Pf_QK_-UJw%2Fphotos%2FAU_ZVEEYMyNAfcrtC2yt-YGbhcElB9qojGuCBkbcti80T4IKcok1rwldSYyC4LNCzw9IvX4A4fEvqKZDU_bcu9ZgQcKdB-SLhEtgk-jOdSvFP6Tm93punFTQLVUdHZjzxOBeUg3j_n4USLi6aHe-FhzVm2GLoX2U-DG898eBMQOSX_oU03yzTb2dAa9ajx-_OQVpEY6ocdyH7YoJvb0QVoCTH5ny5eydxthZ37H5ALoSTCr0cqRB0FUQ9eI4RZU_c7dSSwgpSTRGczC_4uyDPU9WZQh-u4XLeXr8kGqeSJVi7fkr2w&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"06:00","closes":"14:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"06:00","closes":"14:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"06:00","closes":"14:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"06:00","closes":"14:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"06:00","closes":"14:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"06:00","closes":"11:30"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Dog'on Salon","url":"https://scrubby.app/boarding/whiteland/dogon-salon/","address":{"@type":"PostalAddress","streetAddress":"189 US-31","addressLocality":"Whiteland","addressRegion":"IN","postalCode":"46184","addressCountry":"US"},"telephone":"(317) 888-3647","sameAs":"https://dogonsalon.godaddysites.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":166},"geo":{"@type":"GeoCoordinates","latitude":39.5525544,"longitude":-86.0875129},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJVVVVVWVea4gR4ESkcBTh28M%2Fphotos%2FAU_ZVEE86nbVCL23yGYmL54LTA4PzT-yX2pzt9YCCnJFwO7xeyIfu_2Plclv4fAK4lTga6yh5m6f6jG_jix94L3DvhgJ6iOX_WSHQHpWLGsBJqZ7SgmyS5JE6Qa0bu0qxuGAQambNYD8AYmtqQgmKzXwW-XeTOyDSzItW5xaMY4VVmVL5dEWsX8RfBIOM3j_R8gUETFkCJa_lPMHlziES_jKRU24DYoxJja7ZaV9oBoMCOXOboWHrg8cTCj-xLBg6mANc8UXdIA8rE2pOPhRgcjCN_wqpdcONCPizA4gac2V8VKOeA&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"09:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"09:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"16:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -364,6 +372,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -399,6 +408,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

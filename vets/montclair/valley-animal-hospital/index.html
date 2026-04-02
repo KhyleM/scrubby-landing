@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Valley Animal Hospital","url":"https://scrubby.app/vets/montclair/valley-animal-hospital/","address":{"@type":"PostalAddress","streetAddress":"1171 Valley Rd Ste A","addressLocality":"Montclair","addressRegion":"NJ","postalCode":"07043","addressCountry":"US"},"telephone":"(973) 509-5225","sameAs":"https://www.valleyofthevets.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":412},"geo":{"@type":"GeoCoordinates","latitude":40.8616096,"longitude":-74.1942338},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJNUYSfrX_wokRPMvgQJqFuc8%2Fphotos%2FAU_ZVEFaQ7Z-aUR6pfFgA26Lb06EVlkFfI7MHNQXQiq7RJl06_GQtJkVB0-nD97tOMsleaAVAFWEEffK7WIhk2QNYfYidprTfSRpPIr0GBALZDwPp8LAOLPIBeXigByZhExBdl_gRzWacctkX_O7CCQBoU4Awxnn9MNP5nwXuqo1xRgkiU8-YivAKwfvZnzB4E060W2ML0KOR93OpGGNqk1lUX3gl2MdiUG4Qmhgzqt_4G__bRbLP_U3nFn_9YKAWHB9272LawxW-A0SFy4VQuniIlU5RhcmKaPt5amaS1q3V3HLcw&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"13:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"MAC Dog Grooming","url":"https://scrubby.app/groomers/ozone-park/mac-dog-grooming/","address":{"@type":"PostalAddress","streetAddress":"105-15 Cross Bay Blvd","addressLocality":"Ozone Park","addressRegion":"NY","postalCode":"11417","addressCountry":"US"},"telephone":"(718) 843-3879","aggregateRating":{"@type":"AggregateRating","ratingValue":4.5,"reviewCount":230},"geo":{"@type":"GeoCoordinates","latitude":40.6799037,"longitude":-73.844118},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJiT4Ht_VdwokR6oCTmvMMxWA%2Fphotos%2FAU_ZVEFbq57EahSK4QkY7VTxvqykY_IGhOtGuAJc3WOstLBZcE3XtVVy0qrkrvq9iFjXwYFIpuxA7MW5A908jaXEnSogs_y0DwVtBs0gCF3Ms-wVlU6gF4d4yvpXqayTmaovJtxZzO3yfznNEzv5MpWttdC4LyOq55bpMuIH5OlspE4Vd-o2Cy1EEQnJGJctgk83fMuUjWpoAM89PSxSYmtKJOVR6AgfJk7YleULCbxcIw3Aopjyp4KZ4P9YUN21zpSLu2XsUis3HPkm6fQykeWGbJnBB-m_lIqmTHoNJ66YKcvOVFeGz-N2zMXMh6OCeQSqb3poaYDeUZQK_fKoBmk4lt1losdCnnsX7t-h_nTiluL2j6xmmfzU97TXohwqFS7i0Z4RTBPI8NY8AaiKMqsClxNIo6oMHGU_aZsE1SSxJR-bVJwXmRwtI49AjxXzs1iQ&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"08:00","closes":"17:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -363,6 +371,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -398,6 +407,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

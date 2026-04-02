@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Doggie Days","url":"https://scrubby.app/groomers/chula-vista/doggie-days/","address":{"@type":"PostalAddress","streetAddress":"2449 Fenton St","addressLocality":"Chula Vista","addressRegion":"CA","postalCode":"91914","addressCountry":"US"},"telephone":"(619) 271-7485","sameAs":"https://www.doggiedayscv.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":100},"geo":{"@type":"GeoCoordinates","latitude":32.6536428,"longitude":-116.960452},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ6VNx3BRF2YARmH3oKUf3QQ4%2Fphotos%2FAU_ZVEFYziyOmFebph7WIZUKQULLiPMgCHaBscujmucwKVs8e4OUZhrENmHvjqsZqUXcIzlLQ0YU-04d_mV92aEy9Gj0oeZTAQr1VnbmOBJ1tDFkuaHwYrwh4vYjZSzpTRHAhLBv0Qg4wWSvi1tXHWDnodBTKbscHYSr-OUUk2vWwUJn-V_Hp-1Ul3eaXcRlzMaknWHtNmPR0hqiQosRjCJ0JWLVi2qNzn4y1cCAharV0KfHfb6bX6ApttnI-_9z4HY2xXfdmc5juQ_k4laweVY7av-86hboYlsore2Z2yRMYlv0eIBk6sps37Detkg5Hgi9S5aRO1r1YzdQD5Y8hjVZ0aXS7taNuiMJajA7QG3lEtqXMk0t-0wCPffq4lAeDyu03v1cOrqvmGtb7g6e3elDKjcQyM9Jy11KmxYjvadixdw&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"17:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

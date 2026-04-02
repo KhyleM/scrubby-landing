@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Valley Oak Veterinary Clinic","url":"https://scrubby.app/vets/scotts-valley/valley-oak-veterinary-clinic/","address":{"@type":"PostalAddress","streetAddress":"4650 Scotts Valley Dr","addressLocality":"Scotts Valley","addressRegion":"CA","postalCode":"95066","addressCountry":"US"},"telephone":"(831) 438-6546","sameAs":"https://valleyoakvets.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":68},"geo":{"@type":"GeoCoordinates","latitude":37.0491998,"longitude":-122.0156601},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJp5ZOncpAjoAR1SvJFGpGD_k%2Fphotos%2FAU_ZVEF6uaJLMN3B8TNBhtff9vhMiylSpNSXnUACbHdYMi6jEzkWY8FUopEGAn3_zQT-QCRYvyT7mBOKWKWqeqzkDftY6PqTlGP_vJi4K0FCvJRgvAOnAEPIF6o6OlZLc_WuJj3RTgUWvfC_T8kzGTPTrsbduq5E6lw3XBX7kMyczV-t3jf_JG8aiu5AUYlo9G-r0Sd7FyzxlLW_3onn-n13ITySM4iHB4EcWqvif7ZLgo9vtsPaEapNUnbsHyAYSlVzMEusQBji4ksWSwaz3MntPO_5qneJ-xM2charpTGZ5sAuFg&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"08:00","closes":"18:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

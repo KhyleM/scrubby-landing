@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"University of Pennsylvania Veterinary Hospital Emergency Wing","url":"https://scrubby.app/vets/philadelphia/university-of-pennsylvania-veterinary-hospital-emergency-wing/","address":{"@type":"PostalAddress","streetAddress":"3900 Delancey St","addressLocality":"Philadelphia","addressRegion":"PA","postalCode":"19104","addressCountry":"US"},"telephone":"(215) 898-4685","sameAs":"https://www.vet.upenn.edu/veterinary-hospitals/ryan-veterinary-hospital/services/emergency-service-critical-care","aggregateRating":{"@type":"AggregateRating","ratingValue":4.5,"reviewCount":337},"geo":{"@type":"GeoCoordinates","latitude":39.9512781,"longitude":-75.2010098},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ42FzyFvGxokRACviX0S-f2s%2Fphotos%2FAU_ZVEFhK_UrCjScLjJzUA7t85nudfdIEMmG9a0MxBR6G7LuywQs7AHbA2No0qdAFsi-Ug0ILuxm-Rny6vaZmSvPvr67afzHFfHQRioIi-hwoA3t2bvjPnI1OGTZubykjdhzKhEQdZi2K1ybd9iiotyYSCJE6kJxSRJ9qIVCipTea5WNBJAkxbmmrGExKK0A-vt3Giy4-vnTOaG7S7Lt-w5GQo1-npRMDiFnqgplS9-VE8EArOyhPPvjw3D4ohRONLMq6zuqZYaTACd6E2viP4VcP_lOXDvkMadOIdHmoIU7MkQaQe6Ee2J8BcMKhmuzlcz1ACPjD9H9Y4owb7PimZY9J9ylcHpi4RceTrdmxiO23TVWXhJZXEjxSZCGMmDM_AsyDdcpCcMbxmBxc7lbRCkd2qamZFh_Z269cmQpPLz02d04Hg&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"00:00","closes":"23:59"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

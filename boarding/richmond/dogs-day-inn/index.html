@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Dog's Day Inn","url":"https://scrubby.app/boarding/richmond/dogs-day-inn/","address":{"@type":"PostalAddress","streetAddress":"213 Granite Spring Rd","addressLocality":"Richmond","addressRegion":"VA","postalCode":"23225","addressCountry":"US"},"telephone":"(804) 745-7173","sameAs":"http://www.dogsdayinn.com","aggregateRating":{"@type":"AggregateRating","ratingValue":4.6,"reviewCount":314},"geo":{"@type":"GeoCoordinates","latitude":37.4975618,"longitude":-77.5311705},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJZd0L8pASsYkRph3rJrxHC2E%2Fphotos%2FAU_ZVEGuSDxVYyQ6Zf2hN7G2Rnr2oPZ0QrhYqTej2aAAEhUAf_5o_eqNC2WIGntFidfgOvQ5b9NYhgJEuLPvg6sdYBRk7ssLoyVsIZgQJR1gHQp7djlFJ14Kd4bFTiMas-DKi3cw5J1GA_DsW9fIbo69MPQ3p4k8Wb6WRbhAT7WiXSnzrs7lvv6DjFiEcEHsDmzOZMhjHnkt2PsJz_pYaULlB6g4NNTN0Nek10aAB0GPtjGpruCIKebozMtWIJUA0um6bJieSr6OCNU-1seFX212Yd5748ro9jsvGrK0XIO9diAvmU4teu6xw3p4RGTdjMeLJ0FT6QHf2KYvj34sKMutF-f0mFeSz859aAL_HuGJn6aCfaDr75WN9e_Swq-rTdD8tzQWiYJNJnHsJR8_wyV4oVYk-NcxMwThKK8KPYza_NAqz-k&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"04:00","closes":"17:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

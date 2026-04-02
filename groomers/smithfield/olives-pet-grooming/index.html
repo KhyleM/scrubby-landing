@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Olive's Pet Grooming","url":"https://scrubby.app/groomers/smithfield/olives-pet-grooming/","address":{"@type":"PostalAddress","streetAddress":"375 Putnam Pike","addressLocality":"Smithfield","addressRegion":"RI","postalCode":"02917","addressCountry":"US"},"telephone":"(401) 572-1332","sameAs":"https://olivespetgrooming.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":18},"geo":{"@type":"GeoCoordinates","latitude":41.8707777,"longitude":-71.5231083},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ22v_nuZH5IkR7-uY35ZYK54%2Fphotos%2FAU_ZVEFu4uL2sodJ3poUUnzJtVUJVorNutBF8J5XmzG9GX_KjPQ4BB2BtxuoSQaGye2k70v7LyPF_PEoBBxdVSTuITypUgm8PU1k58jgh_qtI7dxvSdjJ9fofqjg4cK6xq2G7FqWsjZ_aYXXh2Tvun4FaNeu-QUiWAMm6RG03HNf8SB6HOdktvU5BGwiVDH-UKYjv2nOIcGTZqdHQiuqQEXSWXcYS2aMhK3vFImLJYhY8BIDK0cSiGP5jYdSCCM_8beUnuJuhEe14cQqUJMgOw02cRSthpgzyTduDfBKwKj-ILpOgw&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"10:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"16:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

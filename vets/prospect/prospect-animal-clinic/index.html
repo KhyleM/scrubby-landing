@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Prospect Animal Clinic","url":"https://scrubby.app/vets/prospect/prospect-animal-clinic/","address":{"@type":"PostalAddress","streetAddress":"9217 US-42","addressLocality":"Prospect","addressRegion":"KY","postalCode":"40059","addressCountry":"US"},"telephone":"(502) 228-4135","sameAs":"https://www.prospectvetac.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":55},"geo":{"@type":"GeoCoordinates","latitude":38.3411075,"longitude":-85.6189891},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJO82FHj52aYgR2Ar5RFvuEhA%2Fphotos%2FAU_ZVEHaA4FKXMRUKR3Je-fdiNBtMDGkjjKOn4-G-9TnV6mDswD-J8nCgx6a8FRDIbl4tvouYEOUgkT3IJcDvFEGulPZGZbV0__DT6sERzHxCwBul3_1rioKSqo05FbFC_SHWD9VT-J0B8aOP99vRH2GW69odEL3VzDpGlignfY0b4qt4eT3QTCKZtRHgcCXT4PMEYdDRgVaqpfHMlxye2CHe06jryy_OP_L8oYY5CG63nIWZWY94NDrRiVgHNVNXYCCvk8WIDCxBnA7YjD9RJYl1ROzWVW8bcLG9t1T9h8MP2qdxAh59QAyPt3wVcCKEbVhzav5hpyin4uS_gkbdnWMTVPD79hlK-GNcgHTOuQGFXBybjOxprHIrkBrz3zkhD6ZRWKxCYYw2fM8X_Z-5WGRsQ4KYB6N_s767SQmiq4Y4YwfL5d7&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"17:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -358,6 +366,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -393,6 +402,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

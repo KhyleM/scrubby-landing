@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Dogtropolis","url":"https://scrubby.app/boarding/south-euclid/dogtropolis/","address":{"@type":"PostalAddress","streetAddress":"480 S Green Rd","addressLocality":"South Euclid","addressRegion":"OH","postalCode":"44121","addressCountry":"US"},"telephone":"(216) 291-0605","sameAs":"http://www.dogtropolis.net/","aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":381},"geo":{"@type":"GeoCoordinates","latitude":41.5404439,"longitude":-81.5300773},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJqcoK6nX-MIgRQh2_Jy61w1U%2Fphotos%2FAU_ZVEEEXJZq-NDBYID_bTaEy7KKVmb474Sk-dUqjGiftfkTiGGBmwhKh_SfaHrwmeCSgwACMoPKudEHhWXl2fNnpUjbSvSCOZ7gzopY09Vmhsv2VQuoiRMREmN7szFZlYpWt8yMRSLckVFeyc6WRQpeXj-kkiCCMfub0c_meBv2-jT7vHJRP2MSi0SsTr4enLZ_XvTfaEZ7w4fkkHiC3XOeWMKHbv0HVJ-jAduAWHEE5flzRBc06k4txcOc537-LlYMxQWts0xwq7jhb7KzX31hREyaLld3whGm-9V9-Eokd72x1A&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"07:00","closes":"18:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

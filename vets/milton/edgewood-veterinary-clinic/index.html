@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Edgewood Veterinary Clinic","url":"https://scrubby.app/vets/milton/edgewood-veterinary-clinic/","address":{"@type":"PostalAddress","streetAddress":"900 Meridian Ave E Suite 1","addressLocality":"Milton","addressRegion":"WA","postalCode":"98354","addressCountry":"US"},"telephone":"(253) 927-4546","sameAs":"https://www.edgewoodvet.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":616},"geo":{"@type":"GeoCoordinates","latitude":47.2494044,"longitude":-122.2962138},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJVSmHYPD4kFQRYKXlf3ARkNI%2Fphotos%2FAU_ZVEEi8iq24QZkcspg3r3TsUoxrJ8VjsKsuB_i7rc8N8wP2ZT1kI4WQ2Aldqz-8IFKG3mX6818EpUcKkjqfuGjGR0fOdnqTqQVlo0AdPqkImQfDDisipGADHh88Huly8ad2su9SpQRHlDWDJPGsvPxl2FHGWmO16zGcyfxF1tlCfx2us4wpStwd_T6jczGz0QXAyIDX2ZDjiITdX_v7zN0I3URhgtKIIgCzVEhWh281rYxaGymzSK_Gnb3I_Yebk1FUXi_Aw3DOyCBNj-dQIj77lEV1kU2TDWpLm1JhXRV3UaQrQ&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:30","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:30","closes":"18:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:30","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:30","closes":"18:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:30","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"16:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

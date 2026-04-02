@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Just Cats","url":"https://scrubby.app/vets/stamford/just-cats/","address":{"@type":"PostalAddress","streetAddress":"1029 E Main St","addressLocality":"Stamford","addressRegion":"CT","postalCode":"06902","addressCountry":"US"},"telephone":"(203) 327-7220","sameAs":"http://www.justcatsonline.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":473},"geo":{"@type":"GeoCoordinates","latitude":41.0564086,"longitude":-73.5186899},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJZZiuc8uhwokR8-TGKLbVGGA%2Fphotos%2FAU_ZVEG524bsdBMhFRTRdfbFWhs1mlrAZeBUfy7RRY41RTNRVlc643xFKBNAUt8yRpTuNol1dUCZgplNMz-r6ysAp1rTNWiJOCTlElJIOjHeGTcK3ZxODSk2waO5wyxseGgSMZD0oTWqvSDCcHSPjV1T0sorTEs0vxiYHj6EpSjDqlQlNCOCXg3Oq1ZcvL0vskGsynnyrtAMUHR3ovBuW22Sqpn-B7a7uYtbJC-3pleV4Ovo7no3qD7DUMsuo--imsynnIgDQxATLfdPjlLldgY5Is1xqeOaRYPP5jH-OUU684ktjP5U3mfyM3A6edAfIvrIjKRPuyK93NCMZ5_GBnc3PqcJHAuvO-nwG57QFePu9vupqWGVuOwAaCy0lD7AbaHIXH10sbDnNuwvoiNpyObACWJ3Y3lNupxbRozurbGJAlnaqQ&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"07:30","closes":"14:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

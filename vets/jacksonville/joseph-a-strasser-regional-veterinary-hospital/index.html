@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Joseph A. Strasser Regional Veterinary Hospital","url":"https://scrubby.app/vets/jacksonville/joseph-a-strasser-regional-veterinary-hospital/","address":{"@type":"PostalAddress","streetAddress":"468 Cassat Ave","addressLocality":"Jacksonville","addressRegion":"FL","postalCode":"32254","addressCountry":"US"},"aggregateRating":{"@type":"AggregateRating","ratingValue":4.6,"reviewCount":341},"geo":{"@type":"GeoCoordinates","latitude":30.3208281,"longitude":-81.7310254},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJgfJTHqm55YgRJ6MmWhPoOA0%2Fphotos%2FAU_ZVEEZBu4HHw7AGH7Wos5_6LLj6uUiMLJ0emRaGkjSVud9zLvzwLuuZhYBouiHLNKoFUriqABcGOSUAntcORv6nqHdP9W_bP6dYcLkUBFNSzPrL7dYZWk0cWVAIbRjxGIM6BM9w8OGXMxBeTmNz6S1ycyMENwK1RCYwVCtlMgiDXCbblUItKL6CWp7PXHOKaTkbHY8hM7d1eFyTkvqBr8PGp3vSVHrUz9peSbPb6crnVM5idd_o6dTwNR9ps930hiWVYSlBaopE-aacxBi8QGWx0xTQnBYRo-p0w-b4No_sPXogOKiCyFwjRzP_c4Sh8_fWvV9ozI5xXvZ1AVFKOOaUVQV4ILWUnKN_mkl0VvsTC3p23L44hW0KcxBt8ajIqTneQSHvNxTSoQLegYKu_zoHXgR6w4owMGkZ2AvqE6pilafAip-VX6A8hLnheKxGmlz&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -344,6 +352,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -379,6 +388,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

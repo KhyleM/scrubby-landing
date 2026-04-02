@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Greener Pastures Vet Clinic","url":"https://scrubby.app/vets/hebron/greener-pastures-vet-clinic/","address":{"@type":"PostalAddress","streetAddress":"1000 S 575 W","addressLocality":"Hebron","addressRegion":"IN","postalCode":"46341","addressCountry":"US"},"telephone":"(219) 313-8628","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":26},"geo":{"@type":"GeoCoordinates","latitude":41.2886101,"longitude":-87.1754352},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJwyzF8KyLEYgRRNw7z8K2QRs%2Fphotos%2FAU_ZVEHJVlWQun1NwruIAV0HqY1rGsIoOaLrnwamz2HOcWXn5pymLFQJVq1E-DQOQGjQxKo74Uyfv83gbjOTQzyPD5UNTnfSkKaUXa9gLXuFCRmUh0qNtM--nb97V9VuuvpBskijRdTJjqQB_Ufd5BIGxY_Cqv5TovQoHARWpuloqWePhP_TRNas-xNKzqwJGK-gXpoyeVM5pfjlBYGVZmzWFEB6VpNf5rXkDy7-ZzwRJrJDQvQN1_9Izz6ta4uw8EBIMTGbgI69B8E5jPb4kPbnflGjUPhw5cnwS94iH9HbMQ1yBluMWMbjKYNpNezEcn3ZQynDx-QK5A_Mfh9ThtyYZRlu-6banu4aZnWoa4jsKzQUa3N7cv1Bc8Wm60JsJa4WrINuh_3HdkVKHZ-m-MudnjF9_Z_Mx1dMqyZ4SCtffujZ3dAy&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -345,6 +353,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -380,6 +389,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

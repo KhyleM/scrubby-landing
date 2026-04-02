@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Puget Sound Veterinary Specialty & Emergency","url":"https://scrubby.app/vets/gig-harbor/puget-sound-veterinary-specialty-emergency/","address":{"@type":"PostalAddress","streetAddress":"6565 Kimball Dr","addressLocality":"Gig Harbor","addressRegion":"WA","postalCode":"98335","addressCountry":"US"},"telephone":"(253) 528-5406","sameAs":"https://www.pugetsoundvetspecialists.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4,"reviewCount":200},"geo":{"@type":"GeoCoordinates","latitude":47.3178217,"longitude":-122.5857273},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ03TZ_sc3kFQR0CveY3E4ekc%2Fphotos%2FAU_ZVEF4vILvCvN40nPJ2-D9SOSMpQkpE87-kkJlW4cAI9jZ5pZEJGKxgr4g0Ss_EiBnZGPBCm_rxSIJzcZZ_-xwajxnBmX3ZAb_s5wftnEVVQCeijh3QPoKQKnMDFs-Aq6_KbQvU8gC6EXw6P82lR0B4RhnjR90ksXfncF0gQwsIrhk0L9DGzeMay-5aUqlq2CpxZ14_dyQFfs6MswOAY0u0a0B1GMAMYzocKQFNGLNXPbcjzNDQtQZaPUnjEzZLwtNs2S9ZRlQLKd7yh5vkSQUijYzpWBPiIy6WxgAy2ZYUDeTJvIC5tKGHqDv99qIi_UxXIvwPpVLJAzVBGHx41nk-250W5HltZ84DtBEFLzLBMjRAmOv26zd5GbJfQiseGW05DLndtiAnLPBPb-UeYcTF2fJlH3k6577mrD8VcjppmA&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"00:00","closes":"23:59"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Pieper Memorial Veterinary Center","url":"https://scrubby.app/vets/middletown/pieper-memorial-veterinary-center/","address":{"@type":"PostalAddress","streetAddress":"730 Randolph Rd","addressLocality":"Middletown","addressRegion":"CT","postalCode":"06457","addressCountry":"US"},"telephone":"(860) 347-8387","sameAs":"https://www.pieperveterinary.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.1,"reviewCount":1443},"geo":{"@type":"GeoCoordinates","latitude":41.5335081,"longitude":-72.6403018},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJMzbG3Io15okRQykS1ZBPB40%2Fphotos%2FAU_ZVEFu_6gqA2D6MVtxzEpPS9q9McbtxSaQ1nXnd2zhg7PJoprSdBcMy6642BdfXfFnqABFApu-0WA7oTCnfae9cZVQARAtOP77BtCseniO1QgVd3_fpkvX__pdvqPC-QLxSwTcUPKHjB__5buIVtx-taCLRXEduncXboT4PQAGhGw4aHIb9xJN4iCzmDSXZFSaL5IPAp38xYAkIkzGztp2E6UBeXF_tYZgam2t5tZjhbWPon_MM_uPD6WWXrFGrRHsmY7vC03Do-lArF5XPN4YdVtpeybdlsi0K2t9Db65ddUMYA&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"00:00","closes":"23:59"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

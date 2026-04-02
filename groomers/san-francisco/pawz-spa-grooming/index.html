@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Pawz Spa Grooming","url":"https://scrubby.app/groomers/san-francisco/pawz-spa-grooming/","address":{"@type":"PostalAddress","streetAddress":"2826 Geary Blvd","addressLocality":"San Francisco","addressRegion":"CA","postalCode":"94118","addressCountry":"US"},"telephone":"(415) 828-6808","sameAs":"https://www.pawz-spa.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":27},"geo":{"@type":"GeoCoordinates","latitude":37.7824548,"longitude":-122.4495768},"image":"https://places.googleapis.com/v1/places/ChIJxzC3QcCBhYARDqdk4bb9euQ/photos/ATCDNfWVIUJP3B4OLmDb7ssqURakxXtuWpj9vOiVxeC5t0FkgwGa07Ln8i5ePnpQ_bqhkfNuvmaU276DQhpSrtlBz9roHCMt6T2IKLB2ENmM9dSdvy5zq7tPiF6i0UN_rvB1sXLDxQbzUmN1dyPSN9aB8qupQebb9Zx-LAoj1QcmO4on3nzyp_820BNqr1aW3KivEmOM03SmVHtHsZNOnFq1KwjaK9NWneK-It-qMzJe-3-aP2CWSCegtrTgYQw5NRn1tlj_2-sf4PIDX7S2va0FQ1Hwpk9PoVCs2oK5Z98oEuEFyQ/media?maxHeightPx=400&maxWidthPx=400&key=AIzaSyCpmbfD6svBtJL5OpHfeph6xPVzLlf7F-g","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"10:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"10:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"10:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"10:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"10:00","closes":"16:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

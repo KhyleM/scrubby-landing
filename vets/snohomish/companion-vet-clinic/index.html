@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Companion Vet Clinic","url":"https://scrubby.app/vets/snohomish/companion-vet-clinic/","address":{"@type":"PostalAddress","streetAddress":"17424 WA-9 A","addressLocality":"Snohomish","addressRegion":"WA","postalCode":"98296","addressCountry":"US"},"telephone":"(360) 668-4810","sameAs":"http://www.snohomishveterinary.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.4,"reviewCount":114},"geo":{"@type":"GeoCoordinates","latitude":47.8382386,"longitude":-122.1255028},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJIbgShYkIkFQRNMUjwCb48QM%2Fphotos%2FAU_ZVEHuuyGPKceWzBNkRdUExMHGsCcxep_e7do91vMek8U-eUpf3BKc9omTFp_7NFz5I4GcMUuFMkSV2GeXG_ZBTv3r5b1cD5wLacIwAiRkCvhmTLsdVVM9DUg_Ps8SxPlJJMwbUTEiaYZx84ztWusoBjVeYs4F1RTAwujcH-tR3kKbOeozuC3YbRvXz3jT-zYAZSA2_aXtqd5qvb1qa9PItKbdWZDhmYhUoSLv1HRk2CEcxQAmCSzolquX_oAKqZXvdYlMU6M8NvyjLV_3aVL-BYuDP897dUxiV7Ck_6E98zql2A&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"17:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

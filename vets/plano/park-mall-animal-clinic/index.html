@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Park Mall Animal Clinic","url":"https://scrubby.app/vets/plano/park-mall-animal-clinic/","address":{"@type":"PostalAddress","streetAddress":"2721 Dobie Dr","addressLocality":"Plano","addressRegion":"TX","postalCode":"75074","addressCountry":"US"},"telephone":"(972) 423-1804","sameAs":"http://www.pmacplano.com/","geo":{"@type":"GeoCoordinates","latitude":33.0345355,"longitude":-96.6978712},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJjd6Z-wYZTIYRFi5SPCfGd9U%2Fphotos%2FAU_ZVEGHUcTQp9-BT4OSyhOSR8_L4Vyq4xatDClUzGzW2L1j2_5s27QWnccpmtr4-9B6AUtGGKLTTJDruW04l5LRLic7SAiQiyz34UMYSAYuc65QsP0BcEESXN_7DHY7bWtd8bIyjujKGkgDsn5hiCkfluHkRP-EoTZD2fW2b3GfBvueMrfSlGctvO5CU8nkv1XxhT6TzpqLHKfHM3ZWCiPXSSDIGo-2Dzw8LRqdsVUvTQwdu0vAAIIA-YmYrCbC82uhbYLgVwK5Ue1HXrvZX2hq2Aus3Rx4ZswCJntts5iImSGn5w&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"11:30","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"14:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

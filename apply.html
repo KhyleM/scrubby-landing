@@ -276,6 +276,14 @@
             }
         }
     </style>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <!-- Navigation -->
@@ -602,6 +610,7 @@
                 if (response.ok) {
                     form.style.display = 'none';
                     successMessage.classList.add('show');
+                    if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
                 } else {
                     throw new Error('Form submission failed');
                 }

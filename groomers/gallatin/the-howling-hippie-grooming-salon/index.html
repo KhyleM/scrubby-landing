@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"The Howling Hippie Grooming Salon","url":"https://scrubby.app/groomers/gallatin/the-howling-hippie-grooming-salon/","address":{"@type":"PostalAddress","streetAddress":"207 N Water Ave","addressLocality":"Gallatin","addressRegion":"TN","postalCode":"37066","addressCountry":"US"},"telephone":"(615) 899-6026","sameAs":"https://www.facebook.com/people/Howling-Hippie-Grooming/100083228955814/#","aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":19},"geo":{"@type":"GeoCoordinates","latitude":36.3905465,"longitude":-86.4466886},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJm660h0oxZIgR-kdFZ5dIUoE%2Fphotos%2FAU_ZVEEolNCjvFc3RbWc289pKyOGje9rbStAdaiybyIaHjbxAaOLThheehv11IA6b5r8aUCrHPc5GKj5Kqi1qppN0IANbthuT9ZDC280MTfb3nC7gU31R5NjoFazttkBld6og_zF4RgIP93oqrC1orhl__VJI1MatUy-1hD7WsC8ZJ5kq29Ud35Eqj1VQ2Js0C0z4diH9d19FZ4JE2c0qepk8JWjSKHsbKOD5e_wwTR61DL4ONewlyY47stoau_GLOOdz0jSL8PoqCyZ-OE37J_p-aI_udzHJrjHgMa2fULQo0bkpLiGNnAcUyr1Mo_jHX1CTcSwXwDFWM-9FrNjTnG4ftjIAk_8V-_L9OhbaWnnwAYDsx5QDIFCA97p2vCBQyB7GdGzlFC6am_1m3cxCU-luO4DAGxahftPF6dUbGnpO_aKepnwXFJXavTVk6ztn6Vb&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:30","closes":"15:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:30","closes":"15:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:30","closes":"15:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:30","closes":"15:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:30","closes":"15:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -361,6 +369,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -396,6 +405,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Riverdale Grooming - Popcorn Pawz","url":"https://scrubby.app/boarding/bronx/riverdale-grooming-popcorn-pawz/","address":{"@type":"PostalAddress","streetAddress":"3261 Johnson Ave","addressLocality":"Bronx","addressRegion":"NY","postalCode":"10463","addressCountry":"US"},"telephone":"(347) 843-0860","sameAs":"https://www.instagram.com/riverdalegrooming?igsh=cDFtZm93cGd5ejgx","aggregateRating":{"@type":"AggregateRating","ratingValue":3.6,"reviewCount":134},"geo":{"@type":"GeoCoordinates","latitude":40.8852777,"longitude":-73.9103776},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJO0k8r77zwokRYRoBrCKZTJY%2Fphotos%2FAU_ZVEFIenlRdrAHHgc26BAYp0c_d36ZR3_dAKHTZ5Yy1N6kWZbwiK8-piOq0NegohTK7SI6DYa_8HNOW_hRPJZBebCFvCVvzatq4ghq4bCa4YtrxAd2DvotldRL_pzpEkr5nsX-ObKrVEnC05u1DjG7MYWgYwb7mUhOjerydm4R_2GqIAky7WCUQXjauYvhrdBmc4XB2YswgIUL66OgwwL_3YqJ_0xex38R4BWJkyt5fUpYqdEk5xshLbmN_52k6dqm9UuUjxJlNPOi6WugKqv4eiFgt8X5EblpI6qNWZ4vf2zp6Q&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"10:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"10:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"10:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"10:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"10:00","closes":"16:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

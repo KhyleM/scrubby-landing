@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Pups & Suds Dog Grooming","url":"https://scrubby.app/groomers/valhalla/pups-suds-dog-grooming/","address":{"@type":"PostalAddress","streetAddress":"7 Legion Dr","addressLocality":"Valhalla","addressRegion":"NY","postalCode":"10595","addressCountry":"US"},"telephone":"(914) 358-9711","sameAs":"http://www.pupsandsudsgrooming.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":29},"geo":{"@type":"GeoCoordinates","latitude":41.0738462,"longitude":-73.7751349},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJwTqslnCVwokRAWvUjfh8yWA%2Fphotos%2FAU_ZVEF8jlC9j4Su2MMhY3Azy802LMu3TgobX_pKoPZmb7O8kGbJKm54Tcw60mI0sWCZ-N5dkRLWUyDKETnwX1wQQ9sXFjeX3006dpb_LwXxXoOdh7hySnBRi25zt8SCh-4DDZ_ctu-DNqbZI0YtFtiMkpwSc5jOKNzm4YMZCrtcaFFli2LWkttITFv6IcVoQtScILBB3GxXThrXUGaXl1W6RPNUeQyCVzRyB-RN1vVA8CB9jfvsKpbQ9o7jZ_Sp864_bGvE7P_EjMv-b9Z6I2X9yk6rUfn2CwgGTcJazSTg9AP1jw&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"09:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"17:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

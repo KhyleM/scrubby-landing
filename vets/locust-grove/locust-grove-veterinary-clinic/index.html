@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Locust Grove Veterinary Clinic","url":"https://scrubby.app/vets/locust-grove/locust-grove-veterinary-clinic/","address":{"@type":"PostalAddress","streetAddress":"3590 GA-42 #1","addressLocality":"Locust Grove","addressRegion":"GA","postalCode":"30248","addressCountry":"US"},"telephone":"(678) 565-4004","sameAs":"http://www.locustgroveveterinaryclinic.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":365},"geo":{"@type":"GeoCoordinates","latitude":33.3537554,"longitude":-84.1143089},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJvQ1MH9tc9IgRX8ZUv4OpbgA%2Fphotos%2FAU_ZVEG8Gl2DkGpvygq7aakWUJeQMM_62OpdC33M8VDmDDuj5Gt8oWnjV40ipXUXgVeSwScr6vQqlMxd8LgouewqBfEvn_a_kKoMGCD3wdgPNNjiLuNASle7mth9Qx7cRAQbWqM54UcRXlAnrai0zohgVmBwpm2B4Des0r8T5H6j_uWnco8zQAtMhcRr1F_3LUY2GblZ4omRjvKnIi88jm-KQ0ujL3nBAhpEnmrEK0uC6w0588OifNVs7AgabfKb0zPoB2MDvhzYq5Dl2GtGxjm_tarQE72ioO7vnsB7vSwCheOxVJBAZTo5Dcqor9tv9rlqZ7_E_Z-Brq1s0LZ-8YxT9vK9xWuUn0VQY7kqMt017LPUBOpeijXfOcBYqyrGnyCah50mvBP0dU38l6UVykSh-2-VLWdPLjPKZADExwsQgRPIew&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"09:00","closes":"13:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"17:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

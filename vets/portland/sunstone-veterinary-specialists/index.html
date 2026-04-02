@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Sunstone Veterinary Specialists","url":"https://scrubby.app/vets/portland/sunstone-veterinary-specialists/","address":{"@type":"PostalAddress","streetAddress":"1230 NE 106th Ave","addressLocality":"Portland","addressRegion":"OR","postalCode":"97220","addressCountry":"US"},"telephone":"(503) 505-7255","sameAs":"https://www.sunstonevets.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.6,"reviewCount":253},"geo":{"@type":"GeoCoordinates","latitude":45.5317625,"longitude":-122.5534334},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJkZnUg-uglVQRGwWulQOZ7xs%2Fphotos%2FAU_ZVEEC1pEvEyZMSTBkCQwgB0fqmpiSv88E_A-fCT52v3kW3Cv8jAdH-r24mhP9063gee53uyVw9I7QCXJVFVQBP0rBr7qdbX5IG-SA4y-8ZHTwzodraCMLPCxRS7a8nJL3vYhD6WedAdaqy_PyqT_vagVQxdEkO3GeVMlUEjJzo3Ov0P1UAZ1vx8JIzL4VwMuC3oyn9kqopdSx-wub1W0_fPhXIusx2KP0GpJngP4BUklmhwMPbjfbdSy-9P0L2bP_bKYEof0jILKeIU0Pt_4zKyUtiNGXPSVygG7evLYY68azf_7hA1G3yWjWKJJENtCwiLYnugsvlo2SVObHW9lclAVeT2KvfpBUPwZxhBgAP9lLopcMPbamKzr3PL5ciAlWy2evvTCrJ8akAUigFBuV6Zx8ch8WdJ3xGBv2H1h4iFI-OA&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"00:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:00","closes":"00:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"00:00","closes":"23:59"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

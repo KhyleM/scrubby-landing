@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Precious Pets","url":"https://scrubby.app/groomers/mt-hermon/precious-pets/","address":{"@type":"PostalAddress","streetAddress":"8 Madrone Ave","addressLocality":"Mt Hermon","addressRegion":"CA","postalCode":"95041","addressCountry":"US"},"telephone":"(831) 254-4401","aggregateRating":{"@type":"AggregateRating","ratingValue":4.6,"reviewCount":7},"geo":{"@type":"GeoCoordinates","latitude":37.0497274,"longitude":-122.0534662},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ1X5R1B-Th44RynhTo8TfVdY%2Fphotos%2FAU_ZVEF4PX0Ow6Zk8kuH3RJ4JMPOzMrfi_yTvMD4Vz4mmGh9nuZzWjmxqVKtzsThJKWtLfgao2EdfL4HW2Hc_kcGTU2ZWB0bkgUehm9tOl5Mi7ZOh-Q5X-1sXOitvre5tPYBBsj0oV3IpQ9pQIPNLTxl4M2psQwfTguGll9ZtIHhXEmRvNq_D42pHSyiZgm1iL2Ps3t_-SNfK8wnD0-FSycYhV9JrvAyBN0QURDDnDHB2PzTV27lgRGhyk4V_iLxrNPRM3cH2vXmOHkTLw91e28yxoSt7XZiAcqQIxkjvcBI1S8nwA&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"00:00","closes":"23:59"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -359,6 +367,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -394,6 +403,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

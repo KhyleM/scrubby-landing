@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"GG's Grooming Salon","url":"https://scrubby.app/groomers/south-milwaukee/ggs-grooming-salon/","address":{"@type":"PostalAddress","streetAddress":"1633 Rawson Ave","addressLocality":"South Milwaukee","addressRegion":"WI","postalCode":"53172","addressCountry":"US"},"telephone":"(414) 324-1768","sameAs":"http://ggsgroomingsalon.wixsite.com/my-site","aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":44},"geo":{"@type":"GeoCoordinates","latitude":42.9151937,"longitude":-87.8752335},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJzZvNCYQVBYgRrqG3SCtMLws%2Fphotos%2FAU_ZVEEJ_6IyW4abfh_ZKhQ0K73x2TyBeOHzWw7VAaM3ibPS9qBuhBZEhGrbNVHVSt86DMPkk-U7X3A8JThrzocfxjdWSNwCFJB7k1D8e-1XyCCCA2o_IeKYGEhEbD4PYrwCfD_QlliLVFr5tlfiJu74OktjAC-XOvLzquObccOf3N4ksvakQwUliEzTL3gBpgCRRRGL2QTgEN4RzdF28Tryx3hraaE0YFhHjUTH4fJxFi8rHvCrdl8dpHU_cgdf7fyiaWZOFpg9n0hKRdnR9ZCPAhEmpkrZp5cHnoPXaTx9bbZajQ&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -350,6 +358,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -385,6 +394,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

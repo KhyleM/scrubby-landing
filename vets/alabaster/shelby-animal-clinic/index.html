@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Shelby Animal Clinic","url":"https://scrubby.app/vets/alabaster/shelby-animal-clinic/","address":{"@type":"PostalAddress","streetAddress":"516 Hwy 119","addressLocality":"Alabaster","addressRegion":"AL","postalCode":"35007","addressCountry":"US"},"telephone":"(205) 664-3462","sameAs":"http://www.shelbyanimalclinic.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.2,"reviewCount":163},"geo":{"@type":"GeoCoordinates","latitude":33.2391962,"longitude":-86.8176235},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJS0f8t-AliYgRW-HdRI8rfOI%2Fphotos%2FAU_ZVEGgstKJAZd3GwWLgQiSy-USrQM6O8dmMLeohfmmgPy7WuqPsf6tVgcA9oSAeyR3aSGy7RzpPeKoWY2aDtHB7gj4jo0dxRK2AUKikfx-byYiW7meOrxHw3mr1Coi8J3XEZRZdNnpuLdT3y_7xd8-a8htmUedWyPmnzxaVVc-gan9JLzZF96gAR7OIDP8mbc3kVoSYWjSMDnn5c2ALPsxUuDN625lXq7cvauv7xFbTCbDFn0rv2tjvpVOwmJr4WtAKZ4F-2KwDmvQjKDr-E4CpbgcDxy_yge9c2hjMi67qJoNNz374Ydb4o8MUmyaOX9ykDnWwpeJdYO7WJHcGeoCt2Y59zWX60ofx3BeVyrh7LnPLNSdhIJOVwycol6pfcKXsZ01T_ISkidnKqVkBmBHzsniJhIroFcblhXz5V21L2nK4Q&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"07:00","closes":"12:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

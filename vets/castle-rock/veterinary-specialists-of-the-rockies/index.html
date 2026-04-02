@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Veterinary Specialists of the Rockies","url":"https://scrubby.app/vets/castle-rock/veterinary-specialists-of-the-rockies/","address":{"@type":"PostalAddress","streetAddress":"774 Maleta Ln","addressLocality":"Castle Rock","addressRegion":"CO","postalCode":"80108","addressCountry":"US"},"telephone":"(303) 660-1027","sameAs":"https://vetsoftherockies.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":3.9,"reviewCount":409},"geo":{"@type":"GeoCoordinates","latitude":39.407101,"longitude":-104.854346},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJvYX6E3SZbIcRH3CWla_HUbc%2Fphotos%2FAU_ZVEEgpGN3G7KdzGMQ_2dDqXHyBKGAA9xHxhYuTbYYxUPPj0T-a7hAUGrIn_K_ldnvBPdO3mNzVnxHG6j5rE5NllflijImL32XSqAeb27zvLzzL9d0_03uznSg8Rj_8wMz8pQIHIYz9A-ApElQD0AvEy3jWAkVZEc2e-y0v9wclW7Cm5aP1BVLGBmfmJwrDToWzwJnRpu61aK4oGC9OTg33oDB9O9z1eFXTS0eEUJhL9FfYqruNvS2Kl8tN6bcY3knM2GmWJF63afyPLDYy4Kp_YTz58bXR9o6eyJg1WuKuXPFqg&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"00:00","closes":"23:59"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

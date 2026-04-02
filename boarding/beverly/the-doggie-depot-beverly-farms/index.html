@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"The Doggie Depot | Beverly Farms","url":"https://scrubby.app/boarding/beverly/the-doggie-depot-beverly-farms/","address":{"@type":"PostalAddress","streetAddress":"15 Oak St","addressLocality":"Beverly","addressRegion":"MA","postalCode":"01915","addressCountry":"US"},"telephone":"(978) 969-0285","sameAs":"http://www.thedoggiedepot.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":144},"geo":{"@type":"GeoCoordinates","latitude":42.5620191,"longitude":-70.8111656},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ9a-f6Ik944kRBr4vsfG5Fqo%2Fphotos%2FAU_ZVEGMUMJ_i8HCP7kv4S_iuYTTzsZEyZ-xBFa4RfenaKin_lu74GMp7P3OTVKNBBPNkDPtMTGKl3lS_-jurXfwKBW821BQ1uSMLAwQIap8LPGl6nryL3C77Cm7E7fkbqv_B1YsZ3X50-L5VKOtFP2QuN2cOAU65yCW6szJOKBNXvqXhLWrNwZxynrVzl-OlsDQOlPLx9mF1MMPbRUe0GIJQ3ZvCRJBYx_9boyAFeLyBdYi3Mebr-1v6bOaAxihk4EsG-MBVeWf1Q1cws2ZK4_qfTy7S7spoFSfpR7L9sVlQKZU-Q&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"16:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -364,6 +372,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -399,6 +408,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

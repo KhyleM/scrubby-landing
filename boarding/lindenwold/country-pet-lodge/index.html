@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Country Pet Lodge","url":"https://scrubby.app/boarding/lindenwold/country-pet-lodge/","address":{"@type":"PostalAddress","streetAddress":"2750 Egg Harbor Rd","addressLocality":"Lindenwold","addressRegion":"NJ","postalCode":"08021","addressCountry":"US"},"telephone":"(856) 784-4559","sameAs":"https://countrypetlodge.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":307},"geo":{"@type":"GeoCoordinates","latitude":39.8097698,"longitude":-74.9579664},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ1YScvlctwYkRPO1bO0TVZNg%2Fphotos%2FAU_ZVEHJzbgjUOPHPcXVJ9O0dEpsRJUFL91GwlCoPQhj_j-D7937gJrvNrAZQkIW1h2FxsRC53CCZVnCGGSNl5iQtVY2vXPuveTFtkcrf9c9dkciyOKoLtK2fhrh7AFMq1axwUwnj8lj0KBgqJSp-jjsApQGm2_v0ZGapfXbySFJX2sm0wSVcmh01E0AA7M22NTC9qESfsMxErjmhvahPvrGsKHr_Rxnn7m5EsqevlLIc7f_FUPnVboL5WQp3ruLHhYH_exnxsnEcVz8JjR0-lKEGFpBb7JilAqg4GBcoBP5waB8OG69No6IC8FZsnsLTlEMWmONxiMy7up6sY8QEyQPIxVKWTfMWhKZvrm9yJ1FKygpdbMaLpRiDsuTi46pjG6fe99spoJ-9ZTE5evyOKj15xUW-XxFZ3yiWpJ0aQW6OBcqnA&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"09:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"09:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"18:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

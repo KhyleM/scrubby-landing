@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Mueller Veterinary Services","url":"https://scrubby.app/vets/columbia/mueller-veterinary-services/","address":{"@type":"PostalAddress","streetAddress":"8605 Hanover Industrial Dr","addressLocality":"Columbia","addressRegion":"IL","postalCode":"62236","addressCountry":"US"},"telephone":"(618) 939-6188","sameAs":"http://muellervetservices.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.9,"reviewCount":409},"geo":{"@type":"GeoCoordinates","latitude":38.3912118,"longitude":-90.1697763},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJKyhxBry82IcRjyDuU_oDw0c%2Fphotos%2FAU_ZVEGX8ngosbYsRsM6A2N1LtS1bTuNSXMZu3cqkDLrJ35JrZSl7QzwJ3xnVDJDYFed5WSnML2zdzfs2MVJ4FOfo8EYdwI2XxaacmXbO_QrDCNhvVMXX7KLHgM6k5G9dZg8l_y9sbsJ2QoPMfwzCsf5OhiRHpAdstWrM3o_vj6wy9hZNFQWbgVUd4fDq1tJkg0qb5H81Nb7QmMNBAUm6hDEXoEAXuLkcd_N6oDhrXTJ_lWlZ3KoPzy7JjTafE9ktp_c6tO4aMbCJmSaxIDvFlAbzJbCF2xeySEn6ZX2lGQOvOTJ36sunEHYj9AAXZew0QkLBrOyAD61b5E_Jv59bRoVD6OTw1JbcetJ2BiVv7er2M8gdhp-OdaH2RA-lYls5comrCpTtsUlsyZMGGLu5xTqNMbtVzhrgud8eVc1XrzQIaHgsr1_&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"12:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

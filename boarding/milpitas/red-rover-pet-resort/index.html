@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Red Rover Pet Resort","url":"https://scrubby.app/boarding/milpitas/red-rover-pet-resort/","address":{"@type":"PostalAddress","streetAddress":"334 Turquoise St","addressLocality":"Milpitas","addressRegion":"CA","postalCode":"95035","addressCountry":"US"},"aggregateRating":{"@type":"AggregateRating","ratingValue":4.6,"reviewCount":299},"geo":{"@type":"GeoCoordinates","latitude":37.4261907,"longitude":-121.8976914},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJu0uDttPOj4ARv6n6O0al3I4%2Fphotos%2FAU_ZVEFflHB2lhuMbKtfmkPQt0gap8k5wOT9dH4_sngoZi87lJjrPixK__UcrWAVNWpiU8tKkmDVYa9BD06vR0hlsLgw16HFalozBwnJIJ2m7dJqWxobEXH0kaoFAX0nxs6NKnn2Q0QKNwum6ZQFpGsp8m2zhjDFKQTSQXd9CXmdJA2po4usGU8MLGKqQ7au5OLKY5ZgJe4wLvc8deFFGTfBQHWOylFqKJfkzGs3nVtdOD4lyUhyqDUkEfbjGpylbGN0aXw9Slhbj3GAT8T14wkbvNQyTRlpbCQ633DyYFamKX4CvQ&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"06:30","closes":"19:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"06:30","closes":"19:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"06:30","closes":"19:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"06:30","closes":"19:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"06:30","closes":"19:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"09:00","closes":"18:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -354,6 +362,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -389,6 +398,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Paws In Motion","url":"https://scrubby.app/groomers/sewell/paws-in-motion/","address":{"@type":"PostalAddress","streetAddress":"330 Delsea Dr","addressLocality":"Sewell","addressRegion":"NJ","postalCode":"08080","addressCountry":"US"},"telephone":"(856) 384-2580","aggregateRating":{"@type":"AggregateRating","ratingValue":4.6,"reviewCount":120},"geo":{"@type":"GeoCoordinates","latitude":39.7629806,"longitude":-75.1080356},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJf57kaFnbxokRgNEWMQKJ3-s%2Fphotos%2FAU_ZVEEJTODGEVIfOkWgj8cXyUbRLxFCXygcW-C2jUJhJXM4c8sqKDNfPAEaNCZlw4_b9MRK2C3hZlsyCVo02uDaeUfLtsE6RW4ZqCd2-F9QmA9StzD9n8lJXJpVLYnj6qk6ky5Bu0h286TkFP3i3POqGTwx9aiH-jNqrZDHDFrHZiU1hh894JKpDZVESQhZ_7Y7-mNZvbeIZv0SOkiK_-JcsTTzTHnNfJp3aIMa2bCxbj3Dw9csJyQ6oYg6S3c802HH_pohINNbVxXmXDgakU9l3AeSZWiy1Lw94t7Eqvy8AwFYOA&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"15:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -363,6 +371,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -398,6 +407,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

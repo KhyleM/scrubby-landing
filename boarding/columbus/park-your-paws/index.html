@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Park Your Paws","url":"https://scrubby.app/boarding/columbus/park-your-paws/","address":{"@type":"PostalAddress","streetAddress":"395 E Mound St","addressLocality":"Columbus","addressRegion":"OH","postalCode":"43215","addressCountry":"US"},"telephone":"(614) 221-2251","sameAs":"https://www.parkyourpaws.com/columbus-downtown","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":170},"geo":{"@type":"GeoCoordinates","latitude":39.9557986,"longitude":-82.9886317},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJUeAsO8mIOIgRZlOECAszni4%2Fphotos%2FAU_ZVEH1EhzbWyWojK3yW3g8kWlIKcF9f012jlR9lHMuObfh7qOumvFdLWxYk7hnqjXKtbBuJeSwkmLxrPCavzMJlYzC0PIFN8JP2CjzFZoQ1OiCvP5I5pruurYRILaEF5TfW7w69i9YH5lJCXZIxdhsDdkzO98CzhX1MC1llYarcSH6Mv7deGjmwp_rUp3I7zDrRo8s3eqm4F4L07i25_CTcS4qd-zYoMZWvZh7zvgiL0Vp9LbCv4T65GBs-NA76gWnkS8N8aICxbeXPmjCzgaS0st9MeshfCi-XUWraHDkwz_xPqexTx_4b0LU7UBmOpBZ_jn3nogLHo2APYZfmFLwBgBugE5BqG53pXgTWxTwNdct_H0douwwwMlkYdtrSGxYWBGfSmLqekQfifSNwY3RHwggNpuMJjmHLLtLyqarjqc&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"06:30","closes":"19:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"06:30","closes":"19:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"06:30","closes":"19:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"06:30","closes":"19:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"06:30","closes":"19:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"08:00","closes":"18:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

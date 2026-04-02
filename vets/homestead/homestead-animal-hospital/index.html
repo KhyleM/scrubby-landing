@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Homestead Animal Hospital","url":"https://scrubby.app/vets/homestead/homestead-animal-hospital/","address":{"@type":"PostalAddress","streetAddress":"1250 N Flagler Ave","addressLocality":"Homestead","addressRegion":"FL","postalCode":"33030","addressCountry":"US"},"telephone":"(305) 247-3845","sameAs":"https://myhomesteadvet.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.6,"reviewCount":677},"geo":{"@type":"GeoCoordinates","latitude":25.482203,"longitude":-80.464038},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJF2ZozXrn2YgRWAnbQrL-P74%2Fphotos%2FAU_ZVEFbMtSUbefFm8q-DJej1s17HsuoBv6yFUnaqVwwjgtNkiKAOOeZaQqb_PV4tg0gzhAyw1HnnD0OVdNXgxmsynG9jToXIGSKqE4LigA7nDW0HuGvsuOf0xKVEvQ-fqZWsCRpLMpKG532IGgUS3ZEzLFBxJtybwwDuSqnuVBbmPKYNF5aoZJrb0x03Oas7AXh7wdtujIMeMppgKLKYJuz-Fs7eEw4I0esvQlvBM3DA90iKORzA-REng44Mp42aCee3qynQSgvCIapcXNw_UejUSIMyGWl_SFgRr5ShIuwEnqaph7hBvbMB6JJ565XYMKmh8KHjvHAhNngkWoXg5t0QGKg0Rm4z7yG8D-ScMfskGNvTRwqwYCL3oCDeHIW6D8q4b8l4mhmYhISrYTTNnLpv52LD1GKPHYWHsPXkBXIly_20euS69TeChGteiUagoAQ&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"14:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

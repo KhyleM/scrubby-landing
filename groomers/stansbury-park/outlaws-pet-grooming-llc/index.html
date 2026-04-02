@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Outlaws Pet Grooming LLC","url":"https://scrubby.app/groomers/stansbury-park/outlaws-pet-grooming-llc/","address":{"@type":"PostalAddress","streetAddress":"302 Highgate Ct","addressLocality":"Stansbury Park","addressRegion":"UT","postalCode":"84074","addressCountry":"US"},"telephone":"(801) 389-7440","sameAs":"https://www.outlaws-pet-grooming.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":46},"geo":{"@type":"GeoCoordinates","latitude":40.6219913,"longitude":-112.2971038},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJmduUKE-_UocR_jlmHnKb7pk%2Fphotos%2FAU_ZVEE-kgE7nWQ368hJJx3u1z9gZCIpC7Lxc-5Q8bJure_L-ydYGG2r3Q3is7D6P3SqOc3NEdm-dQciNbr353VaolFJPPFMLTujL2CVhtQliroqBAuUbTUBevwCWZfi9LUKU5UGZnI7hJfVwFWwfjpLdrJBGK4hXmZ1xPjy2pMWA6-fKD_lmATPN13n-E66uxD3WLvAXDCUvvcvyzgPS0tD-tuBkdDWpn2atoTtOxRchyplvd_is2tWpq6QjV4IO7aI7sYtHZ8h1T7DEnRQvCJtVaCt_qD5w1zHjQwa5eyx8YYOCA&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"18:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

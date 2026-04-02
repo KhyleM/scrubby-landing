@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"University Veterinary Center","url":"https://scrubby.app/vets/anaheim/university-veterinary-center/","address":{"@type":"PostalAddress","streetAddress":"1716 Glenoaks Ave","addressLocality":"Anaheim","addressRegion":"CA","postalCode":"92801","addressCountry":"US"},"telephone":"(714) 551-9911","sameAs":"http://www.uvcvet.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.9,"reviewCount":253},"geo":{"@type":"GeoCoordinates","latitude":33.8426288,"longitude":-117.9423697},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJsXj0eO4p3YARBaVUxibA3OM%2Fphotos%2FAU_ZVEFpaYK9qHEcCkN1eA-VALBu73p8FpuRQ7jqmZBs7uMY-3DS87Jz6qrYiM0wbb08DeK3RU49-546WdrwuJs10Hd8_IYSvGjvrMpJgzKgCtj2AMUadgOFyo_O03AJuRdJTdA40MXwkylDZAMA12NYz1C3I8B0bNu-Pq7OxeOCQjauO4yPYwJw4ChBkZMRNnKB12MKQ5ZAAYqf8dGAV3L6o4V_mJAbhTEuVsrcMZEmXs-Q2MeKFe07TLOICmmASIW4uw75MJhlmMarwPJGvgZsMKKiMYOKNQUYcsyclhbkLh0y2MVnOQinpMEU35-Cgg4LWhmTW_BLSkBEjIxsHgfq5flxywoJ4pX3MOy76QHS4xUal7lpiel3EQk2MbjvPpNxpjxFXnXN9IvtBnG4Vgo5bxLGCLL-_RLYUWx35adU-Y0&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"09:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"17:30"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

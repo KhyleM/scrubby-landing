@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Pawlissa Pet Grooming Spa","url":"https://scrubby.app/groomers/tiverton/pawlissa-pet-grooming-spa/","address":{"@type":"PostalAddress","streetAddress":"1780 Main Rd","addressLocality":"Tiverton","addressRegion":"RI","postalCode":"02878","addressCountry":"US"},"aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":25},"geo":{"@type":"GeoCoordinates","latitude":41.6271886,"longitude":-71.2126242},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJlTz-6tX95IkRYG3y9AZck-o%2Fphotos%2FAU_ZVEH1Qf3YB2_E2DGGCXP3jv7jwpDANT7x3Mmfir4TE7qQa2x2ptGvXLFc0RibeVIFIgH0HnMNhsZ7jDjz4uz0TLRW2YwGnr2Ipz5I7vxzC1NMm52yGzxc1pq5JZlG3himB6xd7F5xFxMbuZZucsaz5_sBa7FcEJH8k6yBOlROWLmeM4LEsd5r9vw01aQ3m7cvK3UO6dF5ng6SSp1IWqR8g4_3nUirMXfyZ9RxtviT9DuMsdIGOeJfM9fqYNswQDlqkxujrgsPEHCXBke1xaIjlhWIV7iXqDxB6TJUiYdNsjY3y2CjfQyQV0utleN_Yjqa3XL_7ivFO_JpxxscxR89GRt_lX5oyjmQvTAeveOR5Vi6J4pBL6e8qTf8VFEjJaLjTzHgRwQsWZyW3qPrFKgYXxAxHwGziNfoJl2Wx1Qf70D67w&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -344,6 +352,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -379,6 +388,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

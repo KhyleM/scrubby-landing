@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Magnolia Pet Wellness Center","url":"https://scrubby.app/vets/las-vegas/magnolia-pet-wellness-center/","address":{"@type":"PostalAddress","streetAddress":"120 E Bruner Ave #100","addressLocality":"Las Vegas","addressRegion":"NV","postalCode":"89183","addressCountry":"US"},"telephone":"(702) 570-6411","sameAs":"http://magnoliapetwc.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.5,"reviewCount":186},"geo":{"@type":"GeoCoordinates","latitude":35.9706882,"longitude":-115.167262},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJgbovkxfMyIARglu-HIVA4VM%2Fphotos%2FAU_ZVEGiATqquhFtZ3oIM0mqbixejGk8aw-pc7lxE1C7FCkEd2dYxE_ziepq5YVqpuklA7wtBbB4MoSh3CcOXZHVEqb8KpYsH8pnvGII3bHQWsLbInseYZgo4sS54DyWvl-MzFDviTk9Gc1YSuv_-wfM8jDlD39aloD5J7kJtURMegHdHxlGeetFVeREIFacrZneWrp3vQ3Hb9PGZJkSUX8XWySHsNHgnyCjdzP9F79J2eBkUeqQ4am0510vb0At5nXUFt1YPT6zvrXe1yhY0UdADnLY8H0z33XZ9lHMhmwOXJeKUQ&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"16:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

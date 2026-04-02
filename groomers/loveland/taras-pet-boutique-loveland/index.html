@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Tara's Pet Boutique - Loveland","url":"https://scrubby.app/groomers/loveland/taras-pet-boutique-loveland/","address":{"@type":"PostalAddress","streetAddress":"685 Loveland Madeira Rd","addressLocality":"Loveland","addressRegion":"OH","postalCode":"45140","addressCountry":"US"},"telephone":"(513) 781-3013","aggregateRating":{"@type":"AggregateRating","ratingValue":4.9,"reviewCount":47},"geo":{"@type":"GeoCoordinates","latitude":39.2629265,"longitude":-84.2689532},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJV0oxJT9VQIgR3zPJlxuzOHY%2Fphotos%2FAU_ZVEGpF4TbX9emAgy-4ag2hbK6kcF0lqSPCzIZIMNEBLkV5wdap7MhYGHDKsG4gFWm99wXgbsPR768T48t-X_riTf-LYI9ohcVU3_PJH2nmNtf-pHGZkTP1gwXTARIYnXaQjFdD4bZX4eL6dWQ9bMhSmS3otAyokmhbtWBnSan2yTA5eVamez2UK2wcz3aTWepNhCpniAOz2USGMyC1QXkkj3MNSP452Y5-39_ry1kkIo2cSJQvYXq9NzwPqmFbFBCpVyZUN2-9mPPpPbNJigEq_GBh0aFq2Hn7hpG1__4kl3y8CP9b8jPcjmAA3WamYGrNkzk64G3sFmFJ3prFgDhxaGa5TBUwQ3OxyaskxlAoHMEr-n8ICGSR2wemd9EmTkpZL77GJexjGW0MsipyQoAAD3WU24ONsnvT1ThZLDjN4QVNB4ISwBkE90GFd1m_g&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"18:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -363,6 +371,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -398,6 +407,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

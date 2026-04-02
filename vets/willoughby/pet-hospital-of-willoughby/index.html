@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Pet Hospital of Willoughby","url":"https://scrubby.app/vets/willoughby/pet-hospital-of-willoughby/","address":{"@type":"PostalAddress","streetAddress":"4131 Kirtland Rd","addressLocality":"Willoughby","addressRegion":"OH","postalCode":"44094","addressCountry":"US"},"telephone":"(440) 942-8181","sameAs":"http://pethospitalofwilloughby.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":460},"geo":{"@type":"GeoCoordinates","latitude":41.6401837,"longitude":-81.3898036},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJPaioNAGpMYgR9eielGH31ZE%2Fphotos%2FAU_ZVEF7HWwHoIoh2XmxzfUkMQ-41qrVAvG0dQFrAOa0fqPFbBdZN2VsX-jh8g2V5bn7YnZOFebcbBMHXlU6g2cBctWjdKmKuT-A8KIsDu9G2GnZxGrZJpXeZ1i-39K8JkpD16uACgBwHJvQTIrIRzbWXYF9ibUc-11kn7BBolh-vTTH7Ssryozymt0mvvGAo2HZoA9ReFKSdUe0bSp1zJfjRwjyG8OYbD34UJ9oWzIqH8dN9ol_4v2a16NC6L_xMppq0JAdnUFCWwWmffhcpokzrQ3-kF-1Crn7yEEyc1iZodsN9DAIf35baaVd-xjrJowgJ6-hjHYWKcnMbAVSZsuvtRKIEB6oXYlHfav3jHb-2yfty21Xk1lngQNlDy3hjSVYkcJE3iNHux1MM6efogRXaUJQAgIp_uzs3Q7uCNFgzG6MHuk&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"17:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

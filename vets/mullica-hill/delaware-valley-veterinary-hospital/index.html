@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Delaware Valley Veterinary Hospital","url":"https://scrubby.app/vets/mullica-hill/delaware-valley-veterinary-hospital/","address":{"@type":"PostalAddress","streetAddress":"400 Swedesboro Rd","addressLocality":"Mullica Hill","addressRegion":"NJ","postalCode":"08062","addressCountry":"US"},"telephone":"(856) 241-1100","sameAs":"http://www.delvalvethosp.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.6,"reviewCount":1140},"geo":{"@type":"GeoCoordinates","latitude":39.7559221,"longitude":-75.2601973},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ51SCBbrexokRvGZrTCfHNnQ%2Fphotos%2FAU_ZVEF4F9Exb_KRE9Y-qF5KUkQuh3MIsbRiHrQbCB0e3eq17C2gcv-ZQpb-93S6FPDtXjlVfeF7XXMAGQkzRGZO6OmsAx736M_En_4RxCoehLszNPwKqZUSE-EUSJGCzoSgvP4irbvoJaTmLQeqR5RRK0oWJ-hcP-lCEHQG5LYsw2Enr8K3kPuRUPS3UBgwmkGkEzOwWK64Q1w8MiSaeWg-UOPWWdJbxPU5dJSo2YISjo4oHo1_5hwogP70wuHHjffMIwh7mXs8rvWBci7b4FL0G4urDlcTQcKoS83N422a5xZTxpsARtGUBm1FIdzGdJXjQ7_ofFbnoK3kOrzmYyOyytHSWU1jgmY4Hl4QQNI_TfD7yha6hyCSbcz1uOb9Xvyc-8d0nagEzg_R-O3H7HjBkArFf_b_PWPPsnWUA8TPFv2toQ&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"13:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"08:00","closes":"13:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

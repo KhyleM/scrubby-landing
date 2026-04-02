@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Parkview Animal Hospital","url":"https://scrubby.app/vets/passaic/parkview-animal-hospital/","address":{"@type":"PostalAddress","streetAddress":"48 Main Ave","addressLocality":"Passaic","addressRegion":"NJ","postalCode":"07055","addressCountry":"US"},"telephone":"(973) 490-4783","sameAs":"http://www.pvahnj.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.6,"reviewCount":265},"geo":{"@type":"GeoCoordinates","latitude":40.8417569,"longitude":-74.1322917},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ8cV9DDH_wokRibIoqrZFrBc%2Fphotos%2FAU_ZVEHAEUhMgubf5ZrL2wHUwHGxDZ7RGhS0rfZbI0CyI7EOyxyceDT6GPiVyeH966QD-F0F_Akx9huLXHW9v0YpthoM8ToUSeLdiokuhq4FUI1scNvCxcCe8hgOCnAoYAtEbOWe5sxuGsGtIEbEtAQpXY2TVmdJ3cL2keE-W6QQya14iXeIIkvPaO1imW89vBz6H13ugSfRDWRmMbTRrfGNvddCt_NdXVl9khad9EyWC94nT33R1R49NGwFh826vHG8rJr3KoiLT88-eilb3oHelKCfY8GI8NM3awWEDgBZHztGr8e7BzdO12AmFold5VBDCSyqjBukI-B4Hji2wlDyrxuo1lCDeH0PVEEY28hnuJ5nDc6Eq66Bd7kEcmkp1XXwDoqShEb-NVaClA0yFP3s4NrXopnlgOsS-XDHVMVd_nLh4Q&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"13:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"13:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"13:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"13:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"13:30"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

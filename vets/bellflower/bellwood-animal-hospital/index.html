@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Bellwood Animal Hospital","url":"https://scrubby.app/vets/bellflower/bellwood-animal-hospital/","address":{"@type":"PostalAddress","streetAddress":"17435 Lakewood Blvd","addressLocality":"Bellflower","addressRegion":"CA","postalCode":"90706","addressCountry":"US"},"telephone":"(562) 272-7777","aggregateRating":{"@type":"AggregateRating","ratingValue":2.6,"reviewCount":193},"geo":{"@type":"GeoCoordinates","latitude":33.8737878,"longitude":-118.1428133},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ2RAvPsQy3YARjOX7Z5GcS1g%2Fphotos%2FAU_ZVEEU5Zw78zlI7PLNEf2zZvcRx6ORHobufm9cdrmglpomhORIxljsqbq6i2S3_KJcyJ1-y9yMakbllIUtTKTlmghWMLoYi_RnzKW6MrIB7zKw9xByY0NIjxANlO6qj0SFDv-kCRrmkzBNlWfUOhpKcz7_9useNVWzJpqw9e-z_eX2CQ-USQZD_U5vjTXab4tH1Raj-buH5Yd86929Wb7Ll1T7wIlp-nwo0Pap_tD_NHXz0DXlXciKScdrXvNrSYCFiDkhB_HKgrEZIrcklAJbQF_sJHB3H5Qj-nc3SkvBJBJa1yL8xPKnB2psa4FZfPwsP3MfIGKXJYINj-fyamBEFSmB6GaIyyqGRiBverE7tJr6jsivQSay9Z8y2O9dIfchBtA3wuz-hMt-cekV99w8LGQVsrc4Su8kTSWRrLjJUdxHRQ&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"10:00","closes":"00:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"10:00","closes":"00:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"10:00","closes":"00:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"10:00","closes":"23:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"10:00","closes":"00:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"10:00","closes":"00:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"10:00","closes":"00:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -363,6 +371,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -398,6 +407,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

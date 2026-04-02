@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Your Dog Trainer","url":"https://scrubby.app/training/santa-ana/your-dog-trainer/","address":{"@type":"PostalAddress","streetAddress":"1451 E McFadden Ave","addressLocality":"Santa Ana","addressRegion":"CA","postalCode":"92705","addressCountry":"US"},"telephone":"(714) 547-5047","sameAs":"https://yourdogtrainer.net/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.6,"reviewCount":64},"geo":{"@type":"GeoCoordinates","latitude":33.7343406,"longitude":-117.8477172},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJiSkbCULZ3IAR0kiR9xMBmoM%2Fphotos%2FAU_ZVEGSpX05lxiTMNpPI0bVN3GsE1X_O9yCE-OVueUcBZ_zf8o8_F6P5YvXNoOkbS1I-QJ6gnoWuF8g6wOWI1Yx8GC3uwV5qAN9bdO3MyxzlLjn9NA_lCDCrzsJfyrG0faKd_6Hc_OHXrYM6vNiqKlYacqLOirbO5Jyv38ZQr5j7jABbQaI3P98w3Ma-QoNAupoFkG4spGyNsnBqiYgs-SveadAXUOuGsLlHYVuliv3oXxaPXDjkDZIFQzsgzRJKycf6HQupGQka7vBLLgk2A5pgNIz7t_x3dqX89eicwm5ZNY&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -350,6 +358,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -385,6 +394,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

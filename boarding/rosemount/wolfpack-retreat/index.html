@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Wolfpack Retreat","url":"https://scrubby.app/boarding/rosemount/wolfpack-retreat/","address":{"@type":"PostalAddress","streetAddress":"4210 Dakota Dr","addressLocality":"Rosemount","addressRegion":"MN","postalCode":"55068","addressCountry":"US"},"telephone":"(651) 354-1444","aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":5},"geo":{"@type":"GeoCoordinates","latitude":44.7177781,"longitude":-93.1525168},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJtUPjX-019ocRinl2npZlPZ4%2Fphotos%2FAU_ZVEF2Cq87tPqcxQexQ8j14jJ93iOILneSf2ZvFjokARYCmYtW-o319UCIv7jyF2G6ErA2g8J12ZtUbFxY0XORBYXVSC-OTiIVBrDX9P2R6VScFWNlYY26-iaFNP3wNhG3CzSKv-OxWCthghvCSXhSCNVRjM4x3cpPq_oj1-2EckHn6L_di9UzStsPHmD0t-HWdFgKCMrN1G0HcxX8inrJrRBwzhoWHk5PEyGmAVhonHa0o0en26f-Mkg-4n76cx8C6kzzkQ05A4vCCmjTrFaqlcj78FBWnQ_n1fZRunS3NeEHog&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -345,6 +353,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -380,6 +389,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

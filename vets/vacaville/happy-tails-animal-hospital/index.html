@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Happy Tails Animal Hospital","url":"https://scrubby.app/vets/vacaville/happy-tails-animal-hospital/","address":{"@type":"PostalAddress","streetAddress":"617 Elmira Rd","addressLocality":"Vacaville","addressRegion":"CA","postalCode":"95687","addressCountry":"US"},"telephone":"(707) 635-6170","sameAs":"http://www.happytailsvacaville.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.6,"reviewCount":156},"geo":{"@type":"GeoCoordinates","latitude":38.3530491,"longitude":-121.951425},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJm62n3CE9hYARs3G6b8Xk09g%2Fphotos%2FAU_ZVEEZr9cIPYJTjcMPdce16PepQSrWyF_plyS_nK8JV_nJj_11Ut2_YMjbrMih3MeFjzbXOBO4YygvfIinJ9M56iivZV6MTNVgD9MyMEFV5v6wlNpxLGK1zxzx3ob7aTIesKmw1iHuvvDoTwfzrkfrJwqOSt1Bgk5Glod6YTbitmMdISEZCixFTd84ickx-5mLTr-WyE9Jow0Y6hR6WEQxFSsQaDipI7wDHGTHFEP7FDDffUd2bPPnSgPGab0Xw0bd3G9Ij14veQj3c09Xz1aVzwEGqRC202_gQdWkOAaqRJ-gpw&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"18:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

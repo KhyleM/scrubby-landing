@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Clarabelle's Pet Salon","url":"https://scrubby.app/groomers/griffin/clarabelles-pet-salon/","address":{"@type":"PostalAddress","streetAddress":"308 Laprade Rd","addressLocality":"Griffin","addressRegion":"GA","postalCode":"30223","addressCountry":"US"},"telephone":"(470) 743-7499","sameAs":"https://www.facebook.com/profile.php?id=100085408780665","aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":38},"geo":{"@type":"GeoCoordinates","latitude":33.2866301,"longitude":-84.2928636},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ0Q-UmuaL9IgRGZoCYOsQknI%2Fphotos%2FAU_ZVEFnOLOUinYBMlIggUevhsvIiGEgRSiwAYyIAJT-xnyzAhZxcGnP4dvHvn4m2neB4MMqloSKmEg9N_Ebzvyfx_3ee6vpoo8E2e0N79AVigaH4dsR4eFIykBTluabqH31YPNsPljv38hy14HQk-FYH84uv_g9c2lQxYkUjrxGqYvr_B0vgRDyM0X-hRTsFsmoLLdNvCnGeQk70pu2C8xlcpRJxPHPzMcxwiNtjkN7B56KNL274ZJRryr69XyVtu7Q6Av0a0L_fJu8rvrOOdmrlA8n6mfkST_qogKy4gqSElZUjZ4k2THBZbzOKreW_A4fTw4og9pOf0nEu4OLfh50aPTV02a2TiH88C6LdgtLIW7UUEv5ClDkUuakmS0Tm50UrCb7s2eK_ggHEcJISzBoBDqAVlNcvDtm66swhhDWm44MelAkBkauu2A_HCSv2wPk&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"17:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Greenwood Boarding Kennel","url":"https://scrubby.app/boarding/peachtree-city/greenwood-boarding-kennel/","address":{"@type":"PostalAddress","streetAddress":"307 Greenwood Ln","addressLocality":"Peachtree City","addressRegion":"GA","postalCode":"30269","addressCountry":"US"},"telephone":"(770) 487-9527","sameAs":"http://www.greenwoodkennels.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":185},"geo":{"@type":"GeoCoordinates","latitude":33.4458024,"longitude":-84.5841996},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ5zyixbfp9IgReon_mISQbmk%2Fphotos%2FAU_ZVEGDYcyFNcIORh4-GHeiki8xtin5J_4FgSp3Iqy3ZgVhlYHMJO0WdnWflr5C9-Am_CZbfPdS3wMkhQWMhG5t9dYD2c850D6MGvXmSKJ2WCZjTJh6n3-Z4JnnJtlg_BKuF1mohxbhhnocFV6yEEv-zZckARmyVOUIxZb9BWRHIirysrrMD407oToBTr1NCcKM77zguhtygDpB9PozfnZmBR4YqBUAYIJmrBJcX8ILfPuqF0WdvLsM7_FogTbZBaNc0uL49lHUTA63dFbWh4cogu2F6eVYUf0rpq1LKix_qaBmeoB4iLrdSbNOmChUd6jshVSbjKB-5rJbZtXPzWcmQ6BbjtxuHMzH2KX9a2J_zhkPwKWupA9tec9CmRjhvTiUgOMWIBhE8i1Jr0iQGGCDFqlyBOsCoH4cyBq8X6EbwRlX1n8&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:30","closes":"12:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:30","closes":"12:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:30","closes":"12:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:30","closes":"12:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:30","closes":"12:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"07:30","closes":"12:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"02:30","closes":"18:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

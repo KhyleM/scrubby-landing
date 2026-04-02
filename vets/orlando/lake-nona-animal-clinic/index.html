@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Lake Nona Animal Clinic","url":"https://scrubby.app/vets/orlando/lake-nona-animal-clinic/","address":{"@type":"PostalAddress","streetAddress":"12263 Andric Ln","addressLocality":"Orlando","addressRegion":"FL","postalCode":"32827","addressCountry":"US"},"telephone":"(407) 249-4100","sameAs":"http://www.lakenonaanimalclinic.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":446},"geo":{"@type":"GeoCoordinates","latitude":28.3875958,"longitude":-81.2457603},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJQ1_IWfJh54gRPIX_wx4t7qo%2Fphotos%2FAU_ZVEGb6rute9ld7tf01gmZtkiRSkcnzqCRduo3v_UKoDEltalFk6XfeLwegFyBzfeQg_LLS8ITUyosCg2kelwaRocgI_4yYgO4bvqy5mU-C4oZKH2aJycKGB-fHUsUPDIZdOXILIIvSDOzEoK7UaVvHiSXo72VzPijnWLwg6NBBFuAZAmrPMny1bqt3T-ZGI7YUKzp6nBM2NjA_Jwa_QUfLMGAIjzvScUI8yAr4WxyeNlA20u1rFWxEJMioRK0SFDnnt1RrTCQAyMGdSb7C88qvo1ZW7LC8_CiLZZ0qnT41EIUv8wLjSM3hFTqL9XQ-9dkZUWPNbjAhTfFjCdAesRinOC4H2-z5X-IY_H7nFOU8Z96a5O0oD2hYTZP7dKeybHv39TE4iCRGc6seP1P5Pxjl6JH3b211Fe1uBRJzMgU8HC8rd0&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"12:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

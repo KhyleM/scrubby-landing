@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Mac’s Pack Centennial","url":"https://scrubby.app/boarding/centennial/macs-pack-centennial/","address":{"@type":"PostalAddress","streetAddress":"8230 S Colorado Blvd b1","addressLocality":"Centennial","addressRegion":"CO","postalCode":"80122","addressCountry":"US"},"telephone":"(303) 770-0570","sameAs":"https://macspack.dog/","aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":101},"geo":{"@type":"GeoCoordinates","latitude":39.5675826,"longitude":-104.9405737},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJHcSvWy2DbIcRXLbxAZjDj2Q%2Fphotos%2FAU_ZVEEJW5uUq2Lhh07F8nwo4tONs0foy64lQqyAxF6F_zQYcOE1woHEba3RZNCWsef2BiOXaZESi5jfHNHlV6dm-1PpSmIPB6eBHwKe-kWZLASU8HUtq1W7FA2nv4Uy2jUhT_ORvIdVYnjwZbYk97ZRdQLIPOIWjBjVuD0C8DDng06tId7_8nEuIKmK_SO5G9yLx6qzeZf_OQCHj8_dacDXDgI_hFzpvAQ-LgrGylUNsSyaEZB38GOUINtwQs9RKogGadGJPHUE-dX-R85XA3Ynj6VXi588qRrZ1muXNHkjXLkNtA&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"06:30","closes":"18:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"06:30","closes":"18:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"06:30","closes":"18:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"06:30","closes":"18:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"06:30","closes":"18:30"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

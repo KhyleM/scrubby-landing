@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"East Hills Veterinary Clinic","url":"https://scrubby.app/vets/san-jose/east-hills-veterinary-clinic/","address":{"@type":"PostalAddress","streetAddress":"2745 Story Rd","addressLocality":"San Jose","addressRegion":"CA","postalCode":"95127","addressCountry":"US"},"telephone":"(408) 259-7600","aggregateRating":{"@type":"AggregateRating","ratingValue":4.4,"reviewCount":217},"geo":{"@type":"GeoCoordinates","latitude":37.3520613,"longitude":-121.825733},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJpZN8Q0TNj4ARQO6RhKqZ6lA%2Fphotos%2FAU_ZVEGjaylphBv48eArRFW7y7q2jkjaDGCwzZlY_bTTUZQrAX9BR_4xt8Q1LShtD8g5diQorzucILwZSmTgIsPUAx7ZZ5PlcD3ofx7liE7geOMzUDBtaihR9CoQ4mURFxbHv483rDfxvtr18fA39xSf4eo9AmbzXssIv2TVwURTFM7S98bZqI4lOQhtQreNuE7z7pwizK1rSEL1ycSeZ634LbEV0iQZDb-gCohzNMPGq57GtTJW2i9opwp-Pcpb1wBaNO55pYKGKk3FdH29U2BA-yvF30Yh-b9_mB46LlWI0MojmHsUAs18QwsB-S_8LiufCv9RErsQLBIYH9x-oaLsP637eld3h1BqIKkT7JrWMC6cE7JnxPbxkn94atefmXDr5Lqr0hiAbntI66iEiH2-Supn-XWyYqFQMRMdWiFDUDKN2cie02H5N3C2zHE31aUx&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"09:30","closes":"12:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:30","closes":"12:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"09:30","closes":"12:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:30","closes":"12:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"12:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -359,6 +367,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -394,6 +403,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

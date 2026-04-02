@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Pawpals Paradise","url":"https://scrubby.app/boarding/monmouth-junction/pawpals-paradise/","address":{"@type":"PostalAddress","streetAddress":"22 Raphael Dr","addressLocality":"Monmouth Junction","addressRegion":"NJ","postalCode":"08852","addressCountry":"US"},"telephone":"(908) 906-9988","sameAs":"http://www.pawpalsparadise.net/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.9,"reviewCount":44},"geo":{"@type":"GeoCoordinates","latitude":40.3712864,"longitude":-74.5571895},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJi_9A3ZXdw4kR3tITc_HLNPA%2Fphotos%2FAU_ZVEHYhl6uZbZzc4z6t49ovpkLyCpX8J9GLdnoFCiA2SDmhsROTnjILFYCwfOScrnF-AEADxuOo1tCiv_0jeT4ehTXKsCsd9xgtLiKd5GyHAE5t8hh0Vb8G9xeM1BNTrt9aR1Gkz0b8UZpjC0lw2bK2I_RvRuFJ8ZiyPk0DDKLn8qNPub7Fax1N38FlJT-hnpcza4d-yovm0WRUwnhnTugMpKpxDcXFsLQz725KmUtFQHeCkKAzahGVxz_bHUmTIW6kwixCeDn2RKW9YxoJgIzPw54ye6CMp821XIm860zVNfIG9zhLGlAIgDnsxtSdDJ3YiRqLiz5VVxyX9zLsMKUmbNLxwX3vPPnYxAGC8J3Rvxys1hfmZ1TpaO3m3lSryW8Yf1psxclscDUA92ylIUW4LUf-ziYQbZTwfOAL96e5Vc&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"09:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"09:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"10:00","closes":"13:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

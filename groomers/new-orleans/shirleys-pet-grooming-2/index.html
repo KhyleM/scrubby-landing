@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Shirley's Pet Grooming","url":"https://scrubby.app/groomers/new-orleans/shirleys-pet-grooming-2/","address":{"@type":"PostalAddress","streetAddress":"7300 Read Blvd","addressLocality":"New Orleans","addressRegion":"LA","postalCode":"70127","addressCountry":"US"},"telephone":"(504) 242-7387","geo":{"@type":"GeoCoordinates","latitude":30.0417741,"longitude":-89.9802411},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJAWOkP8oDnogRM8kOTblGwaE%2Fphotos%2FAU_ZVEGlemp4pTgo1JNi_zIC3SegIi9MRVl032aL6yf1ew4gOVIZ8p06ndEUFicYM6dnefalmT8jIqpeQAdtI5HObKc1ojN_QiZPwsLmpKGFdUCJgf9hmdzD4FSn6WJrALaOEZnlS3jKd-EUgHCkUYl4bO6n20j2Rqf0RNxwgwgcwAJM6l1uaJ9RR3Bgmx_cOgY2RPn8NyzuFUc1v-eF3R3hDd8eKyx6r1X0sbx5YtYz668Z7NWdgpdJYuUKeTU2WzzLN8g57InkIzkIibUBFJoU6_IKXHC_LuMCTqwlRvVfFtBUXQ&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"16:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"16:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"16:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"07:30","closes":"17:30"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -356,6 +364,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -391,6 +400,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

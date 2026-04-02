@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Whiskers & Tails","url":"https://scrubby.app/groomers/ivor/whiskers-tails/","address":{"@type":"PostalAddress","streetAddress":"8294 Main St","addressLocality":"Ivor","addressRegion":"VA","postalCode":"23866","addressCountry":"US"},"aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":44},"geo":{"@type":"GeoCoordinates","latitude":36.9060764,"longitude":-76.8967277},"image":"https://places.googleapis.com/v1/places/ChIJSYtmZ6h2sIkRMm2Q8DXYW_w/photos/ATCDNfXyPAwT7ksoe5nWuBtHj4qslDRxMiq6rRyImkaL3sWhTPNgkdf-qxnuSzMHfUOI798yii_NPo46kZ815mWQZrC5zEwr5j5tu7tNhujW3u4do-106ZjzZ1XcE-_eL_AOivzT3txgn7RnTM34imYPlL1vpuYB_k_IAcToiBnsCFjFU_TWLtzUIapIB6WgSJxeni6YrUhuOEk3aLa6XsqkpjjU2UDwhWIceczZeM5D_51rCtab9Dd31sR-X8y8yvntoAJZa7cDpmVvKKnU-U43X4Ud-ikGLMnhixyUjb7t5HwzKyWY3bXOWEByww2d9E_v75mPfWpYXVAegS_jmogm_hfiguG-vfIRQ3MQeERK8Ovp41t3BUQ1TfAkuRKjbLgO54Va-Snm6ce_k_iy-7Es6KI7J0a7FLufZqwLWbGEc7KLVygo/media?maxHeightPx=400&maxWidthPx=400&key=AIzaSyCpmbfD6svBtJL5OpHfeph6xPVzLlf7F-g","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"00:00","closes":"23:59"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -352,6 +360,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -387,6 +396,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

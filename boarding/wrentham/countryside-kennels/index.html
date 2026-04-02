@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Countryside Kennels","url":"https://scrubby.app/boarding/wrentham/countryside-kennels/","address":{"@type":"PostalAddress","streetAddress":"90 Ellery St","addressLocality":"Wrentham","addressRegion":"MA","postalCode":"02093","addressCountry":"US"},"telephone":"(508) 384-3484","sameAs":"https://www.csvetclinicma.com/contact","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":33},"geo":{"@type":"GeoCoordinates","latitude":42.0275852,"longitude":-71.3961116},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJweVOxbJo5IkR83WNJJY_Isw%2Fphotos%2FAU_ZVEEo6iRUJ2piWvtzC1OITDJIdgtWDeMByGb3TAJYI937BU1ZEVMvSU67aY9AXMzNFnq4d2x4_tcoeWaOBK432llgoq_e3Xkt7eRGzZ2EGPxkyBwC0oGR7t4s2SodxrhTR-qQZp8SClt5y20ncafD63sgnE76pf_8aw749jodYhxKvW4Pag4CVvGHG-1qrKlwKn3tiCbK-8ceng99nM_MjlzmFt6LZO4gppei-gqqWuSrRdlakWQl-DKjlcREUQmy1QMfZ6y9O8Te6c8afvi76WtnqS01sgzFv5PwKO2H6yOyYrCsr1zibkIH21XxIMcC8J71CKfYpRkOg3K4eAMmSx50IUfKqV_vR8zteYCBmwN0BWA5P9jfyomK8HdchHMD69saY4TZx6ZKgRGQLO2mUVoG6x3cUUDir-uxXLf9kA3mMsVA&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"11:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"11:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"11:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"11:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"11:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"15:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"08:00","closes":"11:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -358,6 +366,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -393,6 +402,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

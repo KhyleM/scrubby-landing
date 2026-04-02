@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Jacksonville Veterinary Hospital","url":"https://scrubby.app/vets/phoenix/jacksonville-veterinary-hospital/","address":{"@type":"PostalAddress","streetAddress":"14240 Jarrettsville Pike","addressLocality":"Phoenix","addressRegion":"MD","postalCode":"21131","addressCountry":"US"},"telephone":"(410) 666-1390","sameAs":"http://www.jacksonvillevethospital.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":326},"geo":{"@type":"GeoCoordinates","latitude":39.517675,"longitude":-76.5597083},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ21hD0K8MyIkRyHhlrSLSb7M%2Fphotos%2FAU_ZVEFPZwVH2A1S_V0snH4CK1TvTKOypAXQqTgFmqpZckbxKyyDdqv-gHMNxGBP4PPRmp_3QeYWIvL37z54Lpo41rlmuc69zFXdrxiTDPi5BBi_eFzK1H_1Z7q2AlIFOVI7ItljfJ6LtDXyNEwKClri50m_vuiLKQeS2tZILWUQpa1k-Wj1HsWuujbOZWLATkNJz-UJ9FC67TGCO11E96AmCLqp3mWrcISGK5RpT413UvjtTqZeWGYxE4-btnAwxRpesNn5dPyVpP88O2NNvA-nj-vohwBP3EMDc7e8cNg2wC0v9g&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:30","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:30","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:30","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:30","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:30","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"07:30","closes":"15:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Shively Animal Clinic & Hospital","url":"https://scrubby.app/vets/shively/shively-animal-clinic-hospital/","address":{"@type":"PostalAddress","streetAddress":"2401 Dixie Hwy","addressLocality":"Shively","addressRegion":"KY","postalCode":"40216","addressCountry":"US"},"telephone":"(502) 778-8317","sameAs":"http://www.shivelyanimalclinic.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.2,"reviewCount":3782},"geo":{"@type":"GeoCoordinates","latitude":38.2157143,"longitude":-85.7949324},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJCd1pzugSaYgRZGQBHYWAvOE%2Fphotos%2FAU_ZVEGEaWKwIRehgRw_MRoEBNw0agmIKW6QpVCOditvixZWWNxopkTRGDfpP-6bS5yGDF_8Ztppa9hYZD2gNQQFw-F-AY8hMmP9R701720ImayNlqIIrovrNwWTPtnZjOumzQnjph27ey3hJCag-WGJu_9Ou7S-kXlXwEVkpm-YuBhJ6cSXoQGPwRJ2Rpt-6I6xmo8aneGp-g5WyWY11_mPPeNm8c2rSpyHaS7cCbyuGx2edoj65qiIUY_lOdq8Ffm-9NagoE2JzA5tq2bKgrLNhXpOD6seYM12_WFhac_DA1uEZA&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"07:00","closes":"16:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"09:00","closes":"16:30"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

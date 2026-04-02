@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Pet Paradise Fleming Island","url":"https://scrubby.app/boarding/fleming-island/pet-paradise-fleming-island/","address":{"@type":"PostalAddress","streetAddress":"1115 Fleming Plantation Blvd","addressLocality":"Fleming Island","addressRegion":"FL","postalCode":"32003","addressCountry":"US"},"telephone":"(904) 643-3210","sameAs":"https://www.petparadise.com/fleming-island.htm","aggregateRating":{"@type":"AggregateRating","ratingValue":4.5,"reviewCount":240},"geo":{"@type":"GeoCoordinates","latitude":30.068393,"longitude":-81.708121},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJz1DXywbb5YgRqraloG1M69s%2Fphotos%2FAU_ZVEGOScZs-jo3H-yIYf2WPCh5Uqgk379kwf_UXtR4QmnAaR1QJ7LTyDM8WWZwrBKIIAfgBZPClmwGjcDdg5pO7tmg1C7Uv8cXqLTpWCkLYe5m3VZ-9FGEXcNXDS4erkjNOcRwoBAxdHvtOnzknGD10a0QqbwmVUp7TH_F7nhCViDHpummDzlN5Mo3eeXFXtEpMbb1EMohJIxNsUy5lr8W20AXYkN44hTiydrYqLGUyJ-H3Pupc5g7DcvCBJ8lX9abSbU4T0YwoJPDQWO0SHXZo-ZH_3RgaSMMk3W9rm8POm17KA&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"06:30","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"06:30","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"06:30","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"06:30","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"06:30","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"09:00","closes":"17:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"My Dog's Spa","url":"https://scrubby.app/groomers/bunker-hill/my-dogs-spa/","address":{"@type":"PostalAddress","streetAddress":"2110 Ness School Rd","addressLocality":"Bunker Hill","addressRegion":"IL","postalCode":"62014","addressCountry":"US"},"telephone":"(217) 615-3703","sameAs":"https://localvetservices.net/explore/my-dogs-spa/","aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":10},"geo":{"@type":"GeoCoordinates","latitude":39.0296317,"longitude":-89.903101},"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -348,6 +356,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -383,6 +392,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

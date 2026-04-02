@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"EarthWise Pet Cardiff","url":"https://scrubby.app/groomers/cardiff/earthwise-pet-cardiff/","address":{"@type":"PostalAddress","streetAddress":"2025 San Elijo Ave","addressLocality":"Cardiff","addressRegion":"CA","postalCode":"92007","addressCountry":"US"},"telephone":"(760) 230-1331","sameAs":"http://cardiff.earthwisepet.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":74},"geo":{"@type":"GeoCoordinates","latitude":33.0222077,"longitude":-117.28228},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJOTxcmVYN3IARHOV6xWvXxOU%2Fphotos%2FAU_ZVEFhWBwu0y7u08EprWmqO67VNzo7TQPecRXG_634YmXY-KsDG4kRo6y15TrIOr7O5YnpXt5k92DxE0mEhwFN_2Ip_jG53jDJfWi6rzrfRJovt409SliUtmDP1J99kRHpx25BTPPMVdyTWsnpYTNfpfX7cKkD_q6AqfHcdBjkPVRCNPGdQ81Q7jjRdUKJx8GLX7hyHzMi-ybNoe2y0wqLEp6FRbUqsT6Tk5GJp9j2rCTlGfxGj84_Is9XChOHG0a4mkp2JwwEWs0ebpJfqqmQ_yCLA-aQCcdskUJodi97Qbc&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"10:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"10:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"10:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"10:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"10:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"10:00","closes":"17:30"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

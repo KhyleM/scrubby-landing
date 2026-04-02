@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Fancy Paws","url":"https://scrubby.app/groomers/smithfield/fancy-paws/","address":{"@type":"PostalAddress","streetAddress":"1270 N Brightleaf Blvd # C","addressLocality":"Smithfield","addressRegion":"NC","postalCode":"27577","addressCountry":"US"},"telephone":"(919) 989-6117","sameAs":"https://www.facebook.com/Fancy-Paws-Pet-Grooming-100426645166571/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":34},"geo":{"@type":"GeoCoordinates","latitude":35.519545,"longitude":-78.311301},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJd24sp6ByrIkReEeDN8jR49g%2Fphotos%2FAU_ZVEHX6EEmNLB-9v_ayno1eBRSkqx6lS8nnhXZFZdqBFMYtRFhu4_ZMvhHQF7Fl-bzTNyExtMd64E090a_-X7UbSEv1e6y6LngspqKbBLKJ_eF9BTc9FY-C14WZTQ3LPxbzmqa039BahkKCz5BhdGvEB-Pi90hDGms-KLGzQ6EWKZc2c0tC3Wkla1qTipKjTNs6b-nBArm5cuBMC0XAx4dXJE_GnUG38xZ4tGPyLtWMwWbFnqMKn9lWa2CL0J5Kxpay8_c_ExN97zXox9wcac6Py6LizwjZ_8AeoukhxPHXGTGfRNe8nuXr7MxCxcDRINN1UGLQLr9DiOg9LBLeZnRwdIwZ3q3zWJW4UMEYNGCNnx0-ltEcNWx23yzdt6nZkWCt3VFsv3oNtD3sxrF3kzzjHn2v3GYSvSNGB3p6Bp_4unvDw&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"17:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

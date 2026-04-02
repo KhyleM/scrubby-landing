@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Carson Road Pet Clinic","url":"https://scrubby.app/vets/birmingham/carson-road-pet-clinic/","address":{"@type":"PostalAddress","streetAddress":"2332 Carson Rd","addressLocality":"Birmingham","addressRegion":"AL","postalCode":"35215","addressCountry":"US"},"telephone":"(205) 856-1999","aggregateRating":{"@type":"AggregateRating","ratingValue":4.6,"reviewCount":264},"geo":{"@type":"GeoCoordinates","latitude":33.6444185,"longitude":-86.7088067},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJCYyCqSMPiYgRy3P183c6FaI%2Fphotos%2FAU_ZVEGHrZTIvoI5z-Xu6M2CsHWpwvzwq2aKjIyuFgQydai12cmN6x9Fhwtl0QxlQz7InglSeuFRWNhoW91_NZE2JmGSwWm_54UIynI_WjWFbaEeS5pAOJYB55H4hFhkSAB1ymqrHsUj0tgnFFGcv1Xe9b6z9Wsvjp3XB_OB9o9w9Izo-zJlJpubRx6obQGbpdoK9qILkpEh-Q4r5cbzAHVbxyhMpth5KWHzZCfnDchrWsXzg_5KN9XgRHPAZTs3apoWVDuG_apK_BKlPgO9suEZpU6bHUjPQDdE3X3M2HBWjo4XjJDz_x25mwFaDMz-unA2H2s0ITsfrAhWQ4cWK6lxeVLVenYISBPLzWarrc8i-UX_GNZBbgoCZqaxEsdORs_-7Au3CZ76AxDzzax0mpnGaI9oZe2OXny4SXEHlBIxcsoF8t0n&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"07:00","closes":"12:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -359,6 +367,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -394,6 +403,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Meegan Kennels","url":"https://scrubby.app/boarding/pataskala/meegan-kennels/","address":{"@type":"PostalAddress","streetAddress":"5177 Watkins Rd SW","addressLocality":"Pataskala","addressRegion":"OH","postalCode":"43062","addressCountry":"US"},"telephone":"(740) 927-7829","sameAs":"https://meegankennels.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":86},"geo":{"@type":"GeoCoordinates","latitude":40.01264,"longitude":-82.6427113},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJD65t3ypqOIgR1q6eZGTeCYA%2Fphotos%2FAU_ZVEF48fxetehqLOc9L3P10Lx4QMjIzmKBjJ2Du556eufvNmOkHN7Enj_cBNJDjaUMObEQU0ge-IClCWwHi0w3ZnhI3X352eY79um-cpRVSNq_UkrR2mI4wv-0Hzmro9YRDmGEvHduW44E3iscQHSw1TCtjTLkBAZlNM-YsC-bKkxLzBBn-LDRLs8qVFBDKvF2jF0AgutkeCQpnSkMoR2ScLh9IIjsaokzeFvlhLP76MJ65XtySur31MLHolhU7vGG0nHByFuRhwIKOEoMzJrfXpBrAoCwDbcZ0jettU2QUo2mu4fVAli949PGHpuzGkar6n-1VrZQmQeg9-uD68HiHHab4bqmQxeDaGGFDghPQM5QzaVm6MHeF0jgVUD0DsMtso6pRKqPmpa2P4SIb8UWuz1S3G8wtZNXRck4Mv8N1jj0cPqg&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"09:00","closes":"11:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:00","closes":"11:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"09:00","closes":"11:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"11:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"11:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"11:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"05:00","closes":"19:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -364,6 +372,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -399,6 +408,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

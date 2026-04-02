@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Wag Hotels - San Francisco","url":"https://scrubby.app/boarding/san-francisco/wag-hotels-san-francisco/","address":{"@type":"PostalAddress","streetAddress":"25 14th St","addressLocality":"San Francisco","addressRegion":"CA","postalCode":"94103","addressCountry":"US"},"telephone":"(888) 924-5463","sameAs":"https://www.waghotels.com/san-francisco/?utm_source=local&utm_medium=organic&utm_campaign=san-francisco","aggregateRating":{"@type":"AggregateRating","ratingValue":4.2,"reviewCount":763},"geo":{"@type":"GeoCoordinates","latitude":37.768373,"longitude":-122.414164},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJCQqg3SV-j4ARD6ZUjtnu8No%2Fphotos%2FAU_ZVEGE1nRHlF4I986cmY7g6P3wIJls-DlaWvT6YP2l-AaWLTrEaN2Sk89DRjb56yh2n6z2knS7zDrt7dCTknPXSkK-Gup3vGE_b9npJx3G9K69n33K5jBm2zDACxrRdwivqQT6XXlxiTod8jMT9WRcG6P-gF1WIE0H32byof1M2V6R6G45HXnNAze5p_LhMmmQeREq2NrBjpOjyAszTvW8UFkGECQ-KSn64svG69ys_VUc66Yzbn2-tJRE97YuUbl6LyMXwrVefA7R8PyKrytQST-rbwdzjokVVYwsyxjx893jRUD3zNeY3IXD8ZQNp6KWGRwKKx6IjfWuQcTtc38cGWD8x8GZOzb4L4CQrJkXUqpxQV0ZJK7-8zofYV4qs-Qk-o49hIGMNALMSTZ5XZeEF1qFzF5jy-YqFI_mR-DFh3AYNgqe&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"00:00","closes":"23:59"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -364,6 +372,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -399,6 +408,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

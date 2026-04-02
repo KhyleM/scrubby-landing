@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Animal Clinic, LLC","url":"https://scrubby.app/vets/fort-lupton/animal-clinic-llc/","address":{"@type":"PostalAddress","streetAddress":"232 1st St","addressLocality":"Fort Lupton","addressRegion":"CO","postalCode":"80621","addressCountry":"US"},"telephone":"(303) 857-6671","sameAs":"http://www.animalclinicfortlupton.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":442},"geo":{"@type":"GeoCoordinates","latitude":40.0799062,"longitude":-104.8158486},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJndTIKycSbIcRnUxGsHFfo8I%2Fphotos%2FAU_ZVEHBb24WUGiuQoLnVgpFxDPRl3Xd5oIyNomnsLc5jWpBda1DG_O_o53QaoY3-qo2i6BXegAJIG4SJVAXoteTTI0DNvTKn4SiJlNORgL0RdkSgpGNOXH18k5p5Vx0_qiaEmBveoyyzHsj1spRG2ZAnFsvs4qT-LDjVMrKibj-_RKmpv80_ggC5-NFrRRZ49I5dgDnSvtP-PmRlqABpVK-NxpdVVZInL6Pv-NeFp_kMJBiwVpOZKLcdtLDNflvHWuDFrz0API2WMPBE4owQLBiNM6tpjQXHwx2Bzt7n8Ibgww7z-MZfJT84-1FiDSPYGqwLJ-10YPMRg-zfni1U2dsxkPG34iWDKcHebvMP-_78Y9AFJeU_oNLZQel1nJ8Zu3f2lqrvznMkakwJ1nJT2vHCItYef1X8sSUhgOasyRYRV4zOnn5&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"12:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"12:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"12:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"12:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"12:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"12:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

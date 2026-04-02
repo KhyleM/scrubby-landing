@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Lakeview pet grooming","url":"https://scrubby.app/groomers/metairie/lakeview-pet-grooming/","address":{"@type":"PostalAddress","streetAddress":"209 Live Oak St","addressLocality":"Metairie","addressRegion":"LA","postalCode":"70005","addressCountry":"US"},"telephone":"(504) 952-5610","aggregateRating":{"@type":"AggregateRating","ratingValue":4.9,"reviewCount":35},"geo":{"@type":"GeoCoordinates","latitude":30.018321,"longitude":-90.1236138},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJG2nI7nWvIIYRsFqraqyJ7OY%2Fphotos%2FAU_ZVEGKSxIiOxatlnj9Wv9mDVKc44QsUI2ZJl3iPtJi-rfTjoLnztD-qFb3iqhpQxGH1JnypwJrPAy8srC5MLLqRmvFfTtBBOLzUDHFENIfdJhuHRR0XyiTVVW2ppQ4JNniP2fG9NBJPPM-r1J1Fadpj53iakwhZ9R-MfimXqrrLY7SccHdBkkZDf56X1xlMYYcK27TvZoCE3uK5hgKQw3TPcgpQWqOcMdTNjwj13Z21yoIygX5XuCIDcYRCFgTLHUu18up_KEOqtWL44CCq2BWvIp-df4h5oSJSqPzR2LV-w-F6A&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"17:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -359,6 +367,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -394,6 +403,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Lakeland Animal Clinic and Urgent Care","url":"https://scrubby.app/vets/euclid/lakeland-animal-clinic-and-urgent-care/","address":{"@type":"PostalAddress","streetAddress":"20690 Lakeland Blvd","addressLocality":"Euclid","addressRegion":"OH","postalCode":"44119","addressCountry":"US"},"telephone":"(216) 731-5536","sameAs":"https://lakeland-animal-clinic.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":234},"geo":{"@type":"GeoCoordinates","latitude":41.5831826,"longitude":-81.5340559},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJtWUdCQUAMYgR3SF2rZmkKWI%2Fphotos%2FAU_ZVEErtyKaJIxigwpAVV_QgL_f4V_2YQndcomcC3o5pPxoshptIYHFAVWVV9M0nmJ3mVSeNu8Ek7ax31EwJHUcozLFPkHmg4Oyjdkr2Y2SERgIXrJXjJvcZR7HoC6wUcbfQV9jAMlBnQGlgurq-lBndcyvi6fCCg6LWxar2gPL0F3ARXF3f0vEuaC6McUawGQFADme8GdWws9GF0QDGcva57_4pSi3dC0aFR0QdYn_R0VmZP1nhdF5-0w_7bJ3l0pyqCww4_01Zohl8agevja2XzHu5bfz6KVsHqnYqgKJgsAZN6R0X1tLKKH4sMNKGNMPRvkmjfKUszULVcJ9fWkFpSMz2FurUMaqP4xi1SowT_4_S5yWlz4pmh7U2UJLTes3SWh9t_4cak2fqRbPLWFt5SOarUP2h0IdW6BBaHg-2xKtvw&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"04:00","closes":"22:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"12:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"22:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"14:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

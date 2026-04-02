@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"The Positive Pup","url":"https://scrubby.app/boarding/chicago/the-positive-pup/","address":{"@type":"PostalAddress","streetAddress":"222 S Racine Ave APT 206","addressLocality":"Chicago","addressRegion":"IL","postalCode":"60607","addressCountry":"US"},"telephone":"(646) 240-3424","sameAs":"https://thepositivepup.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":8},"geo":{"@type":"GeoCoordinates","latitude":41.8784252,"longitude":-87.6573662},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJrz9UwUJfwokRSgz1p00l4Wg%2Fphotos%2FAU_ZVEEdb2QOnp0LK37PERtBOOE9Zr3ArB4LiWR10a4TA6QdScqdqSgz6sh_CII0cssZza0R7qM23slc7Jl6L1IYekMdnVN9Tly5phin3C4h9rLmdZftYEx_vR0EyXbQDQBkG4T0MYsg8ysTJp2hOP2wNuO5lBIagTvRg61yF775vi-_AnRDSgozZAzJMTKZ8cDsbhh1iemkm5Iz-yNdlcEz7YsXYCfRJJ0JW4Aa5umbUGUMx3_esdiupSFnc670ux6o63I4ECaCTKGv6yMKNPUlfs0bKiRZ_VlQG7lDR7eIObJk_g&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"11:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"11:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"11:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"11:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"11:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"11:00","closes":"18:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"East Metro Animal Emergency Clinic","url":"https://scrubby.app/vets/covington/east-metro-animal-emergency-clinic/","address":{"@type":"PostalAddress","streetAddress":"6225 U.S.278 NW","addressLocality":"Covington","addressRegion":"GA","postalCode":"30014","addressCountry":"US"},"telephone":"(678) 212-0300","sameAs":"https://eastmetroemergency.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4,"reviewCount":361},"geo":{"@type":"GeoCoordinates","latitude":33.6036558,"longitude":-83.8756123},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJpcjrBfQ09IgRDzJZQYtvfVI%2Fphotos%2FAU_ZVEEAjZCWHfZcLUpR9GuejJ6UoC5RgymGSFKABSUk8TX_-LScLavebArbDA4CX81RDP3KDbsbsNtmmQrPAVu12_VuYY-P34GG7xHn02OEwRsF5TQKySlsXmjhTfZpQbUWh8G_E8CfOrPgA1GtKd26M6xaFFWcepmb5DxR9wOfcG3gF0CM8uXBd0aSkDfsRAiu-vWMRvusIYDuMf-BaJwqaT3GqDyWr_-C6LZNdutUq41y3gkC3AcjVaipG2i-ciNGl76eUlE1XrQzy8a8jKuTVxaLfW9befghkfkvCr19_Fvt8g&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"12:00","closes":"07:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"18:00","closes":"07:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"18:00","closes":"07:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"18:00","closes":"07:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"18:00","closes":"00:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"00:00","closes":"23:59"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

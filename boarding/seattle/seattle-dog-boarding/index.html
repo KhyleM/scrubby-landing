@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Seattle Dog Boarding","url":"https://scrubby.app/boarding/seattle/seattle-dog-boarding/","address":{"@type":"PostalAddress","streetAddress":"11715 Roosevelt Way NE","addressLocality":"Seattle","addressRegion":"WA","postalCode":"98125","addressCountry":"US"},"telephone":"(206) 551-0438","sameAs":"https://seattledogboarding.net/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.1,"reviewCount":33},"geo":{"@type":"GeoCoordinates","latitude":47.7144237,"longitude":-122.3183864},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJN8hidlsRkFQReRwdOuAfe3g%2Fphotos%2FAU_ZVEGb7xlXGfv0zeCJeWxi8PG2xm6XL8YxcB8qWq2qrkcn1RN360-YHLE3pR0x1bJHgrFHgqZilabzYI0o9pxGGMnWn682HpDk3f-zObf2wHMUCfT5A2gDMKHr0CFrax_G-JfnCF7ippmPpxlr-esMGavOB5n7QcqkUGybZSDxTUjCK7_BZ6cLfdjFeC3pa48-zXpN7RIsanbl37TT1FdTVKlpXqncOqgQ6d7X-YB2g-SeYvM9yNloR8Zw50EwJDidw33Yt7m5SSLhaqMKIqTNCDjXk5Yqi-Als6pCRyk4O2VT1Q&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"00:00","closes":"23:59"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

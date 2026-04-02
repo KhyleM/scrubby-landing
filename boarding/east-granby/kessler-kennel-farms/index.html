@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Kessler Kennel Farms","url":"https://scrubby.app/boarding/east-granby/kessler-kennel-farms/","address":{"@type":"PostalAddress","streetAddress":"42 Copper Hill Rd","addressLocality":"East Granby","addressRegion":"CT","postalCode":"06026","addressCountry":"US"},"telephone":"(860) 653-3206","sameAs":"http://www.kesslerkennelfarms.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.9,"reviewCount":98},"geo":{"@type":"GeoCoordinates","latitude":41.9747594,"longitude":-72.7553543},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJacWbuFQC54kRaE27FaanytU%2Fphotos%2FAU_ZVEGKsdQtL1Y8shQvVERNga77RjhYtwyBTnqYML-9AMGUJ_pYqsjp94cW7q8hrMMU6Ak6-z3el3DcmSCA6Uv_coTqnQ1_yAGlPbfqKqxdA3tWCKqSEfsyMLMKtnKoBKFR5OWQ-iB-8Z21HwoX-pA6IxM90MMZDoyEjj8taX7HKdA6qaS-r9-5yJpRNwY4pvHjIJnZcPuLVa3-8nIsZ5Jnlp60SD0iJgqGDGQvAdyLX2QGVVYGFdhI6TUQUfbh2yfFJApCNoc4qac65cef7IT5JH6z7Q-3iiL78SY5bDoH_seXumeIClwUG9dZp5E89OMg3Krxz7-MqbcMIPQv1dUiO8mRwDoDKno__3h1XRxzVjq9uQzuB2q_x3zpV8GiTnWuRISDOCWVirFka2P6qfQMO2pFxgfrEw70SbDVyltX2hI&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:30","closes":"10:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:30","closes":"10:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:30","closes":"10:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:30","closes":"10:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:30","closes":"10:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"07:30","closes":"10:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"07:30","closes":"10:30"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

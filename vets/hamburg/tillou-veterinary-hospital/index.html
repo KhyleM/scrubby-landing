@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Tillou Veterinary Hospital","url":"https://scrubby.app/vets/hamburg/tillou-veterinary-hospital/","address":{"@type":"PostalAddress","streetAddress":"4229 Clark St","addressLocality":"Hamburg","addressRegion":"NY","postalCode":"14075","addressCountry":"US"},"telephone":"(716) 649-3186","sameAs":"http://tillouvet.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.5,"reviewCount":332},"geo":{"@type":"GeoCoordinates","latitude":42.7255636,"longitude":-78.8243597},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJn-Mln8cE04kRMY-7YValMzs%2Fphotos%2FAU_ZVEGJhz53DB7ZOEYZiGqQYltMzH-UryYrIsBXPHFlm8JaafNO-_TxPGKexmeTLHYoAd6pwCE-dXOXAPFUzP8WDifsLVJmQxEr_4rqTgzGpy1olJ49Z-yVVBIAYJkXzJaLSkBNAhvNCxCIKV4E2gz1De8gwx_q4O2G4FVLbm44Njaj85chyaweUwL-vf3ZDgGSifiYGS827hFDc-K0G3JcdiTe6uOu12OgqgSGgB5yP5ZXjRDFO_LJjpVeZepBDOMAuBbf1YFv0ntTyLFf_4CzdECz29QWDpe_Sk9Iuu6hSZMcuZJ57c3BNk6Y234hCd4dcoPEtMtF5PCjGc38VouvSHdgL7cnrqSbmdxC3eXTxHwbVXiyJ4OKOV6I4Orx1aVWrvxOC-dnGa2Jk-harGRm_5jkq_ZK7K8CryaK8b-PLjqvbHY&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"19:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"19:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"19:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"15:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

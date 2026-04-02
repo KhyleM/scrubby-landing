@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Crystal Grooms","url":"https://scrubby.app/groomers/bronx/crystal-grooms/","address":{"@type":"PostalAddress","streetAddress":"4541 Carpenter Ave","addressLocality":"Bronx","addressRegion":"NY","postalCode":"10470","addressCountry":"US"},"telephone":"(914) 715-8646","aggregateRating":{"@type":"AggregateRating","ratingValue":4.6,"reviewCount":32},"geo":{"@type":"GeoCoordinates","latitude":40.902338,"longitude":-73.85505},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJu4uK41_zwokRst_JIERL738%2Fphotos%2FAU_ZVEE24m6DD3FIR91F_bvuREZnC9jsLuOy-ND3njreB3f-NP1tdac9pG7p24rp6-4lpCNCeUjsiGIWXC1EX8sDpsXshq0I1n5oAv1iJhCY1_wuqwcbuoI5wW7_M_DUrASvnq7fYFgGYrAZwxoI2XXmaEq037ukmds2LBFyGpEW7r0dKM1aTVBpWw0ePc0N0Ft6PjHpRZknU6xUxCaAPM7zajvcmG8udbdC_jAQqKcrn_g78RiR5Lh9n8xEgk7A78PEJWW4wexVqmAV6v4LdN8dGg-AQbIsxtDA5oY23cQezvNtUYSv5Ks_R4HWl2EImxMhbmxXyl3RWEA9GvjoUEE49Os4BtC_hfRyOMVPhlhD993A4gJP_jYyBOJUIPBu5fIeDdxE8rrAZsNX1KAv9welnnekF3vqEnbOgxTHzlMHbO4nkA&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"09:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"09:00","closes":"21:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -363,6 +371,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -398,6 +407,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

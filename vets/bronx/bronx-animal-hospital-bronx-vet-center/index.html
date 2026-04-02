@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Bronx Animal Hospital / Bronx Vet Center","url":"https://scrubby.app/vets/bronx/bronx-animal-hospital-bronx-vet-center/","address":{"@type":"PostalAddress","streetAddress":"3004 Lurting Ave","addressLocality":"Bronx","addressRegion":"NY","postalCode":"10469","addressCountry":"US"},"telephone":"(718) 292-1770","sameAs":"http://www.animalhospitalbx.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.5,"reviewCount":54},"geo":{"@type":"GeoCoordinates","latitude":40.8699945,"longitude":-73.8562641},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ3-Vu1EXzwokRkhgna83d9Ag%2Fphotos%2FAU_ZVEFxGjzAXUOodl4CD4dPA3DYux_DMYeRPZWwUoVLKuk9Er18EJQnvOU7Ry5IR7re8HnwApUqu7I9GMi906H4eXOX9eb-2zu_Pl_Mn9rk6wFVQ5uz4nqtNyQZ3XYjHGrmPyRX-RXYebwd-BR52fLFl146TT-d3USJVpg_4jWJ8Sn0ODbOeJqNDfykISSsWnKpm7wtiiAUq-GSVaoyDoWAube1bSqcXDsm9u2xMf2FxjUjJkZwC77HL_3T7cSTtKOrypvHZqrEkXO_3z3MZf-iF5-9IN4hVFFx4-iq90rQxPiqLo6-3bQr814Ukg20Yl_ZAZOyIBiUlDg7Sk0ScYUF2wLIxDl9UeZOuDok4u6nQZkjaObZUGKhcdAueBzaf4vtgA5fSbHxvOlJWIxpwi81gbYJ8FgeTr_MWzvN5EP22qbSeQ&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:30","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:30","closes":"14:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

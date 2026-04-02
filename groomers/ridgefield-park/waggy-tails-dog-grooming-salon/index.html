@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Waggy Tails Dog Grooming Salon","url":"https://scrubby.app/groomers/ridgefield-park/waggy-tails-dog-grooming-salon/","address":{"@type":"PostalAddress","streetAddress":"219 Main St","addressLocality":"Ridgefield Park","addressRegion":"NJ","postalCode":"07660","addressCountry":"US"},"telephone":"(201) 440-4447","sameAs":"https://waggytailsnj.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":141},"geo":{"@type":"GeoCoordinates","latitude":40.8576803,"longitude":-74.0246465},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ2WXD0GD3wokRq0THO1k5kOA%2Fphotos%2FAU_ZVEGAepEhjBVH3J3sGJx0A6Kqoddqiv8E39IT6HsB2rbP8C7wo3TbKuRzXBd0RGAQBCiU0OABm1sL4tYdES9rkRFtGhhSUtrsFUcAXGdQAfe92bjIqSZQnG8PpaIAOSKYXsKNS2HKI0yzir5wM2LIQhmKg7udyBizsEFU8TZwg1gOvVMAGnEkkW5BpfcZCCO0WPrW2LbUHtJa3TSQFUFGzNxCj1fBKb0vjpayX7vup_mksGBLP5o2zViOYbbNr6J7XUeZkvEwU_ip6w6XIhFDQG_4qwzycwfnB5le7tm8x3Mkyg&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"09:00","closes":"16:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"16:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"16:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"16:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Shiny Paws Grooming & Day Care","url":"https://scrubby.app/groomers/brooklyn/shiny-paws-grooming-day-care/","address":{"@type":"PostalAddress","streetAddress":"331 Whitman Dr","addressLocality":"Brooklyn","addressRegion":"NY","postalCode":"11234","addressCountry":"US"},"telephone":"(917) 304-2445","aggregateRating":{"@type":"AggregateRating","ratingValue":4.9,"reviewCount":400},"geo":{"@type":"GeoCoordinates","latitude":40.6065441,"longitude":-73.9068869},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJdQDGTbpDwokRL8qePyAZoxo%2Fphotos%2FAU_ZVEFx9JyZWb0T3C9kjGPyr26oJzBGJg8gPjIicJNpZgp-D-lJGRbte1Pz0l2zrCl-pAyqvdDKnNXk5j_99g55hMPawlsv7I7ID8pOihP12hXzmBVvzQLEDxSx_fFQ1d2dUJf5StZ0aLxGgEY47UGiB87dfmtpr9zUzUl2ZqgP40YKVItkRUOd2s3NUdefo8cdBqyQf2W5foM_PlNbo0cYHr68owqwxLzYwCyn9zxkDTg1stwSrMVIw_jrX4BoqE_7olIdPGs8wxOxbPu1YGQRU2VB1x-msRyhQFxXCiVJjP5VGA&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"09:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"09:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"09:00","closes":"19:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -363,6 +371,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -398,6 +407,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

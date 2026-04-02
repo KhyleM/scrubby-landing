@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Jones Veterinary Clinic","url":"https://scrubby.app/vets/jones/jones-veterinary-clinic/","address":{"@type":"PostalAddress","streetAddress":"9282 N Hiwassee Rd","addressLocality":"Jones","addressRegion":"OK","postalCode":"73049","addressCountry":"US"},"telephone":"(405) 246-9900","sameAs":"http://jonesvetclinic.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":88},"geo":{"@type":"GeoCoordinates","latitude":35.5645326,"longitude":-97.2992739},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJk4fMeColsocRjKGggZBvuNI%2Fphotos%2FAU_ZVEF74uGkIt4rhamGMAgPGj5vGKFaQhUpf6oWxXPSPlK5jb3Pqll8x7RWhyDj3SEbZQ7ED865DzVh7mMvrQY7Kg1A2rnVb6Z2xNmJXGQyL_GEzpNMehjSXh8pcM0dpeGJKUImJVwdrT6eJYG7TScKNMHFVj0MN9j7esdcjFP3Ur_ikDb6NPz0f_g56-rsLyK2gJBMtO_RLFIMJQtXqeDmOC7xh_Yo9pLl8wGdxC03ObOz09Epga6aR_oBJgifJjGUbPqO7I9cozpPwYN1qUL8-nWNoE-0CgL-Ckx4LTRQ9E-zws-ovMeu6UPCPWZxlNJQnyhnRoLkhwgQe1sIXsQDC6lt5hL6j9fQRhxEHH4qb27524EkUpQ189hZBcOwIixs14pw-2H7FDfDihaq5ph6c0Yr7mtph55P2U8EEvX_JT9Biw&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"17:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

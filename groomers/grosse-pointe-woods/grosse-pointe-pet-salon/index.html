@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Grosse Pointe Pet Salon","url":"https://scrubby.app/groomers/grosse-pointe-woods/grosse-pointe-pet-salon/","address":{"@type":"PostalAddress","streetAddress":"20947 Mack Ave","addressLocality":"Grosse Pointe Woods","addressRegion":"MI","postalCode":"48236","addressCountry":"US"},"telephone":"(313) 882-8939","sameAs":"https://www.facebook.com/grossepointepetsalon/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.4,"reviewCount":77},"geo":{"@type":"GeoCoordinates","latitude":42.4477592,"longitude":-82.9061638},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJU2NyadUpJYgRijs5_i_oX1g%2Fphotos%2FAU_ZVEFOLNTo4_j3dasjwwF6erPdMsnQrneq2Nvl_jy_C_P4YbH-EnHLOmyzdgdcm6uBEL-NuBhYyI8de3o-JMpoNhupef6wqlDcd13DONCdWudrvFS9l2_lCmg885iMToFAEDagMtEIOo06kDbFQ6wL0V18W4O-EFazQAUyR67EdJcTCd7MOl_3aN0STO8d4s0WNDm6-jX1BiTUUtgAQCkoTpsEWViCg2tsHg8LYDaHsMy7xxEzrfFRxSYyPFjs-O3whtE7Kpc9HXsIKByr-4kGzOvdJfZAtihEttKf4GM1lZZeTw&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"16:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Lesha's Dog & Cat Grooming","url":"https://scrubby.app/groomers/tacoma/leshas-dog-cat-grooming/","address":{"@type":"PostalAddress","streetAddress":"4602 Pacific Ave","addressLocality":"Tacoma","addressRegion":"WA","postalCode":"98408","addressCountry":"US"},"telephone":"(253) 507-8029","sameAs":"http://www.leshasdoggrooming.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":296},"geo":{"@type":"GeoCoordinates","latitude":47.215014,"longitude":-122.434296},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ2dRMvs7_kFQRO4dx8Oh8XJo%2Fphotos%2FAU_ZVEELZywURI2RBQm8ZSPLgdv3WFiLQ2VzVGxPvP2Bff1GA_utm2NWTvUwRuPkERdQ2lLiTTV3MTtQS3qoG23w5bbl3RhWnnS7IUWn3l93XQVUkZ1rPEk5BJgPJh19u5MjVdpwK9ah6iNsAHcOy9J4UdOPgkfE6_6pB7gcgqmGHPfs24Z3liI0qHaus_lq2D7wdeTK0TPCzjgec7paOXFr7DiJe1tVMPOC5cyOz0CvTBvRU8ADFAFbXYdbBcECAoIybWh7YkkShFrwz1dNzkicr6qBLPslYIdzQn9SEkaV8mw79g&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"09:00","closes":"15:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"11:00","closes":"15:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"11:00","closes":"15:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"10:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"10:00","closes":"17:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

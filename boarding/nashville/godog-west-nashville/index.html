@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"GoDog West Nashville","url":"https://scrubby.app/boarding/nashville/godog-west-nashville/","address":{"@type":"PostalAddress","streetAddress":"6922 Hwy 70 S","addressLocality":"Nashville","addressRegion":"TN","postalCode":"37221","addressCountry":"US"},"telephone":"(615) 891-2536","sameAs":"https://godoghq.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":226},"geo":{"@type":"GeoCoordinates","latitude":36.0785105,"longitude":-86.9109385},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJvW7XoQKJZIgRTx3eltVjbeM%2Fphotos%2FAU_ZVEE33VNWpBKqFTO4jnlT3LmlTqa9G1YwUFMzYR49pMkXIwz0rHyqy7h2nwbZq169wS_H6h1tL8Lw_KPdeWUElPygbViWglf2KpzZhkppIsKRSS42q0RPYgFddZVxtF1VkO1tZzXKva937F657G-ShyX_o2jkFWH2ojY7-9wHFokaLKCIdXFl-CpOZM7fw7sR51RbM51RXEbyo3n-DufnUPvWgnCaG9ZbXFotYyq8NBwhOw2bA_gBX9_YiGHPW4FLIea2ubLWGZ3mBZo8xZt0mmuCEgJ6Fx3ZWWmmuXQkd9D3bg&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"10:00","closes":"12:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"10:00","closes":"12:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

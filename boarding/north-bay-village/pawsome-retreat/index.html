@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Pawsome Retreat","url":"https://scrubby.app/boarding/north-bay-village/pawsome-retreat/","address":{"@type":"PostalAddress","streetAddress":"7904 West Dr #1","addressLocality":"North Bay Village","addressRegion":"FL","postalCode":"33141","addressCountry":"US"},"telephone":"(305) 758-1392","sameAs":"https://pawsome.be/","aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":17},"geo":{"@type":"GeoCoordinates","latitude":25.8491688,"longitude":-80.1598302},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJTx8wgP6z2YgR_k7ydN_nJU8%2Fphotos%2FAU_ZVEHrb9wbWg7yT0bR17PSSYbQuRqcjhuJkXDP1V7f089iY93kULqS6qerfxUqeEC0f07GZyS3bliK-vxTVMuqkjhXN0ZhylDIbPdYide0xmwPeZ0MxmfgeqGIKXHfd7arJe-bU8Rg9XYi_0JG7RJlRukVfYWXY5exTu6szXiDqZne_EU0Ii2LS-MW2mYzNY_a6X_jFvb6vkweOZJMBQrYvh6Je5Px_pMPvqoBjoajJFAzDw3ZjPKR3NmU9uGcK-eWLlqbm0sId0qUCBTL3Q9MlGIAvkdMBEgUiHOB7quwuKmNNQ&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"18:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -364,6 +372,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -399,6 +408,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

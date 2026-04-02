@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Happy Tails Unlimited","url":"https://scrubby.app/boarding/newnan/happy-tails-unlimited/","address":{"@type":"PostalAddress","streetAddress":"1600 Turkey Creek Rd","addressLocality":"Newnan","addressRegion":"GA","postalCode":"30263","addressCountry":"US"},"telephone":"(678) 876-4078","sameAs":"https://happytailsunlimited.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":38},"geo":{"@type":"GeoCoordinates","latitude":33.339379,"longitude":-84.73746},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJA3KvLOzH9IgRRidUvvycrYw%2Fphotos%2FAU_ZVEHzdF7oKE7PX2-9PUeMUfNrftS0mHi-mvtL69zgf2qDwRev-zNMLhnfFq9W_wrXDGuLvOXzK5wPEnyoqAlDUtebLAkRsMFgmUt2kMfMJ8A8EDGiRe5CPUIntiDEHAJkWwmGbkMmhu_RYxYn3Y2DLTWwd595WJ8dp64jWIqTPkpr8MffXaONeZ5TnQJa_broiMIaJQn8q5JNGwXJZ1fMYAS-v2gq2i_Ya6PEZ-MstBELU2CZYaKwzfGOTOKcuc2dqQc9BtizSXGpth4Rj5zru7KlQC0mSC-6rU-5lr_05iYUnmi1mB3jhcLmdGrFvjysvObHDpx7Ryafx3jYobGk6yusHt20BChA79ipzn2DC7800bnSf5byvsSw2J2VGdewcDyW04P6vgcoa5JYy4OHqHUgWPoxkQkJdaq0BBKLAOd1DZyO&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"09:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"09:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"18:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

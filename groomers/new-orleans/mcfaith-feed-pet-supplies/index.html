@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"McFaith Feed & Pet Supplies","url":"https://scrubby.app/groomers/new-orleans/mcfaith-feed-pet-supplies/","address":{"@type":"PostalAddress","streetAddress":"4702 Paris Ave","addressLocality":"New Orleans","addressRegion":"LA","postalCode":"70122","addressCountry":"US"},"telephone":"(504) 309-2908","aggregateRating":{"@type":"AggregateRating","ratingValue":4.2,"reviewCount":93},"geo":{"@type":"GeoCoordinates","latitude":30.006011,"longitude":-90.0744997},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ1dweKs2oIIYRmPbqAfZ7oIE%2Fphotos%2FAU_ZVEETmLurxTErfJqSftdDTS8ehdLmYtin9O5B6hAzt0h1sRTxW7cH8ydKKB9VwLilKyGi6LzCjT5W2X7n6q_7xJoC5GpwmAHm54AhQ3qlr3MgPFxzCsakeJ9fZsganIr9UMApNjiVIxwQLpvms4hq3ZTCO4EuOyzwoIZUmfoGnSLQU4xzSj9fnEzPLCr7EUISjW4tTZ10wOvgDW5x-7YRcLnuGkXmuqbovhpbrXKB7ddAHRejtnSThXXTROgiVg2v_4WGUcRivGISRcB7CagyrLZTIxm_QoDhdoRVWwY8x0VHoMkEKUTJTBS_pF0pwcq0tr4hYIlN15SSmckerHG2NMdVUreSkRgtg8EsTsJumZGwX4leYs0L9EmQ3oXGDvm-q_3C-5KTe6cWp0r5wfnD0Jt19GzvdNnIFqT0EDtAbMogKIos&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -351,6 +359,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -386,6 +395,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

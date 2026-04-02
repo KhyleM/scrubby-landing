@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Rosebrock Veterinary Clinic","url":"https://scrubby.app/vets/buda/rosebrock-veterinary-clinic/","address":{"@type":"PostalAddress","streetAddress":"2325 Ranch to Market Rd 967","addressLocality":"Buda","addressRegion":"TX","postalCode":"78610","addressCountry":"US"},"telephone":"(512) 312-0701","sameAs":"https://rosebrockvetclinic.wixsite.com/rosebrock-vet-clinic","aggregateRating":{"@type":"AggregateRating","ratingValue":4.6,"reviewCount":11},"geo":{"@type":"GeoCoordinates","latitude":30.0994513,"longitude":-97.8632738},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJGRWN3yJTW4YRZ5fJgClFgqY%2Fphotos%2FATCDNfXGzlP1qJD6jKZWEdCpx2MURo4t9DOzHxKLL1tEo2gg94X0F1zR5EBmYo41evheFAPfWX4sAMAhRJdRAa1jiWU8k_7wh1hDCsD6PiU4BpnL93b96O28foCk_XqSFVctCmo2DbJsaIm330IuIa69ne2CEE2vtane6bdYGayWkiCfQRcG4WZs4sqku-4S_KR7XV0eQYYoROM9Li-yoz6K1PqAlKuEWeFagcRtb3KgZfInkZgi3khj2ojO_u-wcWNhZ1K8qW93lFEYA5sNlNWdXCcu8X11USb0Pn3XeWytcz6HINzTMEt3tMhT5byBw0AN4-rkKc2lRqGGupLs4cQOPb2VTFV3_FK2x7CwubEJf0CFdRqJi9uPHj9S0BHf6FdxDkjHMfKGHW3dGDx9Q7ys9T9aKTMdR3J14G1S3xQ7dox5YgIKij-cOAwvtcVKjcpU&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"13:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -359,6 +367,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -394,6 +403,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

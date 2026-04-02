@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Bobby's Pet-A-Groom","url":"https://scrubby.app/groomers/southaven/bobbys-pet-a-groom/","address":{"@type":"PostalAddress","streetAddress":"8840 US-51","addressLocality":"Southaven","addressRegion":"MS","postalCode":"38671","addressCountry":"US"},"telephone":"(662) 393-7019","aggregateRating":{"@type":"AggregateRating","ratingValue":4.4,"reviewCount":157},"geo":{"@type":"GeoCoordinates","latitude":34.9896675,"longitude":-90.0201896},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJM5N-2F1i1YcRyKJjRmsW-MY%2Fphotos%2FAU_ZVEHqSy5gPTuvPZckoLV-iAAK3r4hvZ00cEqRtIq0qRvvV7whoi5Ev7dOT3JIQI227ZkQWcD3KmhTHejdnY9_MWgNYvTLF5iiVTaiI0WT95JY_jrged1Asn6iiWEsxISU5tmYrBdkpyMCntIOgNx0HFwrorIXhgtzeoDpdlajh73SxJtiHlcRrG-xJkldOjRBAKL7Aq0uFV6xYfleOzoDTEWViZ0kQWFAIPtfpmeeMO7TqvKYFE-v8H1109OOP0AJ8w0z8ZaCVoMxINokidm9UeZqBE7_vI71sXKi83nMW12EhGhJVvzQFgiB4tqrPk81UOwaqWNNA5HU9Y_odk-aq79w707dvx0dVm3sb7jTOfegRel0iTXBNUBvI55ZdD-mzsgz2FQeregHO-JQPHdMW-MUCBZsdIoni5KlQyDHAbKegyF-&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"18:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -363,6 +371,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -398,6 +407,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

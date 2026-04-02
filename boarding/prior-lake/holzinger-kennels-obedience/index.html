@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Holzinger Kennels Obedience","url":"https://scrubby.app/boarding/prior-lake/holzinger-kennels-obedience/","address":{"@type":"PostalAddress","streetAddress":"2920 220th St E","addressLocality":"Prior Lake","addressRegion":"MN","postalCode":"55372","addressCountry":"US"},"telephone":"(952) 440-1600","sameAs":"https://www.holzingerkennels.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.6,"reviewCount":10},"geo":{"@type":"GeoCoordinates","latitude":44.6343525,"longitude":-93.4584961},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJfdH4zN5q9ocRQyWYI_iJpuo%2Fphotos%2FAU_ZVEEhA89-CO-jjb0aWuw7C-A_WreoCfZ-RZM1I0LewqqMjf4h90mqrHv4P49_1ZoDcgApMGvG5Ffwh2F6dWDlyj-7cdUGRS9mm6iFXnskBMpkLcF3KibkeWg-4RWCH1MIXROqsIPdsWNhTZRByS9IDixrLzwK2np5-t5GxdYftxVNsxeOPkuSL7hIQVpQEXiZvk07hYqCJrUMFrejvh0fPMPGsYuQ51H-PW4xgruPN3ewrH0aUyHR0umU65_aDJ6woir0obNgU7j0WKU6MM194_ETM63XkpAjM-_pWYjjYyiYlg&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -345,6 +353,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -380,6 +389,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

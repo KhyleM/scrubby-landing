@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Animal Hospital of Ovilla","url":"https://scrubby.app/vets/ovilla/animal-hospital-of-ovilla/","address":{"@type":"PostalAddress","streetAddress":"3357 Ovilla Rd","addressLocality":"Ovilla","addressRegion":"TX","postalCode":"75154","addressCountry":"US"},"telephone":"(972) 617-9996","sameAs":"https://ovillavet.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":409},"geo":{"@type":"GeoCoordinates","latitude":32.529164,"longitude":-96.8852682},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJhSVcxSztToYRKQXvVdowFz4%2Fphotos%2FAU_ZVEEyt_T9nTvNWxOB1Ll8ZjXHMQJl1Z_QpGoLKMcSI-lsZYuXmrcbKqe0QqEWSOvC7PMOKp4McOLGrKo9Q6RV-drc55vk5fEO3maRV-giqcoyMmowOsY95ftfGKscMN6AE2SS16H2iUCqtRuoYDBYh1vBXdzHHmae_NzWk2GGsuD2xC9_vh8ORi9ZEribgeEchCahIyZVzzb-dhH4WHAeiBCEoOlglXtb4Fb0g6cl5PcWci12QuU5tcnq0IfD880EQzfOddM_Ev4L0F6NTS7HaZh6SNDJLfpcu35eczyxuCbuZA&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:00","closes":"18:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:00","closes":"18:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:00","closes":"12:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:00","closes":"18:30"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

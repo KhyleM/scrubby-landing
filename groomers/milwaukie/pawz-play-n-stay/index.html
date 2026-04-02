@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Pawz Play N Stay","url":"https://scrubby.app/groomers/milwaukie/pawz-play-n-stay/","address":{"@type":"PostalAddress","streetAddress":"16031 SE McLoughlin Blvd","addressLocality":"Milwaukie","addressRegion":"OR","postalCode":"97267","addressCountry":"US"},"telephone":"(503) 303-7284","aggregateRating":{"@type":"AggregateRating","ratingValue":4.5,"reviewCount":60},"geo":{"@type":"GeoCoordinates","latitude":45.4064938,"longitude":-122.6259248},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ2xYJJ0N0lVQRs9T09sEXH8c%2Fphotos%2FAU_ZVEFD25ep4cZC3_1f1lF0jAFsqdmQXIhs0MMbqJlSYLkc1bHwVVTBCBrkAgLBKshFoaRl9jmjMbtwALZ9hV1C2YCW5InmJKJ9Gr8YxSQ4tFkGaCeDutfQtno_6RKI2GVh7zWtKeSJdWQZNUjTrs9ru-dPPsC69lWbcbqpTD7HhNYFwQ84ejt_4ROxlIR8K7KHCrqDdVy6XewEjQZP-3iXE8qV6Qyy0_5Gd_5V67CkCIC6HzgcDajCKnDoDAle6KZ_miihj1r28_iqL5iUxpg-9WBPwH1fyGNBqdonyb1pZC1FyA&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:00","closes":"18:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -359,6 +367,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -394,6 +403,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

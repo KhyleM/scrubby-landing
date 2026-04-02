@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Daisy Dog Academy","url":"https://scrubby.app/training/hesperia/daisy-dog-academy/","address":{"@type":"PostalAddress","streetAddress":"10471 Lilac Rd","addressLocality":"Hesperia","addressRegion":"CA","postalCode":"92344","addressCountry":"US"},"telephone":"(760) 947-1339","sameAs":"http://www.daisydogacademy.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":29},"geo":{"@type":"GeoCoordinates","latitude":34.4372137,"longitude":-117.4220167},"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -344,6 +352,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -379,6 +388,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

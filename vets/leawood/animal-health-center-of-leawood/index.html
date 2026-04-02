@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Animal Health Center of Leawood","url":"https://scrubby.app/vets/leawood/animal-health-center-of-leawood/","address":{"@type":"PostalAddress","streetAddress":"3618 W 135th St","addressLocality":"Leawood","addressRegion":"KS","postalCode":"66224","addressCountry":"US"},"telephone":"(913) 215-9611","sameAs":"http://www.ahcleawood.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.9,"reviewCount":327},"geo":{"@type":"GeoCoordinates","latitude":38.8842801,"longitude":-94.6262697},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ3xvBRE3DwIcRbHprR5N5Cjo%2Fphotos%2FAU_ZVEEKeyYaVhu1WrS2m8biiWTU0r0HOz_GSvDxXOKqLEjH6SX4AcZyRoFr7rWgrltsxOZUfuBhhg4lyfq1kHgRK2v6l51PmsAUslW49n46sKQvRrQBd4chPoYzw_xmtA9DPAiYQACwe4EmXf0FLkuVytXhcC2gChd7zqcqydHjZ8P2sbdn6QbBqwf4MNeR6FAQ3NtgA35RFQurc_xdQIApJQVJbXvvLyBi768xA8mNledBu759vJbKrQYQw1Cje3_OEZNbfqKgUFsBzy66L5jgUv22sL4qk0-duda6PiYuhddQXQ&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"17:30"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

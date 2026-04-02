@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"That Pet Spot","url":"https://scrubby.app/groomers/colonial-heights/that-pet-spot/","address":{"@type":"PostalAddress","streetAddress":"2312 Boulevard","addressLocality":"Colonial Heights","addressRegion":"VA","postalCode":"23834","addressCountry":"US"},"telephone":"(804) 691-2803","sameAs":"https://www.facebook.com/That-Pet-Spot-247342987186287/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":106},"geo":{"@type":"GeoCoordinates","latitude":37.2614179,"longitude":-77.411907},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJZ2uiuIOnsYkRKUpzn4I_seU%2Fphotos%2FAU_ZVEEgtf1BrHSvSSotuH7dqDKb1gmo2Kn8wt_YLppsYOnST1jia40p0Qphl_A6bWRiyd-HHc3pN1_IzXBFv11D86P22EO0rH9HIBVOcPLIhX6YVYDSYpYbSzzv5TpOt0C8Q3maSVoz22i0wIkh8rnXGhs49KBgHkUceQOvROHpy3FrJMe_9HRj61jWLsNfp_IenGr5O6KyS5UAMLrW0Sc7v3U2jW2MDzNOigHxayWEoA3AFrLC-BvgWXxXD8H7rTr4oJ4gJxrdJ4lDVBYLOplfoFzCjrn_aBpIh67C7oShLuPXCSKKPYInb_lKrPCbXrktH731zRUwbhuO5K0rVMI0LdaoANAw8qmxylYLJiPzs7NSLlizm6_m_rjHdPJRv0fp1gOR5h2CMJ1kuG8ix0LdZG4-FVYNPaRauRBO9Y77zvqrPQ&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"17:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

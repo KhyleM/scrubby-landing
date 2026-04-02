@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Shiloh Veterinary Clinic","url":"https://scrubby.app/vets/swansea/shiloh-veterinary-clinic/","address":{"@type":"PostalAddress","streetAddress":"830 N Green Mt Rd","addressLocality":"Swansea","addressRegion":"IL","postalCode":"62221","addressCountry":"US"},"telephone":"(618) 622-3778","sameAs":"http://www.shilohvetclinic.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.5,"reviewCount":197},"geo":{"@type":"GeoCoordinates","latitude":38.5562991,"longitude":-89.9285611},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ3ybs4aoGdogRt0W647O889Y%2Fphotos%2FAU_ZVEF_9Y6g1Yf5Q3YyjWdr8ZeXMotlA1RPzMTj6RJyaRNSALLGR4Ra1a2hY88MbQte9uIXTM1Awu9KqasZq8YV49-wc-NUGE3BxVKIT4qIRCY4bYHmvffbMiJJ8omyxzES3OYoCeOwM14_wWjBfoZkulmmhx6dB2l88uinYO-eRkvWFOddUjBUpNdxRHp_2nhXj3EI8pcvzE_YjntUTv31By7FmyeCalnYNVr129ratoG7Fa-9T1XSMUXSRBEOxowKKFpLHn_QBmnItvv4_CgSfr_kfT8xaF5m_cTP3Ij3OTiWOA&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"17:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

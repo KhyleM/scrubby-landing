@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"A Pet's Place","url":"https://scrubby.app/groomers/oak-creek/a-pets-place/","address":{"@type":"PostalAddress","streetAddress":"1010 E Rawson Ave","addressLocality":"Oak Creek","addressRegion":"WI","postalCode":"53154","addressCountry":"US"},"telephone":"(414) 764-5380","sameAs":"https://komaps.top/business/a-pets-place-wly4z5","aggregateRating":{"@type":"AggregateRating","ratingValue":4.6,"reviewCount":184},"geo":{"@type":"GeoCoordinates","latitude":42.9159122,"longitude":-87.8978564},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJcX72NiwUBYgRf615dIemvx8%2Fphotos%2FAU_ZVEHQF5hkv8qplUarpajpRitw2wy9sPcoCeYsmk61nwIOAPGecCNFZ_owpa2HagQwvnDcQJODtTx-5OpOD-d9VGhxQHxuZ3TuVaRGbX08HC2cacqPdXGc9OyZ0SWkP6N4FYmI4lBkIEm-RY43S249DLbF6KIjQGNI6cJU7dR9vsExEVvmqp5EBfsHNJyj3TDlrVAmBAQGuYqN3ewfepylbsCiagBsw0jRDpkPi7tOZCtw4_nVVqqwQ5fk90vPm4_6wm5cJGO6lD2S-_AyokTWmgRmNve3yImNyosh98ksSgU2zq1VuSA4uPTm0BV2xuwspksqsXUBSbqpfypkL-gaI3cx1BEpp9UAoa2kCKRHZdDf3-Jwo73w9wrdKVmjZABkJ0lZOguz5RN-M3CsCe7RTVcxBvx8S_V0fYyGysxeb9uPve0&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:00","closes":"15:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"15:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

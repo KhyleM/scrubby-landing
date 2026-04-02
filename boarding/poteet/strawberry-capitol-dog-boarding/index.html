@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Strawberry Capitol Dog Boarding","url":"https://scrubby.app/boarding/poteet/strawberry-capitol-dog-boarding/","address":{"@type":"PostalAddress","streetAddress":"Eichman Rd","addressLocality":"Poteet","addressRegion":"TX","postalCode":"78065","addressCountry":"US"},"telephone":"(830) 480-6955","geo":{"@type":"GeoCoordinates","latitude":29.1334287,"longitude":-98.6276295},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ6a-Xi8etXYYRKX538DaLvow%2Fphotos%2FAU_ZVEEtkKxmuobN1BdPyqmwJ1ttkK1lPsDzHxhVKmEzsom1W2UwQ_gZxoKD6WJa7A9012hPG3qCY7_5WymcuGFScHLSqwsNG7F2lWh082McgXbQUWxPKGN1P7JBJVa8ThdLSO5ltqnBauQ8tFkJL83paYoNITBA9otBkPHPwtD8FT7cFqkuXoYr25KMo4Z9V4ID1_LOI0VdwOn-j5ZHT2Nv7JdOrwIJYmJ4poDJtRx112KJC6yhF4lCr9C2_rp45pBsrlIVjr0Z6DG_zn3JObUwWh-nuukATAWmt-LXC4reGSSJiw&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"06:30","closes":"18:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"06:30","closes":"18:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"06:30","closes":"18:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"06:30","closes":"18:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"06:30","closes":"18:30"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -353,6 +361,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -388,6 +397,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

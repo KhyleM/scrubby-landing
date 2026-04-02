@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Upward Dog Training & Counseling","url":"https://scrubby.app/training/new-orleans/upward-dog-training-counseling/","address":{"@type":"PostalAddress","streetAddress":"1000 Bourbon St Bx#393","addressLocality":"New Orleans","addressRegion":"LA","postalCode":"70116","addressCountry":"US"},"telephone":"(504) 717-5715","sameAs":"http://www.upwarddog.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.6,"reviewCount":11},"geo":{"@type":"GeoCoordinates","latitude":29.9611452,"longitude":-90.0632717},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ71GCZxCmIIYRB8bkCA689lU%2Fphotos%2FAU_ZVEEGn9FGiM-8p97BaHMuzhZnfCpG5chIGrehWW5nS5ON4qZA9y6TDUS_eqHEQwB3Vt53HJR460bCiqVodc6HmqOKJnEcSiUZY1xJeIKJVhIEVgDwIgkmltiqCbIDw7AdC4AXiCSaHNOWuu73zT1V5opi_omD--3t22OqILbMAdzDlmAwE_D7fJzXxPT1N6oom4_6oJeQxjXbvoudTM0u1z-6YBl5xVxO9hW2EEXJxxbu2CIxOIYEhml0-gmykL7IQJQh1jqtfqTiSXQoZrm3JMk3ieMdEoqwG0Sae-YMpoq6iA&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -346,6 +354,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -381,6 +390,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

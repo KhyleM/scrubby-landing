@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Red Barn Kennels","url":"https://scrubby.app/boarding/mason/red-barn-kennels/","address":{"@type":"PostalAddress","streetAddress":"5882 Brewer Rd","addressLocality":"Mason","addressRegion":"OH","postalCode":"45040","addressCountry":"US"},"telephone":"(513) 968-2662","sameAs":"http://redbarnkennels5882.wixsite.com/redbarnkennels","aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":44},"geo":{"@type":"GeoCoordinates","latitude":39.3977156,"longitude":-84.3215764},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJn-65mkBZQIgRMtyLUerRuFI%2Fphotos%2FAU_ZVEHObCALbVyvrdGZv9YGpbXQmIaY_UemzmVRW0DGHb7KYjb0FFQ8BZgbjuRT5kKSOATjgYeog22SEhPX876yMjDI1wmYB3y9za-FdAeqtkxlIKR0ELvIdX4jhr2dKlYm4epbhnXGBEW-FPu3qr-FXgeDce8Yz29vhlpM1meNJsJuZpXoY7PTM6jZF_MfPh6hCroxfokZ0ydacCM1Q9ohOb6pdhVuulii-9e4Q7tLkiyQ_HeTx1_bfrUu79gBSPVc1wEP-QxskmDR9HStiiqtQUyrdC0URzCsnTQRK9uYEeJlyQ&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:30","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:30","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:30","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:30","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:30","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"12:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"08:00","closes":"10:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

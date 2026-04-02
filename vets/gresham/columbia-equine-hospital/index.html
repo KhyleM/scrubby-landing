@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Columbia Equine Hospital","url":"https://scrubby.app/vets/gresham/columbia-equine-hospital/","address":{"@type":"PostalAddress","streetAddress":"27841 SE Orient Dr","addressLocality":"Gresham","addressRegion":"OR","postalCode":"97080","addressCountry":"US"},"telephone":"(503) 663-1515","sameAs":"https://columbiaequine.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":92},"geo":{"@type":"GeoCoordinates","latitude":45.4722022,"longitude":-122.3766948},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJj9bqapmZlVQRTXJH2wQ73iQ%2Fphotos%2FAU_ZVEEuCcytMCJQP7rkfngGiRZsPucJv3NCcu4_CEMURBYtl0xb1wcHOfVDImGdtNLLmGWT_zvh7Kq5PcpRvHW1zTXs7etwpjlgfA-5TZFIAyvg6eLrnZbUcmljhHZgT7qn8fVj-6QAWG3wrpddUxeS_w_fWLrkhSN0MQgjTvkCMovtxulh1AwyLHYGlOc4yzJZAh3qfxMeCS3FLp4hDUCGqrDTOjBt3OumA9e5I879FFVY45c0jC2II2PCqPdGjHXy6IRSkTwGtWldNHIwiaEYjo3QBbLcE1FkFSRgvkhHsmYmUQ&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"00:00","closes":"23:59"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

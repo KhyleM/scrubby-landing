@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"River Valley Veterinary Service","url":"https://scrubby.app/vets/prior-lake/river-valley-veterinary-service/","address":{"@type":"PostalAddress","streetAddress":"15900 Jordan Ave SE","addressLocality":"Prior Lake","addressRegion":"MN","postalCode":"55372","addressCountry":"US"},"telephone":"(952) 447-4118","sameAs":"http://www.rvvs.vet/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":296},"geo":{"@type":"GeoCoordinates","latitude":44.7181168,"longitude":-93.4179141},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJuxFbQQI-9ocROY927RZiw7o%2Fphotos%2FAU_ZVEEgRIU9FM7kaIUb9BzI0UH1EC-a4g3SjhDcxMndeh-UzqmspuSu10i_2WLoMVDGxN0jJrWLdrouTIxsiaToM0iT2pR-3dSfDdIArd1G-0iKysNugD4aw5f0g1GJjeYxciTb1xZUDV5KW4EcTpaPXL_-7PDk5XJoRfKnLS7W6_rByn0y8X-4YLNuOAtMP6XFZUE1Ry_OQHlKf-qTOTakZj_oTSqIJdCqPiKIpZSGak7u0FmsjaNXr7qisglLKkd_be4s2sufkLDlSvUJDTrXq0Qhe2bSWuSDG6EaGDzkHkD_Eg&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"07:30","closes":"12:30"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

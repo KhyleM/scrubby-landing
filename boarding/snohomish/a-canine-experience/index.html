@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"A Canine Experience","url":"https://scrubby.app/boarding/snohomish/a-canine-experience/","address":{"@type":"PostalAddress","streetAddress":"18208 67th Ave SE","addressLocality":"Snohomish","addressRegion":"WA","postalCode":"98296","addressCountry":"US"},"telephone":"(360) 488-0639","sameAs":"https://www.acanine.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.9,"reviewCount":262},"geo":{"@type":"GeoCoordinates","latitude":47.8322609,"longitude":-122.1441734},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJDfOETWIIkFQR92teiE3hFug%2Fphotos%2FAU_ZVEFjVX_nohSN-1vvLIiH1lzIF--50sU6mMl4erjNqge3cyCzi9mky1OmppKli7cr_DrWLYYY7uAKQON-1AXMV6Qb7hno5y3M8-u1uOiUuScR5kxdkQgqJlIZdwqKtcj_K1yRn1y2z1Or6bgw6L4ostI5HuIteTelzSB2bztq0K0xLV2a1z_dta1TYyiT73rjTWHnt7Ya58PZ_aWjZQjGTGT36pPpI9jm8bMg3D6oxtm5G3cO76-8gpXEpa23yl4-NI8135Ox758S-f54iu7GHmYYmTV6RAlK_HLwstPEakomOQ&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"09:00","closes":"10:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:00","closes":"10:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"09:00","closes":"10:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"10:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"10:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"10:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

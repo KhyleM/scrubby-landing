@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Waxhaw Animal Hospital","url":"https://scrubby.app/vets/waxhaw/waxhaw-animal-hospital/","address":{"@type":"PostalAddress","streetAddress":"601 N Church St","addressLocality":"Waxhaw","addressRegion":"NC","postalCode":"28173","addressCountry":"US"},"telephone":"(704) 843-2269","sameAs":"http://www.waxhawanimalhospital.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.4,"reviewCount":254},"geo":{"@type":"GeoCoordinates","latitude":34.929642,"longitude":-80.745912},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJk8AVZSoxVIgRmNtyGqDeHpg%2Fphotos%2FAU_ZVEGrKvwBT-itykyaYEq9ZFb0Qck_vCljY2ZX7B9lYAfMRUnAY4iNZ_Qdq5U4o3TkQyZngi9gh5h3ddx2m7UZIZZG_fX300E0OJBKx-lAaHTmoHhV_rPUiM2iqC9DT_i1uk4n7u5sqkkb5QDqVu6FAQgu4QRfphsJA4Hr9AZBBuyIaITlqh4Wd1VpIqxgyJ7cepb-xY1Qe8YqGsoVtDH3gYdFcqKNKAxY8P5x5dpDiyklPKaDdNt12O5v7RcW5hUbryRuNJO0ZPM6EwmX78qj4ymfVcyq90dIv4QWPBhXQ551LyKA3aEPO0n0iW5-8YbmiP0woNSSHY9-jyhQLkJrEylfDSTzStCYYnWlwO1O6GR_DKvEH7Ug2MEdg-mvN4-tmuLr0ZGdKvsXQgnZfw_TeomWdI_QMYw8pe08RZ6HraVtKDj8&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"12:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

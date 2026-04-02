@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Tyler Animal Clinic","url":"https://scrubby.app/vets/mentor/tyler-animal-clinic/","address":{"@type":"PostalAddress","streetAddress":"7439 Tyler Blvd","addressLocality":"Mentor","addressRegion":"OH","postalCode":"44060","addressCountry":"US"},"telephone":"(440) 953-1730","sameAs":"http://www.tyleranimalclinic.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":142},"geo":{"@type":"GeoCoordinates","latitude":41.6594625,"longitude":-81.3756409},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ3TzWfNyoMYgRrxFcEa2_Vuo%2Fphotos%2FAU_ZVEFx9RiHrqcRVdY6mXwtHI-AJahg0BXlJCSStbkupUdvwHNPUXHXQXsVkuCYijrvqkdvkbjva7ZDAuVvOvvwXaz8P968OpIIdCfOzGKI7WkcbaQQgv4OoYAC6g3OCQ64AwBiHgqmLRB8hh1KIoTDuCbVGFE4jkAMyqFQjqnlcRofPUaEJClKL8dLqJFTaqKew5kQN0sIt2PDiobMX-SW5vOoiegmUxTnq_uFfmtB7P1rCz-KLMm-2F7delJoCEpr5kOEDTo--A9iygzf7JQzNz0HwHLTCp00TWDz812Pn7bIqA&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"09:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"18:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

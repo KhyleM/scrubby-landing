@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Brooklyn Veterinary Clinic","url":"https://scrubby.app/vets/castle-rock/brooklyn-veterinary-clinic/","address":{"@type":"PostalAddress","streetAddress":"1320 Virtuoso Lp","addressLocality":"Castle Rock","addressRegion":"CO","postalCode":"80109","addressCountry":"US"},"telephone":"(303) 688-9352","sameAs":"https://brooklynvet.com/?utm_source=gmb&utm_medium=organic","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":339},"geo":{"@type":"GeoCoordinates","latitude":39.400094,"longitude":-104.8765889},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJXQuutb-ZbIcRRog184mhtKo%2Fphotos%2FAU_ZVEFj0is1GnPk8T7MD5s8BJa_W2X9JF5ig3n_k84iy9sgarlku_VoT8JWWk2OB8_R3j4TOXfknQ3gQ5MSO1v-BSG7VY4HyWCBtzew4jfRGZUaRaAGJTTOQHQeRSPuVRqG2HtWy244lxHTG1-d-LmeSdgLZhTl1JP5Oil0rNqiPi0b-2D1h--mS4vnnmUQHVPwnqIKCXwTDnZ1sCq0LS9f3XEIVMiUTq9-DLCxgepBvPbKuXO8QLnwUFHqQnUZmxh_lFPqDLURJqgujglJNiSbAEjyk4B-8s5J1lxqhfO9Q2Zibw&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"13:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

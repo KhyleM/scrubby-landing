@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Priest Lake Veterinary Hospital - Nashville Veterinarian","url":"https://scrubby.app/vets/antioch/priest-lake-veterinary-hospital-nashville-veterinarian/","address":{"@type":"PostalAddress","streetAddress":"2445 Morris Gentry Bv","addressLocality":"Antioch","addressRegion":"TN","postalCode":"37013","addressCountry":"US"},"telephone":"(615) 361-4646","sameAs":"http://www.priestlakevet.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.6,"reviewCount":538},"geo":{"@type":"GeoCoordinates","latitude":36.0661087,"longitude":-86.633635},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJl9722bttZIgRBqJJCZdNH-Y%2Fphotos%2FAU_ZVEF1HKzY2cUQgHRekk3lBiJv3-sfUg4RfPlceV-gwFKq3W7HWFPOS6eFXer7iMZkXZhsjo0F4A0jSLmkDvQ5vL7vIrXcILJuvxIm6B3IYnaCAI7GDQQQRIHD6gq0EYmqFr7RQxELnnH4pZAEcCTyELnW1zV3jwhOeLanx5_qOZc0-99VAA7T0CqXUbk74GpffEFJ8TixXDDardFXOUP2gQkJqge3NIKwbDiNnQaxnze5CEciHNm14fqScUcOexWj53MME06QB5rx1D20zSS2nZ785n1qhJ5KNMZg6i6xYwmYPQ&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:30","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:30","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:30","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:30","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:30","closes":"19:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

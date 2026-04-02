@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Crestview Veterinary Clinic","url":"https://scrubby.app/vets/austin/crestview-veterinary-clinic/","address":{"@type":"PostalAddress","streetAddress":"7415 Burnet Rd","addressLocality":"Austin","addressRegion":"TX","postalCode":"78757","addressCountry":"US"},"telephone":"(512) 535-2100","sameAs":"https://crestviewvc.com/?utm_source=gmb&utm_medium=organic","aggregateRating":{"@type":"AggregateRating","ratingValue":4.9,"reviewCount":774},"geo":{"@type":"GeoCoordinates","latitude":30.3499169,"longitude":-97.7342103},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJq6qaM6zLRIYRvO829LkbpUA%2Fphotos%2FAU_ZVEGMzvOAbEbNliZM3yat2-d5d5aPzNbLtaypo8z_Ue9J7v7MRA8chJHqbgFrcMxgXvu8hEwBQJF8zBax1Lj1XxAndWnlDI5j5Dq67HlgQaa7Y2Au4ScAASYwcVVAZEXBwMC_2Mj64Oe33zYoRkAQEelCrdY_fAxP9ZgMkFhDyeJoCfc1z_ZRKOAXD-3wtAZxQFLihPC3TDSCEe13V2omqmt9dqt1kWWCq8Cni-9YT0sbf3kBeEeJhi10k6jXbz_BvPF2bSI84rkfjJ08NtFbvhcZM4luvhU7WuIEhqJ5FTvrhA&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"12:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

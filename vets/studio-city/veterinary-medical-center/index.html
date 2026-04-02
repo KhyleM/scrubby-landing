@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Veterinary Medical Center","url":"https://scrubby.app/vets/studio-city/veterinary-medical-center/","address":{"@type":"PostalAddress","streetAddress":"11723 Ventura Blvd","addressLocality":"Studio City","addressRegion":"CA","postalCode":"91604","addressCountry":"US"},"telephone":"(818) 762-3111","sameAs":"https://veterinarymedicalcenter.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":155},"geo":{"@type":"GeoCoordinates","latitude":34.1418474,"longitude":-118.3883315},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJNTMM3wi-woARDF3ZFe-q6yU%2Fphotos%2FAU_ZVEGItuowHELixhKrzDItK5dSwhyLNWn90sIT91pgpBvEhLB5RIdAmeEdhUqidtsDMqfvX3JpyCSvfR2GC97KICy2kRZ2Optcf7GfeGFu-bW7iEq51Kr_YbI_oA1cc7--k3F98EcKTq_y9R0tPxjN0U_nT87mJw5PPuZhu5uVj1xxORY2-ZOiGuZCAIhHlNxhBeNwMLsIipud_HeY0vUkmk6F_0Ca2gWdb0B72CA_LnQWs_pCYJOsIvhw3DZ19gpn2YkFDJoWGDBktujtWcim3_T6GhpY_VPJx5xgkjyCwo-Aew&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"07:30","closes":"18:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

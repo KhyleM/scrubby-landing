@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Furry Rascals Grooming","url":"https://scrubby.app/groomers/long-beach/furry-rascals-grooming/","address":{"@type":"PostalAddress","streetAddress":"210 Orange Ave","addressLocality":"Long Beach","addressRegion":"CA","postalCode":"90802","addressCountry":"US"},"telephone":"(562) 225-1576","sameAs":"https://www.furryrascalsgrooming.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":39},"geo":{"@type":"GeoCoordinates","latitude":33.7681347,"longitude":-118.1766808},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ9R86Mxcx3YAR8RR03dPoeh0%2Fphotos%2FAU_ZVEEtNC0jX1UAhw_E6Vk-3d3h_bqDDNqCkQ9q1KrkPABsAY6fy9EkUOQNCrOwCc0BM9gabpFEFaKCl5lFn867OiQ9AgugU2bJrtn3INaYlyhzT0bY_n0DbWZAIiG9nSEpVkHP-5U6upEqrhXOSKisZZ-A2-IOktMX6STPFYkUWwZrI7uBGZDw_XrG79VKLU64Ox6K019islz7JPxpW3W7WEbfTzv7La_HHUS8VIcxfuRnLLmQUqe_HwxDc55XY7G23NxnatbiZ-lFsoz9rRJLt7ZILbBM467BkOA31z1QsRJbE1O9HonUSU5w7tpEPKVFkENKhSdysgoJG1RhcPWhRC_EJlpWde_LZzweomtvbsk8f-POYnWJQWYXeAHZqrscTIWfyemvz2PMArta8MbmUrl0SOXiBCO5SpGtLZY8fsZ4XCKinTzj81OA9BZvag&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"09:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"16:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

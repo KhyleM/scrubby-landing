@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Kennedy's Animal Clinic","url":"https://scrubby.app/vets/raytown/kennedys-animal-clinic/","address":{"@type":"PostalAddress","streetAddress":"8000 Woodson Rd","addressLocality":"Raytown","addressRegion":"MO","postalCode":"64138","addressCountry":"US"},"telephone":"(816) 358-0991","sameAs":"https://kennedysanimalclinic.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":670},"geo":{"@type":"GeoCoordinates","latitude":38.9769444,"longitude":-94.4463889},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ23IQY3rhwIcRBi8gANu28aU%2Fphotos%2FAU_ZVEFbCuD8-9BBEhYE41K5a6ojUBzEdHl5_EbBK7TXaO1apszGnwKZQCRz2rfU6HeZfEmOqts9t7Ep-Sg7dNL4MqODT_bHMg2X88cXoZmP3TSUpwigDPKC9OUXtPh2ofYt107Ip0wAAU1b87PKbCP8PKFdZL2JgIflWa1eU599nIkz5M7SpwqeozpMjervC4LYrfaEgxecn-eF4O7yTqkP1o0MU0NP79ADOcU_FU2lD_sZ2Ezx3MSf3hNZNwH0VXMBEsqSc9YSZ-zGyYH5MeqIl4gNk8L6gbEXEjdi1daHtsX10u5FZJuMCb5nrLima3UtazSkClOO2IKYYQw-LUbXb2euFHjnj14BA8-OsXtSDhcKCMFxoeVBBDbi6HdhGt7mWDc8gNY9vECgJbseCtLj2mYZxYBo4Q8SzQ1PKmFJwG9gHQ&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:30","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:30","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:30","closes":"12:30"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

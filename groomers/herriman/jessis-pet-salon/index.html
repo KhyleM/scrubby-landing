@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Jessi’s Pet Salon","url":"https://scrubby.app/groomers/herriman/jessis-pet-salon/","address":{"@type":"PostalAddress","streetAddress":"6646 13400 S","addressLocality":"Herriman","addressRegion":"UT","postalCode":"84096","addressCountry":"US"},"telephone":"(801) 558-1290","sameAs":"https://bookedin.com/book/jessis-grooming-","aggregateRating":{"@type":"AggregateRating","ratingValue":4.5,"reviewCount":51},"geo":{"@type":"GeoCoordinates","latitude":40.5081055,"longitude":-112.0494315},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ44Qz8iCbUocR7mMcmUOCqbE%2Fphotos%2FAU_ZVEGFfjXCpxcG9wpIksqeuSjTkwcC0LVqs7IO3q6d6085FQgJn7-nJc32hx0TocwzHGL9e8WRPwB-wfu0oFGRtNzEMVjpM86Mh7WSMcztww_9zXXGIrvOrtp68zfE_dxIUgvVJA-2Qmxed1aXKqc3TSM8EUZOGvl4OHVnTxNsnMXiEatsJKjqEHBIqPPPvmu7ScZ-kU2q0SZXtHWhfzm0XUzaNtHV7Ky9KcIrXAraaNnOGm2LtXLPNopv47R1EYIWRMpCvQa8l7kNh6-Th4oEI17Spo4D-R4RsW4sFLgUfyIWKQ&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"00:00","closes":"23:59"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

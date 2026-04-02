@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Zen Pet Spa","url":"https://scrubby.app/groomers/middletown/zen-pet-spa/","address":{"@type":"PostalAddress","streetAddress":"143 William St unit c","addressLocality":"Middletown","addressRegion":"CT","postalCode":"06457","addressCountry":"US"},"telephone":"(860) 218-5635","sameAs":"https://zenpetspa.net/","aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":46},"geo":{"@type":"GeoCoordinates","latitude":41.5574109,"longitude":-72.6493184},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJH08mWIZL5okRNP5FOimjVxk%2Fphotos%2FAU_ZVEE50T0N_pfZJKqPGqqelzM24nclh1yoMIlggrR5-lA7zHDCDVnYehsv-n6fYjhZuqilyrFtumLC034YcrXExOQ1rnmGcASJm2lDCuOO-fFxuT6O5iE1SyhzE9fQ5agXHkQgCBfz-Y8nHaWy3uQXwRB6FOz_KCKsNZnSh0towCVZ0zqhhW-lPKJ2l6XKcOQzoqIKGEY0dKOE_5-2DsjsUd2rUZrI47MH1i7gdIgzBN7vH_djjdcdC-GbmlOLC3f5h7KnkRThBcT59weUxX6BMCe2i29MmXzHbrUVOUU0NNvYOA&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"09:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:30","closes":"18:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Animal Clinic of Herculaneum","url":"https://scrubby.app/vets/herculaneum/animal-clinic-of-herculaneum/","address":{"@type":"PostalAddress","streetAddress":"1375 McNutt St","addressLocality":"Herculaneum","addressRegion":"MO","postalCode":"63048","addressCountry":"US"},"telephone":"(636) 937-1655","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":171},"geo":{"@type":"GeoCoordinates","latitude":38.2499552,"longitude":-90.4038486},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJpf70ORjp2IcR-nbhlziWSj4%2Fphotos%2FAU_ZVEHbe3YCy0boza8EJ9zRTfTBY6_kcPFM3ABBi2cUWeokb5dGMQ6uU5Es0mcrbDMXNqbML5o6Bthx-04tDQ2Gcfs1StQ-WX35-o9IxWCvW9WPDwWvbUzO-qYAc0yUP8gQcmQm7Bz68qpQo442WeS1SD8X4CwxkXmuVecVS4x2sPIq1pODuX0eafMZhYnoeWYR-6XBFRw_eRS-Sv0HWABzqASqc97EymRJiaVos7MR2x9iVrsSnD6fUsov14VvUxmobSUy4JmQ0pq9puIXy-OusuQnGrIcUjG2h2MMEgLKfBjVDjoG4ujIB0JkYdCXk5RDD4YusnRLSzyDO3knZwWhTGjwoG28fU1wOTxy5GXQuWGMDSmO1yIFT27M-nC644gFK1haW_hC5ox7GDM_pnAY6ratXh-FqdeKk_zqHvf3g1_qKA&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"17:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -359,6 +367,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -394,6 +403,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

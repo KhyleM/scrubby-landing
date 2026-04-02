@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Daniel Dagg, Bay Area Dog Trainer","url":"https://scrubby.app/training/clayton/daniel-dagg-bay-area-dog-trainer/","address":{"@type":"PostalAddress","streetAddress":"6055 Main St","addressLocality":"Clayton","addressRegion":"CA","postalCode":"94517","addressCountry":"US"},"telephone":"(925) 250-9013","sameAs":"https://www.bayareadogtrainer.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.9,"reviewCount":83},"geo":{"@type":"GeoCoordinates","latitude":37.9414296,"longitude":-121.9357117},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ93VmcGFfhYARQIwDLMDyk4k%2Fphotos%2FAU_ZVEExYYD5l8yjacgiW03XEfIiQcx9z8In2Z5DyK-otglDaw8686QewaXGou9oIBw73jMSl6ivrtG_B0z6TkjjOUlCxktZQ7HzDVc8Erk751wQhAfadiouZMbYrFZrK9uMuvMhuOT3u4Jl337bMmkO3XunfSBRYe2iwo0NltEf9s6rLaxnM5jhIfjRdDLG9mdUyNDAE2D5OkygFdYXLMRo5-uqVu_zqN68NmcTSsZPsNYXuUt8s34kMQKCu3UY3W7E6FjUPuxZcw3RPAUgNtq6r5Nyz2_f1nZXSz00-7edmDFxNA&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -350,6 +358,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -385,6 +394,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

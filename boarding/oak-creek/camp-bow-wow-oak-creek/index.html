@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Camp Bow Wow Oak Creek","url":"https://scrubby.app/boarding/oak-creek/camp-bow-wow-oak-creek/","address":{"@type":"PostalAddress","streetAddress":"8411 S Liberty Ln","addressLocality":"Oak Creek","addressRegion":"WI","postalCode":"53154","addressCountry":"US"},"telephone":"(414) 488-6807","sameAs":"https://www.campbowwow.com/oak-creek/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":230},"geo":{"@type":"GeoCoordinates","latitude":42.8916341,"longitude":-87.9201341},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ7-1aA4MVBYgR4Zy2bm2Z7K0%2Fphotos%2FAU_ZVEGOZMQg3XJkMFATuKTqJKwJHEJtg81lCo-JGow5w9KJALuK_-9ixEnBDHgjhSv3yRwUIgr3z7kULaLlx-3iNQQ4RHA8DHIRU-uf2bqV7KJGsH_XQjNv96M918Ia1iN26H3UCmTBJuBl5t9niSAG8mDD99VqkBWT5EMJzsoHogeuwu9FZ-9CD6ZI2S8oUXTof2QvNX_kENFaq_koKEXqr-q0JUp6F9iQG4x2Oju_9xTJRGbvK0xSIhRrpR98NGJhFxi8-VJmzcB3m-EL2MDvDnMu3pzXpkbosMqzhKvrVvJD7w&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"06:30","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"06:30","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"06:30","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"06:30","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"06:30","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"06:30","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"06:30","closes":"11:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

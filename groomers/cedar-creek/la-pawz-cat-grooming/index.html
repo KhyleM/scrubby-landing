@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"LA Pawz Cat Grooming","url":"https://scrubby.app/groomers/cedar-creek/la-pawz-cat-grooming/","address":{"@type":"PostalAddress","streetAddress":"NO WALKINS - BY APPT ONLY, 143 High Grove Rd","addressLocality":"Cedar Creek","addressRegion":"TX","postalCode":"78612","addressCountry":"US"},"telephone":"(888) 452-7299","sameAs":"https://catgroomingaustin.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":134},"geo":{"@type":"GeoCoordinates","latitude":30.0344036,"longitude":-97.4600049},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJq4sqXJS_woARhxyTKwmXwhA%2Fphotos%2FAU_ZVEEKjAq_GwIhD-BIjCnQgIeTkEuncNZO9OcpcCUtdpLdzO8HXpXgn3j71-ITIjAjKdVyQwzr3hsrplqxOSqHP_BAG9c6bLhZrh0WtQX-bhpSXZNpwS0X3qf3cy02jlEC3KOoUHw7PV4ezuhicaGwAy3gsuMVXAo-L9WWN_tyJUco7MA7WMlKj-qf-kKEY9TTAqgU56n2Bh4oEUqzA3H6cKAssEjBAmBUy95lte2DI3MPOGxDr-jiAHysTitpdVx5o_2UBoSpD0cX2RJue3NJsz1TvvLIUVPgpYAIGy366mgD6g&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"09:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"18:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

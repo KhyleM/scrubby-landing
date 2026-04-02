@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"My Vet Animal Clinic","url":"https://scrubby.app/vets/eureka/my-vet-animal-clinic/","address":{"@type":"PostalAddress","streetAddress":"13 E 2nd St","addressLocality":"Eureka","addressRegion":"MO","postalCode":"63025","addressCountry":"US"},"telephone":"(636) 938-3239","sameAs":"http://www.myvetanimalclinic.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.9,"reviewCount":342},"geo":{"@type":"GeoCoordinates","latitude":38.5044236,"longitude":-90.6270979},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJhUI0W10o2YcRU1ABcncOIQo%2Fphotos%2FAU_ZVEF6JHy25J8fQFwpvC7dkNiXgE2tynsQ2Y4UhHMwydscUTXFqVG670drVbdHIdvr5dWaXQxwg8acDOAhesgJTjZEi0BjBIDUUUklXtCKVJxlwVwA_EjPsfBh570LY0XitKTPPVIOn8hxWojSm2MxEvOVpZFKkc2GBNY4PlZOoX5HUYYtXkdSTB-sabr_oGd9i7KlRCBBrWleAtQ9vr2A17YNV6iV2YwuNFca1mH9o4x_kR1f_55UzABmvuZFUsZQSrRxE6NtxDN2aTNZkBvU7TBIReKpylNj7aQM34qQofgHa19h0o-L3Swv3yEAIvqa9weDY1wFcZUaVhQVZnkPj_dCaX8Wb1czGbkLRTxKemk2tzWclXceF5VX4P2phv8fm7HD0PYslXtfJ22HB2YcydRdsHXURBzpcmHN2JmAxWxh818&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"09:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"09:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"17:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

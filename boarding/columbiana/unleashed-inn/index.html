@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Unleashed Inn","url":"https://scrubby.app/boarding/columbiana/unleashed-inn/","address":{"@type":"PostalAddress","streetAddress":"1724 Alston Farm Rd","addressLocality":"Columbiana","addressRegion":"AL","postalCode":"35051","addressCountry":"US"},"telephone":"(205) 613-3443","aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":11},"geo":{"@type":"GeoCoordinates","latitude":33.2062524,"longitude":-86.5649068},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJwbpXAwtIiYgR9l0QJLBtVO0%2Fphotos%2FAU_ZVEEHIGS3-PiBEAMH1XalFqlo89zLuIQ31DsCOHoF2Quu9R_tMR23BZFCdW9CokrwRqO_eVTr_B6rZSJramDb_lYPsuKdWCNbgIWNmx66EFgPlHWl5qsjF5iuXQXDEkpaKVDOTh5ab5Ngp4wlyhCO4sRHH5AmqIkt-Ia7xeJ6rK4rHdoNBW8i1HkOySjpZTdvYZrqhisTKEo9MfyRBJo86TnAz4d5SYNUMn_lx0Ykijez-z9ZdZnWd7uFv866MDT27sAyJR9yAnqR2tSWFu_pQAs77YKr8khpmZURgj_6ljDomOVed3Mdcmg1SORMGZ0BvzAnhKz5OBYlXo7hAuluQxTFC7yKVZeGscffqo-ubpED2StlSLiyu5F5A4ieWiQL8tuFsUto0DoEdio0gwKk9RxWtyxRXcA0q6MlaRcKhCYxVBcW&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"09:00","closes":"11:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:00","closes":"11:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"09:00","closes":"11:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"11:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"11:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"11:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -357,6 +365,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -392,6 +401,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

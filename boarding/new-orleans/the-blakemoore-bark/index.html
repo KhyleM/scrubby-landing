@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"The Blakemoore Bark","url":"https://scrubby.app/boarding/new-orleans/the-blakemoore-bark/","address":{"@type":"PostalAddress","streetAddress":"319 N Diamond St","addressLocality":"New Orleans","addressRegion":"LA","postalCode":"70130","addressCountry":"US"},"telephone":"(504) 510-5636","sameAs":"http://www.theblakemoorebark.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.5,"reviewCount":93},"geo":{"@type":"GeoCoordinates","latitude":29.94265,"longitude":-90.0663583},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJaz0PyXGmIIYRzu7XdA744kM%2Fphotos%2FAU_ZVEGKwQvJWNX1ku2gS0IBp-LEAUdwD7bBmC6dCb_1jvqH_ceAcUTnXlA-h90hrKHZqRp-MmtrYshtwfHiEasemY4bbMkp61gT-ZDcExnjEyRgVbphTWIrrOwdLA8hJ70kelrS5MEUP_LTqsawWDnRuV3lvn3oCn1ztR6hjSSEXAT4mugLtnEpNbAX-IRXi5nt1eXSvlWFT8fawz4_xcSsEBQcANVAt2lgED0HVfdmW1m8gRj__aO2Ce4XIg3gndET_Fwzg0CW4oGLLzY6lk_HF7gi8oUTS6diQ-bZNMakIpHEp0qRfmr6B5PLIwRAhnvwXDgt0LOYFDwh5TkXFr5j-DD3o-hPGd33hMIhhvlBL-CppWpNt71KZKvUzzpYlq0wbNEWCOpk92N1MVcEWc2oG7GaXkfLo4YZ5TeAm_rxSYlReNSFFI-jqswIEnSg6z17&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"07:00","closes":"18:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

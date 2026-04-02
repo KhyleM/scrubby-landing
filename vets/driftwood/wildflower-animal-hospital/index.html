@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Wildflower Animal Hospital","url":"https://scrubby.app/vets/driftwood/wildflower-animal-hospital/","address":{"@type":"PostalAddress","streetAddress":"20640 Ranch to Market Rd 150 Unit B","addressLocality":"Driftwood","addressRegion":"TX","postalCode":"78619","addressCountry":"US"},"telephone":"(512) 943-6990","sameAs":"https://wildflowerah.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":125},"geo":{"@type":"GeoCoordinates","latitude":30.1524198,"longitude":-98.056961},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ36ekQdlDW4YRpyN2I0aEYdE%2Fphotos%2FAU_ZVEHkwt5ZYeVg9ybwl_WMCEMIWS_5WJIPWrNWANIUE7CAhvAZaw34HGqvtV0TwxhEXfI_oIjjB4V39HABUhwHjemA9hNObGWKFzZp_m4zLhzpddQ1ImayYe2DVyeEQFADr4eILEtcPC565ry3u7uwVZs5Qmbxs2Ax2tofQgbXQOMy_Lf4YFdtX8cyLtJj8yxOq3s-B_yi9DV0Bz3fB56QYIby84XPPw9hf392sQfJLUF6-704AUkCLoXgI9MR4iCf3unzvRso4eC_eQoflT7w3G2STYss6urbDqyltYfrmDJseg&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"17:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

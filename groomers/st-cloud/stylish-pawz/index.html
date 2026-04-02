@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Stylish Pawz","url":"https://scrubby.app/groomers/st-cloud/stylish-pawz/","address":{"@type":"PostalAddress","streetAddress":"1700 13th St Suite 1","addressLocality":"St Cloud","addressRegion":"FL","postalCode":"34769","addressCountry":"US"},"telephone":"(407) 593-6382","sameAs":"http://stylishpawz.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":329},"geo":{"@type":"GeoCoordinates","latitude":28.2462298,"longitude":-81.2882428},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJE1jbkxSP3YgRwxFHNZyqyQs%2Fphotos%2FAU_ZVEEloCmmpEH0-SBd5_kc9y15xWcEyYtiIszgZBGiPOcGf91GrOiO4UDT54fRIuDHtv-cNk-yJl6gkAdUVTkiOBYzv_QP3JX2pvSphokky_S292qs9tpWJPTYJfjCXrX12l7H3awkrL8JC28Pk4ejobY0zEgktAQymsYCe7TqqmGggvinfUxc8xBx1HkGCnf7LKsHXEf-_8neS_fe0_pr1eE9Ai4SlhH0oBfA5cebFk95Tw28HMeCiLUEqUcp5dhprdfDkC3vA-nMi__Jrod9ArOuueVmLtL8cwOX5UcRo5ltK9o99RFzd63jOCLspnCm72DV6G1HsaQQm3Pv_KO8JRlhexZCcL1zai4F1mxsZ6htTMd6dRT9i7azAyFpl9kAFUaYKIhIeBaFmW_W0Zt18XtrZpb73hHmpSViPw5_t54UO3xFcSxiBcKSLbQ6CvJu&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"09:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"09:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"14:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

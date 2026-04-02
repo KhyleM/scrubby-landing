@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Bark Resort & Daycare","url":"https://scrubby.app/boarding/berlin/bark-resort-daycare/","address":{"@type":"PostalAddress","streetAddress":"77 Worthington Ridge","addressLocality":"Berlin","addressRegion":"CT","postalCode":"06037","addressCountry":"US"},"telephone":"(860) 829-7387","sameAs":"http://barkresortct.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.4,"reviewCount":59},"geo":{"@type":"GeoCoordinates","latitude":41.6391907,"longitude":-72.7336065},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJNziufEKz54kRuyfohqIco4o%2Fphotos%2FAU_ZVEHPNcTifb09Mu93-j934QX8wbjk0yo8CpvwzDq45iUpFpWPHPC1QmqDTEKz3kLvkhf6_93Z9NWJ-ZvjCJygPUNGZJ7uP8LbBSDBY1f-NI67DKl160rPmBl2dtLgQcuqsSOpFi0PxnfrQlp0ajY-5NdNhwu7UnUvtL0BZMWu6d-cBjJGpzBJacYyogNP8pumlbB2uMY2bZ_B17j-bxSpYzEtPKFpRhjZBKLdP_11BYySNoYrkHUowCP_DBmu7P3mcVQr9ejim0PAPD_qsJd3D_uRfOAeqA_phqJJU-aymNKBvZBkq65zCK83xW586n5UD5NT83vw-TQcazmtUXCbcnDeThYxsxQp9Fa64nxEoDRD8Fg6CdW_o2cMagtMwU4c6lN3k6aBhYLJEe0iXwuOsDe_CYp-fdn_zoCOQdMoSlz59Yom&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"12:00","closes":"15:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"12:00","closes":"15:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

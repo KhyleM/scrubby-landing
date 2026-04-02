@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Hickory Veterinary Hospital","url":"https://scrubby.app/vets/chesapeake/hickory-veterinary-hospital/","address":{"@type":"PostalAddress","streetAddress":"100 W Kegman Rd","addressLocality":"Chesapeake","addressRegion":"VA","postalCode":"23322","addressCountry":"US"},"telephone":"(757) 548-1548","sameAs":"https://hickoryvethospital.com/?utm_source=gmb&utm_medium=organic","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":745},"geo":{"@type":"GeoCoordinates","latitude":36.6861434,"longitude":-76.230967},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJt44_VPO6uokR2o5ER0TdqoU%2Fphotos%2FAU_ZVEG2gLBR6gA0127U_pLXe13GJryMHPkzU0wQKjXqfAufuYOKnTXfzkrbjV53eN2opcOl2o-Ww9Wohiqh0zXvOYVkwCBpPRNjoz1bFXYrNUrNLxRl1Z8PU_D5QnV5jLmm8Z51_m5eDxY5IIxgx0ZcAfqjEo_KAJg7oWx9roGgrWCMkFXPrqOe177NBcI6xuGKkB1INA-HNdC2aJUVi1z6oZyMlmXfH0--EmhkE86CVTNggupAx3OUTnnETFnhqRedvmPBArhgcJdQP6pd0UEmv4mZmCVKoxaSdnEC7mhdhvXmyw&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:30","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:30","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:30","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:30","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:30","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"13:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

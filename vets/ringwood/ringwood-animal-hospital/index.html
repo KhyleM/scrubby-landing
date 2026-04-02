@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Ringwood Animal Hospital","url":"https://scrubby.app/vets/ringwood/ringwood-animal-hospital/","address":{"@type":"PostalAddress","streetAddress":"72 Greenwood Lake Turnpike","addressLocality":"Ringwood","addressRegion":"NJ","postalCode":"07456","addressCountry":"US"},"telephone":"(973) 835-1112","sameAs":"http://ringwoodanimalhospital.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":345},"geo":{"@type":"GeoCoordinates","latitude":41.075715,"longitude":-74.279447},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ69-65Jwew4kRA5PvlRhWqJg%2Fphotos%2FAU_ZVEHn6CnDOLRKHKFyHygw8Zaw93FrJm3svgeXJIHN5YgZKq1n52YL3ZVHeaWFLtqWNKkNUefFGio0zdkKkliOCQ11voC3AMVOjSp4oUqeguyyApVNiWGpje1OA11cBclu2DUconNtwqxK-E3isZ0dXWcMZRAZ8E4THCGTXm1KHpA1W6eIqWgBt94Jy2oynVO1YxOko_orug0h2gauminXXRc8Em5sVKFpGJz_J806O1_LQetb4IGY1TLnCeLWqLM1wPLPArwhe7RtFfnrnOlxSI3wW3y6uHZiOVwRQvdE8GfT7g&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"09:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"12:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Hidden Acres Kennel","url":"https://scrubby.app/boarding/rehoboth/hidden-acres-kennel/","address":{"@type":"PostalAddress","streetAddress":"21 Great Cedar Swamp Rd","addressLocality":"Rehoboth","addressRegion":"MA","postalCode":"02769","addressCountry":"US"},"telephone":"(508) 252-9023","sameAs":"http://www.hiddenacreskennel.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.1,"reviewCount":74},"geo":{"@type":"GeoCoordinates","latitude":41.9068304,"longitude":-71.2110795},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJHzNcOOpf5IkRR14TyauA5SE%2Fphotos%2FAU_ZVEHMSpRwsBjAolftVPNKi_YTvheoqQOdDyNxaouckJTI5mcgV8Y8Md0Dy19JFnq-CKBRFbcSpGKMWwEt7z6U1dZND0GeNhxgmKw5u0kCFnHeyZFRIqDwuxBHwv1A2MWjC1-WYy436SmKi4U2cAO10KgqbGUPWIjjr9o90jVdt5-6gI4WyQks23fvbqw6Xo3GTtkE4SlAfSDPl8UjsmG3Ot32nYzdsBZdVGLEWdQ-v-kSujMA_u-Elry3pFSVb_74rtmVqLQ7db8pzYBIPEPgD14y38PUWmW-jo7kKZV41xjNMAAREtUAgFVRFDBkqYbtQdUpcj2OzF8X27vWUn92xETJFe31HxGRK7z-gXJRHjIuEeUlW9Sp_9YwEfhO7WGHiBsmg96HI3ro7YDY5Awrz_wpe9mqWlbrBjeAxzsgf8L9SycC&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"10:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"10:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"10:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"10:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"10:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"10:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"08:00","closes":"10:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

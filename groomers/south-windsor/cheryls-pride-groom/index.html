@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Cheryl's Pride & Groom","url":"https://scrubby.app/groomers/south-windsor/cheryls-pride-groom/","address":{"@type":"PostalAddress","streetAddress":"930 Sullivan Ave","addressLocality":"South Windsor","addressRegion":"CT","postalCode":"06074","addressCountry":"US"},"telephone":"(860) 644-1577","sameAs":"https://www.cherylspride-groom.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":134},"geo":{"@type":"GeoCoordinates","latitude":41.8469551,"longitude":-72.5641846},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJCYEn2mP45okROfE4DcNEoeo%2Fphotos%2FAU_ZVEEeOYFD26_wbBOexdG3gnwIpSwDifZxfJKlODw4vTF6l2mrwotcYCG_JnPp7bVs1ONZFceLq0NK3WXPx0fZ_xWYUtJDr-LgwNiTtgOYg7NN8xc7lDwp-6muhz7q4x-iyhnL6Tduetd0eqET0HbBxQLt8TTf462EEtRWVa9Z_FOXiVb_E8GptC_PLEnC-WvOgkfBk5Qn6aWi8jlaTWTwj4sBrzaXnS0Aj0OARq-fa9vLvc_TnB9e8sOL1j8yhLtptfJIqkJRJzJrLhxZ_iguEwfsBxFMyCr9woHPYovceUKy2HZxNFqbbv06F0o3gva75fl0iCSdoJtgorXzFvAMS74Jru7a0pYTlHqgGBPzImoEl5ksREruMeMsgPpI4DLe9zejJoYsx0T1ijEjmHehQJzs9bZ9YrhpG3v3dtvQBq9SR1wV&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:30","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:30","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:30","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:30","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:30","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"07:30","closes":"17:30"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

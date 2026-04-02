@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Farris Veterinary Clinic","url":"https://scrubby.app/vets/puyallup/farris-veterinary-clinic/","address":{"@type":"PostalAddress","streetAddress":"2401 W Stewart Ave","addressLocality":"Puyallup","addressRegion":"WA","postalCode":"98371","addressCountry":"US"},"telephone":"(253) 845-2673","sameAs":"http://farrisvet.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":313},"geo":{"@type":"GeoCoordinates","latitude":47.1986422,"longitude":-122.3268424},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJifuLQL_-kFQRBtRY0RLa6AQ%2Fphotos%2FAU_ZVEGss5lUryanDyAQeCcM_wDneRo7cKakiMjsuKpGjc_SUMRH7fp8ZQpZFRUAqPmSrCHx5bCC12KX2dFkWAGr4OA037_UI5-RoBnIjD1iRrxPtEginDF3OCaXSJBJChGDANcr1fYNrQ_gbs0X_abBW3FLWMr5qNCZtH-CAaj2EcJdF08TgYm-V4hilA0NysUPOf3wBRTFqVP3AHkxgZ8DyBJaotFvZxaF2JsCXylYafjcR_Oa5ddoHIBeWYM5o11CHgfOTGnpLw2TaApNVAaV12RCk2K3WPLxlV1cDSZuOzT7IVxFk5ZTpQpT-3gQ0Qod7uaorWCVACHTa6WjaJv52L7rMWq5JfJBrY7AhwlNfMR4Y6mJ-81sN7IgxLsTKE6ZPgk9H1_Y924lUL7ik9YOjGhCffnMfdOnv_IPQdNXoi0mIQ&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:30","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:30","closes":"12:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:30","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:30","closes":"12:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:30","closes":"17:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

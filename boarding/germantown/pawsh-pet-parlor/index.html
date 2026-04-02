@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Pawsh Pet Parlor","url":"https://scrubby.app/boarding/germantown/pawsh-pet-parlor/","address":{"@type":"PostalAddress","streetAddress":"1982 Exeter Rd","addressLocality":"Germantown","addressRegion":"TN","postalCode":"38138","addressCountry":"US"},"telephone":"(901) 567-4999","sameAs":"http://pawshpetparlor.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":36},"geo":{"@type":"GeoCoordinates","latitude":35.0946536,"longitude":-89.8012559},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJtSAVYrqbf4gR1IKCbm2f_q0%2Fphotos%2FAU_ZVEH-_ZLnWt8K4zemDdKx91fDNvaOKM0UJfC_Vfqd1QHABy_3cw3ao1v3f1w4lc_eUBMBGlq99bPG3jRHQAmjWnC1HuIqJ2kdkctyQ05YWN8p01PXczoofJpzXM3StGBzM2smstoe_ThhCH-a1SAOSP6X93XYJPyfU6j93qj8FovpetxEGHYzNMCXc22O9jI-v5ZdxE1sUhPxAz3AnDgllIBDhq73PdHoXd75AMtHUz0oM1HkZugS0u1tOBuOl9S7g5B46mYE_J-bAt9fAANzQZhQwJ1eLZZ5HWb3DlVej-Rmq6_zJIr_V8R0YL0y_aRN9QcuTpIEgkxZ8njjdMvIePByKYjjtK8uj57dDQhcdZE9es5zA0U8m4qfgLHB10c1bhPkRv9ouTwFkQpRlTIVWFcjDPOcgfL5f93TtLVcDqsnO7qWUF2VtAw-_HoG6w&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"08:00","closes":"16:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -364,6 +372,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -399,6 +408,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

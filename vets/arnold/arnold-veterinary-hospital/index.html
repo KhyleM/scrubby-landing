@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Arnold Veterinary Hospital","url":"https://scrubby.app/vets/arnold/arnold-veterinary-hospital/","address":{"@type":"PostalAddress","streetAddress":"1414 Ritchie Hwy","addressLocality":"Arnold","addressRegion":"MD","postalCode":"21012","addressCountry":"US"},"telephone":"(443) 781-6623","sameAs":"https://arnoldvethospital.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":129},"geo":{"@type":"GeoCoordinates","latitude":39.0316149,"longitude":-76.50689},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJQaDAuNX5t4kR0oLWXuKGOvE%2Fphotos%2FAU_ZVEGBAEq-QYIxuw46SBqOIKmf-YLvYu0dX2FEQ-ePxbbxSucBx41SpmwNq4HuSQV2jwCl7EUfK1aYH10hhUSyfZuf4I3rLTllYB_UfHBj2zlz4jbO1yLK3pzhjRJoe0_1IajTuUa6NJTSkgwq6D9YKItSCV8WZZIr9hGga6KI0l5whu0uQ04hXT_sU9vD1wCWyQ6bt8pmannjThRPkwYiAlQDXTgj-0Vrk87cvVuTqXYmH2-IhRAqsAjGuWLAsu3A4WPVLoSsZ6Iq_qFvFzIYOeaYE7J6ysqbU1KWGjsCC-IVqbj1m8Olv7BGZBbHlG7uaxANHOa4tNz41yTzm5DPPf_82XnC1WFrD4qnBx_Uf-c-y62KLDgb63ZHkrCcOFfsa-zv64uurptFbOM4-7nv_ODJpXc4mEXfiHid9O-JeLZ33Q&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"14:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

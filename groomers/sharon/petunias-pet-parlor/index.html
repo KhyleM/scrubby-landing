@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Petunia's Pet Parlor","url":"https://scrubby.app/groomers/sharon/petunias-pet-parlor/","address":{"@type":"PostalAddress","streetAddress":"70 Brook Rd","addressLocality":"Sharon","addressRegion":"MA","postalCode":"02067","addressCountry":"US"},"telephone":"(781) 867-7179","sameAs":"https://www.petuniaspetparlor.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.9,"reviewCount":127},"geo":{"@type":"GeoCoordinates","latitude":42.1265659,"longitude":-71.1708962},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJdcl-SMCH5IkRuSsWtefE4B0%2Fphotos%2FAU_ZVEGvNWxajgFKshCuWROqe81BMgwTZ1R07873eC1LmKbTdvCuBEh27sBzBRs92LlL4Rxq9zki-043IzICTncnwRG7UPpisKMuaklh6el-Lla2g1ZpOhhKE1bpDS2OuA426-BS8kE6dpqMUZtxOzXRQxtMg3fGdz2BUaf_QhOZS-EYjwKq3Tni2hNDUGYazi8rdO8JC8Iqwwcgk7TAIUFUzZKKKwmVW5gHoMISDVkIFajzDA46jBj7-6Ou0CfVV5RmWpsrZgV1b8_Pf55Ll43NqxjzPGaYPR6UYVpZX-UIFNfKnQ&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -350,6 +358,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -385,6 +394,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

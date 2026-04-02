@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"San Francisco Animal Care & Control","url":"https://scrubby.app/groomers/san-francisco/san-francisco-animal-care-control/","address":{"@type":"PostalAddress","streetAddress":"1419 Bryant St","addressLocality":"San Francisco","addressRegion":"CA","postalCode":"94103","addressCountry":"US"},"telephone":"(415) 554-6364","sameAs":"https://sfanimalcare.org/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.3,"reviewCount":520},"geo":{"@type":"GeoCoordinates","latitude":37.7685733,"longitude":-122.4102089},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ89hCfyV-j4ARP8W8ie1lgjc%2Fphotos%2FAU_ZVEEKmOFZ9qJ_h0AgwxDi_srp7CzuesGYIW_LOQ9bYGussDXNb8AFZgBZ3azDdb_90Qq961fMTZ4Ub7q2hMx9qwIyGJ81B5Yzdta5zhHL-H_6BQ3k12QsF94x7vmfAknE-cWvbiJ3oQaZ-jk7vjv7MtiOSk5kwRbfjw59hLdvjXnDd0AfMo4tpUVeHfgi_vuJWZyPEkMRxP6V_hpJJIzToQe0ayMKj8cVI5KJETSDrFnMvMvfPgMPVt0nLu0yL3tOUoPDyFypCGoFX5pCJHoX3cLOOhlzXIysEzOKPp9EtMdPAQ&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"12:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"12:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"12:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"12:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"12:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"12:00","closes":"17:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

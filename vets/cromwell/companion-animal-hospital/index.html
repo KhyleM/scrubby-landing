@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Companion Animal Hospital","url":"https://scrubby.app/vets/cromwell/companion-animal-hospital/","address":{"@type":"PostalAddress","streetAddress":"5 Kirby Rd","addressLocality":"Cromwell","addressRegion":"CT","postalCode":"06416","addressCountry":"US"},"telephone":"(860) 632-7955","sameAs":"http://www.companionahct.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.6,"reviewCount":109},"geo":{"@type":"GeoCoordinates","latitude":41.6050498,"longitude":-72.7089188},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJTcfW50pL5okRnclSHvn-oJw%2Fphotos%2FAU_ZVEGQEsKKTcX3geeCUY54BxY_cvjbdcJJb7CSoawiSMx3yM9uBOwny7_GtGKYU1hgLmtople7VB1qb0r4klejOHTB37P8ohDTdF-nQlv3-25ErPs4xJiMw60g-wfmZGrzXaL57dHMttB-II2Ae8y37r8AMuruDfGCq7m_M5jf3aJF1dgJrkxQE8DF1pRQ7tYLtoLtOwtY7qvv6JwtrVC0b3sWj5M7UEXbuIl-d8u9TlFi1oxv8W1XQd6VopNpfDyVpWP-ZTLA3fcwEka-jTb8Y2U2DVAEzN5FsXFB5j3QQIop2w&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:30","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"17:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

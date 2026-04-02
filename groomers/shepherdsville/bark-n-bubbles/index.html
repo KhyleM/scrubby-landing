@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Bark N Bubbles","url":"https://scrubby.app/groomers/shepherdsville/bark-n-bubbles/","address":{"@type":"PostalAddress","streetAddress":"4030 Preston Hwy","addressLocality":"Shepherdsville","addressRegion":"KY","postalCode":"40165","addressCountry":"US"},"telephone":"(502) 215-6386","sameAs":"http://bark-n-bubbles.online/","aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":51},"geo":{"@type":"GeoCoordinates","latitude":37.9384752,"longitude":-85.6994476},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ1x1_vLkDaYgRnPjOAl6GR-A%2Fphotos%2FAU_ZVEGCS346Pu9Nw3MI9Xo40CDvoFp9RDgrd-BlVV2Yek1WzQvhtKCxyDHIXXo18lzdo1u5WjD1RB0Hl9JbCe9VviKwQ33H1wlBPGsZsBfpGfZinWk55Y9YfbRoG_-KoY7azvUeeMle7mT0hN2AHFL1qxDVR2g6BrN5Ud1qS3ycSr3HK6_7V2UyU5JlSBh8SoMlMOtD5sr6qQ5Xhl08ToT8GWuCRfQHtCUQwDosZ5udqGU1LuXPHuM8JOfiNSl7wSu1A2EJb1if08Oe_G6fmMo2_gMVuhDmcwNaATtiYJBkbCoL5Q&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"10:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"10:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"10:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"10:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"10:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"10:00","closes":"17:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

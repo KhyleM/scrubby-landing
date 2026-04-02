@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Lone Pine Kennels","url":"https://scrubby.app/boarding/greenwich/lone-pine-kennels/","address":{"@type":"PostalAddress","streetAddress":"39, shared with, 33 John St","addressLocality":"Greenwich","addressRegion":"CT","postalCode":"06831","addressCountry":"US"},"telephone":"(203) 661-4358","sameAs":"http://www.lonepinekennel.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":41},"geo":{"@type":"GeoCoordinates","latitude":41.107767,"longitude":-73.6759694},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJe_jsCiC9wokRYDOhECrmiTw%2Fphotos%2FAU_ZVEGeGDOz87Pscv0vqA1NwxmIJsqGIh2I0glGGhy70vWrJE20MD_I91rMaH1APXw93XLTHOAY6GjIyIQPkIewFugH5-1S6CKC1WiQ3UFKBJ59a-44Wi7dTqtrL3iYxskoCG7Rt6a37-wdGhUelxUHhpc7zR3YO4vCMpSXmXmp666yTqcf62E9Aau5BXvuMv-sparJc0EZMJv5SAvXR1EMbyqBFL5DLfKFkYd-c0zkG8EZEOtb2abI1iQbScVZKZIVKND3-Il8f6yV-P5ULh6qRyZ4pwSmMMrHafzRUVBXnhQbUQ&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"09:00","closes":"17:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

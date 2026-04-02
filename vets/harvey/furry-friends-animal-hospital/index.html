@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Furry Friends Animal Hospital","url":"https://scrubby.app/vets/harvey/furry-friends-animal-hospital/","address":{"@type":"PostalAddress","streetAddress":"2330 Lapalco Blvd #14","addressLocality":"Harvey","addressRegion":"LA","postalCode":"70058","addressCountry":"US"},"telephone":"(504) 366-6060","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":233},"geo":{"@type":"GeoCoordinates","latitude":29.8738567,"longitude":-90.0574251},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJO-7jsUmhIIYR5HoHR1oDisM%2Fphotos%2FAU_ZVEEf4vUuDP9E0yiAhZUTjKiIC4zA4ZCD4EsG2xYyYx8k6rKLvUkDyu55g56Gxn2zh7emSgg8BnJDeIFeFbPrMKcVyj932CO3jPKu34z1yrsGMMke5wdb8T0E5GhJpPB9TSIMO1CzNIM9OVJ5tjIZv4mlMWEWLQitNZWBn92hwNnTyjUAEoFD5q3ZSH2fFIkHGmmIsm8sRkb3DFeqeC7jBkIPwdd22MsygOD7IhlEo0OMJAuePzXn6ahZu5YB9z4CUOS_PFyI_x51VF0JRXQFazMxDHF8HPg-gNjkT-pA-PCJBgE8rgDaoOWkT8_PNL6wofw7i6mBtRMt3DpnkdPDqvG55OAjretKf0fuXkK87JiJJLOydqaokYLqV8WmHIJtbks-aecOcbARZ3we49OcgJ5HbX8SMlEFMSJ7OpX0RZC9kZuj&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:30","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:30","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:30","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:30","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:30","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:30","closes":"12:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -359,6 +367,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -394,6 +403,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

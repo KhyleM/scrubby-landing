@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Holt Animal Clinic","url":"https://scrubby.app/vets/holt/holt-animal-clinic/","address":{"@type":"PostalAddress","streetAddress":"459 Old Cannon Ball Rd","addressLocality":"Holt","addressRegion":"MO","postalCode":"64048","addressCountry":"US"},"telephone":"(816) 320-3726","aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":40},"geo":{"@type":"GeoCoordinates","latitude":39.459859,"longitude":-94.3345791},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJxbLaIqOzwYcRV9ezAN2H1rM%2Fphotos%2FAU_ZVEGluW9AtDDf9XSpba_pFRWFfuZl_ZXU8L-v79yQBfwad77jVShT4UL62S1aycFmqy2jAwtiMwnuR4B8I7kfiFM7NNRmRIMYUD3GWkFZdqKlAhdkrJjGCA1aqfExH8hJN5UwXHjUqdNXpG6yGUf0-zvmVuVPnY_iYct7pp45V0anWspP3GkLjlq9-mccxpmi-F0FgKqGW0LIJB40yyHJo_K4kTojgpFm_kj55HvC-taGk8YOP_fjuKvq0u31dHUYIiQrnf-mCum31d1D6KmInAwT6fyzjMHjj0NnPqHnt5xbH61eHEIsm6aFsBWhl11nxHw-6DgOynfqnHGkopRuJuTCilGLuSgY-K7VNcL9pdgF3KDAS0i0-pAxisTOoa-FJX45lcYmIYvrJexKkwqC_e11_bJtebA3k4SgO8p7SAoq8aOU&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -345,6 +353,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -380,6 +389,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

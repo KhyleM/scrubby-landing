@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Groom a Doggie","url":"https://scrubby.app/groomers/bronx/groom-a-doggie/","address":{"@type":"PostalAddress","streetAddress":"3602 E Tremont Ave suite C","addressLocality":"Bronx","addressRegion":"NY","postalCode":"10465","addressCountry":"US"},"telephone":"(347) 680-5921","sameAs":"http://facebook.com/groomadoggie","aggregateRating":{"@type":"AggregateRating","ratingValue":4.6,"reviewCount":107},"geo":{"@type":"GeoCoordinates","latitude":40.8286253,"longitude":-73.8247905},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJQwGTKTmLwokR4ZVDvz2AI0s%2Fphotos%2FAU_ZVEFemQK8ijGdPp5b3q354FdAiuMJL4nj5_t5Fb0nKn7AEaQhVju1p0reOpHQDJoGBvmNigmlxi94GoPZK89XwdPUlmkgVrgRspZzhLWm7QywcFzvfkskGM-pyKzKYj1SuiGcXXs2crvBPtewjYeLqZDYTJ5QG6n2sUs7Zn7pcGJgeVU-8ZiXk0qWrUp6Re3IK5YkV8678joGwT69mr3Ixptyc2Ld4hwABNCKCkVMh3YY5I8ZI5cIJDYbnMuUtlSzax2YGaVqqJcq0QvWEWXRkS0RM6Rb-p-5c9gogeMMgLDPdA&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:00","closes":"04:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"09:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"16:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

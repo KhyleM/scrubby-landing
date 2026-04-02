@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Community Veterinary Clinic","url":"https://scrubby.app/vets/milwaukee/community-veterinary-clinic/","address":{"@type":"PostalAddress","streetAddress":"3010 S Chase Ave","addressLocality":"Milwaukee","addressRegion":"WI","postalCode":"53207","addressCountry":"US"},"telephone":"(414) 482-3647","sameAs":"https://www.mycommunityvet.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.5,"reviewCount":329},"geo":{"@type":"GeoCoordinates","latitude":42.989905,"longitude":-87.9090173},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJn5Rts2gXBYgRVW82rHW80M8%2Fphotos%2FAU_ZVEFaWsp97MwooEhL7DBnYXOydQju53hB2umh76qva8jF5o43g9LiUzhTOi1uyiF2pk5tQGza8_0eGVJEPp_uwyK18DRBcKTJaaZI6BFL9PJ5cVMiih7KpQZwgH1F2zJu1ZvHmXC2hWXPoFOl7woREU1ZWgz8HcpG3F8djWd45LBj3G-Hz0-R5QEabZT8hXpWE0SvT8F3LwgYrdd6K_Ix7QORFDWhZaclDd9fC2PGwB1-PdpSw3i3eyKh_yO0XT3HIt2d_VPZSApGODU2GTGKhsK-Gkqr2ColC1u50mOHoE0bbw&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"18:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"18:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"11:30"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

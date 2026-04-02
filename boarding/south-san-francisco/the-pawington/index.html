@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"The Pawington","url":"https://scrubby.app/boarding/south-san-francisco/the-pawington/","address":{"@type":"PostalAddress","streetAddress":"116 Beacon St","addressLocality":"South San Francisco","addressRegion":"CA","postalCode":"94080","addressCountry":"US"},"telephone":"(650) 588-7788","sameAs":"http://thepawington.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.6,"reviewCount":367},"geo":{"@type":"GeoCoordinates","latitude":37.6414714,"longitude":-122.4038437},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJocw--sp5j4ARqXsqDHktoDs%2Fphotos%2FAU_ZVEFHgSJOX8anqs4-QgDruqve_KW4MteLqpJdqi2skT_gneJPLkgiY3Hp6JGOoG0olU9Z0NUIg3YtIcwAJwU7QbqhZnT_16HHKGodlK4g4cHq6DImNy_K2SNDWhvnZB1bF--mOtkVfHTE6gKFWPUy2njVXmVmmDGt4OftYNyYOP0lhniHKSEVdjbAOmkKyzmkhD6qGJGpoGzBBaa9qUjyQWFnwMI1UD3UHA6yizxGi5HENRKoJqBRB8P2V0Y8xHGqGJ6asaL2jYlbXstwdSoRhFmpSXlxuzBFn9DCJ-_Yw0NXcw&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"07:00","closes":"19:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Blue Springs Animal Hospital","url":"https://scrubby.app/vets/blue-springs/blue-springs-animal-hospital/","address":{"@type":"PostalAddress","streetAddress":"1201 US-40","addressLocality":"Blue Springs","addressRegion":"MO","postalCode":"64015","addressCountry":"US"},"telephone":"(816) 229-1544","sameAs":"https://bluespringsanimalhospital.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":1408},"geo":{"@type":"GeoCoordinates","latitude":39.0102702,"longitude":-94.2793711},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJi7zOXMkbwYcRwEyej2xmIjs%2Fphotos%2FAU_ZVEE6eyQCXZJlg8FU5NfU4kmP9srPb5VPSuW9su_27hmDVptY5asZxBW_j-q4qbekGOnJDztJdhCZm1hpO70ETw2yM6LlnA_b0ZOdFVqBoitLkXDm8QrMtDTl66suTXLjR2qQAU5WXXIUSGCaHNaRcLC-1vEahGFfIC3KCZo5K5cQa_iZB1uPGKQm4N6GA5t7Nw_KIXhwAVvDR3SSvM3ZC3NWFRdkaqzm8RfzZOe5wkK3XINVdJAldCXeS96mC6seHn5o_ffQK0Faz_IPYmSiNc3dVVO3YZqmi0RdBNrPBd_hew&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"15:30"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

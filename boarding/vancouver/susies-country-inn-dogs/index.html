@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Susie's Country Inn Dogs","url":"https://scrubby.app/boarding/vancouver/susies-country-inn-dogs/","address":{"@type":"PostalAddress","streetAddress":"7418 NE 159th St","addressLocality":"Vancouver","addressRegion":"WA","postalCode":"98662","addressCountry":"US"},"telephone":"(360) 576-5959","sameAs":"http://www.susiescountryinn.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.9,"reviewCount":145},"geo":{"@type":"GeoCoordinates","latitude":45.7370412,"longitude":-122.5966324},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ2-c7ujCylVQRKo1LLOtC3jc%2Fphotos%2FAU_ZVEGebVJIsJrpZedSJ18tQE9X-lMNj0XEt7ay2RhCzFZRaBSDNDPefTFosCf7Seo5E01KSub72zyBIzACXBDEDX6lvOhkkjCxky06_4LUYvi3WqcGmebLqgKh2hfnUF5YKaOf35eqrLDP1IG_ybncRZLmjyOtL7hY31VSQFlroqEIAgD2FJlSREBhpBZYUmstU2CQ6EuXkbVU7KIbrLKQX7uJEejL5YVc6ftzIjnXCTJ9eIA-0FN7A-10KrzZ6JZHFCNhmLiLdUxrUS_G6k4NHsgFpCzbDt1ACOhQ1KBLGLO7pUqiD3ligjswwrC4HxCdOqbg8mdjBqXvM0l4yrG5-1nN4n7nJZK8EG9CkaoEErO-y2TPUjO7_Sy75gOFno5fK6oEQKrxUhcnQLiFXvrT6uE568hyN8gaFMlQYKTu9skrGg&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"08:00","closes":"12:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

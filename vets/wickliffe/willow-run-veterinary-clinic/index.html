@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Willow Run Veterinary Clinic","url":"https://scrubby.app/vets/wickliffe/willow-run-veterinary-clinic/","address":{"@type":"PostalAddress","streetAddress":"30125 Euclid Ave","addressLocality":"Wickliffe","addressRegion":"OH","postalCode":"44092","addressCountry":"US"},"telephone":"(440) 943-5120","sameAs":"http://get.petdesk.com/d","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":229},"geo":{"@type":"GeoCoordinates","latitude":41.6157948,"longitude":-81.4619958},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJJyvUlWWqMYgRCHYOLoBM78w%2Fphotos%2FAU_ZVEGh5Pfd6bWblswudVHYErNFxM5_24MXQNlelUoiR_3vvREj1VbMVgbeC0iw7koF2YaysNfXJMZq4ThSN4-wwTcSJfFBMncL2XBOlLKFbVcME1-MlBbzqhAAKh4nkqJ7bMhT-_Jq9-3ewLASior-KovZpBIbs1ld8sAgkW969G65fmj35-JdcLDwBQwf-y_Xw4Qh6XU_ubaOTcOkFIJh1uvrf1ovbJ5MtXXTO0YKdmy743y5DEzIcIjcYXLha07cCkWhKdnc4ce_W6qbLx_Y0AWxRUSqXr9BYuJqYo8x2kFxE6E-HAnDpg8Om0BDmAkgl8cMYprL31OsGC6hJn1t_BJ1tuWAeDqzAxZH8d3fdlkpMxFsCerTjvosBT3uBznjFA7E4DPza_0T9JsGqtSzLkPYq_9_llenyjDo2RXqt9Q&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"09:00","closes":"12:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"13:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"12:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

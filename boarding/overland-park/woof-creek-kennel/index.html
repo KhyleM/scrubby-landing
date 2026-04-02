@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Woof Creek Kennel","url":"https://scrubby.app/boarding/overland-park/woof-creek-kennel/","address":{"@type":"PostalAddress","streetAddress":"13955 W 175th St","addressLocality":"Overland Park","addressRegion":"KS","postalCode":"66062","addressCountry":"US"},"telephone":"(913) 617-3606","sameAs":"http://woofcreekkennel.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":133},"geo":{"@type":"GeoCoordinates","latitude":38.8103074,"longitude":-94.7475015},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJP5PcMAi_wIcRPWXM2bIrRgQ%2Fphotos%2FAU_ZVEE2JD2nuozfis8ncYqPS8W2XMBE-i7dq_lhuTWkt2DHwb1Q6fnB-k_frMA2bQTmMeeQv7T-CciG2GVamgpXklgdAXedOPkjUdMB9NYq97b-RLAtVTno67X5wTmLhK-jvGkno_9UeeUJu7smNtR0RJB18UoETa9kSOH2z9kfNirOkxazsKIt2QlNt5C6DkWmxedx-hEsa0uZ0RG3kZMzHwoMqj5ANXfyweNt_9mLnK4LgGvc-x9CxOAbDiC3TZ1aB2YJnKuax5gcmFs3sL1-awTwlpXCFtvpp2KxVm6JHMsTlw&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:00","closes":"09:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:00","closes":"09:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:00","closes":"09:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:00","closes":"09:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:00","closes":"09:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"07:00","closes":"09:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"07:00","closes":"09:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

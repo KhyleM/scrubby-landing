@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Lookin Ruff","url":"https://scrubby.app/groomers/garner/lookin-ruff/","address":{"@type":"PostalAddress","streetAddress":"213 Artesian Dr","addressLocality":"Garner","addressRegion":"NC","postalCode":"27529","addressCountry":"US"},"telephone":"(919) 264-5813","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":68},"geo":{"@type":"GeoCoordinates","latitude":35.6794214,"longitude":-78.5992391},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ12y7BWRhrIkRgTZz8x1iKsw%2Fphotos%2FAU_ZVEES715APpR6syJhVyib6ra6nbRovbRr7mM9Fzu51CY0mAsZmY3Mf_R0MD7E_r4rXUNkFcVVpLBMqox4ZX8nHzrbs8GVq8A0dgvX_w2xGcletm0ybiMVy08WSNuzAKwOOLJE2NXb7NurHw9ahaIz-HrNVECzmtamgbTbPWrd9BZMHNcQxC5hzl_JkK5_zgLyi-6V_X9XwZaVaDvo-VUuF_zsUMVGL79mxgPa1YBi95OtUIhcwDb_pQU6QFYGwQ5PCOJnXcG_WC8mNQxoZ2i_xSbmP2J5QeK-RR0PlYO7e6fI4w&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"08:00","closes":"17:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -363,6 +371,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -398,6 +407,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

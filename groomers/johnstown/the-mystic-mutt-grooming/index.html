@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"The Mystic Mutt Grooming","url":"https://scrubby.app/groomers/johnstown/the-mystic-mutt-grooming/","address":{"@type":"PostalAddress","streetAddress":"28a S Main St","addressLocality":"Johnstown","addressRegion":"OH","postalCode":"43031","addressCountry":"US"},"telephone":"(614) 304-1827","aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":17},"geo":{"@type":"GeoCoordinates","latitude":40.153379,"longitude":-82.6842261},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJT2RPD4BDOIgRjPY6AfjoSLo%2Fphotos%2FAU_ZVEHg_p9SR5ATRXsa2Qom5JNEUhzsZd3HiF4s6dKO_ef2HeDT8PtdB18DYcgsUCOw5rrx5YktQr67gY2_yxrSL4LxakXkNdTg-RxHAHDWLSIi2aM28cesfyoih9pkYiMQh0Z3Fx096XEE2NpjK4CNGDyaYCLCtDKsQmdHt9vkS9wB8jJrHAt0yg0MYov03zBs_KuscnfZDaSrtnH5nkLIORo1zqF_ma2oUPJrBDOndEaeW0yirQJd1QJGIzY2M_RpmK3_RER0Pk2qARMZhmjB5DG26ATHBMbggZU1T6lB5Q6BwERdafnva-3Spm_sLnLqlLJu1P-GjXrugY3Q-q2kupqaww2tHetC7xK7ysMVKjlEogEJN694r28B2VH_EDwm0zvk-GX6m1RKSuPkacDrPsVBom1hIAEksnQIzD2bz1WdmXUcQnXxdGyL45cRknzi&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"17:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -363,6 +371,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -398,6 +407,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

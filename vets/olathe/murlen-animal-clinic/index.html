@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Murlen Animal Clinic","url":"https://scrubby.app/vets/olathe/murlen-animal-clinic/","address":{"@type":"PostalAddress","streetAddress":"1701 S Mur-Len Rd","addressLocality":"Olathe","addressRegion":"KS","postalCode":"66062","addressCountry":"US"},"telephone":"(913) 764-8574","sameAs":"http://www.murlenanimalclinic.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":3.5,"reviewCount":90},"geo":{"@type":"GeoCoordinates","latitude":38.8564412,"longitude":-94.7805635},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJSSZqc1q-wIcRC6j2Dpda4ek%2Fphotos%2FAU_ZVEGGeYg90llZ_JcgtOHKdZyZ0-3Zlmv3UwFh8XHZhRcAmO2TyM5NBa_QSJIvfguEXYYhFL_Wj0lEBr9t1xllCFwX6UXe5pgYR5dxEevYe5R-TIu4_mj2gZcw47WdluOnL0lhJGLGw4SC3KvF7dXEz_8ZMSGLlACaSRdxzwAWXKWekuSEpkH1TKkki_H6bjm24y5Y3Pz05b8udSt6FEEQKVyaBCoCB76D2tXHw3wqAIBgf7bMinfaE0xpTgeAz47vMuSLmqnXd-uWeuuITR0urtPGLYArQ09NFrdavnFBqUqupPN-rlBmvChaCnQxvSRZOXiwlr3O4UKqDBw8ZlZ6B1q_v9CsRClJirZJfl9QpPTZOUPKVVlwco98SmnDm5x98s1up6oZew53A6jYYKxM6qkPmtzeuoAoivySDnH780_Qiw2dRhU1ujyp6qFnkw&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"12:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -359,6 +367,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -394,6 +403,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

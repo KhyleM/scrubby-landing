@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Scenthound South Charlotte","url":"https://scrubby.app/groomers/charlotte/scenthound-south-charlotte/","address":{"@type":"PostalAddress","streetAddress":"9716 Rea Rd A","addressLocality":"Charlotte","addressRegion":"NC","postalCode":"28277","addressCountry":"US"},"telephone":"(704) 440-3572","sameAs":"https://www.scenthound.com/charlotte-nc-004","aggregateRating":{"@type":"AggregateRating","ratingValue":4.6,"reviewCount":295},"geo":{"@type":"GeoCoordinates","latitude":35.036696,"longitude":-80.8065811},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJd2t-AY4pVIgRN0ZfeyVHUbc%2Fphotos%2FAU_ZVEF1HHOmeMVBQDApJEoEQBPeGuVXcYAMN4SlTcd-q7mL6N3-0SpkCBnda4o2JpjQsuK0eN50CyIPzFQCtIcP22FcQkRcp3T6LpeUm1E1h6P2mf16mFTVHsw3ir39ksZE919cCSENNrQ8SJCxJD7Zloikp-nUsuoQAtPf5WNoRbcl4SzgYMURvd7bKZR7owBhRBdshrjIWmfGgwbVIeCJvZ1JV8VYOZko7oYr2dE1IGCR6FayCu-ibFWcZFeuMH9EyOljDyzVIJrlDBblz3JStVBDQBj43orAD1QfqBFqN6S6hUhGqW2csTCCNAfucYdbfXn0RuMtLbhBS9o_OPIGSm6bQRi4-svnB4OJb-dM7VsgyhFFdffWcYclQn-n67m6dTyd5m1vJHYecCdaaukBh-an0zaXOcZ_5o-psaEwTyEhF28B&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"10:00","closes":"18:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

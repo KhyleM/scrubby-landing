@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Master's Kennels","url":"https://scrubby.app/boarding/gilbert/masters-kennels/","address":{"@type":"PostalAddress","streetAddress":"17309 S 144th St","addressLocality":"Gilbert","addressRegion":"AZ","postalCode":"85297","addressCountry":"US"},"telephone":"(480) 917-3647","sameAs":"https://doguniversity.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.4,"reviewCount":49},"geo":{"@type":"GeoCoordinates","latitude":33.2908222,"longitude":-111.7722965},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJq1rpXIOrK4cRYNc3MjlVgpU%2Fphotos%2FAU_ZVEH7aiwQRlhaPo7VPhvCqTGr9RMPkCsv2H1AVDNqSTyOXdHJ8vJQMJwAu6su_viKW2dklD89qfwnLDbj00ZDSJif1XHPypJP6HVTRdu2QZLp3fVEfCbw4Y06lyTo0i7sOYHzE_sVnHEfUhQE5DYh4e0nesVPJ46fkzxJI7yG6MXIgNhh7MqUtjaNbhs_GqNlBwPmVMISmemR4xl5CUVyC3fFzD6akO70skwxEeKo-uKBmEkhHUtXlCqrWatLc3rvhmy6-UXqY9wab4-g5N1v2GzTkL-1Qg6N3lZxuPmQ4q1N3YZeuZx0tOv8uK0ubgV8BstvVgPu8q5q4eXovF6hYYKiuLYoUShP1js-REm1ZSxcELPMfRllk0GtM4A1u9ykNy02u5bR2pl_x5C-VXQK1tYK_Vwo1lEaEiuqiorSpUCEHAc&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"08:00","closes":"18:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Andy's Pet Grooming Eagle Rock","url":"https://scrubby.app/groomers/los-angeles/andys-pet-grooming-eagle-rock/","address":{"@type":"PostalAddress","streetAddress":"1741 Colorado Blvd","addressLocality":"Los Angeles","addressRegion":"CA","postalCode":"90041","addressCountry":"US"},"telephone":"(323) 675-1110","sameAs":"https://andyspetgroomingca.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":260},"geo":{"@type":"GeoCoordinates","latitude":34.1397228,"longitude":-118.2052367},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ41_1VgrDwoARcZGdMIYc9Ys%2Fphotos%2FAU_ZVEGTHGiIKimmMNuw7J0OYh38oXAuZQkuXmr819oEsTg_k1qbWf2IO-iul0lmS-gGVkD0zitCnRY_ClobG4swafz0cI_TzY3ebUFNF9NIAN_iWMhC8YSSXpbhHn8cFMvVpybSTCMbzpr_fVyE-itffppvtKd1R-8tux-KMBSFhlsOj0ZHE8_EJCrddf3RM3wzMB1phW0McNj_UHtuffFt6nhdTNE6sG-26bVogH1uZUaQe3aSHcoTOPfCR73QR46BhK5W-FRea4RXkiLtSjMtdh6fW7qcm_Og-4aAn7rInUvZUF7xNq1mGVhrePhofXDx89MWMC5X6KN6g1-IFxvNxaXpLdkk4IUdmn-fDJMd1xKLuaCkuGPbE369zgec89NxS0Jy0LJVrw0ot46et8e4My8DXa9441fdVKXA0SMC35wN41w5&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"17:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

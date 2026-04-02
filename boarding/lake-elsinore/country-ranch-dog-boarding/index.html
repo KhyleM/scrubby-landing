@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Country Ranch Dog Boarding","url":"https://scrubby.app/boarding/lake-elsinore/country-ranch-dog-boarding/","address":{"@type":"PostalAddress","streetAddress":"19800 Riverside St","addressLocality":"Lake Elsinore","addressRegion":"CA","postalCode":"92570","addressCountry":"US"},"telephone":"(951) 840-5056","aggregateRating":{"@type":"AggregateRating","ratingValue":4.9,"reviewCount":27},"geo":{"@type":"GeoCoordinates","latitude":33.7106733,"longitude":-117.3114026},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJqdzXXj2Z3IARDrLo8hTxcV8%2Fphotos%2FAU_ZVEFJIe-zlX386S1KerKhp_cCadq5bbOYnbGevtq2Qk-li-N83rD5NYaHHp7dvEnLA2O_uT-6T8RwRJ5GAawnR8qMBBQVbYfYMP4l-CfmjT8YqySomkklfH0TWkXdb3-MJWJ_UXHujvMPbFk87Gv8FWZ9GTXiiwPlhmrECAoU_yLWkFu2JMz4W7jMgLwNIET9KpFKQZ51pHHL-xMFR19igzSfFtJBvaynQy3ZvnFb6Ae3Xihsxld0A0bj93I-D7C-QqpqyAYhjhIag972jr7rmVADCzr38Ji_fcEmgjBkP4xBhA&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"09:00","closes":"16:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -357,6 +365,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -392,6 +401,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

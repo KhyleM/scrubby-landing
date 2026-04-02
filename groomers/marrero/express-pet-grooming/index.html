@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Express Pet Grooming","url":"https://scrubby.app/groomers/marrero/express-pet-grooming/","address":{"@type":"PostalAddress","streetAddress":"5110 4th St","addressLocality":"Marrero","addressRegion":"LA","postalCode":"70072","addressCountry":"US"},"telephone":"(504) 220-5523","aggregateRating":{"@type":"AggregateRating","ratingValue":4.3,"reviewCount":19},"geo":{"@type":"GeoCoordinates","latitude":29.898975,"longitude":-90.1024655},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJI7eODBSlIIYRs6ITsRT6MHk%2Fphotos%2FAU_ZVEHDfExbYWJKOAiV5yuYl_vsnh5EXFYfXc1sCRJY4fYHyzeRj-DRGdrCUjSpd-H9DYjrHqQgO5JdcFxq7eDCNzF4Ydb0hfLq28IYZBFJnH7XReSG0bOg-dusEKIxO_NuMkf8j7q1pKdsp3dAvob5MBV60pxbCr3r4F5jKtZvZTK_-STagGMAagWGvD_wII1DfeiE23OvWhoOGWvuEbIJW2w_M5UsWbepKffu0zEKkA-OsAw7ILElUo-XHAsWfkI_07jI3UC5oTbNSkZx1qQBYaN75dhvz5k21QPN1Q4RrmxdEKH-CYfn9QCvMEFHf4gbgXz6Qf-z4CNa8Af_Ci_nhh91WQWCt6CdJcqUdZ4nULYlcDW31NYfzy1snyuL5CXP0em1FbYP-bKN-domDFxhcqsL2GWgMlE3RnIdTRtFzRFZm9AiGYyWEl8ZKtTKxg&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"16:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -363,6 +371,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -398,6 +407,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

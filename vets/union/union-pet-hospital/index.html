@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Union Pet Hospital","url":"https://scrubby.app/vets/union/union-pet-hospital/","address":{"@type":"PostalAddress","streetAddress":"9842 Old Union Rd","addressLocality":"Union","addressRegion":"KY","postalCode":"41091","addressCountry":"US"},"telephone":"(859) 384-7702","sameAs":"https://unionpethospital.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":330},"geo":{"@type":"GeoCoordinates","latitude":38.9487482,"longitude":-84.6818302},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJa7Ow4FLBQYgR8px22T85PBw%2Fphotos%2FAU_ZVEHj-oPrs2Q2LDqJqB8yOD3MwrWCnVM5qinMex3xj63qtMCyCkvsE9SYX4Zgfu7Y8PVsGIdt1lLxiI94iHm9XOnX_QbUc7FtUNbr8QJbGHb_wuBMVdrIyGOp-h6j8OcUAPwxN8E2Rp0FrZFdOcWzfeEKug9Ki04VYzCbDR4E23yKG-3921a7rpb4qxTcC-09zijwPT5dZgvM91S_lIXnrDtNZAs3ByTM_pkvBpLvZ0eEFXLhAqQKuOxNP6Eyyr30Tjbl5vzx0z9ht2fS7RNhN8IavIX17uamojEQfBVMTxu7Dg&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:30","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:30","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:30","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:30","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:30","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:30","closes":"13:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

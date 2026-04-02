@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Village Veterinary Care","url":"https://scrubby.app/vets/pataskala/village-veterinary-care/","address":{"@type":"PostalAddress","streetAddress":"4159 Hazelton-Etna Rd SW","addressLocality":"Pataskala","addressRegion":"OH","postalCode":"43062","addressCountry":"US"},"telephone":"(740) 927-4159","sameAs":"http://villageveterinarycare.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.6,"reviewCount":200},"geo":{"@type":"GeoCoordinates","latitude":40.0296936,"longitude":-82.6700744},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJxVxtzwxpOIgRN5gWkzvInqM%2Fphotos%2FAU_ZVEGRyzJAjx1mlDFBdY2NydQZQtTUs3hfJVJyiGLJqCvNxUBteXnJybvGQMFb3FZUZdP3tyO-kzj3hE5DwSYFiaElMHSUpi9ckXJmuP53-Li713ITC6xF6UkUCqbsxJW7o_tZIKm4XcNsvyIGFYrFKH676VCgDOHQQgK5tQ8JGmL0LHVO6p0U1SQbeYteiCLOsK4aHBat7VtOA0QXijW0MKUeCOkbzNEJ7Kf0e4-WagYZnmkh5KqOeuwahUdeJmumYIt4riq1KB-QS8dgAgBRO_D4AbAPkb4nfxLTOvM0fakOhQ&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"14:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:30","closes":"12:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Matt and the Pack Dog Daycare","url":"https://scrubby.app/boarding/lawrence-township/matt-and-the-pack-dog-daycare/","address":{"@type":"PostalAddress","streetAddress":"10 Shinney Ln","addressLocality":"Lawrence Township","addressRegion":"NJ","postalCode":"08648","addressCountry":"US"},"telephone":"(609) 802-6515","aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":7},"geo":{"@type":"GeoCoordinates","latitude":40.2765269,"longitude":-74.6944503},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJiUAWq_Tjw4kRU58wp1EpLmE%2Fphotos%2FAU_ZVEHzlxbzmiobkWamdOy0Ib7JonEXEKK3eUgWP2tHZs-F9GcXPPN44o6zUM-sVI2XsDHP3zFETr7eEzDi4js4ISk7ExBRJFJPdqsEGoHSdWPLZwaBwrENY3XpkzaSHjuKw-0SWVWJ_aoftovdz-8dYGHTUD54QCjanPGwCqxQH1RtAoQzhH5DFFdGIfebM3YjzrAWlFRdF_8bqfOlmmJAjXg1GskPO7Q6Vgmwer-x6sIt8_dEofI1K9YEgD-KSGKfBy4FCv75qde7ky0-4XzFJYn_6-GVWr4giGhnLsOQuPwXqDblAgM3Hiq3kg00RY8PanYTYUIM4Ka3s3S3GscmKAFT9gR5TfyFu_R4qLrkC5LTY9UWOQ7WXi8Ya6Y8BFF1hhYDoID_3I1NnMivT-fhb8dxqn3F3CvXylZXFNteiYeFGA8O&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"00:00","closes":"23:59"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -357,6 +365,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -392,6 +401,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

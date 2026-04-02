@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Bayou Animal Clinic","url":"https://scrubby.app/vets/luling/bayou-animal-clinic/","address":{"@type":"PostalAddress","streetAddress":"75 Wade St","addressLocality":"Luling","addressRegion":"LA","postalCode":"70070","addressCountry":"US"},"telephone":"(985) 785-8221","sameAs":"http://www.bayouanimal.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.4,"reviewCount":55},"geo":{"@type":"GeoCoordinates","latitude":29.9099851,"longitude":-90.3551871},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJKa6hpezGIIYRR_rtnIkCm1c%2Fphotos%2FAU_ZVEHeRqx9txVUGy6Buud1rsf42XgHFRVXBZ1HL_BkQJGLnIQl_pXRL88yanSRNi7pfAFTqRS1l75vYT6qIrjJtiBZV5VKZB0wu5Iy5-wBEbpgaX3q0On3TwgjCW-fpZbVua1-9NWeurUBXAukk96Q8EU7u7Xv8AUxdDitIvou3gDdAgTJIHcI6cVIneBgmDKd25cUWUtJG0ZlhU1O46L4A3tTfsG0aiGisTbNmCmWY-eRbSNLkwYu2-D3Nj13XPAmKpLaRuSiZeqK9lc5EorkdzanXk_GY7yHXqv4XqfEgDEMXuDA0W1gaMxb_voSEgE5Gw8oW2cHnXu29KyoiZqKQt3RGvlyqZ4KGFArw50u3ZTsFkOEP6DtA4h6kSI-FaGdJIRrrnkV2k_mS-SqjWhGE_VomkCZAeAs4gQEu8DATZn_Dw&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:30","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:30","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:30","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:30","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:30","closes":"17:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

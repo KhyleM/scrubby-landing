@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Granada Veterinary Clinic","url":"https://scrubby.app/vets/mission-hills/granada-veterinary-clinic/","address":{"@type":"PostalAddress","streetAddress":"10838 Sepulveda Blvd","addressLocality":"Mission Hills","addressRegion":"CA","postalCode":"91345","addressCountry":"US"},"telephone":"(818) 361-0125","sameAs":"https://granadavc.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.6,"reviewCount":161},"geo":{"@type":"GeoCoordinates","latitude":34.267032,"longitude":-118.467029},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJNTlbI2aQwoAReTayO9fmstQ%2Fphotos%2FAU_ZVEGK4eq5A-8bPe74mHI6LgYVfaiPPPOQZ6Z31XbsuHRweFH5SuAK53DiSmV2rO8PG1bNRr99VVLqzaMy-H5eDoT2rk7T9XWsXHlLikKjenl90XotgKcajNoOxUrn6sphBZ3-YeYAUELn5vvRFenT8Sb4lkzjdy3qclZPXEmx7q-1kVFr4dRSludkctEw_dYaIsAb-i7HIKH2cYWKNiZJYbmDuS4u4JOfDHJyXFNk59IDV8qHhoLWOisRiy68VjEZBmFMjlg3lAWsqdzOZSNS0wq9QiP8uO3-ib0U8aE4FztETg&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"09:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"09:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"17:30"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

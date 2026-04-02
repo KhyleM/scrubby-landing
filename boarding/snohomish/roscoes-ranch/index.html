@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Roscoe's Ranch","url":"https://scrubby.app/boarding/snohomish/roscoes-ranch/","address":{"@type":"PostalAddress","streetAddress":"10526 221st Pl SE","addressLocality":"Snohomish","addressRegion":"WA","postalCode":"98296","addressCountry":"US"},"telephone":"(360) 668-6139","sameAs":"http://www.roscoesranch.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":42},"geo":{"@type":"GeoCoordinates","latitude":47.7958966,"longitude":-122.0898991},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJT7H7vG0JkFQR4-JkXJ_UAlY%2Fphotos%2FAU_ZVEFB7D_W2OeD1WO9FG7t-53xZR6gk4YClpLzrqNI81pYO8GaL-vUuXaArQI5NtAOtK_A25VN-JcfwGCpAZQN4uTV--nQiCziZeZRcc3jlwKnCv9XyUGA-3UXONun6yB0qzKUyKBlBynvGP8RG4sR3Jh0l_8ArXVXXzC2OLiZEYJdk0N4-p5ISxxGVvIFAVLd3HYacvQfcMqdDBdps3SosSZusQf0UT_z3_npH6nv5Rq1KzIDpj-UQwckt6TjViAidIR2mDTYlXvIsP5MOWBSlmlnbP44aFbCU4tK-EArwrfCdjUToGG66hctnH5yg9-vKNtc8lZjwxsgO1MrdY5KWOdWVCJcYfRYEW0fiC542NanTcRHiMQiZzxQJc50hkQVS7MOZx0rpwhjuE4VuLUA4ejsyE9cboqM4snC8bYCybPz5w&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -348,6 +356,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -383,6 +392,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

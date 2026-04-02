@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Rainy Day Grooming","url":"https://scrubby.app/groomers/vancouver/rainy-day-grooming/","address":{"@type":"PostalAddress","streetAddress":"3300 NE 78th Ave #110","addressLocality":"Vancouver","addressRegion":"WA","postalCode":"98662","addressCountry":"US"},"telephone":"(360) 900-4551","sameAs":"https://www.rainydaygrooming.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":151},"geo":{"@type":"GeoCoordinates","latitude":45.645928,"longitude":-122.593486},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJo2DwzdGvlVQRGNsNXWF0CMU%2Fphotos%2FAU_ZVEFmia3SGm-CgiJDBZt5h42hoN6wANWu5CbXKvDPlNH9t86_Zd_ymRn-ouNOhgHKhJ_b6ndvX-3pumgQYmbbqkf-1ArujBzvdEHemgtp5GyKsdrwCTx9qG61QoLy5yVKIklCJgLeEZUA17gusgMlTbfjJP1f_9Cqw77G0qjO_3RnphMDSRR8KcE32QEa1qfGiP95WXx3X2L8mx5yE4x3D-W9N1h5sjIRcOB8MK6zL_yV2bABeZzVDNGHQ0mgdvRAoo3cgyjfPS-Lnm_-H3dV324Ughkncvyd2KKzT1VeO0pYHg&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -354,6 +362,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -389,6 +398,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

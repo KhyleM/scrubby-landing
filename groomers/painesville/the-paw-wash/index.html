@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"The Paw Wash","url":"https://scrubby.app/groomers/painesville/the-paw-wash/","address":{"@type":"PostalAddress","streetAddress":"2139 Mentor Ave","addressLocality":"Painesville","addressRegion":"OH","postalCode":"44077","addressCountry":"US"},"telephone":"(440) 358-9274","sameAs":"https://the-paw-wash.square.site/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":168},"geo":{"@type":"GeoCoordinates","latitude":41.6867351,"longitude":-81.2899524},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJfeclCjakMYgRm667o6lJnW8%2Fphotos%2FAU_ZVEF-AQm6X7PtY1QoWVYSkh732XZ16O7-oWrlM-AHiyd3_jfySWLeCM2x-UQV3ugtro__5FDfBUoS1ldRkYqG5uEopp2d3Y64yvBXjqL6sKovvf6KNpbk95YhOBsz9SDmg_miOyllI84izwQEe3l-6FPMdICwbxVQ3FgkkSiLvfQo1HvHUvQiD7jVTN-9GeNNxfuJ6TQxElBOZx6Ybjoiibb-06Hs_HwyB5-DY8DNyUJIzVZQMyJZ9ppjEsGj0GphC2t8iOO_pPpGdwQPpDK-7Y-isbb6ue9pbhx96eUO3kP0pg&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"10:00","closes":"15:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

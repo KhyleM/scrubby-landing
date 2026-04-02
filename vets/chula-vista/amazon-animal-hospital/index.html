@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Amazon Animal Hospital","url":"https://scrubby.app/vets/chula-vista/amazon-animal-hospital/","address":{"@type":"PostalAddress","streetAddress":"1172 3rd Ave d8","addressLocality":"Chula Vista","addressRegion":"CA","postalCode":"91911","addressCountry":"US"},"telephone":"(619) 476-0053","sameAs":"http://amazonvet.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.5,"reviewCount":532},"geo":{"@type":"GeoCoordinates","latitude":32.611232,"longitude":-117.068479},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJS82dWH1O2YARwEIvwEeQ3jw%2Fphotos%2FAU_ZVEF5eQBcSE8dmD3zA_HrzEwp5L9hX4m_7BvnyJktB2wJ7rRqsseEv60a4cI5lbQMe19Xcffa20cQuOFNgMpjQYYIi5zRFVnYI9k_fAKXuvBM7bernO4FnDjjuGHQXaijmSl2L5Adgegrx7j5P2JDVJT1LUmD7CxOz6AdKALy2nUXnzafYtQKi66qmLcFiciYDUUswt_i_-aDZyYK05qfrGOczpfNINRC2dWeQYOdscuNGgWVmsfxuIh4skFnyLjDc3Ev35JF1FYjhMMTc87KWmdRBg1VNBpU69og_rubCv2kNzsvN6AXrtrxTtAlklFIGJN98jxlPfNAQR5J75x8nxPl-khAO6kUtC-h_ohNNj2l4d_YZ2Z8DiwIR7Tn74cA-kUgKHz03LCmOAJ6lzmmLQZ08RxYBb_iv9iCvD2l_J5k4Q&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"09:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"15:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

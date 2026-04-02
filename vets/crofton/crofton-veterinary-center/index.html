@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Crofton Veterinary Center","url":"https://scrubby.app/vets/crofton/crofton-veterinary-center/","address":{"@type":"PostalAddress","streetAddress":"2151 Defense Hwy","addressLocality":"Crofton","addressRegion":"MD","postalCode":"21114","addressCountry":"US"},"telephone":"(410) 721-7387","sameAs":"http://croftonveterinarycenter.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":301},"geo":{"@type":"GeoCoordinates","latitude":38.9916667,"longitude":-76.6977778},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJERUWv_Lut4kR0JSUR1NaDEM%2Fphotos%2FAU_ZVEFMbDnKcFC8ArzGNAGm1N97nFZ2GbrhYfVVpVrOZNxD9o2Ca6eyr2wPmA6zhEQYA8sbi4g193OcEJu7m4YbYdI6ESIC-ymSLzLSNc5drc9bOQgd0J1mox8rAb8P5EJ8e3dv8y9jo1XXxj9DZgJlvDOTb4UxC9phQocijnuS_0e5Fo9eBaIM_uL91ZR1TM-nJTWgAF0tIjuc4hysdMQC9bZWwj2hrccsAc1WCjrm_3FucFmm7Cp5VVi25GX6poJp31muCbewbv2INRSzzgZbf0fKRFagSqilP38A2iWGK_5_Pg&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"18:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"18:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"18:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"18:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"18:30"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

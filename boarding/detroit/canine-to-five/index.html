@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Canine To Five","url":"https://scrubby.app/boarding/detroit/canine-to-five/","address":{"@type":"PostalAddress","streetAddress":"3443 Cass Ave","addressLocality":"Detroit","addressRegion":"MI","postalCode":"48201","addressCountry":"US"},"telephone":"(313) 831-3647","sameAs":"https://www.caninetofive.com/locations/midtown-location/?utm_source=google&utm_medium=GMB&utm_campaign=Detroit_local","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":1504},"geo":{"@type":"GeoCoordinates","latitude":42.3450118,"longitude":-83.0605757},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ58NINLTSJIgRRlws90yt7-g%2Fphotos%2FAU_ZVEGC9uvFh0PWcRmk1FY5Q-8aKeVAQCzyhS4-HpyyuZdTydmBsHaGfotNHlHM625ce6hBN3lEBVY1Swtw7Rpf4E9e3E34O10AwUZHtEFMw5-Y49G6tBBR6Gw1LrVgXmAuqXpwLbd2jR3TxS8T3sxoPSfjqVKwFncqJyjngNn7Edr3HG6ikTFQh2GwvimKU6leYUYp2QJDeBVX-naf_mlOaM03YfVzUNPESYbj-PKx7Bwv-L92zdrMFRKBRrHt_bnXmaH3cDqn1Ayk2GtixkaezN40A35dkxsIta_Bj2KGKIYs3Q&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"06:15","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"06:15","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"06:15","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"06:15","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"06:15","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"08:00","closes":"11:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -364,6 +372,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -399,6 +408,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

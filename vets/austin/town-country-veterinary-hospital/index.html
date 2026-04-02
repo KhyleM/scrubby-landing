@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Town & Country Veterinary Hospital","url":"https://scrubby.app/vets/austin/town-country-veterinary-hospital/","address":{"@type":"PostalAddress","streetAddress":"6300 FM1327","addressLocality":"Austin","addressRegion":"TX","postalCode":"78747","addressCountry":"US"},"telephone":"(512) 385-0486","sameAs":"http://townandcountryvethospital.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":375},"geo":{"@type":"GeoCoordinates","latitude":30.0896644,"longitude":-97.7125473},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ8bWksMCtRIYRW5bb0-O3oNo%2Fphotos%2FATCDNfVW-n6HaSUEZeCzrKoB3ZDNwcDMKHfbb12K-OoLnBbH0JqAD-fExqCAAa9uFpqGvnhdJtp4GU7bIe1m1Bver-yfGvbo9gzQ7_R2888-mnurlxz-Xg-NRDny6eq4VQu5fxg8VhYhnqzM_AOTeHhHtnYgOiiaNkAr1R5DSsAsG-lHOZmDmWZYS69Ujvvyg7zDcaBuJ8P6HViJa4GUa9S8Z5uEcA1KAGUM1z-cfgk-XfR0MR4XgKvPU86SEdehXDIy4Ex1ZlQxm2sr8A2xSECSlUrAkte52LZC-VNLdCDNg_GMnw&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"12:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

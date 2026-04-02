@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Midway Veterinary Hospital","url":"https://scrubby.app/vets/chesapeake/midway-veterinary-hospital/","address":{"@type":"PostalAddress","streetAddress":"3710 Indian River Rd","addressLocality":"Chesapeake","addressRegion":"VA","postalCode":"23325","addressCountry":"US"},"telephone":"(757) 366-4050","sameAs":"https://www.midwayvethospital.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":1000},"geo":{"@type":"GeoCoordinates","latitude":36.8230616,"longitude":-76.2340367},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJETnonh29uokR4qZrjy-I5DM%2Fphotos%2FAU_ZVEH6JnKNYDc7VtlPvuzTzcyJiy-g5Oq0nrmnc4mex40_PzTqoP9IIbiVawjV2cTqsqSWeGMpg_73jvEN5KqkTxmdfpa1Va0g_2Xz7hQkksa4otwusUO38zIXF44eKJ7pZ5f5KFrI667KM41N8pXU4pI8NIBURim3KR1aSzrciELs2G9mmEJPqcRuTaTGwjuUvG592tWof2zCriD6pyepRHY7FVbpBO0bb7-W4CeGohwxkrilZiH3yqUID1sKlQPi7Rl6yrlaLg4eNL1f6vG6a_MLLj36dBq5l8cgxRpUKuJnf47e-Y6j6YSUdGllq-z8sB5st0tTuf2LytnHP2cjgaxSDvcX5nCmQH-M7kGKCRZ2FNaDMvPtleR3rDo3i7d8P6Kof3hNNq97slW4BjnoebrYu9DShFw9mWFK1JdWfO4&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"16:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

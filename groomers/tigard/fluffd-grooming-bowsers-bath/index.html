@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Fluff'd Grooming + Bowser's Bath","url":"https://scrubby.app/groomers/tigard/fluffd-grooming-bowsers-bath/","address":{"@type":"PostalAddress","streetAddress":"14315 SW Pacific Hwy","addressLocality":"Tigard","addressRegion":"OR","postalCode":"97224","addressCountry":"US"},"telephone":"(503) 684-5074","sameAs":"http://bowsersbath.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.6,"reviewCount":155},"geo":{"@type":"GeoCoordinates","latitude":45.4171749,"longitude":-122.7902305},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJp2pYWEgNlVQRrKTbUic0itI%2Fphotos%2FAU_ZVEG3uhDQ3e2gonefw7y2n6NTRBVsuauZboQuKnZdorIs_YFw8FQmXMufVjbVJnZ9rNTucKyITbQjSAOio3zuit4KcUSAV4VjH7wQG-_LbRJP7FfmLlxgpKx0-mkPxYPirIoU9Xw4HTjED37UofTPrSJt6q9bcuCwxJnzwlmDIq_mViP4rFXh5dutrtf81VrGi2LUR7STCm3oD2QLm6uOkNygvQhErNViyFloMELOjfrySj7Ogdgql7ULtGe5xISZpcjGmBO2k_yIRGkonH2T4z85kH7USyxt2Eqq_Zud8KJdTZk56mPr0-HydmG1bDoqcRpb53wNSP8bHy8VTIdVInscuIsLLgBh8Wfz5-JOYImusENb9RMuIC8R31Iy5V9LuJ-hN2mm9JVhaWt884nngX0U-xjcJrJJizkcInrs9lmkV4Pq&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"09:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"16:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

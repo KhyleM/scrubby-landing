@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Champlin Park Pet Hospital","url":"https://scrubby.app/vets/champlin/champlin-park-pet-hospital/","address":{"@type":"PostalAddress","streetAddress":"10909 Douglas Dr N","addressLocality":"Champlin","addressRegion":"MN","postalCode":"55316","addressCountry":"US"},"telephone":"(763) 315-4981","sameAs":"http://champlinparkpethospital.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":227},"geo":{"@type":"GeoCoordinates","latitude":45.1525378,"longitude":-93.3614028},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJY08_Ot87s1IRwQZk4mjHMzk%2Fphotos%2FAU_ZVEGRqWZrGwNwsUQQWrQ_s20La9A0LsqRWazCae8E3r8RMHJYik6zIwzGQP8GSO8wQ-ptjWy8qeXKunUWrc6txaVncsKbzqTtaM0GDsXQK2LgfmpA1arATAN0CND3FPk7gfOTM-v5k54RfVSVQ4TddR0mRAWX1cTeJmPDiTJeRfPlCSiMnpWYzcA7APHsDwe3bS8apETXhCAUJQQJlcPeaIMGHtnaQxmOS3EFKPgYtR9nKwyO-k24YHqhikt179r3AX7qf-Gzs7vCL0VUZcTzqCDi86CWYdngSwOiyxeKAXLTaA&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"18:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

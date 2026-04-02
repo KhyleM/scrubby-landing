@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Top Dog Walk","url":"https://scrubby.app/walkers/virginia-beach/top-dog-walk/","address":{"@type":"PostalAddress","streetAddress":"913 First Colonial Rd Suite 202 Office G","addressLocality":"Virginia Beach","addressRegion":"VA","postalCode":"23454","addressCountry":"US"},"telephone":"(757) 750-0445","sameAs":"https://www.topdogwalk.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":42},"geo":{"@type":"GeoCoordinates","latitude":36.8558394,"longitude":-76.0259258},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJq9Dhn26ZuokRN3F_T183E_A%2Fphotos%2FAU_ZVEFVZfmg6Q_OcuBnOidY-ffW0Wa0WqWV0Pouoa352N31uxgNqX2gqW9k6gFlWakH-yJniWVoBwdOnn7S88gIKyxjcCmxWUsO12tykhJ8t8H08GOs47iYZxrklO724hetX3clQ7z_3F9JIbE7zdbfQeMuJORFjnPamnHcnKsnWG-AfcYDqfqBO1ARDw3j0UmIkzCQxzRCDGTC6J12mXgV3JRL2khXKwewgfkvkxm6ezT9mWcZ_fPmARJhsW8wZltj9j1ZRAfOzx91ePyHHvkexSggr75gu6Q1xTjy6VRqSpnQKQ&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"06:00","closes":"23:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"06:00","closes":"23:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"06:00","closes":"23:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"06:00","closes":"23:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"06:00","closes":"23:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"06:00","closes":"23:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"06:00","closes":"23:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -361,6 +369,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -396,6 +405,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

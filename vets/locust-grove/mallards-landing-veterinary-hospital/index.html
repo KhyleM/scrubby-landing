@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Mallards Landing Veterinary Hospital","url":"https://scrubby.app/vets/locust-grove/mallards-landing-veterinary-hospital/","address":{"@type":"PostalAddress","streetAddress":"3590 GA-42","addressLocality":"Locust Grove","addressRegion":"GA","postalCode":"30248","addressCountry":"US"},"telephone":"(678) 565-4004","sameAs":"http://www.locustgroveveterinaryclinic.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.6,"reviewCount":18},"geo":{"@type":"GeoCoordinates","latitude":33.3537554,"longitude":-84.1143088},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJZYMadMZp9IgRGDtw0Bkm9PA%2Fphotos%2FAU_ZVEGwQSXisQHUcm1MmUTB0LhSSSRtCVUmiRgA0z09EjiJ4q5GVocLtskEe_wSfehYKlP4uhXqoU_UShsn09IfeeYGEOQgiXxfo8Ob78ghZBqFPyylwCoK0pbElr8rdvK-ToF3QqQUkYEq5Q2P94_FHQp-ruwWpKTFFJAz1bG7mcnrnFaH99uI9yODSoLLuF-1Jg2bnodGwgjk5PsEd07Ww8Nitx6FbSwEcukP6M2pLwvcQpGcMZvtcypI8mrhphtjGA0WnBCH0oBIr6jTJw8j3TL4WYjRsEEiuFlHWdO0IAvHzFFTEHNByTwYNgQmKEfJMfad9P1WWA4cmaCES14_5T9d5SdObsnzS8_-BB7jjj4QocM3gpuOCS8Z7mVA-3Fw1mlApLHk_eGn5bFPP2QB2oOsh7fuaIwowwCKmk-NtZmjGg&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"09:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"09:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"12:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -359,6 +367,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -394,6 +403,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

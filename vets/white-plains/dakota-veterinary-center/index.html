@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Dakota Veterinary Center","url":"https://scrubby.app/vets/white-plains/dakota-veterinary-center/","address":{"@type":"PostalAddress","streetAddress":"381 Dobbs Ferry Rd","addressLocality":"White Plains","addressRegion":"NY","postalCode":"10607","addressCountry":"US"},"telephone":"(914) 421-0020","sameAs":"https://dakotaveterinarycenter.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.4,"reviewCount":280},"geo":{"@type":"GeoCoordinates","latitude":41.0364143,"longitude":-73.8091377},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJTc_Mb-WUwokRXuIbOkp9Ftg%2Fphotos%2FAU_ZVEGpBblRSQCwI1vssibNPeJyJgq88Ms9Mwk9nLFxNa4Fe3yyYK6OZmXUaHHUv5yhM8zNpoApu1iDs1Rrh6S1YhmlRtC5aVuLijOm-KdlztOS0_02G54vzaHRwAFVlAv84o0hE1XWqBXKwkrFWcDJR0DSKQelFgH_FCPzznDy3n9NzMIDi-ZYoj5G--ngfIwLKETaSYcHyFCaiBTMpqOrNx4LeGlq2zj0xxxX_pXjEeQi4jhAwmJBzKtvGi-JYy6F1lUb6auVuY1se71dMyi-gCsXVqJtyzYEWYqyQ1LXFJC8s0S6bgSiWgMR7gQzf6PO6ga0S86BDSB7o-21ZHtx4Bi96XUzwCfSnd5hLij9PO0oC0BJpSaLfmUbhOyo_QrAdaamAfabDtUJ1XwAmtdpXRpQru07SODaVWuT57GoJGi6Lg&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"09:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"12:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

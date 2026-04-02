@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"The Animal Keeper","url":"https://scrubby.app/boarding/encinitas/the-animal-keeper/","address":{"@type":"PostalAddress","streetAddress":"155 Saxony Rd","addressLocality":"Encinitas","addressRegion":"CA","postalCode":"92024","addressCountry":"US"},"telephone":"(760) 753-9366","sameAs":"http://www.theanimalkeeper.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":353},"geo":{"@type":"GeoCoordinates","latitude":33.0495047,"longitude":-117.2851396},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJYWTRSm8M3IARXChrcbBYJmU%2Fphotos%2FAU_ZVEENh0akt5RuR3WWRjaHB716gJaiHzlLCL5nibtPpYu712-OXcFLRLchQ68zUKYBcpwtiJBMbXJM7J_WkOiDH9LL9yibUlm_wyi1e5G_x1-d6ZSVZepX21gOOjlZwc5Qm2dMNgQfA15IMMPqkcbGgpjmce-DO_B33Q9emRUPQOTpS6kdkTL4034FSu22EE572CKtUxAlINPV_AQM-7Ezo6-u_5cDqXtEvYZ22t3h0ca808iKfYmpiPzGvfRUwO3u-ulDkq0uD0PCRLnyxeY8OWXTza4RSG8qcQkVp7zn0fA7dCWE7AVWdDOJmGcOe-WfGAwX4ceVkaeujHW6qGYrOJVjpOzaO-qgtBf8l9opT4tiR5O-8wAoH-G5hstHQWV5uoZI58f9zYUM6zE5O1fybAr3k8FmXRgH25NMlUgJ_-J7Yg&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"08:00","closes":"16:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -364,6 +372,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -399,6 +408,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

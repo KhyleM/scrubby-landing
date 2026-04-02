@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"The Grooming Shop","url":"https://scrubby.app/groomers/newalla/the-grooming-shop/","address":{"@type":"PostalAddress","streetAddress":"18300 SE 38th St","addressLocality":"Newalla","addressRegion":"OK","postalCode":"74857","addressCountry":"US"},"telephone":"(405) 962-9164","sameAs":"https://thegroomingshop.co/","aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":16},"geo":{"@type":"GeoCoordinates","latitude":35.4258716,"longitude":-97.206996},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ-RfbPho3socRpSn8-BuWEQw%2Fphotos%2FAU_ZVEFe_ms-OrSG1DbwXSGm9tE0ClNJNRab_zQX7s-LBgiVC_ZoZjhS8mKYHKmKlii4dvz1PQ3ZYBVyXQ8YEv7Dn4Ihhv0xptY8JmzKe_WHNga3drY-SEXoxvGYwuxXYiEkhGyFFj0dsn_W5gEiJY7OhjzE6NDhEZBg1tMlae5d16b79YcLluWVW4rjac8mW5aAcLzsvZcxmje4str43O4qf0kNJcydZfRmV5D_9knkSHLysmSFr0Zwn-z5PLnsTlWz7DTm9edJirFsZk5Q1r9yhJuZfoiPVo2J_7WqjiZeaGlazg&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"17:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

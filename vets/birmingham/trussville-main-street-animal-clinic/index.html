@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Trussville Main Street Animal Clinic","url":"https://scrubby.app/vets/birmingham/trussville-main-street-animal-clinic/","address":{"@type":"PostalAddress","streetAddress":"1921 Gadsden Hwy","addressLocality":"Birmingham","addressRegion":"AL","postalCode":"35235","addressCountry":"US"},"telephone":"(205) 655-0065","sameAs":"http://trussvillemsac.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.6,"reviewCount":333},"geo":{"@type":"GeoCoordinates","latitude":33.6087086,"longitude":-86.6275273},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJV9-i5q4NiYgR6Sjlemq1wOY%2Fphotos%2FAU_ZVEHKTqo9T4K1M3cZ6XvHOufIlxIsyIP0MXOwGmeoPf2r2uvYhGK0Ir3FCc5nNZjbIp6pJn16lHIMLdrJIhlN0Yt6_zV2ReNF9dOyS_4-mwFqxO03ImbpQELFtT6L2VcDpnOl0n3xYlFHqJmLHflWXJgZGr4zZNSG9cKa50Y5slQdDYM3jTirph-RhLRU10VK2eR8x7mTztzLUFGO7A0Sx5Nl3WMOcOdY7P1le8zwJCgAgiha04Heqdqpk5dmNlYUqqlBnS_U_tY0wD_KpwYAUsVAXx0youswO3c_hy0YX21SxzpgXL8CcefFQ_92ktdQwhOELfu_evEL4wXxohHr3Ba2V9EDsN2FLiVMQQ28uIZqXCo9jsXpF7quhqjlXlpQ2L-IqzR9RTcQzjeys3UdduDJXgNVICcO9Vbcd1xCacwACc5C&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"07:00","closes":"14:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"04:00","closes":"17:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

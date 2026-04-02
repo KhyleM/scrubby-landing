@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Park Lane Veterinary Hospital","url":"https://scrubby.app/vets/norman/park-lane-veterinary-hospital/","address":{"@type":"PostalAddress","streetAddress":"1525 24th Ave SW","addressLocality":"Norman","addressRegion":"OK","postalCode":"73072","addressCountry":"US"},"telephone":"(405) 364-7793","sameAs":"http://www.parklanevet.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":93},"geo":{"@type":"GeoCoordinates","latitude":35.199682,"longitude":-97.4765396},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJw1_QfFRosocRi0p_V1wm9IE%2Fphotos%2FAU_ZVEHETCTqKaFoSR0fkeV2Nl7Ea_ceSzHWHy5utF2wYQInTXcO6HWQoR9YJOwVNJwi5bC2UIyf188ZqoNpn8oM49n3N6-fBd04owmAXtaoj1T7dz_N9Hq086i9m4SfNra4Ppkm5tjpgVNiQOeBBMb4B6Z7gT_0nttytMgQb-Y4Mivoow0fTPEbx7u6uAFFRLrbpmlzls5VMLzK32tcdBH1EAxtRmIHWqhMIGxONpKtgrTD_HPqQmFJ_RYkErXvWZJakKw70vmG2f7STIU2p7JxBjUcsyLM3HPU68EqI0vruTLggtpBnXkKNa7D3pe_y-Wy9kULmMK11vAiDT4v5WPgzaxnBBZVt3QA9pTTiytPYWmYI4_wlY0alIn2RUEOOtmoknXDJU4YYm1XJbjAL-62WNJOXThX_aaoj61Szz83Snk&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"13:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"17:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

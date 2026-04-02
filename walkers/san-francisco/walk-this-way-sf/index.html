@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Walk This Way SF","url":"https://scrubby.app/walkers/san-francisco/walk-this-way-sf/","address":{"@type":"PostalAddress","streetAddress":"1515 Jackson St #3","addressLocality":"San Francisco","addressRegion":"CA","postalCode":"94109","addressCountry":"US"},"aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":3},"geo":{"@type":"GeoCoordinates","latitude":37.7941337,"longitude":-122.4200193},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ9XA6rr-AhYARXRaj-TVVUAM%2Fphotos%2FATCDNfWyzyro4aCUjuHlDiGGiYWGhvlOJ-z0fhK9TDKcskLtY4mQOyfIz-hnwLztqBAYzaKFG73zjUMKa6GqViW2VyaQ33V6Vb-8uzQj3vn-M1akuIB9V9KbPSe-wN_x4ZrdvFs8z-vkbyz8w_X7AWb8UKxh_t5dEL-9v8N9yoQmTpqboq_9oBybSzW4GkFBKjNNypiyMKjVwBNTkb6yrdplHD-7fIlVR6FO-0TpYgcBBaQM44HUIRKkUuWZg6MfAKyT6L4-lkSrN9xfKaeq1FJx2MKKU8yvfEl5Y1Xbrr6RLdeu7Q&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"17:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -352,6 +360,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -387,6 +396,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

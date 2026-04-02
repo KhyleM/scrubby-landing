@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Vetco Vaccination Clinic","url":"https://scrubby.app/vets/hamilton-township/vetco-vaccination-clinic/","address":{"@type":"PostalAddress","streetAddress":"1215-1309 NJ-33 Ste 1","addressLocality":"Hamilton Township","addressRegion":"NJ","postalCode":"08690","addressCountry":"US"},"telephone":"(609) 890-3160","sameAs":"https://stores.petco.com/nj/hamilton/vaccinations-hamilton-nj-2873.html","aggregateRating":{"@type":"AggregateRating","ratingValue":4.1,"reviewCount":19},"geo":{"@type":"GeoCoordinates","latitude":40.2259711,"longitude":-74.6645147},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ24jBgj1fwYkRxCUFoNQ4cgs%2Fphotos%2FAU_ZVEH41Dg9Iv71Rw01sJLHls0LXM78OJNXvu1uTDTjVeojNpNP5uqZQfxZ2BFXmHEtE4fAZNemh_G2PsNexcrRzQZiuGzYP6pH16mDHYjruUxnnBcnyF70b5_XVSB_xllcIyGB5vRWFUEKRVuvtyivFVNCRSMUB36TacdHSwV3ZZQa95xQonIJ72OMfMxCX-2FrIV-fEzgTp0VO6k3MdHWuYW3pfXGzyuCPP6ITOpuYrfIVKS60NF-tJ1B6JCb1-c5POEbOdjo4Kwvd69lzRxoi6wQ-B0HCgS8v5OuggMUHwQ&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"09:00","closes":"21:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:00","closes":"21:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"09:00","closes":"21:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"21:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"21:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"21:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"09:00","closes":"19:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

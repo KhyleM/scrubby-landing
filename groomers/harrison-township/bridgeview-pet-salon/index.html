@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Bridgeview Pet Salon","url":"https://scrubby.app/groomers/harrison-township/bridgeview-pet-salon/","address":{"@type":"PostalAddress","streetAddress":"28438 S River Rd","addressLocality":"Harrison Township","addressRegion":"MI","postalCode":"48045","addressCountry":"US"},"telephone":"(586) 948-9398","sameAs":"http://bridgeviewpetsalon.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":45},"geo":{"@type":"GeoCoordinates","latitude":42.59038,"longitude":-82.8259801},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJfR6wVWMhJYgRQJDZa5qw_b0%2Fphotos%2FAU_ZVEG4LIZmnCDaA3jZP_5fmAEhd9vod2DX3jLdqf8GMuWQgmte8XGLRpqVIydMpNozKpVt9r8Z7xz23bXqwdsRkHHdVeEerHXsVnZApZAR0VWR2KrrvhoPT-ttR0RGLxbKonCzBaVrDe5cW1hlMSvNbOzPZTKprQtuyd0V5d1afzjRC5d_xQN1UgFdo3bA2bHJ7lGEEdKsmdO70rYCTivpYO1ReXn9dZSYm5SEXhgQyROO-iKogf5jnLmuADDPbGZVa1w2rB3uhL93wtiSRWfVJSYB22CAMh-VdRX94FioTAHMxQ&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"15:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"15:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"15:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"15:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"13:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

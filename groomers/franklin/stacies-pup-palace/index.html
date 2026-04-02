@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Stacie's Pup Palace","url":"https://scrubby.app/groomers/franklin/stacies-pup-palace/","address":{"@type":"PostalAddress","streetAddress":"509 Shadycrest Ln","addressLocality":"Franklin","addressRegion":"TN","postalCode":"37064","addressCountry":"US"},"telephone":"(615) 891-8060","sameAs":"https://staciespuppalace.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":25},"geo":{"@type":"GeoCoordinates","latitude":35.9135363,"longitude":-86.8395665},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ60Qhnp1_ZIgRNjgHoNok8Gs%2Fphotos%2FAU_ZVEESzeU1m5ltO5FQACC3LQv8uP2dpqIk-VW9QqvLLVZNrriQDt2Gm5vq0QNBRV2d8uQNLZECYVWyVCFfZVwqM6eKEE6TQVWTd9x8-7Lw0c-0E1wHDBwjj2tFSDONnxt8sX4AkaOyi9T6EVE8GW1YLOa1BoAMQDTzAQX6Y-FIuhrFGEgsF6eEaDDCuFHwbJW_qymb4mrqfJ-lF9HD8I2zEwdgkWm3lIAl1Q6cCTL64acWNtYn7_Q1oL3x5lWwKuDpUpkPDQPXCQWhtgZkTjYI6SV3HwKJ667eM3WDV7VQRvUxtw&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -350,6 +358,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -385,6 +394,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

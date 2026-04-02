@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Chaska Valley Veterinary Clinic","url":"https://scrubby.app/vets/chaska/chaska-valley-veterinary-clinic/","address":{"@type":"PostalAddress","streetAddress":"115 W 3rd St","addressLocality":"Chaska","addressRegion":"MN","postalCode":"55318","addressCountry":"US"},"telephone":"(952) 448-2936","sameAs":"https://www.chaskavalleyvetclinic.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.6,"reviewCount":248},"geo":{"@type":"GeoCoordinates","latitude":44.7859814,"longitude":-93.6015442},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJJ2kwy_IP9ocR6iu2pwE2MCM%2Fphotos%2FAU_ZVEFRAuIqmqiI3OnDEQV4yHo5tMxGufZGodNvaKzzSaUASiTop6uH4qPG1Iz3CfA-G436wtUpdwoVjfKNnNzvv5DLhDPwXYlWCinPNeEsLvDzoqVbIagUAwmhueKf0JHZ5Tfps7glFl6qF2dfme8Q8VmG8WmQ97xWAs3QCP_K1g9XZZ-SOW3hRjAtfaKR159uGyky48lG-B5WrFWukNzgS5paoDer8gek3uIyG00nkO3_p15z3T8zo963Lh0VW-3KhKeyQSR4wCvOx_yx-V0phUUiGMCfvYtBHvHrZH00CycxUWwjraLRFZft5qRMnHAa6yhkV5Q0CDcumR038tXlQrE7P2eI_qSVHzIj8uWd512axAMOxBjKLfoxR5leepI-XP5BtnT6V4dUr0k0TmP9Gn67oKMDqulTGDmYOCIob-yzx1IG&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"16:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

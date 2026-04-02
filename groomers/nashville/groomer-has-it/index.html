@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Groomer Has It","url":"https://scrubby.app/groomers/nashville/groomer-has-it/","address":{"@type":"PostalAddress","streetAddress":"7648 Hwy 70 S #12","addressLocality":"Nashville","addressRegion":"TN","postalCode":"37221","addressCountry":"US"},"telephone":"(615) 646-3434","aggregateRating":{"@type":"AggregateRating","ratingValue":4.2,"reviewCount":142},"geo":{"@type":"GeoCoordinates","latitude":36.0800619,"longitude":-86.9523816},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJIflTKj-IZIgRf9ekLdcHkx8%2Fphotos%2FAU_ZVEEcq-rrMZJdE4sodfez9Hglkol0w_3fQ-yGgupbCYn3U7PxoYCy20Ad1xQkuk3OQ0HLrbZjPN1SHYfilXqxi0BYR9q8K3wLZZuOR_4eXW8MQPmBehUOAgOYMJ3MOL0g7DgK9k-TpxUQjO2ZX-BVdpTFvJnr8uu4_fs-dARDTOBdVJdr302xIo84CJkSoU_4VtawVsD-nD3FqbLM0joJt0o40i25GpZzvakwIbYXmincwsEo7yszy_NZRu1QovHRUkuC5-Y28Cf_RZoCJt6yz4QjycNGHYiW31xgqXB-9J7jzjxwTvCvZ89fwlFqMnOhhI679glFr4GS5gZkXUolRG8Ko6CpBRcYfAjHLQkqh48XVpdEeSaI-KD33BVqPAJW7T8_rQ2Gm8NObetd0oa_vqdVLfbbMKtZa3tbLyTEzOqtVRKv&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"17:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -363,6 +371,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -398,6 +407,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

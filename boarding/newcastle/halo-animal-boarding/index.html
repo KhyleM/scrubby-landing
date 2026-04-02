@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Halo Animal Boarding","url":"https://scrubby.app/boarding/newcastle/halo-animal-boarding/","address":{"@type":"PostalAddress","streetAddress":"2941 NW 32nd St Suite B","addressLocality":"Newcastle","addressRegion":"OK","postalCode":"73065","addressCountry":"US"},"telephone":"(405) 852-2110","sameAs":"http://www.haloanimalcare.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":2},"geo":{"@type":"GeoCoordinates","latitude":35.2914061,"longitude":-97.6530732},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ_zvtzoBzsocRI_A5JKlm5tc%2Fphotos%2FAU_ZVEGpPwkEtyn9GeZzBJDODe-_rOKDQud_sEWs7cyUrbrNvjpyp37rl0ZuFH91aMkUCwpLJsVv51Fj7G-3PhUBOF_UP7MCJuYmL20JFmp8rZEbGdUKZYqBoL8jQCH0kfrVBvSM7zZmz2Se3gBt0UmW90769SW97tQGvrbphQHALC3Eg4M5IoW2keVd4NkgJ0R2f6zY2C6WK2kSHYXL9R6REkTX-RM1r3qtdBOUypPlZpfovw2mI9ew61oa6VI5N4BXCoBzTau5crbHn8GX40gvwao4PkOgSQlvci7Nz8Q56tx5iw&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -345,6 +353,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -380,6 +389,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

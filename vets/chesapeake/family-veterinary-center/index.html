@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Family Veterinary Center","url":"https://scrubby.app/vets/chesapeake/family-veterinary-center/","address":{"@type":"PostalAddress","streetAddress":"1101 S Battlefield Blvd # 5","addressLocality":"Chesapeake","addressRegion":"VA","postalCode":"23322","addressCountry":"US"},"telephone":"(757) 410-7754","sameAs":"http://myfamvet.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.6,"reviewCount":61},"geo":{"@type":"GeoCoordinates","latitude":36.6882557,"longitude":-76.2300086},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJV8SEffS6uokRqtOZd_hSjvM%2Fphotos%2FAU_ZVEGOmqfPOTW25wbTFmDXEVhjf4D8hWdUraQoX68A5cNNGxGdOe0X_c3VDh8crmxQH3Iuxs8H5o_GWFRT3j3WzkpQmIGgcPImusSIoXlVkCbZzrbezaWDyv0tqSz2v83_2ooR11Croh5u4HaYgGj346Rhm1hSWhYuZbMdC9nLJC7g6kO14NzHFrNAY6JK8OZdG0g4BylSrjZAlN28NC2BP5gJCl0ipr16eJNptEL33ttJRGKHiZOCY6FcdVD3DJ3jIaXhGxeDBd168cKi2MgZfN3aP5D8C9-bsjqKbi_zX5yRFrbM1dzG8t-N0c_wYqgC1R-g1jWGIWbpk4YQ_tLF64M8IqwUyyAdNkC1A3H5nViZ4zE_apA1d5RrpFSG-HPjYwoIvHCbbs_8WTj4TZqbfN7gIRr1cGvD72_zVy-2-etJXw&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:30","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:30","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:30","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:30","closes":"17:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

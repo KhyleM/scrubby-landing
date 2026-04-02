@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"The Doggie Spa","url":"https://scrubby.app/groomers/mentor-on-the-lake/the-doggie-spa/","address":{"@type":"PostalAddress","streetAddress":"5940 Andrews Rd","addressLocality":"Mentor-On-The-Lake","addressRegion":"OH","postalCode":"44060","addressCountry":"US"},"telephone":"(440) 585-9850","sameAs":"http://thedogespa.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.6,"reviewCount":65},"geo":{"@type":"GeoCoordinates","latitude":41.709671,"longitude":-81.361646},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJJ-eA02mqMYgRxRyf1-2Uhjw%2Fphotos%2FAU_ZVEFv3DVbDIWz8f52P9WMv-BkskJTsytvht1tdzmv0rueNHlNjT6DqXnAkD9fItshIF1NgX6JVyeaq7XVOP7H4CG6iVe54lxTtI25z5Y0RepldpubrfdgPaeufMugljRR59sKtWcTBRh7KFC87oiaXMi6A25Ot6aaY98rS4MEranTmTUvB7fdcYHzFKPnooZjgEvRukBB_exeHke6vt2J38cxQhcarF4K0Zr1RxyW2M9JFVkbRLHb8HblP4sIxxfopiepcFt7MNHGbI24inl3hwL61YiEUg_VY-1J2CMboooaVQ&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:30","closes":"15:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:30","closes":"15:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:30","closes":"15:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:30","closes":"15:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:30","closes":"15:30"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

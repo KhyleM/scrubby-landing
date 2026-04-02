@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"PetSmart","url":"https://scrubby.app/groomers/overland-park/petsmart/","address":{"@type":"PostalAddress","streetAddress":"11501 Metcalf Ave","addressLocality":"Overland Park","addressRegion":"KS","postalCode":"66210","addressCountry":"US"},"telephone":"(913) 338-5544","sameAs":"https://www.petsmart.com/stores/us/ks/overland-park-store0237.html?utm_source=google&utm_medium=organic&utm_campaign=google-my-business","aggregateRating":{"@type":"AggregateRating","ratingValue":4.3,"reviewCount":1441},"geo":{"@type":"GeoCoordinates","latitude":38.9165538,"longitude":-94.6662058},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ87AnDEDqwIcRg0Ng0EKae1Y%2Fphotos%2FAU_ZVEGlkqw1K1-CjRdO0VMRD0tWn18viLfxGM-RnJhsdr0gc2TJoOO79peUTH52E6amnoz6GGILs7VtIpru8t0z8P-SpWVRXDvl1IoSQiyTAdvbfbPlTcj-iCAU4wQD7HzyFZV2t9D4wKvXtjfm3HSg4IPExE88Vwe2jE12Gsbc_ePq_nHQ4Z5E9Zba7Ei8gT-DJbkRXX4VBGPxSDXzBN2y34rvI0fzvTU9eqXrEqk7yMAvvbNHJZivRc0F6FznoTsdRWEvnbVmVgQytlv6JPHjU44chfObLmE5cMPsBxvMBxp9G-UhvXls9qBHMoFQuNi511sFzpbMluVvdZD8Iifm5N-g5H9htvQOn6lwT_9DJTsgfaqH1KSx_v8853dLu-pR5HP2UkhCkYs2-V3bzBdML03z9TJM69vN4g7gNA0qvHgv9Q&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"09:00","closes":"21:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:00","closes":"21:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"09:00","closes":"21:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"21:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"21:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"21:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"11:00","closes":"18:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -370,6 +378,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -405,6 +414,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

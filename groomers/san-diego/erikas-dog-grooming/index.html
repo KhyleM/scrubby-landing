@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Erika's Dog Grooming","url":"https://scrubby.app/groomers/san-diego/erikas-dog-grooming/","address":{"@type":"PostalAddress","streetAddress":"2511 Coronado Ave Suite H","addressLocality":"San Diego","addressRegion":"CA","postalCode":"92154","addressCountry":"US"},"telephone":"(619) 394-4967","aggregateRating":{"@type":"AggregateRating","ratingValue":4.6,"reviewCount":78},"geo":{"@type":"GeoCoordinates","latitude":32.5760842,"longitude":-117.0793623},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJU6jrhbtP2YAR5Qh5ylT9XEk%2Fphotos%2FAU_ZVEFmYEjBKuS2Rk0Ff3GHwAxX4YbcghJZMEMogdzODfhpTAtgiTRbdRedAejPfNnbBwIAZ0HiOn27ZAMAB8b6kVRilAr8KR39VNOxljgS8p_zyMv8ONf5vbUenGIwBWVhZzJNCwtBGaQfGuKXAVw-WkUbpeoyjDKyOmId8lBdxCbKWr1ItxFYOdEvG-HFm8S0kBj8F1iC6DsfUU7ggOsijqlyVr30z6r5PwYGMm3Ja71u5d9VfyhJm0WXk0d2ioJ8qmJw3J7JKspMefYmOFLifb3s5ijECxm5Vpph22osp3J4og&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:30","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"09:30","closes":"16:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:30","closes":"15:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"15:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"16:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -363,6 +371,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -398,6 +407,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

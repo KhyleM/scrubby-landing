@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Bark Collective","url":"https://scrubby.app/groomers/costa-mesa/bark-collective/","address":{"@type":"PostalAddress","streetAddress":"704 W 16th St","addressLocality":"Costa Mesa","addressRegion":"CA","postalCode":"92627","addressCountry":"US"},"telephone":"(949) 239-4551","sameAs":"http://barkcollective.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":140},"geo":{"@type":"GeoCoordinates","latitude":33.6328116,"longitude":-117.9282641},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJv3FPMLch3YAR8C6j3i3u9O4%2Fphotos%2FAU_ZVEFXzAxACedA1q1QhUuMfvEb_5YLRgp_S7vbR2howmVPVxL_vlG9-CJJNiG2pU3ifpTzhddDwDjclFzyvyqOHXJjbrpDAnUEm1D3GU96SkJTQ1-tAGyYPETR4OFtUm_n0SZxmJ_Hw0vl4HXKyM_vuEP6DtrZm6nSv9DsSKJHO8jgGanwGlGRQ4aYm64Wjt1DTeD77r8zv790tkZzRNinFMi2_RS4Fns25jBPoR_Gf_vanhuSkxtxs4vvJX4bbEi1RRws_nRdO5IiAuqyiF2ZFmhnKfT4h_APGKKoWK6yC9DlXA&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"07:00","closes":"19:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

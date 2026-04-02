@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"LaMagna's Dog Grooming","url":"https://scrubby.app/groomers/floral-park/lamagnas-dog-grooming/","address":{"@type":"PostalAddress","streetAddress":"360D Jericho Tpke","addressLocality":"Floral Park","addressRegion":"NY","postalCode":"11001","addressCountry":"US"},"telephone":"(516) 502-6000","sameAs":"http://lamagnasdoggrooming.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":40},"geo":{"@type":"GeoCoordinates","latitude":40.7299189,"longitude":-73.696888},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ3xzfqmBjwokRVCa6WPF1aJg%2Fphotos%2FAU_ZVEEmS05vmMXtFvSdc5KsB9U4wEuSxEfrP3buWKJgQ9ArHGBi3_IVj_P8fDxfgt5PL7zYGgs3TQURB49m1P_E7lZlGBzRsjz2gj9UOGDGaL_4MB5JNXBgYV-SaM9bwPNkVI9uNcxU3Psy2tI9QwMNTYDqC0p1pm_ykxLhb3OpxPByubp_AHWng2L2S5ihX5sx5pXircv0hsfUO3sahSOv4Ow3ZnVuopL_WGlycV82LLKX_w20AkiAodEkw5SEQM0IxNK8LnFiJyxXIgXvQ5Iti_dXuRwAtewyXa7l0JKHXBflOA&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"09:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"09:00","closes":"18:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

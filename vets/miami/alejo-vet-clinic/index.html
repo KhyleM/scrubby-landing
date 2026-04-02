@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Alejo Vet Clinic","url":"https://scrubby.app/vets/miami/alejo-vet-clinic/","address":{"@type":"PostalAddress","streetAddress":"11266 SW 137th Ave","addressLocality":"Miami","addressRegion":"FL","postalCode":"33186","addressCountry":"US"},"telephone":"(305) 501-4125","sameAs":"http://alejovetclinic.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.9,"reviewCount":143},"geo":{"@type":"GeoCoordinates","latitude":25.6624263,"longitude":-80.4171325},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJn4POlHJ4K00RyxCrNqaof8g%2Fphotos%2FAU_ZVEFKzfGQUrIAmidDQIIAjHBksLlmHymDYnbUtCMMj2YDfv-PPyhCDaU5R9D7RIXWX_SMfLeaP_zT6O6Uz5RFwIBGYomikoC0HHnapmYgA1eUjsIGGYWCisZaPBk_x6eKDaMY8rOd9UriHDbbkCGgZnOMOM_lRMRZZHeKynGDZm5_GwVwa4aJDX44S09ObYP_EJ4N58asTlBCulmtvNaJlHcgCTca-f3yb-Bi_YJziZVru6yxYSLu6gsnBm0eB_aWMkDeqKyqK7Dzd2WfhcP2bz8sZefR49PKMKVW79ZK87mpp9WWU4WJc6q0h2drLwvXP-pp-hG5dMU4rXJZVV1k-DglMQbxhbFWvUjU3NP-8THaN4Y6wdkuUyxxuJHrEdQMt2RAIlG8jCdph7ceZj4ryLGTobyh7jlvsddKx7iN9u6FVqMf&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"17:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

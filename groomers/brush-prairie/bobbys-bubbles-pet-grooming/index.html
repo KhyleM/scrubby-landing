@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Bobby's Bubbles Pet Grooming","url":"https://scrubby.app/groomers/brush-prairie/bobbys-bubbles-pet-grooming/","address":{"@type":"PostalAddress","streetAddress":"15317 NE Caples Rd","addressLocality":"Brush Prairie","addressRegion":"WA","postalCode":"98606","addressCountry":"US"},"telephone":"(360) 695-3655","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":139},"geo":{"@type":"GeoCoordinates","latitude":45.7333153,"longitude":-122.5468423},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJt9UTqUOvlVQRJ6avGt4U5kg%2Fphotos%2FAU_ZVEFH2OYk2CdJGbexz1PgLaCpiZh3wHdI5575IY0O5se9dWNJjNYaYS-GaxwKsHkePdTc7uYMrlpS_CwB2z6KMIbw6q10LavAsXxtxybO7BNzDiw8CZ5uH1n1FZegRUYWPt6jBV1LO-9Lw3bru8qQMewEb4etbDlBourlimEh_dFDXcYV1VoMQ90719KMGGFyslkBbIp7GSO95d2AEpBTHpu33JWPYUALWHlb_M5V-T14m6rv3uX3QfRxv94PoNDakn83_eoSPYklmkxnKeGesFq06hIo4dwvdSKfm7AGPq2TEQ&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -347,6 +355,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -382,6 +391,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

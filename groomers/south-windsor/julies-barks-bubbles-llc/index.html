@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Julie's Barks & Bubbles LLC","url":"https://scrubby.app/groomers/south-windsor/julies-barks-bubbles-llc/","address":{"@type":"PostalAddress","streetAddress":"1678 Ellington Rd","addressLocality":"South Windsor","addressRegion":"CT","postalCode":"06074","addressCountry":"US"},"telephone":"(860) 648-4050","sameAs":"https://juliesbarksandbubbles.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":34},"geo":{"@type":"GeoCoordinates","latitude":41.8270927,"longitude":-72.5580909},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ5fjnLNdX5okR1uUqvv7y0Sk%2Fphotos%2FAU_ZVEGftdobcT91Bb7qIEAgx5iAHQZ7bvKlcg1SUC8GEGd6uTaGOlmR-2pg2cECrPhO9Wv112heqUvn4Wt5poBvoQ6BubjbZ7VLHDJH55MnxrRu7g8V_EmQyLBZeG-ln_2h1AIAlhVKfxqDd5HVm7RfciNQkwZt5PKGQpBGdvsOMK_m_zWlOeMTVD3ffo8oLYi5LUCmDEX3AV6JxJkrFTdilsrdV0qROsVSzCk26-PKS4DuNkFxFLlj4NWWjAghyqVazq5UemDZ07nNqMAd3n-TyGItM3WXxnm9Gurvyo7sxuNYL77NSl0yQOU5lYTOskyLxD37dnOxL18j5gOS2TwmeKtXJ6rcPTZ56x8k68wMNA4Fy2z9aSXjoGn3Flt5jAHpscw3Y6hn_xdJQ_DcBM2um23W4F9qFLiNcGMh7pvkF4gvp1k&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:00","closes":"17:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -365,6 +373,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -400,6 +409,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Brekke Veterinary Clinic Aloha Street","url":"https://scrubby.app/vets/castle-rock/brekke-veterinary-clinic-aloha-street/","address":{"@type":"PostalAddress","streetAddress":"1176 Aloha St Unit 100","addressLocality":"Castle Rock","addressRegion":"CO","postalCode":"80104","addressCountry":"US"},"telephone":"(303) 474-4260","sameAs":"http://brekkevet.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":91},"geo":{"@type":"GeoCoordinates","latitude":39.3776347,"longitude":-104.8274039},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJcTdkyoSXbIcRAogWSDM8-Oc%2Fphotos%2FAU_ZVEGcd_dUfbIRw3ykTmS7DZ7roOt3lE2ZS8d697BeEb5tXw_8OeTprBksrI_vdnLzNXVxysJclEK0deeLcxq6wi6lJjeB5-BokYainSB9c6Tn2UaWN2sVo-jRn9yfBtmYPMH_CiCwRETeQHLi3Y6PEER3WzkPam8SUKjUNIqLZNbvrkdpjr1lt76S4ab2bL1AaS1dJp29VdoAvZhM9mPUFhzGjhKnyc_aweub991Tjqar_Mr537K3_VnugHp2yL2_8ujtcrgRm8koHvhBIcE-thlgP_DMvBPBLOaGUjEwxFMWqQ&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"18:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

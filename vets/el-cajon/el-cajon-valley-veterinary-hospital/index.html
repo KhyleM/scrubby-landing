@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"El Cajon Valley Veterinary Hospital","url":"https://scrubby.app/vets/el-cajon/el-cajon-valley-veterinary-hospital/","address":{"@type":"PostalAddress","streetAddress":"560 N Johnson Ave","addressLocality":"El Cajon","addressRegion":"CA","postalCode":"92020","addressCountry":"US"},"telephone":"(619) 444-9491","sameAs":"http://www.ecvvh.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.4,"reviewCount":846},"geo":{"@type":"GeoCoordinates","latitude":32.801188,"longitude":-116.971531},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJdeo2zzJY2YARFlWGw6EvxOE%2Fphotos%2FAU_ZVEEjcE1kDj5kJm756nPDncKxdASJ-AfNdm_ozXTO5AwynGtUEPKBjpcUm4eg3UIGzz8j3DpjSgsAUvY_1uoo5mP5cCUHLmLdqJ5E98W78msSXCG2lBlP6K5hSR1cxdCI8y0Z076kNYV6NzguUud62ajTy2fYC2isEoa744TsA2DDTJMu8ZqAAh5RbOfKVC_AlgE-iOH0-x5pkMCcGaeLiSuJELVQkl9eGBvtZzcUyL2u2DyIPU0FGl78RKK9oDmkgKWA9Hz40uQJMgoBsHiUB6X1y7kG_E8iQQgh4auoxPhFjg&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"16:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -370,6 +378,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -405,6 +414,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

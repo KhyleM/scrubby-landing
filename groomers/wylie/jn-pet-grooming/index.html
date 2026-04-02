@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"J&N Pet Grooming","url":"https://scrubby.app/groomers/wylie/jn-pet-grooming/","address":{"@type":"PostalAddress","streetAddress":"1959 N State Hwy 78","addressLocality":"Wylie","addressRegion":"TX","postalCode":"75098","addressCountry":"US"},"telephone":"(972) 442-6743","aggregateRating":{"@type":"AggregateRating","ratingValue":4.9,"reviewCount":327},"geo":{"@type":"GeoCoordinates","latitude":33.0225981,"longitude":-96.5157018},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJZZ_KP0AETIYRp_xksDVhqhE%2Fphotos%2FAU_ZVEHN-AQ3iHyLg9FFZFPq6SEG7pBL_ycSktpBymdm_mj2SJR8cAL37J_moc8pfYTwRc3EIF5iqX22KH8h-D6-5C16368ep-b9vkttOJe7FVxP2wyqAfzIN6JaTJr_1R720R9vGkYBBl7Ppp0tNrc05vrjMK_PhSTr0hDFmy3jsbWaNpa_BuqN8M2OWykM9eZGJzVtcxmmwLCwEHIgPYUPyNLr1zXJaifawjYVZlnxxgUpaT8lmfsd8WuTx9WuDwjd4tJ2sehjT0hOtgp1zF0vz03lNvX-R5JzqYIrqET2qDugiQ&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -351,6 +359,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -386,6 +395,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

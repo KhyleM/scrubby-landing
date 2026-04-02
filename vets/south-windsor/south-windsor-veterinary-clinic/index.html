@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"South Windsor Veterinary Clinic","url":"https://scrubby.app/vets/south-windsor/south-windsor-veterinary-clinic/","address":{"@type":"PostalAddress","streetAddress":"69 Oakland Rd","addressLocality":"South Windsor","addressRegion":"CT","postalCode":"06074","addressCountry":"US"},"telephone":"(860) 644-3224","sameAs":"https://swvc-online.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.6,"reviewCount":217},"geo":{"@type":"GeoCoordinates","latitude":41.825811,"longitude":-72.550253},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJDYqlTtlX5okRZnnINw8jk9k%2Fphotos%2FAU_ZVEHjPF6hAfjBn0WsRwfNOHAL-4MPm7uHm_FcXi0liGsuPbdMq3j33ebjxk2tLeR1PpFkCV0Ra6dB8GXGbesg35d8DqKo60YyCLy3rp23uPYg_GTRTy_bBlFBnviqLWZhjZalAgot906UzP1Y8YDnhmR6DVGFcbELWd7lHQ1Igk2WcOboFD_gsIgZ49wUPRQAl0Q4UWUD33cMnJER-wQNwqG5XzhmPKtgcJ5jlNbBZ9egJwbJh3NmCv90Z_kkM2_GSdgKbNRRmWMnahRLQ9C2ykLYFzalgwPzyYDzgNMoLlouAWMeSiQfl2aYf99hZtFx-t8t2vMX-jtN9MiMw7YkhqDW4dPO4tfCp_pOIipZAK38V5bUxluBcGjKgd00P1DPteH_sW0lOyBRsebvoik_7d_zymdWPuo8ebBa_VgtGpz_Lk0&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"08:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"17:30"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

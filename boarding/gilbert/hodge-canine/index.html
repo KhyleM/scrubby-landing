@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Hodge Canine","url":"https://scrubby.app/boarding/gilbert/hodge-canine/","address":{"@type":"PostalAddress","streetAddress":"835 W Warner Rd Ste 101 - PMB 253","addressLocality":"Gilbert","addressRegion":"AZ","postalCode":"85233","addressCountry":"US"},"telephone":"(602) 816-3071","sameAs":"https://hodgecanine.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":139},"geo":{"@type":"GeoCoordinates","latitude":33.3338092,"longitude":-111.8075126},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ7-dmFmF1N2sRC6Cuownd75c%2Fphotos%2FAU_ZVEFi5TJMCo-pFFNvCulG-c4b9bI37S2wOBUEw6Yw3XrKk2xuLw0YWpyRvhtLsXslZ-ir05_8nzTvxotpjJ-TAX7PPq1O6S7toDCfPnRsqx8yUmLLeVvpyjXn9rYzJ2m5tb5C7JSHvXtLPtWDi7RT6Ppnpca2nt2gHuuQNxbee0ZiWKeeJqvUzVPgfKHRAEq8tz_y2jBfdTXB9IrOR6RUTygEa1TXFXrsE5Trl8yotULjwnEIgCrxqsRLtmMiWI0hC6lqM8OvvhR7lxRecDMp507zQKczJkOAWTTD07Ta2hbtRg&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"00:00","closes":"23:59"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

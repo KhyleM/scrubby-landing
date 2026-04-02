@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Westchester Animal Hospital","url":"https://scrubby.app/vets/mt-vernon/westchester-animal-hospital/","address":{"@type":"PostalAddress","streetAddress":"384 Gramatan Ave","addressLocality":"Mt Vernon","addressRegion":"NY","postalCode":"10552","addressCountry":"US"},"telephone":"(914) 668-0031","aggregateRating":{"@type":"AggregateRating","ratingValue":4.6,"reviewCount":506},"geo":{"@type":"GeoCoordinates","latitude":40.9204951,"longitude":-73.8377443},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJI2FZW0yNwokREPThF_yzdvw%2Fphotos%2FAU_ZVEHI80RMPDXTHam_hUceFU56StVxfCMaUpcEpqK6SuhlMo-JTlJ-0QdujHmiZR3y0ijF-MjNaGUuFs_r-e_I1WPfPMCUVGAQ2jwkfGP6kibCHefsSX2gs8eEUHq857yr9z64Bx0X2KdQWQQYME15Q5kFWiOuaObtJjDG4o3mQfoXVtLHnzWSIQYn91DTkTOhigLQlz17YlZ5mmsl5VoZpRgKMLPnrXvM_1xEs1A-4rpRDU7LPSkEkoOFoLnlygKfy3pXNv9Gou-vRhSDGgX7MggZPuXui4R9-TCrUlNmB0GYyUhAzKfTgsRvxUmUPYFmYJ8AbKQUvl9EGPNeUEO_fKXQbzibMRh4H8r1GQPmGkY3HZ3NZr1Le21DWWXPyDjAyu1-hLOuHXDCaEQrIZf0jyptgmuGampCSfZ7RHYYm3zqBD7U&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:30","closes":"14:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:30","closes":"14:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -359,6 +367,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -394,6 +403,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

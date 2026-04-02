@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Kris' Kennel Kuts & More","url":"https://scrubby.app/boarding/clayton/kris-kennel-kuts-more/","address":{"@type":"PostalAddress","streetAddress":"457 N Delsea Dr","addressLocality":"Clayton","addressRegion":"NJ","postalCode":"08312","addressCountry":"US"},"telephone":"(856) 881-0131","sameAs":"http://www.kriskennelkuts.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.9,"reviewCount":101},"geo":{"@type":"GeoCoordinates","latitude":39.6617363,"longitude":-75.0925352},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ9dC1x9spx4kRELqVy7pzULs%2Fphotos%2FAU_ZVEH-gXA8XicSC4E5xpapuyslKwpSM2YSAwrWRAXb4sRejnyFkflwmH1R20q6WRLSJxphfiONI6TuiUAWxbAYBUikCMYp49Opm5EvISe2IL0EwC7O5vLIMoPxLHKtG7xaCr2lCwa6Q0eqtJgsOlPLCafq2aUKmRjiFNmDOlIaVSJAaWdq4yzH1aQrL-gQIAodeSebcp9Nf2DlNZUBGORabYPWqKHcLrDry_Jsq_kCFsoEv-3NNUaAQkn8kMUCpNRmD3J4IUrQdXj6_uEgzbLcQqqwtB4kj4m8rLo6AjOMYUxeE-tg12mzgxpCDUMBVrB5kUMzYmhgr_je47podcdj90fkBruEN3BZ5lqu-5nfi_c_gb0QgbSUF2VDqviGuKeWVO9yHIdrK0gN3YSkx_uoTDG8NQbtt_HYcgSp0LsBR9Q98fDnqtvB-80ssPretTEb&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:00","closes":"14:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:00","closes":"14:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"10:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:00","closes":"11:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -364,6 +372,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -399,6 +408,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"The Paw Spa","url":"https://scrubby.app/groomers/holmes-beach/the-paw-spa/","address":{"@type":"PostalAddress","streetAddress":"5343 Gulf Dr #700","addressLocality":"Holmes Beach","addressRegion":"FL","postalCode":"34217","addressCountry":"US"},"telephone":"(941) 778-0885","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":60},"geo":{"@type":"GeoCoordinates","latitude":27.5062081,"longitude":-82.7156771},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ4zr4gDYQw4gRJT6g4Coh1dQ%2Fphotos%2FAU_ZVEHbfPnFWYiiW-NEuBV-rATf28_pNnpfjaihMXp1VcB2ujrIoTLkS9o_MRwkh7jk25yI54FPy6eJ2fUE61DqZSy8RyP0fLq70q8CH5BZf3CPvvcz1HDf0MV2x7BnrzWVeOBMutQn58ElRX8j66bRu9VSYm5NklYiTbTBHFIsdvIEFKNPjpN3UVguIsk6rspsVSXAWV1s21Vf2pZ9MI2KL0J599oSs8JghAiD_WdK8xMaPao8tonsK1kLdCEF8IaenS14986WeJ5UONMDdBZA634hbnEp-wcUWvw2vZIUDp_8tg&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"12:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -363,6 +371,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -398,6 +407,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

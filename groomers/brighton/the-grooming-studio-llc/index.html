@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"The Grooming Studio, LLC","url":"https://scrubby.app/groomers/brighton/the-grooming-studio-llc/","address":{"@type":"PostalAddress","streetAddress":"16070 Yosemite St","addressLocality":"Brighton","addressRegion":"CO","postalCode":"80602","addressCountry":"US"},"telephone":"(303) 918-7028","aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":27},"geo":{"@type":"GeoCoordinates","latitude":39.9876594,"longitude":-104.8836135},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ5RZ_kNFybIcRa0UApwRKFLQ%2Fphotos%2FAU_ZVEFRkOPhA9dDo4n2Dq58jcJAN6BBrlE1LOTyuWi8uTIb6qqIiROD04yHh3Iw5BywaTmiz6UuvuOXRz0-ttJQwPOvRmRzk6U6Xvt6L8tphpdPnLt4yAc5XfpuIyjWsel_LWHwBhm5gduRc3Lf3wgNj0hHcySE_1OOGvXKFiL-F2d7pMtZ_hQrCKavF5g29vf6I5B43KtMvfdXsfcF-n0rVD94ujMeV9L7TA5mm5oTLXdWqEPPrfkQdsIsVp6kdbVBFFFZnnF2o00u359PPmrdnR8Po_5cB2cwW3QmJtFE2HCAUA&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -351,6 +359,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -386,6 +395,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Veterinary Emergency Group","url":"https://scrubby.app/vets/carle-place/veterinary-emergency-group/","address":{"@type":"PostalAddress","streetAddress":"204b Glen Cove Rd","addressLocality":"Carle Place","addressRegion":"NY","postalCode":"11514","addressCountry":"US"},"telephone":"(516) 693-8859","sameAs":"https://www.veg.com/locations/new-york/carle-place?utm_source=organic_google&utm_medium=gbp_link&utm_campaign=locations_page&utm_content=carle_place","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":1022},"geo":{"@type":"GeoCoordinates","latitude":40.7478724,"longitude":-73.6181955},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJt-YW1r2HwokRjQ8TJhPG7_s%2Fphotos%2FAU_ZVEHtXO7xxKTzbFkY7HBLUjClBJXjxy25YiEZ8_jhoY7EffHNzvjNLi7CpcpexHHTLKUQg19zYPJ9H3xHPtbOvb-toDXtd50pwkCUyBqiHZr4TBuErwRtbrtRk0kE8gQzzGu2G2mrzjBT78w9lueyPcJv6gHgt6HzmIgoRJJNLBgaTelHvJbHDz-yt5lEgopVcuWs5Vw7laDWxycH0wm-i-bZcCVjgWYynbcNSytLdG_Wq5BmWwrtDiMbnKzbhBbswaQ4fOPRjFeRYS7KMU-OSBat0lRm0RN008qBz5mlBl-7FQ&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -354,6 +362,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -389,6 +398,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Stoney Hill Boarding Kennels","url":"https://scrubby.app/boarding/swansea/stoney-hill-boarding-kennels/","address":{"@type":"PostalAddress","streetAddress":"115 Stoney Hill Rd","addressLocality":"Swansea","addressRegion":"MA","postalCode":"02777","addressCountry":"US"},"telephone":"(508) 379-9882","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":42},"geo":{"@type":"GeoCoordinates","latitude":41.76425,"longitude":-71.2633626},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJwXmlo0JX5IkRj1LyGTmxM20%2Fphotos%2FAU_ZVEEjjMJhuft1tB4qpCE0LL2URw_aU-YjQHc57vz3vY2P_zemNJMj-z9QwvIj5EANLKpzXqwOp4sa0r3vC_NCuG2AV-by_IwgZ6eI0OOUDGCFt6RZGx9sN-UHWMKx1s7_RzzQ_y6kvuIOI8PCz-SmY39ADnO0FufE6ZTsWJnHT3SBLycS-moBU4UD2Cqo3nSMehWMfF6wuvrn85w17I9AX0eeZuZVBT3d5SjOoSDgyYtf8Pk8w-BjRPyrXU8oH6CRqdLtFd3dcfndgyazBjQAP742yDeGyPiPwJ_sWh7FD_DsUA&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"09:00","closes":"12:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:00","closes":"12:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"09:00","closes":"12:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"12:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"12:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"12:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -357,6 +365,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -392,6 +401,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Northside Animal Clinic","url":"https://scrubby.app/vets/cleburne/northside-animal-clinic/","address":{"@type":"PostalAddress","streetAddress":"2420 N Main St","addressLocality":"Cleburne","addressRegion":"TX","postalCode":"76033","addressCountry":"US"},"telephone":"(817) 641-7411","sameAs":"https://www.northsideanimalvet.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.4,"reviewCount":454},"geo":{"@type":"GeoCoordinates","latitude":32.3882716,"longitude":-97.3898514},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJnaSzAt5GToYRJkxv_Xr_ZhQ%2Fphotos%2FAU_ZVEEbfwrqhWrcgjEWdNMUzf_LZg5JJcbezqSrF68vRy4Fn4-1cOC8fitLBRABt529zJ9fmTkQ8eo5BYlAPw8UwapLUTVH7rpM5zvnoidNg-PU342holltgrEneZ0Lc2NXyFNxE-D1TEtRrBi11lPGCBSeWEOhtGhFvV-k60N_K-N7oB0yMWf6uVQjxkT9k1ozLyuBog6mVIN7Nf5kHGcd8Fbzm3zkOUGcrGSLJYcDADT8TZL15HbHT7z79mpF91YH-KEipTcwslWRUzhWX7Eidh5RcCnWDLLE0bDy4D8kfM-OSQ&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"07:30","closes":"12:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

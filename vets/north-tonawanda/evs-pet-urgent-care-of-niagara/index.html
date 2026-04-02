@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"EVS Pet Urgent Care of Niagara","url":"https://scrubby.app/vets/north-tonawanda/evs-pet-urgent-care-of-niagara/","address":{"@type":"PostalAddress","streetAddress":"1089 Kinkead Ave","addressLocality":"North Tonawanda","addressRegion":"NY","postalCode":"14120","addressCountry":"US"},"telephone":"(877) 874-4838","sameAs":"https://www.evs.pet/locations-north-tonawanda","aggregateRating":{"@type":"AggregateRating","ratingValue":4.9,"reviewCount":467},"geo":{"@type":"GeoCoordinates","latitude":43.0530849,"longitude":-78.8717209},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJJRzaIMpv04kRypBT580KwAI%2Fphotos%2FAU_ZVEHQla1EJ_gA4AXvM2FPsUDwR0f28rt04ISkpDjInCFnpdJAAGPxqQT1XeArNpSvm-vpcV9w6MkmWZZmaUminZ0-RMLujur9vWIQiF1flpJzaxlqMjgQQgQwKGdPeNr1lTYUcS2Uhfe45dUU6BC8673HtCzSLHhR-d3JYg6TNrHjPvWWB4QERBiJSFOpPgR8P4n6L0oQlGGOYJN5TGw_vvr95GX6mvKC0Ge1Sjp1PLx80XFzh_gff3AjHkM19zHbHZclYuK0Lo7DenLgL8eaF5oVHCKg4DoeckxMomm5JHhWKw&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"12:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"03:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"08:00","closes":"20:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

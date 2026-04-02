@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Countryside Veterinarian Clinic","url":"https://scrubby.app/vets/ferris/countryside-veterinarian-clinic/","address":{"@type":"PostalAddress","streetAddress":"900 S Central St","addressLocality":"Ferris","addressRegion":"TX","postalCode":"75125","addressCountry":"US"},"telephone":"(972) 223-5641","sameAs":"https://countryside-red-oak.edan.io/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":241},"geo":{"@type":"GeoCoordinates","latitude":32.5221794,"longitude":-96.6639373},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJn8px1LqUToYREsc6r9HUiFU%2Fphotos%2FAU_ZVEHKR0f3V5sRI2L8zzfMDp0-Xo_ELiN0RW6W84FlPtOxJ5VVDg6Ztl_FX1P6f6BvgFMz00EzM-jZjQahegQUtfJKELlq_Mp9oEe-SlfOeWxPM1AJoefCvNc7zAmmJiqCdNKYBTQVvaIeaZWtbIiw-0LFoIvrDuTbQISaxkfSAieKRVAgYmNA9-I0WeTwhDxDRJRGKUxVkBQsiEmMyKaF6xZ9YTf6oz82uEqAi3xM4m4irtdXKRs3Y6PquNVEG4JheNfKRYjj2uQ_rZMJjwrI2XL1PMkvbTe8jqfymRWy2JGDDTOqPbt9WMujXI-R9F3dNk2_cqepZalDQxGfKDXxoAfsag3fPdch4z0xIvupQF8JdaGrFehjw2sa_OKXbS4Ijt_aDqstgP-WrULp0-nQUusFjb7v5qSV82bZjIYRNlomVg&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"12:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"12:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"12:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"12:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

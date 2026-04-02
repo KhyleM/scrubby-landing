@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Ace Pet Resort","url":"https://scrubby.app/boarding/allen/ace-pet-resort/","address":{"@type":"PostalAddress","streetAddress":"861 E Main St","addressLocality":"Allen","addressRegion":"TX","postalCode":"75002","addressCountry":"US"},"telephone":"(972) 908-2360","sameAs":"https://acepetresorts.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.2,"reviewCount":135},"geo":{"@type":"GeoCoordinates","latitude":33.100892,"longitude":-96.6501359},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJawtft7kQTIYRDLMuCb5l0Oo%2Fphotos%2FAU_ZVEECheW6m_FP-Km9LB4cpYSiC4GN0DOUacAjUwzLV25k8P0E-m1hjwvKymQURKYei9qjY9H33yAGI-1eJIPsbg9gU-mNC_gSI2i7BsSsdcLBBZOF_db-XMTgti1oMIbMHsfwdDFYl58uoWc9yqEuLA6xtBO9poQwnZnCpp9Kamc6yQudgv1MGJZgIeK6hpzQJbCj5HMIB-kZ1uMjMqmCPv4BD4f0yijYnKv2omGRD-3wJFkD9DwZDnPD4C4isGCbEy2Gf-ykSaYAkpurcczL_1SQ-MGZ-zuuhMEcRU9rX1qV7A&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"14:30"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

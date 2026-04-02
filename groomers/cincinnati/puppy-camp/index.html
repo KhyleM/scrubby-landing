@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Puppy Camp","url":"https://scrubby.app/groomers/cincinnati/puppy-camp/","address":{"@type":"PostalAddress","streetAddress":"3330 Reading Rd","addressLocality":"Cincinnati","addressRegion":"OH","postalCode":"45229","addressCountry":"US"},"telephone":"(513) 221-7877","sameAs":"http://www.puppycamp.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.6,"reviewCount":151},"geo":{"@type":"GeoCoordinates","latitude":39.1396133,"longitude":-84.4936522},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJKYP12qSzQYgRBcMSU1xCZYc%2Fphotos%2FAU_ZVEGKM_s42TDGKja_vgNRensEnEg_KBt1XN8Dkv999Jk5DglqD_vNjw6mn7Kst0XueodDgREQuyj5IjJbqF-z_Mrjc0Xmt3UzJAaoFBKOAEnydOPEVFIPIJXJlISD-KxbebYITzh3FNoc59LTYrmUGtGx4kelJiK5KGObx3DPL1jX7H_K-UUSstDJACcLZXSp61JHmt1oXZ3IWTSOLRvv9UHVE7KGmD_qkbR98g2-dsWYrLxeSE0xvxHcvXZCU8svY34fmO1AR9ukR0Akb2j15p66KRmB86oW9J9bEcRiRjGsm8iPmddSH2G_DSG7-W7BVQIfq4-CjTU41Q19x2LWwQMHnd5cVunPOz0jYWzEA-q2FJmLuifxz-wqqXjB13_kueluvgbERRtqX2NZTldqMwf7oIZGDI4FD_m6Yt4mpRPR0w&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"06:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"06:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"06:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"06:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"06:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"06:00","closes":"20:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Dog Town Groomery","url":"https://scrubby.app/groomers/columbus/dog-town-groomery/","address":{"@type":"PostalAddress","streetAddress":"341 Norton Rd","addressLocality":"Columbus","addressRegion":"OH","postalCode":"43228","addressCountry":"US"},"telephone":"(614) 403-3330","sameAs":"https://vetg.net/explore/dog-town-groomery/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":16},"geo":{"@type":"GeoCoordinates","latitude":39.9444002,"longitude":-83.1420799},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJl25c7lOROIgR1-ibYDp0DLI%2Fphotos%2FAU_ZVEE7jWRqfRK66Pg_oN9oCrfh5z1wUk_LN7quejIMCJ3qGIWHjsOTTtnexfB8BCHwhc5MUFi1L3Rg8CmY0sLPPVtYkqwyMxSsMxk4howT3l57Wfc-rBkreQ79JX5RuN5ETfHjuxi4uheSOBE2kh11_8wFgNClLl8fs3k7Kl-xne7bRMsazxs-C73IsIVNw1DKsrwbyY14jNF3dsfjqxsHWWIM0Rj_GCVNVnZIQMqd7sQ8wT9_3ZeJF0uDWeetQLhdqS8A5rmP707lbQxGcvvRsoO8r3a9-U6KyqOciNW8fG1TDA&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"12:00","closes":"21:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"17:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

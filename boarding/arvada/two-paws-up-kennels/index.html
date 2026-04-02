@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Two Paws Up Kennels","url":"https://scrubby.app/boarding/arvada/two-paws-up-kennels/","address":{"@type":"PostalAddress","streetAddress":"7155 Independence St","addressLocality":"Arvada","addressRegion":"CO","postalCode":"80004","addressCountry":"US"},"telephone":"(303) 423-0044","sameAs":"http://twopawsupkennel.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":37},"geo":{"@type":"GeoCoordinates","latitude":39.8261865,"longitude":-105.1052458},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ-TIgBMGIa4cRX58KuaTO90I%2Fphotos%2FAU_ZVEGUnrtDWEfJ4PdhA3nCS3UbN76RqugL5NlZ5MQxCSEFAU8LCUZGIvp41zWH7zwBnjV0sbe_2ocwZ3fiZxXbWzMiNTmk06eWXwRoNdYa8fYh-XftuKLUCMKwgl1H0oFvp6-gcLcW5u7nm7A_fbV-5zaZ0UKtNBpqTqfk6pXOQUIXGnQqZWIbSPC7e_6hfSE0RXGsXgHwFxgs8UuKcsruGngZWVkqxBnZvQXXa1ck2uArMbSbY8EFOu4GS5JQKX02PLcXArA_P7QA-mxbgquZ5jqIJr7bSsuAd53Neijd_gHhMR_8X2xq_P3VHPCmBhoC_l7gOb7sEWTHCR5DOlOwYsGOJ2xft_QO9P6TVIJmOVIHF6bKZk7bbMI5c6eLy4-a_El2GlbBZSfFbygt-4yuGQzjLEfw5AW2Ge8l377lF7ho99s&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"15:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -356,6 +364,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -391,6 +400,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

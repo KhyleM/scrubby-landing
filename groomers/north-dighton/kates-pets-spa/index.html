@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Kate's Pets Spa","url":"https://scrubby.app/groomers/north-dighton/kates-pets-spa/","address":{"@type":"PostalAddress","streetAddress":"Spring St","addressLocality":"North Dighton","addressRegion":"MA","postalCode":"02764","addressCountry":"US"},"telephone":"(508) 594-0435","sameAs":"http://katespetsspa.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":4},"geo":{"@type":"GeoCoordinates","latitude":41.8662334,"longitude":-71.1299045},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJOT06e-715IkRJIu0gwYGbxU%2Fphotos%2FAU_ZVEETjNsdstNFJ1IktdZrlIdkmVaZjkSCH0C8CX9ui_-P1iL722u0s3amNRPgjTP_GMfevFMEI2Z2OSAP_ougW3L9Raolea0CDoedOXkBgpwIGP9Su-YP9KtZaXCF0rlNilACqgpXnHfKZEOxBlW5Zm0B8CnG3qdlV5sRC8ZEA1J9MpEd7kYO0q9lr5dMNoaYF3w5VpSIr4D7JW1LbFHm3z3IaQginYAGzaylg8Dw08dJjYmFLag8yqoQvCU9_gBHPRwhpwu3TYwMWUL6d7f0DZW_sjf_viJwKfu5rjxq5vK61A&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"14:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"14:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"14:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"14:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"14:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"14:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -365,6 +373,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -400,6 +409,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

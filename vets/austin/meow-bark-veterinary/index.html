@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Meow Bark Veterinary","url":"https://scrubby.app/vets/austin/meow-bark-veterinary/","address":{"@type":"PostalAddress","streetAddress":"9021 Goodnight Ranch Blvd Building 3, Suite 3100","addressLocality":"Austin","addressRegion":"TX","postalCode":"78747","addressCountry":"US"},"telephone":"(512) 770-9550","sameAs":"https://meowbarkvet.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.9,"reviewCount":57},"geo":{"@type":"GeoCoordinates","latitude":30.1522652,"longitude":-97.7563732},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ1UPxi0qzRIYR7TF5gN5MGhM%2Fphotos%2FATCDNfUxW9KKBM50ovn0ordIyxQ6c-k8TJBMvpJzEGgeKM2ihkf_laZruudavU4P8RB_1gvoAdoW_G8YMcwG4kW4flBMCrJaFpP02mrxGpM0z7XK4iA2Sf_-BAe5Tg4xBsX1TtJNMHSOl8TU7YL9b2L5lbwoWCX24EBW358TSfiPdGrKhrOT4rR6fMolFncqkaVys3Ldj7Q1XLQgpdhG7HfSetj-g4V7Kvltu-qjB-8czL68PKAEdRuhutj6q_wm0wCenixpNewbhWw6d-YJ3FpTIaNNEioe0KBzBU0Q5ZkbhZqrtA&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:00","closes":"12:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"07:00","closes":"18:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

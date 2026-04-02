@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Dog Tales","url":"https://scrubby.app/groomers/portland/dog-tales/","address":{"@type":"PostalAddress","streetAddress":"283 Main St","addressLocality":"Portland","addressRegion":"CT","postalCode":"06480","addressCountry":"US"},"telephone":"(860) 342-2284","sameAs":"http://dogtalespetspa.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.5,"reviewCount":31},"geo":{"@type":"GeoCoordinates","latitude":41.5762933,"longitude":-72.6378693},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJr1kGbcpL5okRFbJZnfheA5s%2Fphotos%2FAU_ZVEG0xlLP0xcPlkM4POMK9e4Zm6soTPXVUhYWfB1ncKNKtzOdkxN2wU414G1LU9H6s0XhL4hQ4pYu6t9BTKGFRVVF7y1Tc7gS6w1iB63PMzF3xUQjSxCajjFk-EZnznadSpYM6m8SgH1_b5ZmGhMo6EjJH35PJSnjZqSSK14joMXJZJjIFQ1ZjWnlkPZpEnk1YzRnRd_rVImBzpuyzarkFbivbbm3ZSXyuUgqyJGbdiT8HXkvM9yeTGQwzv-QpP8RgeW1T-IGU7FbAu80mqaqGpffd0cBFaGy-Y8bZjiDupZWQ1_Iv0IXP7glBEuk81IBHM31sShEo6BsSAUsTeTLIoXY9sUEuCqJFOYkGLBAgHiCBs5EMDBG5Fe8RyGIte7d7f1ErQM5X0FNE16uuxxPYCg5ZDfWwB4Ok-qooxEIfpBLEuU9&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -354,6 +362,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -389,6 +398,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

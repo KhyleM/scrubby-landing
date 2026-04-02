@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Naomi’s Dog Spa","url":"https://scrubby.app/groomers/orange-park/naomis-dog-spa/","address":{"@type":"PostalAddress","streetAddress":"550 Wells Rd Suite 17","addressLocality":"Orange Park","addressRegion":"FL","postalCode":"32073","addressCountry":"US"},"telephone":"(904) 227-2742","sameAs":"https://booking.moego.pet/ol/landing?name=NaomisDoggieSpa","aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":73},"geo":{"@type":"GeoCoordinates","latitude":30.1850013,"longitude":-81.7056961},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ-TxcQGzH5YgR7LJ1SbtS9Mw%2Fphotos%2FAU_ZVEFyNUDMOEI8QYMnniY7UMnqWu2fCb1d8hpDYj9RTwi1lL51jtwiw_GZrtP--HopdPnWITjQJcl0zivqZjw5KhTc83CTZ6HW-l_6CTzLOzmiIDcGC03nCG7RkSSryttP3fiqnOsiFhvINyge0CbQMQ4NYPum55wZbQkIs7CP6gD-c05I7OuJDC2B-CDuHWWk-8wt02-ubDq3cYATDO0xYNSA5SnwsYLsq6cPBZ_-rFmSp-x_SfTrzXHp7yGQ7uCdRAjAokSAhvRKdUw5vcRFxicWAmvwlEupA0-3w_14Dvqyag&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"17:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

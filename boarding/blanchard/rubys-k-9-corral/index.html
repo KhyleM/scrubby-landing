@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Ruby's K-9 Corral","url":"https://scrubby.app/boarding/blanchard/rubys-k-9-corral/","address":{"@type":"PostalAddress","streetAddress":"902 Pendergraft Rd","addressLocality":"Blanchard","addressRegion":"OK","postalCode":"73010","addressCountry":"US"},"telephone":"(405) 999-5822","sameAs":"https://www.rubysk9corral.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.6,"reviewCount":71},"geo":{"@type":"GeoCoordinates","latitude":35.2615058,"longitude":-97.6769212},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJpbNb9pVzsocRv8x9w_6qwz0%2Fphotos%2FAU_ZVEGvI9vR_LIziYe6Lj_YazBqVTHfkBhzxLXpWjrdgKJoaElqfD2F8vnFIw2SA0b1oPXa3soN0dacdAqUYlaScP4vhfJC62WLrHh45rLa7niUiwTvxr8SdYrnNJNuy_Sc7_k4FJBKdAkvqOQcy-9YVnuZpY-1kwTioIu6eebMA-7R6VmF693kNnSaekR1MIENxW2qmeborNEi1mp9Eo05zRM4lSnbqQeKmqNSJRaHtE8QEma5lbCUanqdTscGWi3Fg_sjiqhWHw3BUtXcHW3kN6aGhk7Ny5eEyAaPMj1Z7QF9YQ&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:00","closes":"10:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:00","closes":"10:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:00","closes":"10:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:00","closes":"10:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:00","closes":"10:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"11:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

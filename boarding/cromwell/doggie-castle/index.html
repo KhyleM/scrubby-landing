@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Doggie Castle","url":"https://scrubby.app/boarding/cromwell/doggie-castle/","address":{"@type":"PostalAddress","streetAddress":"197 Shunpike Rd","addressLocality":"Cromwell","addressRegion":"CT","postalCode":"06416","addressCountry":"US"},"telephone":"(860) 635-0111","sameAs":"http://www.thedoggiecastle.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.5,"reviewCount":35},"geo":{"@type":"GeoCoordinates","latitude":41.6256686,"longitude":-72.6764147},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJX-Hn7JpM5okReDOyPMGiO9E%2Fphotos%2FAU_ZVEGyNkFkB4APGxqYLs3Rya3bk-A61-eO8_lS7UhbpfJHUIsG8w0ZjU_YU8YWQlUJCf3KC6FXQe90YyYyh1L2CP1JnmhkmiMd2WFz1Qq4ndwjBm_ZSSZw4SYKRy0dWbD_Y7S4KgRdXWnzhQ-ocN4FdubmyEw98gTDwX83D0E0kx9FHO7MbCtOA6e-U-kxD0B0rgDiHYKY3JRSHMjvWIVuh3B1LD_re4eGom4JIo6KciHWRQjo_fSjnZQZE9PFy3YdYXphocEHZyBzoWVKxJUdd4HIZsoqpWUbJK979LPzd4O79A&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -348,6 +356,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -383,6 +392,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

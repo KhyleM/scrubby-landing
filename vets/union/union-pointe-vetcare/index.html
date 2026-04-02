@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Union Pointe VetCare","url":"https://scrubby.app/vets/union/union-pointe-vetcare/","address":{"@type":"PostalAddress","streetAddress":"10350 US-42 suite 100","addressLocality":"Union","addressRegion":"KY","postalCode":"41091","addressCountry":"US"},"telephone":"(859) 818-9755","sameAs":"http://www.upvetcare.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":47},"geo":{"@type":"GeoCoordinates","latitude":38.9350244,"longitude":-84.6751198},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJk9AddTjBQYgRNwM4Q-xzmkA%2Fphotos%2FAU_ZVEGI8LKXEwhiOYiUaW5xAWRW-r3JJPCUzhDIbWIjfQZEM7ehpc5Q4tUoecugK2QB0-O9Yo_RQtgTxs4PZCtmLoFATySC7nw3RIlrYROeIzFgM8MMdKM8xEs4ejVK3PbjUpb7v0r9bIt4IZjB3DJXdVh9nx8n7-aMcXe5iZ-XQlFFUhrK5eVfxa10OMwWOd3bSUpgg5FhL6oY9N6D83xix1NH3-nlZC4XhB2l9Wj3wPOxnEusYuBViil5D6uDX1OqWjkcdF5T0x8qX2IKC2Z4pOMx9UNJUV6m4L6wkTf_Ijq-1A&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"17:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

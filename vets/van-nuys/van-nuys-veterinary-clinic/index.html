@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Van Nuys Veterinary Clinic","url":"https://scrubby.app/vets/van-nuys/van-nuys-veterinary-clinic/","address":{"@type":"PostalAddress","streetAddress":"7215 Van Nuys Blvd","addressLocality":"Van Nuys","addressRegion":"CA","postalCode":"91405","addressCountry":"US"},"telephone":"(818) 453-8789","sameAs":"http://www.vannuysveterinarian.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.4,"reviewCount":587},"geo":{"@type":"GeoCoordinates","latitude":34.2018169,"longitude":-118.4490004},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ2ev-4uyXwoAR3Tf9zXVDzJo%2Fphotos%2FAU_ZVEFV4U6QRYYVHcjyTVcbZa4odUbzNAt64-mbgoH1bFscFQZHYCrAwvRryY0BWE-Skvt1MsBy7I6VciXNkc3jkZsahj3bovyIjwYuCvnT4kGN90t8D1G9nduuH01HjmURJnwq1c5S_0_ruNbiuutls6bWKqp3R1rXds0FUXnuvmkdIl1JchSk0pPSnIXho2EzZuSgNuhvC3a9XuMx2E9L2DvK16UTnCVV43PnTxm8lkCgHx0t7FnqMHHQDvhlTzz6ym6heH8dHBtfiQ87Eg8Pd4WdO8_5f_pX4fso7wDDkkgEEydYPZxoJ3peBKRrQEgiRGWWA1JTRCOGQbwZrYfTw5lXhiNaOwLfmQix2vznKvP-xz2mEXhAfRz-PJ0dCwETrC3iznCw8DZ9qBp2gLmlDKd6vpHuJyrjYmdj2jaZYqD7bh4&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:30","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:30","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:30","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:30","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:30","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"18:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

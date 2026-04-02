@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Sidlehill Farms","url":"https://scrubby.app/boarding/olive-branch/sidlehill-farms/","address":{"@type":"PostalAddress","streetAddress":"1308 Ross Rd","addressLocality":"Olive Branch","addressRegion":"MS","postalCode":"38654","addressCountry":"US"},"telephone":"(662) 890-6291","sameAs":"http://www.sidlehillfarms.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.9,"reviewCount":506},"geo":{"@type":"GeoCoordinates","latitude":34.8818511,"longitude":-89.8467559},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJvYTfu6OSf4gRT_ryGws-aKE%2Fphotos%2FAU_ZVEFoGUjoMWSQGk-Edz3cz-ubEN2XZTnfANIUcKJUQRFAUaWhvYZobh0aCAMiKCdoLnpEZcbZy8pXh9zGsN_JWap5pHPS3jtzVaNHr5iD-qAZO7VI45WTZ2RxhaRXqlc7BekYSGwynQc3Pp3VU5IbfI6DNCbNCCNOANUoYUAiRf6_a40JlrbZccgSE_fmhXihTpXjswV6zVc90GQF5aHC8VBgjS_7ZTRYVGOSRV247mHdCHlO8guiEr7TzA8vuQCE41YDruM2LJyw_bpWzNnALk1VzDjI2cnoF-mqoaBxD369wBkOvRXuq3xBkFO3Lacg32Dcue6qaPRvUow3Cs82EeMPInvrq69lTu4PNwMz3v3NV3EzKHus26IEFjt7HFPN1aamK2XlFvgioU_VJkrwhnjSUrd46ZMCoTp9Tt2BJGY&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:30","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:30","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:30","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:30","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:30","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:30","closes":"16:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"08:30","closes":"16:30"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

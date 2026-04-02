@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Groomingdales LLC","url":"https://scrubby.app/groomers/union/groomingdales-llc/","address":{"@type":"PostalAddress","streetAddress":"9936 Old Union Rd","addressLocality":"Union","addressRegion":"KY","postalCode":"41091","addressCountry":"US"},"telephone":"(859) 384-6300","aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":18},"geo":{"@type":"GeoCoordinates","latitude":38.9467744,"longitude":-84.6815929},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJj_w8TVLBQYgRoADh2igAgxQ%2Fphotos%2FAU_ZVEFodYSrvDVUcPGeXdA_kPVy5xtNScUE0Fh63hRMs_wkPzinKTJyWH5vyx358sj51HCkKumGJ3DUVxi1sgZ2Fu8PgBwpto3yX1jmSKeUKJEv8hAALpcKb6gDbuxdXoKRrzfF8ohuejSj-rFgyIVF3vfBdB0XYFJDsShGFKZQlTmqCG1PBkIsjt2Efi6Ktu96arXesE9hauq5_qCqz15do1QaGB-N8LfqTMmLFIajEoSwd8Yt94lIVgnPodziMDRLfE8GdyhKIFZUojGfk-Rhgxx49EfcrdiqWrXdxDaCy32XPhbzksv5PX-qwHzgObUFUmd8nO3e1o3T1Q_L3mp7_FPN6OgDVRqwIG3bjAkPBDlIM3CQ5Bmh7AtxeYhXZitx0FqHCbVMZ3VkZ4c9cwum9_XhUC6qyc2uiHs4Juxsh9w&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -351,6 +359,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -386,6 +395,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

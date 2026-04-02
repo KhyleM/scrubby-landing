@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"East Coweta Veterinary Hospital","url":"https://scrubby.app/vets/sharpsburg/east-coweta-veterinary-hospital/","address":{"@type":"PostalAddress","streetAddress":"3462 Highway 34E","addressLocality":"Sharpsburg","addressRegion":"GA","postalCode":"30277","addressCountry":"US"},"telephone":"(770) 304-2600","sameAs":"https://eastcowetavet.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":371},"geo":{"@type":"GeoCoordinates","latitude":33.4079993,"longitude":-84.6702563},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJGUxMsWDB9IgRBIZvPfkGiQo%2Fphotos%2FAU_ZVEGxRlccSm538n-AGjKnnqxCIA6BoAiVrJGG-_ca_x2_0eybXYdNmVCNYXY9oFemxREkY6oBd3UUlArSCZKhQqwCOmM4VNCx7ctwAzZCDSbXjLQ1mtPUCzROj4cit3JtimcCu63Q1H6ag7VJ06up5Q9qjRw4sowz2KAFIpiAHm8RNaQkq2n0aFGKgz5kn6qFp2EsRcwl_-u9nd-dNW2RwtRrpBmv7jz8ffrfbzqFcMK3uK1JXUYe2S5CYQ9-DXgHnxGXjNzq2q1IkKTqLOniujwlYCg307IFjicMI4gFgFpvOX9AHd9EzNKSoRD5t0StUMD_GbQTtmgz0q5U1dQojzu1AFXDlgSNONcq4wP71PE9HFE4UeROqC4ZT64dJ2fmewyOFlI5ozadYAwXoPC6U5A8O81J4dvY2N_c0Vkr1VFGH84&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"12:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

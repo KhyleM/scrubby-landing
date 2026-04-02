@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Rancho Vet","url":"https://scrubby.app/vets/san-jose/rancho-vet/","address":{"@type":"PostalAddress","streetAddress":"10050 Machado Ln","addressLocality":"San Jose","addressRegion":"CA","postalCode":"95127","addressCountry":"US"},"telephone":"(408) 549-6474","sameAs":"https://rancho.vet/","aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":22},"geo":{"@type":"GeoCoordinates","latitude":37.3660441,"longitude":-121.8049458},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJweDGIwDTj4ARmLDZ3vkm1SY%2Fphotos%2FAU_ZVEHK2H1fxX68KGQp7BbLy66fTfV2sZF2CzQBlvdC_SLIYUoBRwdVnyQNhKF-i1zvAhopFxZGUGXcW1Vk7CSJS9Fv9SaeigsHHyd4COxps9rNExAldQAZLOEcQmE1qrvmW6ai_lTfw4ZZzxFhd_gDQSQl5INfH4pBhcPh6xNz4uWajbn5_Vh20mDS7xcr0nTtnUHJvGQN4X0x706Bfx6JuLxrfg49Rnc_LfhXnLFuZAqxm5U-cw7PJU69r3Pid-02E9TZbNIVfPDwIxl5t5kZGAKdWBX3qnKfhZjZq4IIiG1kPw&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"09:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"09:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"18:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

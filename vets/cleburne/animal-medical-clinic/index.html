@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Animal Medical Clinic","url":"https://scrubby.app/vets/cleburne/animal-medical-clinic/","address":{"@type":"PostalAddress","streetAddress":"112 Prairie Ave","addressLocality":"Cleburne","addressRegion":"TX","postalCode":"76033","addressCountry":"US"},"telephone":"(817) 641-6274","sameAs":"http://www.animalmedicalcleburne.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":169},"geo":{"@type":"GeoCoordinates","latitude":32.3456433,"longitude":-97.3929771},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJnRUg5UpGToYR2SeE-vNFwlk%2Fphotos%2FAU_ZVEECjlD13o1yQaGWottgIJAhx-5LG_FzcLRwf8nz62CjpMjhi3ws6Bv7zye8sOIBNrVTetb2_2PLo54SlSZaR7jaDxC_PKkgmmWjIjGn8YN2IhDHzRYSO4n767yuS43T4nKhnPvCN9s-pqsWjgAXSAj3A4ZkuJzyLB556JZzTBz8zgnYmCcY8Q-kqA3lGu15yT6C4g5x9l-Sv-YhAUX9QuvH6j7Ekp7JJW5miNEQrvHBDeNbWxRYUa4t7zsxnehmUCnvObErKwTE2SfQIXR0woHatMqQOJevlk2y_tiuD4Okt-fnbGW7o7y3zSS7vleP-BFp-Zda3rMB_Gdap3aMWXWXRc5UC6fVzZXvy3LjN2lyFmLb-ovDJo_UijYFj2BdYblbe9v70UnTf_w-TdIJTN3EoRCemH62kkWLhZngM7g&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"17:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

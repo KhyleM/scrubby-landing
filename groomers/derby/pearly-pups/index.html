@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Pearly Pups","url":"https://scrubby.app/groomers/derby/pearly-pups/","address":{"@type":"PostalAddress","streetAddress":"6853 Erie Rd","addressLocality":"Derby","addressRegion":"NY","postalCode":"14047","addressCountry":"US"},"telephone":"(716) 646-5209","sameAs":"https://m.facebook.com/pearlypupsllc/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.6,"reviewCount":14},"geo":{"@type":"GeoCoordinates","latitude":42.7005328,"longitude":-78.9812931},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ0Qr7T9aAhU8RoclC6CehNBs%2Fphotos%2FAU_ZVEFE7XdIcjEkkA-8djEHxtiJUfaLXqwlSKEvEh7PENUi0D3c1KoZugoVNOX4cf4WSv6z2MgHqZV5fn2uYbvMja47uiuAhQmzzj1_tpOlTcIiEx_T702KO3dFGeiHxAt1uTRkO34_QiW13G_rykyGijDzhaAXYHFl_Dh3y51VVypGFxWPRweT_IdeYYZpXRqJgswAT-FSqtKbKlKakQ5QHAyseJHlWvEK7AzrzBdZ0OqSUd_plpgplnpZvH4T6JQII0Ig4VAjlMhe5OLgEoKr9owMmMTEtM-UsTdRcGBbjYxdEw&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -349,6 +357,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -384,6 +393,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

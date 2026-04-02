@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Wagmore","url":"https://scrubby.app/boarding/stamford/wagmore/","address":{"@type":"PostalAddress","streetAddress":"37 Cherry St","addressLocality":"Stamford","addressRegion":"CT","postalCode":"06902","addressCountry":"US"},"telephone":"(203) 658-8231","sameAs":"https://wagmorect.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":187},"geo":{"@type":"GeoCoordinates","latitude":41.0506354,"longitude":-73.5287997},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJY6_DltuhwokRJiIOz735ta4%2Fphotos%2FAU_ZVEGhtJZenJVukHhlQzTiHTy42Ok9eXBsCV7a4uPdcTM4qk3i606MLch1g8DJGP53s7BrA6WGICLesXe09vVhS1-VIC_y1NW4PwyPASIacvW8aqSVpBqtk11TTvHeCp4Pdi42BLqVPXyaSdYWnLYQkI-QJmK9eI4OOsHEC5kfxHNHbkKHcMxY1ZbPvuegsI0vCKky_Db2H07haUP1HHvkf_7FTlkU_DvSTjKq6TkRa0Ra2ZUFGSwOs4osUhjbDYPLkEgdt8ubwSmTf0SO2ltlFha9y9SMwWF3EIOgoRPrS3X76vlYSE952Dca_yABTM2gYe_vxtJbWgbTCf18DyOLlAYVrrZr2y4MJjHbJu4fy9OSieORVljvfBVfqLNAMALD0h0Nq8kky9oMWGgzhFoQ4uTcO7oI3SsWLETaua93dliM9Smojgtlz_gF-EycjccU&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"06:30","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"06:30","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"06:30","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"06:30","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"06:30","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"07:00","closes":"18:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

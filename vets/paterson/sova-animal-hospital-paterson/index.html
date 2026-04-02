@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Sova Animal Hospital-Paterson","url":"https://scrubby.app/vets/paterson/sova-animal-hospital-paterson/","address":{"@type":"PostalAddress","streetAddress":"470 McLean Blvd","addressLocality":"Paterson","addressRegion":"NJ","postalCode":"07513","addressCountry":"US"},"telephone":"(973) 881-0430","sameAs":"http://www.sovavet.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.3,"reviewCount":32},"geo":{"@type":"GeoCoordinates","latitude":40.9038626,"longitude":-74.1355904},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ4Xa3LwX8wokRntbg_--Wtmc%2Fphotos%2FAU_ZVEEyREoGEhFlRNO9a3gfhbAvlZumCKGCUCzs4P6WCWm0Kj9Q_XrMjOS2qett4OZP7HYaqwAOC1R6N0n9pkeOsOoIKusPAVFfN_QWWIwYDc14cWq0xOAX5P4M2tPb71zNQkeKha1cGrKiRzh3bqF_PyBnj8e8iUjdzYDI-Ct6OajZeAq06Yg2vEF0gnbJIAwJbQzvuLYHDTPFYFMYaIPhpMh52l24DgwIq8sZUBB7d_QsqZxoOPYfknNubgLEWzLkn9jyyrvcmFmc1HAuSaDU9gPSKZyyU_B0r-P78D9gHm10cRyb9fhm1N819cfFtzqiGi50nXS8BQJb6j1nR_xSD1ybvKik1rTgi3fIrUh40PyO6bRiQWB-F53UvjBLAgQYJvGbbwBoi_1Isy2u3K1RSJ9PZP8XlAOhUsBpjSRxrVWP8VQ&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -350,6 +358,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -385,6 +394,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"All Good Dogs","url":"https://scrubby.app/boarding/trenton/all-good-dogs/","address":{"@type":"PostalAddress","streetAddress":"160 Basin Rd","addressLocality":"Trenton","addressRegion":"NJ","postalCode":"08619","addressCountry":"US"},"telephone":"(609) 587-3535","sameAs":"https://www.allgooddogsnj.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":72},"geo":{"@type":"GeoCoordinates","latitude":40.2713399,"longitude":-74.6994082},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJK0YdnRDiw4kRyrI1v7EQ0bc%2Fphotos%2FAU_ZVEFGuTp6nYcoUtn52eDJehxtd_ghp7WSG89_6JGvSC_Ig7QdO4BYDeiRA2_G-l96ShvhWkSe5tMPg-baNL_9jw-9LXkwCQYKbS8uGdp01KAgKSx41ueQtp5VPw_rrx4fHntgLNPienixjHNF4PqHoviF-2AibvfNfZaVQ96EELWysCzuOqiI360aAE0Ic3TSkq5_Usk_vzTmBt_xUUfnZksvyLVxMANrAU_U-yWTKQQUsk27aBayOGCPDe7BIvP8Fn8e_BJY6TUciuT5oNSMAEZugRH0ltmB9MY0wgY0L2cndeOyW8Iow8TWUqBl-fbJ_vLVIV3huf8G_hwUSsNobFSwJ0ECqa0B0eQiSDzav1_wNu3dbCXf_0aaknY7csw7q6xNji3DiLQcDRrusgIUdIjA7HVo9hiX3uEwEmsedSOTHA&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:30","closes":"19:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:30","closes":"19:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:30","closes":"19:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:30","closes":"19:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:30","closes":"19:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"09:00","closes":"18:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

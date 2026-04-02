@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Stanton Pet Hospital","url":"https://scrubby.app/vets/stanton/stanton-pet-hospital/","address":{"@type":"PostalAddress","streetAddress":"8591 Katella Ave","addressLocality":"Stanton","addressRegion":"CA","postalCode":"90680","addressCountry":"US"},"telephone":"(714) 828-5891","sameAs":"https://www.stantonpethospital.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":3.8,"reviewCount":292},"geo":{"@type":"GeoCoordinates","latitude":33.8034451,"longitude":-117.9828489},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJZb5eUP0o3YARKrb43euq_3Y%2Fphotos%2FAU_ZVEFB2Sj8M84thUSI2rMcMvKg6yf5fMg3jMIWa5xGNlX_Uq9aVfRmz60mrC3mheuWEyrwRQ9H90Fw24LZgfmBeQ00drZJWvJIHAm6YNKR6nRZLahavCQprs5VHZeoYJysSnk3g0pRB2dz6k9Db0LYpt5lIVwux-rgG_Wrm5hmLEJdrlU3FooWkkcmgxtd1Wz-zreoe3Xe7cMqn-rcyDBdt2KEA3fGfa3tFEavof9pSgOV4lB1sYuDD0yqfFVZKb2gJhpaouo3tMm4qq6fKjLZsQ0nzMybY8odo9MssZb-hilQsN0pkQr_iESeDqXS23sjL6IRafRVbcj2NCTm7ShOyixHIzjL0mvQxyoOl-SF3BhgSCjW1ugc0W2pIRZUZAJPyE7DhGjGQMIrXwXtYtpkbOTlAp3Zot9prU-9gz_eafI7TQ&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"09:00","closes":"13:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:00","closes":"13:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"09:00","closes":"13:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"13:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"13:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

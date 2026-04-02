@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Pups & Pals Pet Lounge","url":"https://scrubby.app/boarding/austin/pups-pals-pet-lounge/","address":{"@type":"PostalAddress","streetAddress":"8701 S 1st St Bldg. 3","addressLocality":"Austin","addressRegion":"TX","postalCode":"78748","addressCountry":"US"},"telephone":"(512) 897-8755","sameAs":"https://pupsandpalspetlounge.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.9,"reviewCount":319},"geo":{"@type":"GeoCoordinates","latitude":30.175976,"longitude":-97.7971552},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJIXG6c8ZMW4YRMJ01UuAMdXo%2Fphotos%2FAU_ZVEFuNpE1hDS8lusGEDO-Nw0_TNVgJs-o2HNzc2O-fX6T4wyY9jnYEOkE847SHDwVlLyuvUMoMD9K2I3wkU_vnkGUyeaJHgskdo9zzL2Hgp6xyfvdEwzoo_X0JnI5-qbC_8fm4eRt2rQzMIAhkaTSwnwgePF4KOCliq40yP8XWfKFGM-TDc536lLzl9q7OEfG9vlWkqKIIMG2xq6W-4DXQBJ79RwXWT_tvj1cPXCk7K0j4I4ye96bkwag1a4EOsyel5_j7YQRT98EjuxzO37oFUJdbVwcvblgqYRW3Su3Nge30g&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"09:00","closes":"18:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

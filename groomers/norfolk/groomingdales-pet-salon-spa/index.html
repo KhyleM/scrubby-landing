@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Groomingdale's Pet Salon & Spa","url":"https://scrubby.app/groomers/norfolk/groomingdales-pet-salon-spa/","address":{"@type":"PostalAddress","streetAddress":"222 W 21st St suite g","addressLocality":"Norfolk","addressRegion":"VA","postalCode":"23517","addressCountry":"US"},"telephone":"(757) 627-1162","sameAs":"http://www.groomingdalesva.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.5,"reviewCount":298},"geo":{"@type":"GeoCoordinates","latitude":36.8686111,"longitude":-76.2874156},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJQbYlwTuYuokRqXcWwZU4neo%2Fphotos%2FATCDNfXtskGDa4n4cK_8j23j4sHswG4SNBanTUk8JDijNnUFeJ4uSazGrvWLHq8LYE6EqCAtFpR4NfiOg4NiXt4aJynPxmbxV71j9DrrLBomxr9fF6CE2nqIVmVzY-HEfr_AorxBISijuT-SFgZILdiI6ZTV56U4T8puA8FFJ9Hl65GtPO9CQrjcsBmSqixqDwK5wz6U7uSP7hKawjqIyUcchRSjajQTyy_4P0cjIdHvjlmonb_dWTm4qYK_LOfwtjLGJpEktHs7Bm-cGTnlF1iz9nVZfmmfHRuPs0i-GA4QbeH4_0YVZRvN9xb7iqc6SPPiL4XfQU_-vv0mPgXWTOePXDZ9rvHKWg2xSevLnBV0DEBHEHIdfew-OoHq4gEBag2DtVOcyjGaI59kXJHrVj4gGn5LInrk99B2LG8L7r7hov4QlRfzQ3Do1uDfvndsNg&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:30","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:30","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:30","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:30","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"17:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

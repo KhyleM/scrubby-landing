@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Scenthound Overland Park","url":"https://scrubby.app/groomers/overland-park/scenthound-overland-park/","address":{"@type":"PostalAddress","streetAddress":"6519 W 119th St","addressLocality":"Overland Park","addressRegion":"KS","postalCode":"66209","addressCountry":"US"},"telephone":"(913) 399-4611","sameAs":"https://www.scenthound.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":527},"geo":{"@type":"GeoCoordinates","latitude":38.9118597,"longitude":-94.6608321},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJx0E8qPXrwIcRdWoSXLsow7w%2Fphotos%2FAU_ZVEHQhY4cSqO_F8YyGUTZT5fcjGFxvAiV5LitpTDqh8Vxlmp7Uux8hZXkCuqlLw7nwN9FgTDdwRA1gMchytp1_8ZWc1gRefLmXtNNY5YdEuRrdhXH_yvAZtjYExdD1H_YUwBNLHDsHLdCtoPK1ObTKPs_zogSbU-dj5O9c6sPZ8XFMZ-KA6ZAQC5O3Wmppp0a7lpuyKu7XZGvw2WVGp9xBgKbge_9MNynPGdGwBE5KRh6UxW3UY9yLBTNMl76yMYihye1rH4_ff8gGUlBcZBrYXeluHYWJwbw8xFqatuJLQXNJkSmtFwWHwOLemwe-hA_VIkLZ6B5shV5cf_2GxN9IwaqjtlXn_DOxHsxXZw8kjxXv9u1Wa2IZ6FTi8w5WsYVqS8vIC8ErLf8O1F_68MivR8hyNCZnSriyLPpbjmbs1UOsds&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:30","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:30","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:30","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:30","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:30","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:30","closes":"17:30"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Dog Resort Glendale","url":"https://scrubby.app/boarding/glendale/dog-resort-glendale/","address":{"@type":"PostalAddress","streetAddress":"4111 San Fernando Rd","addressLocality":"Glendale","addressRegion":"CA","postalCode":"91204","addressCountry":"US"},"telephone":"(818) 245-6622","sameAs":"https://resort4dogs.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.9,"reviewCount":71},"geo":{"@type":"GeoCoordinates","latitude":34.1292507,"longitude":-118.2604718},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJi0OiLd7BwoARQNT_d00AlSI%2Fphotos%2FAU_ZVEEv8-9GIrcVipnazkEXca4MgIfBgHV-ynvRvGyPFZxeNQasG1hXJjm9OHqqjzahnSilu9ZttS1hDIAxTxnMtfMH9PTgtrXpcs9iDmNx5bWlCSevN5P9_ORoxhBX7zqg3Nuuc0q-71OSaFwmFINVsBAbc2TwT7jOZYMvknZ6YK4ppNDGPJNvOgbBuSqRtxf7K-o3O1PXbxYBAdOCgHROdBbM5aCJMpeeCzgVI9jOmXWliCYQaTcAFyZ3CDXu7Q6BLIHNM1GJX_V_SDOQcGyVpr0-4tpby93NO5lrvDlu7ib1iA&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"07:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"09:00","closes":"17:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

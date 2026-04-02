@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Downtown Hound Grooming & Pet","url":"https://scrubby.app/groomers/monroe/downtown-hound-grooming-pet/","address":{"@type":"PostalAddress","streetAddress":"150 N Monroe St","addressLocality":"Monroe","addressRegion":"MI","postalCode":"48162","addressCountry":"US"},"telephone":"(734) 241-1940","aggregateRating":{"@type":"AggregateRating","ratingValue":4,"reviewCount":72},"geo":{"@type":"GeoCoordinates","latitude":41.9195314,"longitude":-83.3955947},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJp6dsQqNvO4gRq7awjopOqws%2Fphotos%2FAU_ZVEHxkiSPxa6kSu29pkqWXG574AvWBoqALo7oWoVUOSuGUxrX2p2b_Eb2iZ6BtUA1bfHzM-O1UDDyMoIgIy-fy5IB7YBiLRX0Vmh1Vz0tsHCkD5KmkluETuDChcpjaf3_bA8tQccbNuvV-ijpHcLWsWkqXRdGbCfXaYRKaJFtwVY94tLRRES462UEnbUZZyAyBsZuNWCheSOLx3yAfBMxXcw-FqJsK-UP8oI1JPFcw1OBtd3PeW2dt6sXRoTCYeuXseIMAoAenNLoo61NTbeRoE2F8mL3uiQi7gQkfS9cPYfG3A1eD3ku-Df4SgkQZsAPWIUEdd1fYWbG-Yvu2-eIndQ_MCtDes2xTNOjfexPT_OaZJQK_4DoV97KrFlQk7P17KprcN_7ZLP8iroUqXAitmliNWSB690A3QIkzHNhoZj7PDw&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -351,6 +359,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -386,6 +395,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Karens Grooming","url":"https://scrubby.app/groomers/blanchard/karens-grooming/","address":{"@type":"PostalAddress","streetAddress":"2234 County Rd 1250","addressLocality":"Blanchard","addressRegion":"OK","postalCode":"73010","addressCountry":"US"},"telephone":"(405) 387-2920","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":29},"geo":{"@type":"GeoCoordinates","latitude":35.2041904,"longitude":-97.7174363},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJw7wcKcJ2socRVtjgvO2ZpDc%2Fphotos%2FAU_ZVEEQqtW7XA1LyAG8mhlwu5dhZc_yMS5dpwKy8ICK2l5vph69D_p7Qwr_lInZ59hiMyo-D5wytg7_EES0VGY7Rgr0gTz2dRRNs5FG6RD64JfTjfruh3YaY9mXvS9v2O3NRDcy2-dQipR_MwT3W0IQMbE-U5-1IpZ6TI4KalKyQ4nGR65ktGoegX6qp64qy1KJKgtSEBi83Gzpoy1mDTFWVUA6phh5hI9Uqv3g8-sr83Rg_MPMJgbtI-FS0OyatBfNcPzy16fd1h1Ps52iADCEVLB4A-fHDgaTw3vi-A0_wPNuP-MvAImaazqDameR0We_o6S9Zw62e3COsRTQ3wFbfV5wEgVCaD8ulRDGILV9zr5tNhgZp4wvbh7jKadYN-aFTz7wW3Jp2xLN0oaF8yAnSB_2RFbn0PnH9uNSf6mO7Qc&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -343,6 +351,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -378,6 +387,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

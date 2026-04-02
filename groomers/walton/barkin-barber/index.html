@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Barkin Barber","url":"https://scrubby.app/groomers/walton/barkin-barber/","address":{"@type":"PostalAddress","streetAddress":"12 S Main St FL 2","addressLocality":"Walton","addressRegion":"KY","postalCode":"41094","addressCountry":"US"},"telephone":"(859) 485-1555","aggregateRating":{"@type":"AggregateRating","ratingValue":4.6,"reviewCount":100},"geo":{"@type":"GeoCoordinates","latitude":38.8649087,"longitude":-84.6104058},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJmzookwHAQYgRq7B0TcRZ6tg%2Fphotos%2FAU_ZVEHC-9HKLejYMoX8rqwYar22Jke1MRt7ahwnoVCLCLa4eAYdePQF0xKyN8Ivl2pDEH_zuaMg6BzxySM4pf8r3-3AkqFMeTPs7pvDX0pkfupX7-tNR8KQLMpJZ6_f1WH065eLyKrW_YsoxNUxtJWCqwYDziIkJ17Qel734Sy5jHuNXWHhSfAeinYfc6KaCBaIUXl1wHy2tXuIp_fzULgoA861aTkcBRhWjXwK2Et4ogHrN71uhD7Jf6YuBUiCLqEgfuqsk101thojkey8HSmU0m4tEECitS9Zncx4PSzKt3-CdI6nC5JuSLwA5Gdfjl0_cwmjwSZ5VCaKXqwUuE-j765iYp33mOt7SqHMPYbrGSeoTn14aPgJ5PBq0MBcNS6PpgXn3xcw4cnOVyprSiYbsH6tPcesdEz2QpdwkvVPJsLzia5N&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"10:00","closes":"14:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:00","closes":"15:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"09:00","closes":"15:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"15:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"15:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"14:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -363,6 +371,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -398,6 +407,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"The Pup Camp","url":"https://scrubby.app/boarding/gambrills/the-pup-camp/","address":{"@type":"PostalAddress","streetAddress":"1041 Maryland Rte Suite 4","addressLocality":"Gambrills","addressRegion":"MD","postalCode":"21054","addressCountry":"US"},"telephone":"(443) 281-3647","sameAs":"http://thepupcamp.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":276},"geo":{"@type":"GeoCoordinates","latitude":39.0277273,"longitude":-76.6856292},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ0W2x86Dvt4kREh_tJiMLNX0%2Fphotos%2FAU_ZVEEi1JKkGh0DSL2Pvoa1qHq3H2NUYMdYNb0yBInNQPKtaavJCWBZkvQTab31AkSwE3nZiilEbyGtH8x_OG31BpDIkcoS_o4Z6uiRVHieGkhExjCuBBkWhYFS1xBj2vC3Lz-H4ex3h1mdG2Z0ZcHrbgCD_m0vIU8HFLJhOh4fmmJSYmaGXZwMH7RvHQ8d9825buMG5intRmkq7EMTS7Bmj7hbI5pRsekaBm6JuUQCegDwHod0AbMJ1FdibdxHh26Tew6zTXBiIfRfn9tMxioNEaqQcuYEwNa5p0xLGvttf1xY5A1nRT__xMTijn7yOLNM1NEtS_jfNsQ2b05bkKENhper8Gkk8F73opcgBO0Srda9VH71GTOymtTsodYGGvXExHK6vgJbaMt1IPTBC667xgZ8xBU5Sy0TR33sGaLCU4-SBHh_JhjerkXfuX05MPnQ&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"06:30","closes":"10:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"06:30","closes":"10:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"06:30","closes":"10:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"06:30","closes":"10:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"06:30","closes":"10:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"06:30","closes":"10:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

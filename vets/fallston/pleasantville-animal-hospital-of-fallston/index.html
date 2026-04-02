@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Pleasantville Animal Hospital of Fallston","url":"https://scrubby.app/vets/fallston/pleasantville-animal-hospital-of-fallston/","address":{"@type":"PostalAddress","streetAddress":"2128 Fallston Rd","addressLocality":"Fallston","addressRegion":"MD","postalCode":"21047","addressCountry":"US"},"telephone":"(410) 877-3838","sameAs":"http://www.pahfallston.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.9,"reviewCount":397},"geo":{"@type":"GeoCoordinates","latitude":39.53264,"longitude":-76.449531},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJvycQTvPfx4kR3CFypQ2hUaM%2Fphotos%2FAU_ZVEF4e7HLaduzQmKzxS9iTVupkfYqmfUywm4XEnukPS5LwapHsEO9Fc0FL1wau4U6pYCnCYhfNAR084zJVUE4ZC4u5ujF_jvW-vAzyhM19AcsyZRfa_Ayc7VJcte8be23nOk9_89FcbugIikmPx_E4J66MsAUlYdNPTQeUG9ke8Ehbf4ts2Hxg95cY_4JhYLrscMXCZ1m6F1KWqbTliUBnAaomWHOCNKx7_uS3PRuI5eRUZb1h70Rvo_VUMgr2tRCh9oeHlhvNSXgNZMd8fN4dXaJpMLsBRmIxeivHVDch8JTSA&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:30","closes":"18:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:30","closes":"18:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:30","closes":"18:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:30","closes":"18:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"07:30","closes":"12:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

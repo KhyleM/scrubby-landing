@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Dog Day Getaway","url":"https://scrubby.app/boarding/apple-valley/dog-day-getaway/","address":{"@type":"PostalAddress","streetAddress":"14607 Felton Ct Suite #101","addressLocality":"Apple Valley","addressRegion":"MN","postalCode":"55124","addressCountry":"US"},"telephone":"(952) 431-9663","sameAs":"https://dogdaygetaway.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":362},"geo":{"@type":"GeoCoordinates","latitude":44.7384034,"longitude":-93.196142},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJUzwcpTEx9ocRQrw-9iT3aAw%2Fphotos%2FAU_ZVEGkFZpF1s8565SJAwQly_4yGPdnlbE6He3HGd2UqYqFscKIIMs35clQoT6kgQH8PiKCa4dtxEfXKUbC0CJ2fCowvbUa7TN9eeI28joyBlkQoa0IgVfbUnkcuvLwRZFdlS2UVUB0NJR7AtwKJo1VIn5mqr-UHzGOFnja4kKqgu6zVhdZhCei4XQ_JxkEJIk9ExoqvgD4Ukbs3Tog_m1IUvWyYfTlq0zhNniNonBQxhR48T1W1nCOn79qg5nzS31njlbR10t0QDSC8AHQZB7FGs7gQ9-k2YohkbaTZVXRkECnfQ&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"06:30","closes":"19:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"06:30","closes":"19:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"06:30","closes":"19:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"06:30","closes":"19:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"06:30","closes":"19:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"09:00","closes":"19:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -364,6 +372,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -399,6 +408,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

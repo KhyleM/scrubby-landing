@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Expressive Grooming","url":"https://scrubby.app/groomers/maple-grove/expressive-grooming/","address":{"@type":"PostalAddress","streetAddress":"13686 Grove Dr","addressLocality":"Maple Grove","addressRegion":"MN","postalCode":"55311","addressCountry":"US"},"telephone":"(763) 496-4078","aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":14},"geo":{"@type":"GeoCoordinates","latitude":45.1046013,"longitude":-93.4538646},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ10weUu5Hs1IRLj81DJe--mM%2Fphotos%2FAU_ZVEEjWUQ8ZWeK-54XzZza8bm5XPvBjRzrBZ9r_50q2JQpbo5pSAsuai8ij5Vwdyz-O9irYNB49RL-YO3jsyhj3rsTDtTWbyk5Vj5rfpuRZi2z3GthE5UGS-zGNRgmHDaUQnRAOAi6NSOVMAzumOlj6PTpFQgEpY6kzC_wh9vbER7BzTWRQIx_W8_tGPRu_lxh4I_4fXYBck7h0hH7gG-XGJ7ou_4I2sfaTCNSi394BJ2W2ktFnfuwo3ZwqaCAk8YuI3sS7tv49Pqaqav5c6jf-izhR3Z9y_MGwQlpysMnZvsd9Q&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"09:00","closes":"17:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -363,6 +371,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -398,6 +407,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

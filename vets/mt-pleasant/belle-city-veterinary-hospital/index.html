@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Belle City Veterinary Hospital","url":"https://scrubby.app/vets/mt-pleasant/belle-city-veterinary-hospital/","address":{"@type":"PostalAddress","streetAddress":"4701 Spring St","addressLocality":"Mt Pleasant","addressRegion":"WI","postalCode":"53406","addressCountry":"US"},"telephone":"(262) 565-9568","sameAs":"http://www.bellecityvet.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.6,"reviewCount":662},"geo":{"@type":"GeoCoordinates","latitude":42.7365259,"longitude":-87.8368816},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJi5uEc2hCBYgR0vK4B0_d8tU%2Fphotos%2FAU_ZVEG5hm3v3iJBdOsNqZkeC46oYLA3w_ETOLYgTrIW8Y5YwOYwhYMobcnwJhTr7a20wB6APXiqB2TWazxnL36a7ubBXZOc5ENBaXPbiIEf8FjTCVu3Ip_1cnAAwAa0xzBFcRcKsge-x9yVhMlBz4Fe7oJ1K9Jt0pXCkZNWRGBIG06q1o9x1zgWtUHMymcK3Chjo0WlQulbc_K4jYkzP0_lcQmwIJfzmdCTjKyrPDwMoawmMyMepLlsHz9j3_2v-AcZsQf-R1zqs8Ggb40sJ0JtxC751DgeluGqZjrz_gwPr1KRUw&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:30","closes":"12:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:30","closes":"12:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:30","closes":"12:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:30","closes":"12:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:30","closes":"12:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

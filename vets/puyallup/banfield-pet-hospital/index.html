@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Banfield Pet Hospital","url":"https://scrubby.app/vets/puyallup/banfield-pet-hospital/","address":{"@type":"PostalAddress","streetAddress":"107 37th Ave SE","addressLocality":"Puyallup","addressRegion":"WA","postalCode":"98374","addressCountry":"US"},"telephone":"(253) 845-7076","sameAs":"https://www.banfield.com/locations/veterinarians/wa/puyallup/puy?utm_source=yext&utm_medium=yext&utm_campaign=yext&cid=yext_local","aggregateRating":{"@type":"AggregateRating","ratingValue":4,"reviewCount":119},"geo":{"@type":"GeoCoordinates","latitude":47.1568976,"longitude":-122.292419},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJf-nv1Cn9kFQR1IvdaPaDH1A%2Fphotos%2FAU_ZVEHLc2IMKYBU7UNKWS1N8iRDl0aY4SoxuV-G8k86PEM_0d9nR2Ua3V_l1GjD_7Zr19-WVro4x_oNRy3O5rmlMXnq0TmcIa6IRQcIyFA2QQn6EXzJWhe1auiZNU4v1bG4VDaWeGx_DuVT17pkzdCnmA5iZhnNoFo5JIBbb-lIEA8w4oQsqmsnoPVpmEeIhktshJ3iFJs5UVE4DCKCkSJFaI44FKPhh3TUlSoJk2FazLy713BR09pcCVYyhT4TqrDw21sD6aJ4oIVREEPu4fsZmV_pihUeG9Xz8JNBxl_EoE3BoA&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"08:00","closes":"17:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

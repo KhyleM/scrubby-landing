@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Humane Vet Hospital of San Diego","url":"https://scrubby.app/vets/spring-valley/humane-vet-hospital-of-san-diego/","address":{"@type":"PostalAddress","streetAddress":"8360 Paradise Valley Rd","addressLocality":"Spring Valley","addressRegion":"CA","postalCode":"91977","addressCountry":"US"},"telephone":"(619) 475-3000","sameAs":"http://www.vetsandiego.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.3,"reviewCount":508},"geo":{"@type":"GeoCoordinates","latitude":32.6976072,"longitude":-117.019158},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ42e18lpQ2YARd1R0XiXO4LM%2Fphotos%2FAU_ZVEFK0VTCcKeA9UtTnQIRkMPAo7mqsIZmSxZEOFIMuoPBaCKlomh3aKsoqk8kABO2-HlyQx5uCO8SH-vY-GTO6pFxGA4AaMmlscGcJC9bbzOo_JQ2HZmwiMDm0G3ykF_8CTpTylrBMniNWQH3famCDjgRHXtwnwvEmk7JTmnrQoYLvfd8I8iZxfNavCxUS9onL31Lql8wn_EbtjH9tGc0lsV3axkWuHRYRSYlv8yzVtKLTOTYMh6pCxcm2zwldga0ugM8NBK56n7NkMD36ryR9E_LRi4v9b7DGho3EP5dxs32jA&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"17:30"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

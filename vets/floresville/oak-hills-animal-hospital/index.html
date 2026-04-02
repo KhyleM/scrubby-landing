@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Oak Hills Animal Hospital","url":"https://scrubby.app/vets/floresville/oak-hills-animal-hospital/","address":{"@type":"PostalAddress","streetAddress":"1678 US-181","addressLocality":"Floresville","addressRegion":"TX","postalCode":"78114","addressCountry":"US"},"telephone":"(830) 393-4600","aggregateRating":{"@type":"AggregateRating","ratingValue":4.5,"reviewCount":265},"geo":{"@type":"GeoCoordinates","latitude":29.1738586,"longitude":-98.1868515},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJvZaS7ZAfXYYRsREKjuydAjI%2Fphotos%2FAU_ZVEGKNegxgIruHa5H65Xk9vqXmTN-sUAm5EExSTZ0-1obyNwr-db_J2FtsMWxRCh7Ewv4jsSj6OPAVlA4bNfkmGwhVe9h-cuWph--x-4xQk9Z3vW7gyskiXMmom3y7N_ui638qGD8syiQ_xQMsdxYhhUfMNjTky3FUJmMXCIreU10WRs2Me4P1h4Elp0JkxawLVmP5_gP7MigMieDgXAlD-2tEoykIEqjK-YnfSXZ_g63SjYUTxKTCdUqIxpk1wTp8VV6-6uy5tyKS7Ye7ICKeWo3d36VzleM9wxYYoSLMs8o2DynHIVbrNF3j5PdCqjpl3kGAHL7t6mTGJaMdoGlWxuH_KULNNtgFnXAVviA0qMI77O2KA_uAsMtgyAghAanV-TocxgvDGFYTYpJExhD0JOsoNlNp9Svplv6pn_Vv6FhFldD&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"12:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -359,6 +367,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -394,6 +403,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Vet At the Barn","url":"https://scrubby.app/vets/spring-valley/vet-at-the-barn/","address":{"@type":"PostalAddress","streetAddress":"790 Chestnut Ridge Rd","addressLocality":"Spring Valley","addressRegion":"NY","postalCode":"10977","addressCountry":"US"},"telephone":"(845) 356-3838","sameAs":"http://www.vetatthebarn.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.4,"reviewCount":109},"geo":{"@type":"GeoCoordinates","latitude":41.0835924,"longitude":-74.0565724},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJUWguU7TnwokR7GF0eStDIig%2Fphotos%2FAU_ZVEGh7YLLFUcLHN0Iw66t0c8I779UV9rvF5no5GO4J7IFtROqfYZe7J0XsqI9ps54Q_HjOJ47EeVpHumGF9ducSBx6ywpjdd3b6lkAv-FG78aBX_hLYyJLdLuXLmnAylxsU_eEKq86_OloL2TER3IhXCAnbPyef6YPJCv9SH4PJJMJPCi8b9vGedfeubb_zrBz9xSTdLuL5uZtI2jCijGpJ78FCFZoQ8CCBKkayJS375a5_aqEQLr-l67FjnKVH98NxJLPH3eOSby10x7tY9NINipVYUB1_2Vyi6erlRHvKrzw3nxL9c7eP5Mu3CrRR9Z2_HoWN1ew_aV-Dayci9ml2aYkIOYj8M0weYGP8O0G5nVKMNBI8oBmKI6f2DfcAI_AyYGxsmT05v7tBDRVNpzyjcslGqTpylsf_GP_Q-iU74sVpc3&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"09:00","closes":"15:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:00","closes":"15:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"09:00","closes":"15:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"15:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"15:30"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

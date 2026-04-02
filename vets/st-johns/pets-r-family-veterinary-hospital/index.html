@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Pets R Family Veterinary Hospital","url":"https://scrubby.app/vets/st-johns/pets-r-family-veterinary-hospital/","address":{"@type":"PostalAddress","streetAddress":"3035 County Rd 210 W","addressLocality":"St Johns","addressRegion":"FL","postalCode":"32259","addressCountry":"US"},"telephone":"(904) 452-7387","sameAs":"https://petsrfamilyvet.com/","geo":{"@type":"GeoCoordinates","latitude":30.057882,"longitude":-81.5340273},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJKZAJxLzS5YgR3cMPqg0w468%2Fphotos%2FAU_ZVEEks5MvuLgxekYRLaKLnWc9dCqOJYoCs65IalDIUf8wb4tCDMm2OVU-rhJApn_D0PtPzJoT_uPwc4kIcES-o6KGyUt9rFaWGDpROAU1B7p5FjJxSG-57vFpsI07R3R6o6IKGsDfgPAkXzjN_F3FyC6F06K9i8xdgwY3SlR-4At9p5i-_BK-hlZ4zCHmc9Qbc5a6Z_0XE-ED5v3yuGYOT3yqjm_68jvLdXxc1bv-tAohL3sdAgE12narMwqlTb-7QX8oa-7JVO_LgnCJFzfzdfEzcaZGwgiWrDrb_Bwf0bfmCw&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"12:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Lago Vista Pet Retreat","url":"https://scrubby.app/boarding/lago-vista/lago-vista-pet-retreat/","address":{"@type":"PostalAddress","streetAddress":"17714 Fawnridge Cir","addressLocality":"Lago Vista","addressRegion":"TX","postalCode":"78645","addressCountry":"US"},"telephone":"(512) 632-7065","sameAs":"http://lagovistapets.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":52},"geo":{"@type":"GeoCoordinates","latitude":30.4125636,"longitude":-97.962628},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJL1ztBE87W4YRZauf8w7g3HM%2Fphotos%2FAU_ZVEH95Xr99yE4wZMWmekCHAAp8oZDTzabdb8wM4Cd2uQJZTKEwhc1B-JTqxRXOHxPVVufM7NIPAxeBim_jvP07KzoE2_JyEVTogF2HEOw1GZ1tRhQEAOU9XnEp3-04Fww4P7vGGXEbRj6DiA1vypgykYbf1Wn5hOdEuO243nlxPcs3BS3g4Jsg88St1cqc-ORP4WRZHysgR6GJCxVKFk5xJDJBHcNKnYhxe7OTgNt_uDSJGJ1tyABMVWV7Yjv2P3dooABg997y_NJ7vlsoxuiGgNvNYA2RoxLKVM0SPiWTqFjfQ&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:00","closes":"08:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:00","closes":"08:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:00","closes":"08:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:00","closes":"08:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:00","closes":"08:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"09:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"04:00","closes":"17:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

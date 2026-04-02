@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Yappy Pups Playhouse","url":"https://scrubby.app/boarding/salem/yappy-pups-playhouse/","address":{"@type":"PostalAddress","streetAddress":"11 Franklin St","addressLocality":"Salem","addressRegion":"MA","postalCode":"01970","addressCountry":"US"},"telephone":"(978) 594-5575","sameAs":"http://www.yappypupsplayhouse.org/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.6,"reviewCount":49},"geo":{"@type":"GeoCoordinates","latitude":42.5264593,"longitude":-70.8990422},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJvSrM08Zs44kRQMJbtSGUnqA%2Fphotos%2FAU_ZVEGR_ZP_-agUQjicgdtCaZi9Waz5_BXitJoTtkKiL21rd_pZG_nmCrvWyGj3RYEjD9LO-n5Z6dKqtX8pneR8g425w_E73aONfr7p9EgApg3AxL5gLv-TpP1BNEkWfDdUuYm8oGojYcRtEQay3VBFnib_YN5hiXJf87f7ZouXxIsa7kFULZFi370Fsno1N_TWkG6klrDMEmV-K87XpweQ5D31EkQU7Y83Btu4mFZM-kpnArNwqDt99fPGlz7L_bE0Lug6uAwpevyv_u6yH8lyMO14-czuH7UGyHgYWGbI7UpW0J01NLRtHZv0MPaXce8TXv06nbnOh1PtRobm3V9UR29YfqpU5k5zXZBXtcEQtYsBY4yAzsX2gMX8dm_pCZyR2b5nLYioeRjan6kQudgIdtOtXijSHLwSG5rfqOP2nCbevg&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"09:00","closes":"17:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Robinwood Kennel","url":"https://scrubby.app/boarding/highland-heights/robinwood-kennel/","address":{"@type":"PostalAddress","streetAddress":"102 Robin Ln","addressLocality":"Highland Heights","addressRegion":"KY","postalCode":"41076","addressCountry":"US"},"telephone":"(859) 781-2352","sameAs":"http://www.robinwoodkennel.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.5,"reviewCount":66},"geo":{"@type":"GeoCoordinates","latitude":39.0203992,"longitude":-84.4663958},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJWYTTEp66QYgRJyLFNheD6W4%2Fphotos%2FAU_ZVEE-bH6ZxDsqTrQQoU3xUBywbl4BiEk3HQFMH21qN3t7Spm7ywmKMUC98J_ikOZIUykhWUGALwVFmj_7wPNl8Fk34qqhAts86rR3ZaoJ3p2iWVowaD_2ErmVYDmN3obGBzu4_t2rNYdzEMBblzR_LTR9-hHnCO2sgPkB7n9R90b4yiT8iQL7YyoGwmfP0cYogkhveYVwnHqxmyQfD5V-yVi_K8oCVeevP6olrIOya6BrlP1tjvDiKQWeBJ7J3K_UtYFulf6VN-n8FTKG9pFbSxXTBlFR9BpEIIlciLIAXi6jMg&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -348,6 +356,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -383,6 +392,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

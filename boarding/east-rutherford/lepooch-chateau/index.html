@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"LePooch Chateau","url":"https://scrubby.app/boarding/east-rutherford/lepooch-chateau/","address":{"@type":"PostalAddress","streetAddress":"169 Hackensack St","addressLocality":"East Rutherford","addressRegion":"NJ","postalCode":"07073","addressCountry":"US"},"telephone":"(201) 370-2281","sameAs":"https://lepoochchateau.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":53},"geo":{"@type":"GeoCoordinates","latitude":40.8305637,"longitude":-74.096673},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJHbAZW2T5wokRRUBlFTYWABM%2Fphotos%2FAU_ZVEEwrUVMLadnvYymUK6PXKqgQLYpom3q7Bygsf2OWrHkP3VciPh96DLE-BZJT-jrNkLC1P7O4FuiyOh-d9vuckuYrYDOagaAEsosGw6BbDJOlVQ5Fpl4YEqOI8xOIVLQvDl0FnnnplvENuTTegsK7MiW17HS0kj8znaC0NOWhmMJX2aQhvup1WsOFpP3eSHC_tLQ_0cMVwZhZK79HQsRKcH30IL0EMnPb_n1qJgu2R0YRmjrbDs_TajtTc5yS7SXfh72EJve99ch3PYWmBc-pNIhUMXFPzG2q6Ye2Dgv-DXNmXY__N1MLsGH6wdwzEOepZK_sDW9DseJj6lXyRcWtuOPZvbxikdxRIjtKkEhoExo5hcGCMtp8VU5B-BqeaGyLaTUlL8YHmi9IjTopziT20YsFMkFRTbSe73f4gIawt4Ctg&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"06:45","closes":"19:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"06:45","closes":"19:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"06:45","closes":"19:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"06:45","closes":"19:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"06:45","closes":"19:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"07:30","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"08:00","closes":"18:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

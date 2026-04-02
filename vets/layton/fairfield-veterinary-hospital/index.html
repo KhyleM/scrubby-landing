@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Fairfield Veterinary Hospital","url":"https://scrubby.app/vets/layton/fairfield-veterinary-hospital/","address":{"@type":"PostalAddress","streetAddress":"230 N Fairfield Rd","addressLocality":"Layton","addressRegion":"UT","postalCode":"84041","addressCountry":"US"},"telephone":"(801) 544-8800","sameAs":"https://fairfieldvet.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.5,"reviewCount":334},"geo":{"@type":"GeoCoordinates","latitude":41.0631235,"longitude":-111.9459507},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJr4TPJYQBU4cRo9HSTWyOz2M%2Fphotos%2FAU_ZVEEq_PKBOQRMWwQ12esJEYaN6nGo8mfnSTthB85yqBR-Hx0CAgm9KTNLt4mfDOOoZRjVEQRl6W-jaCsJ-Eijxnks38MK4O6h6c6Yjfx-hlyYwdVs9SZyx9fEtTozeP3Cr5cvLvK-t-_6LZtIBZRfLmcOMl_BrNyp1aJAiOE0IzBSxmucndjMQPRewiqp3r7V5x_-z3qesf9NI2PL78roOmqUyGVLTTsN2X-8TGEXI78TzMcw2D1d-hWwXEg-w8vKbB66_Vo36RrbAkisGB8_WNvdiliDbFLHPsSnwYDXRfrvMiMmQTfwpFpyzp2L4ahv-KsnAfC9gL4fcg9FMGtsaaDMB4NrVkEPc_k6l-fTK50LD-2NBS8WgZn64blXl5eixGmqvX6PgBOvV0i9xNyiuaYjlSelpY39nsnV8dkH5be57NVg&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:30","closes":"18:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"PetSuites Herriman","url":"https://scrubby.app/boarding/herriman/petsuites-herriman/","address":{"@type":"PostalAddress","streetAddress":"5116 Denali Park Dr","addressLocality":"Herriman","addressRegion":"UT","postalCode":"84096","addressCountry":"US"},"telephone":"(801) 849-3678","sameAs":"https://herriman.petsuitesofamerica.com/?utm_source=gmb&utm_medium=organic&y_source=1_MTAwODQ5NTkwNS03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D","aggregateRating":{"@type":"AggregateRating","ratingValue":4.2,"reviewCount":169},"geo":{"@type":"GeoCoordinates","latitude":40.533,"longitude":-112.013107},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJXZti9NaFUocRlCSHVDIPXTU%2Fphotos%2FAU_ZVEFyVujFw1pkVe72c0xVyAbCJctkx_Hz698psTNz_sF6H1_KrMmPvsfcquejPnOQ1U5v9WxNvXrE8LcYAWbtkk4Wc2e3TI6G9OjXKC_n6sDaLiaRCxEtM8Nx8qIKn6Sbyrtr6fMHWCLg36d2mwOwCFpR18DsWPnYX13dglUuP9bRxkFEMZ_7vgAC5Isc_aSK4YxMMhAa_-CNBfcTT_hpHlRJX8fsH_5GiVm51VnThlUiosYLuIeLb1N-Wn64MO6npKuEpXa3X8VMb2rT7k4Uw1u7fHkYu06dugxj_VrUNuI&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"06:30","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"06:30","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"06:30","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"06:30","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"06:30","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"07:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"12:00","closes":"17:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

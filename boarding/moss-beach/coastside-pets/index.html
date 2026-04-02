@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Coastside Pets","url":"https://scrubby.app/boarding/moss-beach/coastside-pets/","address":{"@type":"PostalAddress","streetAddress":"Sunshine Valley Rd","addressLocality":"Moss Beach","addressRegion":"CA","postalCode":"94038","addressCountry":"US"},"telephone":"(650) 728-2166","sameAs":"https://www.facebook.com/CoastsidePetsLLC","aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":4},"geo":{"@type":"GeoCoordinates","latitude":37.5328761,"longitude":-122.5037674},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJG8_KcWxxj4ARKnCk2neQFDM%2Fphotos%2FAU_ZVEGeQTufiI0780wN--rGSrJbZsTDhnXsL-FHcW0z7kbbmUPFO3JLM93RFumXRb4RTQIl2QJj3lb1Sno4z5O4AyDhrJsU4lBIlmmk9--fMogjMguuIoaWJMtj8JRjo9MUg7Ay9eSKoSZTYRKvxwGsQC7JGTkcr0qKzGUzo1fnJxD4PqyIwsPKj19wo_98INlInd2Rx2SJaKh9SEalRhC2cqd1wnkw8gdlxUD5Zbx1yBjr-12Z4gb1H6fYsLzKQMs9ixDtIlf8pBtTWcAqiOEy1zGcwR25RvzfSIVYphmlFzQpgg&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"15:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"15:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"15:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"15:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"15:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"15:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"08:00","closes":"15:30"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

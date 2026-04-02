@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Kirtland Veterinary Hospital","url":"https://scrubby.app/vets/kirtland/kirtland-veterinary-hospital/","address":{"@type":"PostalAddress","streetAddress":"9222 Chillicothe Rd","addressLocality":"Kirtland","addressRegion":"OH","postalCode":"44094","addressCountry":"US"},"telephone":"(440) 256-3319","sameAs":"https://kirtlandvet.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":370},"geo":{"@type":"GeoCoordinates","latitude":41.6192562,"longitude":-81.3587216},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJv8iupu0HMYgRT6WFz9baZNA%2Fphotos%2FAU_ZVEHm1-TuQnbZEuJTAjhTYjBu12dk7IM42cmOlzot9g1zBF6cvgYm9WNpoKL4V89cMVwISF6uBr4bZVRkGbh8LmrJJ5ltIzTpL9EqwxkXvJaYttd1y1xxsqnuukDlCyJKWo0aOnv-ew9HMFTZm5A4-hty4_ilI1PvUSpYcefnn1R-o6qPq5quAkQ6HzQItPBQJCyFThhLH7wY2zeFXYvKyl3ANCf7RQB2F3TRNIY9D_IR3b8JhAcxynmLSK4x-UPq6VY5g3ZROZz8zW07r4LS16vLmyE-sqhdwaQXtpbV6UyzzNznaW_LY0Xj6mj7Hcq2I_7xBsI0uOCBlYmQU-fNyspNOQJQ31FfB4xkXLFNa6SAIAbvmedWwyAdtt5RbKobmQXHxQQXATp1AC4H-R6-_lIr4H8bGGoW-n4L1bNnFlw58Roi&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"12:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

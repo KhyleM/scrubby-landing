@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Come & PET It!","url":"https://scrubby.app/groomers/henderson/come-pet-it/","address":{"@type":"PostalAddress","streetAddress":"2562 Wigwam Pkwy","addressLocality":"Henderson","addressRegion":"NV","postalCode":"89074","addressCountry":"US"},"telephone":"(702) 478-6878","sameAs":"https://comeandpetit.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":154},"geo":{"@type":"GeoCoordinates","latitude":36.0358202,"longitude":-115.0993316},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJNa7RbyvOyIARSbYhyD9OegU%2Fphotos%2FAU_ZVEG4oeHZCr1UDKNepEkN_pEbacZQAYPS_8s1jt880x75GeHgEW6Xxxi7-BRBRcYGT8CTKYlS7btweDbe750NUBnnMNY2aQRzAyl_5on8TtjwWeBI8_wGoUusVN8U2MUmHc9l3A4QOS4OdjUKheqqhR9bMbxcQeMBB81yljp2zb9fFeKG9vgJR8frtBBF2Oe8nA9ZNRuTmm3FkPD8vAG-FaR3Z1uJUjOh1OCmZdxkDffX1iDyxhXtFx3YBOUljLlsSz2TyuR0GubfI6ArFBxKgFx6wQ26npj8LSZBetsOAlvUlg&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"11:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"11:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"11:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"11:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"11:00","closes":"16:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

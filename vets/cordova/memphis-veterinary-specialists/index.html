@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Memphis Veterinary Specialists","url":"https://scrubby.app/vets/cordova/memphis-veterinary-specialists/","address":{"@type":"PostalAddress","streetAddress":"555 Trinity Creek Cove","addressLocality":"Cordova","addressRegion":"TN","postalCode":"38018","addressCountry":"US"},"telephone":"(901) 256-5271","sameAs":"https://memphisveterinaryspecialists.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.2,"reviewCount":1034},"geo":{"@type":"GeoCoordinates","latitude":35.1400726,"longitude":-89.800803},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJFfuFsWqcf4gRyIb0bJitQ7s%2Fphotos%2FAU_ZVEFTIjTpUMBgsVIyqAfvCYt6hoYfWFZL_AWwARA2A7CHwMWG8J-3qycZk_yakpD4PKrzp30fV-6gUeFTJZcAzi0FAdn_J1bu0Xu7N6RRx8O2aK41z-nM6saVvsV7mg0K1ElvC25XPXIT5zCXhZBtIeJKwVpoJh2tMoXj9qz7UMt9qTQ0h-TpFmrfS4cBcLnyxM9XTmIo94S1Wx9SvNv2oaeGVi8Vu2jl_CbOsB-lPc3-t8kUFUZTcjRjoKbC37X5j5RxoW8KqkmXZ3rm_XGwfxKurP5XRJpTkGLawooVJuK9zg&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"00:00","closes":"23:59"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

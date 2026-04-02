@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"2222 Veterinary Clinic","url":"https://scrubby.app/vets/austin/2222-veterinary-clinic/","address":{"@type":"PostalAddress","streetAddress":"10601 Ranch to Market Rd 2222 Suite S","addressLocality":"Austin","addressRegion":"TX","postalCode":"78730","addressCountry":"US"},"telephone":"(512) 276-2633","sameAs":"http://www.2222veterinaryclinic.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.9,"reviewCount":452},"geo":{"@type":"GeoCoordinates","latitude":30.3931011,"longitude":-97.84517},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ9-jl3o0zW4YRxxTbLWGZVLE%2Fphotos%2FAU_ZVEEzk7gGlMauNSTlofVLRl_4z9Cps9NTJJS1svlHLkt7jOTPeDmBNZPtwfMF-MDCvkjYNTofMgcLHZU4hQeOO_bHFEyRib5oWfNhCOaJNj8bfVFFydL2cCjcOZnhta8SJZvYjYxieGYELq_4rLEblWAVQGkKYIdMH_0hquE1XQCcBge20Ylru-dX87P0uBGwdvRpLPZCGiWoQXsyocugAJRx20dosKbupgt1_MCMAfpQrZ0n07tGr8d-wJI-4ScLoR7FIBqay7lVTpDvBZk2Y8B8sgtOPX0zbf19ldqs8pNdcqKBOCSIXbSpB5RMdi1DD3-gq38hRt4I0UCm7HZHqndJ4C-0zgmkXf-fC5y3m3M88xY6E-lu71_IsoEN9ZWCyFTxZys20CheIcdticXvycyRh51FListYFRAR8E2Kn60LoNG&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:30","closes":"18:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

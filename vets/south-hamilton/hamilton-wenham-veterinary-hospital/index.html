@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Hamilton Wenham Veterinary Hospital","url":"https://scrubby.app/vets/south-hamilton/hamilton-wenham-veterinary-hospital/","address":{"@type":"PostalAddress","streetAddress":"31 Railroad Ave","addressLocality":"South Hamilton","addressRegion":"MA","postalCode":"01982","addressCountry":"US"},"telephone":"(978) 468-4408","sameAs":"https://hwvh.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":69},"geo":{"@type":"GeoCoordinates","latitude":42.6107155,"longitude":-70.8751312},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ-0XLkW4X44kR7bs60ubPARM%2Fphotos%2FAU_ZVEGANeEO3ZFM8A84TbzKG9IYCqLGjPInDBZsBdV5P0BOMPTaDsra2QM9Ra7m2J04MEnNeY7cn61kOcqg8-cP0HwuQ4c3PR5RYu1_3o0ifCRZFpP_wgkcG3UOXscLhJ4gCa006MKTnzNoFqpxr7jbwrTyEdJkz8zH_WkBOr7bNmvLtKA0iBijCtnj_cGvY9wbVbTSDbVXBOpt82ZgmyxFaeD2CCV556MBg9vrZdTa9z5JHdeFOai00VygaTh1mIGHWKV-HBTRZ8zut4JdX0a0XKwJauPmCg38A0kw-2VK_lkZqA&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"17:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

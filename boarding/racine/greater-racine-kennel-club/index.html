@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Greater Racine Kennel Club","url":"https://scrubby.app/boarding/racine/greater-racine-kennel-club/","address":{"@type":"PostalAddress","streetAddress":"6320 6 Mile Rd","addressLocality":"Racine","addressRegion":"WI","postalCode":"53402","addressCountry":"US"},"telephone":"(262) 681-0700","sameAs":"http://www.grkc.org/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":49},"geo":{"@type":"GeoCoordinates","latitude":42.8153222,"longitude":-87.8572774},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ02VDPp1qBYgRgh0DRbFiS-E%2Fphotos%2FAU_ZVEFxQZrtPjDMr_nWF9jAZRAX6bM40Sdiyw5XioBDgsfzEbXZbh7JIuZp9nHxRy-sv8dbzxPC0kVCZZ8WXichLrBysTqUQG7wRUn9DtZVNqZLfw0fKY7hk1KIuwlQYyZTkTEy8NTUKd0e0fqYacqibDRIbI4sovyFmfOUyun8BzqUXvQTMduxhHkfT5aBYYUtwsVmONUq5wCXKnSm_UK-T2Q-6keAx_q46s0InfiV7M64W5wIeSJd0FPs50MTlhcIplBa0ay_CeOlT__bjYCuHUSJ0GAIpiJ4KmLNdJYKFwz7wQlSv149o1VIiiLMkU3kSUQ5z0M8uh3eGAtUeRNKdXUMLUDmPQ-lv_4MxWa_X0qAg_0WmdJDYGtEmrVTmJFD6i6_hOWLVk6lTsIvC7nbhTW7vO8PuN4Lu53NJrvEJKJpn2c&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -348,6 +356,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -383,6 +392,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Fuzzie Butz","url":"https://scrubby.app/groomers/rock-hill/fuzzie-butz/","address":{"@type":"PostalAddress","streetAddress":"339 N Anderson Rd","addressLocality":"Rock Hill","addressRegion":"SC","postalCode":"29730","addressCountry":"US"},"telephone":"(803) 328-5353","aggregateRating":{"@type":"AggregateRating","ratingValue":4.5,"reviewCount":59},"geo":{"@type":"GeoCoordinates","latitude":34.9469734,"longitude":-80.9991308},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJR5hxV72IVogRE4EYkS_FzZA%2Fphotos%2FAU_ZVEHNjfxDtDjGZwdi15fJ87mO-HI38bJHAk6gCv3InuQSnxb_s7Rftrej_2NqqjjSkkA7NMbhITyXEB1NYkhE3e1_5My_7pdShb3_Ai9Desnhkl0w17V34VHhhq-4GvATgNyK4kTOysJQSMs0liNwiJjwvbFIdm_gstfKBQLp_LF9A78EvibNIHBe6ERvdM8OF46DfDoKPC72xmS3bfjVdvA1XYiKtUFHWoM4Iti3x6Wcp_OqFVhPVkgRgqbqDXP4LvDXS6b4tgh5VISpMX1img95kO3EwfxJJxEzInmApLNTWq9lrgg9jSALiKNk5K4dvQVQCJ_05JCp_ghNq4_qKniQ-L6ArE2dkStBRUuiGsu5IEhgvNSUQNYGQ8CMU7fo5wcumdD6Z6Xf8-m1QLlZ8VwVu2pz8RpTWMZoracpxlUcLqvV&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"12:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -363,6 +371,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -398,6 +407,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"The Polished Paw, LLC","url":"https://scrubby.app/groomers/fenton/the-polished-paw-llc/","address":{"@type":"PostalAddress","streetAddress":"1063b Gravois Rd","addressLocality":"Fenton","addressRegion":"MO","postalCode":"63026","addressCountry":"US"},"telephone":"(636) 326-7800","sameAs":"https://www.facebook.com/The-Polished-Paw-LLC-261226055661","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":82},"geo":{"@type":"GeoCoordinates","latitude":38.4980347,"longitude":-90.4745317},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJm_AxUXzQ2IcRSx3qNEVYZP4%2Fphotos%2FAU_ZVEGsHkvpBp6MtcYQULMAANRHEtzWAoPnRNenxCy0ITxRfWQwV3VXqToiISkQsPVeX6zg8OpTiSqpA7J11s5NT0DUmMSG12-QZFehDSk09NVsBEywq_NaVaCquDlexJMGuf_JUacbNO9wh4wruK4TXWzsekuC7haoXjrh0DP-oDUtvGdQjdhZOQz7ZR69LwiY_PrB79hKktnS9kF-6OMuGGzl6fpU1DGciNGn6oC58Q_kGr5sgkK9qw76hj2diYrMLMQ72sjZ4esf-eYxu3MM8Dte5lIARAne471Gi7Zx-DpAGKp-ssJuiFQ8cdfCdldisK_vhVy18kFoCLTbZ0111ivfaxxb_nwXQvX7Fv5LTOFU3XsIVZZNp2L9Rmp0ZiiyGDo3DhCCfmSTXzCjLIPg_vn9HR7FD4a0BNjtMOLRbExw4vU&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"15:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"15:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"15:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"15:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

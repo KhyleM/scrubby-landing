@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Dog House Grooming","url":"https://scrubby.app/groomers/lenexa/dog-house-grooming/","address":{"@type":"PostalAddress","streetAddress":"13506 W 93rd St","addressLocality":"Lenexa","addressRegion":"KS","postalCode":"66215","addressCountry":"US"},"telephone":"(913) 599-4222","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":92},"geo":{"@type":"GeoCoordinates","latitude":38.960399,"longitude":-94.742595},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJkZV98buUwIcRuOi8xZB_c4s%2Fphotos%2FAU_ZVEHXcPPY-FZ8vcuHw96mQw2EKne2SxPExVTV7HzNigimtoRmoREHx010cxlK5eZq5D4zsaJ9Ku47xUCT75l29iog7-BU8lBjVzleswd5zZuzeJKrtc9L3KInAHtcGLMpctgvf3KVL4IPuTuZz_oCeFAUPMXF436Xfqyx73cGjvU2uhnvo2eBKOTdD7nP0g05LILjGs4drmx7HGDnf3HL40WPgOnUrfXZAADFnh4EnjMPaDR6xu2SaG19J4TaXBccGy8__1Tkev1K6tSdg26by0xA4X75cQglnbK27ujJ-8kLNSHoumSKgdc1XAu9zNwJ2SfeW8_8-IKD-aN5q_WT1gyIn03pguhoXBnke234o5LdqMribONx6eGzuu4JxCRybiRvfGngo-d4v6JoLNmLdp8E_LBJo4-5LEq27A5pcFoH2WTp&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -347,6 +355,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -382,6 +391,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

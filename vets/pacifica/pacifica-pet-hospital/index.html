@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Pacifica Pet Hospital","url":"https://scrubby.app/vets/pacifica/pacifica-pet-hospital/","address":{"@type":"PostalAddress","streetAddress":"4300 CA-1","addressLocality":"Pacifica","addressRegion":"CA","postalCode":"94044","addressCountry":"US"},"telephone":"(650) 359-3685","sameAs":"http://www.pacificapet.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":204},"geo":{"@type":"GeoCoordinates","latitude":37.6119707,"longitude":-122.4892959},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJVVWOKWJ6j4ARxYa1P0gD6dM%2Fphotos%2FAU_ZVEERAy57HSf_cQLjvfOhk66W68-8L1H2IMAfDRnzDGB5L22MWc8_zIK2DYpQ3Oio7v6YiNBLzTjdU7vwsj2KLeIAENFhBYyTCWwblwWiK0AbjSAJy-t5imwDiS2QWeyyssp_j8yKW2S0_QwTd93wPRDU7d82MriPRHbXNYnTlHvRLzD8ykt2cVrNd4YwAqY6C1QIXdnpOSeL5o9Wov1eUxEfFCr693piuGnRP9PETg-oc3fcIX32m9otqQyUsI0j8PS3CublQZd01HlGnlKQgIr73wHbBJ2MJ-_8eQp2CozNTw&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:30","closes":"18:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:30","closes":"18:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:30","closes":"18:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:30","closes":"18:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:30","closes":"18:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:30","closes":"16:30"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

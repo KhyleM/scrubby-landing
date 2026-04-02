@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"GoodVets Streeterville","url":"https://scrubby.app/vets/chicago/goodvets-streeterville/","address":{"@type":"PostalAddress","streetAddress":"227 E Grand Ave","addressLocality":"Chicago","addressRegion":"IL","postalCode":"60611","addressCountry":"US"},"telephone":"(312) 509-9170","sameAs":"https://goodvets.com/locations/chicago/streeterville","aggregateRating":{"@type":"AggregateRating","ratingValue":4.4,"reviewCount":323},"geo":{"@type":"GeoCoordinates","latitude":41.8916529,"longitude":-87.6215163},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJdaGWsKssDogRWA1HoeVuQJE%2Fphotos%2FAU_ZVEHCw2v51NUwNNnmN7bD4m2xOPvdW91DmvRRMurX2V-RkSNTp4KGo0MY5-6Jr2P-wJbwzliUYKFYekpv_M1BfSKA3fVyncRWRhcVxzOQbGSGDrRn02xNXzyfzlFaf8XDHS2SrxaMqh_qHOFS0dLlVGw5S9W_FEEZlEbW1eojxUyLixNqHj1YGHcVSJT66DXt-czS87oVKKRgNdZ5JiAbfMgsUuIYj0-piJBLJf8p23Y5BcNNf9C85CR4wDQAYrthUWhraAVus78aIMzH_MrV-v8523UUp5u2S_wTRbRckEXduw&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"08:00","closes":"18:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

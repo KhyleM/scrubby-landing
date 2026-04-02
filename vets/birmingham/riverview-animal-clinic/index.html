@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Riverview Animal Clinic","url":"https://scrubby.app/vets/birmingham/riverview-animal-clinic/","address":{"@type":"PostalAddress","streetAddress":"4640 US-280","addressLocality":"Birmingham","addressRegion":"AL","postalCode":"35242","addressCountry":"US"},"telephone":"(205) 991-9580","sameAs":"https://riverviewanimalclinic.vet/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.6,"reviewCount":637},"geo":{"@type":"GeoCoordinates","latitude":33.4272605,"longitude":-86.7069449},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJv-T3sUwWiYgRXtMSsV3KaEU%2Fphotos%2FAU_ZVEHzQ41JwH_LOtSsuJgtF7BahAiRA-OsOT4jLlHjSG_tIxdfCzM72W6a_ph-CcBXuY8GvPdqclZmFBDgfIcHM_ULmOCyO7txkq0AxE08vX5TAk0k8TDZkUJ7YhJi78zfp07lclCkk9_SZHvhaeRB3C5B_Fz1fJciztQWPRcHUKY66PJt_46z8WnSnaK2QvMB8trjft-X_Ataqohgzb8d47kaZ7OnPPELy2c6Wk3UBlYwmfqi9dwlp1q0oK4OupY449O-LFqmfYVit-Hi5QrmppeSw94K-lnoH-p9_pt29HBbAQ&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"07:00","closes":"17:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

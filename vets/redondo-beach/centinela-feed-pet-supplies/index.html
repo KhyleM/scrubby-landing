@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Centinela Feed & Pet Supplies","url":"https://scrubby.app/vets/redondo-beach/centinela-feed-pet-supplies/","address":{"@type":"PostalAddress","streetAddress":"413 N Pacific Coast Hwy","addressLocality":"Redondo Beach","addressRegion":"CA","postalCode":"90277","addressCountry":"US"},"telephone":"(310) 318-2653","sameAs":"http://www.centinelafeed.com/about-us/contact-information/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.4,"reviewCount":142},"geo":{"@type":"GeoCoordinates","latitude":33.8483704,"longitude":-118.3885618},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJq_HiQZ-0woAR4n6EZ6gNwX0%2Fphotos%2FAU_ZVEFfUWhcEsmWhge--6Q7qZdBiVck4pkUaQPpup7OtPEeZl8h9g0tB8sP2FUCAD42UhArl9ZqUzBpC02atL2sFhmZ87FvrAp-e_0a6makNiJtzx3pZ4lxYkrqUY0FCmB22GAmwr07wyZnXeSFU1peA_56AOOpmu6Rk6HzElg6WzlwAuzzit_-lkicuGC7YB8gOtdkGUvETBqwDRSNWuchk30X7JM0ylKqhcoRAjJctcvLkBtb3w20AKQIrLx9DYM7YA4e8JPdwIc2r3WD081ctltwxhtUMRTTa4vfsh5znZcl4mb9mSff0s1PIKEdMHAwai3J2d3Tvzm3QSNirLambmoAd80X5v45oqywwWMvRgFXgclQRAWHcrSv5yk8LMqERpWRAJKiBOOZUVYewWWu3deRZ3eU9Lk-4KPP67t8HbLQ6g&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"10:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"10:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"10:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"10:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"10:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"10:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"10:00","closes":"19:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"San Diego Veterinary Urgent Care","url":"https://scrubby.app/vets/san-diego/san-diego-veterinary-urgent-care/","address":{"@type":"PostalAddress","streetAddress":"2860 University Ave","addressLocality":"San Diego","addressRegion":"CA","postalCode":"92104","addressCountry":"US"},"telephone":"(619) 977-1114","sameAs":"https://www.sdveturgentcare.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":3.9,"reviewCount":60},"geo":{"@type":"GeoCoordinates","latitude":32.7486733,"longitude":-117.1322265},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJR5K82-NV2YAR3Sr7JUeag3I%2Fphotos%2FAU_ZVEHE4jZ1t1L1sJLbmNz8fClYW9-8j3I97GO2U6N48WsOvmC-CVarAuqJOnrRIjYyNpb_leVXi3XePljcUyz6031whHbmI6GM_vpNmCa4-UINJ0ywQAaZq6rRQ_wCsB8HlBr9fiWADPYN6-lF7_yva4ZpTQQxMWNuXH004FxGXdX07Q4fFhYbOKgWJIc3Dc6gdTOkcmbVA-2KvMQj4gz9irqnAyQ6k84Iq93HTntb3EWyfNWM51bO1-vjC1AEXzmHzhXwMb4sUy3iEhPiiOFAibpVTwTZ9IzDv1aT0Dk-abOh_A&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"17:00","closes":"00:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"17:00","closes":"00:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"12:00","closes":"00:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"12:00","closes":"22:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

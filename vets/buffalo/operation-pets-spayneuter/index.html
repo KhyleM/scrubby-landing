@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Operation Pets Spay/Neuter","url":"https://scrubby.app/vets/buffalo/operation-pets-spayneuter/","address":{"@type":"PostalAddress","streetAddress":"3443 South Park Ave","addressLocality":"Buffalo","addressRegion":"NY","postalCode":"14219","addressCountry":"US"},"telephone":"(716) 783-8998","sameAs":"http://www.operationpets.org/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":898},"geo":{"@type":"GeoCoordinates","latitude":42.8060687,"longitude":-78.824205},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJCe3YfsMP04kRAgzBg-9O9hA%2Fphotos%2FAU_ZVEGQQ_aMW0cpmqY62O69ySBetdRDpQOPk1hMeKX81x0LlBz8bsBuLSsntCeRU7LRgiY9bYtIGrPYeT445RRkApGG3Dl8ZmGRCPkil9w04RnnXHteJ1pHW84PcGYGnNRu5WfvzyrhK9m6jBd4MuQE63w3JE-BtJwT1hMEhJjF9pY9ILvzXMSKQLcSnYv-gYYfEfNWBKQYYUd0MbZhUgB5j_M2MiKlnGmc7g8sn2xlcqrpzDkTeCACtd7ZqXsc0O-LfPLatWf7YSwHb0YOJ2tlVcr2jTrkMUcBA7vTVnhMVBwafTPoR4TqymNN_0Jt4FucPa-XtbxAoSjFXQ2RFVUSr870UC-Joqxab36wUBfKkdU1C8KqeAjMCheIPnrnJ0DYaGNnNa4W3HbRfVyG4h-36krI6iWzofzrqZAEhnGWJo1_SK2wmBu620J3QtVRXtGF&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:30","closes":"15:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:30","closes":"15:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:30","closes":"15:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:30","closes":"15:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:30","closes":"15:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

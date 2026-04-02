@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Doggy Deuce LLC","url":"https://scrubby.app/boarding/oradell/doggy-deuce-llc/","address":{"@type":"PostalAddress","streetAddress":"297 Kinderkamack Rd","addressLocality":"Oradell","addressRegion":"NJ","postalCode":"07649","addressCountry":"US"},"telephone":"(201) 820-4727","sameAs":"http://www.doggydeucerml.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.2,"reviewCount":20},"geo":{"@type":"GeoCoordinates","latitude":40.9506756,"longitude":-74.0326225},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJQcSGZ6j6wokRlVtOE3XL9mU%2Fphotos%2FAU_ZVEF1rGKHMFQVspItrN_04sIW5h3oZ2sDvqqk2TQ1wAS85OklQ7jDatQRIFUSr43oFAg9C5ni0RjaGD9ISpCfuStM0wFdv5Qy13BqLZXMeCVC0J8GvRVXhcxgpfj2Hmkjt7ZqVZtrtiS08nKitiPRoDGk1dpgRSp3Q1WnFQzZ4UIOlHs8c2TnQCRG5CCN9D6oOU2qoYgXxzRITZqjTt07FEiFCj1HXSrb7KARA3LWm-Gy1fGmJ7cvaC6onJdJOGBKS-O6Luv-FwILzm_QOV3R-TLWSZ5Jeq33h9Mt9epXqe6pIA&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"00:00","closes":"23:59"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Rivergate Veterinary Clinic","url":"https://scrubby.app/vets/new-york/rivergate-veterinary-clinic/","address":{"@type":"PostalAddress","streetAddress":"648 1st Ave","addressLocality":"New York","addressRegion":"NY","postalCode":"10016","addressCountry":"US"},"telephone":"(212) 213-9885","sameAs":"https://rivergateveterinaryclinic.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":429},"geo":{"@type":"GeoCoordinates","latitude":40.7457166,"longitude":-73.9716251},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJV2AKJQVZwokR2XQyki1Q4Kw%2Fphotos%2FAU_ZVEGngHnw-Ae0XOrrFebUHwWI4GrDHbe3YK9seoRhDfOKh_qUiCWYQkPVGyqrSdQpWkyJMu4ysb--13tN0vmq0g6kFRmQhhlqOZV7P9FBZ2aN3KFKj5005oen6ChLMEJLYU_ebLb77bxXZQV_rgEZSZKVBkz_QySBTiWm-Jf6SQUqbnF9tyUkuZEDj6WsDFjNSHBO0x0Yj_V6_nQgC_xlT2nZwKAGvx5emvHYjvqHXuTCtM7V31w9H2Rl7294buIHM-C6q-UkjyWcQZm9472YI9S8gmoiUXzg-4Y1PbLt9zJ0KQ&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"17:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

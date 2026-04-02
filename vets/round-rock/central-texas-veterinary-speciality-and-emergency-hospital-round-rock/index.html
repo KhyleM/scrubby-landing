@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Central Texas Veterinary Speciality and Emergency Hospital- Round Rock","url":"https://scrubby.app/vets/round-rock/central-texas-veterinary-speciality-and-emergency-hospital-round-rock/","address":{"@type":"PostalAddress","streetAddress":"301 Chisholm Trail Rd","addressLocality":"Round Rock","addressRegion":"TX","postalCode":"78681","addressCountry":"US"},"telephone":"(512) 982-0535","sameAs":"https://ctvsh.com/round-rock-location/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.3,"reviewCount":1222},"geo":{"@type":"GeoCoordinates","latitude":30.5091826,"longitude":-97.6891941},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJqaehy_LRRIYRpBG6gSSKEgY%2Fphotos%2FAU_ZVEFQjloG4nntcrITkBcrABdbC4ZIEW2wvsn6i8FrXGB3u0OI02TcZkCNin_VjERB2sp6nsEKw27cXsebto_9itzg2mLIT01V-EX2Mai_dEhGkOg9hV8qy5hBHWkUG7S1GZhsjt7-1YC9kSpxDEN7wAZgxM2-B7vZOyAvPB_BkUVqN3V70jSUqqUyUG2JORbAO5ivXibVkAIt958GPOn1FSX4T6svn3sIKseSmqCl2UttFvir4ZkqiGXJ_7TctQaJp1vxtI77BtJR6OyIORLHeOaAY-VeSVGfklilJcVvnKshDA&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"00:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"00:00","closes":"23:59"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

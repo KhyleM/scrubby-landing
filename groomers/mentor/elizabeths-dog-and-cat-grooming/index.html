@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Elizabeth's Dog and Cat Grooming","url":"https://scrubby.app/groomers/mentor/elizabeths-dog-and-cat-grooming/","address":{"@type":"PostalAddress","streetAddress":"9363 Deer Ridge","addressLocality":"Mentor","addressRegion":"OH","postalCode":"44060","addressCountry":"US"},"telephone":"(440) 525-4687","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":43},"geo":{"@type":"GeoCoordinates","latitude":41.73149,"longitude":-81.3031183},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJM17C5x-lMYgRrYUD_LsaBos%2Fphotos%2FAU_ZVEHDJdXDJ8zNnjDgCHp5DB8jzLIxvIWiv4xi-mOtg5q_FyAKPg5M3wlwn0dBYo-_zY9cfsC5D8zxTmtPSzPZpiCGwQ_GI_8yq8gRFuzkU0vHclGxV82yMWVhszstDsXSrA_8qGNMbljmoYkYsurnTaoemaVAv3W9F3odAAizSyQY0h4-inl-zmiWumANjr-E9L3JKPCFBqWV_mjSbxGQjLdY2bxOR4KMVb2jBzAoznUAZVMWI_-rb-x8vkE6m5ey_LP7FUInBeX8zcHCnvBEoTAlEozfjzutG9vhTSR6hNgxvyyq4n6i5EQntf38LSeqHvRi-CPmuEIzWK5cwr_cavVPfjKOdYTCVCJ4dMf1WcpV3ae_hayRDnlwswKbU6_xycsicAsiMTWhYv83t4yXJ1oBKvodzd-YrS7lAkaN9AbqUg&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -347,6 +355,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -382,6 +391,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

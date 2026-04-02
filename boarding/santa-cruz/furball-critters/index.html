@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Furball Critters","url":"https://scrubby.app/boarding/santa-cruz/furball-critters/","address":{"@type":"PostalAddress","streetAddress":"VISIT BY APPOINTMENT!, 145 Thin Edge Rd","addressLocality":"Santa Cruz","addressRegion":"CA","postalCode":"95065","addressCountry":"US"},"telephone":"(831) 428-3031","sameAs":"http://furballcritters.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":54},"geo":{"@type":"GeoCoordinates","latitude":37.0686088,"longitude":-121.982193},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJV8l92684joAR2RNFzNwzd7s%2Fphotos%2FAU_ZVEHT6C6ud3wx1Own9hyVeDVedHWuQyvxnABDJwdHw8mKrmzSmQ3Gq5ucXzOALD7zv_CvAs1lLVVKRz02vVe2ZXGr-VBYLr3A8EGcnNhwakg5lwEd5ft3rjgmtax3GrGmBknrO2CL64GLa4-SBgCD11HjiWHn3QqIOmlySzk73o1FAnzLtDiJfx8USnVQJwsKdRnVL0l7AQn3McU0cj2yIE0wcXKNntaZadvrgWXjJvD6KuApwQIztuKw0-MEpk4hiBNVSEM3ywaWz2KnxUcVaJCLx7K8eMA3tWds64jkTWAyLw&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -352,6 +360,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -387,6 +396,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Ken-Ton Animal Clinic","url":"https://scrubby.app/vets/tonawanda/ken-ton-animal-clinic/","address":{"@type":"PostalAddress","streetAddress":"903 Brighton Rd","addressLocality":"Tonawanda","addressRegion":"NY","postalCode":"14150","addressCountry":"US"},"telephone":"(716) 834-1636","sameAs":"http://www.kentonac.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":545},"geo":{"@type":"GeoCoordinates","latitude":42.9908928,"longitude":-78.8395089},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJWf3WHYpt04kRyEPtP0NtrBc%2Fphotos%2FAU_ZVEHvxHTywMGJWMkgQk-kxPqokRM3dXy4wW9SreW9Hl2g7B_smCzXp974MqxNji7BC1Z8neJwbckr1mTnDqPXw1gvm9Oo8nsurdDSjLv_ohBoyXXPlsbMytPmcIT6p_3fTataWlPv095b8KvTuTJXAFUZn_u0bzCv55Q91Nuf66st8HJ_x4mHpUrRnb2BW1JM7xQoPM2oX4_zBq3ma-Au0LJ31566IK0jOcjahl-CWJP5fI8yYPVDnO750TFFuRo7dYSwgI8Jm20J8pYxH7if1hfq99qku40w5FpV0dIRq17aMQ&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"12:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

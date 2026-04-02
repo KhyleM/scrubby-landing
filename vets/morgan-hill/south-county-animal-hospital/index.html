@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"South County Animal Hospital","url":"https://scrubby.app/vets/morgan-hill/south-county-animal-hospital/","address":{"@type":"PostalAddress","streetAddress":"15790 Monterey Rd Suite 500","addressLocality":"Morgan Hill","addressRegion":"CA","postalCode":"95037","addressCountry":"US"},"telephone":"(408) 779-6867","sameAs":"http://www.southcountyanimalhospital.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":220},"geo":{"@type":"GeoCoordinates","latitude":37.1108212,"longitude":-121.639247},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJR3hd-3EgjoARknONwu0abfg%2Fphotos%2FAU_ZVEFKZJrLGljDst8jiOdSFKFj_TKP4RZry8iY4LlKQarrpgQvOTm0lbdRCdIrM9c3YH35MNDZPuW2jxR0WH3Vwb1R-GL5nmmBXT7aWy61M7vrngUCCXoKSGVtqrNTUx1FxNOYsoRgC8E2jWNRRr3eXWxapYfWbE7K-4dYbM-7ZgN1AtTQuOdslJgbLTh92aRenq9Jc5viGQdUlZ-FosOleIgMwiSBOiLjQij9Te4i5IktxY_Nq8tUWlN9beYvFo8ZtCKiA5pPLsb13IIuRMKhqTt2e-T5eYErxJvx2R5n5z8On_QkElGdFu9aci4vRwZtUH5XjX-lhGobD-vwEqAC6Q5uslLXw_RSOAN3o4Ngfkk2brBfqS7Nl7mmOzka3EVa1vg062yeYUdoLN-cae5vQogqHesxH3aL51mjwACt5_VWtgU&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"17:30"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

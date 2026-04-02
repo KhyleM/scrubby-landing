@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Puppy Playground","url":"https://scrubby.app/boarding/indianapolis/puppy-playground/","address":{"@type":"PostalAddress","streetAddress":"5266 E 65th St","addressLocality":"Indianapolis","addressRegion":"IN","postalCode":"46220","addressCountry":"US"},"telephone":"(317) 723-6419","sameAs":"https://www.puppyplaygroundindy.com/locations/indy?y_source=1_MTE2NjkwOTEtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D","aggregateRating":{"@type":"AggregateRating","ratingValue":4.9,"reviewCount":345},"geo":{"@type":"GeoCoordinates","latitude":39.877696,"longitude":-86.0803919},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJPZRu_XZNa4gRVkz1Z9aXIjA%2Fphotos%2FAU_ZVEGIdWckD1RfuQRCelUyd7rPrEL_Z6YdIIENXKPYOxfT1XjVYKxgmr1cgGX0nR5SrPmtLAZu7a1JYDWSrkttS7H25LJKptoIZ6yYHvWIaR6rESf0IVP928hxVpEmlkkZBfmR9m-E-curcwQeBGl4eND6q0cV92PLbCB5l_8zuaxRCncTxuiDV-VmhLzWfqm7IspVRiNY5D4v6NEUAwFeeKzWZmSwlHH-lvKp51v9-Z1a5v2Iw7VqY_Xt70mgT_MuNQR5snMda-FHntaPbokHI1VOPuD6q4fukZUo_N3fnaDflZS6B8Ij_w5cRy3UM6Pd-UvvQerWUKk6E_FPERtbEVQCZFZ8DWEUMVyUnaiRdiJU6F90N_EWrDj2y3BBGOOHVOGjKIX6c_fEFj6nxJbkDacZ3yUhdKA2KjN4_AFOpY6k9zvmsyzsCYirWhNSXv-s&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"10:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"08:00","closes":"10:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

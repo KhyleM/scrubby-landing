@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"My Pet's Place","url":"https://scrubby.app/boarding/littleton/my-pets-place/","address":{"@type":"PostalAddress","streetAddress":"13059 US-85","addressLocality":"Littleton","addressRegion":"CO","postalCode":"80125","addressCountry":"US"},"telephone":"(303) 683-0330","sameAs":"http://www.mypetsplace.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":168},"geo":{"@type":"GeoCoordinates","latitude":39.5516842,"longitude":-105.037023},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJAw9ROTOdbIcR8YhSzebxIe8%2Fphotos%2FAU_ZVEFhnIgEM5qEomVB_xg65xGBs4I7-SiBGbiiqUcgNXdHwgNQddWYbwZCUGDLluRPyZJZmN61ooaBgxjH_R7mNO8hTDe6sv7E5LQdaMYU7bqiUNnx2qouGn32JZDEIpgfGIukFDzx8PhZQrLgzZu7gkqVMynS6YgrnbZ7QNSPIIRNRTh396pAc_zfiqYuWri0SNeXOwPOIsxtyr3bKXITJbNSbNRmvSfHnFMff5pPstM8xURZCHa_qlgd-Mwfz1tVKB_0etADTKcC_luazeNFaTmULtTf4uU73VZKhnL3_9E&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"06:30","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"06:30","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"06:30","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"06:30","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"06:30","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"14:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"11:00","closes":"20:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

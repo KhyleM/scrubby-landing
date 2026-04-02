@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Poodles N' Pals Stylist","url":"https://scrubby.app/groomers/peabody/poodles-n-pals-stylist/","address":{"@type":"PostalAddress","streetAddress":"23 Tremont St","addressLocality":"Peabody","addressRegion":"MA","postalCode":"01960","addressCountry":"US"},"telephone":"(978) 531-0036","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":92},"geo":{"@type":"GeoCoordinates","latitude":42.5299543,"longitude":-70.9247052},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJT0lfEZcT44kR-m6UJHWUh8I%2Fphotos%2FAU_ZVEHO3GCF1cV1Bz2ASq2h2Rr9eg-lK2hoCzgKzmpF8l5RFE8dh_E3Ig0RKnzePNstwmox4so-X4CdjxZKvamwHilY6EPlaNTL8LrC2UjoZVPEuGjAJIGbIfUhwqH3dpezR9W9w1gOEOrtoR3kKu_C5soKMLeCIEdedI0XFaVIjN5qttTHV9fU7gMcmliTBiElgBRQNEhzDOa68FLCd3RjgVtDXg116A0-QuKYtG5-n9hXYd-AU4VKWfrKRV8dA6lmiiIff0ZK5z3EXeXse9ShHx_ZPIW6CMb1ikHEf7V2S8IKB1Om2essRiz9vonA0zjVTc3QfvzeOzJG9nHmRfjrKPkjH6O25gX6tKOrspjbC31LndYFo-g7xyYykAaI0u1rLaTnYnea8xvzohuKqap-utJz4XsLbY7wnJnyuA&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -347,6 +355,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -382,6 +391,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

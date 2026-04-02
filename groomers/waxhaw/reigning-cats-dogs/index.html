@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Reigning Cats & Dogs","url":"https://scrubby.app/groomers/waxhaw/reigning-cats-dogs/","address":{"@type":"PostalAddress","streetAddress":"700 N Broome St","addressLocality":"Waxhaw","addressRegion":"NC","postalCode":"28173","addressCountry":"US"},"telephone":"(704) 243-1946","sameAs":"http://www.rcandd.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":68},"geo":{"@type":"GeoCoordinates","latitude":34.9301485,"longitude":-80.744858},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJU0gzFsArVIgRNtfjBmnMLt8%2Fphotos%2FAU_ZVEH9DjBjgl_kxd1sLE9M9_XBvr6L6Qb_Ye-fFMq6uN7FmeCCA1P_WPOq4RK0dtQ4_nCrITjodj_E0VfQdx7aPMPwuQhNKc9MO_xURu_PEY2pNKqjvR0hoZcBkRR-KWz9VRNNbuVaFONcfXSlcK-O0pzDN5Xn2zL86-l2IdHcsTXKSjH3fK7pC3J0CqS26NeK6ZCtKYsaOAJjbTv346nzLjVvorytZLq5RHNztF3FiDvxybaIcEKbrsvCwW7xQ8wbngR6BkW7MKjRMBnXOFDTrzCDyeelwmk4Z8wHJ5qUjGmmZDiDIu90UTuO8FxqdVPBdLHQEXJJxmFpeTAZghKFQK37zH8Mh8LbL4mMNQqKeM1REkOhqCREeNsubC6yWwIOaVkrXNzxbEohj7-LwmJSLM5ff-MVfyI2yRKbG1mBns13geg&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"09:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"16:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

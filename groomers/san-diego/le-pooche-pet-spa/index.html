@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Le Pooche Pet Spa","url":"https://scrubby.app/groomers/san-diego/le-pooche-pet-spa/","address":{"@type":"PostalAddress","streetAddress":"4804 Gallatin Way","addressLocality":"San Diego","addressRegion":"CA","postalCode":"92117","addressCountry":"US"},"telephone":"(858) 272-4301","sameAs":"https://instagram.com/lepoochepetspagrooming?igshid=MmJiY2I4NDBkZg==","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":53},"geo":{"@type":"GeoCoordinates","latitude":32.8358033,"longitude":-117.2228729},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJp8QpyQIB3IARuoVoIi8cjDQ%2Fphotos%2FAU_ZVEHwQ5ImteRcBlYhCAFlgR7WEpWh_GRfdgCtHFfh32O3t5WETPYZnD2Ph4V0omVDv5K99rXmDEelHCPxgPKevfknHEcGPRq4wGAE1kYmW15i6utrdR3XFTpNSh0r_PlpM0LusNtho3HRa9Cjm7f1rqzRwi5Ptm7eNfFNwtsRJfVsNfmflW79zBHHTreRghUtW6XKPj2sQFssF240h_ieKxQlYw9D1OJzquxXdq1t2aemHKTe_E8_XFmjwfQvaXeLL7wwW5mx299_E4WsGDDzfBA-rPHV86nQF8Ylsl0jWmwweA&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:00","closes":"15:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"09:00","closes":"15:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"15:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"15:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"15:30"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

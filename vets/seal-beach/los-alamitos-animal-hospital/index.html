@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Los Alamitos Animal Hospital","url":"https://scrubby.app/vets/seal-beach/los-alamitos-animal-hospital/","address":{"@type":"PostalAddress","streetAddress":"2365 Seal Beach Blvd #105","addressLocality":"Seal Beach","addressRegion":"CA","postalCode":"90740","addressCountry":"US"},"telephone":"(562) 431-6925","sameAs":"https://losalamitosanimalhospital.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":322},"geo":{"@type":"GeoCoordinates","latitude":33.7588057,"longitude":-118.0821359},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJZ-ol9fQu3YAR5HWApskeGUw%2Fphotos%2FAU_ZVEG0ARXZ8rCPfHp1zRKaMoSOgftxl5cUQZJwWntWJ9dPnKC13l_7eCgl0VlKwD00yBouWtAyXuep39rkfttWyFQjo_40rq_3anolIeDSyMrLYTg41b55gcYVxEexM03CigaMU_ognht46AJmWNwzX9M8PDmD-DBut10y-MAvq1q_OZzD3A_2XPFH1HFwAi8YdiNAcsctKn9Fg7ev3q9bdfCYXCO1N5HjCNy7rrmkXR1mLzsgEoIm9w3_KETQ5hw1GOGuH4yqZeBGBoJus87N5byHO0HIYhui4RFxOuy_3TKhGXd4ViMtTgtAvOOpFu8IhIx1O2fty0mg5-npKpHih4lWbXr_Rm7kYEopKCv8gRnpyoXIxCj5G6i_4CaUC2uCxA8s8dbSvCs2qYjNhA6_q9v4D5y3oRclAKRIMjjaDhunrsA&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"07:00","closes":"12:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

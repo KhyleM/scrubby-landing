@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Cypress Veterinary Hospital","url":"https://scrubby.app/vets/cypress/cypress-veterinary-hospital/","address":{"@type":"PostalAddress","streetAddress":"11950 Cypress North Houston Rd","addressLocality":"Cypress","addressRegion":"TX","postalCode":"77429","addressCountry":"US"},"telephone":"(281) 469-8056","sameAs":"https://www.cypressvethospital.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.6,"reviewCount":260},"geo":{"@type":"GeoCoordinates","latitude":29.9528741,"longitude":-95.6017452},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJZzH4ZSvSQIYR4CRfBlSpN4c%2Fphotos%2FAU_ZVEGSTdAcCBvXXOE1--c7mtEfCkT4C0jHJ9qls_kCiqIj9L3bCqacXkzUAVmyyjGSMlEsIckJBpb2UDcTu5atnruoKAK72vYHm3YGK0Nj_XtyJvX9-WhUE0YcN5rI2PUiGwmHy3kJPiRDLdOnjEvBvy7Dkb4y2xqbnDu7ru8uk6t1pJJXLo90Tgc96nFtrYkksPAvt1S_ngAWzT8z7wm3ZsfLfKBRtChphp73O2jo8Uuo0b1hcTpTi17elsPvTMs9aXxxmtbRBdchas4iAHrdfwNzoW_6Zs0B1A69Chac8KkfSw&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"13:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

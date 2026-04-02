@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Family Animal Hospital","url":"https://scrubby.app/vets/costa-mesa/family-animal-hospital/","address":{"@type":"PostalAddress","streetAddress":"1525 Mesa Verde Dr E #121","addressLocality":"Costa Mesa","addressRegion":"CA","postalCode":"92626","addressCountry":"US"},"telephone":"(714) 434-2830","sameAs":"https://familyanimalhospital.org/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.2,"reviewCount":294},"geo":{"@type":"GeoCoordinates","latitude":33.669682,"longitude":-117.920508},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJwcln2GPf3IARovRghVYFIeE%2Fphotos%2FAU_ZVEE7u-ZG7Szya1x75ae8t5W2JhMFdXB8TMpTZU9Lo83BPS2IS-kTS3W8Jb9EXNbXpARJ3Lc0EuzWqgBOGl6lPiBDewoQJKhDA7Jm5ZWYS6l8JnYEOZQnrElqvylz2dNUIEcJU7WUO-v8jmA3T8g7LFM8xpRqfiSozAu7AAhgUhaVH2U3G2vj_CsFQisE6FjYn7mcttFrvip2EsrQ43l4a2AbaegcbgornvrYFJ3kBsux5xayc3NizhseKZTZNPPfjbLpr5qDe4wrkH32E8An_oHPObjhhbWDMWO0VY5R4bH0UYNR8qmOS_8AOeqstuQEUpj3X13n0yQ69M2iLojX0dh1rnPn6aNVex6ZyXflEyunJmWmEVrIWVENvlZ4gUDsl2oFgfzbcIezDFM3Bqs4wVjSXqq2Bxft3qH41kKEmx5iuw&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"17:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Ahwatukee Animal Care Hospital","url":"https://scrubby.app/vets/phoenix/ahwatukee-animal-care-hospital/","address":{"@type":"PostalAddress","streetAddress":"10855 S 48th St","addressLocality":"Phoenix","addressRegion":"AZ","postalCode":"85044","addressCountry":"US"},"telephone":"(480) 893-0533","sameAs":"https://www.ahwatukeeanimalcare.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.6,"reviewCount":378},"geo":{"@type":"GeoCoordinates","latitude":33.3471713,"longitude":-111.9798631},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJAT27D7kFK4cRKNSMb7rJWUg%2Fphotos%2FAU_ZVEHXiAvEg288CDSj6LpdqRUmNhKf2S-LFGjtlfTb3NsxdT8Zz_Gr9PH9cgmvCey84hIA92VUKkNPhs3LYzI-9_GanUIJJ4uYrt530xizzIQg9_TJpvZOK9WfRli5yIKFsM63yJjZfPpynJDt79Kc4on7K22MrLeFgiM_B3iRRbxJX7nRMZvo7NP77d3hQwsnj39DC7BdZWRnQjPWH6Jtla5KMGvCKeUU3-jIx1SuPMT2NPoKR19IpxJQzaZqaV9EmyijNXnlA_LoviR_kEZfHjwSMbEG4uLWC6QcyWfPehjyEg&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:30","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:30","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:30","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:30","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:30","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"10:00","closes":"20:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

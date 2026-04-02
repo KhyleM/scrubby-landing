@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Brighton Animal Clinic","url":"https://scrubby.app/vets/brighton/brighton-animal-clinic/","address":{"@type":"PostalAddress","streetAddress":"180 E Bromley Ln","addressLocality":"Brighton","addressRegion":"CO","postalCode":"80601","addressCountry":"US"},"telephone":"(303) 659-2472","sameAs":"http://www.bacvets.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.3,"reviewCount":345},"geo":{"@type":"GeoCoordinates","latitude":39.9719742,"longitude":-104.8215022},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJS0H9thJtbIcRtqZhCmZhgUk%2Fphotos%2FAU_ZVEHpJsgR8pFT2I21xXs-0g4ClPQYBi8vXYVQ6o-_xL1Xwyy4OFkAT8PL8YlwyfWPwRuLsh8XQAhIPER9aE_FaxerB_JRc9Dy6VHEzwE3rMExze_aCxubmFf272fSgEU-o9z8VXdS3HfuL0vq8tR_1Bvnp5d3qU714fmeXjKpuk-iHTlUv6AJcP5PoZcm8aodkHzw1y3v-aOrVrHE85q1Zzz1R-mLhdZ5FXH3vdbGfeivrZMG57AHPHcEEvzraofhB_YXnnmp29nSO_PDOnoG0Ja2D1E1sta46xcyLS_VqCLo_CISpRh5nQuIvpO9oQMciM4jZHFn3gawspvCBV2wEl8olhSj0SwbuyauqTcY1aY3y2kSD6QLFlx6Tv11UjY3r8L1UkNQicC0QptgLBpJhIsgMDD0-XT9ILtjcx0YFLyArA&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"17:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

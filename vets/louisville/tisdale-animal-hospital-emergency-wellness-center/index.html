@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Tisdale Animal Hospital Emergency & Wellness Center","url":"https://scrubby.app/vets/louisville/tisdale-animal-hospital-emergency-wellness-center/","address":{"@type":"PostalAddress","streetAddress":"Chamberlain Pointe, 4648 Chamberlain Ln","addressLocality":"Louisville","addressRegion":"KY","postalCode":"40241","addressCountry":"US"},"telephone":"(502) 384-3260","sameAs":"http://tisdaleanimalhospital.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.9,"reviewCount":398},"geo":{"@type":"GeoCoordinates","latitude":38.3107532,"longitude":-85.5687698},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ6XTxvEafaYgRdBMKyXIbIbg%2Fphotos%2FAU_ZVEHqjn_dfUg-UTrwhcri475Gp1xq65lS3zqSz5TkmEVo6LFCqFZe_X4ECx3NFQf4WJupjkeiCqMmOfWtsDRvMnwKHYS1yaegwy8rLQ192WbcgER2A5Kjyzd3znz6DXFZXUAQln5Xl-buff6wyXmJW1upGjuh5h-0cd11pyBV0YfKCufgZO9_6raDPhHq51RnNuEff387EX9SBPJg4-GIIDvz6weF2o4VZI7OTjzH3_Zt-35SDymf7AVIw6rBxTEYKXbExJN8_m3ea8HQTFceeOuk1ab5Eu3NV8RWPrhMf2O3xw&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"01:00","closes":"23:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"01:00","closes":"23:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"01:00","closes":"23:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"01:00","closes":"23:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"01:00","closes":"23:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

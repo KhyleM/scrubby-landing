@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Cute & Cuddly Grooming","url":"https://scrubby.app/groomers/sacramento/cute-cuddly-grooming/","address":{"@type":"PostalAddress","streetAddress":"8140 Industrial Pkwy","addressLocality":"Sacramento","addressRegion":"CA","postalCode":"95824","addressCountry":"US"},"telephone":"(916) 381-1672","sameAs":"http://cute-cuddly-grooming.lany.io/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.6,"reviewCount":78},"geo":{"@type":"GeoCoordinates","latitude":38.5153933,"longitude":-121.4070889},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJc1nGhyTFmoARkg_EM7PZEuM%2Fphotos%2FAU_ZVEEJG6s5srIHDLM3AN_g_Z4fe0BRN4f9zrk5jAi9xq718dCzU9SxrLJPvSlCxHQAiXJRhenj6AikO7bIrcLljvQoxIR5ERRZ_P8HXgUvsmsBMooVEtr_1NWnU_76rzrtvcwoIU0VFGJ4Ue76RJDR3hLP1vHZkz7CFk6aWfPgOONg9bJblpqAB9s44I1qZaE2YCXTPOe_NlIy7SeU0sQpjxkrpgzg7VKfKjT0-CivF_UQ-_ei7Lfw5ItBXo0AagUbT3wGduM8WUHMXX2z9LXVF0J5Mo5HSceiXkiHwolhE7KR64KGy4EyyTL-lv1PcSc6cUCwbqtjk77zbap0AEhL9qQG6aiEDPl924IHLmCkZjYijfsvujwmrdBhgnPilKQ31lyumbirXuoZcREFK-ACTG3FRWb2DOvLRtPxBifLLPyWU7mu&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"15:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"15:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"15:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"15:30"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

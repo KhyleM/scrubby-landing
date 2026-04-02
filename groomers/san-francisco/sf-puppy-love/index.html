@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"SF Puppy Love","url":"https://scrubby.app/groomers/san-francisco/sf-puppy-love/","address":{"@type":"PostalAddress","streetAddress":"840 Harrison St","addressLocality":"San Francisco","addressRegion":"CA","postalCode":"94107","addressCountry":"US"},"aggregateRating":{"@type":"AggregateRating","ratingValue":4.1,"reviewCount":24},"geo":{"@type":"GeoCoordinates","latitude":37.7801543,"longitude":-122.4008625},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJDXaqONeBhYARF5aNLn8QGWU%2Fphotos%2FATCDNfUv7Y2Xdw3yuyZjg0lP3B8owN3jtPAOvRR_xgvsgjlZ-LUpXQzjBJ6c8PIV7DyxuP_dWVE_junor8IFl3WRTbccFY3wsulsp0dtNUJVaTAubokAS0vn8-P7fzu0vCShbQwc1KNQKi5G3XlolssG5tQrheF5jiRDK7fiSxGMiTUwwGMKZ2Fh4RTZhwM9Z1sD3orMKqWZnXpRmekhb1b50Ckijw2A1KinOERg2Vgtdst7P993LNQeH6n6FruNeKkD6ZLwrfxXNM4B9TovbF5uR1M5o_YrDaangRfD86p3fV72H6VjtCe5czZ6tX-POy7Q2l0NEkpvygJYztlUq7ZYohB6DtzN5Q2xPm6KbRPwAE4afTgDERwNLlKcD9d2uOFvlQvSSMOvgJWcYw7_n5dE1G0W4A-FQb2NICPk2WlRT0bn1bup6W-jWu6llcOMFIvV&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"00:00","closes":"23:59"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

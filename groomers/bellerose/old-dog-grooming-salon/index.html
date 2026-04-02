@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Old Dog Grooming Salon","url":"https://scrubby.app/groomers/bellerose/old-dog-grooming-salon/","address":{"@type":"PostalAddress","streetAddress":"251-73 Jericho Tpke Suite 105","addressLocality":"Bellerose","addressRegion":"NY","postalCode":"11426","addressCountry":"US"},"telephone":"(516) 643-9064","sameAs":"https://www.olddoggroomingsalon.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":24},"geo":{"@type":"GeoCoordinates","latitude":40.7274239,"longitude":-73.7109219},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJjQ_J69JjwokRgJy3k0GiTnE%2Fphotos%2FAU_ZVEGXeSKgXdNfq1JlZca1rh8u-R5HDSBQRHOEm8mVs9L-06uJTaNmz949PxydpF9WAmEOgsGjJ15cElSrCT_3sKjH8-P-SNVuIDd7ntcQc1PYxiwlVIzvXkcnDIoQ6XFfvwu1ru2VjVsyxhkk4ff_Bf_A8y7JznVKph3w1XcFZREdMj7-WN5gQ0Q4QWJEFXJ7H-5ey6hektTvebEZpC2ih-_S88AvUHYfHv0ZR1RMI0aE_Z_0fSuBCm8L1tyOA1VIZfWkg2OW2GdlPdETBROSdKlaWHqgUi4Shp7c8IbLKtbF9mYKZ2Oa0xFDOvSIN1c_0aQKp2YZ_MhOUwLfxz0qfh46nO_odXsWmawfqOw1T65qFs7cYq8tze2Bkh2s6dL9QyMCnaU5CkOpQRhisisyb47yGd0KFwHkWFCxDqVHiC8VVBzG&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -354,6 +362,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -389,6 +398,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

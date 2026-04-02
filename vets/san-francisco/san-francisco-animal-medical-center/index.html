@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"San Francisco Animal Medical Center","url":"https://scrubby.app/vets/san-francisco/san-francisco-animal-medical-center/","address":{"@type":"PostalAddress","streetAddress":"2343 Fillmore St","addressLocality":"San Francisco","addressRegion":"CA","postalCode":"94115","addressCountry":"US"},"telephone":"(415) 872-1872","sameAs":"https://www.sfamc.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4,"reviewCount":300},"geo":{"@type":"GeoCoordinates","latitude":37.7914167,"longitude":-122.4345139},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJRc-jVGFyaIgRDK0_Em9iOYc%2Fphotos%2FAU_ZVEEop152vQvjot3sK3KS_keBEctPKt0THlbk9Pkjp5d12dT-KBlIfUvcbvNLol8OxdoFfzNeQQOEqBdTT4nXtY33e7XG2bGh8TmF3LObfMYahjrUbGIAqXN-x2criUHw3_ZfM_wcjLlAukGKs-HGOYgzTfVhWy1AxjYC_xklDq_FJoyIQMhwOWaNEXHDqGNvc8OYhihKWjm2VugYLmdVK_g7Zpe-FKs5WcbwjRATmRWNT_sBJ2hBAnzXz60Gk4vxZNhtRYtZ6RaH4LqiOUFq3iBZrWQx6IrVswU6dhEvEtKXrw&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"00:00","closes":"23:59"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

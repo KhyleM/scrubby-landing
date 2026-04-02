@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Mannington Veterinary Hospital","url":"https://scrubby.app/vets/mannington-township/mannington-veterinary-hospital/","address":{"@type":"PostalAddress","streetAddress":"279 NJ-45","addressLocality":"Mannington Township","addressRegion":"NJ","postalCode":"08079","addressCountry":"US"},"telephone":"(856) 759-4388","sameAs":"http://www.manningtonvet.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.9,"reviewCount":33},"geo":{"@type":"GeoCoordinates","latitude":39.5926567,"longitude":-75.4473254},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ14wPDmwZx4kR0g2QV1sHyyA%2Fphotos%2FAU_ZVEFe6-qI4JwFYUe-2Cn5EmWUYqsS6MdSMgja6C_koySUo-VzHytVsNKyOgCgMtA_C4cZk5wosqX-WmRGg_7unE2iV7_Dh96NgqaSRdLZpu3BwJXgz_-wC9DqBUGZ5eHXWP-j3OK4XmmwLkUrDRdyUwyk3rGCDFb77QofrBBP-SjNl7Cc4UYdJTczWlrLjXeHmSet1O76LhV6eTUZbl4T1QZcPDit9JH743b9Pu5D-TuJIzwK6ZqoTWEM1rUl82mCn66D6jNWfbaQvqFeTMkThTPPBPPHkqkcEnTsPgl4qjeT0hGvHVUvtX9SDORcmYZymBuicHupngwrALPweWMZIbZQCDByN23aEpnyN3PQD_r-hdHDlsHHha7F4UoYwGLo_4SPizj2LM3rC9xaF7y5JkSA2tDlrH88jYBMuJByLnKFPSkTrDgSnO8Hs8ebIe55&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -348,6 +356,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -383,6 +392,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Lakewood Pet Vet","url":"https://scrubby.app/vets/lakewood/lakewood-pet-vet/","address":{"@type":"PostalAddress","streetAddress":"6405 Del Amo Blvd","addressLocality":"Lakewood","addressRegion":"CA","postalCode":"90713","addressCountry":"US"},"telephone":"(562) 925-2300","sameAs":"https://www.gopetvet.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.4,"reviewCount":523},"geo":{"@type":"GeoCoordinates","latitude":33.8473931,"longitude":-118.1074157},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJz9H-ZIYt3YARohROMg1A2-A%2Fphotos%2FAU_ZVEHrmZlzMiW0IvrJ0JZj7Aa6FajmhBkCYqcEnwp6sRIUG9KWqUisWmHjmd384i3AzJ--rLxdYkFZz21FZLHD5_rIgyGReORVkxcKechUI-zH9BCDmrpZwZ1lgtkQDrk-hhRhKuId3Mmg4RiQoHfqi0syeUNEvuEJLEN6wGE2bZFsjOksrFMq3EgY4azzdLGy1gnWLSg0haGRL1PixFjtADr8ms9t5pJNSiEgR4Br40m8Q-7vCfBBxP4Qd2iobEmm4kqaU643Pqw569_iPcnQdU9cg-eM6bDgDkfiLr7za1Lzqw&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"08:00","closes":"18:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

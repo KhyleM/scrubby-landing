@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"West End Animal Care Clinic","url":"https://scrubby.app/vets/st-cloud/west-end-animal-care-clinic/","address":{"@type":"PostalAddress","streetAddress":"2325 Nolte Rd","addressLocality":"St Cloud","addressRegion":"FL","postalCode":"34772","addressCountry":"US"},"telephone":"(407) 498-3080","sameAs":"http://westendanimalcareclinic.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.5,"reviewCount":218},"geo":{"@type":"GeoCoordinates","latitude":28.222678,"longitude":-81.296859},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJad_7KqCP3YgRfcI2IDRk660%2Fphotos%2FAU_ZVEE7O63IkHJISUkb3-IHuuLXY__7T_bD0jsXFOZjK5ThZEiJOAKbHIrSwq39nJkwsbMl2JuOqzp3IcLPhIqkSNbZZRiAmO6_jvDwS2YIk9OQBrZDMYZxQqActXNQ15e3B6-1xW7rua8El8LyMg7i3gD4XZuWYhi2H0ZOPLoCOkMpT3uVZOy2_d8pZ1GoohJULxkwIz-_baoVfdXuGFpvAbnpEoLA8y06wij1ZPUiex1RNMGs6Qshw1mYzeCCxiVAOQU66jmcK3DcwhoM3dNu7hjgQyvPS8ztQzheZsyfQaAysQ&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"09:00","closes":"12:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"12:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

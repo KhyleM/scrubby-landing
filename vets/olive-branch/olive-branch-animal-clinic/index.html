@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Olive Branch Animal Clinic","url":"https://scrubby.app/vets/olive-branch/olive-branch-animal-clinic/","address":{"@type":"PostalAddress","streetAddress":"10368 Goodman Rd","addressLocality":"Olive Branch","addressRegion":"MS","postalCode":"38654","addressCountry":"US"},"telephone":"(662) 895-5509","sameAs":"http://www.olivebranchanimalclinic.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.5,"reviewCount":375},"geo":{"@type":"GeoCoordinates","latitude":34.9644046,"longitude":-89.8070509},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJw8-CPr2Gf4gR6f0APVe9fA0%2Fphotos%2FAU_ZVEGhi67rrZPIV33zU18CZB8qTMtRq2mMgtfZNC_lZmOZscOgt6S4in0X-ccs30LYnzCepV9k9H_6nICBg9koiuYGAvtO0ENGc9iVN57IXmU8vi8AO8BCx6oUFQEysKAzE-_jrq8NaLLmOIYjcfFxDcUrYUhdbyc1k6sLBz7cdXqidpR45h9ihrZTU_ADThxvwYRqQndkW7wkt02DHDHZNbqHQzZUJeV1b56DUK0X6oaquKjEyL1wpC5oqO7dbPuXBhfLEglTLyLnMI5Upt1YhrTh5boxbcmT37V1oa3BDOYCfnERFCdlBfxz2mCta4F0GIOyvNhV8udyf0DVEdOzZ6ULH-YbFJS1nBcSXY8LFeK30hp_1QZXb64yLdxj81ARtYkb3Dq2ZjdW5m3r5bfUG-Iwp0wrL7dzVc-y4QkWPpA&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"07:30","closes":"12:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

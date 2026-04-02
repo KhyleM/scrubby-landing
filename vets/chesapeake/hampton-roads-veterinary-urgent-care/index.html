@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Hampton Roads Veterinary Urgent Care","url":"https://scrubby.app/vets/chesapeake/hampton-roads-veterinary-urgent-care/","address":{"@type":"PostalAddress","streetAddress":"676 Battlefield Blvd N Ste B","addressLocality":"Chesapeake","addressRegion":"VA","postalCode":"23320","addressCountry":"US"},"telephone":"(757) 271-4669","sameAs":"https://hamptonroadsveterinaryurgentcare.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.9,"reviewCount":166},"geo":{"@type":"GeoCoordinates","latitude":36.742713,"longitude":-76.2439742},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJtyW5RhS7uokRnsalHXVZVc0%2Fphotos%2FAU_ZVEFOUjjAsrRhA3neIsqXiZzdeg3-4f5IBRNK6DR3FCJxq88tmEGD0Ts8vOcIDPEifCLSfUklMx6E76OvLn87PfT-WP9tEeEjpdUKTah83XqNMVyEQQ2hhsQyoCj23aJ8JL9sptEi-bcaXRq0dYrZ2sF84HCeudyD3MkRwTEd0qtIZmZDmTrwZL36Xsw-6zItb00sDGnPvcnZvjdq5-cLpWWFduek6GAww4acUPRUFUkkdd8eRS3aaZRc1Paj4qVbKAffn-OcC7w9sdd180bXvaQrThFmwv4tTLpe85m6A9QkWg&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"05:00","closes":"22:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"05:00","closes":"22:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"05:00","closes":"22:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"05:00","closes":"22:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"05:00","closes":"22:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

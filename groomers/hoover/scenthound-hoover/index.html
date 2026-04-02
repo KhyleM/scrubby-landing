@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Scenthound Hoover","url":"https://scrubby.app/groomers/hoover/scenthound-hoover/","address":{"@type":"PostalAddress","streetAddress":"5190 Medford Dr ste 118","addressLocality":"Hoover","addressRegion":"AL","postalCode":"35244","addressCountry":"US"},"telephone":"(205) 526-4266","sameAs":"https://www.scenthound.com/hoover","aggregateRating":{"@type":"AggregateRating","ratingValue":4.9,"reviewCount":301},"geo":{"@type":"GeoCoordinates","latitude":33.3565596,"longitude":-86.8541478},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJZaDY9KYhiYgRTnI8cOvvVr4%2Fphotos%2FAU_ZVEGMsakj_O8HWNVr4wDrYOfvZB65QLVX8vUOg73yFYoBq_lK3bsRIU6Re82672okym-ED08cI-cuhwjIfHOg8O5Uj5DzR3O_TKJm1uOC8_XXOC2ouM_NBGUvwPSZhH0r3qbh1uhwsBl2Z0P0VJkc4XdCGJ6cRLJ6SC5_54UelokpDhjgwAVKbP5zKkIKw5_eDcqpmm8hWaKpr74DvXbH0K51_FpOEo1BBKU2aEyXspC3r3pKg5W8g-sH2m4kEyDj2mtNb49dwSE0eSJr5aTMYAbIjTL7qUoHSz_wUfw9xtzjFw&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"17:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

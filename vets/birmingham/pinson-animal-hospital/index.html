@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Pinson Animal Hospital","url":"https://scrubby.app/vets/birmingham/pinson-animal-hospital/","address":{"@type":"PostalAddress","streetAddress":"5161 Pinson Valley Pkwy","addressLocality":"Birmingham","addressRegion":"AL","postalCode":"35215","addressCountry":"US"},"telephone":"(205) 681-9669","sameAs":"https://www.pinsonah.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.6,"reviewCount":232},"geo":{"@type":"GeoCoordinates","latitude":33.6741456,"longitude":-86.6956137},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ_xUqWC8JiYgRqDLjGSRYbic%2Fphotos%2FAU_ZVEHgv0jqsSa2VKNPIYO90ENCRYwvtMhPugOPrrDKQ3Jug44-nKS9sfMRW8euDvUCYS-Kx1x3hI5h5oOBdwr0yaPfDD9kp2dQ2ZadRdQYbr7GasHWbp4bKsRo_YtWmJb_qXm-fDY8BoaMoyN3hIvfU9aJ-EUoMQ6mME0Y8aQ0EoPaCdcaIZmFMabQCdxyJKloCKwgnNZkHv5aRGevC3liMwNAN5_eqFTc8s7PG4372-lmvzTWZjp935M0EFwhAI_Ue47tBZSPLjZiYrzYHadhqe_dleHtnKrxS_hS7iv2G9bdLHhgErCLJSlRCB-zdQWEFwA35xm2omL8vlkMv30WjGwq8OVT85-U-x-gHCNVZqkbsHrpiOqSsWO84zG9Ip36EkgOCyQhYFFd34gdTsXZMXQnY9hXLhJMzGY9gHTqM6Y&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"13:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

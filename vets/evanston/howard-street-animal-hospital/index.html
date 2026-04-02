@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Howard Street Animal Hospital","url":"https://scrubby.app/vets/evanston/howard-street-animal-hospital/","address":{"@type":"PostalAddress","streetAddress":"715 Howard St","addressLocality":"Evanston","addressRegion":"IL","postalCode":"60202","addressCountry":"US"},"telephone":"(847) 475-1880","sameAs":"https://allvetnearme.com/howard-street-animal-hospital/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.6,"reviewCount":104},"geo":{"@type":"GeoCoordinates","latitude":42.0195567,"longitude":-87.6812727},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ_7PJPDTQD4gRYK-rkz8TJpQ%2Fphotos%2FAU_ZVEHZRdcvVT9J7ClFE5kllPrm1kQC-9TpqD6LgG5hKPVYDR5QK0FHSs8BXxzH533q2osuwhPh2MSOcIHBq4LQG9tOhB-GUaYeZJTl8D6-tFBFoPnpyLQ_580oSsX_W1yfWHp8BqeEyqFBaAqCSX3vmzaJ55T5cJLBvb0DFqWUwslNw5M9XigHXuPMu_D-ffZDrXv0ZfjseyeFVuc5Q3vg1lDfjCSnaMviixJ93loyRcBOMRU0YDxksLHBl_ZeiYEBFCnBkus8TbsozGB7xdduzuQgDmyNYglCQ4GeGW7tc5AlvoYP2Xbd_Xd_FKrGTHbxf3OEY2WN7cZWAaMuPLW-Z9zRpXCftISGSdYX_3o1S-io86bmA0_HxVMRifV92Xmwofa45lqJ0tQsmrl8Peh2sZxCPyBTtRA4v_EGmmvvXN5_wg&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"09:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"09:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"14:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

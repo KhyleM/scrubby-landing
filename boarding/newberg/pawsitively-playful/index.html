@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Pawsitively Playful","url":"https://scrubby.app/boarding/newberg/pawsitively-playful/","address":{"@type":"PostalAddress","streetAddress":"2771 E Ninth St suite a","addressLocality":"Newberg","addressRegion":"OR","postalCode":"97132","addressCountry":"US"},"telephone":"(503) 476-2734","sameAs":"http://www.pawsitively-playful.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":67},"geo":{"@type":"GeoCoordinates","latitude":45.293156,"longitude":-122.9519732},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ8736P3VqlVQREVTgdKS2Kvo%2Fphotos%2FAU_ZVEGwAVHFjlROU4Sfof5hVBe9nrUPbsyFLxkMIZnFQXLmIgxRbGPlqkXgFIQE4mN_1L4SHlEK6abRzbTf_o3MstC_IPgn0HymBW7sIXluvmGt3UD0WreYVYxYf2cp0gXhMQ9L34FF8QVkb8HnFVKIWv2k9KyD5u9aAP-MwkbYJNYMR7Q3cxs6HlrSmvNOwA2-7-f7gVGjlG9RRhD80I2AoegKptWvfzMtUXfFKzeeSuExmqjLBEbRHrTNJO32Djwde4OVWxDg5zvBCz1N9y0vrLcx2MEBUCCTkrxF61u_Qcoi8w&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -352,6 +360,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -387,6 +396,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

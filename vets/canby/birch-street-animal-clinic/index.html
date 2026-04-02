@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Birch Street Animal Clinic","url":"https://scrubby.app/vets/canby/birch-street-animal-clinic/","address":{"@type":"PostalAddress","streetAddress":"145 Birch St","addressLocality":"Canby","addressRegion":"OR","postalCode":"97013","addressCountry":"US"},"telephone":"(503) 266-5881","sameAs":"http://www.birchstreetanimalclinic.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":480},"geo":{"@type":"GeoCoordinates","latitude":45.2580966,"longitude":-122.7001636},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJv3CvSINllVQRfzCu4Oq1aSA%2Fphotos%2FAU_ZVEE1wJP-y0lOAFp1vcuNes1gxArWx9W8f7-kG4nhOixA8T4Qpk2wdGSkCIojVvItc4l1_VP5RUXkyRzoQAfJWETMhSYlIyHyNn4o8Jn19UUAF5ypK442TbadaZAqVNb9zMtgGeXBUJCR0JGQZ70lvLD2l7l4_wvR6Za2ow9aHzaAzJTD9_MlzQhzQWVRqzSOPpaAq_C6hAxC95BMsVAW6Lx9wkH70tLKiVeNMzhD-F3HpWd2AuBil0JsolsjP1UNVeOvcZAAMU60cZpxAPHUQ0m7ogUWNLQEvaPabMwEgicnBzLvHAWZ31mp5JVp42J4hhAl-jzW-Kmcb-OvAr_FDFqS84xqtBjDiP9l-fcxJ5sGKDgnRZwdg1BxaI9thoGs-muKx-zC1t4Ql73UsZGioOjZBruEGCFQoNrY6Ln4euiuig&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"18:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

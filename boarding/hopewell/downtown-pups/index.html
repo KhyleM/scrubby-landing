@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Downtown Pups","url":"https://scrubby.app/boarding/hopewell/downtown-pups/","address":{"@type":"PostalAddress","streetAddress":"246 E Broadway","addressLocality":"Hopewell","addressRegion":"VA","postalCode":"23860","addressCountry":"US"},"telephone":"(804) 446-3592","sameAs":"https://www.downtownpupsllc.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":306},"geo":{"@type":"GeoCoordinates","latitude":37.3048372,"longitude":-77.284805},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJY5tbRIwBsYkRJigbJLcgXWQ%2Fphotos%2FAU_ZVEGAzav4t1u5ZlfoDryyJ-EcB1ZMHlnhJdYEK7thhFATUPlbByRfgVqNmNjZnGO47bNfK48UAB4BIwD_VS-tQa9ZH04oqSYjrTweVwULxl-sO0QOtGU4joM0Ypl64XoHh1Y4RC5cqICq3vyS3XX63jOdIYpjfXMPsq2IwZn2gl0gpIKtDAA2y87nGH-vj-Z6R44Eh8b4n9l8pCGbEV2p-DbPSTOc6fQNsumUrZ8AW5DogRH5Yyy8B8RUS035eW-jcnr0q7cOpzfuTFco1fmM8aTX-vlm6yd8jXhW6nnmpxrYcg&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"16:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -364,6 +372,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -399,6 +408,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

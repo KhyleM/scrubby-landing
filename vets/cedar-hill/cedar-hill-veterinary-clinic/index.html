@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Cedar Hill Veterinary Clinic","url":"https://scrubby.app/vets/cedar-hill/cedar-hill-veterinary-clinic/","address":{"@type":"PostalAddress","streetAddress":"1026 N Hwy 67","addressLocality":"Cedar Hill","addressRegion":"TX","postalCode":"75104","addressCountry":"US"},"telephone":"(972) 299-5261","aggregateRating":{"@type":"AggregateRating","ratingValue":4.4,"reviewCount":342},"geo":{"@type":"GeoCoordinates","latitude":32.6080282,"longitude":-96.9263196},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ-dnwY_CNToYREXuZ5LlaiLA%2Fphotos%2FAU_ZVEGojxfdTJyQnJ3njJvW9znd8p3cdNp0gMXo8VF5T7rIfQcoKXaEciO3Zyk9itS4lC1AiQDF8nm8tRNO_jON1hCGfRI4b_GpUgqfuqieMXfhcy3FbmKsyG2KGtNZfbxH5hCV4y8jtadvjCIF_LOHGGUL9UYQazDZNeJWUF-0u3kvXbfXGfu5glhELP8-40vJxG-hQmeEt5NJnhO4L8acdxXHm9AoeTSA1GEC6bcftlrP2Fj4p61-aeDRq-2FJBYocwuw7-Z7yNX6mW34WwQLFUX-XPfwtisLOz9QLGFIKQYoBKuN3UHQpqTe1k-dTqsXwWYkqKSjnWY2U6uVzUar1Nw4cOBdfuuWY8MaMjQff7WkMTdP0k3GvRW3Rj-SKjouGk8KgWF2WN7S3Uk2Gn0KCd4d-cn04Ls5J9A4JNAx3JSkGw&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"16:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"16:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"16:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"16:30"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -359,6 +367,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -394,6 +403,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

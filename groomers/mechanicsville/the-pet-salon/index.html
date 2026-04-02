@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"The Pet Salon","url":"https://scrubby.app/groomers/mechanicsville/the-pet-salon/","address":{"@type":"PostalAddress","streetAddress":"6234 Midnight Dr","addressLocality":"Mechanicsville","addressRegion":"VA","postalCode":"23111","addressCountry":"US"},"telephone":"(804) 873-2489","aggregateRating":{"@type":"AggregateRating","ratingValue":4,"reviewCount":41},"geo":{"@type":"GeoCoordinates","latitude":37.6334161,"longitude":-77.3177022},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJjVrE6ekhsYkRX42St9yi9pk%2Fphotos%2FAU_ZVEHpoXhKybh6wIqiL_eQVnym9-wAkJhclptSFW-c7zsu3nnNd-goeCKu0cTDhtzrkqdHB5fiE5vWuS2u-Rwcw_1EzR5IokTWube-gozYs6MGwBE7SeDTOPNmvv17cwYjtXK_sCZTQLUGU6vReBl5SLp5RnPoSDcNlUAyzmlv_aSFRXZ_TxDxOYxd-atkFNVHYnbE2Crroduygp5GYB6Bs5umOLoLz7yNVGjxrASEcbnv3dU6SGqsKOWbDSsjD4ghya9tAYVWkQ6TlSJyv1k9VhEFM15i67EjNls5zwY2m9QD3A&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -347,6 +355,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -382,6 +391,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

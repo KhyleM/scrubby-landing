@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Farview Animal Clinic Paramus","url":"https://scrubby.app/vets/paramus/farview-animal-clinic-paramus/","address":{"@type":"PostalAddress","streetAddress":"429 N Farview Ave","addressLocality":"Paramus","addressRegion":"NJ","postalCode":"07652","addressCountry":"US"},"telephone":"(201) 967-1881","sameAs":"http://farviewvet.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.9,"reviewCount":1271},"geo":{"@type":"GeoCoordinates","latitude":40.9485059,"longitude":-74.0581362},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJW3pMtMb6wokR-a--dN3HtkI%2Fphotos%2FAU_ZVEHTYqVOg_-haVmUkOx8YT9en56y5jpqB2pTadymqdLshd_SGGSyEuvFESCbR09G-KQbPojNVOp9RPlkGzdw-dmX8wziFBispj88yF0HTbRsnBLjW_ZKQrnI9kJmTPcSjypoD1uqQp6Btu42CwdoGCm0h4IsgPN6qJBT1ugUYIz0R43l_xXf0pkfniZb1-SKm3MYGO1FXKa1Iw0hCfIN7moLSe2XCk7GJcXX5UF1A2O13W0PGmoI0OCPyRVh9AoofeMK6GPGgEHVblQMjUp2pIRYXeGpv28jibwa2ufN9-tSPQ&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"18:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"16:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"14:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"18:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"16:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"11:30"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

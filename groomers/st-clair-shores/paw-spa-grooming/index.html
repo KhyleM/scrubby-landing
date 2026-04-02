@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Paw Spa & Grooming","url":"https://scrubby.app/groomers/st-clair-shores/paw-spa-grooming/","address":{"@type":"PostalAddress","streetAddress":"31384 Harper Ave","addressLocality":"St Clair Shores","addressRegion":"MI","postalCode":"48082","addressCountry":"US"},"telephone":"(586) 328-5880","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":94},"geo":{"@type":"GeoCoordinates","latitude":42.5267044,"longitude":-82.8936242},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJr14J-x4nJYgRJgbqGt1FsKc%2Fphotos%2FAU_ZVEGTzWS6v7KY0zblwxzqzm_SM0Efzkiwk90aysLMal03T16h-fmb0JvV2MABsdkRbKYWaN0H-mBx0-sEKCzGR7CYbnIejR_ME9WoOdZ4psf6LfrDDR1NeGICzuMUU7f6J88ndv5FPPCxtdYUdLesfrLaXIJxXsa5Xf1pCDe0uy3fR9B0nUDrrixcni0khQUeNhebRqqvwfnSGx41m7O2Q_NZF4QesVANlb9q81QUDWbm4aHUMyGvOV4j8Vku5gupqSYmxOuF_s6h66IYXHS92IdLCuUiKoroKNTPYW792bESTx79XaFqwBsUtqvX-jtvLhAT4cnLGHiq9fxMBBa8lDiy7FBwO21hqp6P3F0skRqWp8n2zLri0E9m26QwH5y_-soI_XSRgU16wij8n120PJ_QBTKnWnClKZY20ep_60JkoUWk&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"03:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"15:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -363,6 +371,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -398,6 +407,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

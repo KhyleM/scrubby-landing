@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Petworks","url":"https://scrubby.app/boarding/north-attleborough/petworks/","address":{"@type":"PostalAddress","streetAddress":"540 Kelley Blvd","addressLocality":"North Attleborough","addressRegion":"MA","postalCode":"02760","addressCountry":"US"},"telephone":"(508) 643-7387","sameAs":"http://www.petworksnorth.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.9,"reviewCount":60},"geo":{"@type":"GeoCoordinates","latitude":42.005805,"longitude":-71.3012139},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJd9CbvqVm5IkRd8X8mHQufbM%2Fphotos%2FAU_ZVEGy7KDXP9-zE-CdOznj0fFHrQs0o2H4mELW4bOr8dldOPUumKiESyStDnCKxvhh5QpQpJ71CkwvFuI4D2fcDenQI__BodT9vT68g7ha67YLKtxLxA_SRHlI0-QjemAaCiSOLLvo7fNykejmUSs1uMg_OT2k5r6SFFa-QPeT-YsNhxUBQ328IQ1CGoz3qm5_7y7j9NJl2E79dMV0Q8nXDUEESdBNuXDQZ4YgCd8uIFYwgh7blyW8UPNHcKDoefoEq1wbxvWbOsm-JTGtsjl3Ej0bTkxZQh9RHYoweVFBBpYHoQJ-1ou49LsJGaKOe9oMhbWssdxI5uTn_rEzsbjVz33r7lvNBzPnQ9CMEVixyp4HMwKZImljYBY5YAj5Ax67HUR2EqJL_YHGT8GrkT806ZnwbYxF8ECpQZyjozd7WHPPTIg&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"10:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"10:00","closes":"11:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Camp Bow Wow Olathe","url":"https://scrubby.app/boarding/olathe/camp-bow-wow-olathe/","address":{"@type":"PostalAddress","streetAddress":"1150 W 151st St STE D","addressLocality":"Olathe","addressRegion":"KS","postalCode":"66061","addressCountry":"US"},"telephone":"(913) 733-0860","sameAs":"https://www.campbowwow.com/olathe/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":492},"geo":{"@type":"GeoCoordinates","latitude":38.8556132,"longitude":-94.8359424},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJDeB8Rbe9wIcRZj2jbuUhqhs%2Fphotos%2FAU_ZVEE2pk0SCOm1wjmiM9bg5C7NXnHF6XRrUq-o3W5D_hV810qy3xFWvVPkMPjR8bSgalsxhI-KK-h3FT84OTiG9KX9fExWO7XSzobCetud3sL1R7WZhOpJBlo1VZhTbW6mj99Q0ZxyP_MbGdDZf6H8kgYCRsGrlcbTM5o4VC6uXG90DS8bF8yqVAVdLEkiSsIIhtv14UVut0c_uzEqZDCucT4T8NszS8gdAYi_U5lOkLp4jH84mWP5NFdDQudwlhhU1DHR407y-mHu5ecq-JijNKLP1EwH1GsifgKwet_HXUCJjA&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"06:30","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"06:30","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"06:30","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"06:30","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"06:30","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"07:00","closes":"10:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

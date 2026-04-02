@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Fetchers Play & Stay","url":"https://scrubby.app/boarding/olathe/fetchers-play-stay/","address":{"@type":"PostalAddress","streetAddress":"585 N Central St","addressLocality":"Olathe","addressRegion":"KS","postalCode":"66061","addressCountry":"US"},"telephone":"(913) 768-9663","sameAs":"http://www.fetchersplaystay.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":181},"geo":{"@type":"GeoCoordinates","latitude":38.8893237,"longitude":-94.7968086},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJYZ6ziR2-wIcR8DL5u_s_Doo%2Fphotos%2FAU_ZVEG7ViVjKgPv5GBB1X4BgL_YyuUKbNfZwcilAO-L3EiwpUqqRhBSHRAo61eqvS2KqsbBIqjTWyZUWTFFGABCK5CX0upfNyUx4sN3rZTlwieIz_vw6lVCw7kRkXalBeCNlEtMIMP9wnhPKILx1ybZ62ZHrElu4ZHyoiUo2nryLAp_9YOggjdEsyesBUqf64PyLkHPNNLiSBQNeBd-bgkq-HtagUk7R7qUVEDDdZ6adgY-S5osvjXEzaY0ui7Vvs07wavUgm3LnW9a9SCgcgfeVNvv5dECEzyCsDrFuBr64S-4UQ&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"17:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

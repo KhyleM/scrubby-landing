@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"MissionVet Specialty & Emergency","url":"https://scrubby.app/vets/san-antonio/missionvet-specialty-emergency/","address":{"@type":"PostalAddress","streetAddress":"8202 N Loop 1604 W","addressLocality":"San Antonio","addressRegion":"TX","postalCode":"78249","addressCountry":"US"},"telephone":"(210) 737-7373","sameAs":"https://www.mission.vet/?y_source=1_MjkzNDQyODYtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D","aggregateRating":{"@type":"AggregateRating","ratingValue":3.8,"reviewCount":1826},"geo":{"@type":"GeoCoordinates","latitude":29.5726094,"longitude":-98.6475518},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJQdeX7TxmXIYRW_oSSC2sWjQ%2Fphotos%2FAU_ZVEEVB9wm7UgbqS00HeRBLvBdGCYdcXiuxhxWF9pRyst4JF5RfbrSzQrLfgwrK369SIKhKOjp_x2nsD8bn4getBcoK-JnAXr5LgWLlaaVOG-X1mJe1YOFCNoLmDeRBkIo3ULfNVMo8XlMR7tOD9JNKb9GiaiEzdSINsOoa67Darp1YU0LfQpahh7FVOf0ct0UHN_m3sJbx9qRPz4EO_D15226N5BDkCynF1BzZhCqM8fdIbd7e01B96QdPwnZ-vZNRglT1wlN9uJik_xJPPxRfK_Z-QPHstipj9Ov8a7ObvkctQ&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"00:00","closes":"23:59"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -370,6 +378,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -405,6 +414,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Paws-a-tively","url":"https://scrubby.app/groomers/chicago/paws-a-tively/","address":{"@type":"PostalAddress","streetAddress":"1555 N La Salle Dr","addressLocality":"Chicago","addressRegion":"IL","postalCode":"60610","addressCountry":"US"},"telephone":"(312) 951-6547","sameAs":"http://pawsatively109.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.5,"reviewCount":72},"geo":{"@type":"GeoCoordinates","latitude":41.9108225,"longitude":-87.6329269},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJcTdjlEPTD4gRsyoCdR-N6vo%2Fphotos%2FAU_ZVEE01SVyLaE4hH7AYl1XRmszcRIlZPXcG35Y6ek_f1F4FX_CmQkN-KXj37sLJCzr7igAJazH9rLVaodWswJzalwKuUqhCC0fPv0yTftkt_5b7jnrMVyFW0dOnlc6tPTF3uMvMU9EAQq40E0pF71d7NBw01T4tJ81hx4arQTFo8cJG8oJMCkotkgtCnQWMyM1SdMzgUuUhsxOBVhzJVjpMAY8zTyztFhC2ebKbYjQMz86JpWrWavigoa7zSK100qKrB8cHoqzAoClY7mfrE2h0pHdjgnX7LV3NBE3xEsOtrKKthLHusEQojD2VdOiu6iHRVA6hVnzD29NwdY_mH14d5dgWvf5Z77cxan4vyZCesPumZgALRrV_MHULMh9SM1MUnV712CTIpNbzp-m3dMUpHAZnCMTJ1jhkz69uOazhUZRZg&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"15:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"15:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"15:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"15:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"14:30"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"The New Kelley Animal Hospital","url":"https://scrubby.app/vets/birmingham/the-new-kelley-animal-hospital/","address":{"@type":"PostalAddress","streetAddress":"992 Huffman Rd","addressLocality":"Birmingham","addressRegion":"AL","postalCode":"35215","addressCountry":"US"},"telephone":"(659) 262-2260","sameAs":"https://www.newkelleyah.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":13},"geo":{"@type":"GeoCoordinates","latitude":33.6056525,"longitude":-86.6891586},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ41ZBPYIPiYgRWIEvowHZ8-c%2Fphotos%2FAU_ZVEHKo_0DnOmyYU7sw3G2XMTcmGsGq8bYHKmFS2PYT6fG3NKBWnDkSxZP4aN_nD3aWYGSANo1iRAQrCYC9OhFEDHlv7JPrUSd1lbFvURMa1ZMkVPryCkSr2oGHlpPTjRzkFQXFt53xFMQ1bcyxc-Nn3pXtX5njnUz4kOQBQP2kPk7Aw_8J3EzMr_AOoQMzalXJbIhzdPDI6qnL3i6AG_21C_VnvVGPytNDNtnbjIRgg-ITsZlezCUzeZiJ1iQHPFeZI__yCQDib8HxiTzYEpk3dkwZ82DWDB_t5sz7rkZClj6_g&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:30","closes":"11:30"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

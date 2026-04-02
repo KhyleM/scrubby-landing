@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Thomson Animal Clinic","url":"https://scrubby.app/vets/st-clair-shores/thomson-animal-clinic/","address":{"@type":"PostalAddress","streetAddress":"23500 Harper Ave","addressLocality":"St Clair Shores","addressRegion":"MI","postalCode":"48080","addressCountry":"US"},"telephone":"(586) 778-3900","sameAs":"https://thomsonanimalclinic.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.1,"reviewCount":203},"geo":{"@type":"GeoCoordinates","latitude":42.468234,"longitude":-82.906496},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJK8CVGiAoJYgR49dQqiO6zqU%2Fphotos%2FAU_ZVEGSi7w9mJLvvnqXTkJZgolHurVwl1sdMy2NQPTtHF9bdThosRpI7RW3WmQncw08HRiwmob0gq3mN-P1v96WevQ-0kbmSOmq-0Kg948LMYC6INV5XJwc-ZIC2x7P9PlzeEjUPFBypz7QlOtJuGMo8d5MgDR-sCN6yBBCGcYFoARrQhiLrXUdy6BBG8kG4ZZIoE7VJTyIc0Lsa9FghUWmPhysslfbTV4s06tgX_SvkA_svyIdzVmSJc6ynty43iydfOpTgNBP2q2wUpRHTqSHSn3AzJsCpgtQp4oKoqqe2z6sW1YYGr5zJzCVskf-xXb2M43MVt60X2n9PSigFGNfdKxvmprG8tQQNBcI2PAp1yL4HFJUBowDweSfkdHnY_eGi-VN-s8k1zWxZyUYhTu1G-lhpo1nkwm30qdghGsc1vk&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"13:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

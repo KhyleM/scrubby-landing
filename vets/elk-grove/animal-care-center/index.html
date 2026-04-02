@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Animal Care Center","url":"https://scrubby.app/vets/elk-grove/animal-care-center/","address":{"@type":"PostalAddress","streetAddress":"8901 Elk Grove Florin Rd","addressLocality":"Elk Grove","addressRegion":"CA","postalCode":"95624","addressCountry":"US"},"telephone":"(916) 686-7393","sameAs":"http://animalcarecenterca.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.4,"reviewCount":144},"geo":{"@type":"GeoCoordinates","latitude":38.4340883,"longitude":-121.3709033},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ12Sn9iPHmoARlJRxAoRkvJ4%2Fphotos%2FAU_ZVEFQttVGyYRt7q2_uS8zL0Qf9mYcJXc0ZjV1gebQRtef5n5b94ZrDVx0TIfdGLP9FdJTdCVY7E7THVYhfB9drP9Qd-AaUrWXMwwrQrkNeidhtgHsMzWSQPMT6rCoxnmygZ8AkDduRi4JOvXHqV5LvosJ2x8mFMMhOsBCIrEIRza_wBbix_CzGAt1jW9PeAAb2btxjVDxhz0AgCkUKULyUb7lD9VusKc7PI-X2ev4OTitD_AyEP2vfnucT5EW0TmGL0bQR2Unk9bE-p7vZ--2Su36XEd8fbpNcJbXmlwpzJrDaA&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:30","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:30","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:30","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:30","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:30","closes":"17:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

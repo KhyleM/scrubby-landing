@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Gilroy Veterinary Hospital","url":"https://scrubby.app/vets/gilroy/gilroy-veterinary-hospital/","address":{"@type":"PostalAddress","streetAddress":"9565 Monterey Rd","addressLocality":"Gilroy","addressRegion":"CA","postalCode":"95020","addressCountry":"US"},"telephone":"(408) 842-9348","sameAs":"https://gilroyvet.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.5,"reviewCount":209},"geo":{"@type":"GeoCoordinates","latitude":37.0352788,"longitude":-121.5842334},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJUyy7OZ3hkYARfYJNCKUKe3g%2Fphotos%2FAU_ZVEHUDi0gEQzbg3NrgDNe4z-CFApDka4_NF_4w7ye1G_OxW-LHOrCpW9lDUwpNPyRdhTf38Mjxj3Za_CPoype5W60IlynKg5tXF4t9TmVuE9HrUvi3vIYNrbaEa2QmC-M8_NoID6X7cd3Zo7fZU0hQKlTcW-Z0Rv-EzoL9UlbwwBajnUtWM4jFHyozB7m8w_sJurUaUO6sIKfY-D8DtXYRkEq15fWuU8sz2qA2EHGI5L-Eqr0sRfcg6AR0hvbsndUeip60GGCSLxI0a6RGuktPQRqzV7Q-csyIK-P1EJDmTGyeui-6OAfce91SfuuIPlbH_5Pq-1XzFfeg4KuJnkp1yM1l1QMMI0e5uEKdy9m2Rxay-dnpguTMY8xKkP_ZOwZg_47tMb1spnQ_RFhQwgSqzlNCZQeC99f94x_x6ggK-AKzPc-&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"16:30"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

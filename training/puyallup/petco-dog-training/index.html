@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Petco Dog Training","url":"https://scrubby.app/training/puyallup/petco-dog-training/","address":{"@type":"PostalAddress","streetAddress":"3717 S Meridian","addressLocality":"Puyallup","addressRegion":"WA","postalCode":"98373","addressCountry":"US"},"telephone":"(253) 446-1501","sameAs":"https://stores.petco.com/wa/puyallup/dog-training-puyallup-wa-1214.html","aggregateRating":{"@type":"AggregateRating","ratingValue":4.2,"reviewCount":881},"geo":{"@type":"GeoCoordinates","latitude":47.155897,"longitude":-122.2909297},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJteF8pUH8kFQRfzi8N5qEYe4%2Fphotos%2FAU_ZVEGD7wY4TbVghz9oAAzc-lTj7saWgJ4STsR64DM-kwwujFLyEOJ10_oeH3wZYi2UF8lKqiJravmOxQp3NnsN33pWStVDCtoHczj9ovJakM4UAap6xeK1Wn4yxDVQooT0_Ep7yJEIMMzBtmBbu8BT5AEXuuASB7uEUa5xEuSX3y9U48ywuqvNFncncZ9gUSbvxr43nhEzg1ZxiVE34WS0SePgFl3QcJSP6FwsOKyzgIgmOtPPzHaTU5buWB2SgHxqRpOun7MvuyUb7r7i66ihShSk3fGwwuJrGAGrUVbqQY2nQA&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"09:00","closes":"21:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:00","closes":"21:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"09:00","closes":"21:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"21:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"21:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"21:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"10:00","closes":"20:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -370,6 +378,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -405,6 +414,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

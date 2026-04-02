@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"FurrLife Grooming Salon","url":"https://scrubby.app/groomers/osseo/furrlife-grooming-salon/","address":{"@type":"PostalAddress","streetAddress":"101 Central Ave","addressLocality":"Osseo","addressRegion":"MN","postalCode":"55369","addressCountry":"US"},"telephone":"(763) 438-7239","sameAs":"http://furrlifegrooming.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":149},"geo":{"@type":"GeoCoordinates","latitude":45.1172519,"longitude":-93.4023623},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ_TDtjzU4s1IR70tros9yKuk%2Fphotos%2FAU_ZVEHpbnpFpyUM-AET4LNKZYLkp7TWTFtO02McM5B_77y--ckVplQpTS6anFuDhtUOJdPAClKoVBVPjk5uVBa9Z6wCJlrEsErfOH4_V6bKkL7L47jNTVdxzNSUuUg40GX82VHFZiLSWqThbuVHd4lsTIhswrWnnYfm4MDOnKq5ap7fb3NIxEQ27wbgC1xQxHdxrN07_jymA-X_8unEAELrtPppZK10oIfPsbruO78Tb9gsqk6zgwKEEZnHX6cHJud1ka1vlxatQm5PgmSYXDDOxN_Qr_2tl_pp7qXycevk_HZsxcRwxsUG_phwpgyws5-YjolQHkeVbPSampQSsARKzSXAKKujF2pq6c37QBmOQ5hoQ01ntHPSZeq6MhYs10EHaao6vpSfDxt6m6VpzT71kuEYAiNzcfhxtczUBU_Re6B6ug&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"13:30"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

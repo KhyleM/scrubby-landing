@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"McMinnville Veterinary Hospital","url":"https://scrubby.app/vets/mcminnville/mcminnville-veterinary-hospital/","address":{"@type":"PostalAddress","streetAddress":"2001 NE Lafayette Ave","addressLocality":"McMinnville","addressRegion":"OR","postalCode":"97128","addressCountry":"US"},"telephone":"(503) 472-6184","sameAs":"http://www.mcminnvillevet.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":3.9,"reviewCount":170},"geo":{"@type":"GeoCoordinates","latitude":45.2245102,"longitude":-123.175054},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJbXQOrZBIlVQRXZxE0CKiMTg%2Fphotos%2FAU_ZVEGMIOvXuczdM7G8T_zV8_THi2J7L0D8ZrHigaXjUxGKq4pL95y6mZxi-tEYXk1YqJ1wo9MEOFPzyl8zClO6MmPcZFAkEAHvmitlmWauOCZrc45sK1SaD-ZJWMHfWwMt47K-xGautBo7MwAFb-L1uP31IYtnA8fhdK8uajS5V5JX4ZVFH6xwF7ziFlFucR-7_mHHnjGwgUCwKlyuc08YZVfEcgsJflt1H4ARfmFnEZYAh3MsMoynydM773hiw6ALIUJq4cTPb6QuaDGCbJxSDacXffvKkpjiXUPGpy7i-5HcW77J7hduGh7RO5bXEJ4lpQPT18MuRZ_WhTuviaSmcweGVVOaBKBcE7lAEmFMEMXKzlh5rV9n7ahQmLAgKZ6OlZrjh1KCPwwDMSogDz5dO-nP1aDOxh6uEIoaf2tcyWqjkiz2&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"12:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"12:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"12:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"12:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

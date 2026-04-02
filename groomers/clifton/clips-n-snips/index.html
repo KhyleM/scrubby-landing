@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Clips N' Snips","url":"https://scrubby.app/groomers/clifton/clips-n-snips/","address":{"@type":"PostalAddress","streetAddress":"51 Valley Rd","addressLocality":"Clifton","addressRegion":"NJ","postalCode":"07013","addressCountry":"US"},"telephone":"(862) 239-1777","sameAs":"http://clipsnsnips.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.5,"reviewCount":187},"geo":{"@type":"GeoCoordinates","latitude":40.8961131,"longitude":-74.1731365},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ49M2roP-wokRoVItAwlqMok%2Fphotos%2FAU_ZVEEFnSGoYUihvu0O1S0oDFqcIpwkbUoXnI-Xz5uHLLYsGwpyv7dCZxWsOj1x2m-Fixkf8DIQ535X6I1upstMIrEtkAlupdAuWjv_wku_4AwQot2bHwR6cdZ9EJ9B80PbaH9vAcAUI9JgTebwgE6eKB-zy4SvOhSMlo09byv9EcRqj7lPh0z7RG__GrZYybWSUpXrEcJGLVouIjpaWyoVPjl7fX4JBlmFq-nYtQbVrW8kJhSRfhS2oGoTQnu8KsUJCiIPoPlX5MfuZ6Aqt0XoWTF8keXCLCI-T22w1zoM53hCpA&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"09:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"17:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

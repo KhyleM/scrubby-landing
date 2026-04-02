@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"VCA Joliet Animal Hospital","url":"https://scrubby.app/vets/joliet/vca-joliet-animal-hospital/","address":{"@type":"PostalAddress","streetAddress":"220 N Hammes Ave","addressLocality":"Joliet","addressRegion":"IL","postalCode":"60435","addressCountry":"US"},"telephone":"(815) 729-0770","sameAs":"https://vcahospitals.com/joliet?utm_source=maps&utm_medium=organic&utm_campaign=AU_251","aggregateRating":{"@type":"AggregateRating","ratingValue":4.2,"reviewCount":219},"geo":{"@type":"GeoCoordinates","latitude":41.526662,"longitude":-88.131488},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ-Wt8LqBhDogRYtuIof-WSds%2Fphotos%2FAU_ZVEHfVy_ViESbymjtbfmPcwPQphx4NBzU9GBjUxh5Ao-u1Ef8DCFktkmoNldc9PCSvb5NSlA90FuRnwyDJGBJcKgvkMHOYyfAAvpTI4f4Gt-AvktxMaf648AuraxCoqY5QhmHxNsmGRil0LNDvZ1JUzY5YH4hxU8r5P_FXkZ0eHmWAJyJHSesJO70m_iHzSnjGWqWDNy_dTIWN3iNojAS8pYM3XYvqOChKk1j1YWuvyGtH0mXpo_LjiPuLtFkL5MnzGcPsc3yVSJ9nG1kmd26XVGkAzxr_hiDUMCmQUPd5Le1kQ&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"14:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

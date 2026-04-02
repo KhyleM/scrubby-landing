@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Dog Days Dog Training","url":"https://scrubby.app/training/vancouver/dog-days-dog-training/","address":{"@type":"PostalAddress","streetAddress":"7206 NE 37th Ave Ste A","addressLocality":"Vancouver","addressRegion":"WA","postalCode":"98665","addressCountry":"US"},"telephone":"(360) 553-2699","sameAs":"http://www.dogdaysnw.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.9,"reviewCount":86},"geo":{"@type":"GeoCoordinates","latitude":45.6749153,"longitude":-122.6346133},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJz-dtEVGulVQRus3hwu8ZCJA%2Fphotos%2FAU_ZVEGLtR1LHrz4m7BDDyR7MMa_R714F4KhZZj-mMCLx_SeosQk2rbW9au8rzQdnKZngI3C6OZjRmdPXTX1USApKgPsiOibKGb0PorrXPCZOc7PlLzFK1Eb8KMuxyB0-N1x8t76nNzGrPx4p3TmuLO-jgnm8GjythCKtwUQkeNz63anjaM_-iPHKUGgGo1njmtZ8V4DeZfVSh0zJq4G7en2u-e9-pyxCEsIf3UYYYTHEp-MqxkitgfQgX6L2MW8Amg8RkFHTneHL69_cKQrZn8y0Y352_g5xYVCG171WwIuE5989g&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -350,6 +358,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -385,6 +394,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

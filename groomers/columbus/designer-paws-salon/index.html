@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Designer Paws Salon","url":"https://scrubby.app/groomers/columbus/designer-paws-salon/","address":{"@type":"PostalAddress","streetAddress":"2824 Fishinger Rd","addressLocality":"Columbus","addressRegion":"OH","postalCode":"43221","addressCountry":"US"},"telephone":"(614) 948-7800","sameAs":"https://designerpawssalon.com/upperarlington/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":386},"geo":{"@type":"GeoCoordinates","latitude":40.0307111,"longitude":-83.0916433},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJPfSdfdOTOIgRcUO0I4RS6Vo%2Fphotos%2FAU_ZVEE4VO_LN9S8eH5tVNWusG7UvKBpBY0kHm7rfgoaZCI2-nskec37KTuaMdri3XjWGirQ75BXC1UZJsU-tIDTy4jwnR9rLN1eG1-tyRpkNWLicW6lzKtqmkXGMawjTUiConHm1H_WZPSwHcuhjdaromrMrnqkzmc5JsYtDJ5p7lqE1qEcXGFvD8AQVodoLPG4g-yf6HxsRjWivA-SpSBOXzOTPP31BSNKauCPbamj7hg_J-CCsTUNCVf7iT8wBPVQCkaAjzbMmN_7kB50VBLEKPJliBVKjaKsFImgjRyLUWAEGQ&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"09:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"18:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

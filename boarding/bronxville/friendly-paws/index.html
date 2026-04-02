@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Friendly Paws","url":"https://scrubby.app/boarding/bronxville/friendly-paws/","address":{"@type":"PostalAddress","streetAddress":"204 Parkview Avenue","addressLocality":"Bronxville","addressRegion":"NY","postalCode":"10708","addressCountry":"US"},"telephone":"(914) 844-2209","sameAs":"http://r.rover.com/e8B955","aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":21},"geo":{"@type":"GeoCoordinates","latitude":40.9319671,"longitude":-73.8051539},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJm4tRXjTzwokRgzShijcghtc%2Fphotos%2FAU_ZVEGityhzencnp6uWlnE8oJ0DTcC2Sb-GiaXHNMTRiPjKl2oZ_mbXyZBZ9RWY3SPGfxvpj_sTyolI0yoVTBco9c4XoPZVLBgXOLK7my3wNaaVAUMlKGytkUaVlY-1w_0z8Yk3HsXgJRlXxT0KwPWMv5ocN-7S2BXZ9f4TAAch0eyAy3m4mGFtSvHMK0rHNqwCmiRjeIy_7CIPBnQCkttMURSdFPjEZpWrTrAQ7TCD43NUsVAfH9BdZYijO-jFtWHTQDn1FS75XOWTlLAzrbmfClN-l9axAMU7XRicYWkZQRpmqZIggv3ajkjPeN8IE3pO6C92N6qxxlyS8PySVeLZHAbK59VCA2aNHLr_RLhra0qffdd_3cVtT6iUHKQJm2E55EqL5mhzwq9PJp3f76nvZT0LZ1vFjH4_oofzW4KkypdiQA&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"00:00","closes":"23:59"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

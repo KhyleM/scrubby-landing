@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Expressway Animal Hospital","url":"https://scrubby.app/vets/westwego/expressway-animal-hospital/","address":{"@type":"PostalAddress","streetAddress":"400 Westbank Expy","addressLocality":"Westwego","addressRegion":"LA","postalCode":"70094","addressCountry":"US"},"telephone":"(504) 341-4603","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":529},"geo":{"@type":"GeoCoordinates","latitude":29.8993251,"longitude":-90.1482257},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJvSSogLSkIIYRHZyPVEzwMtQ%2Fphotos%2FAU_ZVEE-MWHEkrG3E6yoH7-j1Fv4Yxos7eJoD0OgYxyotw1XHiHqcqIuanQGqyOyZdNkCP29n3VLa9hP26LRQ68y8rrCkGpIENS_Qb-KalSXhFt2KADHCoCKI1vKkgoQvn0yKpWUWufHIfu6FnKoscjeX-dRpOiXqUOw0gWBT0ejmLe8BT-lvVc3r70TBOOLoLFbxeNAVBJi9wqHivZf2kyKldEE4DqiU2hcQDmPO_tymZNLVlmdpPHfDNipS52f-L5plmkR96GsJKJvcWwU9R1nQcyvqavLNskm72Q3xIgotHVru7vWRMhw9-6A01Gccdl5ZwemG0Kl4F6cIIVzbFdMPZf6Sf1ljkh0eysPj_Q8zDGXqxxSlwolSeZt19ABapLNCXDlgiA0tp5y3ZD1lg-v2Qqr9_SbWvOzt7v6H0W1icANOR9Q6H3KcVDOI1DrJw&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"10:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"17:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -363,6 +371,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -398,6 +407,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

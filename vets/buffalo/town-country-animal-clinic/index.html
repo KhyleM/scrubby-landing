@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Town & Country Animal Clinic","url":"https://scrubby.app/vets/buffalo/town-country-animal-clinic/","address":{"@type":"PostalAddress","streetAddress":"3000 Genesee St","addressLocality":"Buffalo","addressRegion":"NY","postalCode":"14225","addressCountry":"US"},"telephone":"(716) 896-2424","sameAs":"http://www.tandcanimalclinic.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.6,"reviewCount":153},"geo":{"@type":"GeoCoordinates","latitude":42.9247388,"longitude":-78.774622},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJR07c1skM04kR28HnbPK335c%2Fphotos%2FAU_ZVEF6rDXfobaaxm6onm0QXF8UBW34QIBtFycbBEHBuCphwlvneTOhbqOXMr_0QluAtiLNwVKdhb8_bsflqK_dRDYY9BIKuefZdQaGrN_BNV1jYB48vucIRb_QPJvl5_bSlOMp2OtX6peezwmVmlOxux9PdY9uwLdCDHRvZPN0JokbEDo24pDeJxDTZ7bKlBFzNLYjwD_w--04ZvNyKBUsuRaAl-xD_19I1g5JBtQy0OEz-EwJSfMP6jcPUxrEbcDfBsiCMDS3zWR8d7N7kQ57S__y4xJYVxFVdyveyQk29EWpD7bOrSVR4IbVQKa7SkB7ub0UE-Kt3K71rcm-Muw3bd7urPNHY1k4H08mnOsOwcaVAiTzU8iLo0B05DOlNc3UX6kBO7Q0WSgvzaJoGsk0zBAlR7ipzm5oEn5YbDdM6vO1Oc_5&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:30","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:30","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:30","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:30","closes":"18:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

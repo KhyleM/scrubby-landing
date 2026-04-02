@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Coal Ridge Animal Hospital","url":"https://scrubby.app/vets/longmont/coal-ridge-animal-hospital/","address":{"@type":"PostalAddress","streetAddress":"6171 County Rd 20","addressLocality":"Longmont","addressRegion":"CO","postalCode":"80504","addressCountry":"US"},"telephone":"(303) 833-1137","sameAs":"https://www.coalridge.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":640},"geo":{"@type":"GeoCoordinates","latitude":40.1329493,"longitude":-104.9384867},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJxeXvs0wPbIcRqErI5u3-1hU%2Fphotos%2FAU_ZVEGflgPEZWc9LcCi7LhXQAQZHkn86jPEmE-Ws7rxTxTtSQkGFIEVTKhTngD4bm9zpV4OMxJL1JFFSbjmpp6OGp8K9PcHoy6YUGrswO_NEdVRpoWBdDD3LtDcBDPadNHV9QbNyQuqX0Cg7qRhrybZgdCXDO__e9L4lrD2QHlCwd9VUuH22Kpt0lJNHh3JuknekmSpY7RB-qL-5I96yP7VrEhT6mtNnL3l5mTPHb0G1t02aBEDi-uHoilGpwEjCyjldfjx-CJCLjGzeYPW05_dAxkJPUQu5YIIm24n2wRQllcy2O2-_mLBE_EPUDJkWjQdDcEfYKPGTS9a2oCG2et6Q5n3mdhKtvnj7dIOSAr50VZPi0bD6QAF5XIEpao6vc0Q3Opuy18w4eO2sCvdylZ_N2a6q8dV3EBeHajQzSX1NcghJ9c&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"13:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Caring Behavior","url":"https://scrubby.app/groomers/frederick/caring-behavior/","address":{"@type":"PostalAddress","streetAddress":"305 3rd St Box 124","addressLocality":"Frederick","addressRegion":"CO","postalCode":"80530","addressCountry":"US"},"telephone":"(720) 612-7361","sameAs":"http://www.caringbehavior.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":22},"geo":{"@type":"GeoCoordinates","latitude":40.1006393,"longitude":-104.9378587},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJSzODK-GVwoARM5b80zCIEg8%2Fphotos%2FAU_ZVEHvY0AcQu3bjSMraAKFuO3ba7pkHDGVXpSeaGKmPeFOF4oRmbM2WrR47pudrF-ZjkOF_S19WnDLUDcXv9Muhf4ghe1yODEfrV2V6zHDv3NTpxiZrYBYFlf3TB24dz__qzZV0WIY0tUqEARAwUkYWHgSbuuv3nWfB3kczFVy1wZ0L--J8bFl_m3LT3tddAzwGBuYaeFab9NrWUFtueeybDCaBj_RW-4WdAMmr5wCWUf9HqtvIWB14G9-sTO_9AkVPsdRf9-Tb5jf4zQ9_9u3GQZI-7nS7EjnJ4NxecpJl_iKWw&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"09:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"19:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

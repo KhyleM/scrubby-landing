@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Animal Wellness Centers","url":"https://scrubby.app/vets/marina-del-rey/animal-wellness-centers/","address":{"@type":"PostalAddress","streetAddress":"4131 Del Rey Ave","addressLocality":"Marina Del Rey","addressRegion":"CA","postalCode":"90292","addressCountry":"US"},"telephone":"(310) 450-7387","sameAs":"http://www.animalwellnesscenters.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":3.9,"reviewCount":58},"geo":{"@type":"GeoCoordinates","latitude":33.98775,"longitude":-118.44465},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJaQ2oMdK6woARLuk4rT1oF_U%2Fphotos%2FAU_ZVEGutQ5iQd1TrBl3PYbMeaMuCgYXpVq4V5lqwJet5pQsJOXsCO-anZhM-F7Hp4JS2zdQG6J4_CJWyn9PVyKgogO_arw7QdVxT9cXaYD6qP3486_etQZ4RT8tYyoI9CQfS4x4fORlzdHB54bCJ1zti5Ci6pazcEhs0IHFjxwAmQAFmTQrXCB_PIivb_naA2YcFZstv4llTJnJit2V2ItzFFZLQbJx5t__QQ3NOVGNOJ_HhabBD2TEFBeiQsb2rfTSYTDdwFV8fPKzqebJ8HBhnnO-9od1VP_Sa85TM8o72TdeJBvzNS25ULtOVElzFl9B-hJsS48ZmyX12oI0rCicpmARzwEL99spj6vnNiW0g1CsOjjIVaWPk-nMJIcWibCFfzSQzChLgjdacIoWtdST4YXDV8ks_-DCSLjePyue71XOniYDfiBzudT9aFpCHWG9&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"09:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"09:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"17:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

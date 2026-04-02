@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Sammy's SOMA Pet Grooming","url":"https://scrubby.app/groomers/san-francisco/sammys-soma-pet-grooming/","address":{"@type":"PostalAddress","streetAddress":"169 Shipley St","addressLocality":"San Francisco","addressRegion":"CA","postalCode":"94107","addressCountry":"US"},"telephone":"(415) 312-4398","aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":1},"geo":{"@type":"GeoCoordinates","latitude":37.7804685,"longitude":-122.4019823},"image":"https://places.googleapis.com/v1/places/ChIJFZwm1-2BhYARPy7j_3rrsU0/photos/ATCDNfUNs_e_OziRijYas3jU-6SZMrS1zo1SMrR37WiRsdn_wG1wn6IFNoNq3Xrb-g_0VpsxWSnkG_jR2IUHtm8163ggw3bgCnpGKJpVdA5RZqYNiNGdvr2SWkqCwQfEw384HfVF5HMY83i7O_a8QEp5rQk6J9kkAqXPMQY2m0xPoHzHdWfLftTOaQ0eYgLRQIIE77qOkdcqy7qGrrPYoy2mQ9Jo_9qtNSF0TKEibDBYgE3vBSmqwpsHg6DJXFRa-kz3MF4318FfmpdKcHeBGMaBAjEfi3XeKx1qYWPq5lm4ZbMhzslDlcBB81RT_8ycPLGyxNM98n7U9I0ujZmNBo6nCBY2lVLY210QAuaYAJWotO7ygAcSOS-U3clg4qppvRE_kEjtBgeRtymbKDgip1JTMZ5jedc3Lsv4XfFSvWcoMcw/media?maxHeightPx=400&maxWidthPx=400&key=AIzaSyCpmbfD6svBtJL5OpHfeph6xPVzLlf7F-g","additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -343,6 +351,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -378,6 +387,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

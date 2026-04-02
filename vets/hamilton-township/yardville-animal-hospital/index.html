@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Yardville Animal Hospital","url":"https://scrubby.app/vets/hamilton-township/yardville-animal-hospital/","address":{"@type":"PostalAddress","streetAddress":"401 NJ-156","addressLocality":"Hamilton Township","addressRegion":"NJ","postalCode":"08620","addressCountry":"US"},"telephone":"(609) 585-6599","sameAs":"http://yardvillevet.net/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.5,"reviewCount":81},"geo":{"@type":"GeoCoordinates","latitude":40.1827623,"longitude":-74.662283},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ6UELG5hewYkRDdyhD5HX66M%2Fphotos%2FAU_ZVEE46P9Q4xS3gBQfjZOiGl8UxqkCaod5X5PILWXfvS0eO_fnJ_spZpJ0QUiK2JEq1rz7sdxw5uc32Dj06CvI6H0nOO-YgrzypW-hsyr6tBTWwy8rKv92FbK13vknqCBSrdE0qdJfJ8kpWVX9JLgfurXSLco3TbgKqvAYNyvBRro78EGUNgspeDJWGqZI7xGjjip8sMk5OWuPiS2YEoSxnuggKnCNtMnwv8Q3oetr1a6OIJLAa-YabgnEfLUwgIiKEOp5dm7jkVjxEv8L3ZV0Utr6clOzlP8krYxmgP3dSfmk4w&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"09:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"17:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

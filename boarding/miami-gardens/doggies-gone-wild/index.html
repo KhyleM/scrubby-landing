@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Doggies Gone Wild","url":"https://scrubby.app/boarding/miami-gardens/doggies-gone-wild/","address":{"@type":"PostalAddress","streetAddress":"16555 NW 13th Ave","addressLocality":"Miami Gardens","addressRegion":"FL","postalCode":"33169","addressCountry":"US"},"telephone":"(305) 740-6456","sameAs":"https://doggies-gonewild.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":266},"geo":{"@type":"GeoCoordinates","latitude":25.9253727,"longitude":-80.2212546},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJL2jWeEiu2YgRx9DwhjkYzxw%2Fphotos%2FAU_ZVEE74yGZjFToD4xMyWjfJgQMY3KR4Ss4mvFqaBrIiOFBwHifhp82Cfp-j4gDMakuLW-xgA3yFheAit3aFu0tMQAWq2q7Tux7bBk_LPvU2iPf4Y8kA3iaG3XCBgRs-4nzjuLc3JACdv_GksRuZCDhFvLLGH6xXVn7gDCPG2aosVnM0JXv-ype3f4967dAjB0pxD7MQy5BJzzHbquJ4FtZFHKjgdPLQ2M4CuspsxKSb3lPmYhME0OaLVGRuxr4DtgPjG0KBlyZMWsDJFym7hKEMTYZyFgmaYFh93imiRQKFid9Yw&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"10:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"10:00","closes":"17:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -364,6 +372,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -399,6 +408,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Shannon's Pretty Paws","url":"https://scrubby.app/groomers/edgewood/shannons-pretty-paws/","address":{"@type":"PostalAddress","streetAddress":"2719 Pulaski Hwy","addressLocality":"Edgewood","addressRegion":"MD","postalCode":"21040","addressCountry":"US"},"telephone":"(443) 409-2830","sameAs":"https://shannonsprettypawsgrooming.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.6,"reviewCount":83},"geo":{"@type":"GeoCoordinates","latitude":39.4417894,"longitude":-76.2910909},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJW644_rThx4kR3mgEhMcPmS0%2Fphotos%2FAU_ZVEGoqJyFdwuWQiaEzOqQsFziby8ldfqHykJ09iao5xEj7lq39yzKAODhLVB8t_OxgvPoVS5wiHQoEGb-FSG7GNrrNRPUbhAx0rFIKtDTbo1x9KjJJqjp-vBm6Dqv8QiTDxpkoD6JzikBGSM4QI4RxtDlAaiHt59I71Q9VclGgMC-I_bRyvFydDuYm0q3Je5QHUnEOcC5MPE8ezum2JWVvXnHW1GOrPDr5-4SKWlSEdnlEURVqWr8o-nIBC1QP5owk8IMwYeVvKoU5O98lEsPbutX77dQ-qi-CZ9i2exnfe0XKQ&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:30","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"09:30","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:30","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:30","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:30","closes":"17:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

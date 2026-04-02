@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Woof Grooming","url":"https://scrubby.app/groomers/la-crescenta-montrose/woof-grooming/","address":{"@type":"PostalAddress","streetAddress":"3434 Foothill Blvd","addressLocality":"La Crescenta-Montrose","addressRegion":"CA","postalCode":"91214","addressCountry":"US"},"telephone":"(818) 928-8008","sameAs":"http://woofgrooming.net/","aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":14},"geo":{"@type":"GeoCoordinates","latitude":34.2325444,"longitude":-118.2543201},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJaWhDn2frwoARoBCOfld5MrA%2Fphotos%2FAU_ZVEF65Z6XAspw_4DjKSTnRYjRMzMAWl-VUfDQ8ksCWoYOqX1KsTOaK0PH9RVgiNurKV10hnuHTSW6FcHys8aQK0V6ZcafGupmdHkte9U58OsfdG5gEuXpzH9DOC-QtjM-7zAXLnGcG-rbcMWAze6ZtlthDe4CLY8IDoyDsucDGMtYFHqhYCpnh0gWRtnNawoCnqGShuLpkfeKeVxStikG69eLgz9dn8NdsOQBIOeYpD2KefiHlJT41sTuk5cOaKCHxla6z5GQgpSK5swyLxnqWwF0OEyRA9NtBYeiVdbYI1PU3_4SzfUh06pwFVLUyY3vkZns7pwDHygIlbU5URDlZjnneDfSkKRKrV-ilNbFV3_RXesnL-wbz2KzNE7FznKnt8LaPX1ziSS_xtbBz3J1KHjoPI1-53AUNw2CRRCKBydo0ShnVV6EeAdmue1hkg&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"10:00","closes":"16:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Hot Diggity Dog Grooming","url":"https://scrubby.app/groomers/canonsburg/hot-diggity-dog-grooming/","address":{"@type":"PostalAddress","streetAddress":"28 Walker Rd","addressLocality":"Canonsburg","addressRegion":"PA","postalCode":"15317","addressCountry":"US"},"telephone":"(724) 745-9313","sameAs":"https://www.facebook.com/HotDiggityDogGrooming","aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":4},"geo":{"@type":"GeoCoordinates","latitude":40.241806,"longitude":-80.1695137},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ_ZLpUSNVNIgRp5jy2rK-KKw%2Fphotos%2FAU_ZVEG8PzjUvVQTBLj1w0AMH41OU2oxIfJwe9aKnn6PbMwECtdF3I4U9ViG-dR3GtrufdBICkKVmHUh2V1Uh86dR4Tov2s_BZPSaTkAXrnX85_0HggZBhGFBF5XGSc-fGwgxy4D2IfeM6yg2DgsqbrI_O9VTzxOdEmZc6eWn3af7DpAg-LTBIuPKP-K84F000NlNkfZmAi-hP7RrYYCR_A72Fp5ulRExIyw-vrW_okpJJ5JycuEhXjmGNyVOk8ROjNdMtllet_N8B3CXhzjWENaCRhyKmTA7zQCFMQQSnk5DTAWKg&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -348,6 +356,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -383,6 +392,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

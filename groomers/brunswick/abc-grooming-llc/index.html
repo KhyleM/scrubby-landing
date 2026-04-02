@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"ABC Grooming LLC","url":"https://scrubby.app/groomers/brunswick/abc-grooming-llc/","address":{"@type":"PostalAddress","streetAddress":"1672 Pearl Rd","addressLocality":"Brunswick","addressRegion":"OH","postalCode":"44212","addressCountry":"US"},"telephone":"(330) 225-3647","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":118},"geo":{"@type":"GeoCoordinates","latitude":41.2297043,"longitude":-81.8417865},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJNxvte-rAMIgRDn7J0A71laE%2Fphotos%2FAU_ZVEFf8wlJHV7xwhAx9fn6hQWkQnfLQAHqdViz_BtLOd6Asj5YjAJGx8jeETDIAx5_8tgZ0lcBa_T2RSCqS6KfusSMm4-vmk_uLnE3GX0uawmhzV-Iw5tDRo0Ldx8fpysPrISH4pViz9MxrUg2W6QKsaAM_Cwmy5kws6AHmpWxWh9OXbsB21w3EXft_RtaMdbVjlbYH0EEyqf4nDs0Y5ivr4Nw9ytahYoG_S26WprZtUAml7pTMqIT7DsL2zP7_s_HJNf2EjwRQHjYPzQVZFeCflIeWjKhqh1Yif1BcCXuraI&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -351,6 +359,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -386,6 +395,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

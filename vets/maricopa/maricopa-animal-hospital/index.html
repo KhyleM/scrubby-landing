@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Maricopa Animal Hospital","url":"https://scrubby.app/vets/maricopa/maricopa-animal-hospital/","address":{"@type":"PostalAddress","streetAddress":"20035 N John Wayne Pkwy","addressLocality":"Maricopa","addressRegion":"AZ","postalCode":"85138","addressCountry":"US"},"telephone":"(520) 568-2224","sameAs":"http://www.maricopaanimalhospital.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.3,"reviewCount":669},"geo":{"@type":"GeoCoordinates","latitude":33.062053,"longitude":-112.047642},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ_3hUKSvlKocRz44SAqAKU7k%2Fphotos%2FAU_ZVEFa0qWAwOjA8C9pOd0mWKEhdvFrNJSdW9fp_J8i_Z_RgPUMkSWMV_VlNjFLjvhUSFpHU_IdzGCLK632lzDfqmjKxqVgIc8LczeGV-JcJ98phM0DxQNVoeKk7MifyMH2dB6CAtZjJ0jCavjhCCV8ECEdp1s2ZtR-Tgr2iw1tYWWoDCIs3J4HYfZo2ope73YcgYfkoRGv6ZZ41ooGdX8HdkF9hiUQz8NgTFHM2-ahlDtQckwv2lX5u5pJkdcMsWiqENA7e1iIXnv2OIfjtf4atfwhf-dMuSywLUb6Mf-FrZegkQ&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:30","closes":"18:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

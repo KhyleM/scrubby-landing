@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Pets R Us Commerce City","url":"https://scrubby.app/vets/commerce-city/pets-r-us-commerce-city/","address":{"@type":"PostalAddress","streetAddress":"10290 Idalia St","addressLocality":"Commerce City","addressRegion":"CO","postalCode":"80022","addressCountry":"US"},"telephone":"(303) 288-4955","sameAs":"https://commercecityvet.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.3,"reviewCount":342},"geo":{"@type":"GeoCoordinates","latitude":39.8842118,"longitude":-104.8055198},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJvQj-ZlNubIcR_e2kbajjlbo%2Fphotos%2FAU_ZVEEYW3Ovx1StjET70JXYtVf6F4ST0gke3uvrq91TdBjrvxXwUcVx2pEaikU2jNSpvXjTu46rW8f6CMwLeCs17nCLamAZzW18YTjiH46EaX7THV1HosnbQp0La0jne3qp2L6EEsew0UV2JNX0sCncNdN7XaqDKokfb74fRp459Y0JjIGL5eW6_WeYwFIvcfTT9JeUsUMD7RhrOog15B_c04VJR8qOBoTH3m3qWcYRQx0ZYh1DFO9xYToy-IcGFwVjBKkLV4VRRctUNWoXVRX7iAdUjw4XtkM_Gco4v_fs9jnvfg&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"17:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

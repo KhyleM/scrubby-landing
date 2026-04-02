@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Kritter Kamp","url":"https://scrubby.app/boarding/elk-grove/kritter-kamp/","address":{"@type":"PostalAddress","streetAddress":"10731 Rau Rd","addressLocality":"Elk Grove","addressRegion":"CA","postalCode":"95757","addressCountry":"US"},"telephone":"(916) 691-1364","sameAs":"http://www.kritterkamp.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.5,"reviewCount":78},"geo":{"@type":"GeoCoordinates","latitude":38.3677135,"longitude":-121.4025326},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJQ_QOSGC4moARrYG-7QeXfqg%2Fphotos%2FAU_ZVEGDVAicLiCqyFSV2pgSp-fRX9gf95i6L8EVPhB8JLcyZObPY5hk2nU42FfzWoUdaG-558-TdfRxLn2yZCJ-EN9FKabVSCjPK__2sor9gAfkzLkw2ZhW37RTsFrewfeEsypqmJio09S62Cox3le2dJGTiVbjUWqQAHqlRs6HgTaiGo07kbEA3Z2YrR5cDfAyWUN6UXbr4-gtRNMmYNwuyl3d4oznt4vafvLWQt42jonZj6QWQAiYL4mtRh33WITTMjuPNOVZRwsEda2GhpBhefnfO__a0kxBYVuIio87XIyhlfy466Qgr-PCuXYYzjLGS1MZfCt_sQT2YHmcQw49An0V0vb4t4NMo0PiP0Xi8-LLDKKEqkqRWXZjLEWNm-OOle_N7Sqa_izP5GfpOdyf6sG-QEWpQJs34OEhNxCZwLZ3kMeZ&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"09:00","closes":"17:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

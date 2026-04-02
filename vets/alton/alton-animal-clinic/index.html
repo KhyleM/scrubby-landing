@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Alton Animal Clinic","url":"https://scrubby.app/vets/alton/alton-animal-clinic/","address":{"@type":"PostalAddress","streetAddress":"1639 Main St","addressLocality":"Alton","addressRegion":"IL","postalCode":"62002","addressCountry":"US"},"telephone":"(618) 462-8000","sameAs":"https://altonanimalclinic.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":498},"geo":{"@type":"GeoCoordinates","latitude":38.9026626,"longitude":-90.1476167},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJax0XYlVb34cR3y-EO5o7uqM%2Fphotos%2FAU_ZVEHic9dqOwWB-EqsuVuBpohbb6CYLuxx-lMbEUUWixJ81ZxByMMZPTk2Z5z7QJRyIhO9Hjaclz-ENDEBjU-dFkFeFs4gUvaYHOM9HJHLzM1kpDVtCnkP_dTmWNrlI3lr5iDsxVt3JYXU0WvlnDFSZcf9OL34P8-ZVrkRKOR18G4RjQH9Ve_a37vWO5gE2ApT1wD2m9Cf9XT-L0AQj4nkuEenE6nuGqxuUksb37Ofvb3QyHvve0XDunIgfLWPvFfBzI8q_g6XXaCXD3fsjuk3wibz-3yjAGr6KcMLHcG4nKb6-Dkn0417tfLfr1OBulsIgxIcRiMzX31Am6KPJgmOu0138vaR8r4IYYGemlN--ault2z4SPJ2czELMzZ1oHN6FAlhxEK2XzRN7H2Ata7SQ0o5zncA2AAfUFDW3MvEHbx20g&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"17:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

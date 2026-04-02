@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Springdale Kennels","url":"https://scrubby.app/boarding/san-jose/springdale-kennels/","address":{"@type":"PostalAddress","streetAddress":"520 Giuffrida Ave","addressLocality":"San Jose","addressRegion":"CA","postalCode":"95123","addressCountry":"US"},"telephone":"(408) 281-1965","sameAs":"http://www.springdaledogkennels.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.5,"reviewCount":115},"geo":{"@type":"GeoCoordinates","latitude":37.2529128,"longitude":-121.8319076},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJV1VO4PIxjoARgeh1KkJsCr0%2Fphotos%2FAU_ZVEFbbmZSHTXHtlp0Kpb9WmQnkBFQP0RtBjb18CfKStL1PhQCOYre6-M7UU4Rp9KqpfmEkYhH66kgxXnjQSE5IglkttB_OJQuHh6tpdoKO6MK__IL9wu3hppN9BbTtKTmkCqVog5uCtE6V-CrA7W2jgOrkpEPctfwzVvjDbalgqEDFfM7qP-rtsiTs7RDeQi2jzQguw44N6qtvj5MYt8UCYj0PMFAVIWqencMokAmbhNCBlG7wyW8iAIS1EkOVSkw-UyM3PyZGJXiLp2Uq4s4tALfyHgt_G4SiyOTijJvrkklB1VhzEdFmUajvjeBR6VMxh7r_QHJeUtTMEeifcAhXd7JNyhPQPvtfj4HxkQgd9_LlAIJOfHkpkuU0XHMe5NoM1-Bx8Esr5-qfrajtEugGLksRkslkmerzWqLt-e0mvYKN9w9&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"12:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"The Pack, Fruitvale","url":"https://scrubby.app/boarding/oakland/the-pack-fruitvale/","address":{"@type":"PostalAddress","streetAddress":"3550 E 9th St","addressLocality":"Oakland","addressRegion":"CA","postalCode":"94601","addressCountry":"US"},"telephone":"(510) 822-1943","sameAs":"http://tpfdogs.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.9,"reviewCount":152},"geo":{"@type":"GeoCoordinates","latitude":37.7725282,"longitude":-122.2247959},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJwWYxkoiHj4ARD80XDfZ8fnU%2Fphotos%2FAU_ZVEE2oRUz2C45EnGrhmK9ig-IyWFm1rGO7nOSZptwS-MP96QfJzpxe6eGLK1ZHGKJ2djtq9-8lb4EVTC3Akpimrf2KRpy1UEUggON3J2gQkrm9a9ShCpfAcHRwOyoQzo37fYqMM62la8rvcYz6TVw94KJPlNfRTQvDpD3V29ij0zz0m1KVY2MJOyytnxfaS9D3TH8g3lVEzrJK16bd_CxClH34dVwkgaeZP-5JGaMmzKwzJ7zkCfWKoJVQzEGK_hMqz6vDHm2oJo4h4X3ruW6zkT5zLxR0bwrSZEp_q_0NQgofA&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"07:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"07:00","closes":"20:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

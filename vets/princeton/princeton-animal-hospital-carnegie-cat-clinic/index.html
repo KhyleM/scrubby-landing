@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Princeton Animal Hospital & Carnegie Cat Clinic","url":"https://scrubby.app/vets/princeton/princeton-animal-hospital-carnegie-cat-clinic/","address":{"@type":"PostalAddress","streetAddress":"726 Alexander Rd","addressLocality":"Princeton","addressRegion":"NJ","postalCode":"08540","addressCountry":"US"},"telephone":"(609) 520-2000","sameAs":"https://www.princetonvet.com/?utm_source=gmb&utm_medium=organic&y_source=1_MTUxNTMyODEtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D","aggregateRating":{"@type":"AggregateRating","ratingValue":4.6,"reviewCount":578},"geo":{"@type":"GeoCoordinates","latitude":40.3216032,"longitude":-74.6380606},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJPwDIu9fgw4kRFlN4aNYJoOc%2Fphotos%2FAU_ZVEGSg56FkfCVemLNBezz323PhX37LXHw94fQ12sJAMJjG3HFcybtAcYEVz4Cp22MmsssuCYEmrxyOlcbVXbbi8xY1AjYwG-09rDcbGwzJdlNRNUSE6jhSIPN_vdWlmikTsGnAHf8wkuuAkjlZYevicYGAMeWRo1JXqT1hNa7vyJ8ZO9SqGlIY9zJJbZLyNL7iiymrfDTaAG5-u0lTn4BRurLfM-HuW9UOI_3Z4FZZWeU6dkO03T5CaP7w0XAdERFOx0T57BX3L9JisvQFeYycPIum4-WHQV82r3qmZGdW6nN1g&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"06:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"06:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"06:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"06:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"06:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"07:00","closes":"16:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

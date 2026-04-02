@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Farmer Linda Pet Care and Grooming","url":"https://scrubby.app/groomers/tacoma/farmer-linda-pet-care-and-grooming/","address":{"@type":"PostalAddress","streetAddress":"8205 Portland Ave E","addressLocality":"Tacoma","addressRegion":"WA","postalCode":"98404","addressCountry":"US"},"telephone":"(360) 402-1456","sameAs":"https://farmerlinda24.wixsite.com/farmerlindapetcarean","aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":6},"geo":{"@type":"GeoCoordinates","latitude":47.182566,"longitude":-122.4072718},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJNcfvb3D_kFQRaNlAeRR2Akg%2Fphotos%2FAU_ZVEEYpLV1ujeGo0-3aCO3kjmZlj1wKTlYb90XwCnmuuYWQzB2PmSwvtCSzu7pNvlw70tWU64_wkDNZfYz94go5wgev7faPtbRzNDMu44G8J4sMxGwoc_3AjexwejF1BtMLTe8fiSfJ4bkzA9PoEwEiBT-kwT0dl-399lDHR-bvOcqeggR2dNiVqNQz9Hq6_tdh8oG8BaCtvN8Y8LP4MJI4udz8Jf0Nitlj_NalvEQsgsIcoXT5RKdb3JRvyH6IpOPzNMxO2j28IYMibAkd6GpsWzKdP0cfbiMt5XWn78N-qWR7g&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"09:00","closes":"17:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

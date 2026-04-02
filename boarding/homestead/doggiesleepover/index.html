@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Doggiesleepover","url":"https://scrubby.app/boarding/homestead/doggiesleepover/","address":{"@type":"PostalAddress","streetAddress":"25065 SW 123rd Ct","addressLocality":"Homestead","addressRegion":"FL","postalCode":"33032","addressCountry":"US"},"telephone":"(786) 758-1768","sameAs":"https://www.doggiesleepover.net/","aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":115},"geo":{"@type":"GeoCoordinates","latitude":25.5346268,"longitude":-80.3916959},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJyeVxz9nd2YgRxN_ag05f7Nw%2Fphotos%2FAU_ZVEF-1be0-q5iHYCGTZ7HGSp-8PSdv-AGKbw0G0d3QqTeD7ZOgV-kKSDmBov1VQ_zrmzTuHDmI0-KDSWu79jH_gZXSrwI8MWAxczLmCSDtVSQ3HgiG154cD5g4UNKE9NIF6AxtWyhMtWSJatkWPY-hj6J-wf7j_-5N9hfx8rJFyE8yZDuoxd95pK9cAzXfAMoRQVn2KSOVJeqZHkxXLkOsUa_rrzU62sMtxDfWIrrgImsNWyMLg1Qbzd6KUc_bU3zRQWAx2Txq-7z282YjQpKENL0JABNFD6T70nzD0iWBGgU3PpIjO1jDCd9voYHFU9nSyei3PxBKFOoQQi-LgKGzqVJVRdD5iM4DbtUaCHu_yTZ8i-JP_HcbnzZZ7yr4Sh4nx0scnSEUGHlL7bxGGpBjyBgGgk5FFWZP487ulXQ0ZDcmbcb&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"07:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"07:00","closes":"20:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

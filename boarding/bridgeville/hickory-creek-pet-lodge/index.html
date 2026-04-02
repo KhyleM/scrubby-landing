@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Hickory Creek Pet Lodge","url":"https://scrubby.app/boarding/bridgeville/hickory-creek-pet-lodge/","address":{"@type":"PostalAddress","streetAddress":"900 Alpine Rd","addressLocality":"Bridgeville","addressRegion":"PA","postalCode":"15017","addressCountry":"US"},"telephone":"(412) 221-7664","sameAs":"http://www.hickorycreekpetlodge.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":61},"geo":{"@type":"GeoCoordinates","latitude":40.3426015,"longitude":-80.1471892},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJm7CnQQZXNIgRiokZifyMmKQ%2Fphotos%2FAU_ZVEGIjiMsRQ1onfFFhsBpeVthDSKJgocp2yUKPumt1EfwsmDeI-nP4_2cjSHgC2r987-h_f_aC2R3_biokTpMJ0KHHfE6wvfjX0c34X4DqJVbpAwM82DY-scZoY5tQ4hGZvI4_N6phw4ZRhw-FNE0PvfXVe6XSUNT37kH7lgiqVCy6t5A1PMZ6w9dQndoa8nSHj7cklMurJf3hji8ZpLxw0rMr-rfyFvKtb3W75yZPDFrkxXhNqzsIQLCC4hKfBDjPv-xdp4e0INSCBrSof6w2Tj4G5tqR_EH95Z3SuBWvZrZqQ&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"14:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"14:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"14:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"14:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"14:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"11:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

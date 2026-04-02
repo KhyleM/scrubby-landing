@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Canine Counselors","url":"https://scrubby.app/training/miami/canine-counselors/","address":{"@type":"PostalAddress","streetAddress":"7875 Bird Rd #212","addressLocality":"Miami","addressRegion":"FL","postalCode":"33155","addressCountry":"US"},"telephone":"(305) 264-0027","sameAs":"http://www.caninecounselors.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.9,"reviewCount":492},"geo":{"@type":"GeoCoordinates","latitude":25.7335377,"longitude":-80.3224016},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJu7OMVIi42YgRpvefZVW5T9s%2Fphotos%2FAU_ZVEFK0BZC1KprzJOA16iAWAZ9NwIBWzHX8ptvuAeKw0w7LxUl9fyJFSAPsVnaXO-ihhQp8PqPXBJtP1ejEp0kEkpIgT4v5_V4bLQlf8IdPfRVDTplMCYs1Qs9IqXEq0-JZDrqfunf2DCpMAYpBaL0pQ2p45WhtJ9PZ3_J9JfXvKKuRWD2TlT8n0Ne0hQduqKpfDtsA-hWaMHkxBTCyUrWF6GSSQ7gcexyiowJ0i8VggB7otuhgcJXSw0Tg8rmEjwkEeAmTl_5INZ-CMP2vXJSnSigJB5JXp_qGzKiADoL2tTqHA&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:30","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:30","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:30","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:30","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:30","closes":"17:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

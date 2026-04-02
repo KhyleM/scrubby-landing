@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Tammy's Pet Salon","url":"https://scrubby.app/groomers/crown-point/tammys-pet-salon/","address":{"@type":"PostalAddress","streetAddress":"9121 E 109th Ave","addressLocality":"Crown Point","addressRegion":"IN","postalCode":"46307","addressCountry":"US"},"telephone":"(219) 776-3745","aggregateRating":{"@type":"AggregateRating","ratingValue":4.5,"reviewCount":69},"geo":{"@type":"GeoCoordinates","latitude":41.4195251,"longitude":-87.2256878},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ9cxz0k3tEYgRCPBilnfT-LE%2Fphotos%2FAU_ZVEFg-kGa_QzC0yCAVAlLVW_0QGuInAfXF7CYCRKkwhx5wKbUoilcaqmMjqx3cWw9jNp5gj2qO9YkZ9pt6Cj0MzUD8FBc-EFzjyAEzag6CrEe8VoJIUhS_jw4v_CNTy3mYm17LotYkulZcsu2dwTMLIqvlZc4xX-Vb4y8zJtMCf47d7igq_obQ8AJ0CBY7_y4SZ4ZiHkygyU22PmQaKEQQBoT8J8os1eUoOF-gR_uzYysEOqLNQS6m5-gRLm3OqgZFks-ZOIgzQT1PjXS9XnxyZ0PoQ5QCKiw9oBTvneIeuQh89HQPtM3DuN7-lEGKj2ZjjdiQn6RSAc-pvdV3NP1-qz8us5je8xd2MZFM1_c4yj9a5TA8JUEJypeU3KjayBjkFmbu-IkZAYTw-VBzgzfKFb6YQk9eatyj7b9FWv9QkRSwqHM&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"16:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -363,6 +371,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -398,6 +407,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

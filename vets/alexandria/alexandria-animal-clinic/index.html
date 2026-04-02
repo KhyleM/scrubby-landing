@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Alexandria Animal Clinic","url":"https://scrubby.app/vets/alexandria/alexandria-animal-clinic/","address":{"@type":"PostalAddress","streetAddress":"2367 Johnstown-Alexandria Rd","addressLocality":"Alexandria","addressRegion":"OH","postalCode":"43001","addressCountry":"US"},"telephone":"(740) 924-3911","sameAs":"http://www.alexvetohio.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.6,"reviewCount":389},"geo":{"@type":"GeoCoordinates","latitude":40.0923395,"longitude":-82.618988},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJGUISDMdBOIgRRzdiEVExxX8%2Fphotos%2FAU_ZVEHalHRwIGlrpLfqiXnLCX8yFT6ZsEFEzcmdlpjg63TRqZoBH8FZ6EG187GHhNj0Pr-lrld_OQiOm1exKlQjcooQFeOzKJqoTPlkhiJWym_9B3Z_MPBrerkF7B7kB3ODUgROgMMNjwAU26jwTD6v1MgKS_8Ntjm-9jlO-U2VzcoATKxbXG4rCZXui9JEgJoGTuDvk3TU_wTeR0ukLSVSCevRIvDtX3wjOrhufb6cc68L2Jylas2t15ajPtCzmbLig0S81JsR5VJzheMoLrgzOMn1bZp_d_MT0210_ubFv_iK88TAQIM0IwFHTJDicQZYb-07Dug0b2IYkvzmsPnky5kguCEKy8BQKH0G5fE1kMmz0ZLv2NALhQjOyddgSewxZNxWVfvJtD9lrWNBe-BqNXPR3hLKdQ1Fmw6Rh_YKbPZDuAj8&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:30","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:30","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:30","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:30","closes":"17:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

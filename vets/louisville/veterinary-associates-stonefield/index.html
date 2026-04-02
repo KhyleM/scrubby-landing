@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Veterinary Associates Stonefield","url":"https://scrubby.app/vets/louisville/veterinary-associates-stonefield/","address":{"@type":"PostalAddress","streetAddress":"203 Moser Rd","addressLocality":"Louisville","addressRegion":"KY","postalCode":"40223","addressCountry":"US"},"telephone":"(502) 245-7863","sameAs":"http://vetcity.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.5,"reviewCount":304},"geo":{"@type":"GeoCoordinates","latitude":38.2440501,"longitude":-85.5592767},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJjVd7vXefaYgR7z-OMpKoW7A%2Fphotos%2FAU_ZVEEIe6XYSxJ-IJGKiMQ7BfIAbPQnuAFPr-uUUaov2Eh3nGvES0tb1OKnaq2vnoBEDUb7e86F7ZRUw0hk7E2Ij8xwdtHBLr6rzLnXJ8xEO8CYNMqL9EYoKMmUDrkVQ3EVM5q_E8keDJO__YLbsW-Hsu9lGSkoqkAViA3Exqtxx-K9PUrUZlw7Eu_ZuDPLJ72ySTRXr5NK9HELKNIreKX2LtTvRNp6dzv-0dabLWgar9nIvmDs1LKwsdVYLzzrTlTd6YkYRmF4eZSulv_vKuC6RKIQGO8xo31Pe5jXrgka9anx1SrorZfYg9SOpEOyEmnqnmPL5Y3rcfJAwl1CnSNclLdzp5UTwE6te7iJIs8QcmdN26Q4kXQCawOpsSpdophBD0JuG1GV81giaIl_sBtCi2M32ZVtx9crWIY6AEqCILkQc-I&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:00","closes":"15:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:00","closes":"15:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:00","closes":"15:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:00","closes":"15:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"14:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

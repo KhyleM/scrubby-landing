@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Golden Post Kennel","url":"https://scrubby.app/boarding/franklin/golden-post-kennel/","address":{"@type":"PostalAddress","streetAddress":"4158 IN-135","addressLocality":"Franklin","addressRegion":"IN","postalCode":"46131","addressCountry":"US"},"telephone":"(317) 422-8567","sameAs":"http://goldenpostkennel.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.5,"reviewCount":62},"geo":{"@type":"GeoCoordinates","latitude":39.5364627,"longitude":-86.1642311},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJUeXbP99ma4gRcVTv4EEnF88%2Fphotos%2FAU_ZVEG7JP-cjuT9QWUgRS8BC-kPMdZEMR8aVxtkhSGUQR46hobM1KaQ_PKzu4xtEAEpHyzqW8_aA-4ffO6kxBJUEmfcP24za1Au-LO8dRXHbDjAJaJVnGsDKdz3bhaSUlmtI8ZAruzhOsdTZGKOq8E4jP3b4emjHnCPYU8cq6gptF4mEkgNtZ6f-0ZhEhywpFIpUURb6VJat8TiQdx2df59CK-JfSVv4xaosrviM7jrGdjN6ToptKg9vnJBIxzLTNc07p5lTUnrgiY0tSqsEihisHb_ch9jXM9EFPuwhkaBgOLrVo5kGukf-h4XTty11bmTdED2zI16PKqcrbHwfxjy6m-9fg_WjoqLaNRgBgsEamsE56M6XwgFaLgWp6CGQzTWt9FJ-2zeLQ24rI__b8BOfoawOiq6sN_9h__YW1bvZAuw0dDv&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"10:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"10:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"10:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"10:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"10:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"10:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"05:00","closes":"18:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -358,6 +366,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -393,6 +402,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

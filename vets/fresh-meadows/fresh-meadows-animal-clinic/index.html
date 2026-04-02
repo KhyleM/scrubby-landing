@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Fresh Meadows Animal Clinic","url":"https://scrubby.app/vets/fresh-meadows/fresh-meadows-animal-clinic/","address":{"@type":"PostalAddress","streetAddress":"192-09 Union Tpke","addressLocality":"Fresh Meadows","addressRegion":"NY","postalCode":"11366","addressCountry":"US"},"telephone":"(718) 776-1165","sameAs":"http://queensveterinarian.com","aggregateRating":{"@type":"AggregateRating","ratingValue":4.5,"reviewCount":485},"geo":{"@type":"GeoCoordinates","latitude":40.7302293,"longitude":-73.7782718},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJkaHOpKZhwokR9l5yi-Z7UqQ%2Fphotos%2FAU_ZVEG0uUEiKOh7rJE6Dv5M8h32smmzY2o2FesVISmyD7KrZLNuH5RrnUu70bBeoHqk6JQnivCGdw9zX8m0pJT1_cwdmuhZA4wwEXwJQDPYCPEhEZdULApvszrwfal69u-4BSfqbE1LZGaF_t_lhbjrK95SRlLT_gEHnnAsnLf1g03oL4nH-IM5nHxGG7acW1e04tPLxK_mA3gVfoayBABvlWgJ_K2chxMuA17swi9VO0o1uj7_QM3_Gdb1o3nt8udWO8asWtZNz4fn6_n8Okin2pVvkXbCW5pKwFBgTGj7rvgM7JInKVOG8JOqT2PZbRAePX3zLiJWLTwUBIh7grDiI5Y9Bm4BaZKcJee9fTh4v5jCCkCOtR7AqufCmms1EtaXmXaktPzo4jb6Lg_oOc0YrlJHH8iUDvExNmkLqViYWUA5Rg&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"15:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

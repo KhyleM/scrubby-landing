@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Fuquay Veterinary Hospital","url":"https://scrubby.app/vets/fuquay-varina/fuquay-veterinary-hospital/","address":{"@type":"PostalAddress","streetAddress":"1331 N Main St","addressLocality":"Fuquay-Varina","addressRegion":"NC","postalCode":"27526","addressCountry":"US"},"telephone":"(919) 552-7200","sameAs":"http://www.fuquayvet.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":288},"geo":{"@type":"GeoCoordinates","latitude":35.592441,"longitude":-78.777131},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ_dHiQxGPrIkR7CfpTCTkZ5w%2Fphotos%2FAU_ZVEFiG8gs1ndbB1GFWaeYX_Xg36q4_TceOwKi0_kFAma2acjU2xniVN_wBnDXny6gmRLJJt-RFx5qDeiov4bCAmf2E9jj9XcJgxGQJZhaDXmxSPU4SRFtF2vhdO695PIbb3BVli4smWSP4zo8hDiK-umQOuyrCX1ZDmfIIBkFP3OI051BOFH092AxYUXFkn0fp2n8bVmj0dUVuPVwF1YGntzO7QTUQGHuI5-sG18_MR7heqr1muEZhf2zeNWqBY1MVwMkVeKSZ_JGhA7QI_4BYZeEr3qi9nrhfUMi12ML-boaPBNKJdbOg_py3miDmdUN_yy7x5nbV5oK2olih_nL5UdbrDcAa3mb7JsW_CRjGltfbrdEnwDeIHvxVa22BTHsGSS_tNUXGRSmBk2MY3T3ZT2WI4K8eS0PS7mpiQUdC1g&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:30","closes":"12:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

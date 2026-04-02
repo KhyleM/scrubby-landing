@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"A Paw Above","url":"https://scrubby.app/boarding/hollywood/a-paw-above/","address":{"@type":"PostalAddress","streetAddress":"1532 Washington St","addressLocality":"Hollywood","addressRegion":"FL","postalCode":"33020","addressCountry":"US"},"telephone":"(954) 699-7669","sameAs":"http://www.apawabove.net/","aggregateRating":{"@type":"AggregateRating","ratingValue":3.9,"reviewCount":181},"geo":{"@type":"GeoCoordinates","latitude":26.0040841,"longitude":-80.1381982},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJXxvq0nSr2YgR7xZ78jKKEvU%2Fphotos%2FAU_ZVEGM_8YN-Y7zGEfZ_asbmgaYyCyEA0PmxyQUCgKSNzFUqGAiEE3_SkV6z8E_BHt5SLBHFOSBajfuHC8Znojx0enJoQudgQOduUkGM58GwKvKUoRq7Bg9rZA0KGxAi08Xqihfrt1IwpHFPwGzlPRdKvh9SIwCxZBAknkhkE-AfKwCED9ZXBB3f3P9yCv3V3O7Pfdz4oiyRjU5uL-O_nmvQCnO1CKXkR0YqrHBd4k6LFzOrck6AWpc1V4BgZMa8Il5lShUiKNedSn1JemPjgioYHhYfLhSxgiCr64AYLCqcI_c7Q&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:00","closes":"11:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:00","closes":"11:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:00","closes":"11:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:00","closes":"11:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:00","closes":"11:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"17:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Tanasbourne Veterinary Emergency","url":"https://scrubby.app/vets/beaverton/tanasbourne-veterinary-emergency/","address":{"@type":"PostalAddress","streetAddress":"17400 NW Corridor Ct","addressLocality":"Beaverton","addressRegion":"OR","postalCode":"97006","addressCountry":"US"},"telephone":"(503) 629-5800","sameAs":"http://www.tanasbourneveter.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":3.8,"reviewCount":812},"geo":{"@type":"GeoCoordinates","latitude":45.536718,"longitude":-122.8560594},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJn9EvFGUPlVQRaqIfCHdQyJU%2Fphotos%2FAU_ZVEGRSoJ-KGooR9SbMTQRfobU196CiqGzKfWx1YW6fdfQzl-IDYSP1I0vxt3bExEX2AJkmBTUvh70YZnU548CI5z5CMNZ5guX5H01SozJ-u4BCAA2YX_eofdSxcDU7yeSiGRiKAgxBynTGWyivSEzaAck7ACBD5hCdGJmTgoFY5yKv7kCi2L8-5S7b67kY28zGKq82SQLAkWkWQUUqeed5ZJM2jgg_3mcJvldNCRT1LG1pnywuyyhxELus7fhmy3TW1QbusPfqJyPt6K5_l0DkuVtIwNqzS2UIVxESI0QcWYkrVolf9-SM680tWwwMjiwjKDp-5Za2rj2bEof1kDekaTxJZ1tUH93lmyp2H1z-4ogUBiE34uXB41MaDIp3-VfD9SKTXVhqHEhvTvs6N7SwZoykRTgL0mIeSM50YhZZ1pR6BQ&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"00:00","closes":"23:59"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -370,6 +378,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -405,6 +414,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

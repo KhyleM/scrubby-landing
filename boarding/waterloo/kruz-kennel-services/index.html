@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Kruz Kennel Services","url":"https://scrubby.app/boarding/waterloo/kruz-kennel-services/","address":{"@type":"PostalAddress","streetAddress":"3480 IL-156","addressLocality":"Waterloo","addressRegion":"IL","postalCode":"62298","addressCountry":"US"},"telephone":"(618) 939-3647","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":25},"geo":{"@type":"GeoCoordinates","latitude":38.318315,"longitude":-90.207386},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJk6ptEPW92IcR0tqS3ZURh3M%2Fphotos%2FAU_ZVEE5AdXKJOaD764VTLtgn2Ty77av-5ya8Pb_IC_wh7FK84g5xKgPoypOm4fl5Zfy9ErIRI6h1cmD4VcGb5nxiUPtFRcefPRGPw6h5fWK3iU768mbe8z5712iah3_9tfQ2qI05j5VcB3vHIdfaHUGslmnGD8fetXoja3eRFVsDMLFSG6xeYUgEz3sWY1-D9nVeDH_3Z82k45TsXQL-7cso-yVk921fbdZNVHsc6Os-p2MvOdmadc0dBM4jRtsTG2C-IwVk-nQsWe9jlhZiTyFaN-q3lLE93iWzxPa28zlap-1MA&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:30","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:30","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:30","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:30","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:30","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:30","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"08:00","closes":"19:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -357,6 +365,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -392,6 +401,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

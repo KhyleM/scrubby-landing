@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Barkefellers - Indianapolis South","url":"https://scrubby.app/boarding/indianapolis/barkefellers-indianapolis-south/","address":{"@type":"PostalAddress","streetAddress":"8808 Madison Ave","addressLocality":"Indianapolis","addressRegion":"IN","postalCode":"46227","addressCountry":"US"},"telephone":"(317) 881-1888","sameAs":"http://www.barkefellers.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.6,"reviewCount":634},"geo":{"@type":"GeoCoordinates","latitude":39.6381436,"longitude":-86.119656},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJLdwY8OVca4gRvjZxrDPgro8%2Fphotos%2FAU_ZVEHhK2RqTVvsExt6VC6suncK4RzthhNVnAPTMqgFHfm8egkBsTThIgVoUajdh3uVN9svVrQVSMSp7xllzuhGnpvejmBaaffc03uzKO3fkau3uTlcGCxZMxnS7m3Z4qh2Y0HJjG5PmgVI49VzAD9IV1FwMRIg18KfYREgTcbo4LVFRtQOqZuuZbSrHgHImkf8SXHeWyUKlVqlpWc_hXz1OpBV2h8zv2_eHRyKY15M_pQv5aC0j-2wqb9NpNXrWQp5hRbioD0FbKkYgnfOZCyr6rZNwCt0wJScLN63-hWhsipCTw&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"06:30","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"06:30","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"06:30","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"06:30","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"06:30","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"08:00","closes":"18:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -364,6 +372,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -399,6 +408,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Where the Fur Flys","url":"https://scrubby.app/groomers/ben-lomond/where-the-fur-flys/","address":{"@type":"PostalAddress","streetAddress":"9400 Mill St","addressLocality":"Ben Lomond","addressRegion":"CA","postalCode":"95005","addressCountry":"US"},"telephone":"(831) 336-8747","aggregateRating":{"@type":"AggregateRating","ratingValue":4.6,"reviewCount":36},"geo":{"@type":"GeoCoordinates","latitude":37.0891224,"longitude":-122.0897798},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJO1Oi1uZFjoARc0AIq5jrAek%2Fphotos%2FAU_ZVEFl9XxshUln5xqT7DAxSkRsT6VQzk0cSUjhKSXm1MIIxWyrqqWM4EMigNz42ymvrPHkHqFfS5kXjRqccXSQ8bweyYGg1-f9_irvLrwdmYoNYBPJkwKXvsLoyaxmd1j9u0mzzVDHpZpevb7QZhLAVZNU2H5RkU28Kqr1_k5PSyIXIY6s0uwlSBfUUIpH3hBRWO5SrmqnnbzeWaNbtOJjkbdK71KjPTFVn3_5q4MBJxlwJGremablvJFXPftYpD4AdFo7reliOJZx_4aXPE6zl1qeRzwXao6bA7zO31iRuajss_AYSnwl-2wfpXqNJ8pqQhO3tmfbaTB65NoS75aZrUtDB2i-twelG1WHP0JDKl-fPyq9lGYXFL9OaYfha2LTaXq3AH9nuZ-PaUUipBZ13NYUBpZYOE4bcNcPyBFWMad0ieQNlaZ7jIklcg9f2cQC&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -347,6 +355,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -382,6 +391,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

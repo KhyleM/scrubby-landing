@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"BFF Pet Grooming and Boarding","url":"https://scrubby.app/boarding/mccalla/bff-pet-grooming-and-boarding/","address":{"@type":"PostalAddress","streetAddress":"21861 AL-216","addressLocality":"McCalla","addressRegion":"AL","postalCode":"35111","addressCountry":"US"},"telephone":"(205) 307-8969","aggregateRating":{"@type":"AggregateRating","ratingValue":4,"reviewCount":4},"geo":{"@type":"GeoCoordinates","latitude":33.2783637,"longitude":-87.1132636},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJh7VRMU7EiIgRNzhxTZw7mGo%2Fphotos%2FAU_ZVEFU47SeDKc95EzLdFQy7eofC26vk0AX55cdHiAgXmPl4X6Q4ij7RwmA59woGFQVJQfQ4Dc588DBUnjY5vSa95_k11a17xoYIVyp9nQ4L3XAIWQ2SC-n-oAXIfNJkmEKyTc4Q-Nj9Gp7PjyzKVRy5m-GGZ3e6xYZgXS5Ku-UHCcF2Gk_0Sm9N3V9LcMJH02XrP1VRsV4JTuctAYMwq25iWRyr7BFRihe6L4DrZ-924LyDFuu9IqpUJvNuD82lt_2K2EntIA_jhonFpeM8W9riCOpFjgcfUwkFiM_F-v8oHOT9ihI-GrqV683cbH_b0BUP6Lo_px0CY1HqjSV7o9RJypJgmXiCian7m3cPuCECJDEbgKhRwpqCw9LOgqMBpVjeg8mTTnfNkMLnBVsZJv-CGaNIyCz9GwNatl2fgZioA8u2Q&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"00:00","closes":"23:59"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -356,6 +364,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -391,6 +400,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

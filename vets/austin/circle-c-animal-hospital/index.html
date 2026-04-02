@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Circle C Animal Hospital","url":"https://scrubby.app/vets/austin/circle-c-animal-hospital/","address":{"@type":"PostalAddress","streetAddress":"9600 Escarpment Blvd #950","addressLocality":"Austin","addressRegion":"TX","postalCode":"78749","addressCountry":"US"},"telephone":"(512) 288-5888","sameAs":"http://circlecanimalhospital.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.9,"reviewCount":319},"geo":{"@type":"GeoCoordinates","latitude":30.2039675,"longitude":-97.8793119},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJE_AhvlNJW4YRs3aB-EDqSMM%2Fphotos%2FAU_ZVEH6MlUoZpLGflXY6AXdcY3x4T3CqV2IeC5G-F0Qd94kk80AqC-dA3vLJa5QXMgkGZOvo1691gFHc9VQZAMq3qVWhnF2hednuuAOTA5tsK23N1U4NjTuDV0Fd-dzVqwhtHDZNg8qG-QQNF92B0iT0hHjYYmvA0_cZ2Z-bENSSWlfRCRXvZQAr5HUoohiE7Ihg-vQYiNL7CjD_Gw0w7I_msoO8iGRfpVNrNaC5HWIIDAVcsh6NHGuB3-5m-tMhAcXjxCqbOiZFZ4k7r2r1XXlRhNlb2HLykDudhfJHLPmfOSoKw&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:00","closes":"18:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Puyallup Valley Veterinary Clinic","url":"https://scrubby.app/vets/puyallup/puyallup-valley-veterinary-clinic/","address":{"@type":"PostalAddress","streetAddress":"2208 E Main Ave","addressLocality":"Puyallup","addressRegion":"WA","postalCode":"98372","addressCountry":"US"},"telephone":"(253) 845-8122","sameAs":"https://puyallupvalleyvet.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":504},"geo":{"@type":"GeoCoordinates","latitude":47.1913934,"longitude":-122.265665},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJg2wSx-T7kFQRRdrDhQEzmwQ%2Fphotos%2FAU_ZVEF-P7xXnSbAdu6A02Tz7NeMC9k9VNioC9UIcwCcWNpgSe25UAHkDLk9fHIwhFQ8D-FQb4wzyApafV3_lfH2UJjDTIAQ2wIn1X_HcHVyMGLXVhvHOCvKoOd8mqNZCnMhjWwiAeK66eadmS9bLgZotlnhtxZa_YdFZE_FNYx6z4GwPCHCFiWazj7zbnOYifr5JdNFq8xGwbPv50QimOqVmuvzyfD0bch9VoEW0xX5-DmSMt0dI13MYwvdt2tarsiqD2X-ZzKQZFyMa70rXSYWp9aZ2nRshd9_sTBOp9Sa1XDeDg&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:30","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:30","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:30","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:30","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:30","closes":"17:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

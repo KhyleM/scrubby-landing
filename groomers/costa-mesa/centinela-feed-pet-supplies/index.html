@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Centinela Feed & Pet Supplies","url":"https://scrubby.app/groomers/costa-mesa/centinela-feed-pet-supplies/","address":{"@type":"PostalAddress","streetAddress":"2320 Harbor Blvd","addressLocality":"Costa Mesa","addressRegion":"CA","postalCode":"92626","addressCountry":"US"},"telephone":"(714) 540-4036","sameAs":"http://www.centinelafeed.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.6,"reviewCount":284},"geo":{"@type":"GeoCoordinates","latitude":33.6599562,"longitude":-117.9185755},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJEySP-3vf3IARaRXIDDbASZs%2Fphotos%2FAU_ZVEEQjqkhYb7_l07D9js8XfOPc1U4gN7D7_4Vt0-11ZJNXjvNA_U_o3SwWsPZCArII_Mu-nbTk41q8mwKVzXOl4v_kJKbmn9xStFkSaVfPUVmwNy-Cl_nNQ4LVC3weQ1w0kmM7uI7hczhFE0CTz7TNy3zgSma7aEh82f2TPAp88HaGWhJ8oG8uDfQ8IyvR8I2v7uz0WCNwqBS8yKoIdDv-nToKJ0PAYFHacniDzavsPic3pw_UuroVNepfg0zXF1mkG4aKmGeSkjAAZXDQUGlOLUlQ92qfHKEMX0yHy5fpuZ6Lg&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"10:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"10:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"10:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"10:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"10:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"10:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"10:00","closes":"19:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

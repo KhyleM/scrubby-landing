@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Doggone pet spa","url":"https://scrubby.app/groomers/springville/doggone-pet-spa/","address":{"@type":"PostalAddress","streetAddress":"8203 US-11 Suite D","addressLocality":"Springville","addressRegion":"AL","postalCode":"35146","addressCountry":"US"},"telephone":"(205) 467-0140","sameAs":"http://www.doggonepetspa.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":25},"geo":{"@type":"GeoCoordinates","latitude":33.7824489,"longitude":-86.4426135},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJjfmDmuudiYgRqZpsithG3Wg%2Fphotos%2FAU_ZVEFeFQPW7GpOIKcW8v9WlwCsfdG82pj4zk4PmE3o12UXoJRJctGOla8CrkWqrQntoecKyCm8z9pJGYVbDMKoDkdlZ4l1eU1G2z5_TfV6lWxsxKofowNX3yBfBW4HqJLqkq9HRdj0H1ISYLNxYdzzE8L4b-xmTBAnRQUwVQjbSiOa6rAPg0wohdCI_tLvltiEEWIyPYLwW3p1FIB2oEEev-XySKWTK49x5CwqcnK24RhrQNuyt9m4bM38Q1nj3_PfDXZFa1fS8DF0ZYaBSsTQ8V82HINRMaaf53EUhRrHFTqUfQ&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:00","closes":"16:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:00","closes":"16:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:00","closes":"16:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:00","closes":"16:30"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

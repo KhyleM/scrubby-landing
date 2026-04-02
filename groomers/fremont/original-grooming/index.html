@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Original Grooming","url":"https://scrubby.app/groomers/fremont/original-grooming/","address":{"@type":"PostalAddress","streetAddress":"2090 Warm Springs Ct #164","addressLocality":"Fremont","addressRegion":"CA","postalCode":"94539","addressCountry":"US"},"telephone":"(510) 909-0586","sameAs":"https://originalgrooming.org/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":103},"geo":{"@type":"GeoCoordinates","latitude":37.4968346,"longitude":-121.9356776},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJlyDeHpzHj4ARWw4puAfj5E8%2Fphotos%2FAU_ZVEGxblhNYIsfjaSUVcPrUJConddIs5OCKe_zLQ9fK7fZmEwVo4VUxm9U9Ga04JpzV18HhvAbaxglhG_wiMf36NTlNdyqiH6w_J5wkMJ7EG0ZzwfaC190mgm0HBDjzOfW7pEdVCcf9om6KkYdWgol9HBExJXHGCZDIea1aywut93v0zQHzCeM1D9NjFD35nqDAkQDkNt2h1FaAPbti5y_RZjTYCaYuxjuQDJiTVhoHBRc9LrZI6O3rcgkgi7an45vQU94GgCT3JPTI8byGNSNBz1jjmBTXlcS3m-4LL4wIDhr-0rPTENrHlXCyAOp3F6mHsrz8JjrIfAdD6rDugMu3Mj1im3cv-vrioXir5MN6kzmMjoYIR9civ2o409YL7vvM7Nc0DQOoioNdzRKvJrMKb2e0fA7UmZhupiX-YgxVw65UtPI&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"11:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"11:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"11:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"11:00","closes":"19:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

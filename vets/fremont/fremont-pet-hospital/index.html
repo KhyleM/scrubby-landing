@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Fremont Pet Hospital","url":"https://scrubby.app/vets/fremont/fremont-pet-hospital/","address":{"@type":"PostalAddress","streetAddress":"43391 Ellsworth St","addressLocality":"Fremont","addressRegion":"CA","postalCode":"94539","addressCountry":"US"},"telephone":"(510) 651-3960","sameAs":"https://www.fremontpethospitalca.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.6,"reviewCount":304},"geo":{"@type":"GeoCoordinates","latitude":37.531848,"longitude":-121.9216},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJKQLOfrfGj4ARWecJc4UXLAs%2Fphotos%2FAU_ZVEFA4rruh7yh6vw9K8YepxgCMY14-GSla_QPWJW54wlERH_zLBqHZv9Th4NhKndEfONwViKclGGdoJ58wST7u25V83V8Eh_I9EipS6kgPs35JIzijpa6ITI7Y2M1I30fjDnlkZuIASYcWdOUxUifXlT1eIcx8GL4CFIYzCfWmsmYXoi3yvVpIR0CX3SX7qyNPCK8slu6asPjgcBfHUcMEQCee-S-8cc3qNwuc7mRS2NkLAT44kI2X-s1wFUlvDysmWsMN_Viqe9JJ0_5RrScri290lZdl58PULUK_Fbp8p39pFMzKmbdkcn4VG-7m4H8d9K-ILXVj1IxEbbwY0KBOjbp0OqZlVyWB43jsM6Q-e4CeG2TaSmiwFtOR8aLtXwbRqAKf2wb1zwExjSTeopxugA1TKvfUiNHjID6sn6DhfhslD9t&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"08:00","closes":"20:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

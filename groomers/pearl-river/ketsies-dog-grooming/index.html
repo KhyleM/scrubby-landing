@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Ketsie's Dog Grooming","url":"https://scrubby.app/groomers/pearl-river/ketsies-dog-grooming/","address":{"@type":"PostalAddress","streetAddress":"110 Mountain View Ave","addressLocality":"Pearl River","addressRegion":"NY","postalCode":"10965","addressCountry":"US"},"telephone":"(845) 558-6870","sameAs":"http://ketsiesdoggrooming.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":66},"geo":{"@type":"GeoCoordinates","latitude":41.056427,"longitude":-74.0088975},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJwyCoW_bpwokRr_FeQphz1Pk%2Fphotos%2FAU_ZVEGdHRQBj9PzYuctYaextfXgxQfDpqSLNS5xRKAqCzS2mrix__ry1JiWcUNSk56eFl8b-Z72mUDfvY2CQr8hknGdyYAg6nEPvZA65e4hhWl4x9HQJ4SpLTSA_nKd-5DW4RXNPas7wmxXL9gJSbQG3hXS2eXrlXVTwaRjBc7e24W12OzpR3845ZNlR6iLWsKtt8TqlYocYs1mzTQ7DVCxf__lNRvLdinDvwhDUX1j7-yIJJ9ZtNiLeXOPyEeTvO_6GitlVpoAkupLtoAFio3G2NlGI5X6SwAfBbq7QBm3KfcFfg&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"09:00","closes":"15:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

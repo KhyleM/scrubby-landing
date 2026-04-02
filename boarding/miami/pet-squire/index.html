@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Pet Squire","url":"https://scrubby.app/boarding/miami/pet-squire/","address":{"@type":"PostalAddress","streetAddress":"7079 SW 47th St #7079","addressLocality":"Miami","addressRegion":"FL","postalCode":"33155","addressCountry":"US"},"telephone":"(786) 208-8599","sameAs":"http://www.thepetsquire.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":141},"geo":{"@type":"GeoCoordinates","latitude":25.7270772,"longitude":-80.3081959},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJq6qakqK32YgR9iowM3Zm_EU%2Fphotos%2FAU_ZVEGoVaBdVmCD5MtpI6BvNnZLQoErPs-23XzBmmIesbAPz5dcBtTeE1AzrUVsp-XPRaReJlB0HiOVoOQqAcflIZGa9eJr7ZUQilYCliOkFFwd6NAbAEBZQIDAhr93YupXyT7_msHUCiCGyFc0iOnI0JUiExWlMqEOKZ7fbKdj1nsjD-YU7SvzzFZulHHqmudSGkqNfD19YZ3Upm9H23rbH66xM2I-ORN0BL9dVm-Dvl3AoZyJ-A5v30NpGXBYLOKtb64--aKX_p6uefFnnoJNoehYc1Oce2MKe-WG_CWIZAwV2g&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"10:30","closes":"17:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

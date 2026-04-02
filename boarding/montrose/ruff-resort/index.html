@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Ruff Resort","url":"https://scrubby.app/boarding/montrose/ruff-resort/","address":{"@type":"PostalAddress","streetAddress":"3709 Clifton Pl","addressLocality":"Montrose","addressRegion":"CA","postalCode":"91020","addressCountry":"US"},"telephone":"(818) 900-3568","sameAs":"https://www.ruffresortca.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.6,"reviewCount":21},"geo":{"@type":"GeoCoordinates","latitude":34.2040348,"longitude":-118.2248272},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJB--AK3rrwoAR5872EGpNh1A%2Fphotos%2FAU_ZVEFaDa_U-emsK153kf3CpDD0DPyzWlF5W0pM58yAdATyaYNh4ivf_mN8rXL8X6i08d-yxGjVhnRc5wua_Re2rnSr0RmDnmmgq-lj19dN7jkzsdjVYfSP5mxaYQzlHNXk6NFGHXtd_j2cycEJZq-YF6OE57MZp8aWiqwURROkUkD7NxpW79tlNSdxhbhyAIhTbdg6rmFAP4IEAGB1vqXkUPz4z1rbOotlpTD91jCQmsaS8ZOVgEPZNbV5upqyQK3Q5RqthP5clDLQfPErKQVpzgEdbgfdz3u5fx6rZZ_wHiQ5kMwN3g4vdd7D45DhQ9U6y18TVf7m4AMHl7vV0fPoN8xY76132RWL5xzIpwQ_SukAP5hNmfZHrab--vAEgL1_Qc_aDVFkCTMl0eESMjlV9sH5mjZhKs5bLA7LKn8f6ub5_lTTAhNpajeVs3omID9j&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:00","closes":"12:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:00","closes":"12:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:00","closes":"12:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:00","closes":"12:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:00","closes":"12:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"12:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"08:00","closes":"12:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

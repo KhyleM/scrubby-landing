@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Pearly Girly’s Grooming","url":"https://scrubby.app/groomers/canby/pearly-girlys-grooming/","address":{"@type":"PostalAddress","streetAddress":"265 SW 1st Ave","addressLocality":"Canby","addressRegion":"OR","postalCode":"97013","addressCountry":"US"},"telephone":"(541) 670-5657","sameAs":"https://www.facebook.com/pearlygirlysgrooming/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.9,"reviewCount":56},"geo":{"@type":"GeoCoordinates","latitude":45.261409,"longitude":-122.6940824},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJdc78F4BllVQRsPee7ksh-Qs%2Fphotos%2FAU_ZVEH9eBw-20WB-mVZzoP2Cr5K_xC0bs7zateSeBZa7MWigImvFH1ausPDBbr_aZ4JrtxIMI5hAX3RljdnUl9JOF2t9MQSEBVZBHPdgNw3283MiUsfHwvhjR9tADqcoYcI1d_TmoZXrcNmP8WyVURm4sBf9beShu3dJ1ZmvMpj2kxvWNfi7AytxnQ9oI9PCOd7Hm78oknq2K_q7ycafuoZ5Q5rFaYXH5UhX2gDGKrXBNb7xvSeIRcWLG8eQPDMwVFcgnW2fjeqUSGraUZqCnEj5BG7oN1OQr6-no2X41ecdyWIcL9_k28hXAko99U-eTAbXe2CHBdKG92U5o8lRiNzULK6cxlYYF3F63nzpbiQ90cMym_A0EYb8Kb5J-ois2r2wcpxjGlKJIPOUuCs80aXGIlMNubb9Q3-p7uUQQlyik35Wlc&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"16:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

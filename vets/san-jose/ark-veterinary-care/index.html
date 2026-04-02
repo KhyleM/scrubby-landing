@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Ark Veterinary Care","url":"https://scrubby.app/vets/san-jose/ark-veterinary-care/","address":{"@type":"PostalAddress","streetAddress":"295 N 10th St","addressLocality":"San Jose","addressRegion":"CA","postalCode":"95112","addressCountry":"US"},"telephone":"(408) 956-6122","sameAs":"https://www.arkveterinarycare.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":3.9,"reviewCount":177},"geo":{"@type":"GeoCoordinates","latitude":37.3448082,"longitude":-121.8845163},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJS0IeAmnNj4AReuWRj7LVJh8%2Fphotos%2FAU_ZVEEh8qLtCGIjmEy3H3TV2Wg-zAFRDXIk67clO2kwVDAE0TYt2T8DGh5Q1nTksQi5K8GyROSE8B_4ElRVwOmAah5mMnqybDMNz9Ee8-NPywC4JI22rswJMPHEKPxqJQVH7cTEkyGqEh7oQytYvrjwcNTyww8AbKntaK3Fh_WLlDTq9zKlFHjd0EAeG5u7oqhSJ7ZVu-whA54dTkDaCjiyoBJEFa5dEgHEEb2o2lC3zoJoPclQDC-7S13vCWyNBRVNEZKgbpM0DcjTEmp8Ng2fi3taT3Chl50QCy7J1q9fsRFswSiovrx8fkN2M9poWN4nmC0MYnspIrQ5gbYF_4pqMlnkrG6hkdyP_J5ltJVuSoct-uw1DCvgaX6m1JRLsRAZOc3H2MzCOEZRxDDIru9XFc75b4Nn7LrE3yjzaLWvi6lBXY0&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"09:00","closes":"21:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:00","closes":"21:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"09:00","closes":"21:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"21:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"21:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"21:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"09:00","closes":"21:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

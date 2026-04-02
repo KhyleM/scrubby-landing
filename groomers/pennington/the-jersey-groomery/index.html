@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"The Jersey Groomery","url":"https://scrubby.app/groomers/pennington/the-jersey-groomery/","address":{"@type":"PostalAddress","streetAddress":"265 Federal City Rd","addressLocality":"Pennington","addressRegion":"NJ","postalCode":"08534","addressCountry":"US"},"telephone":"(609) 947-2960","sameAs":"http://thejerseygroomery.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":11},"geo":{"@type":"GeoCoordinates","latitude":40.3132834,"longitude":-74.7577775},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJG0cjn5_jw4kRV77xs9Wh2ME%2Fphotos%2FAU_ZVEGljW5qbGdimEg5XkTg3iXQol4aEg_zp8oUsFu_fOHB-Soy6MTWxa6uxk4Qw1SUFufPdluKL-N3m5q51E2R2ETPT1Eiq88uBv2NuG_LSMoLv3PZoD9rssfWU-ERu4gHyLRyILvwfakeDSgRFKd_4LtLqW3lyW9nRejblJR850CynJvUJF8iBJijkRlpQ5VHov9cvnSCQHdWkh1trr-8ZRW2btBYPDgf0Pu0hgBriwomCB0WdmauAYT9QXVHyf_wMXLMp3esO7p1rYOK6mS7C4nN80aMLEN_RpKmMybF72W_Xu5DB4b2tq0RVVo_Z8d3SBhK0tg45e7DKyRZSA5OqgeL3WSwLO01KQgCdqmWpxkAYGojiqghxkemEDiGk1gPoCMtO4ggYWjzStZ-zfxN4kWdcS5cGxa_R2m9mbuborlcRykhzjs3Mt5MOGdISQ&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"08:00","closes":"18:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

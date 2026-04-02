@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Boulevard Dog Salon","url":"https://scrubby.app/groomers/los-gatos/boulevard-dog-salon/","address":{"@type":"PostalAddress","streetAddress":"15070 Los Gatos Blvd","addressLocality":"Los Gatos","addressRegion":"CA","postalCode":"95032","addressCountry":"US"},"telephone":"(408) 356-2583","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":35},"geo":{"@type":"GeoCoordinates","latitude":37.2495861,"longitude":-121.9547229},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ45TeCLE1joAR7d4Vh1Pkt5Y%2Fphotos%2FAU_ZVEFYT87fDD6CCidrGkbUa4vYvj_wBULWCkXhtUKnXq2QgCvXcV3RRektWUAiaizs-6FLwNi7gbu2sBcL_iN8dWc51gefnoN2TxFUuoJtDhCbXApefgjTzPBgpSN-jsiux_EO4A00S6r45veBfaJ0gIeMcbdiFGDWrGxopb6Y65Fh2N8IxRrEFopDpaPq1gdXQB-Tci0uPjySMt1xSr9TDNIGAaDxnC8KEdtDkpi91-snRj39djziYc2KmmPm9o5-aj455Lyg8Cde0ZEYiMVAFlfp6aI1slMrr9vO5bXEBZmy5g&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:30","closes":"15:30"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -363,6 +371,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -398,6 +407,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

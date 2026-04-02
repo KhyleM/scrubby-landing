@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Weddington Animal Hospital","url":"https://scrubby.app/vets/matthews/weddington-animal-hospital/","address":{"@type":"PostalAddress","streetAddress":"13667 Providence Rd","addressLocality":"Matthews","addressRegion":"NC","postalCode":"28104","addressCountry":"US"},"telephone":"(704) 847-8466","sameAs":"http://www.weddingtonanimalhospital.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.9,"reviewCount":181},"geo":{"@type":"GeoCoordinates","latitude":35.0232056,"longitude":-80.7607522},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJFZM0YogoVIgRGtZ3WSKnjtA%2Fphotos%2FAU_ZVEHGdG3CexDTSP_IcX03x7k1V0sMCnY6WpLTrpe_Cv6loXR7d2XJpZMBe1z7IPrWPYx9NBdvkkroJU6unW69OsD8d3l4Zut9wfoosvBmiI9xZnVdtGg9DEABk2NPEDoMBe7POEn3V4H90FvBHDU0-s7AYaLK8I3By_UDhYdoKO2DKfngfR7s9Pd0c7RjTViRig6j1h4FMhUvPUZQebnMbGfc3ErvkgikPfCf9dcX2MznH6zabJ3wMR9vs2AFfL7st-n6WwiF-CzKfN_yLOpvzefkY5YOnvYcnKvftsuucgY-cA&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:30","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:30","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:30","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:30","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:30","closes":"12:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

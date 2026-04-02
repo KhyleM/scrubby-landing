@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Plymouth Heights Pet Hospital","url":"https://scrubby.app/vets/new-hope/plymouth-heights-pet-hospital/","address":{"@type":"PostalAddress","streetAddress":"9200 49th Ave N","addressLocality":"New Hope","addressRegion":"MN","postalCode":"55428","addressCountry":"US"},"telephone":"(763) 544-4141","sameAs":"https://www.phph.net/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":617},"geo":{"@type":"GeoCoordinates","latitude":45.0445771,"longitude":-93.3973231},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJT-K8vF02s1IR37VNWz63MsA%2Fphotos%2FAU_ZVEFbRfKBYcPlizIaL9MkGT4LVs2imbTwBx1Cb6wplMZOu9jt5WJyNnIAQnO-W_qcfkQ8nkelLKnfsyIBmE0dQ_mEY4B41-5LNi-VjoMSJ_1q7o0Ft_v6b02Xia3o3KWO8bs3pXxAhxYht389UwvVD55doQlzXDZhQNiL2O2UPSb1UjbSVy8PcJkqg_mbx9WZ0qoaUj_BlHR6emKiY7M5Em_s13C6Ez-UPANsW6AGaL7gXEbgaa1pPEw2MjhLRtJH3iSAsN6qvDXxUBYBeeBcr1-tG7Q-G_rDwMKpmle4v-hVBA&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:30","closes":"18:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

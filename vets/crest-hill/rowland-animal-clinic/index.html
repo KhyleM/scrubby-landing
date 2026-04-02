@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Rowland Animal Clinic","url":"https://scrubby.app/vets/crest-hill/rowland-animal-clinic/","address":{"@type":"PostalAddress","streetAddress":"2314 Plainfield Rd","addressLocality":"Crest Hill","addressRegion":"IL","postalCode":"60403","addressCountry":"US"},"telephone":"(815) 729-1111","sameAs":"http://www.rowlandanimalclinic.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.6,"reviewCount":348},"geo":{"@type":"GeoCoordinates","latitude":41.5639507,"longitude":-88.1390234},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJFx59FVlgDogRtMQ8_yAvgMg%2Fphotos%2FAU_ZVEHuVUYluudP1FlLWVOtkr_uHMVNSWJIE2Z3vWgSIJW72qaiKbmKheqE51LKQPZJoGLgU-j-72awb3USjy3XmPpKSC42XoYVxTQsQqY0wYGPOSIwM-GtEASVMQYnWZ9KwWtHWafp_9G73OMVzuTdBwP43QX5M5fVGcNJoxJN1vBHQ5p3SEgQJ1vMwA1LKX-nuTLkM-bjiBHtR6YQev3RvUl_gIjtGh6B9vtaJEB2xU8MlOEJb6IRcshYfWhBJQQ7wXSZ42SLYvnu7W1W183yZGhenrOcF8T3uyLwjpUn0ygy6OhSODXKTt1xk4qe1kw7QFBZ96s5WkeEip1VU7xPQxcUCOQBAvFJokVXYHW78Ilz4kW38gu6V6t233q9hQ0bXmrQGSLxCwOGv7x57LJSnvgJqUTiwxLsL-QjtnvOeBFMOA&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"16:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

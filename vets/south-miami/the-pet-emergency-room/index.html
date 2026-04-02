@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"The Pet Emergency Room","url":"https://scrubby.app/vets/south-miami/the-pet-emergency-room/","address":{"@type":"PostalAddress","streetAddress":"6394 S Dixie Hwy","addressLocality":"South Miami","addressRegion":"FL","postalCode":"33143","addressCountry":"US"},"telephone":"(305) 666-4142","sameAs":"http://www.svrcflorida.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":3.5,"reviewCount":361},"geo":{"@type":"GeoCoordinates","latitude":25.6977763,"longitude":-80.2969453},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJHwLFEevH2YgRgcIsgA5AH7g%2Fphotos%2FAU_ZVEGJuAdjtyitAE-_QRlPC-wZ3tsACIyYevxnjMSBNvZSZUQM0MBIry43_cxSq13XKND_qGkAzahWTKV0AiBUBUZUZTDu3pvQbosjYQbYLhJ8xPHaNe_sjhQX70pORYvxfXQgaUieBGSG84fwETbf3fI_cI-K_8oDsU_PlbyXY8yJx6Rk8MuOVNFLn-QkiElwyEt1FIx-dLH2p39UAIIYKS5iPhTwpnInM9H6fN9SPB_oznEeLS29dKqubonyohjfHwPohxO41bIA4aDzuO0v294l8cu63yX6EbVyxXZDIHWudMEdBovjqZxWw5qFQN1fubmu9EHOmXzLYMWv5XoJ3JvPfnwKv7uF0Fl3e8_Oct1Gx-o7PHz9pE8QTbubHzDSLr3P7MqW9UMjpLDZTeD9DQWaM_bmTeNEM9_k-yCYUE-ywzly&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"00:00","closes":"23:59"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

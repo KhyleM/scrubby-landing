@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Center Point Animal Clinic","url":"https://scrubby.app/vets/birmingham/center-point-animal-clinic/","address":{"@type":"PostalAddress","streetAddress":"1704 Center Point Pkwy","addressLocality":"Birmingham","addressRegion":"AL","postalCode":"35215","addressCountry":"US"},"telephone":"(205) 853-3340","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":78},"geo":{"@type":"GeoCoordinates","latitude":33.6328264,"longitude":-86.6849874},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ9WEbkDkPiYgRSs8oHVeUVfc%2Fphotos%2FAU_ZVEEDaK5Slaa_Hf4YkPT8mM6BI2jnA9jmi8wpXpmGCdPim5refZHpeI_0mCXsxXOLeiYQb-Iow4m-PXmavqKZPfZBhQA-3tLxqFxLNAy-WXBIKeu81dPhQHlRrLotnIESKTIeHRPXRZPPZFnh1Ek-3RWsLKT6ORm7aEgMF3cb4A9wXcdRz9eSoUessWeIGuQP-86Pb86MXdH1_71WBhBVqknb8ZI-Qho-5I2bOhR1hEuk1V3WpLnTECgDW3nksHxhQlNwDFBKwV37PmpbAH8UoK5pWTvHQtgs3N_zdvlHx1VoZ0tJlgM-GE9hGf3b759ceEvoQ7lnAa1od6BbkhuopZsW5VHQn4HEnzW2-MrFScfQAIWm7qBi8yxUH5IWP6cJRzAhEWT5lIJ11XRlJdag7Hn8zDBSjGdFFcJFplLzEZh7Mg&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"12:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"12:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -359,6 +367,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -394,6 +403,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

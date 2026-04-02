@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Dog Mom Petcare & Grooming","url":"https://scrubby.app/groomers/yonkers/dog-mom-petcare-grooming/","address":{"@type":"PostalAddress","streetAddress":"881 Yonkers Ave","addressLocality":"Yonkers","addressRegion":"NY","postalCode":"10704","addressCountry":"US"},"telephone":"(914) 295-4300","sameAs":"https://app.jotform.com/dogmom-by-jean/dogmom-by-jean-app","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":90},"geo":{"@type":"GeoCoordinates","latitude":40.9195838,"longitude":-73.8605455},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJl2uQpL7ywokR5yl2NAgMBcA%2Fphotos%2FAU_ZVEG4ajdACLm_fSoo18X3wvp9lBrxihZhKi4PiPBDF_eRt3wOTa686nhUlowaAPCWEaIDnkNo_S5A2mmZysCdIoeZFSxBRDwd8T8QD0J_J_424xxHjctkHApPFvVxSRxbMK5Xfus4y6H5ga_uXzyPjF_JDu24qgY0SzWfjhUObiCtIwh5XUlh8cGm2IfgovFs7Rv0QRu-7x_Ku147hKAzu_QUA0cj0f5AGCZ-c15Qz-7jfS4shUqpJOZYmKaQuK3K1AZpqqz7nazvWAMfmvO3yNyVM1psbOBbOt4MPMET0Py-ktAFJXLSJP6xjoKRt3B6POv4jNUVK41dMM0CdGYtmysTmvbQXahmR72YUjMt3rCnyd0AcL3qAY4eE3Gm6oRmcPux9iQLwg7YMgY_PcJM-qOo8p5Qoht7TqSkIqe39fVcIhI7p_Mx6UiuIsI6eQ&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:30","closes":"16:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"09:30","closes":"16:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:30","closes":"16:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:30","closes":"16:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:30","closes":"16:30"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

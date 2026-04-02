@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Amclare Veterinary Hospital","url":"https://scrubby.app/vets/williamsville/amclare-veterinary-hospital/","address":{"@type":"PostalAddress","streetAddress":"895 Hopkins Rd","addressLocality":"Williamsville","addressRegion":"NY","postalCode":"14221","addressCountry":"US"},"telephone":"(716) 688-4454","sameAs":"https://amclare-hospital.edan.io/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":125},"geo":{"@type":"GeoCoordinates","latitude":43.003467,"longitude":-78.7387656},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJR5kzkwJ004kRrssNwXGywjc%2Fphotos%2FAU_ZVEHC0YuL-_pXLpidW1J5tw69gKi57j8kF_JXn_4Ez29Nhd2sfEX9VrPxfbencUFS8IOCRjRQHEQjfhEvLu_QWTetl8B8JmTd2Z3Y0gGbLWs068piFBNq3imrkCshWL25zk3eqJGIoJ2ye-VOXCaoUWSoTWB64qQXEPuw21QjDz9g23T2V3D1iULaTOLG4HVrveb20ofajDtlp4_4fiyEl1R4uNfjoODUwAQUf4bv_Zya2m6r8z5HqMQzJ5O_2gI0rejMiVxFLbbwI_JRfP02pTazvBrwSsaeUANPw38tAWP1DR_EIMzthcukATK3OfG049DTlYR49gRGaVdwi4KpXnVvvDP5Uu9pXdgoJ3Blmu9BGYCWOAXObbJicfpowJf50sBhS_9GvYUxaw8F8f1ZRQldVj1FZSaevLwfOST9ucvmfsU0&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"12:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Peachtree City Animal Clinic","url":"https://scrubby.app/vets/peachtree-city/peachtree-city-animal-clinic/","address":{"@type":"PostalAddress","streetAddress":"343 Senoia Rd","addressLocality":"Peachtree City","addressRegion":"GA","postalCode":"30269","addressCountry":"US"},"telephone":"(770) 487-4074","sameAs":"https://www.ptcanimalclinic.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.9,"reviewCount":26},"geo":{"@type":"GeoCoordinates","latitude":33.4405979,"longitude":-84.6060858},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJSdptoMXD9IgRJFCXw3ZXf-E%2Fphotos%2FAU_ZVEHEi95zNzr5MALy82eSsfEzbVBePc5MDzyEGz8TCkVcET_ehRJXAqM0iv4jgkVc1zmtQTwL7XQUcn3hNpVVZfsu-8noM4DTebFYAjEw2SuTW3sZ0W6Mt7ZROANaxO-WnHhucP2WxINLCkr9pZRQ8DaJccYmGlF7F9jnI5ZMfT7uqWbud99g7-10W5o4NwebBFIkzM8ZpV1fVDdT6LSjgnk6ImfOH8ewO7UT4I3FkrnGYRPXcDltZ13TZBn3Wd6Yr4i4ZqUGbfiSjr7dsR0wVvIGW6v2f4_uqBL4J63mLc-sVAr8MxBkwXGKcT8mmrDiUgnaXeIpDgixKbuVvWElUFL4O-idbqB8wiLI66IZPGwYDzfeYTaTTnOCMB2zwn2MAtp80EW1uqVXsxyYcOZ7DGoBf8rohV35bOf4XCBu5SqO6pI&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:30","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:30","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:30","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:30","closes":"17:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

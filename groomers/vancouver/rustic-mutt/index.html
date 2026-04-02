@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Rustic Mutt","url":"https://scrubby.app/groomers/vancouver/rustic-mutt/","address":{"@type":"PostalAddress","streetAddress":"3200 SE 164th Ave #216","addressLocality":"Vancouver","addressRegion":"WA","postalCode":"98683","addressCountry":"US"},"telephone":"(503) 912-1364","sameAs":"http://www.rustic-mutt.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":84},"geo":{"@type":"GeoCoordinates","latitude":45.5979611,"longitude":-122.505629},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ5cqdd2GllVQR3EuTgIZQ3so%2Fphotos%2FAU_ZVEHHdrguGmF_4eyOTjDIKqdDU46BJoe5PaKphcbqtLznujNuFxJ-MUAF2_GVwKquq_e-GW93XPq9vLn6NPM6kJ3ypql0KNh5k4HtSEcPn6GH3VMt2eFX40D6zzXIJud9uNFt1uWVoMIe95O5m-_yo8bxKc9d2Jg9UT3ctJ3Lq-0CVafdiVmcx2V7_SzrBPizL-iVODGNph_1hcm6JAVCvKZGgNWQufPdB8b9-yDFgyhUE_6vqlg8XRkE3ZFIHqAiMp-U0tcm-GzhBzJw1-nu-ftMhbgZzE0TEbW-j3sbIdw9DTAUjJjRNFC0SaJd68le4iIRG1IMKHdNoY2WGvq1PfSXrsG2cShGlFTO-MXFh0nd0J761gzeedWqE7CJCSY52ciKAQ_xkuSvbSeVjQartm-KbK2u7GQGzvJWkrMKzKG1yYiqM9JCUmRJmY_7oJJF&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:00","closes":"15:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"09:00","closes":"15:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"15:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"15:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"15:30"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

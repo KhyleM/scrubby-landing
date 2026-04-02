@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Gentle Hands Grooming","url":"https://scrubby.app/groomers/henderson/gentle-hands-grooming/","address":{"@type":"PostalAddress","streetAddress":"2654 W Horizon Ridge Pkwy Ste B-14","addressLocality":"Henderson","addressRegion":"NV","postalCode":"89052","addressCountry":"US"},"telephone":"(702) 664-8551","sameAs":"http://gentlehandsgrooming.net/","aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":30},"geo":{"@type":"GeoCoordinates","latitude":36.0010889,"longitude":-115.1053187},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ5-Uixk_PyIAR5U4MSYL5SCg%2Fphotos%2FAU_ZVEEp9vWZR2zT4IMwEanAJCx4nVt3xCNoln-NuRCDSr4AFhv0zj4gzAdIHlRxOFUOsVYVYxYpgzNuGdqw_wjueM6pTdNYPwvd2qRCItNEmDw2zxe1ey8Lylfbi6v7NLplw-4B5BY0S36-NLMprbW2bE-1Ll0vhr7GrnTTMK-VUQsVdJNDFyy9rqzhlUHQ33tTl3M-BvhoU4pv-xVrZ7L7jR2sDIAwxtNBEiCwKcXIShrrpgPNajWsBeFP9hPaMtp7UDXXfKpT-A4h1ZQXxUiBpN8BRD2vKGPpTsx-PqQOv8OGEw&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"09:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"10:00","closes":"15:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

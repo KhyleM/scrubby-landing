@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Pawsitively Purrfect","url":"https://scrubby.app/groomers/nashville/pawsitively-purrfect/","address":{"@type":"PostalAddress","streetAddress":"6901 Lenox Village Dr","addressLocality":"Nashville","addressRegion":"TN","postalCode":"37211","addressCountry":"US"},"telephone":"(615) 837-6765","sameAs":"http://pawpurrfect.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":112},"geo":{"@type":"GeoCoordinates","latitude":36.0256309,"longitude":-86.7126259},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ9R-tyTlwZIgRvfl2Hjfqbzk%2Fphotos%2FAU_ZVEFPqucj0wHUVM-lzL0b97kHb5ZRBcPiLcgdDAP55e6kh-g6TZXCrlXLpm4JHk7oWpRWD6G5yoYC3qyMeHeMdDmBWdJKg4OmNKrViJFCC7Tz5xMqcvSNS8AbOR-LEST8uwfVPLDevcadVz87aZa2ZrTTtT2wBVIFt7zeNbIyH_9jc6SHYs2grX6XydEpLt0j3WjmoyBN7s0408yJ6vpFOEx79MR9q6emZU5-VBNGoTP6LZrkqeQRzdwBLAzm0HzXEp6f7QIq5K572-yt2yKLVYoXP4fnYaL-RKlGzRLLGv1I1A&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"09:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"16:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

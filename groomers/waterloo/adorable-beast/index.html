@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Adorable Beast","url":"https://scrubby.app/groomers/waterloo/adorable-beast/","address":{"@type":"PostalAddress","streetAddress":"203 W Mill St UNIT 1A","addressLocality":"Waterloo","addressRegion":"IL","postalCode":"62298","addressCountry":"US"},"telephone":"(618) 710-6004","sameAs":"http://www.facebook.com/AdorableBeastgrooming","aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":16},"geo":{"@type":"GeoCoordinates","latitude":38.336015,"longitude":-90.1522564},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ5eLy7N692IcRiFnTM9rs8kM%2Fphotos%2FAU_ZVEH16k_CqXsn0DhMK42PsP5Gy5vFx9gC8G87QY7wGCIlRFzuYdLlE_FdALMAxhmOKlivgo1-xgW9T2N-SLPCJTSZ9eTy9ZPkSUkztNgKrd-4dJcAWgIlViDz_bMVIOBMvC_qGjJxniFyRhsLtMqPMQ-LN3mntuYzHr9Q_-HSMd7rKrGdoFJtHnFG9l-_RC14khv889fM1gS4s5sTE6rM-B7FGkRDBFjUl-TIqXz4AkGRZB--5TO9c_RFIEfFjoDc57mpN_gjbcst3PjuZZwHsCuyuHCsBtpKdK-21djsbsgqEs56MGqn4t8M-ek3vIhYEGFZNFOZcNTtrWW6OqJz-IU5WAi9z9L-X1hDhb7HveZLKvB4f38aj3ajihtrwdBumSX5ufxCjvKcK91vBwOSH60C484WcqlTlAHPL5RXYYMO2w&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"15:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"15:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"15:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"15:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"15:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"13:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

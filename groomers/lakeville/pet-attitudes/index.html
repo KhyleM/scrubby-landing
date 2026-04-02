@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Pet Attitudes","url":"https://scrubby.app/groomers/lakeville/pet-attitudes/","address":{"@type":"PostalAddress","streetAddress":"16273 Ipava Ave","addressLocality":"Lakeville","addressRegion":"MN","postalCode":"55044","addressCountry":"US"},"telephone":"(952) 435-2599","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":107},"geo":{"@type":"GeoCoordinates","latitude":44.7129209,"longitude":-93.2605522},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJrf7zyuE59ocRNID4fsb-4_Q%2Fphotos%2FAU_ZVEHiOtWvn8m_SUjgfCb8sn1SbR3g0ygh5S7tXF1i1AwmNAEljovxEEBxXnjqwBvre71n0gp6MaA9CcEmhPC_u9ORsuR9sxET798xGbn85pGWp4BLOdXNWMvuWBxWpKVm-7xKAseHoCZMLeOn5__CH1SKa8q_AvXjUZAdRGV5k3VmvAAoVf-JsVXDOd26dm8d5bK-YQ4siFc6w2HBLs_I-SQ3_flWfhEb_xvVIpOFoHEhAeSOW-iSdKVgzpImZnRcGJU5sTZti4VD9UvP0eawn6mnIR3_8yWZU57479YcS6U9MxIgmGwSM8ALv9H5YB8Whwta998QtjRc1dDL796H3kqek7brPVadCaVqSYbrPR9l9KcMvO0ugb63vam9jn7ygkScyYnH5F7kS54GGMVfI_6xAbVUQicYsQGmtvUDKbGTpijcUs11lWiV_7sxVw&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:00","closes":"15:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:00","closes":"15:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"15:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"15:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"07:00","closes":"15:30"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -363,6 +371,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -398,6 +407,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

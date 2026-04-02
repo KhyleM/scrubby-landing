@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Sugar & Spice Pet Grooming","url":"https://scrubby.app/groomers/lynbrook/sugar-spice-pet-grooming/","address":{"@type":"PostalAddress","streetAddress":"471 Merrick Rd","addressLocality":"Lynbrook","addressRegion":"NY","postalCode":"11563","addressCountry":"US"},"telephone":"(516) 825-2858","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":81},"geo":{"@type":"GeoCoordinates","latitude":40.6590032,"longitude":-73.6780647},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJGwt3lphkwokRW2iYtmVJzxc%2Fphotos%2FAU_ZVEEDIvu5Let81BSk0mE3q0lvlgrVdm3vh1FfyE-Dclx_KAiE_6pKBkdtNdUf9fwJICp4qkQNyA3M6Ldw4CxiGtGhLW5XCFIH377FPgLyIefCjyCbMP7c-2ARK24_-A6JRZBzJAFKk0PYSmadsxz4fEY5jewYRkL0gyt_on8Wl0qY-nYbzyCurL87Br6PrJlTxjBN2HHVUT0jF1cmOhrNyALWHuBze1dh1HPUBtYSksCgwDcm19Xt3p1BddSBOHyzCcRVJcAIPxDh21k7Xd8hCsIE6DPmXRLezcgxCQX9cmCvTg&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"17:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -359,6 +367,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -394,6 +403,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

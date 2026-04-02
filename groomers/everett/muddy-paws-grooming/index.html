@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Muddy Paws Grooming","url":"https://scrubby.app/groomers/everett/muddy-paws-grooming/","address":{"@type":"PostalAddress","streetAddress":"7207 Evergreen Wy","addressLocality":"Everett","addressRegion":"WA","postalCode":"98203","addressCountry":"US"},"telephone":"(425) 355-8429","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":174},"geo":{"@type":"GeoCoordinates","latitude":47.9325883,"longitude":-122.2191279},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ0fz_8M0BkFQRjEiSyFCmyOI%2Fphotos%2FAU_ZVEHqTHUrQit3sRTMoAJuECd9jrptJiJ-zC4zounVjzAF1wCNqqy5oVnNkjBpkgYYTBb_2lJ8ZISMHXKX_b8aNxhQX1N3GLBwvGpv5UT_MrDgswZEukpLfgzya6kqD69WsIphvNFsyZ6BjIBJBu0A07Jnp5J3VDOkCn9x0lKocVJebpaGOJVvmnWlNV-_TCEsEWlDeyXpx6uUsSg9rZJVMZCYPeslkyr5-Z3cTbSSZRwQnOkJEGChsl_q5BSOhh2QQ1juRn0jZmg0Lg6mQeHvGo2wzY7H8oeZC-Azz_czc7EBovuNRo_F1TBISsBJx-2-0K9zUenzyXaZJj5qa46_lrtEKuKCvGKVIluameHIyHdIMGZLceVhPp7USzH5I1lD0tGF73PveMn4os7aon9FmflgPLpbdaEH_Atdiqc&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"19:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -363,6 +371,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -398,6 +407,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

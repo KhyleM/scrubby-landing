@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"The Dog Haus Grooming","url":"https://scrubby.app/groomers/pasadena/the-dog-haus-grooming/","address":{"@type":"PostalAddress","streetAddress":"2441 Mountain Rd suite e","addressLocality":"Pasadena","addressRegion":"MD","postalCode":"21122","addressCountry":"US"},"telephone":"(443) 305-3999","sameAs":"https://www.facebook.com/share/VawV86uiNPtwqRM1/?mibextid=LQQJ4d","aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":13},"geo":{"@type":"GeoCoordinates","latitude":39.1283826,"longitude":-76.5473104},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJa8fzAQD_t4kRRcwFGF8Teis%2Fphotos%2FAU_ZVEEyNq-Bng0IKz1vKX0gLme0ttRPBB3IPmFhW60EBBmzchikadimEsjopnX2-rDxjYowL6Xr1oMoIbCR_v01DhV0EAsIQgcEn1IksGD8YNu9tQ-SYnaPs3Upt8LEsmY_NgsLwLQEkfN1U8_EeUUl80xtk7J_TBGqRIowigMX6h-elwRfJvlv_6CKUKloP4hgJ6Kx1fjHhWhKCS1j3RoTdnvzva1sTteNIGRTlJ5ujS4RVmf5sJkMIeA9vBg_ZzyK7nlCpFQvzoaqNUMq4-QjaagkQukHxClC94FD6LSAUq2V8Lv3lGR3wanfKNowMJ3GX5uOEG4PcB4KBzab8uBPxE5pqQzkoromGUZyBYZbBV8tmCwoIio5wOqdG4ASB8NxT2UWP7A8ciMQ3HCnL51xCyhZQ-d3JhuLtmihLoU89Iyrk9P2h-OXZL8oZsHTyKzY&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -349,6 +357,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -384,6 +393,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

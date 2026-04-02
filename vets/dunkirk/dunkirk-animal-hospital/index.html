@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Dunkirk Animal Hospital","url":"https://scrubby.app/vets/dunkirk/dunkirk-animal-hospital/","address":{"@type":"PostalAddress","streetAddress":"11470 Southern Maryland Blvd","addressLocality":"Dunkirk","addressRegion":"MD","postalCode":"20754","addressCountry":"US"},"telephone":"(301) 855-8126","sameAs":"https://dunkirkanimalhospital.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":854},"geo":{"@type":"GeoCoordinates","latitude":38.7374436,"longitude":-76.6601369},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ36hPzxWQt4kRxZblHDfY9sw%2Fphotos%2FAU_ZVEGcp9yrdA_cFiUipXxshxNdNa4RnKn7PTJlEJVDZLpGdfoOB4WLMjsd7cstVsvwscF5PDbcR5IsYhLkI2T5gdol7xqx9bUJMcsXxVZJPba9ZtzGQTLTF3WKCjxXjJPXy3famEFOnhYnUZVNyBRwiyAqHvyNoFNkxkzzKUMtPrTJvvw9XkcUdWljM_ZTPWDJRPyEx5iF0Yt45gk40qIruXBBT5KrcMWjxOGof-zkVQJYb90RAleYciNSK7SsHtI4-_Kqti5xeWrgjQR9V24-jTW759E8flB5HgbfXwpbGdKqIA&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"07:30","closes":"16:30"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

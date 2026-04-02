@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Furtician","url":"https://scrubby.app/groomers/bothell/furtician/","address":{"@type":"PostalAddress","streetAddress":"11511 NE 195th St #102","addressLocality":"Bothell","addressRegion":"WA","postalCode":"98011","addressCountry":"US"},"telephone":"(425) 408-1823","sameAs":"https://www.furtician.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.3,"reviewCount":124},"geo":{"@type":"GeoCoordinates","latitude":47.7685933,"longitude":-122.1861671},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ7_LIKycPkFQRPJ5mpSqks9U%2Fphotos%2FAU_ZVEFErKO9mehqeu2EiJWtOGlq3CaKGP6jUyUlfiPrfHfDGfy2Wr-eHK-xeVZ73xD6ZP-LnqDYKiESrp58H73Q4TkOnLQVukIrY7vY3RFv0aXbz_z_A2plqzxTAHZbpbaHqKnKp83js1Id9pvXPc_0jNgxtsaJRDcvBNVLOqhCh8SE0P94ij4ojRnY93CTavxji9Nch8tO7KNQFtzgnKpkCGB37h5X-81BppYv-jGfdF2HnroNv_jdTQ4EzzUnGNEQ_7rmvCQetZ8GtH0iMRNaGLmzneLn-Zhy9mXsSpge4SCzUg&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"18:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"18:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"18:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"18:30"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

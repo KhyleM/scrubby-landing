@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Come Sit Stay","url":"https://scrubby.app/boarding/littleton/come-sit-stay/","address":{"@type":"PostalAddress","streetAddress":"12692 W Ken Caryl Ave","addressLocality":"Littleton","addressRegion":"CO","postalCode":"80127","addressCountry":"US"},"telephone":"(720) 382-7659","sameAs":"https://www.comesitstay.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":334},"geo":{"@type":"GeoCoordinates","latitude":39.5779256,"longitude":-105.1391349},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJP3q1-zh5a4cRa08-kLvvRu0%2Fphotos%2FAU_ZVEEjcnU6tzRbjalh-zsNkS4P_NvhEOt7T4a_nIZSQTMgOqQxF4aLm90RqxGqRJ6ltuRfEgIzUTzMFXq_DNv0VnUmR_sNnNOurdxkekY1GJ6OmDksFywmyPDXYy20K3hyY4KZi6lWwk1YULFmroXFX9AtuRhvlUeBctcUW5QlJA0JkP_Jkk6J8S4_sZ_lKvLFqQnTb5IzRPqQHQExZlUYjWff3n2Xh5xboEOB2Igb_WfC3jFl5nAi8keDWdn0K5CG1RXdZteGvXYIRLE2ESRkshgLI5A3qXeZTycPiqGCbbo9qA&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"06:30","closes":"18:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"06:30","closes":"18:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"06:30","closes":"18:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"06:30","closes":"18:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"06:30","closes":"18:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"09:00","closes":"10:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

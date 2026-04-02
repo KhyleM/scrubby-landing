@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Posh Pooch","url":"https://scrubby.app/groomers/chesapeake/posh-pooch/","address":{"@type":"PostalAddress","streetAddress":"123 Battlefield Blvd N unit d","addressLocality":"Chesapeake","addressRegion":"VA","postalCode":"23320","addressCountry":"US"},"telephone":"(757) 549-1989","sameAs":"https://tpaw.net/explore/posh-pooch/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.5,"reviewCount":76},"geo":{"@type":"GeoCoordinates","latitude":36.7231177,"longitude":-76.2402524},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJQdcUWq27uokR84uS_uydX9g%2Fphotos%2FAU_ZVEHXgmXJd7Vl7YZ5mC7u_6jJ845J09GjBmvj80Q1TItLctkYT5ZkjpCnXSMsG9BGab0FmUn_2SPyySMJPnrX9KxYViLIecOaTrxTBoyAfptD7JBXFLkkNjApIYvNUd7S4limDgMCMEZzbmMfsCtjJiXkcWSxUz35Rd9dIlX9_iZMourliKf06PY87liFg9SrWoIT_FTQDI0GpjKmtegg8VLWv5LnsWAvKBlCsa8BGEyxIn94erjZCc3WyuCOAD7nRktQrgzuxvi1N25qG1Y-N0MxzXTZ_1lH7XST42BzAGAK0E-Zamd0w9K6rs6JuNRHFKWDNq-nEM2CqjcWJbETZs-O0ne6u3Wt2xd5YL9IV3pxW6s0Sa-55h2BbcpgNju4xyB9bALZD6wAdx6uqmwLBPj2tiayAk61Bfz2t7br65xcDw&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -350,6 +358,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -385,6 +394,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

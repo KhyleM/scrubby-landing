@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"North Peninsula Veterinary Emergency Clinic","url":"https://scrubby.app/vets/san-mateo/north-peninsula-veterinary-emergency-clinic/","address":{"@type":"PostalAddress","streetAddress":"227 N Amphlett Blvd","addressLocality":"San Mateo","addressRegion":"CA","postalCode":"94401","addressCountry":"US"},"telephone":"(650) 348-2575","sameAs":"https://sanmateoveter.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":3.8,"reviewCount":198},"geo":{"@type":"GeoCoordinates","latitude":37.5765227,"longitude":-122.3208611},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ4T7JFNedj4ARPob5UtJgH-4%2Fphotos%2FAU_ZVEFWbcgF9L1WNJ2XPq9Vzse35Lncw1-8GtyBnVpKkCuvf6aaPmD9UuA_vKjrf9HVcszft-1XJ44LqV925ZW-0JwpWxCCD2x-EFHRziJdfU4OvDa4S9EK2pOwxlU5V6DOeyS_OwvReD2yXLSlcRrNDIv40H8Yg1TG_XnGMlhWfBmJWJWDwdndYtDPZXmMADhJyN9-hWjS3kkKfJZ7Ca3-svJr4_Zok28YAKLZoURwwn4aQnKBGllYi6f0KT63lCUWuhcLMOuRAPX74Mc9GjknFIjke2SVycckIxNb3fOJjHcDthl0shBqutoo6nz6aQ4AFM_abDRdQEDOPb-3p0oZeRHJuwLTx_V9HOySasww96F_WbQBLs96hM0Dw1pVQY12v3KFhbxaJyjLemE9bxp_tmXn9XzGonEVLGFCM8BQHeJ3gw&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"00:00","closes":"23:59"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Groovy Grooms","url":"https://scrubby.app/groomers/johnstown/groovy-grooms/","address":{"@type":"PostalAddress","streetAddress":"28A S Main St","addressLocality":"Johnstown","addressRegion":"OH","postalCode":"43031","addressCountry":"US"},"aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":12},"geo":{"@type":"GeoCoordinates","latitude":40.1534209,"longitude":-82.6842903},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJyTsyqQNDOIgRF3XFVijyOi4%2Fphotos%2FAU_ZVEGBUThLbMzV9-CtorwzJGnY1TdRABaF54iPs0YtgiEG2oHHLrEMHeswWroKGDzqoahmMxy8K33LXJB3nrolih_ddWS-rsYLxOAIfkDO2Xuyb77MlayKDO2tOZgUbWBTYGYY66M_0ZkcOFKNX6oY5-9cDvVdWRyPbZh080L-OyFWfV5XbzxUhXoWK_uw_dL1h4FcD45lOsW47Eo7vudrya_DxTwmaHDBfoMDdJZWijIZLNPPuSCoGY3qr-uip63jvRafjVcr1X3sixzDUUMG7FPAU9B7IgG7SkQJGm8ng5WVjnjZ51IrthELviBNhKXFPzYUod-WK9gKT60Mb8OQ3ba_w3BUTyOfxGXGE3CtUNPozLyngtJoMpO5pM2MdEk7EHyGk5vlU8sjZiQlZ-76x1YruiX2MsIlbnGerZKUntW_7A&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -344,6 +352,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -379,6 +388,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

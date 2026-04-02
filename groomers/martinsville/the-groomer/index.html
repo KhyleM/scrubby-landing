@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"The Groomer","url":"https://scrubby.app/groomers/martinsville/the-groomer/","address":{"@type":"PostalAddress","streetAddress":"7492 N Herbemont Rd","addressLocality":"Martinsville","addressRegion":"IN","postalCode":"46151","addressCountry":"US"},"telephone":"(317) 989-7210","aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":6},"geo":{"@type":"GeoCoordinates","latitude":39.5351388,"longitude":-86.5644747},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ-ZQxUPOVbIgRIn_Mu6L7QV4%2Fphotos%2FAU_ZVEHNL-o026HBS0Lr70keu_jsgaxa6lCUr3A8vKJsNamWMMjklz5SH6OVZJDe1xzRKA8eh7lYl_519F_saOEsuKcbeagOPSpCNYMrqdtkX6OmrxJeDzz94teR9lO771JAm5Jpw0AzAXFGuLQcU3kTMo7hGtg12b0xAClINPkyyIIzM9VqSg4oiPRZu5SXSa14tKUzK-5m2dGQsHGetoAeOtlqrJJhWliBg0Wdo_7mYkB0xy1f-QRpRbTp0zQFvH5FbkMGpv9nlfUEmV6-ogW1PfjGCkVF-okNK9XSoCgtSrZivHqf7FbFxa0sAcpMumjqbqSlhlRkr2F__0IgvIRNH50ZZVAHp94PS6rf_x6mr47jslXH5uAq2vigfu330oUB_4F5hNPWs6CQnfZ-ZGgufOsGBzSqCgL74yFrc1yz-eU&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -347,6 +355,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -382,6 +391,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

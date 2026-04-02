@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Bay Area Dog Training","url":"https://scrubby.app/training/san-jose/bay-area-dog-training/","address":{"@type":"PostalAddress","streetAddress":"1975 Hamilton Ave #30","addressLocality":"San Jose","addressRegion":"CA","postalCode":"95125","addressCountry":"US"},"telephone":"(408) 725-2594","sameAs":"http://www.bayareadogtraining.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.6,"reviewCount":22},"geo":{"@type":"GeoCoordinates","latitude":37.2948643,"longitude":-121.9218396},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJt2FAJ780joARZbZPo3-Vh78%2Fphotos%2FAU_ZVEG6b0o2zPHx6irYKCX7B4C7cGgPL8qGPFj63UKB57sdZzBtLrQVSqsJEM84WwU_bFk_3U2AS3oaiH_KtkcqIdJ1ISIoMmtZHSIUUCTkmYb92UsFSUO7pL_FfuRzy_G_UHwd3qFN_wzC8GubmibYvZpYsY-uaBkHgio2MuUaRKWrQe6BSn2bZcALGqnJVzxnxkvh5BmPP5Mvld5ZOBOliuvPeMfzdxay5ala2AYxmnBH0rLGQ4ZhJ_Q9PhP0lxSCLjeDz4GTPV1uMR9LBrSDeNCkXoC0dQfhE9W4mQb3NpPZYYAPnGu2cb5p2xB7vRHUcdfTP2a12gOBtxJacbmXugXTjGTk_xzC7z5dT9KQtMCkznHYUsXhE9h4Lc8Z1j8kd2snVUUwH0gZmmgFB3zxZ4EOuMxRT2y-5qBs40hRS2gKTw&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"08:00","closes":"18:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -361,6 +369,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -396,6 +405,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

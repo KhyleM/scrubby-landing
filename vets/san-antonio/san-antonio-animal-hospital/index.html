@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"San Antonio Animal Hospital","url":"https://scrubby.app/vets/san-antonio/san-antonio-animal-hospital/","address":{"@type":"PostalAddress","streetAddress":"32347 Co Rd 52","addressLocality":"San Antonio","addressRegion":"FL","postalCode":"33576","addressCountry":"US"},"telephone":"(352) 588-2132","sameAs":"https://sanantoniovets.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":358},"geo":{"@type":"GeoCoordinates","latitude":28.3324786,"longitude":-82.2803972},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJAVIw6IKuwogRW1S8jqB67sA%2Fphotos%2FAU_ZVEFsurQEi7qipyEmvU3sw3KhY0wvV49rVDqkfM7XLKvG9jPkuhAUc2zCBFk-nkTmjhVtYZjYPunqvN6KvWCynlZqfA1Q0BbwA9kOTlL-U_MznwkLOx2zNsxS5K6cq_YRSit5p_1qCZ-Uuhj4Fg76sW-4G6M7kr6OtiIopNHjeFycTvuljRMMLh82qBrpRTTAvY7fl0o4rtrTmykgj_QWZ7hI6_bO7b6dvfDWwSFzCKwaWF_-HXq1Ti6rWalgtF2kmZTW3GPl_576M6rG4vYaTZJOZOEvi8K_8Bql5sBay5jRoA&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"17:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

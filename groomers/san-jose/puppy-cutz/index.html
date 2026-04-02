@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Puppy Cutz","url":"https://scrubby.app/groomers/san-jose/puppy-cutz/","address":{"@type":"PostalAddress","streetAddress":"2745 Coltwood Dr","addressLocality":"San Jose","addressRegion":"CA","postalCode":"95148","addressCountry":"US"},"telephone":"(408) 318-8399","sameAs":"http://www.facebook.com/puppycutzz","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":21},"geo":{"@type":"GeoCoordinates","latitude":37.3361981,"longitude":-121.7884362},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJiZnLU0ctjoAR7qGWvjtyXZs%2Fphotos%2FAU_ZVEHmMpNLM898Xof1EO2RTsXUih9o1KmLYKUCMzcDSz32SHyrPdJpWMGSBngssaiex87vRNRWWHRwmBd-sfDUGkD2L5PeUaFkiugBxlIoPkxMiYBIPfbzrPBgf5VUftKZ8YqVOiGTbZu2a8-0lgCl8emfEQYvqz0hrAKtaOOv6j1xIB8Haxh53UcIxxENEs6Pl0KlcWbUL7Gek2wuXGss6AfIvGju1frJGcWTzvq1nryX_76-fDnL9X6FbYXY4gkcxrL5ue06GorcFSyp2GYmBFWFnzZ0kZZriRWTD4wzbvK1Ug&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:30","closes":"16:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:30","closes":"16:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:30","closes":"16:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:30","closes":"16:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"08:30","closes":"16:30"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

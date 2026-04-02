@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Winchester Veterinary Clinic","url":"https://scrubby.app/vets/canal-winchester/winchester-veterinary-clinic/","address":{"@type":"PostalAddress","streetAddress":"6825 Thrush Dr","addressLocality":"Canal Winchester","addressRegion":"OH","postalCode":"43110","addressCountry":"US"},"telephone":"(614) 837-5555","sameAs":"http://www.winchestervetclinic.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.5,"reviewCount":421},"geo":{"@type":"GeoCoordinates","latitude":39.8426871,"longitude":-82.8236194},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJPd5IW_Z7OIgR2wGDPwQCYTI%2Fphotos%2FAU_ZVEF2-V5owzFSoocRgN6itIzxLSqY8Dg7JASkeTcwz6R0zpPBPMl_cykQ6ltwQgxCExno3L-9o0G5XWmchUHqX2TeaU-u99Js01fs0qSrqyeXPkZllGYPIZ7hfzmolOTee09OtLX3cm1425ZO3HtH4XJKutcu_u_3F-2Wc7dt3xrKNpcTYZjWPzApaG-wK9S5XD_jUnUG26rbvw_nyq3IbKfR8wjgiWFBXWXWzykXW9xHH3Y3fqRlITEzz4RQ7jSW-btBY6iEjK9vVUgLryX3lo078t3grWTYn0Pkj7Be5X-6VNojR9I81LnTIWyvV4xgq8Gvhhz9mXRZtR0quzkQpxnmGrGSfr9jr_sG0jW_Y0c4vBrbn7ogIz0Uc6JjeWj_3Zz_g6PfTU8pJQCooe_YfYl_wK6GSLcCppJLECtTRw9tjBXP&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"14:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

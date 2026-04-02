@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Playful Pack","url":"https://scrubby.app/boarding/annapolis/playful-pack/","address":{"@type":"PostalAddress","streetAddress":"2021 Research Dr","addressLocality":"Annapolis","addressRegion":"MD","postalCode":"21401","addressCountry":"US"},"telephone":"(410) 216-2455","sameAs":"https://playfulpack.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":195},"geo":{"@type":"GeoCoordinates","latitude":38.9930617,"longitude":-76.5468229},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJe66FzMn3t4kRmCI2WquL3-Q%2Fphotos%2FAU_ZVEF4SHNaiqaNHT4aGZT4CL8bB3bEuOYnyWfnzoehnw49brohZrbdffPNFqWHzuLKPwUJMgfNchrTChj1q97twtQK9-IxT9Ho7vivltZsdNbf4lafbs77SvXer0sdRh23AkMslj_7T2wDmabRGSHEOsZi2FRdhEyVJ7M1fvHX139WcAMJckwlZr49HDDalMPxCcJ5NBnq0gwwW8sA_gHNEF6l09qaQzgUrfUCSjz3jlAqb0rIVTg5JIwkRnRV4OoPWZN_uMcomhMoIenVRKEv3asVBLoIYbQSQRfX0GzZ7U_2w0U53BVeLf0H2PorRqjsXP5TDS-ayvFnUnZTK95sgdoKHmOFNC3wpmRDXYPE9XIG7pyUjoDv6wQ5fWPLgjs-hG4agVYzAG6GAEEsvpjgciLdSkV9cDptowp0ki7crkE2sA&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"06:30","closes":"19:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"06:30","closes":"19:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"06:30","closes":"19:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"06:30","closes":"19:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"06:30","closes":"19:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"06:30","closes":"19:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"06:30","closes":"19:30"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

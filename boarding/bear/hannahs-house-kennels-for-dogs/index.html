@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Hannah's House Kennels For Dogs","url":"https://scrubby.app/boarding/bear/hannahs-house-kennels-for-dogs/","address":{"@type":"PostalAddress","streetAddress":"2309 Red Lion Rd","addressLocality":"Bear","addressRegion":"DE","postalCode":"19701","addressCountry":"US"},"telephone":"(302) 217-6173","sameAs":"https://hannahshousekennelfordogs.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.5,"reviewCount":140},"geo":{"@type":"GeoCoordinates","latitude":39.5743057,"longitude":-75.6947138},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJg_mN6g0Ix4kRZSb21rRndiA%2Fphotos%2FAU_ZVEE2qkVtj4SGCyHzBiex9JGKT0hQqIrtDyyHXyymySOYHGd47shASq_ki-ORYQ_6jAPHPU7nl96ba0nuaTef_cT3Xq1vCWWVvoVEdiDtvXszADZSFK5rDiZOIzJuIuX4fLy85h3uUWFImDnX5tq76XReBBYl8kx-sVLHQc413wrRPd5s3rdo793qQCZaet-jBcZA16QGIQOtBMSGh5mLZFFze8wNQR2gg79tfqEhrXEyJOpq1LUEhYzwzU6nYDB4vtMcB-eMbLOO2xtYBWXe9z6zUgZdUERKIXhEimITdwHNSScz_06Ujvs2-LH9MV9zjhPTaQ26srNNztVYXWE7iOZPa5IG5768HVdej1Z22hWDshiWsFDgX1F7gYll_xgrCOm6Itu30mW30jqedc3lzPYRrjvlourhx8b5-Sleez4i1P4&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:00","closes":"12:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:00","closes":"12:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:00","closes":"12:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:00","closes":"12:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:00","closes":"12:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"07:00","closes":"10:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

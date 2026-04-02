@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Swift Creek Kennels","url":"https://scrubby.app/boarding/colonial-heights/swift-creek-kennels/","address":{"@type":"PostalAddress","streetAddress":"17700 Branders Bridge Rd","addressLocality":"Colonial Heights","addressRegion":"VA","postalCode":"23834","addressCountry":"US"},"telephone":"(804) 526-0202","sameAs":"http://www.swiftcreekkennels.net/","aggregateRating":{"@type":"AggregateRating","ratingValue":4,"reviewCount":23},"geo":{"@type":"GeoCoordinates","latitude":37.2782156,"longitude":-77.4325439},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJB8NdDw2nsYkRkBQzDv9C-mQ%2Fphotos%2FAU_ZVEHhiG5TW_UGxu5bbxadKSnUZQ0Z9eW4aXoyqZ29fc4f2NaMQt1wnBLzg9k4wGGiXaaaBH-HVPH6USA0tGhMnZqKyGK_HIcbcZypteBhMbxFjQuempdSWf1IdRzbH5uuETJIQZTH9dU3HxYgRolENYw0kouxeH8yW3kcEUI7XeU104JQLB-mvfRAUxDRbJhJS1UOB0XrWSDW8Sh64wpQ8lh32VYh7m7qldAGlia9BZ3atd-BUOTyV48npoUbNh4DDJPuJQ5fK8a5NF7u9M789bf3slR_PnUS7GbXuRiMmd5PLw&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"18:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

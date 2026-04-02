@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Pawsitive Grooming LLC","url":"https://scrubby.app/groomers/portland/pawsitive-grooming-llc/","address":{"@type":"PostalAddress","streetAddress":"PDX Antiques in Portland, OR, USA, 1737 NE 42nd Ave","addressLocality":"Portland","addressRegion":"OR","postalCode":"97213","addressCountry":"US"},"telephone":"(971) 485-1694","sameAs":"https://pawsitive-grooming.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.9,"reviewCount":60},"geo":{"@type":"GeoCoordinates","latitude":45.5355868,"longitude":-122.6201141},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJj1DpRYOhlVQR_IfpuPXJOUY%2Fphotos%2FAU_ZVEFaW_QFsM1nsBvYnzoLojmYNYI4ZgCT72IcMdsIVDku-Flk_7esBIsG3muf-GqcqFfd2WoQC-c9jrDpgz5Ql-MtIZfRFU4LfP7wf5acpaH3YV883lsgH2gZXVRVFHF-Phe_yxqhpvdkzd3C_kX6TXZtrAyr9UruTjeeQBmibQMQiPY0BKtU4y-asOVT7HRKEdDfOhddqvoQXB_csoDhxdHfMHCfYmosuDR66xqSQ9Wx8cTdpe7kVdLhwgI0FnnpCJRZohEcZQfPrU2_g2tEcg2JZ-lqzUE4It3_1rWTdpj6Kw&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:00","closes":"15:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"09:00","closes":"15:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"15:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"15:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"13:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

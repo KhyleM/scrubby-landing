@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Farrington Kennels","url":"https://scrubby.app/boarding/martinez/farrington-kennels/","address":{"@type":"PostalAddress","streetAddress":"170 Nardi Ln","addressLocality":"Martinez","addressRegion":"CA","postalCode":"94553","addressCountry":"US"},"telephone":"(925) 228-6288","sameAs":"http://www.farringtonkennels.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.5,"reviewCount":84},"geo":{"@type":"GeoCoordinates","latitude":38.0078601,"longitude":-122.0879348},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJdQ4Lv-BlhYARGJZCaf_2jh8%2Fphotos%2FAU_ZVEECx2E0QbMakREGUOwm016oZbnZS2G9O7qXiQd6hmw5Hb976LyqXfK57pL7jpJVVBxfxu23rspqUWzPvgvv5sULQMWFAAusv_D6RviDo4jmyuNsSasHfehIwRKyqEL8Sn2Jt6bt68pxpjzoHkOtupjgzgPXxFfmcJK0XZXVqnLlpmL8Y4jSY3KaclvUcKl2eSbn65CiK-Tj5xqgmLz9JX_VisfPqXkHEg6xeGzAe2d7WSoiNidrTvcEO14zoNwHLLewqJy6Q6yBIFvaFEkPHGIkH71isoS6ah52v48dmR2p_auaI77dha_xxO6V7G70CGxGQYFjmHF3WgH8MC53iV81YvBRWIy1f2ORHOJLNuqM4Ofjo2p43jHxlSYAjkZhwd1gIxPUHio8pTi7U5PfTUncmmqe3Y1tpRMzPPsus79n0PF7&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"18:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -364,6 +372,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -399,6 +408,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

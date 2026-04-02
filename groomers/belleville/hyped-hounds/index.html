@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Hyped Hounds","url":"https://scrubby.app/groomers/belleville/hyped-hounds/","address":{"@type":"PostalAddress","streetAddress":"1014 Cart Rd","addressLocality":"Belleville","addressRegion":"IL","postalCode":"62221","addressCountry":"US"},"telephone":"(618) 979-8521","sameAs":"https://www.hypedhounds.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":39},"geo":{"@type":"GeoCoordinates","latitude":38.5336122,"longitude":-89.9662349},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJwWxAX6oDdogR3SdSIVt_2NE%2Fphotos%2FAU_ZVEGBS0ubzefcrTwuP-aRdDQNIS0DYP0Ha5aZ74r9n5xMyAztOsEUau5BD6AoY4HmZa6mV9UloMNLOz9w6-JSLDtU7NtF3N1UzCR2nWeGU9ta8p6RPU1fwY_Nhb-yuyEAotV7bWMH0RyyUdoRg1-sjRZvs7RFsEA6Hno-msBL6UJztRdHBz4-yCPboWcFpyx_GRGRVHw5sstqdwM3PUs8GssRFP0tzHcQrNeh3M6Yv40nl5Rn5Gh02CvN9YsNMnzDfXVoDgNZsvKTRpn7T9nwQI2gAVxWSoChpLI3VUjKfPnhRQ&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"06:00","closes":"18:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"06:00","closes":"18:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"06:00","closes":"18:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"06:00","closes":"18:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"06:00","closes":"18:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"18:30"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

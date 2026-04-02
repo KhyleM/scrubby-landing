@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"South Park Animal Hospital","url":"https://scrubby.app/vets/austin/south-park-animal-hospital/","address":{"@type":"PostalAddress","streetAddress":"615 W Slaughter Ln Ste 121","addressLocality":"Austin","addressRegion":"TX","postalCode":"78748","addressCountry":"US"},"telephone":"(512) 386-1065","sameAs":"https://www.southparkaustin.com/?y_source=1_MjA3MDg5NTAtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":659},"geo":{"@type":"GeoCoordinates","latitude":30.1719343,"longitude":-97.8011551},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJVdo6acRMW4YR0RIJOee-y7Q%2Fphotos%2FATCDNfXaYeVErJ0zqzqLn0CMixNsUEEYkFrkNeRN0LFXkIRgRQ8SCqcFFr-PQK5gt8JDXNn9OA1Kq1KdHhOZVtuigW6OOkpCBuZvUbLrA0jHjsuHlcsceYyP6LHdOqoCKrgmqOupaPMrJd4gwB_sZVfBwCRmktGxn9Fn72ZZS5zc5iWA_6Sl8DaJsQ8MxQ7ZXrwJLwFhjy011sJJZY8lVxpM6LLpf4wI05kan4jQBtgku6Q_QFDmYNO8H2-_1Gq8-83B7WV6MnDLI9u4ABUUv7yPbUKQK--ofJF89uR2QnGI5ZFFVQ&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"12:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

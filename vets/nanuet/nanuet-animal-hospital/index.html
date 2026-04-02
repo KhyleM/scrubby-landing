@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Nanuet Animal Hospital","url":"https://scrubby.app/vets/nanuet/nanuet-animal-hospital/","address":{"@type":"PostalAddress","streetAddress":"4 Ave C","addressLocality":"Nanuet","addressRegion":"NY","postalCode":"10954","addressCountry":"US"},"telephone":"(845) 623-4469","sameAs":"http://www.nanuetanimalhospital.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":244},"geo":{"@type":"GeoCoordinates","latitude":41.0938792,"longitude":-74.0064471},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ10W8VxXowokRSfK1dhKcjmQ%2Fphotos%2FAU_ZVEGUQ2HO1s1BTYXSiC6t4YG3c_bF-D9T3tTgqE094RUsLPMdQBbxukO2XUSKtIft1adzCYVI6xfBRM-F5vcB-FhQM8HQVpi-Vh3QrM07QGfFtlerMZvHdI4CivTEvIWDfI_x7jTXejVwEh4PN0VOIF4ZC3Dw9_5v-I83UrLeKL5jgK6UXWFFO98hz0r1VHV3g5IfquOfRwkiWA3LdOpj0oXuW-PQLpEA1nj9L9jOGQQyfN15cGTOGl62JG8SBOmNa6ZbxP54myZTCk1Bv1NZir8jX-sGPPwWpa4uFJyvAwhb7EcCsXrMReLB9zC9mDTpa5G8tqifFKCWdZc2NNHpmdaY1lcZp837LN0YJ6A1EqAZoLhR8cRafc-VX6p71ULVdgRveQzZBbDjz2VH6UjBHKYyursh-ks8a4Zkt_U-oJdWZy8M&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"13:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

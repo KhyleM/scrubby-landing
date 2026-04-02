@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Dublin Creek Kennels","url":"https://scrubby.app/boarding/dublin/dublin-creek-kennels/","address":{"@type":"PostalAddress","streetAddress":"6570 Donlon Way","addressLocality":"Dublin","addressRegion":"CA","postalCode":"94568","addressCountry":"US"},"telephone":"(925) 828-5355","sameAs":"http://www.dublincreekkennel.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":63},"geo":{"@type":"GeoCoordinates","latitude":37.6991405,"longitude":-121.9375115},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ_c4WF2Xsj4ARUC8bLVZ_u8s%2Fphotos%2FAU_ZVEEjVpPDONhgNxMQgGi3yMG0QnGkACfGY7-x_irK1lEb6mi3sjiUKJwL8Eujr743bZLXhN9_YbwRkhO4Dg6dvgQRyjgO-5hW4GWbEeyMJ08C-Tbby4o9b-KAc2xIw_fen9IoHclIjEjyFLwVdZ8hGg53cxRk8omEecG-idZ-DZ4H1qAbx41qIZIcrbDBKz3FrFj355BC2nhi7H2CO_UAJNXPFGULXBSAj9XtqgKdMVAlDrrBahcy6sUv48BSSLTE4HD_1xKhqCT3az7q_2lWoAvAokvI_BReKetDQe1eBY9YCrmBk53olpK3y5hlztzBca7t1wzls5E2jIynNKKYjcfgLxSzwmJWmB4gMDhtKVnDNQGa91oMFYb4v0II0TbzYArFaKWeLCmteZeo-gw-mzeU4nQse4ymhEyNiQCrp-sXjo15&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"13:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"13:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"11:00","closes":"14:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

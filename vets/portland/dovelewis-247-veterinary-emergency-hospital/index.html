@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"DoveLewis 24/7 Veterinary Emergency Hospital","url":"https://scrubby.app/vets/portland/dovelewis-247-veterinary-emergency-hospital/","address":{"@type":"PostalAddress","streetAddress":"1945 NW Pettygrove St","addressLocality":"Portland","addressRegion":"OR","postalCode":"97209","addressCountry":"US"},"telephone":"(503) 228-7281","sameAs":"http://dovelewis.org/","aggregateRating":{"@type":"AggregateRating","ratingValue":3.9,"reviewCount":2071},"geo":{"@type":"GeoCoordinates","latitude":45.5330605,"longitude":-122.6913345},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJC24DqfwJlVQRSLg1mPfO1yU%2Fphotos%2FAU_ZVEH7AZjphPr6c4knEAj74drsdiZpi_BfNlfr28qGjs3fy7w5bmzsd5vTFbKUg5x9h8vNChHf6e3gPATBkf6Hj3VASRX_9xHX0oICQO4cyxDka9EmWxfb3b2uXz3d5thxTpo3jcehQs2Y9PI7qS6dJn0rv-aurEjx9juVTmvWKsmCoyM04kMeXvdKALR98wMmhzzsO8T9d74amrMRmzOdg6V0HDp_vWdRWR9CrPQ8s82n3dSwXba9TpuRoBqI8Pu2L71XQrALuLmtRxrfqSRECsIYouXRJWEvwaBL36JV3qNAPw&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"00:00","closes":"23:59"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

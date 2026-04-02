@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Alvarado Veterinary Clinic","url":"https://scrubby.app/vets/alvarado/alvarado-veterinary-clinic/","address":{"@type":"PostalAddress","streetAddress":"6800 US-67","addressLocality":"Alvarado","addressRegion":"TX","postalCode":"76009","addressCountry":"US"},"telephone":"(817) 783-2257","sameAs":"http://alvaradoveterinaryclinic.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.5,"reviewCount":2110},"geo":{"@type":"GeoCoordinates","latitude":32.4153788,"longitude":-97.2319999},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJlSumvHxbToYRRdJ7GrEoo8E%2Fphotos%2FAU_ZVEHPrGDA2375weiVH14w25Mtj37oOSyFL6I5Cb_qIe8gVLNGEnAAgvqZYCAB_BeiuxL_brvkrtrhNnf-nr5pX6jXecLImwHFT2E7sE7ZVlt7CRVilKtVkc5M7TSpx3dZFMMTB9LCvXQ7GzdUjbZPDgCyNtDfRTc0CwO_hlmEnFINGzEs1yVdk6GCuI5h9IrfzjNskw_iLrXfRqs4S4KJ2IzWP83U6WpXikVEAb6raLm9Y5fxI5lm9OOmJOnLVPgcIvy0Mhqtm2Ww_luVBKoPbhepTanqfE88dIyOO0L18ml-j7ek8enXTIVRspiEArkzHe5jCt7VfD4NSwJjYaLzA6kOfnSOyO135K6T8r5NqmxWWF7jRpUt5DJ-R9FH9Qf5Zj8wiZBYU0Ze5_0Yw3-w8EfqMOy_oXGo-mqNnUmHa5Q&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"12:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"12:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"12:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"12:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"12:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -370,6 +378,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -405,6 +414,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"STAY","url":"https://scrubby.app/boarding/oklahoma-city/stay/","address":{"@type":"PostalAddress","streetAddress":"1717 E Hefner Rd","addressLocality":"Oklahoma City","addressRegion":"OK","postalCode":"73131","addressCountry":"US"},"telephone":"(405) 478-7829","sameAs":"http://www.stayokc.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.5,"reviewCount":138},"geo":{"@type":"GeoCoordinates","latitude":35.5810519,"longitude":-97.4811927},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ-2J4OicZsocRhxx0zLdDGj4%2Fphotos%2FAU_ZVEEF1Eyq1dvavEHPeOPlU6UOjz-Rxu43Wj2cWP76XmYKCH9qNQ08C6ZcyrnmfLtb8hcos5h9AFj7eOLViUkxCcAGvsGfMnOHQihkzgt0dh_KBAsIFIHqJEdyBqMSYfXpZ8NCFwynw8MGiJ26QmTT7cEAFn-T9w3BTFVHNnBSYqIExMnxxxjp4SBcadxDhlq7Ny5JjYEB6ihAugC7ExxLvHEIgXXJQMb1lk8tFbuwKRE7rdIJ0qW7s1qJE37DoWPVctB7emVzT9Vq7VTeW4ULBouwZcAmp0d3-E2S7Z4J_TTPEKMPFK3ukbh9wTcXSbG0Zm46gLTQw81HjQPNDdI5wyu9EozADyrnVZBx5E60HaIZ-9qMomhRDUcDO4xbioN2yorP6NM6BkHeFRCQOoLAUhqFQK9QVSk2Op_lmfSgAY29e7_W&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"12:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"01:00","closes":"16:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

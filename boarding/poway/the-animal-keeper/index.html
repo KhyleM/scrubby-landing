@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"The Animal Keeper","url":"https://scrubby.app/boarding/poway/the-animal-keeper/","address":{"@type":"PostalAddress","streetAddress":"12280 Oak Knoll Rd","addressLocality":"Poway","addressRegion":"CA","postalCode":"92064","addressCountry":"US"},"telephone":"(858) 748-9676","sameAs":"http://www.theanimalkeeper.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":448},"geo":{"@type":"GeoCoordinates","latitude":32.9503197,"longitude":-117.0648506},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ2ZCGNDL624ARe0-tn7uvggM%2Fphotos%2FAU_ZVEHLkwzVTGJJ7EpWQSP3XbOggroFZq2WoHiezqRGF1qE46M97QtnRhTw_d7t8cnk7NZNdA_a-yj75h238iA6DUY_kIq11as7U76b4sJvktB4-Pfdo6QPLNOTU-y6iW2KkZ6IqENb0awR3jQ7r_rpYCZ8cpwvAJqBOWZ8uyio1bX3DsdahmVDWmTCDnCr_b2E6o81Z_A_aUt70vzznfzH4tGqdCANFAAlJ_nv5Liauotm_pa3h_WTlh01PqFbtyG8_RZD_yWWjc4Wm-8rzbvjL-QI4VTAH6sNik4oIVKDT28hbqYce7ZxxbcoXRgzYjSWgcmtz0HByvCytC5ThuIh2akWih1KW4h6_ZS80SSoeclSmHOwShLHEZy05hFrHSn5KW3GidtoOlAd18MiCoC3UJ5KPA1DqI5PGPvHkbQiiPrN_w&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"08:00","closes":"16:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

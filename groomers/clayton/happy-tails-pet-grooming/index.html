@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Happy Tails Pet Grooming","url":"https://scrubby.app/groomers/clayton/happy-tails-pet-grooming/","address":{"@type":"PostalAddress","streetAddress":"397 W Main St","addressLocality":"Clayton","addressRegion":"NC","postalCode":"27520","addressCountry":"US"},"telephone":"(919) 553-9574","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":109},"geo":{"@type":"GeoCoordinates","latitude":35.6555086,"longitude":-78.4631699},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJOaOvhI9orIkRmBc8bB7j_H8%2Fphotos%2FAU_ZVEEDLgF3oHZ2T-yUvgPpX2dNsvSCKFxZOjom4bmYT3Kt8AQLCCniQFFwzZ9bxu76R7y8ox9sZ9AXnAnws1Yw2hDpAqFj3kkQKvuxCEQ3u5nernq7raXUYIScWp8bkgJ2RZXS5k-ygT9MHHWX4x7avMZ2E453I27O_wwcdmNvwdK3SbZ0DFfd7xEAzDhntc_Cr337imWG3wZiYrv4VqAUf9HK9nb7tZ123I3XitksycXJeLWzBdncYfowjPG8AZHcTSmehPfQUeyDm4G_6pTPPQ_KxWxLisoCoXAXVuPs5a7MzoWCDFj9w7ie1QSyAQZM0Ds90kDhcZyoRV9kmT9H6ytFXBRixAHjf9_8UW7rk82Amf1orxwTYi31BkXSUPbpFA6qhMPSrC3F8s3-rHPj5tQ3cZGfchpzcvKzrt3AMWCehYZ0L15WzJq8ytLB2w&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:30","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:30","closes":"16:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:00","closes":"16:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:30","closes":"16:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"07:30","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"07:00","closes":"17:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -363,6 +371,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -398,6 +407,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

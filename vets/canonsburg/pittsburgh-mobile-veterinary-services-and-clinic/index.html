@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Pittsburgh Mobile Veterinary Services and Clinic","url":"https://scrubby.app/vets/canonsburg/pittsburgh-mobile-veterinary-services-and-clinic/","address":{"@type":"PostalAddress","streetAddress":"3075 Washington Rd","addressLocality":"Canonsburg","addressRegion":"PA","postalCode":"15317","addressCountry":"US"},"telephone":"(412) 509-8215","sameAs":"http://pghmobilevet.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.9,"reviewCount":214},"geo":{"@type":"GeoCoordinates","latitude":40.2919322,"longitude":-80.1040799},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJGd6XDaKNNIgR3wbmn0Jj5LI%2Fphotos%2FAU_ZVEGzUf7OU3MWWcKv5u45Z-dJtaax6VmltC86XZsOov83UCsUvk6Ymj5lc8fcut2Es_OlegABUw1Ax7YPEvKS9mZTsX91kATJq2W-00KqeHhIzCFcEYqWpNfEbs857BHanrA3bV7q94D3nsOo7eCQ0QJ7mXBvdqGXoOp5mUDkvuyIe2B49lyFnEn7pC2ZO3ItUDVaaSbhHx7b0QQTcPZJoQRBK5yi1KTxFrhSuG8_F39tUDGSXhEoS6KlXyqMp3sJcfSxBD6xQ1x1k5GuY8oVRr0fVFnkGZ4VJBdQRzO906Td-Q&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"17:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

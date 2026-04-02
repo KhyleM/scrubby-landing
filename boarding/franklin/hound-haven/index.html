@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Hound Haven","url":"https://scrubby.app/boarding/franklin/hound-haven/","address":{"@type":"PostalAddress","streetAddress":"109 Rand Pl","addressLocality":"Franklin","addressRegion":"TN","postalCode":"37064","addressCountry":"US"},"sameAs":"https://www.myhoundhaven.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.6,"reviewCount":88},"geo":{"@type":"GeoCoordinates","latitude":35.9102394,"longitude":-86.8327336},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJSzwbqVF-ZIgRwPdJglKd8eM%2Fphotos%2FAU_ZVEFFA0pKeVA6l5VFFMW0BCtga1fhR5apQmTnOTvhWemly5JkCPAC5lcMZoRSDlz7JD_L0dchM72hO9zZwAAUt2hkvEyn4lYu5YYTr53EjAn779-HX2qypUIDVDTTqQcZ09oPmD6xl8Cb1D1MiXWudhs34H68HcDacSPSmRHF2KgBAm8zi_uZFkA6ndWbD6Wk6dDmewuFlgMURfEx2iD_BjvTggSfHSxj6mRQcYs2cTMXarqbPnZMAQVi-5wHmT4GCgwmWINjlef4FQrtJMHBDi2aUWFw00D_tOffz9CaIsxTpQ&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"11:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"08:00","closes":"11:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -357,6 +365,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -392,6 +401,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"PupTown","url":"https://scrubby.app/groomers/medina/puptown/","address":{"@type":"PostalAddress","streetAddress":"810 Tower Dr","addressLocality":"Medina","addressRegion":"MN","postalCode":"55340","addressCountry":"US"},"telephone":"(763) 478-0203","sameAs":"https://puptownmn.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.3,"reviewCount":107},"geo":{"@type":"GeoCoordinates","latitude":45.0453509,"longitude":-93.544004},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJacmEy_FOs1IRplWwhKS7ftg%2Fphotos%2FAU_ZVEH_BeCF0g4Lqfh-cGZDHoV8InHANS57riz5I6heUaR5Nxf05WWtJKsyIMkZ08kqo6oj_IJisfcCZMbYtOpQ9IEH_Gik89pUoe4hukqirCrsmLgCOvwEquRBfG0DIABRruw_kXB_Ab4nJ4zn0fwcYPGk7-XLT1726_EVGnUudtcybkv3Mrn4fUD9awy3Mlxn6PH0Amvf8P50u8jy0y-F8eUvc0Y0rQJgp-L6vIl8Wmh5dJz4_up8T3GKrxrIYJQ5hsu_hr05jTtEp80dEBt4F99hjG3O1ZEk9qY7fhG8zpS--Q&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"06:30","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"06:30","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"06:30","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"06:30","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"06:30","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"08:00","closes":"19:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

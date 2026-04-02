@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Williamsburg Veterinary Clinic","url":"https://scrubby.app/vets/brooklyn/williamsburg-veterinary-clinic/","address":{"@type":"PostalAddress","streetAddress":"117 Metropolitan Ave","addressLocality":"Brooklyn","addressRegion":"NY","postalCode":"11249","addressCountry":"US"},"telephone":"(718) 302-1485","sameAs":"http://www.williamsburgvets.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.6,"reviewCount":564},"geo":{"@type":"GeoCoordinates","latitude":40.7165693,"longitude":-73.9626383},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJHT3hxWZZwokRm72jVI9DEzw%2Fphotos%2FAU_ZVEHIbhQXPVEx0juRHnkz4H10TG_3JG0xkWXIkpgPzzQe-soHmClmZTU5Zvmo80RrHiggYFJ3Emhy9xO6fgHg78bvgRCb48xw0P3Rka1z6Jt_fCH-RK4D6B2Uc9PDzS8OkBDY7tfoadw-35gi6e_gCt4ZHI6Z_IBMSAWBNaEtbAU768MUkn4bTSFkwkIQFAYj6yxgh-k_kK9Rwg9zUbsrt1HcNvHHfAIJzfQCRA9BVzVUPnfCld0kriMPvBEsqOl8bnbjeuS6oH2XgJ3Y4l7rv-ChV__mjrgz8DxITAAOk-K5TmpqKlaiH9Ivub8hWFp397c5F6cu3djrrkqext1_SHg_W4Pk1Hkm8WpESvqJ-wCbZaVHXogMeqjhBQw3feonQOhcZPQNPms64X88sfLn3qpiqn9LWb7ycRWIW7qJ9JGW_A&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"09:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"09:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"10:00","closes":"18:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

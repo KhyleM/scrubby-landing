@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Animal House Veterinary Hospital","url":"https://scrubby.app/vets/arnold/animal-house-veterinary-hospital/","address":{"@type":"PostalAddress","streetAddress":"4202 Jeffco Blvd","addressLocality":"Arnold","addressRegion":"MO","postalCode":"63010","addressCountry":"US"},"telephone":"(636) 464-1038","sameAs":"https://www.animalhousevetstl.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":525},"geo":{"@type":"GeoCoordinates","latitude":38.3979148,"longitude":-90.3749313},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJAdhufFXB2IcRbKx1lrNz1Mo%2Fphotos%2FAU_ZVEHWwc_eeJUc-KwG1J0iy671vfjwCZhU4XoP-2M6SMmccG8bpkAgxi_psyY0sDpK9cVh0TkeL95L03RUzYygk2VEqc_z8IuVlxx8ey1rlxx48JgxeOCo8HL2P3lKDilvhZffzFiwNIRbTY4sg6-Cf5Nmjnh5J82w7AXWNvjKyUUO0XVoGK0K98CFeEtsje4r1bifEnKncEGoFfT6Gef3gx-1XS3dvo4Pc9DhuxAn-i-n8qe5MZfb5Iz2G70CVAGg2uNntP_awELF8QrA2ktQnaeMV4XVXukTJmSsGr080lBFrmhRJUZGuAiWZ8IL2hklxHfYam9Fen8oEeUYCvFBL0aQ_bqAI8yM3qP6i-zxPnbe8Q-fYXoAKuBKDgYKMXXKtMMZP8iZ92ThsifONkLeJTkYekVzY7c1RAM4Nz9GcJ9smRxZqrPHwl2Gj0lZpc3S&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"13:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

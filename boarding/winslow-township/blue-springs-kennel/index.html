@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Blue Springs Kennel","url":"https://scrubby.app/boarding/winslow-township/blue-springs-kennel/","address":{"@type":"PostalAddress","streetAddress":"645 Bairdmore Ave","addressLocality":"Winslow Township","addressRegion":"NJ","postalCode":"08095","addressCountry":"US"},"telephone":"(609) 405-2012","aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":7},"geo":{"@type":"GeoCoordinates","latitude":39.6510638,"longitude":-74.8477974},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJNx3tfcEpwYkRUMYZ_Xa88a0%2Fphotos%2FAU_ZVEFKknkbGZXCj6B-vSaC9njjmxBrIdZxFfpNPhnEZqR0PrrZ4oji6ykREq4dvBvvU9dFCtX1aEcU42TUzv2VYFJBPz1tk3oBEJGcwvchhqQVFO6Y1BatgpiSH8jcvUj3KlkQyhPmoqza7Mf-L9_ui62sCAl3KZ074I-wFsRdYJPCMqbfirHBHil2YH02JKREGUycg7ImCTYPCBTKUb6_gOJNuqVOe0K_oVMalZZKfx8pRbIWVQ_5IZXXCwgnIQrrOlp1aWG0no095K0oJRWLSS4Q0HvT0_FmycUNGmrtrGkUWQZNw6nm5FAgJLoB0eAIqfsD_2DPMBhtd0BMUFpueIsk_RURHrpf6smygOtnvV1Thy5fs5q9s_ldLLJGMfo7q3gJHfj26ENqxIbEPHkYhj4b08SizM5_bZqLXACY4vHb7w&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -341,6 +349,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -376,6 +385,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

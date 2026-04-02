@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Barks & Recreation","url":"https://scrubby.app/boarding/macedonia/barks-recreation/","address":{"@type":"PostalAddress","streetAddress":"9849 S Fwy Dr","addressLocality":"Macedonia","addressRegion":"OH","postalCode":"44056","addressCountry":"US"},"telephone":"(330) 467-9988","sameAs":"https://barks-and-recreation.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":445},"geo":{"@type":"GeoCoordinates","latitude":41.3149171,"longitude":-81.5111029},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJc4NRd9kfMYgReQ6aKyhOzoQ%2Fphotos%2FAU_ZVEFWPmBe8QLgy7ByRs553fV_QMDj81Cj-F5dCPCNolPKlX7S08bwglctiknExWSmKp0sb4E53HDnCe2YbxfuLlQb2datI5AMyuwtUpCVHFCi9qmet_L2-rI45hzGZjtpBPZ6EuvF22BV6WMKDXFVYpV7d9y_Z9TUytn3xx0S-uL2tWwvXjmfl354nHT-7zAlbDYry0ltKNzJEMp-VWmBp0IALLxO7KKJiIR-0-wrUuUdxNslxWCC_97MzHOLAOI8rQtJLyXgcsczLrXfDG9zCOU6cEik6NUWxk8MdB-SxyEO6LQQC9p4HnLDrMsgxQqbMitrXurFmc2Jzs04VORSGXBqsA6Ol1MuSflVgoXMwSdrAOc_QPGaoZcj6eF-ihlcrR0TBUWOyMUpZK8qAFBb1d7kv_L42XmPHD1l-Iwq2eH7YY2Y&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"06:30","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"06:30","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"06:30","closes":"18:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"06:30","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"06:30","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"07:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"07:00","closes":"11:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

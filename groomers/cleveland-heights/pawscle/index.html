@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"PawsCLE","url":"https://scrubby.app/groomers/cleveland-heights/pawscle/","address":{"@type":"PostalAddress","streetAddress":"1970 Lee Rd","addressLocality":"Cleveland Heights","addressRegion":"OH","postalCode":"44118","addressCountry":"US"},"telephone":"(216) 713-0585","sameAs":"http://www.pawscle.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":137},"geo":{"@type":"GeoCoordinates","latitude":41.5056282,"longitude":-81.5657118},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJu278sU78MIgR7oROba_ISIs%2Fphotos%2FAU_ZVEFLsKlmDg3DE87DL_ngqsnPE_NKV_G8MAr2fTQRFRJkB6lysn4fXqXNxN3L6hv-hBlqjdrHYFMHfLYih8z_0lJCszB6GcJo1Vyl0jWmpFR4GwwKYl4KJp59bbD7wdJ-A_izv2L6kKgftytaiszu0GjL4bUmTvsKDjVyEf1mwh9QvUZuDJlYrgzOF8k6OPQ5tAErHzuMAKG0SR2RfAhg1m6ieJoJbO91HwcwhA0LPVgm5DpGd4xOlljel-1axZTsxUKZ0VXVce52OW3ZyxZQN0IFK-HvEybWiWLsaU4Sme2KEqehR5ic7DY5f7eBQbPq9Q8RntJYY72qVSU9SappTvodSCwH0kG05_EPx0D45L6aLXUeDUjpNLYKo_x69-78a8LhritbWNETqjf34XSc29SACB7Bs5aR6S-Zxq4FhrWAD_pb&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"06:30","closes":"19:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"06:30","closes":"19:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"06:30","closes":"19:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"06:30","closes":"19:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"06:30","closes":"19:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"08:00","closes":"10:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

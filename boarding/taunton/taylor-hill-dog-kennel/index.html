@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Taylor Hill Dog Kennel","url":"https://scrubby.app/boarding/taunton/taylor-hill-dog-kennel/","address":{"@type":"PostalAddress","streetAddress":"15 Bassett St","addressLocality":"Taunton","addressRegion":"MA","postalCode":"02780","addressCountry":"US"},"telephone":"(508) 789-8780","sameAs":"http://www.facebook.com/taylorhilldogkennel","aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":21},"geo":{"@type":"GeoCoordinates","latitude":41.9401973,"longitude":-71.1166207},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJe0MaIAOL5IkRbLtJWbb4nXE%2Fphotos%2FAU_ZVEGzy-kif5Ea3BLxAEtrolELzHZ__3t7evAPgcuBT6RvGoI0vMWBa5ji5ceSURoMSoYIbX2d4YN878irFSZgTUmaD0UtdDW9nIk51iHcyu8PSvL4eQ_rPfmfLnt_vy-v3PZlB_J0Z7giOHM9jXvgW_urpx0h4_UJIkG79_b22wHlk11qZl0R9u4JOoy_qBQvAvhIrI0jXrFr_ShjW_MonVAM1txEpFpgHLcTy-KKrrMXTredlHHHjk9B2zUB7zERs2CHFRu1I1TmHAg0pbXltlCLmZDzKhw9qjkKZWF5WycpCg&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -348,6 +356,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -383,6 +392,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"A&E Kennels Dog Boarding","url":"https://scrubby.app/boarding/louisville/ae-kennels-dog-boarding/","address":{"@type":"PostalAddress","streetAddress":"Friden Way","addressLocality":"Louisville","addressRegion":"KY","postalCode":"40214","addressCountry":"US"},"telephone":"(786) 620-3589","aggregateRating":{"@type":"AggregateRating","ratingValue":3.9,"reviewCount":7},"geo":{"@type":"GeoCoordinates","latitude":38.1721739,"longitude":-85.7956809},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJdfZWeeHwniYRQ3PmTwco5D4%2Fphotos%2FAU_ZVEHTD-K_i7bcPfS7UckIcgGaT8YISjkbg1WsnH4VnDw5LzdO2TUkeRJNkNjDzX_8U0sVPg7s6CWbHOcF226KWNeOrzu4PQy83nwG4WrLK_8lMnw494lmFiYLA8xsz8A3K2epcPW-E7t-geygrjE6iZmAhGKKyFnc0wSNAituMVX6cHi756wHfqZWYppfrJXbLcjOWkcsDVFGl7S6D3lkwNMVbqEhaVB91t5q3yoD17jPnRSstJvhAi7WvxeqOeiq8NFI1qCWjPVUNd1sxwpnyK6WBWtSWT55yzL1zgbmcsLeAA&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"07:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"08:00","closes":"17:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -357,6 +365,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -392,6 +401,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

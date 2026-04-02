@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Epic Puppies","url":"https://scrubby.app/boarding/miami/epic-puppies/","address":{"@type":"PostalAddress","streetAddress":"8173 SW 40th St","addressLocality":"Miami","addressRegion":"FL","postalCode":"33155","addressCountry":"US"},"telephone":"(786) 717-6477","sameAs":"https://www.epicpuppies.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.4,"reviewCount":329},"geo":{"@type":"GeoCoordinates","latitude":25.7336457,"longitude":-80.3266165},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJL54JI5-52YgRlkH93YoEqKI%2Fphotos%2FAU_ZVEEHMxkSrRITZqxIlq4ogwXHUXpf5vfmSOoUOkED_S71EOVjvGEpOFNKh89Xvipa_pic10irsF-fcs2jwdFZNRZbgtK27tqS_YKC7PFg3FcX7ffArr2zeOBIZFBHhPjnP4Z3-3qZKjioc8FA_jZXZo9Zgt1Xqa3fl4tmzYwOnV0O5GVYz7f1NhhKQiwFHIG09xTZcfHCqdOJPS2NESqrFRVnbj5mDUIPvFJotInwlcyJ_W61fCg4jFICFSiShBBoDv0uk6gr7JAn2wEkU_AEhGp_ZfUKB6sYSRcZ2DMGm2EK6w&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"10:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"10:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"10:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"10:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"10:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"10:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"11:00","closes":"18:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -364,6 +372,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -399,6 +408,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

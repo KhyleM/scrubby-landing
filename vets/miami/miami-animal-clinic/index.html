@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Miami Animal Clinic","url":"https://scrubby.app/vets/miami/miami-animal-clinic/","address":{"@type":"PostalAddress","streetAddress":"7345 SW 8th St","addressLocality":"Miami","addressRegion":"FL","postalCode":"33144","addressCountry":"US"},"telephone":"(786) 542-6070","sameAs":"https://www.miamianimalclinic.net/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":1078},"geo":{"@type":"GeoCoordinates","latitude":25.7631874,"longitude":-80.3150289},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJX8QWbVO42YgRTov2Rw4228M%2Fphotos%2FAU_ZVEEpQYo7dozdpBz4JFSfLNIuF8xgGT4eqYDIOH1Qh7t-NK1I6AqE8ZIN-VkPKIioI6aH44UqmbQqpj4reTRKneml32GnZy001k30j8MV0-LRudv35MC0DizrEjvi0IP19lx2hwWq2sz2JfBjq0LsLfktxXmWB4lqoA2pncCYU6_UdPkyAiaDaDq2XoOrky8_wVN3wAFfcfeTdA1xgXf8Ao8y7_PfakjDsvX6HLefyzUdUF120UnDJejl7536ZgNwntdRwUtBNw39M3x8fvQkdfndObdC50-TLBJdG-xuo5ij4Q&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"09:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"09:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"20:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

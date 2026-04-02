@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Woof Park Lodge","url":"https://scrubby.app/boarding/rock-hill/woof-park-lodge/","address":{"@type":"PostalAddress","streetAddress":"1139 Cherry Rd","addressLocality":"Rock Hill","addressRegion":"SC","postalCode":"29732","addressCountry":"US"},"telephone":"(803) 329-9663","sameAs":"https://www.woofparklodge.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.6,"reviewCount":212},"geo":{"@type":"GeoCoordinates","latitude":34.9514138,"longitude":-81.0191616},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJHRiI6LiJVogRpMD0SXIFCgg%2Fphotos%2FAU_ZVEGT0YF8G8vEa7lLZrgRyyFbb9Vvnl2DweS-agJKm2gD2LwSmetsO23S3pKReGqyGWwiYQJNy_eO-RY6kfahDMjhN-Bv4EXJ-IIJD9yfnBOo-B4aP7b1390xzd4PelgSSuhZZdHoJL-JAzKKa60ADtGujUHz-HeB_sidEbI8O9wv2n0xEj5gtUSKp73Q3DYb_-zVK2nPTLI1CbfI8Z1e_mjNAegDiEACM83KvUNJ9YPTu5iVVlYBsWgnBdVNkfk_lnyaXWPgqFu2vWYAEj1p--MsVgo1x2Hr485uZsYhBzooaA&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"06:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"06:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"06:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"06:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"06:30","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"10:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"04:00","closes":"18:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"PetSuites Lakeville","url":"https://scrubby.app/boarding/lakeville/petsuites-lakeville/","address":{"@type":"PostalAddress","streetAddress":"18440 Orchard Trail","addressLocality":"Lakeville","addressRegion":"MN","postalCode":"55044","addressCountry":"US"},"telephone":"(612) 200-1654","sameAs":"http://lakeville.petsuitesofamerica.com/?utm_source=gmb&utm_medium=organic&y_source=1_MTA0NDAxNTI0Ny03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D","aggregateRating":{"@type":"AggregateRating","ratingValue":4.6,"reviewCount":61},"geo":{"@type":"GeoCoordinates","latitude":44.6820089,"longitude":-93.2836535},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ9as-bPo59ocRiyDyFENVj9E%2Fphotos%2FAU_ZVEEEaPNTEG-HExV3Omm-IWFGFvKZKBOq-2992GiRc9imtlwGw72eTw2TKniZXCZKySjtYKuqywO73fPSk6FjYfkdXmFxAzW07rqV9ShiArSnth2fI-TNkkvwe9c8VKKdmgxHazmGxx0nUHiQ3ZWVje3jc8BjThP6mo681_bne1aL58NgxNEVVZDModaOuDkltf5rcG6Mi7n3vuwXVXdT25Rfo12XTFptX2RQ6YSfetM_-8aAwv1toHBP8CdSJzZPK--7zUA6MxOGzEENqiKNR7pVv9AfVH9CjrbnAZ-yETWbLA&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"06:30","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"06:30","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"06:30","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"06:30","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"06:30","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"07:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"12:00","closes":"17:00"}],"additionalType":"LodgingBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -360,6 +368,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -395,6 +404,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

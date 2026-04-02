@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Nickel City Animal Hospital","url":"https://scrubby.app/vets/buffalo/nickel-city-animal-hospital/","address":{"@type":"PostalAddress","streetAddress":"473 Niagara St","addressLocality":"Buffalo","addressRegion":"NY","postalCode":"14201","addressCountry":"US"},"telephone":"(716) 847-1000","sameAs":"http://nickelcityvets.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":437},"geo":{"@type":"GeoCoordinates","latitude":42.8971111,"longitude":-78.8877775},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJiTbwSawT04kRDqD0BMNXBOc%2Fphotos%2FAU_ZVEETL_sbZVgjca6crnjKnVh5-QPVqNTlbFSfz_8W78KthEK9wM58jS-UeypVFShiTaGbfIxzp_G8kihI5_5LUxCK7HiBxL05pnmj9kbKWCh5c3sWx2mIIFP0YyJAhIm7qDzKLz-ZUm91L4LRrBTg5IAVf7RX75GCy1HV7kK3zHQmFF6jYUdkDT9dAiVDiQHMDkQNpeGgs-vax7pnLCXJlzj3G7O6FEM5B-0LUB1nHMp4r4WDpbtpAadxqt2bofXpNL3-I_VkGsVEv_OHL5dAnVqRvKE3iOzBfDi6j2kCUqpePQ&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:30","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:30","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:30","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:30","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:30","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"12:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

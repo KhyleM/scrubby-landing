@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Focused Pet Care","url":"https://scrubby.app/vets/orange-park/focused-pet-care/","address":{"@type":"PostalAddress","streetAddress":"920 Kingsley Ave","addressLocality":"Orange Park","addressRegion":"FL","postalCode":"32073","addressCountry":"US"},"telephone":"(904) 298-9606","sameAs":"https://focusedpetcare.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":427},"geo":{"@type":"GeoCoordinates","latitude":30.1650744,"longitude":-81.7134633},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJgdY6H8rF5YgRJZ0VQgQ-6mo%2Fphotos%2FAU_ZVEFC2AtrxN4caDApyyS9ib4nTIlvlV62eKxNAIEb3hMU_v1vOmJ5y3_lAoE1ShGjuAhXxVQv-6OPFZxQdNxI9ud08Gzn2pLMXu-0d7eVjO0zF4k2qm59Z1naDBGDyoT0z6c1yeZo-d96ki6lJAWSNef8TFzpRJbO4bZ4a13q1xbUZG_MOaij1mfXqxFXg-oLgtTynQ19WqPr-tSbKo3V2StOD2txh0bLRMN1qgfA1DrqIfRkqrb8e1Lw9zgVp0gqIChB36cR8I2_1GSmeqUw7CyuusflZLMMQydW2g0CY2kS697AH_qxLiK1fxtEe6MjX3Ti-WLY7c7x2LBTytiJb4vAIaBCryRmmZiK_-2o4RgbBAvtqJwnbBBd90nv8fmvNldS14WHA9UJdoCB4orMTk1P1vx2eYO2HtH3JgEXJx0&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"00:00","closes":"23:59"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Animal Hospital of Berlin","url":"https://scrubby.app/vets/kensington/animal-hospital-of-berlin/","address":{"@type":"PostalAddress","streetAddress":"369 New Britain Rd","addressLocality":"Kensington","addressRegion":"CT","postalCode":"06037","addressCountry":"US"},"telephone":"(860) 828-1770","sameAs":"http://animalhospitalofberlin.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":139},"geo":{"@type":"GeoCoordinates","latitude":41.6385471,"longitude":-72.7692191},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJEwF7Zo-z54kRLbgKrwWFI0Q%2Fphotos%2FAU_ZVEHGt6TojFOLo6pgLZkxVDmKt_WpxBjTIFaio-4LPR6kiB1EIFQeCWa9L_eXHNHaj78ww0F15IzGDwWv6sj4ZlPIa4q95ietOOskeszNiRM3AJ8Jb8aa_7-D284wARUQa0qLONI6tknf1twbY2Wp480YqK6beYMKBeuhet31hql2KtcWTwxv-8T7N2AxmtegoZmxAAtKvQAiEhRBuKwdGZugIxcnfl2iiWxQUyLY3yaPZNJdnjghuUPTmANOUZu-VKyRY1eqXS03NZcWwYQXAnzqw88mRl0Cszg-X9wQ0qrt8Q&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"18:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

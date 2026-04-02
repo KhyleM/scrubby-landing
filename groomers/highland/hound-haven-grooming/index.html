@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Hound Haven Grooming","url":"https://scrubby.app/groomers/highland/hound-haven-grooming/","address":{"@type":"PostalAddress","streetAddress":"10063 N Vineyard Court","addressLocality":"Highland","addressRegion":"UT","postalCode":"84003","addressCountry":"US"},"telephone":"(385) 497-5754","sameAs":"https://paa.ge/houndhaven/en","aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":9},"geo":{"@type":"GeoCoordinates","latitude":40.4147218,"longitude":-111.8002273},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJa70B3DWBTYcRpJ7KtjXwQJ4%2Fphotos%2FAU_ZVEHNzxeYMdbts-b7OWE6hpApJAo36YDBERFcjecHGMRgW_wYIetZf6wmH8k8dvMSv2BNeOWD90qQmAog5QyYwtZsWMJfoIZBi_5aiiGzFtj_eEWFfy2QvBs2i7GOE0X_W9iC3fAX3x5D9l3ah7CFPI3kyTezGsz5Dvh1FTClLE7i242zKLyxhwTU2rdP1qAqkBwK9KVzV0bkp-YtkbepqRaKvIxpMLtgLPqMu_jBdlnBB5rDpNMNjzkDlZH52XzhSpmZpaLLXXatlXrgLia8ZV46tvWKBqINjKaGbWeAg0HyXw&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"17:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Muddy Mutts Grooming","url":"https://scrubby.app/groomers/milford/muddy-mutts-grooming/","address":{"@type":"PostalAddress","streetAddress":"6080 Branch Hill-Guinea Pike A","addressLocality":"Milford","addressRegion":"OH","postalCode":"45150","addressCountry":"US"},"telephone":"(513) 646-6167","sameAs":"http://muddymuttsgrooming.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":163},"geo":{"@type":"GeoCoordinates","latitude":39.2057715,"longitude":-84.224447},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ6Y9vOkj_QIgRDG3Z1zA3sTE%2Fphotos%2FAU_ZVEHgUPLnbR4HTOVMuCOWlvvH5HmkhqqZR73qaDCeXGurHBALADnPWWYGR9VjaO7OahDPKCBisWoqW_jheegxcTj0XNuYa-68-EZ1cnZLSrTjdGBJazU9ubTfNsIc9M1KKXGGoVkOJ8E6zLfk7sk-JVvB1BVXZ_gaA_Efotkb-qBQiQeXIL6rGjRzNbKJ_v9sWKDSjBMy4VZc5Laz-kbjPjvvGAIhS9HXub1uyffe8oHchkG3pU5J8c-_bhmDLnjvSTpf4GJ5hhAS7KFxCcaSytfxUtP3v2WofScmj3Y7-1ZpnGTlYVRDzL0-9r6nqFt3-nX42gogZ7GdRusur0FwD-C9E_6mBQQbjGNHSDcnj_ICHwhjAXNsi9G6o-vrEJJKvfYUWfrRXa2-FDbSTJzE1W2pAtduf9CXhmuX-qb2ohjJwXYcEQm56yvw2RBZ4Q&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"09:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"09:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"16:30"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

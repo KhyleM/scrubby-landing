@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"GROOM! Salon","url":"https://scrubby.app/groomers/silver-spring/groom-salon/","address":{"@type":"PostalAddress","streetAddress":"8040 Georgia Ave # 100","addressLocality":"Silver Spring","addressRegion":"MD","postalCode":"20910","addressCountry":"US"},"telephone":"(301) 328-5750","sameAs":"http://groomsaloninc.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":615},"geo":{"@type":"GeoCoordinates","latitude":38.9888833,"longitude":-77.0271524},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJPzlp5qTJt4kRxMZcyzPnRVk%2Fphotos%2FAU_ZVEEPHD3FoJn59XU_icdbtU2NfIFfHU10adFLlXXmB8rHEe7fcqUjmlZMgorOlxV56d2CUlSiNyWc_vxP9pNz9_94Ru6Yb5B3vSHolAhHJxxtn9ekpAQbRUQ7c75iZLx1-gP12-etENhIs5C3yk8fc3rkIm6nUbhKtJxeV815fUreGu29-G26sJ3bLrBOMo5NsELSUSmCA1KIY8REpn669-6WQkDbil16lyT_GMx-i6qPshgkb1otYpgnobkUs2cvj3DlJ1w1C6vZrweAqlHCgrJZpbEe-fjC56tC8Zzn5cy9HtMmAIic9FZR9hdcrTpA4JhUmqfmuGP6BRN-Mi-WU1gpbmSNoqk17qH8hs6KO_UlN9p5XdopXzp1ZU4oh2kvA53VqebsbCUjpX1f7TjnjFSe9zQhoWfhLKOg-GLUWpZVUB2xJ1q2Gd2pUWoxQVn2&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"16:00"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -370,6 +378,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -405,6 +414,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

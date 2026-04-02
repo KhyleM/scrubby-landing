@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Charlestown Veterinary Clinic","url":"https://scrubby.app/vets/charlestown/charlestown-veterinary-clinic/","address":{"@type":"PostalAddress","streetAddress":"2046 Market St","addressLocality":"Charlestown","addressRegion":"IN","postalCode":"47111","addressCountry":"US"},"telephone":"(812) 256-5403","sameAs":"http://www.charlestownveterinaryclinic.vetsuite.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.6,"reviewCount":254},"geo":{"@type":"GeoCoordinates","latitude":38.4713696,"longitude":-85.668535},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJRSLwYkF5aYgRoPsqD9FRB_I%2Fphotos%2FAU_ZVEHq91cGkOD8i50nauQl9UjtuO_76c81de94iR6z2Qe4OtqT-aD6TXL-sX01exkYgx1heEClASspx-ksH9SB-c8U8PYGyMBbjbkFuM3gj5KLlvVn4JX4EnMfc9bjddkGedJTEfh3skVtceWH-2aZQ4gKtpfPHvWVXR2YNgK-P5IXbJDESc5kwk8hp4BBIV3eQLQ31I6l_um0PgcvwjoJL0-d7ghAKYJkCCXafZ5TNFvJelm_VbAXnmOfq0RMJaqPTERe0z5vdPlnGpdNoO92mFQ48N5EOTIwPjyB5SNvRplkLiMDj6TZi-J5JXJxlt6FYL_b8XEBmalZuh4RaJinAuHUYF6aG0_xgQM8d4keJO653zj17sdp4HpEui8d-p09GdU80iAwltBS2qSNqcWJTqMQU0lKJIse6Bn20jnasJwWD9mv&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:00","closes":"18:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

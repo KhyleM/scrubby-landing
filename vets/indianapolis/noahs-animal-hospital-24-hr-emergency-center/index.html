@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Noah's Animal Hospital & 24 HR Emergency Center","url":"https://scrubby.app/vets/indianapolis/noahs-animal-hospital-24-hr-emergency-center/","address":{"@type":"PostalAddress","streetAddress":"5510 Millersville Rd","addressLocality":"Indianapolis","addressRegion":"IN","postalCode":"46226","addressCountry":"US"},"telephone":"(317) 253-1327","sameAs":"https://noahshospitals.com/central/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.1,"reviewCount":1180},"geo":{"@type":"GeoCoordinates","latitude":39.8543603,"longitude":-86.0878525},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJzbhfpYxNa4gRja5Oe__W03Y%2Fphotos%2FAU_ZVEE7LvAFqsWK5RdbEaGBObS8kwA4FkFeSEr_iG3o2sphmoFLibWnwoibdPTH8rmwjFVzeUD0WE2xC1YrImbEdS8tf3F3Ujaa75xVxu4Qhjwy7qlD8HMI57cGrKNLk9KXDhVzuhTXjKuncCvHM74TFP1J45uQ43vDx6AOtcVhXqy4StTsfnFQPGv14CwK1-eJbVExLwDeqmBxJXvNXHoS1L8Bz9KrZ3IRqgXhrdQoCGPX_gBRCdtTPBzTl_MROClNRaSXE9is8O_xhuyOf1ubtgobv2dSbULXQnp5ck_eDZo2zw&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"00:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"00:00","closes":"23:59"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -366,6 +374,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -401,6 +410,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

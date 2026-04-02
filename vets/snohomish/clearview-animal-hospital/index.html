@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Clearview Animal Hospital","url":"https://scrubby.app/vets/snohomish/clearview-animal-hospital/","address":{"@type":"PostalAddress","streetAddress":"8424 180th St SE","addressLocality":"Snohomish","addressRegion":"WA","postalCode":"98296","addressCountry":"US"},"telephone":"(360) 668-3005","sameAs":"http://clearviewanimal.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":4.6,"reviewCount":340},"geo":{"@type":"GeoCoordinates","latitude":47.8333544,"longitude":-122.118947},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJw-YuvowIkFQRo-F3Y3tC2sA%2Fphotos%2FAU_ZVEGXtlOH4f6S0OII6emHglfuBx3ss2gHVaR1QAa2SOdMH-Ztnlj3sgBxKxTX4xaQchPtNwoYvbTZtdLoB2NXORTM-Lni_8vQ3mzOaU-b0vJnLO8-hsrC7rojDLI7zTBPdFFX9kAZeedx6PcWZaYcPJQYbI6RGj_rAVVQ9isUC9yPCKD8t9PfoXUEWB9DiPIFbK7BuHioiCrxrDJf6yA6Zfl0yl6f9v4m0LqJqXyKPjpXBIp3_QUwYFBTAkng7kVUYXgSKIKni9t_s37bigk3ebITIQDfAi3YgNDSACJOFF3Pef038ox_SE2-_hdn4a50GGEMPjc4vSsWGJOSAdrgCcTtY7Hrn8WP8PJNuXpyNExJhk5HLxrxPgpG_HINwDwqOB4fxsSptcJHsN4KxKXgnv43PM_D_9uL-mwnc2ErdjhhMqCc&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:00","closes":"12:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"07:00","closes":"12:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:00","closes":"12:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"07:00","closes":"12:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:00","closes":"12:30"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -362,6 +370,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -397,6 +406,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

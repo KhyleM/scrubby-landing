@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Fort Russell Veterinary Services","url":"https://scrubby.app/vets/edwardsville/fort-russell-veterinary-services/","address":{"@type":"PostalAddress","streetAddress":"6185 Old Alton Edwardsville Rd","addressLocality":"Edwardsville","addressRegion":"IL","postalCode":"62025","addressCountry":"US"},"telephone":"(618) 656-9525","aggregateRating":{"@type":"AggregateRating","ratingValue":4.7,"reviewCount":302},"geo":{"@type":"GeoCoordinates","latitude":38.8231981,"longitude":-89.9737995},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ3SkmWYj3dYgR2hjfu3rNImo%2Fphotos%2FAU_ZVEGw8w5Flp2_AS-3UftsKQ9lnIQLD6ZmqCrzxZ7kZ8JyJAIfEgU6M9U72hnDpNJq1wXHWCny4PoLhs2k9tTjNEknOzuCXPzKU7kmG-q2k7CootMHZQ2_NJU_ANwVMGlTGUOfY1ECVLIgeCVnT2sgAha4JrSjWW6ObPHHyCotnm9UQ_KG75Ed4BHWjJZKOJX1s5jIXkNlmiNMOsMha9xEmnH1monk8TEwLaieTlZdKQbfdvSqINSU0x0ofxw4aL4oFljuNj5pg45lyNZlN_tql57vaDoU8xG7_u0xJcUISzrqPtSQjwFN-N1NiTNCv4B2Sm0s8D0-JzC_K6vsenym7UVBba4WPl-7Ypabxf8xSahF0qRiACl3tfkIDo8wNM3mBj8rr_wERLJ1eup8fmYoBgNbHlgTUCDoy-XGtt10CNo&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"09:00","closes":"15:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:00","closes":"15:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"09:00","closes":"15:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"15:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"15:00"}],"additionalType":"VeterinaryCare"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -359,6 +367,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -394,6 +403,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;

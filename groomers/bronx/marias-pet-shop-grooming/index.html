@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Maria's Pet Shop & Grooming","url":"https://scrubby.app/groomers/bronx/marias-pet-shop-grooming/","address":{"@type":"PostalAddress","streetAddress":"1382 White Plains Rd","addressLocality":"Bronx","addressRegion":"NY","postalCode":"10462","addressCountry":"US"},"telephone":"(347) 281-9919","aggregateRating":{"@type":"AggregateRating","ratingValue":4.1,"reviewCount":272},"geo":{"@type":"GeoCoordinates","latitude":40.835333,"longitude":-73.8629068},"image":"https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ4dXIXcD0wokRcMxujgEw5C4%2Fphotos%2FAU_ZVEEKdFcVqH2OGqTecO6uC1vY4K2bKvG7wXreZ5pw2ZVY2NqjvqrtD-JuUx7zI8FB5CpfQ2cGU-4vCPo1Sg9tlsmKIR4Lm5zAtsYx_qmOyhxAw5TOvpeE6I2vY2rkIFLvCK4QaOgB6iY4G6QRbf7nYmMBb5QCXG7ewbZ3-c8vHqgrw0KcPxu1CtCk38ztyj4ggnCPJ8v7LezvJAYhUDjni-BDzz_VaT5rUJnzgWdizD79iJKNYPi4uG_Vbi-PaF9pDrJbVzChbkwHVpi6poT3jR-L0dnZMQBBJ7V2ZsU-G4Y&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"11:30","closes":"17:45"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"11:30","closes":"17:45"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"11:30","closes":"17:45"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"11:30","closes":"17:45"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"11:30","closes":"17:45"}],"additionalType":"LocalBusiness"}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18054455651');
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -363,6 +371,7 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
@@ -398,6 +407,7 @@
           if (result.ok) {
             form.hidden = true;
             successEl.hidden = false;
+            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           } else {
             errorEl.textContent = result.data.error || 'Something went wrong. Please try again.';
             errorEl.hidden = false;
