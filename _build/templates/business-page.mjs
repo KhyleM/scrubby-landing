@@ -9,6 +9,17 @@ import {
 /**
  * Render an individual business detail page.
  */
+function renderSubServiceOptions(service) {
+  if (!service.subServices || service.subServices.length === 0) return '';
+  const options = service.subServices.map(s =>
+    `<option value="${escapeHtml(s)}">${escapeHtml(s)}</option>`
+  ).join('\n                                    ');
+  return `<select name="service_type" required>
+                                    <option value="">What do you need?</option>
+                                    ${options}
+                                </select>`;
+}
+
 export function renderBusinessPage({ listing, serviceSlug, cityName, stateAbbrev, citySlug }) {
   const service = SERVICE_TYPES[serviceSlug];
   const slug = listing._slug;
@@ -81,13 +92,14 @@ ${renderNavbar()}
                         <h2>Book Appointment</h2>
                         <form id="bookingForm" class="booking-form">
                             <input type="hidden" name="listing_id" value="${listing.id}">
-                            <input type="hidden" name="service_type" value="${service.singular.toLowerCase()}">
+                            <div style="position:absolute;left:-9999px;"><input type="text" name="website" tabindex="-1" autocomplete="off"></div>
                             <div class="form-row">
                                 <input name="name" placeholder="Your name" required>
                                 <input name="email" type="email" placeholder="Email" required>
                             </div>
                             <div class="form-row">
                                 <input name="phone" type="tel" placeholder="Phone (optional)">
+                                ${renderSubServiceOptions(service)}
                             </div>
                             <div class="form-row">
                                 <input name="pet_name" placeholder="Pet's name">
@@ -111,7 +123,7 @@ ${renderNavbar()}
                                     <option value="evening">Evening (4pm - 7pm)</option>
                                 </select>
                             </div>
-                            <textarea name="notes" placeholder="Anything we should know? (optional)" rows="2"></textarea>
+                            <textarea name="notes" placeholder="Anything we should know? (e.g. vaccination records, special needs)" rows="2"></textarea>
                             <button type="submit" class="btn-primary-large booking-submit">Book Now</button>
                             <p class="cta-sub">100% free. No account needed.</p>
                         </form>
@@ -224,7 +236,8 @@ ${renderFooter(SERVICE_TYPES)}
           service_type: fd.get('service_type'),
           preferred_date: fd.get('preferred_date') || undefined,
           preferred_time_window: fd.get('preferred_time_window') || undefined,
-          notes: fd.get('notes') || undefined
+          notes: fd.get('notes') || undefined,
+          website: fd.get('website') || undefined
         };
 
         fetch(endpoint, {

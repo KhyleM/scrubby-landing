@@ -135,8 +135,8 @@
                         <table class="hours-table">
                         <tr><td>Monday: 9:00 AM – 9:00 PM</td></tr>
                         <tr><td>Tuesday: 9:00 AM – 9:00 PM</td></tr>
-                        <tr class="today"><td>Wednesday: 9:00 AM – 9:00 PM</td></tr>
-                        <tr><td>Thursday: 9:00 AM – 9:00 PM</td></tr>
+                        <tr><td>Wednesday: 9:00 AM – 9:00 PM</td></tr>
+                        <tr class="today"><td>Thursday: 9:00 AM – 9:00 PM</td></tr>
                         <tr><td>Friday: 9:00 AM – 9:00 PM</td></tr>
                         <tr><td>Saturday: 9:00 AM – 9:00 PM</td></tr>
                         <tr><td>Sunday: 10:00 AM – 6:00 PM</td></tr>
@@ -155,13 +155,22 @@
                         <h2>Book Appointment</h2>
                         <form id="bookingForm" class="booking-form">
                             <input type="hidden" name="listing_id" value="e68c00f3-0877-4be6-a9c8-e892b3de8cf8">
-                            <input type="hidden" name="service_type" value="pet groomer">
+                            <div style="position:absolute;left:-9999px;"><input type="text" name="website" tabindex="-1" autocomplete="off"></div>
                             <div class="form-row">
                                 <input name="name" placeholder="Your name" required>
                                 <input name="email" type="email" placeholder="Email" required>
                             </div>
                             <div class="form-row">
                                 <input name="phone" type="tel" placeholder="Phone (optional)">
+                                <select name="service_type" required>
+                                    <option value="">What do you need?</option>
+                                    <option value="Full Groom (bath, haircut, nails)">Full Groom (bath, haircut, nails)</option>
+                                    <option value="Bath &amp; Brush">Bath &amp; Brush</option>
+                                    <option value="Nail Trim">Nail Trim</option>
+                                    <option value="Deshedding Treatment">Deshedding Treatment</option>
+                                    <option value="Teeth Cleaning">Teeth Cleaning</option>
+                                    <option value="Other">Other</option>
+                                </select>
                             </div>
                             <div class="form-row">
                                 <input name="pet_name" placeholder="Pet's name">
@@ -185,7 +194,7 @@
                                     <option value="evening">Evening (4pm - 7pm)</option>
                                 </select>
                             </div>
-                            <textarea name="notes" placeholder="Anything we should know? (optional)" rows="2"></textarea>
+                            <textarea name="notes" placeholder="Anything we should know? (e.g. vaccination records, special needs)" rows="2"></textarea>
                             <button type="submit" class="btn-primary-large booking-submit">Book Now</button>
                             <p class="cta-sub">100% free. No account needed.</p>
                         </form>
@@ -349,7 +358,8 @@
           service_type: fd.get('service_type'),
           preferred_date: fd.get('preferred_date') || undefined,
           preferred_time_window: fd.get('preferred_time_window') || undefined,
-          notes: fd.get('notes') || undefined
+          notes: fd.get('notes') || undefined,
+          website: fd.get('website') || undefined
         };
 
         fetch(endpoint, {

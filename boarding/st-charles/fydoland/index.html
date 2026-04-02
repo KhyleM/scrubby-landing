@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FYDOLAND - Pet Boarding in St. Charles, IL | Scrubby</title>
-    <meta name="description" content="FYDOLAND is a pet boarding located at 1311 E Main St in St. Charles, IL. Rated 4.8 stars based on 175 reviews.">
+    <meta name="description" content="FYDOLAND is a pet boarding located at 1311 E Main St in St. Charles, IL. Rated 4.8 stars based on 177 reviews.">
     <link rel="canonical" href="https://scrubby.app/boarding/st-charles/fydoland/">
     <meta property="og:title" content="FYDOLAND - Pet Boarding in St. Charles, IL | Scrubby">
-    <meta property="og:description" content="FYDOLAND is a pet boarding located at 1311 E Main St in St. Charles, IL. Rated 4.8 stars based on 175 reviews.">
+    <meta property="og:description" content="FYDOLAND is a pet boarding located at 1311 E Main St in St. Charles, IL. Rated 4.8 stars based on 177 reviews.">
     <meta property="og:image" content="https://scrubby.app/images/scrubby_logo_full.png">
     <meta property="og:url" content="https://scrubby.app/boarding/st-charles/fydoland/">
     <meta property="og:type" content="website">
@@ -16,7 +16,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"FYDOLAND","url":"https://scrubby.app/boarding/st-charles/fydoland/","address":{"@type":"PostalAddress","streetAddress":"1311 E Main St","addressLocality":"St. Charles","addressRegion":"IL","postalCode":"60174","addressCountry":"US"},"aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":175},"geo":{"@type":"GeoCoordinates","latitude":41.9161523,"longitude":-88.3003577},"additionalType":"LodgingBusiness"}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"FYDOLAND","url":"https://scrubby.app/boarding/st-charles/fydoland/","address":{"@type":"PostalAddress","streetAddress":"1311 E Main St","addressLocality":"St. Charles","addressRegion":"IL","postalCode":"60174","addressCountry":"US"},"aggregateRating":{"@type":"AggregateRating","ratingValue":4.8,"reviewCount":177},"geo":{"@type":"GeoCoordinates","latitude":41.9161523,"longitude":-88.3003577},"additionalType":"LodgingBusiness"}</script>
 </head>
 <body>
     <nav class="navbar">
@@ -101,12 +101,12 @@
                     <h1>FYDOLAND</h1>
                     <div class="detail-meta">
                         <span class="stars" aria-label="4.8 out of 5 stars"><span class="star filled">&#9733;</span><span class="star filled">&#9733;</span><span class="star filled">&#9733;</span><span class="star filled">&#9733;</span><span class="star half">&#9733;</span></span>
-                        <span class="review-count">175 reviews</span>
+                        <span class="review-count">177 reviews</span>
                         
                         
                     </div>
 
-                    <p class="detail-description">FYDOLAND is a pet boarding located at 1311 E Main St in St. Charles, IL. Rated 4.8 stars based on 175 reviews.</p>
+                    <p class="detail-description">FYDOLAND is a pet boarding located at 1311 E Main St in St. Charles, IL. Rated 4.8 stars based on 177 reviews.</p>
 
                     <div class="detail-info">
                         <div class="info-row">
@@ -127,13 +127,20 @@
                         <h2>Book Appointment</h2>
                         <form id="bookingForm" class="booking-form">
                             <input type="hidden" name="listing_id" value="d11a69ee-345a-48de-9bb8-2d114de4680f">
-                            <input type="hidden" name="service_type" value="pet boarding">
+                            <div style="position:absolute;left:-9999px;"><input type="text" name="website" tabindex="-1" autocomplete="off"></div>
                             <div class="form-row">
                                 <input name="name" placeholder="Your name" required>
                                 <input name="email" type="email" placeholder="Email" required>
                             </div>
                             <div class="form-row">
                                 <input name="phone" type="tel" placeholder="Phone (optional)">
+                                <select name="service_type" required>
+                                    <option value="">What do you need?</option>
+                                    <option value="Overnight Boarding">Overnight Boarding</option>
+                                    <option value="Daycare">Daycare</option>
+                                    <option value="Extended Stay">Extended Stay</option>
+                                    <option value="Other">Other</option>
+                                </select>
                             </div>
                             <div class="form-row">
                                 <input name="pet_name" placeholder="Pet's name">
@@ -157,7 +164,7 @@
                                     <option value="evening">Evening (4pm - 7pm)</option>
                                 </select>
                             </div>
-                            <textarea name="notes" placeholder="Anything we should know? (optional)" rows="2"></textarea>
+                            <textarea name="notes" placeholder="Anything we should know? (e.g. vaccination records, special needs)" rows="2"></textarea>
                             <button type="submit" class="btn-primary-large booking-submit">Book Now</button>
                             <p class="cta-sub">100% free. No account needed.</p>
                         </form>
@@ -321,7 +328,8 @@
           service_type: fd.get('service_type'),
           preferred_date: fd.get('preferred_date') || undefined,
           preferred_time_window: fd.get('preferred_time_window') || undefined,
-          notes: fd.get('notes') || undefined
+          notes: fd.get('notes') || undefined,
+          website: fd.get('website') || undefined
         };
 
         fetch(endpoint, {

@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carriage Animal Hospital - Veterinarian in Lombard, IL | Scrubby</title>
-    <meta name="description" content="Carriage Animal Hospital is a veterinarian located at 244 W Roosevelt Rd in Lombard, IL. Rated 4.6 stars based on 455 reviews.">
+    <meta name="description" content="Carriage Animal Hospital is a veterinarian located at 244 W Roosevelt Rd in Lombard, IL. Rated 4.6 stars based on 453 reviews.">
     <link rel="canonical" href="https://scrubby.app/vets/lombard/carriage-animal-hospital/">
     <meta property="og:title" content="Carriage Animal Hospital - Veterinarian in Lombard, IL | Scrubby">
-    <meta property="og:description" content="Carriage Animal Hospital is a veterinarian located at 244 W Roosevelt Rd in Lombard, IL. Rated 4.6 stars based on 455 reviews.">
+    <meta property="og:description" content="Carriage Animal Hospital is a veterinarian located at 244 W Roosevelt Rd in Lombard, IL. Rated 4.6 stars based on 453 reviews.">
     <meta property="og:image" content="https://scrubby.app/images/scrubby_logo_full.png">
     <meta property="og:url" content="https://scrubby.app/vets/lombard/carriage-animal-hospital/">
     <meta property="og:type" content="website">
@@ -16,7 +16,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Carriage Animal Hospital","url":"https://scrubby.app/vets/lombard/carriage-animal-hospital/","address":{"@type":"PostalAddress","streetAddress":"244 W Roosevelt Rd","addressLocality":"Lombard","addressRegion":"IL","postalCode":"60148","addressCountry":"US"},"aggregateRating":{"@type":"AggregateRating","ratingValue":4.6,"reviewCount":455},"geo":{"@type":"GeoCoordinates","latitude":41.8602732,"longitude":-88.0222997},"additionalType":"VeterinaryCare"}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Carriage Animal Hospital","url":"https://scrubby.app/vets/lombard/carriage-animal-hospital/","address":{"@type":"PostalAddress","streetAddress":"244 W Roosevelt Rd","addressLocality":"Lombard","addressRegion":"IL","postalCode":"60148","addressCountry":"US"},"aggregateRating":{"@type":"AggregateRating","ratingValue":4.6,"reviewCount":453},"geo":{"@type":"GeoCoordinates","latitude":41.8602732,"longitude":-88.0222997},"additionalType":"VeterinaryCare"}</script>
 </head>
 <body>
     <nav class="navbar">
@@ -101,12 +101,12 @@
                     <h1>Carriage Animal Hospital</h1>
                     <div class="detail-meta">
                         <span class="stars" aria-label="4.6 out of 5 stars"><span class="star filled">&#9733;</span><span class="star filled">&#9733;</span><span class="star filled">&#9733;</span><span class="star filled">&#9733;</span><span class="star half">&#9733;</span></span>
-                        <span class="review-count">455 reviews</span>
+                        <span class="review-count">453 reviews</span>
                         
                         
                     </div>
 
-                    <p class="detail-description">Carriage Animal Hospital is a veterinarian located at 244 W Roosevelt Rd in Lombard, IL. Rated 4.6 stars based on 455 reviews.</p>
+                    <p class="detail-description">Carriage Animal Hospital is a veterinarian located at 244 W Roosevelt Rd in Lombard, IL. Rated 4.6 stars based on 453 reviews.</p>
 
                     <div class="detail-info">
                         <div class="info-row">
@@ -127,13 +127,22 @@
                         <h2>Book Appointment</h2>
                         <form id="bookingForm" class="booking-form">
                             <input type="hidden" name="listing_id" value="c77add76-7f19-4263-8f36-0fea245eb75c">
-                            <input type="hidden" name="service_type" value="veterinarian">
+                            <div style="position:absolute;left:-9999px;"><input type="text" name="website" tabindex="-1" autocomplete="off"></div>
                             <div class="form-row">
                                 <input name="name" placeholder="Your name" required>
                                 <input name="email" type="email" placeholder="Email" required>
                             </div>
                             <div class="form-row">
                                 <input name="phone" type="tel" placeholder="Phone (optional)">
+                                <select name="service_type" required>
+                                    <option value="">What do you need?</option>
+                                    <option value="Wellness / Checkup">Wellness / Checkup</option>
+                                    <option value="Vaccinations">Vaccinations</option>
+                                    <option value="Sick Visit">Sick Visit</option>
+                                    <option value="Dental Cleaning">Dental Cleaning</option>
+                                    <option value="Spay / Neuter">Spay / Neuter</option>
+                                    <option value="Other">Other</option>
+                                </select>
                             </div>
                             <div class="form-row">
                                 <input name="pet_name" placeholder="Pet's name">
@@ -157,7 +166,7 @@
                                     <option value="evening">Evening (4pm - 7pm)</option>
                                 </select>
                             </div>
-                            <textarea name="notes" placeholder="Anything we should know? (optional)" rows="2"></textarea>
+                            <textarea name="notes" placeholder="Anything we should know? (e.g. vaccination records, special needs)" rows="2"></textarea>
                             <button type="submit" class="btn-primary-large booking-submit">Book Now</button>
                             <p class="cta-sub">100% free. No account needed.</p>
                         </form>
@@ -321,7 +330,8 @@
           service_type: fd.get('service_type'),
           preferred_date: fd.get('preferred_date') || undefined,
           preferred_time_window: fd.get('preferred_time_window') || undefined,
-          notes: fd.get('notes') || undefined
+          notes: fd.get('notes') || undefined,
+          website: fd.get('website') || undefined
         };
 
         fetch(endpoint, {

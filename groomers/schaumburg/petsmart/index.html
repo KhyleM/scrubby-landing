@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PetSmart - Pet Groomer in Schaumburg, IL | Scrubby</title>
-    <meta name="description" content="PetSmart is a pet groomer located at 140 Barrington Rd in Schaumburg, IL. Rated 4.5 stars based on 988 reviews.">
+    <meta name="description" content="PetSmart is a pet groomer located at 140 Barrington Rd in Schaumburg, IL. Rated 4.5 stars based on 989 reviews.">
     <link rel="canonical" href="https://scrubby.app/groomers/schaumburg/petsmart/">
     <meta property="og:title" content="PetSmart - Pet Groomer in Schaumburg, IL | Scrubby">
-    <meta property="og:description" content="PetSmart is a pet groomer located at 140 Barrington Rd in Schaumburg, IL. Rated 4.5 stars based on 988 reviews.">
+    <meta property="og:description" content="PetSmart is a pet groomer located at 140 Barrington Rd in Schaumburg, IL. Rated 4.5 stars based on 989 reviews.">
     <meta property="og:image" content="https://scrubby.app/images/scrubby_logo_full.png">
     <meta property="og:url" content="https://scrubby.app/groomers/schaumburg/petsmart/">
     <meta property="og:type" content="website">
@@ -16,7 +16,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"PetSmart","url":"https://scrubby.app/groomers/schaumburg/petsmart/","address":{"@type":"PostalAddress","streetAddress":"140 Barrington Rd","addressLocality":"Schaumburg","addressRegion":"IL","postalCode":"60194","addressCountry":"US"},"aggregateRating":{"@type":"AggregateRating","ratingValue":4.5,"reviewCount":988},"geo":{"@type":"GeoCoordinates","latitude":42.0274459,"longitude":-88.1463951},"additionalType":"LocalBusiness"}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"PetSmart","url":"https://scrubby.app/groomers/schaumburg/petsmart/","address":{"@type":"PostalAddress","streetAddress":"140 Barrington Rd","addressLocality":"Schaumburg","addressRegion":"IL","postalCode":"60194","addressCountry":"US"},"aggregateRating":{"@type":"AggregateRating","ratingValue":4.5,"reviewCount":989},"geo":{"@type":"GeoCoordinates","latitude":42.0274459,"longitude":-88.1463951},"additionalType":"LocalBusiness"}</script>
 </head>
 <body>
     <nav class="navbar">
@@ -101,12 +101,12 @@
                     <h1>PetSmart</h1>
                     <div class="detail-meta">
                         <span class="stars" aria-label="4.5 out of 5 stars"><span class="star filled">&#9733;</span><span class="star filled">&#9733;</span><span class="star filled">&#9733;</span><span class="star filled">&#9733;</span><span class="star half">&#9733;</span></span>
-                        <span class="review-count">988 reviews</span>
+                        <span class="review-count">989 reviews</span>
                         
                         
                     </div>
 
-                    <p class="detail-description">PetSmart is a pet groomer located at 140 Barrington Rd in Schaumburg, IL. Rated 4.5 stars based on 988 reviews.</p>
+                    <p class="detail-description">PetSmart is a pet groomer located at 140 Barrington Rd in Schaumburg, IL. Rated 4.5 stars based on 989 reviews.</p>
 
                     <div class="detail-info">
                         <div class="info-row">
@@ -127,13 +127,22 @@
                         <h2>Book Appointment</h2>
                         <form id="bookingForm" class="booking-form">
                             <input type="hidden" name="listing_id" value="98664c8a-4f8b-4a8c-8188-4e25880e3e08">
-                            <input type="hidden" name="service_type" value="pet groomer">
+                            <div style="position:absolute;left:-9999px;"><input type="text" name="website" tabindex="-1" autocomplete="off"></div>
                             <div class="form-row">
                                 <input name="name" placeholder="Your name" required>
                                 <input name="email" type="email" placeholder="Email" required>
                             </div>
                             <div class="form-row">
                                 <input name="phone" type="tel" placeholder="Phone (optional)">
+                                <select name="service_type" required>
+                                    <option value="">What do you need?</option>
+                                    <option value="Full Groom (bath, haircut, nails)">Full Groom (bath, haircut, nails)</option>
+                                    <option value="Bath &amp; Brush">Bath &amp; Brush</option>
+                                    <option value="Nail Trim">Nail Trim</option>
+                                    <option value="Deshedding Treatment">Deshedding Treatment</option>
+                                    <option value="Teeth Cleaning">Teeth Cleaning</option>
+                                    <option value="Other">Other</option>
+                                </select>
                             </div>
                             <div class="form-row">
                                 <input name="pet_name" placeholder="Pet's name">
@@ -157,7 +166,7 @@
                                     <option value="evening">Evening (4pm - 7pm)</option>
                                 </select>
                             </div>
-                            <textarea name="notes" placeholder="Anything we should know? (optional)" rows="2"></textarea>
+                            <textarea name="notes" placeholder="Anything we should know? (e.g. vaccination records, special needs)" rows="2"></textarea>
                             <button type="submit" class="btn-primary-large booking-submit">Book Now</button>
                             <p class="cta-sub">100% free. No account needed.</p>
                         </form>
@@ -321,7 +330,8 @@
           service_type: fd.get('service_type'),
           preferred_date: fd.get('preferred_date') || undefined,
           preferred_time_window: fd.get('preferred_time_window') || undefined,
-          notes: fd.get('notes') || undefined
+          notes: fd.get('notes') || undefined,
+          website: fd.get('website') || undefined
         };
 
         fetch(endpoint, {

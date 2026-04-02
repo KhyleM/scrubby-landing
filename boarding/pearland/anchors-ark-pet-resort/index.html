@@ -123,8 +123,8 @@
                         <table class="hours-table">
                         <tr><td>Monday: 7:00 AM – 7:00 PM</td></tr>
                         <tr><td>Tuesday: 7:00 AM – 7:00 PM</td></tr>
-                        <tr class="today"><td>Wednesday: 7:00 AM – 7:00 PM</td></tr>
-                        <tr><td>Thursday: 7:00 AM – 7:00 PM</td></tr>
+                        <tr><td>Wednesday: 7:00 AM – 7:00 PM</td></tr>
+                        <tr class="today"><td>Thursday: 7:00 AM – 7:00 PM</td></tr>
                         <tr><td>Friday: 7:00 AM – 7:00 PM</td></tr>
                         <tr><td>Saturday: 7:00 AM – 7:00 PM</td></tr>
                         <tr><td>Sunday: 5:00 – 6:30 PM</td></tr>
@@ -139,13 +139,20 @@
                         <h2>Book Appointment</h2>
                         <form id="bookingForm" class="booking-form">
                             <input type="hidden" name="listing_id" value="078ceca8-4e6c-4979-a1e0-a8adb12bcdfa">
-                            <input type="hidden" name="service_type" value="pet boarding">
+                            <div style="position:absolute;left:-9999px;"><input type="text" name="website" tabindex="-1" autocomplete="off"></div>
                             <div class="form-row">
                                 <input name="name" placeholder="Your name" required>
                                 <input name="email" type="email" placeholder="Email" required>
                             </div>
                             <div class="form-row">
                                 <input name="phone" type="tel" placeholder="Phone (optional)">
+                                <select name="service_type" required>
+                                    <option value="">What do you need?</option>
+                                    <option value="Overnight Boarding">Overnight Boarding</option>
+                                    <option value="Daycare">Daycare</option>
+                                    <option value="Extended Stay">Extended Stay</option>
+                                    <option value="Other">Other</option>
+                                </select>
                             </div>
                             <div class="form-row">
                                 <input name="pet_name" placeholder="Pet's name">
@@ -169,7 +176,7 @@
                                     <option value="evening">Evening (4pm - 7pm)</option>
                                 </select>
                             </div>
-                            <textarea name="notes" placeholder="Anything we should know? (optional)" rows="2"></textarea>
+                            <textarea name="notes" placeholder="Anything we should know? (e.g. vaccination records, special needs)" rows="2"></textarea>
                             <button type="submit" class="btn-primary-large booking-submit">Book Now</button>
                             <p class="cta-sub">100% free. No account needed.</p>
                         </form>
@@ -333,7 +340,8 @@
           service_type: fd.get('service_type'),
           preferred_date: fd.get('preferred_date') || undefined,
           preferred_time_window: fd.get('preferred_time_window') || undefined,
-          notes: fd.get('notes') || undefined
+          notes: fd.get('notes') || undefined,
+          website: fd.get('website') || undefined
         };
 
         fetch(endpoint, {
