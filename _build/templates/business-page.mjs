@@ -55,8 +55,6 @@ ${renderNavbar()}
 
             ${renderPhotoGallery(photos, listing.business_name)}
 
-            ${renderClaimBanner(listing)}
-
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>${escapeHtml(listing.business_name)}</h1>
@@ -143,6 +141,8 @@ ${renderNavbar()}
                     <a href="${cityUrl}" class="back-link">More ${service.label.toLowerCase()} in ${escapeHtml(cityName)}</a>
                 </aside>
             </div>
+
+            ${renderClaimBanner(listing)}
         </div>
     </main>
 
