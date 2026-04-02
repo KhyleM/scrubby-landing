@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJeSc6cFmflVQR1VjTkR9PDA0%2Fphotos%2FAU_ZVEFmsGX28YGxfeqfmW3v0rAjlkuz21bl4N3u_RmCwL7VeqWU_Ao0wuwdxcrnHyY153JxGG7je86jthntJm91ty2Fe7npzVJcQjnAxZl2NeY5Q_CuJqaTkd2K9YSoh-ZyCUGKbwrVYVhh8xqpT25Uu3pEJCyqM3Za0ssouJoCNGOn4iu-nYNjMHnBaVY0qy67d18dhsUeJPN8hb1b_oc5aA7amPl98l1of9meaBcV_hYE3h6SzRy9d5M-Us9fizFdEteUqJe_J4MBp5_rTz520cm-CnYTccYLDx3fea7--8rgM3eE_t-kbvpQ-kiBV3WsGTeLk1WbzQgZTGRDpPxrFs8T01iVtVQdXXO4_6WBXocyfOLFozcyG-S2c4CVhvVNhhQGy2KzK2JdZP2PFm3RtwD1Scvfzr8C_YFw6O8XWRkLMNoDYiW7JpPwal0Kj33v&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Pavlov Dog Training - Portland photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Pavlov Dog Training - Portland</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/portland/" class="back-link">More pet boarding in Portland</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Pavlov Dog Training - Portland?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ_-8-5vAIsYkR1C8Al549QiM%2Fphotos%2FAU_ZVEFKmC3k3tqNkfvwpkLYrHk199E-Qn2_lLV0_RNbtdFMtzGftStcGNVmuSzoy4Y6waTHS0VXbYtQy30mjxzuejPA7UHiJBfoUSqXyFzZon9lT6DFznj0HsMRBgQtYdZGWRNlhl4QjmI_saYPOogod0j1Im2y-m-r9d44WEMPxMrr4lwU57SKds3Q-Rf_c6Ghbn-Ua5h_x3KP6Obt3iig3YQt1fZ7qFAeYCFBviWvKDjYTZzR_qLCr7sgueyuFFzcstdjSD-L_kibHMK-cm83btkj7SyDmB9XIJ5M-i-msypLK2zwnLeoDYOS0PrJGvX9YoYhQTROgPjh8MQS5_DWsKdFlH7PukyfeEO_Wv1is_WJ5-jPasciZesZGZWR1n0TDjy6PPye0mCd13jVzzeXjWO31x_iNAiaJTmIqwX7x941q76q&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Petco Grooming photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Petco Grooming</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/chester/" class="back-link">More pet groomers in Chester</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Petco Grooming?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

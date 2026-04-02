@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJHcDgHL_n2YgR_LTIvm51kUQ%2Fphotos%2FAU_ZVEEVVHlCavi-9J0VAbSv6x8zKG9qnDzKlk3fMIf8HQ3CCkFnxy5RUmA0zovPDyRscSoFF9rMh_H51xJZLe_SZTe268r3yiTY3J7NHJcb6EwM525jKHfQlQzsQHjRmM-QniU3IjaJ6lwlFJC76QHsbduEcZdqOsU0Fk-k4DxqltKxnNEJAFfkpo84ZGGIJ865ucAwduQWGMO9YKQQR9EVxcD6yk5wQBQif81Idp01F86Y3G8lcp-c4LJTnFAXkk6qc__Ae60j2GtIs5QAQtLE3reS1AQqu_XQm_RJ2Zt6hYbF_8kyjD5II3p0gTlUSrOPXtzUGT0uqOgtsFP83oO0J-nVuS6kqS_nwFTWUfCVVNYkkMOLpV9TRS_L-6sVLcqE8RnbAXH1mSfpLnG_9TOpogVcO2-UZp9EKhb4uC-RaN2AZfQeiZQk1HFtz7h9lJgw&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Canine 101 Ranch photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Canine 101 Ranch</h1>
@@ -197,8 +196,9 @@
                     <a href="/training/homestead/" class="back-link">More dog trainers in Homestead</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Canine 101 Ranch?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

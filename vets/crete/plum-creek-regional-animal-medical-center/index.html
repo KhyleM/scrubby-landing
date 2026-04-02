@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJJe9xPRodDogRe-V_WlroTjw%2Fphotos%2FAU_ZVEGom7GcqQUdmVeZH--Zef4jqS3-ouQG9DQ-tOGWoRxHc6FabrXsU2_Tia1i3dsdxW8LPQqLMnREgIMds2jHrvAqq3Ow5Tce-YUZHrdZfQPnd8jH39vzTtIv85LBceNI8_2G53uIPTJogcK0pkRKan2koa-Uv502uMNSTD2pOlq4jvKfxQIF2TirXUzJjy9-cWZYaG7NzzwWKhJo_X5M_4cWh_lr4aFZa4QXCj22QjnIFxKo5GylS7YFTMgOwJpmWDwkMnsiVUGCwaZNrIZAGkTn_CHrFVKQEpMjsQ830Po3hOs4oDLxWry1Z1ojUaCO0XdwaD9ZEhNc2MIj29K3pJ_XGMwnYmERF4OjjX7YvaDqMh3jnwGBlzh6eLu0EQ1L_1pJmx7YiHBPoddkiAvkWxqI9-cv_gh2y0gbG-MSdVu0tg&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Plum Creek Regional Animal Medical Center photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Plum Creek Regional Animal Medical Center</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/crete/" class="back-link">More veterinarians in Crete</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Plum Creek Regional Animal Medical Center?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

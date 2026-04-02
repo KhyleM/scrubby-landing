@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJM3uPr1HBwoARBdrFe2X5MIg%2Fphotos%2FAU_ZVEG50prA6PARx4u_2xfGclMHryRAt5xI-IuXExQs9QvScXtw3fXot98H2TDDEP2rCRNDcAIKf3XX4Z8VipxRNe1wVoKMfeJ5FwhNq6wzzCmu81f0e9Q25NnMQuYdQw9rs-Sdu9fzuazPRp6lXcyi6dMOnBxyhc6BtabekhyvtwN6IzwOUg8CUqDeZAC6Aa7kQXuCs5IKD-fywTl2EfQq4EGROOiDG7QP5ENTwGGha0kN7Zeb0QWCBUiqHzGki9e-RZIpJbvXrpu4tvEz7Yv27EBot3KUi6jnW-oeHSMXgZD8iowenVO34INpM9MWFmtBgKd75PTSaSabkjkzzyWXRm-ABntsMPQg8F2_xQ_kZiLAz0KFV8QFyiNCSfwgV4o7sQWrPd8YqnNyzXMUIFAR3iYTykOY_cZntC7rN9sxeF1s5w&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Happy Tails photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Happy Tails</h1>
@@ -198,8 +197,9 @@
                     <a href="/groomers/los-angeles/" class="back-link">More pet groomers in Los Angeles</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Happy Tails?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -345,6 +345,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -355,10 +359,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -383,7 +383,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

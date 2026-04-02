@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ4X1D7-JFZIgRlA_SWfvIbes%2Fphotos%2FAU_ZVEEvvzStZN1eUQdhIw1UAi_pA48io2F__LSh6hnwF5EH0QCfYwcVD8I0N1OLy8RhjUlB0bU1B9aNzkzQL799NBcQP4eGNU01LQvTu7pp0_0HP5-_AHvBF2a803DzVZtQDMEpvLJw8Q6l9SIRzKBVQwnEfv-Df6Ldg8PK3g4-r5gyuP7ekErMzzReTaTJzysol9gjJgX9K40lmrCYT_GCI_6r8GbJXTdZ2Mh7oYLDTKTSqKxeyWMBhXIyzHk-7yvzWwLTG5wEW2ZgeBj12gqEbgkr3hyz8F01DPFhUVN15uE4w_u2HPQmLgjpcrOj4OVdM_nEMH_PPSbCrwe6Ti37fGwPhMrJ0Qg9NN6UaSMv92G5QZR96S8dUXK2U6JAQQgfOD98uIVi4dqJSjnF0DmIVRNSEvfdLSF4319TcakNy4ITAiL1&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Feeders Pet Supply photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Feeders Pet Supply</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/madison/" class="back-link">More pet groomers in Madison</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Feeders Pet Supply?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

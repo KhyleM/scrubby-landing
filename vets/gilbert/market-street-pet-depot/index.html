@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJsdMb9mSsK4cRXgEnG514zDY%2Fphotos%2FAU_ZVEGU_-xYOF9l7q8aoal0Eu6Ea1Xbx4IzWjXUJfCP2Nhuyl4CZsjA1xmb9X9rmrm-YX61_nqQfFSsSzCYEvI_fm4K3VoLf_8ySep8YtwTXER0G5Yk1nBDe_FNLkeYc5ARsoe98DG8_surWesNLjQAYQydYaXxYEEJEHZpBT_mGuDgJU5ax78ph0jOEsdOmCTN8C5Jdn3xVKHRm26Y6Mtlrn9WX8l4qcNEMe0rgqjc-5nY2b3i4ymWHPvJzH9essZqBk2Nw9eTaCh3Ach0E6PdkFqbJXOWdo9F4S5RqRt4XveWTWVvMP-1mf9c9I1hOli_k-KKNDbB5Wweo1bqmhb6Z7MVrzA01jro9HLuHs10JYx9ReBaf8OZTuc3eK5y_Wu4jAn3taauAYxdDM69PyvLcye5bFmVe0CUiQ0bEnbdFvA&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Market Street PET DEPOT photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Market Street PET DEPOT</h1>
@@ -205,8 +204,9 @@
                     <a href="/vets/gilbert/" class="back-link">More veterinarians in Gilbert</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Market Street PET DEPOT?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -352,6 +352,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -362,10 +366,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -390,7 +390,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

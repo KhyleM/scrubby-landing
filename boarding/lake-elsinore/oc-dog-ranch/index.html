@@ -78,7 +78,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJPZmNcwCR3IARog8G97huASM%2Fphotos%2FAU_ZVEGx6B3BKgkjgfGZzvXJRAxuJHEJdrR_nP_0Yw2gCSkV5uosDP0mWOEfqx860J2u4A6Pc-jLy0_E-R55ee50evDAiJR1OpUagsMunjQmuzo-xSxtM2_mgwAeMyyUttn-FREKdvA5AcDiiaSJMyK2MK6eaD_oXDxJA-wNjlZbaSTSBjvpSyJTaaYNt1yr_a6Kos3Db3URSLsAsRmyvJHalGnrwuvADV-zE2XcXbobUHQyoOHxI90HxxT3TPv3KLMgkJ_SNZ9unRHRBm1gxs3uksWSmUmw3OQBBosdqf1pvwVN46S6bSu0aQSW1yOVk1W8YCwSVjo_TZYdmVXBy-2ulHzxDviZxSA8KRERsNQFp6Inv_pw9PMzLB3Rc5cLyNVAUdsNcIebv5dPG_J33ho6svFfnN6HM6MSqlzmWg0CMuT0GUfiYvdSSa7HwSfT0fUC&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="OC Dog Ranch photo 2" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>OC Dog Ranch</h1>
@@ -192,8 +191,9 @@
                     <a href="/boarding/lake-elsinore/" class="back-link">More pet boarding in Lake Elsinore</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of OC Dog Ranch?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -339,6 +339,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -349,10 +353,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -377,7 +377,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJzQ0SiIe6QYgRIaphUo82HvE%2Fphotos%2FAU_ZVEGwhXLj3tS56iV3pvdXv1Uo0ZhVIYw3Qfljr9--JfN83jFMAZWOxfdZSfKrQ5yWFPDYiXO7jznEcnj_81NcXpAP5SMwXNWkYeFAizJ_lZfvbkuddpz1IkIPgu4kgT3ffdlNvvmTHsOK3CWzmWy0gx8Cy5eBHz9wPc3xOhdUGrB2lQsi5xFY7379nLpt1U4Y2NeAD2NAmQrNNB6EGLlhy60icIpzAMRvh4GIOaaG9VqU5EnGnc1KXxpGBD9a5HO-eGnS9NzgLPwrLgfynONsQT7qJkY5eZ56PPuUCh3pIByxWSVJx4Lgy9Wtqo39LzVRYEwkazzHO5kODZyIySPY950MIV_S0-5hiWn22GcEz3dsCOPcaugVnxFD6DeQFZXM9u7Pb9_KEpwBGKt75CMGjfw1SnrLx0hom-p3OUe51xVcjw&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Greater Cincinnati Veterinary Specialists and Emergency Services photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Greater Cincinnati Veterinary Specialists and Emergency Services</h1>
@@ -201,8 +200,9 @@
                     <a href="/vets/wilder/" class="back-link">More veterinarians in Wilder</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Greater Cincinnati Veterinary Specialists and Emergency Services?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

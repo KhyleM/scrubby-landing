@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJF6l9dE3DXIYRw_isxsZmPI8%2Fphotos%2FAU_ZVEGFBit1f7b36CEEjY_bAKIOQ4AqQF2P_6Ttppx1I9A6RZDrVe8Yy-JoydzQEskPbGC06o0fvtrl04qmErSpkfv6gSYWBSHcgIDWHUqupCKZA_LWtMXfyG7h7GKm983obMwSAHDOdeyFIsCUPFzvnnV4n3zP-gxqorVVKeaW4wdOuymecMWfiqBVP4Q0yJiu1iV8F7EtnJVOEUlZb83Fb5l6dO_09hIHPB_6Hzhv04qKtb2EL3xJwr-kJ06083T_B4krDxti3OijJzmL6z4xS7TiQVky5maW9hU7rpWdNfcjP6ky0koMsjU4Ekz8pqdh3TU0BqCv_YlgjhtB766McbA98k8_KLiEWjTOSHMmi3ov5MkQNCy2973TDznyKS4gw5ygAJRzs053bTTi3oH5JcFGxanXZoqMK8FC1oPaNoCs6YF5g5TguHMyYaCLr5jn&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Clip’N Tails photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Clip’N Tails</h1>
@@ -198,8 +197,9 @@
                     <a href="/groomers/la-vernia/" class="back-link">More pet groomers in La Vernia</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Clip’N Tails?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -345,6 +345,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -355,10 +359,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -383,7 +383,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJQ_QOSGC4moARrYG-7QeXfqg%2Fphotos%2FAU_ZVEGWsQnN02yxnWZo4hNLZov9L2lGZkWd0tGWCHl7L1hzQ-61TL-8yfLJ-_vUTBm3dcnvbgA3mMyOESjmVcIExkTLvPskVMbrnKktKwynVHShQq6v08lpNkfv-6zFCHyFxsM55hJXmu6orNwtZ5UqOJBEeVC3xjFLD7ZLFXL_efZk2Z_8JvdLVjqAiwovewAwpHCYB21aXfvfvHKbZJW2wtLw3fFkdBg1boBH6-u-r3t8AALNJvCGEeP_gjdIi5TslBIYj9WNxq6Pqzqo1hFLvixcayCoz6fmvF-Of0ylpDhJvOKVnlvsZ3mhAyrv4VUOe_p7DmdNaOH433zvb5H0uu0fyiKFkK7DqNEoS5PCUpWQPecROSXzJ12jERkGoLfalwubA1SQfTP95Pt6NTpw9stKpMKZ20vh8k8zPzqCINB3pg&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Kritter Kamp photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Kritter Kamp</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/elk-grove/" class="back-link">More pet boarding in Elk Grove</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Kritter Kamp?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

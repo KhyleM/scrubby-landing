@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJMWv2cGdkO4gRnwZMZOOW4ao%2Fphotos%2FAU_ZVEHCbN2W_BfdD7C6lOzwqmNwydpxg_Tam1pOcUiRjzU3Hvw2tgiwrU7zwzblXBU498YyhWZG3FrKqgAnWwFuyWYyamtNKVexwD3QqSc0_wS0jMwcCawNeepVeTze3ojaw-iNX_v1Q6UsG3ZiBB_ryoO7lxtzUu8QXXlzuJVDHwdZf6cQIkusABmFjROB5esnjWolNLwUApk1MnqJ8nEKflyaqUK5fvZNLn_pev0fUTiAnAvzRKDV4MTidFEB7_uSgdLMtm0eR6xl2Cwguu7lutHmW5IrxOiD-t_L7jMF5LPcnN7-JtB0FRwYngU8hi2rMlXxWulRAGDtV8LWqNP3RJJ_KY3ThaEOo7Z12tTjRsKaUMTnJB5MJQEnVU4XpptYLUSU_wRnngMh8bQU9NHz6wDxAs3yrpKOp12Auv5qBnoLmSw&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Fur Babies Grooming Studio photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Fur Babies Grooming Studio</h1>
@@ -197,8 +196,9 @@
                     <a href="/groomers/monroe/" class="back-link">More pet groomers in Monroe</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Fur Babies Grooming Studio?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

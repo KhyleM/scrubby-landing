@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJAe4u41znx4kRkLLUJOkjC5s%2Fphotos%2FAU_ZVEGFAJJgPNzvI3ds7G5Owfmib0jxVE7Iug3KFVeBurT4ldR9rYfsTSNXhjCy1c9z6-HNXFFter1zZR-kn2GFkQEubQJgyLI-HwOjL5j1GYTh7oTbt5MVw1w1ztmAOn2goO9TjmazGe6xBk495kpcZ-YyX4Hp4fxwoQRstoVc6dQoPipBuzhE7ahe80jg-Pgf5-0WXkk9IFa5g4SDqHeDOCmo_RmHw9A1aoNYVLXfifbXNVXgIrzyoAwYkDdWqiqOOKnvJFzxM9X5HmTYy2DrvP_0bY2kUu-jjV7lmzMZqNbKwRbZEngLzijTxUplFr0vn4I1TVqWcVR01ktDCDRw1yYs4oFqJJBKoggl79SUlKKaMi4U9NflFl22xYMJ_67S52fYyP_Q4FK6lJpW-jayQBnktjwFN7OPeGeqym4qKK0&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Bark avenue edgewood photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Bark avenue edgewood</h1>
@@ -198,8 +197,9 @@
                     <a href="/groomers/edgewood/" class="back-link">More pet groomers in Edgewood</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Bark avenue edgewood?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -345,6 +345,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -355,10 +359,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -383,7 +383,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

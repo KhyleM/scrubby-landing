@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJj6PfeGB5D4gRyQyVQ-ClaZo%2Fphotos%2FAU_ZVEHBL-WLUlPaFCkZjOp00_0ujai2TQduCJ8xursfpW-2MniSGj0muqaH6Jjlt5yiYR_yeQnBgyBpfpCPn3XukZQ4yfSTFImUIQiRB_v8hz-Eg3GyydF44m-OJhd9Wn4GTH1h-iKB9RZxOJUeCbQ_hh6tB-LUk4z9B3c4_puz6U4KrGZYtV3hLsGFT-wsXXMmq6aH_iNqZ1mnQK5NU3Eq8Qifumas5XLnFn353SGoq204-jDQIQmv_vKZx5rbJmfeOwLYxyZD235bShtXNJQR0v3VarUwgpBaAGtANh9MVD9jVmYBwUoiXFTjiibCvGRWKXTC5j5eUMzHtdQWw4IcJs5YcZ8W-PTiRxmIlLAM3Ai8TYvU4z36JIszcigTcAefY7gwoi9Y2ZqllkJogy4bhyWoAZZNNOFroEscm-E5U94&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Fur the Love of Dogs Inc photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Fur the Love of Dogs Inc</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/spring-grove/" class="back-link">More pet boarding in Spring Grove</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Fur the Love of Dogs Inc?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

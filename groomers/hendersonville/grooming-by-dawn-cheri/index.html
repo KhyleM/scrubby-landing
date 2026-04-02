@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJqQh-3NRGZIgR1gqwQ4qtTxo%2Fphotos%2FAU_ZVEHAQC5nSxGyjFcyyZ0yB6R7SruXCrn_PxHWDP-kJbBnKxUhXqCnoHfmSkZDkuO60FfkvMtQrqrkBIPOV2YQNWfwGGH3k18XwOzzwWTzleJxNscuDYgnZluplBG9AH-o36YZdJ0AUq9WWPlu_pzufGEgwADWNmjylbnoVePtt9L-NM06BWpzI11ltrppDI7P6cN1wh5Vuf9Bp4SrRrkDc_8XZ_21tWg1XrnfivYuv9E7HD5HmebqI3wfbwQ2CY8wvY7J_c3RCKGImCAaeTUUqv2J_9Y2sbCgH--D7R-RTb9FK5YvcZD1h4mr4xB3RIVUoqVtPU13OKVNK5fj5b6q2HFLIw2INzp913qX_xBriRZbB6NraNwP_fOxUCHOLHJlKgXmdp3jTh0EKTiHzWNIQ-jIRdwSCZL8g2b0mrFqAPn12npnwVxBSHSiBukXoW-Y&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Grooming By Dawn Cheri photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Grooming By Dawn Cheri</h1>
@@ -194,8 +193,9 @@
                     <a href="/groomers/hendersonville/" class="back-link">More pet groomers in Hendersonville</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Grooming By Dawn Cheri?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -341,6 +341,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -351,10 +355,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -379,7 +379,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJvZ6pXirl5okRjyiJdkBRkiM%2Fphotos%2FAU_ZVEE40LHkYxUwVP1aGtCuSFWfKQHjf5tuZYeZB5llPRuwb6p3bwCTA5Sq_2e4Z5hcsaZ6kbydT_rP4nmspqDx-N4Ld0m_DrYPYQQRNhe2ogpwXF9NnXNmrPEGVUSLpvmsvyxYSGPi3xI5ekzi2nN2YB2CkW8oYzSVIU-FiKmBjJKVjOlql82uholxsybrg0BNah9j_vrgHnnY--sBoBJ2v6Kb811eTKs42jSPMHXNXgxDXEbPrOg9vZ0ETsAK37zd-MgfxW7kehQWZFvDWUhjzvpm0JrDBHQlXwdW8cnOj0Yrlryp7lwLsc-Eyp_cAgKQnR5yvTJ38As4ldaaLj1pyiXN2lrLx-sj8wGwuPv48i2oQ1enmaCkKAXAzEvSI6ThI3vkN8AeNhG3bI4stKXp9erkd7ee5l7rF2fCiWQNNb_7gA&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Elizabeth Ingalls Dog Behavior and Training photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Elizabeth Ingalls Dog Behavior and Training</h1>
@@ -182,8 +181,9 @@
                     <a href="/training/enfield/" class="back-link">More dog trainers in Enfield</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Elizabeth Ingalls Dog Behavior and Training?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -329,6 +329,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -339,10 +343,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -367,7 +367,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

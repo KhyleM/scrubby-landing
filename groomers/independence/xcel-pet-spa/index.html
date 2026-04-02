@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJrwVEfGr9wIcRtbvlu6airqY%2Fphotos%2FAU_ZVEFRrovYDOzX2zOdp8rWYS5Udjjl2235kpJtvBc0Ebz6pyPZQzfSMIpsD6-Ac8cos8WNgI9Bylu2295QLwWjqoxM0eWgdp_xLWN78z9NbBh-ubVs1Tv-15WNx1-0VsgExeF3fTi7ZyfXetYxpaw3w4x-fvcC9iODnDRtGeIshZVFsla77WGNMUQOs0w9Y_Ok8X3Xo5U6zC2PRUidKmTqZp0EiuTYMqhxVSNgdL2W1gs3fGlOv8SZshdgi0pdvrHiKaXarMn6oLQufUbQ6vxlA7ZB4_u6l-bR6VQkNiW4QoPb-68MDoByB-pkACkYUGbQkdvsJNBHBq_8PDyiHdSBuoYRpfqv9cN8ZFYAW2fkV-AbaxbOxi0dIhvn94sOtkl1Hd1htinfq3NYie6kStFRuqoPQ2wIt1Evb7uxIgSWwbUkYj8GrwtUv9a0I7WcU-02&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Xcel Pet Spa photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Xcel Pet Spa</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/independence/" class="back-link">More pet groomers in Independence</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Xcel Pet Spa?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

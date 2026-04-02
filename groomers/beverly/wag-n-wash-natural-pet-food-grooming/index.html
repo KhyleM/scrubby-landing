@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJZRIRoHIX44kRlh08_wSZ9hY%2Fphotos%2FAU_ZVEGZeibE9Uz98I9TBEN9DerRHqI_ViIck_trR87Xp8GLdyfvh7rxeXdGh2XVlQZkjK7aAdFmjzlT687VizUtcF_MwnXjZ79uTbkPb5qWNOq7XzIVgMgVTEK81ybXeDntyrEimxiv_EipIcGGRiE9o5J6pjENreT2cojIh1zy1JJADSShVQn9Fuml-wQ14CpgE_LbBMCXZ1DnN4l115qPwUvXm464GAZSYHgqaHrA3QuxMdM9kw4n6a8an9_kJWAN4AolGcXuElgRloBzdCKqJWlKfiQdSQiAvn-IedSpFyIq_Zn9tJKC1Sa_hNElsqY99ep_C3oXy5J0iC-s_EZjnEslRzJAM2UbhxeyrKgS3Wi-O1hBmKYyWos1S5bZ3pKJjldFriuBkPAHRqgV6K6-wmTm5fAYI1MWDasCls7ce5EZxA&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Wag N&#39; Wash Natural Pet Food &amp; Grooming photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Wag N&#39; Wash Natural Pet Food &amp; Grooming</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/beverly/" class="back-link">More pet groomers in Beverly</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Wag N&#39; Wash Natural Pet Food &amp; Grooming?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

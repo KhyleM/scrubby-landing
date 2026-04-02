@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJpRoO9uj_QIgRHX_OJecb_gw%2Fphotos%2FAU_ZVEFd76WQt5or8fuS50cA4t-72KYUaQZFtrfvHOjPGF8ECYWd9dYexsSjj5ROi55iXDzUGt9AN19FT7871x02EZaWVux2qbY2vKR4edJBwU9DBTonH_Kg-ezHTpRvQO6pnNuhokZrVJlIBNJHUFNT1SCJkDDYqACvj-xeBFybRSVM3FuoLcQC45SRodTHyUkZjPKeX85x1N4p6AyZLSI-3r76uF0KCKGW8gg92z9gugTlZVkN2lQOTaQqbuYQSQiCrSZUIIhPw8u_H8nOWys1Qa9IRYbXMQt1z093ui8dDmaoL71XFP6ruBUuBUIftlZmN9rs7D6I9qJoXm8COgdlrNedfgt6gB2tuWGsOeLZmK-WaO80q2NbqrIoW-dEcJDSTPg9WEN8GW56oAvrsTF1TjFwY9l5I1IrZO-7w2Z1FP8tJVuq&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Shar-Jo&#39;s Pet Styling &amp; In-Home Pet Sitting photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Shar-Jo&#39;s Pet Styling &amp; In-Home Pet Sitting</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/milford/" class="back-link">More pet groomers in Milford</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Shar-Jo&#39;s Pet Styling &amp; In-Home Pet Sitting?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

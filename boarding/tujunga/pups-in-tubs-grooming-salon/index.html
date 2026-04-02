@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJgc1kRRfrwoARRRskDl2d3JY%2Fphotos%2FAU_ZVEHln6zt_y2SsXDmkeWiXC9n9FWWvhqV6UqzGHFTDcCwHKW9Wd-Xn9s5QcfFTumDiuKLkRJnd9XAfXy_31D8_V3rifwBj0GCcfYjUNBubovtLjazBWB7RAQWM6ayqvyOt1BWy5Wvm2umJFrRih7qxyVJvwBVO6bSLVaMZUh2-oZB8-oQ3qTT6pSERM9gLhRbSuMKzZKIfUiHzBBFzLPSPnuzNMaEKkm5AsWTULlIB8ZmebIavtilcB_V_cjyvM11SqCkgt2vSJhy5s_aHLZvE5oPA3G5k-gsic9VZB4VQvUJKw&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Pups in Tubs Grooming Salon photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Pups in Tubs Grooming Salon</h1>
@@ -199,8 +198,9 @@
                     <a href="/boarding/tujunga/" class="back-link">More pet boarding in Tujunga</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Pups in Tubs Grooming Salon?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -346,6 +346,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -356,10 +360,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -384,7 +384,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJT3DjM7keTIYR3eanOtkRG3g%2Fphotos%2FAU_ZVEGm9nmG9p218hEx9_EPmO1k9riI_uR6QcafNWjOWXrLQsW3X7KpSIdpAyrFbXc9MGEz9iKoqMFn9QxH6ulcK4IibtNDXXhII2YB8KqnaK1XVm1Z-JKr35ZK9tk5zE-aWweiLJJ7CgfK7W9HdI6P6MPDFMuSpOMOfvDxaBJJXtS7-TKS2TsZFdFMJN9HwawFmSX6AF2hP4OP3pbb5T9MNVzIrLQOMPG1Ru8fVYHeVCVGoIq9MBQp5WHmzqIa-SW9NIGKhdfMIzsRs_JzNOgI9GGKL9G1tjS8k6nUIK1xLJTN4Pe1xHrByYjjCeWVLjMSmopMAgZfu-HKFd-zX5qMElSW2VmutovP-Q-fBooAvqqAm8qkGDyI5s5MWMjpN3WnReHczI58eOADnEiwNq0p6x4oWM0cVOlJP-tn_rg5wrPGSA&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="K-9 University photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>K-9 University</h1>
@@ -199,8 +198,9 @@
                     <a href="/boarding/garland/" class="back-link">More pet boarding in Garland</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of K-9 University?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -346,6 +346,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -356,10 +360,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -384,7 +384,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

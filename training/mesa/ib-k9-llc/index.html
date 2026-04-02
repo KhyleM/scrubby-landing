@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ7Xtfvh5PKocRn59zrYvw6pY%2Fphotos%2FAU_ZVEFuU7ZYgf2oYf9Nhm8tiU8jdZrLygz1kt3c00O4LbVPdodrWhL7dMf5-vhAbRnuptNBDy7SuyDjfjNa6cKVLGqt_8fpOZJJFEjDP1Ew9wDd68lLlDXEaMIU7SwlR6CcsEZdS9faCGViDvQpjns1A5DWLUVEVS8o_ItCb2EbHt3OaAphOWjZ6IAzH3gsVVkNX6Bb-U57T_8xZFXgTbqfjxC2caWNfQC6iTGZWgCd30q3ZwylTDA0i6az-Z4YVloGjYUT537A7aHrMDGuPB9wnr6sAXzjp0WRlmxyx52H9_7zwIE7RW-Yun1UwiB9AzQKC0WcI6tEXG94INAv-VbBQm9bZb6wjS2qSTUj0hlQ31xOifbfqQFdTY3c9iWk2icwcg38y7aCSGjHrKdpETVCS_DEnaPKjN6z993YYwYrS8BemQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="I.B. K9 LLC photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>I.B. K9 LLC</h1>
@@ -197,8 +196,9 @@
                     <a href="/training/mesa/" class="back-link">More dog trainers in Mesa</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of I.B. K9 LLC?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

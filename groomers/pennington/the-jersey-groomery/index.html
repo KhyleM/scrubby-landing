@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJG0cjn5_jw4kRV77xs9Wh2ME%2Fphotos%2FAU_ZVEFCnF267d1WhJH9iBp8Pvm6T99zUnRiYdWy4msfYa0vBn18ouqPpgDfd8-J5MT3Enon3j8qUtLjGrHXBcx9N3tyeUziOHQYA-os3rr9QK1xy1ruVle-SfxrlfyrkqJFb7vc7kWVACHTVvckKs31GmTI0vEBbiKNy5j-79TrZZXhjiTIgxgNpua1T8KJNja6nGRQe1pC1ZYh93ft-NCUR2c-uxc-pJyBZ0pcCiwPGZUn1N3dGuux5EIOAqFurdRJsVBE6hVwlAfk1T3coEi1DBOUQJGJZuJqeJStqVQvcixfLJVrpzNGalSxFGnuT3IJskMlh-z_Q8YyB_-gXaeSVFv1xNIWAAP2okkDX95Usu3IKRcTzMQM6bOOzx-_6lfcwV5tjX5hHWwpDBJinQcHIXiLXGRfPR-ElW9TLPafKauHbF3MgSeg0Tz2obr1a-s2&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="The Jersey Groomery photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>The Jersey Groomery</h1>
@@ -197,8 +196,9 @@
                     <a href="/groomers/pennington/" class="back-link">More pet groomers in Pennington</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of The Jersey Groomery?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

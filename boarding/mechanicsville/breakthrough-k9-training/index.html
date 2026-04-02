@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJo64Wy4PisIkRWNd5YAtVfGE%2Fphotos%2FAU_ZVEEwToVyIqYB9ikHA1sL-OCSlnV483dR5DDO6mmk7q3-jYtfQqs3p5kI0kqRhRkt7aWYp6dSC_RpnMEXx8y1gSnQR5J07yU_p1XVIeENykFKDNA9e6f6KZfDqPEDw2kCoRrsEx1Q1SZ4ICcWYsoyMURAuYZxxUfs0lPCaSfA3zTALpzJ90oizahN5bE318b0_zdhWvVjfYs1t4ukUHGjQfXiGHRGAw5V72y812Yu2wQWGuu0QDNZJt_UgvzhUFNew-lZZ4E70RBIJbFwGtO9Pmo8G6dUueF0DHUraiDkw6NNuA-nhsOu7XDD9qv2arPO_a8IEZ8HZkWYAV_zqmAjuT4OWQpuv38GNeBqj6xgwxCaCoV0jCy97Z1sPtU14glcb7WSEfUsn9qqTe1HtKUpkc5M1TsrsUbtAeXoKRdhxsPpAA&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Breakthrough K9 Training photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Breakthrough K9 Training</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/mechanicsville/" class="back-link">More pet boarding in Mechanicsville</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Breakthrough K9 Training?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

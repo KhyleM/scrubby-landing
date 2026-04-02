@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJRR5lyr7x3IARY3s3X-cjA9w%2Fphotos%2FAU_ZVEGzIdPtg3rg7RvESmhaZKzLqg3pilg3THNfrYvNik1OAuha2PEyLtvjYDmFzw4xRu4rvj0gDKIJi7LqqivbZDALG-XSeJGkysku-r9d9d08_h7OiwZ46_M9vjA6BVPZe4pw0LgqDVYAOqcMS-DS_HRWRQAjzBPDIlELezxR5thh4Y9PCQLpxJFFzsTYmP-FtsrXA9Ca6TxRgHju7UJ340VmeC8NOL8Ii_muBXcYW1VJ3gl4wqDzrmq40oBhik3Z5mTe4zod7W0v_C-roGR_tcKmge8B6XP9A0vgbejFY-wDDiS5dI8cx6KJojpgSxKsPccIiyUri16WhG02eb9cUsj6Aqv9pBYoXg2qxcD0l2WtiXh6guVs7Do8RJwYn5dfcn-yayGSLPfdyYz5Nsg8bM1bTlBFr_PfLBTDvBLQM2I&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="K9 City Play &#39;n Stay photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>K9 City Play &#39;n Stay</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/san-juan-capistrano/" class="back-link">More pet boarding in San Juan Capistrano</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of K9 City Play &#39;n Stay?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

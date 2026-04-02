@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJV5c93IPE5YgRphVecWfK1_g%2Fphotos%2FAU_ZVEGWgv-C0T9L3c8_sakGtuBcQGfuZjw4hm_g7xv24JOV_U-1aWJ2M39Q0n5MSHx7CarioHFb8SB69ZQl3KdvaOGv3bQvtFe4uGhAi-IVEnw1sSef22Verd-FsX9bA7DusBPw9n0rvv7DqZNfJQ4uyqmn_7W7FmIvxaYnFWDgATkNksnMYqJO1x3SMjZa_6Eh9DNdFCnyUqTNmlwQ4DPrwu9_2yoIFe2ZnFnEi81518p8ViO5nbG_HkkB-3x4uR67GckVENVOW55TXqVXjsuyF-Pa3By_8S7LnD2OHTDbbMmkyjJaq0IELXUxG48kHRAHfRy2IjAFpOoSjjRdWYj8bSlX6gmCAlcaNHt6lPh3xKaNgVL-G7kHwSbqGs4e-tF8VBMHjWF7EPfGKE84eHBOdk_4V2SGTVZ-63K8gYnlSk8Ya0l6&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Julie&#39;s Grooming photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Julie&#39;s Grooming</h1>
@@ -197,8 +196,9 @@
                     <a href="/groomers/orange-park/" class="back-link">More pet groomers in Orange Park</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Julie&#39;s Grooming?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

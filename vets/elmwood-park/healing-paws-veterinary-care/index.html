@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJYXRf0-T7wokRJDHaOBDDHmc%2Fphotos%2FAU_ZVEHf3xkvzUE2E-bNs_TxumFw_mGFRbQ-oD9J8N_QGO5DEJBvmtp_s3aJids5SOJn4e59404z1uUrRyvS2kyGHNCnd_xS-dQdxC-InsW5NAnEACHGMljJ7ekvklMsU9yzTe_M73K6Ao1Z6giS6oQ6aVC4l71xrSlwogl-eQiv_guE9TqbfHtU91TYef4CVZzCMB6F3yah50-AjPwZjOCv0wcVX7ghVhcM6vALYtMs-MGvf2lpPLOEZzRqS84u35R5en3pMUsmAACXZtjMoNW_BNs4_d6Diy65ibac-_1VVpWeOansMhsY6PLLhabMclgkeoIHecZjlYuhjU31Cs8T3s6vkShF0RZ6-KSTqCtParhix-bb8r7MMJWrgPrFckPh-L_PFb0aQlpY9WU7nk58GVnQbZuqzRK8b97neB4GMGMCoA&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Healing Paws Veterinary Care photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Healing Paws Veterinary Care</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/elmwood-park/" class="back-link">More veterinarians in Elmwood Park</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Healing Paws Veterinary Care?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

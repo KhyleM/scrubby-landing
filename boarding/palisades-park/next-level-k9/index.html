@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJoXvWOA-teQYRR-HZlCOwIO4%2Fphotos%2FAU_ZVEHBrA-fghF28GufIBl15JyD6Zy-u2Lw1XFOcD7Ad50wwwkjcVyFE_xQ4V_ZQ0OewvPApPMREyXQml7-Znj3-LPaVos4KfMsFYXzPikfn1zVkb9W6naqQFUAWOonpuYL8kVl8Y6ZV08xdSFVELPVLNTSsSLPd1nik4wzZMWkk2NHZU04Jl_NIAEPswCgsF1cIK3r3rnM5LEMCLvuZpHm2ig1eS4zYBTrBPTUuLHKvkL7YxB1bRk1i9AxtfWaD5V7H-9j0Kby6YpuM9yf5UOZBSA1Qy32GXnodXM6-s9rguBU32dHhz2MnrQ8qgVzrY84KtMCFnmqeYK7LkkP5uc4YXv0DoNI2P9hhkLWNV0D_6ntRHTk2sgcFGBgVN9Lj1yNPxd20oG11pW6aQMHJ8mcwzpGnxI5Whae1zdOcfVeaw7vDelSBP73dj9viIEYq6H1&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Next Level K9 photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Next Level K9</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/palisades-park/" class="back-link">More pet boarding in Palisades Park</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Next Level K9?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

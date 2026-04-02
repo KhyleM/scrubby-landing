@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJXwY7rvYzjoARRYqfeQiGh6M%2Fphotos%2FAU_ZVEGlZbR3x467SkqJG5oyoKaQnbZugtLRwLk6LGJpih_JM7XGA6g3ZiT-XVbzUNabNQgXmMAiNNg1Ip5lVabBNMSwl3cCTX0k3I-Z-IGD_ah_IlN7ce731c8XHrdGqEzQu8Cx7xktCMneSlGhIDtTQM7vfLv8l8CIO8IJ-27pB39UrCEGqnlkOT_S218xkBCrY4wXVexV2m5qAUlf_fQiQh6kdO4rf_u6B0SfQwYFmnxdRuCbQUBqun4nsqrASFTlyJ_1ELZctmiIrTuJmkEk_NybkEBPDK-5le-6B8X3usxNiP7N77XD0j6FeY7HSEdxVHyx3LBF2aXJOFbDS-tSUEOHarJEoVLGOne-LQJxedI7qP9OZ0ZamcvIYT05Vy_U24MoI-ZjQ8XEgAEfvJ3x_m56g3Rvc8-GTAQku-mnVuROYw&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Petco Dog Training photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Petco Dog Training</h1>
@@ -205,8 +204,9 @@
                     <a href="/training/san-jose/" class="back-link">More dog trainers in San Jose</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Petco Dog Training?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -352,6 +352,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -362,10 +366,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -390,7 +390,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

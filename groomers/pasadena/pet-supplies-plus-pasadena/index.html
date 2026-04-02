@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJITmzknL9t4kRXC48fHS0Jow%2Fphotos%2FAU_ZVEF-wHknR_IdPiXljCIw_gUnJJPPnRPP4GRUaZX2s0Pe4qdViKGDg1Sq20eZOsBAX6T9OfPtQnKjrwUfy-Jf2To9kXuN95yvmzkgapep4zCz2TiB_5tsAGjrOSCwbv3LG9gv07sBagbVYe54t5Qs8-reLq-SE7uuh2E_BiK3PFAClzFAQPffthblGLxaPo19J2CNdNimt7I4a6Lzxbjr3580y6uvinhkyvkPg08Tug76z6MX8X-M2gqVV49dBmgh9YlwK7pyk0OKTK27n1Z7w7dHjdND4hU-NktmIYxUCDRGXezmRPbT7NYOKM22rphpFdUL1MsXfSnHTv76tgbsVkejCj09J7NGoisFrAjIjUEJSPEgqKcggh93XLNcbdeODpMyWUj868Vda7wYTnt7o17WZ83E_b4NYKKg0lUxrKjSLXY&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Pet Supplies Plus Pasadena photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Pet Supplies Plus Pasadena</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/pasadena/" class="back-link">More pet groomers in Pasadena</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Pet Supplies Plus Pasadena?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

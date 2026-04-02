@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJldaCnGwfsocRwRKp5JdP-q8%2Fphotos%2FAU_ZVEF32Xv9lgZqz1TH0F_lXXnrMLPPAKmxgMpqQZK98odC5nApyCHxDlHQmyw3dQ6Vp4oBWay67qSGqvS_1K8jmU0HBK8fqr8-Utu2-uRhOi8dcq9ERpk9Z9yFHiYn9m9nYCPOpI_FVdzjt6BxCmU_x7HRAyH4gWBuhkeCbL5EkoL7c_B26HXqgDCRqr7_J6ryYuhaPktHaKtMhbR2uNL1lA6Bw_Jz_fccJbkDU8E5m0dDM8RBlyfmkf_ED4oKcooj5aABEseRaegzn0sA50v0GauLqQpwVXKN38qSe-vwei_29H-5B7s5T5tO5856LAQ0kQRuDIa3fSDzjQlnoydg70SYglxlZ5BLXcWD2RhwIgOguQYLEGIrj4Ak2IGWvbjLx0QBjEXejXD_810JBSGLYwpfBRqsBvKBiLaI9UfLP50&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Little Paws Pet Salon photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Little Paws Pet Salon</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/edmond/" class="back-link">More pet groomers in Edmond</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Little Paws Pet Salon?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

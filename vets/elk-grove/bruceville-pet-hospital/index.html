@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJOaOdf5THmoAR2FCU1FB7vk4%2Fphotos%2FAU_ZVEH6mKTQoYrpuWM8PzGslqNKcdXQd2A7hfu0CfpDgRUF-Lva5jovC4v4MshrFpGnnCedUb09CAfgwYwTUL4n1exaeYz35fZptcjCSHsvnTQIpIIyMEyNiGtQbBbaacvoG-Iv8capt-Z7-Ms5uwt4CFWcZxbM6T-NOv-_VPVnqUMy1KAa22Fg0RkTBzkyrP5Yprs68TErG6GgFEtAjnurjG2cyOoP6v4HAdWhVr8oGwedXxia6MXfHuCzAgSCWcRGsOP7bAGAZq9I-_zyoPqNHKNd-Aml4d7P4xK0X1Pd3LwnMsyiIAeqLOdCiluJDql6-hNNGlsOsHGhry6ZgugKPT4FG2yH_2cqSHmvIBK8c-QYxHWFpA_N4viTscYsJz3DC02ZxrY5ksvWjuZvPAqflBd8wvyuLDF143CeHyr-ZaezpA&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Bruceville Pet Hospital photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Bruceville Pet Hospital</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/elk-grove/" class="back-link">More veterinarians in Elk Grove</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Bruceville Pet Hospital?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

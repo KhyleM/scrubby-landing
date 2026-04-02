@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ77nBx-2lMYgRw7VClquxvzY%2Fphotos%2FAU_ZVEFwcInalsSb9qgwz0UaShv5jerdRcJvpUarxoK_lgs9QQg1uyOOn3lUS9RW4xMGn_Pkb1qpzGNirnQKT1UelidBBVcA2O_UJ0XmOT1qZTn5nBdD0YRvpywSlhPxF3yop_0IASE4MRgZ5yEXm1TeqgqsJGr8PuwTvSsZH2eT5ym-BTo1IUaOOCNnJqQv17LvabjQLEyX95qURbEFSSNr1K62KSBii2_yhkWlLkswcwQAHXJqYKLH2R9FLtLGpo82c1PNMAdyixhmSthefO1D9iR3IxDQPclCn5etkNJ0lGqP-AmngdzZOTBLG1EmjmbaoV4JgIuD9HHjSvlOpGdXdP9bQhWktShpNntGsyal0mT37_r6Vmo9Kwe2pbe-hhgIZg5wRw3p55IxodVm67aA_uvHa7a6HmZ6RD0GgQHc-Z793w&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Pet-Tastic Grooming &amp; Supplies photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Pet-Tastic Grooming &amp; Supplies</h1>
@@ -187,8 +186,9 @@
                     <a href="/boarding/mentor/" class="back-link">More pet boarding in Mentor</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Pet-Tastic Grooming &amp; Supplies?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -334,6 +334,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -344,10 +348,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -372,7 +372,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

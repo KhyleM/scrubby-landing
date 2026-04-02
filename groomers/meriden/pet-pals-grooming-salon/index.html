@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJp3kkgLvL54kR56ebIa54RVM%2Fphotos%2FAU_ZVEFVNHEpcfyNInslHQinWYIr851BogQ0q2Wb5FYVow_5HeFQF1wJobucfphVIqEuCmVrADTewoJGx4dtFLTmJrIBdmX7I4HaBtdRvqhITYk42NWdvBrwAqgfKNAtJn7XEQSiV0bsXsZ0vNs46GHgMbMmu5IRyLKGmJgEAgt9peauhCj-aMoBTrvW5QRhCP2qo6G4BpmYJ4Om7dUYBqni4JsRbZCc4G_hC-QXCS35W5q0Jq0gd6AqZ2KBWiEDHl6fSESIA161Kzyr-5EGk8y4raY2uChk-QFIg_f87QMX5-mnwQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Pet Pals Grooming Salon photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Pet Pals Grooming Salon</h1>
@@ -189,8 +188,9 @@
                     <a href="/groomers/meriden/" class="back-link">More pet groomers in Meriden</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Pet Pals Grooming Salon?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -336,6 +336,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -346,10 +350,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -374,7 +374,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

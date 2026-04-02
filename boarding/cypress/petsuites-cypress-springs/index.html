@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJdR8h_bHXQIYRPlR3r83TgwY%2Fphotos%2FAU_ZVEGnq5hf7sPmckbOBvOD6jN_Ydocdw-Kjc4vvTgu2VsZhDyP7TAu7jJwh4And1KX0lw5FM_Mp7EQ5EVRDNHEC5_BVrCMCVlQJHT2iHyXuj3mJ-6FOeBHtzthd8PLo93fi_wsT9pOjkT5nWeIkSW7e033G-UjRQpUUiNfyFfL1dwVDCmMAnyWQx-7iIJ6K6vc5R59mDK6kasU7zlPV8CcyBI4gZXmn72mv8Q_iAHRuZXdQWBCvFnbovFYil7VgKzch3gWKu9zaoj_j1Kv-aPBFvUy07uYKuR_msn_Z4KRNn7OJrhUCCN9sNpzfXgZ9qq0RzUpXozqLtelEasxdui5Yzl52KTDBbfqbRppbk1Yyv5PgkayJ1Z0-7iHKMD1bhMHmEufYSoVKwo4Jg7F9T-K7_2OrlTDpdGfCajQFMAxVLqgs78qBoVtBw_jFUDMxRPK&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="PetSuites Cypress Springs photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>PetSuites Cypress Springs</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/cypress/" class="back-link">More pet boarding in Cypress</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of PetSuites Cypress Springs?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

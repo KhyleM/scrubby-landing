@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJBxFqJ-VbwYkRkLCRoMV5fac%2Fphotos%2FAU_ZVEHLhWXLw4D8dUW3_z3qtXUntB1Hured3SK1i17Wg7CBdV9UqFfJ-Sx1eBuQyoluWNSNK00JTd0790wQ57RxelWX1nNxudxeioNStqawWczUarIaCwAvFLGeGWnIh4geOQKsruHLt-pEOnj7_eMiU3orXeFjWjoIupGdLYh0j8yqPUnm7REa12xgBxEg6JHBtlMhjA71CAOvOWxbQNlwUhR_rb41jouBT5_Pn-9_O0etLcnRs11AQ0G4ptl_JuRiBWDeJohhXk6okMVrg776I1o1rhyCzVox6C4QxI89tCY9etUPsg-kNAb2pA8t7nB6a0nCmpwM7zsNIBy2x_L8QcfKQ3g-LyX33tJK3IDkDsqzbxYNBE9OiOMZ3n9oTF9jXVeGzmdJQM9VCpBFCGBuIpDKbbC7Vuvk6x9-K6HBimJiXg&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Chesterfield Veterinary Clinic photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Chesterfield Veterinary Clinic</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/bordentown/" class="back-link">More veterinarians in Bordentown</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Chesterfield Veterinary Clinic?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

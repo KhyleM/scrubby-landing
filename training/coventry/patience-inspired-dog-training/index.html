@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJY9kcIjhL5IkR9tTWYgWM7Kc%2Fphotos%2FAU_ZVEFM3vxclPDsce3MH-7OC-zrXCdLGJO1KHYfqwj6budb2L3-KlUn3kt7Vwd0hHDNgr1v36dNG1GJYwEcADoVbYEVp7qM5vjp68qfkOuFCLI4ylmy7nc3h1swz4LzL5at9vi65Sdw4-dNWHT-sq-icZwya5_Vj3HYd6wcaL4_DXVNymDknIx9ABRexDmAx1tCCePLEwvmE8pTfJwsrX7kdsyqesmRegzQPihU_VeFyeKCZjUvwTZh5ZVeCLsfLr-8bHu1kpHO7XQrKjh4C_xyDTAbazpCVuTLwxVtwgjMcdaBax4nQEC4N1_FlAwMVeD3CeE_0unNmytr6fbVTvOwJGDod6ci7k96X8SCUZf55EKByhLSKLng_n0uHpi6eAzQlJFj7wkfQVpwn41L1sMkiE-6jEDNoQNccb1Ac7uiWWt8HaU&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Patience Inspired Dog Training photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Patience Inspired Dog Training</h1>
@@ -197,8 +196,9 @@
                     <a href="/training/coventry/" class="back-link">More dog trainers in Coventry</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Patience Inspired Dog Training?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

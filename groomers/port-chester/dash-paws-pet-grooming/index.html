@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJL79zPnOXwokRVU6hO0KIn1Y%2Fphotos%2FAU_ZVEGtIjMfpGT8rXtI61kKs_zU_aJl12GW2aRmmhWhxaPL7mXhqVEhB8KNrNi5_Imaaymh4TT31bqodJy7rA00OONwd6UVFf7A86G0e13Jz73c8ouQiQld68EwF3UrO609LMb2Gq-DBCNd6WqF4jryJbS0kaaRdSgfjl1IGmn-N4aMEl8kmv2C6wcO1IFdtHS95hm1o23ZIs6wYbrOndvPFibngvQB4paY62jPePj5yGb75wf-RPEj4INHhVy9SLorz7VSxemtcObhei0qKuwD-zJ0aJe9Yuoqy4wH19vwcKvIGA&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Dash Paws Pet grooming photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Dash Paws Pet grooming</h1>
@@ -197,8 +196,9 @@
                     <a href="/groomers/port-chester/" class="back-link">More pet groomers in Port Chester</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Dash Paws Pet grooming?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

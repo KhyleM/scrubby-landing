@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ8cxP1orFJIgRePAJq2ZveC8%2Fphotos%2FAU_ZVEHoPK1kgND5t3lbjjQxvhPp5NZ4gdd06orkg7zmqpSagw_6WVr3hT4iVxkNZE8SgUICl67J2w-OdUaiekpBoqrASveQ56OmBRpmeXtscHmS24tKLLJdpNVK3rdc7Th2c_OUE25rxFvEdjtJwlk4zm1JAjmhm7jAO-GeDVN-2hl1Nm8o9W5f3dpBoNsVYkQcj4oWHKnxze65ks9TBOg_n4lVENvdh3tJ-OFKEnHzjDgga0okAuTVTxctPMTAIJ-PSyTql_MLklTCJEeSBlaXE3Po3OfR7kQ1eIRnirLJTBayq4UrbVnj7XUWsixJ86fjnnR54sPKH6YDXxvJxoi6okuObQq6Czkpug9wgCXin_ywyiVpaFSj5MxYulBQCk-wQmoT3D6YI3hvPlIEYmxz_gTAVT1nx7x7bIIB0jfLhKMj-vA7JfM_Q7M4msXHGA&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Veterinary Urgent Care photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Veterinary Urgent Care</h1>
@@ -201,8 +200,9 @@
                     <a href="/vets/madison-heights/" class="back-link">More veterinarians in Madison Heights</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Veterinary Urgent Care?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

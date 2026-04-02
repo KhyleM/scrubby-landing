@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJPXAJdhZda4gRJm1-EoKsnOk%2Fphotos%2FAU_ZVEFI9x1Gk8QGBGmDRPa_vm_NcJdisc_x-bnHgb6QNUba349Mijp0xkXWkVmdGxxHMk2uoHhfg22WoSV3sX-MctCLEtiBb6nE_45bLtovnWylDaiW_IVDevAnxkq9J0gzetukrTaEUIYUe3MC0-gq_8OuTKO-S8IZ-_SD4T2n6lf78ucNPbRMtuX9PGN3OZj-OjaK2M2M6YqIsDlR9NcydTWmBLSxzVP6vAsqzDpkQ2Hl0OqPppxUS2qLYRPNton8kMB-HdI0pyzKxs1pQ8ipByCQ2QEkpMHPzJHNKmiCl8FnayJyw-4E7pu00cC7IxLxStjztA_DnVxF6Hhl4vCwJ_kF9go6gNZCc0Jef4Me3HhojvBVgVg7r6HxFis7c_u8SYpbjA4bNxbCQIJDh_xVWydgT2390IRw4uQjNONyEHnf90HOFPr7_dZfYGDjjNDt&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Bath &amp; Beyond Pet Salon photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Bath &amp; Beyond Pet Salon</h1>
@@ -198,8 +197,9 @@
                     <a href="/groomers/greenwood/" class="back-link">More pet groomers in Greenwood</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Bath &amp; Beyond Pet Salon?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -345,6 +345,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -355,10 +359,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -383,7 +383,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

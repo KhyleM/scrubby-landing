@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJkfE5_YZ004kR2gkwtIHzLV4%2Fphotos%2FAU_ZVEF5kZijEymIndKrQA9F8y-4vmDNRyL_3_c5tC8qCHW-kNWVqCLhUNNRYn4AZLekQe2LcGf63qxRgMBpZy3ou5RPRlAZe1HJCNabV8Bq10nYhWdYeDCXYTRN3BEHkvxr5ODbonnIhxAEYnW0P5J3hmf2UFMdfulDXCUaJVhhh3KWMIC-NXsgM5xnW7wW9AVxuj2OdG_1jwIC7OO3WsSYLKrWSVqryJLYEtFf2FwlGYvXVfXaTX3bFOwr2zE-D_9GnM6QqBmLmfZjuZLjT4bVY2Cc-Rt6-vyQV0fc_DYANiGE_ndh1RIOghgIMDAxwMgYpu3UmNairUxHl1uxyq7ub86cjTVHUuMZ1Fdh0-XCNMOwAxj9DwXWdYRXSwj59sS4OwD7mJccAsjCdcAYE0_t51IUOEg1yQlWNBv06wrIgc8&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Ohh! You Dirty Dog! photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Ohh! You Dirty Dog!</h1>
@@ -197,8 +196,9 @@
                     <a href="/groomers/williamsville/" class="back-link">More pet groomers in Williamsville</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Ohh! You Dirty Dog!?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

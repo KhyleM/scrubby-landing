@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJsyCikz3ByIARC4nUETt9Puo%2Fphotos%2FAU_ZVEHlhf_M0xzN_aSnDCn7TJ419geDzMY1vbVlbUd97MCwu6du5JCm2oRXGjiHUfiD6qTd6iCUb6skMuHsFZtPJJruC8KTs2SYHyQQNhBN8pLjlaiMXmLZFpoTizJ0yjNj38fRmkBTu-K-2I3KoANEkgKCDDsu-n1YFFlNG6rqlUWo4FAt2VzwWA9DRAi4aqg9Hgiiv5sc1JQI-4FD3kE-bovwL-_N_yfMMbekDhnGiGgBPvGTVoCjavQyNn-iytVrm5gxsGpn_W_kntHAzhPbHtrP00uGZFZ4D-qt5XggwagGxA&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Puppy Heaven - Teacup &amp; Toy Puppies for Sale photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Puppy Heaven - Teacup &amp; Toy Puppies for Sale</h1>
@@ -203,8 +202,9 @@
                     <a href="/boarding/las-vegas/" class="back-link">More pet boarding in Las Vegas</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Puppy Heaven - Teacup &amp; Toy Puppies for Sale?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -350,6 +350,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -360,10 +364,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -388,7 +388,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

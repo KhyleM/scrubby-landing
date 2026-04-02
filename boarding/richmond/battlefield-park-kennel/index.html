@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJCzzeKHwPsYkRxn1TFhCxcZ0%2Fphotos%2FAU_ZVEHDfgv8fidWg0oF9xb5xeKzOByZUmUhW1BvaM-xMUcU8vmJnN4iWFLxWdptX1w6U-YgjGQzivuvsZpyMX7usggLGVlluNSJWLJIQbPWdSHVKEzSoXQavyIUwjqeH-KR5Ru79Xb6eXtxGh-g2MT5phuovHUdNfxU90yrRB9DI89ekp5R-eJ6U0KwIBEM-vlOMHiHgPS-lDLpGFt6-jpEctCD4pDPQF8dhYhg9Du-PGNhX0ZMb5vtTmrAao2IqfYmr77RSf6pkP3BeS7aZGyDA5sby1vWrmX8bS1qgK6C9IiiDLWGcjLSRGEg1fS-CXDLxSES0qab87Hp8rrj6zEtgMznd3SIVu5QIGTU6ClglwGXV8nP9hOAhxPKgYfCTRRI4l_y4rVFb28euR695oRxlC3kA0XkkPzHZIE-98xLGXtcC98&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Battlefield Park Kennel photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Battlefield Park Kennel</h1>
@@ -192,8 +191,9 @@
                     <a href="/boarding/richmond/" class="back-link">More pet boarding in Richmond</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Battlefield Park Kennel?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -339,6 +339,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -349,10 +353,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -377,7 +377,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

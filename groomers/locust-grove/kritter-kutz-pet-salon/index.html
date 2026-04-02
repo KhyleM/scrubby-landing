@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJZShv45Nc9IgRV2gAdxDA3Wg%2Fphotos%2FAU_ZVEHbcC7OW4LvNwxZJCSsOdKwamta7ZjpClWnRCf0Q-l_FxUqcWqHCl8zlO0Lcb74R62UkVPOUhzOGqDB_Sose_V3NpeziCe5Nl-Wp9WrjLH2VYdx-PxKVjnE9CVV6F6RdUu-ZK03KsCdnvLMWLqBS0BU2bJeNXVG04tyZHChcEheT7ULVx4s9y9DXghT6VcDjoKeZOeNQaCjxXDT_JrwGhu1nyRecRFwR5WLaM6v8ypCfMsfRLWJkRIU4Agz7d2xLrAon12bB7cQmayFZGBVTHnOm2I-NlRfmAYAeV4cZA2YC0VFUxEvSO_f2a9Kv4d4MlPgnycT-Y5yhpdhSKmmOvBvS1NWtF9uh2jwp9g8OD4OijwFqaAkI46lZXQgh6lOpCAGds0CKE1F4ti5ipKmvmsvJiO6hFFnE9AvZPyryvHDTA&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Kritter Kutz Pet Salon photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Kritter Kutz Pet Salon</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/locust-grove/" class="back-link">More pet groomers in Locust Grove</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Kritter Kutz Pet Salon?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

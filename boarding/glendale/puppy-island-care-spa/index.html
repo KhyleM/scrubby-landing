@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJqx2PhxW_woARcG74nNAXjAg%2Fphotos%2FAU_ZVEEBYnNdj7nxWoHwC6jpok19hRG-kid8NbxHHX4U92gab7SzAP0RQoiou4tqqitEA01lLAl6TH9xHAlV71X_sddllOv9goVUxCb2Yww6BmDc3AYM04Yd_Bs1j26EjcCaAR5g1O_PoMOTa7u3uxtyd6BjSM0-qV718loHmDTYs0Jcmr4oBA-JzIL8KjEk9pUsspeIuJnZrWPpfGjU6y6-e_BgNmtBpUV00DMrFoR5dZ18dnWLusbx0UaNXd0Jz9gWoWteyB6FeP_O7MNgdG5FyVRq-Kc_QOeYZW_LAfFze1KMF3XfksxkLWDuCq91VRm-15j9XPz0lfZrXZfGgTVzri4i56hjfochH_9fRl16z4Oxu-7IkcuwQ51td18tgyw094FHN_kx_vo1DGlHIlcBgHczl2Fmr12nJXjeGMwwyzP1-sLAHg61c8VLQL2TOawn&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Puppy Island Care &amp; Spa photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Puppy Island Care &amp; Spa</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/glendale/" class="back-link">More pet boarding in Glendale</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Puppy Island Care &amp; Spa?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

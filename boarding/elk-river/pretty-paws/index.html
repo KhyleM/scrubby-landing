@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJl2sTO_Frs1IRmdSJBoDdi_Y%2Fphotos%2FAU_ZVEHamdxA7mkdM7c9rs1_7uT33kVrjpci0RAQ6xc1tqlqhFXUBzTccbldgR053yI9Y6gQL4u5pxMd1Rp_jKq5EV9ZXloW0kkpJAtgUcc0Dcp8mFaOiBWOvhQwo2i6uvK626rQktJQNLspGUuBczHiGaRv6RflSdyjHzMr0lrXs63GKm_kpR2kyyfLf_0nVL6IfgRHObepnUiydhKOXhytxlVDzTXuUoVkYY5-JZu4JyBFs3CevqOb8gZ1zWlg6KV8FUevSLclEarb4dJbfB36pPHEsGDU2OGoDzeORYWQA5w-nAGbQSFi8tDELTTEVV7FVIWMuY9eZYtp7J9SKeGSdyVIGSNY7WufZ6DdcenldoBqBl6wjTXf7cbp_Ckx2gc3IzzPsdxQBra-5MLKDjuVSTJl3X-vCPAM4OMX8vH_3owdJcI-Lqr0OyxU-zDZhPla&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Pretty Paws photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Pretty Paws</h1>
@@ -199,8 +198,9 @@
                     <a href="/boarding/elk-river/" class="back-link">More pet boarding in Elk River</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Pretty Paws?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -346,6 +346,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -356,10 +360,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -384,7 +384,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

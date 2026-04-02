@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJI9IRrh5bO4gR_jrAhQTMW7o%2Fphotos%2FAU_ZVEH1NaNj5-lSDc-lXyff-qeago6odU4lYI7CAcUVGpteM6RYILH5Up7-OLUMswR3s_Al-AWSGU_kil4zLUuOashPRbOqJNy4aS5JSWDzj_59qTjNTBj1ZXppm3anTOmfTpPZ8bkGFPO5tMIJye2yuWV9XGExb6dxzJtte4E_ijbdsKKZrFBtBe5VRbYEn3fZis7CKyVOp4nZcfzhm5UE7G3pQmWBUpFEo9Sie4lkESQfSSwnArKniVw5QV70zT78Rp5bQ8w6X4uDdw5_bTzlAgDC7C_aX_vGVfXJ_3f2G_XaheiGG8cat4DK3yh_8ptnPihr3f93gfVuFEZa7xAy475Wn1kyQyPZZ_O-NwA0pXI_e-EuTugPko-qgkFjeZoSdaZUW9aR1hyEaCOP7FIG6RnXKQc6TxIt4GeQPmkdyeFuYtppji-TbXixpuK4eK0a&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Kennel &amp; Coe photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Kennel &amp; Coe</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/belleville/" class="back-link">More pet boarding in Belleville</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Kennel &amp; Coe?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJO-7gvgjdJIgRK_ahxI5PPAg%2Fphotos%2FAU_ZVEFIzJtP95jeesGXs3-_OSMkW2vPe7tXVivO6V3zh0G-kZn3xtV7Ev4CeaKSlz1N7B2-dnV06dhgxnV8IISN4DHDmCF8rWBscOhoMnyz31JgqooM-j0RAe5LssWdz6Hp1HQRk-9PE7fKK3EyG9lrB14lkgTShcJuCP70gmaf0Y6HrLj9FvvlKUh3L0Sbff_XrYCxzvDM4x5PA7BH_SARxxWGhACn9lhkilYdWkrteXoSDc_LXVBm-o7FxaUlLFxSnXAbWXIfBGFKkNmg3cLCCTZp4OHHl7Fudhd-g7TplcpzH0RsJR4FMntzQ8zAbrJHVIBnf6MICLrmsE3jplv1z_2ln4aEKoaOkOdiCO_xl-X4RxGiFoPR_SB4ajotujWKIchd4WkBCBxS85CUhglDh-2SQjhtSDFdTL_ECLuWWgVQhnI&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Bark Avenue Play and Stay photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Bark Avenue Play and Stay</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/utica/" class="back-link">More pet boarding in Utica</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Bark Avenue Play and Stay?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

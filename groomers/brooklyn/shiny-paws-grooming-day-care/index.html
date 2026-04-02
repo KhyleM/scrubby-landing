@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJdQDGTbpDwokRL8qePyAZoxo%2Fphotos%2FAU_ZVEFjXOLtZlT9gnPf3U6p-1G3eSo7txL24EDq4ErBO0BYbmpeplft2FBYxBPABrh5ZIx_q4rYkIHG-m1DBRieA6M7grSGG9fgWRdlfsm13lPtooxQ9hJwUFq8P--IY-4gOEZ03DDk_p6XWi0mtXiOzj07eDiyeU0Cbr3esld-tmBdldXO_AYgU0up1FvY7qr0j13q47BOwNOM5n2Ssy3xwveBFxHPwyAxrb4Me6X8fho-HK1Tu-yI9N74_0y0iTxQsw2Q36-3PSdtZ4jt--pmEShG35m1oPzDAppiE5PKuAMNjwJXB5DY3RrBBzce9p3YqzRa9N01L17qw7Swgw8F7DK8NWaLTzPoStpxN8E5jQN0X92bws5bZIGo5CxRf2OUKs0scuP4bccZRod8Tn7MwsJ0DaaGq2yp7NAvDXFRYOTnov4n5kzLDJl44qElzA&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Shiny Paws Grooming &amp; Day Care photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Shiny Paws Grooming &amp; Day Care</h1>
@@ -198,8 +197,9 @@
                     <a href="/groomers/brooklyn/" class="back-link">More pet groomers in Brooklyn</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Shiny Paws Grooming &amp; Day Care?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -345,6 +345,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -355,10 +359,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -383,7 +383,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

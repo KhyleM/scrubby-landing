@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJx3l1RV-bD4gR9_R2colt2eM%2Fphotos%2FAU_ZVEHHHCjv-WBtsbeO8DYN8_z5QWiiLkPuUJxbG4ZCRjjPjKp8-Ik_1ilsQy5RZofiXPf_ciG3tLWP49jmcMBGc5eOFy6ZcWsvFsL_GawKEg3qeVV9QHBV3TsgqD8B-3aWCryqyYm3CHA9hCghcv9YA6I2DRaZC9xJq66y6ruTHFCYa4Lltrm7BKo7VMVrvAG03oIvl7Nk_mMIbfPrLBFFIDzI6JSAhi1Suzk3G5MI5wZBqmqfDD7aYquK20JGDk5GTE30d1y0gKc-x48LkGJ5GFA3Y7NGEvKa81vt51F7rIlaKt4tVcVHv8SIkYUl4f4-uAkTtsyTJJ-77ZJvv_Pd1ghdIaFGf8BNDR33Jf0d-ac5bzyu-_z_asAfapgc9FHbgXCXFPM8PsA0h9l3DWNzd-j0fWTQhAsDT0p2IIgZ1PB_AOY&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Melissa&#39;s Passion for Paws photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Melissa&#39;s Passion for Paws</h1>
@@ -197,8 +196,9 @@
                     <a href="/groomers/lake-villa/" class="back-link">More pet groomers in Lake Villa</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Melissa&#39;s Passion for Paws?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

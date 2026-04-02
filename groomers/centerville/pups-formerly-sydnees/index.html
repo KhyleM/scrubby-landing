@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJTRKhWdT5UocRCzUzlcX2WWI%2Fphotos%2FAU_ZVEHt-f_Glgn1nII8RDGyY5eF7uS4-eYVaF_QzE1XbOWDZ0YV7efu2HtG7D7EYz6TkfwfBLYe9Ntl44-mqbMLWm-QpZT1aCDHl2_4721ayMFVVE_irg8BhFU1Y7veIkUd3jYFrWzx97kcoBdQBPmqO7gGtZa1DvTVEX-vb3PFBmlgk577wJkxDduamh3pc87-hItl9tYBX_QZxoSqDf7M5NT53tu9DcrmdmSf3dqIrvnsZUuij4qPX0uUCtkDy_6iFenDy-niemOMMFpyiyiXJ0qw-_lGsPhNvW-HNcfWXanE2s0-J9YPoZ6Mkxdu8nN7FrY5sAXlwTOP6dnBedQ0y8LkVs0SPIUldmemDW6uvBi2H1zWTw1-fEnyKO6ESv-2tX0U-W4RW7OYJDddSPkVNOPc6PzZai8U1QR_oF9XWICOEpgVE3BWJgQEo-cdgRjA&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Pups (formerly Sydnee&#39;s) photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Pups (formerly Sydnee&#39;s)</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/centerville/" class="back-link">More pet groomers in Centerville</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Pups (formerly Sydnee&#39;s)?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

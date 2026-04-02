@@ -78,7 +78,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ6WoNEikPbIcRJEM6bFopl5A%2Fphotos%2FAU_ZVEHFLcXqjhVaJl8S6ogpd3JxLYNaD0rJMwuosXJCSs6JInc65b5qtdpTBlslOi2I5yO-pvDkjF07yAEYbla9yygarDUgE5IPaYmhxyfIx9nZEB6UaSw2rWMiXhh9bNFGD5KM1x1XvAX-_8noyjAKIXcC3FehyLXNulZPoWYsZrqKySwOJK_fkLF29MkjZ9IX3LZP4etB77XOCU-xcNA08soJamBi2qisBIE4BypiRnmHqkQiAQPLDs8conCQcmwiixb_LBNZBigq4P9eOYUZU4faUrD_h9W4X_Xm2k3399M7jHXKnQDDBr53EaO1sEFxCiU6r8sOuMlGxBdrujoVyQE8tCQGE_u6uvFjK_KjSTf9blu_NLGl4-j42yx7A84zLYq4Gyi4J3vtYfZzExcqIpoeRbZ16rBsG1Wyzb4IajnkoQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Pawsitively Pampered Pet Groom photo 2" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Pawsitively Pampered Pet Groom</h1>
@@ -195,8 +194,9 @@
                     <a href="/groomers/frederick/" class="back-link">More pet groomers in Frederick</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Pawsitively Pampered Pet Groom?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

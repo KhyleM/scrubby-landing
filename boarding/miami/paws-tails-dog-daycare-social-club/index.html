@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJPxbd9fGkUQQRgwO-bcEbheQ%2Fphotos%2FAU_ZVEGBa1ZI-pY_0ja2ux2C0m88LgDfjpeQa1qYbAptjN2qF3uUcpTLCnRgz4GYin97tu_seD67sWLESnSFDGkg_02-VV22hH1uw-mqFv5-KeOkBxAlwmjCykRERWfTuNLu_W-dur8vBuwIly_2cWEldTb-NTWtVSDxBFRIvcnX2R8LAZ0Px1PDCJkAZtlQRUaAg-3m09n8jypFq4Fj2uxfKalCPF1ohjQ4U7nuUuGQEVVKYLpHesKowo-ld9k-MBtA9JsgYvN3X_fEXuzyRmfB9lF8aYTN0ibDCJ9NIEHfHsdyVxgGB9ZeQ8OMCi11YHF7a4SpjdtVTMkY6r5Qat-95OgUEa5DppcpaBsg6qSzkADYnBrgUC29QQ074O82Oe7xfsQkL0rQ6IQ1ulw-K38iEpX9ZeP6qA3sxBAZvhrqrZMEe6Q&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Paws &amp; Tails Dog Daycare &amp; Social Club photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Paws &amp; Tails Dog Daycare &amp; Social Club</h1>
@@ -192,8 +191,9 @@
                     <a href="/boarding/miami/" class="back-link">More pet boarding in Miami</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Paws &amp; Tails Dog Daycare &amp; Social Club?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -339,6 +339,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -349,10 +353,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -377,7 +377,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

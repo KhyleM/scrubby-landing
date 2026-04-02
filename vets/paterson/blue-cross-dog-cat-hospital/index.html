@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJZSu4LwX8wokRFka9nzSr4Eg%2Fphotos%2FAU_ZVEFu7vQfPQW1w-f1PPa82F3XkUUPupdFd5GcYI_9f64W6Yk-l-R1nX5njFt-MbEukEYoPgf6VOcCPpNdcr_ZwXHUtKh8Tk-h9uu87p87gq4c_HXUcZvBdKtZJAGlaQu59gxi2G4zLESxe6At4D4ECJP1aOud3-EGhPE9W4vh7uWQdF8U0P3bX9sOd1Md_eputkerNTd7OehIb7HzdUuYlPNDQ3VjbNWMIYGwPpmTgWTp9iZnAHvt71ZaFSS1D1mk_5AG1K8wenO7Aw48tnbC9sIURA-etaIieLaRXb2qS16Air9IpXgI_eeW9Lw0lZUDwyM4lFFx1TYsnfC8I7X60ZW5IU9QOpsPyBFsa7F3rD2zUaMJIlu6Tp5CdpNbH62go-KKQ4KGYV-B-4IfzG3mrcKxiO_siyqBgPQgOeiQLusLrw&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Blue Cross Dog &amp; Cat Hospital photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Blue Cross Dog &amp; Cat Hospital</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/paterson/" class="back-link">More veterinarians in Paterson</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Blue Cross Dog &amp; Cat Hospital?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

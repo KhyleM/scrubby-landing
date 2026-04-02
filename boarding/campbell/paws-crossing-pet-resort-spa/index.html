@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJre-d5Bw1joARugbPedd8Up4%2Fphotos%2FAU_ZVEHAlYCUUwVwM7CLuVmQD9QrgbRIv4fEGTxVggEJN04QOaM_T6jY64UA8gXXriOXUzOPVrl90I_FxHxtcwjXy3qVOTNtd664M-md9IrMQg4HiB5lCcQqiocjYOtRwAXGsL3TGvdqzoQFgJciwqV_8Bnr0YpP8LneI6tqUvGqGskoKuSM5Bu_7LseFDPI7GJUQJrmQQkfLGZPqIt5m9sHD_FPjyrly-A6WUc6MQUF5gUO_aQAr_886Hpeij2RSRn38Aj32lAzwMktRs-0ZjuQ7sT2JjsKvSJl797sUFo0YzB1Sd8OFFYXcfcs7Vr7dFepmCV4JYLiVb8EN0G1xoyp9nKObtXFO1HCBM_qC8jLNtf3yo4RuQDvlokhJhtyZZScDYqoyQNYmUXj2sOZ2pxXudqfdJucLzCVCz4cTvIsMIy0Gg&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Paws Crossing Pet Resort &amp; Spa photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Paws Crossing Pet Resort &amp; Spa</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/campbell/" class="back-link">More pet boarding in Campbell</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Paws Crossing Pet Resort &amp; Spa?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJp_Kgp9IFaYgR6tQv8YKfnTU%2Fphotos%2FAU_ZVEFnyJw_HP9FLcmHoTz5kGPRcckQy5orlebkKrtJrphZRa45CjEcxrzBB-u1Kh6n_h4yj1xacykbNlXAKYC80pmHL1gEgXBTPWgIHCcDjuBfvVhteasPEZ2QaIq9JPCpwF_p3yUCB3OpxrZ1U8K-firBesNemFu9HftP3SQCk4wkYp-GCRniv8iIBVm8pE64slF768LMYvst7EL0MbEZi71Pub_V6JEVS9mjR8-lUA7kcLkJZ5Zs7-BdpHuIGbY5zKyBl3xxlX3UYqdjju7ga0G1ExPy7Vb9EiCAnPsSf5RF8MqivKcGzYII1dXANj01phAlB00PzORSCkC7iFcG_czHHwpJZ6eXsHeJcKACmzC9iwiK0YmHToygmgxsV_sBtDzOO0TAgVDO6gfyNJIBHOwsEdeU2MC7s9QEUt8WOIv8YA&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Furtastic Pet Spa photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Furtastic Pet Spa</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/shepherdsville/" class="back-link">More pet groomers in Shepherdsville</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Furtastic Pet Spa?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

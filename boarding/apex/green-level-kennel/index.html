@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJi5G318fsrIkRuXd7v1PEnCM%2Fphotos%2FAU_ZVEHy4PMkM-T0eFR-0KVbN_vxVNNARhcegWEwXv8aqvLfI45n2IGL6KHYzRsou35-LYpJtbsqYY9cg3sYUdd8ZBGX6jCFpox-AVR6XxNeHK7vVT-cClQGTjq8D3iXP_HhIvfaFIk_UbMncGi2pUbujcfA1LAlOcEc3CKRxShwLTa7-VNaRYbcrq15-sc2pAblDyLbfFAnIHFDOySPrpfwlQnKUpqaeto8p2B4MyVaOuQ_5yJfjn_oFXo-8tCpfuUjaEFfIe1AKZ59o4CLKR-KiiYccSA5Cfvk7oiWiQp7aUxA4JLS7NnNHWM9hwY0-j_reeqbQtGgOK-G3TgQ3K0qmD2C4br-5CF49sZK0wJ0xI74E2xz9noFPVWJazaUvsUxwejnAbNb2ZpZrhub3LyJeOLW1xe00TEzDiS9JgLpcf-G7i7fx0DchSfdKtktFffN&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Green Level Kennel photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Green Level Kennel</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/apex/" class="back-link">More pet boarding in Apex</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Green Level Kennel?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

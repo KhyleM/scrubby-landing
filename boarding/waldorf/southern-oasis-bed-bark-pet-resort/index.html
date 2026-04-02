@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJzTsbEeKmt4kRTwLlFdnmhvw%2Fphotos%2FAU_ZVEEwMfZvQy-t0HEe-ClRQaWBBdGds5D1TxyyhKknHPEMYigBSc4W8MwIx4uWndUcJibPw7O9-9ej3xDo8_BwT8RuAgng6I-1RXdzJ9K_-6i1tbvnzb9s738yZvmUnzzcYeaj7ZzDjsL5W7tF81xTALZ_ujxZiip-DqxANIaOoyM-1SX7-mmIjeSxS63SkwGvZsGCb6HAQM06LWqYr_q51y2B4Ee9IPrefMRQKyHwaIROtbRLET-948cIh2XT3bRLyilaXXE9JlN041bcmYE_DwTFm8wkGEXywBfXXMN_vAgng9EjDzPm5fFtO0kOR3zoDz_cvCDfPvUz9goLdQCFZs_6vklrZnYwyuK7oXtbEq0uOXN-UJ1iDe2gJ1lIL_MdHaxi7gAw4MiQgo1VpJC-ScW1c4zg87hahS9nBscDYwD1-PpZxqjdD0mt2HN-6A&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Southern Oasis Bed &amp; Bark Pet Resort photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Southern Oasis Bed &amp; Bark Pet Resort</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/waldorf/" class="back-link">More pet boarding in Waldorf</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Southern Oasis Bed &amp; Bark Pet Resort?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

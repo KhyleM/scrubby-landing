@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJAQDAunwX9ocRpsNmZMTb6ZQ%2Fphotos%2FAU_ZVEHSt1IquWhqFzoa7W66_8XC9XW7xTWco7wG38_ahAwAkqKPdAuBgQ191ECIjheFJG4Lfl5g-aWX3Ii0YPwWR_dO7Ux3xwPrYe44YAjt1gJ-fo6ptF6A2uw0Iyjy-Ic_C6WE_F6HETTGRKP0FaExXTsWGpRLnZbmezsJRK0DcsjzhQua2bG-Od2nyg56TYqUAjsGPnXtOUnIkJ44PxDd4URcxLauj1ezDsjfHW61w3YgsTJdMZaG0GSh2-8wpSVo1RuYpptO_fYDugIZaogntEI6pkqgH-UgrNjC3RW1ByzhGnnVu2nB-Gr5Dx1szGO2zS3PEmYVw7hoVm5yUH3B9dCXxC_sDoR3iY0SR4ASchDz1I8NZbvvFX5Ax-jSCR1j4xck5537Qh_SaaEUFeoIBDVKNDqC6-tFsPAGeHxaPCioWWgW&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="K9University Dog Training photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>K9University Dog Training</h1>
@@ -197,8 +196,9 @@
                     <a href="/training/jordan/" class="back-link">More dog trainers in Jordan</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of K9University Dog Training?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

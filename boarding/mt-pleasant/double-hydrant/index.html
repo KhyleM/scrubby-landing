@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJCfO-wZooNYgRZ8MhEpNrOUg%2Fphotos%2FAU_ZVEHGPeKEhlZoT97sr8zUdqy_nxZTu1xaYSurCVNROvbQ87Ypm_hWwWwv45_-5X_ME_btJun0xBtMgVVWYxcRbIFIEqXBabFHJDWpU4yCEKuuiLyIGlKGlqaqi9Z4SykNOTmk1jh8ZrAB2X6mC8F9pHG6zuy6ZYRSdCc0kxRZ-0gSJvFFkhlXv3-CBL845thrCaDTFRTx8mWJz1ur07mghwADsdEQ88qdCqRT4l4vDD_3bJ7OjgypCBNJ_apP3DJw-ifGCFcu2P5dYdxGliIyYB8IEWDawYsHLQbMQaNtYD9wJQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Double Hydrant photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Double Hydrant</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/mt-pleasant/" class="back-link">More pet boarding in Mt Pleasant</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Double Hydrant?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

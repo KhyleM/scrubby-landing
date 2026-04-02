@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ_fBn4v-fj4ARCmWuVcHhXYk%2Fphotos%2FAU_ZVEEVovQAIH106HkXQLFlj3uFgCREok4QyvI7FXuz622iGmch8l1qPxk4IILR_8yZ3i7sPYsE_NAHxa5S8zb6CfzM8-Mn1ExrNv3cJNFyHTgWu_K4ODVihlQIG6RkMm1erLg_VGnPif-EpWWZUHl6g5kLIkwy36znu_jFZUEqQ9Ktif6VaOyHi7H_2tcgmGC4qR2hV1EHyfjY0MqA8Jkr_MmprMRiQk3kJ_5T5KezQJ0FUUlQkMiMHQUUMLwLpaBgEERIP8gKgtq-CHBo89vRgxN_qSQ3tg2L8SY02U142lAQkQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Retired Couple Pet Care - Fully Insured photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Retired Couple Pet Care - Fully Insured</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/san-mateo/" class="back-link">More pet boarding in San Mateo</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Retired Couple Pet Care - Fully Insured?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

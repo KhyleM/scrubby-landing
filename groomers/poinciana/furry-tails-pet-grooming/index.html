@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJdeAuQxOc3YgRcGWvWoxdx9c%2Fphotos%2FAU_ZVEEDXX1c3T5-nf50EfqrDZ6oHjgKGQg5CziJmE3EtK6G5Lfwv0e_C75I2pTyRxrJyox1F_3pH3TPfRr-G243x19an66V6m6iYdlGjzoqCC3F58JgXlGFtRgZIaG3aQVKzjnsl4F53Jh8X4o3SHoZ5jh2D2csEjhd-lp5cgM1SPfqfeNuEdUtXzrNYwG__GcRHLp9JgvwE4rdLOAVjK-2YHMYgSPgc6Pd6M2Khsj4857O-GKDSKqDn2JD7MbewvduekeEAbA2XBR2rIsmfqJYVbqpvwG5TPc8n43wKmA34jc1TpAtjo_HxbV6Sx28GgMFAW-kaPKcgMLTdhkZIr4B9o-iCjJ84ftOXCsEnfwMIokAFL6OtisqVBHVBWmlrsDKoqU32Q0GuCyVP63a9UjXnt42kqDYysulib6un4mfNk6AbIKLgJ06vToHWPgcKLZa&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Furry Tails Pet Grooming photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Furry Tails Pet Grooming</h1>
@@ -205,8 +204,9 @@
                     <a href="/groomers/poinciana/" class="back-link">More pet groomers in Poinciana</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Furry Tails Pet Grooming?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -352,6 +352,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -362,10 +366,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -390,7 +390,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

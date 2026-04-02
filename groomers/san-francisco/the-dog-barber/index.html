@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ5XJW2R9-j4ARKiiD1STaiBs%2Fphotos%2FAU_ZVEG5Oze3MwggAk1SLQLa3Y7HEdXRMplx1nY4MujCUxR3fl9U3FjoCv5JFjLR-xEnGrfCSoAxuD-Hkv6wNwqpDmBqbaAPA668m-CbFec3R5mIetI6nKbHQkOaXUyzUvSAJKvpwDRpagSju5bcQ4ZRcUj7Bbid17ijQRI8ugWPQcRif5B6_M5B7RzOPcBf6RFHRCVCOwwVdadohyqaPrujftysoj-AnkRvyWODChKorJG_E0R1V52kc63s6UoAq7alLmM9mRoQNpjNNeZTgkSJpoT2lE_5GmRkfOk5UH2LpvPON9YUQ0WRe8e0BwaVIOEm1qr6Bg9NuhoDu9BioMXlj3rAFwk2eLAfNtUCufQ-gZmtje1pVknoNeGjAAQme79Af6YR_nEpg7Wx7l1glQSWphHtlB3BnU8LbdRbBNhsWsKHr8g&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="The Dog Barber photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>The Dog Barber</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/san-francisco/" class="back-link">More pet groomers in San Francisco</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of The Dog Barber?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJJV_9MITNj4ARe2_54I6OnCI%2Fphotos%2FAU_ZVEGzwccpKAe5_ovSXjuDe-Y_40PeTF8NXt0Fy_oEyE6HPr1Q4Pgj31aChFXVhZGQLx5_FffrkGSnwgSf8YnC7s-L7x-E5IBtfifyH-AorvSLF1C4SUDlaQmPG7ODlNTU-K6E0eAYbcgsCy51L8oIoGjBz3rnOz8CRj4LWEPkT-H8baT9q3Bt_WZv96RNSrifKjZJNcvvl6MsYU5BVd8BILUwjru5HVpQQd3-WxH7_LSpk4nB0jBJOcBlIkkTJBw6O2x0WAWqtEuTCR07SmTTe6uSCd1bR1WnSVOP0zRVmcAGlg&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Tansie&#39;s Pet Sitting photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Tansie&#39;s Pet Sitting</h1>
@@ -189,8 +188,9 @@
                     <a href="/boarding/san-jose/" class="back-link">More pet boarding in San Jose</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Tansie&#39;s Pet Sitting?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -336,6 +336,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -346,10 +350,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -374,7 +374,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

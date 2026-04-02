@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ02VDPp1qBYgRgh0DRbFiS-E%2Fphotos%2FAU_ZVEHfA0gGFq5JH1x36o0xnvgC1Wb0i3-yqkdEeNnRQjhH2MdM1ncD7FkkbjAGl_5hZFFmZWF9S2MnzYakGJt460OYx-tGqA08vHosoL_XfgBlkzjEEXu8C3Vwv8oBPzTbzcWdOHmMBbgJbLqwmOy8TRPt3pT4yitMVrnncJuwnDVXheP5ZpwSYr05p-iTtp6UXIhSlfkZNLvglD0L1lfIkp4QJw__9xO6WAjRKOUYnC14hSQT_HtJ9zufV_zF90BACHSB-jiN98Q477iU0vy_aGUF7TBU4LXrjaNgDN8k9fhANzHE6etHEWHQvbT79dRrNeqqkLrmb7lV2MyM8_thWVZ4UwtrZRhcUaqs73JT2gIo0lwP7YRPfOY6bEqSkFFCKCJioYmn2c3uGHXDmFKYvqpz0MIoFVeIdKs0H4czmURSxFaSkaWS6jot2q_lmlSZ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Greater Racine Kennel Club photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Greater Racine Kennel Club</h1>
@@ -183,8 +182,9 @@
                     <a href="/boarding/racine/" class="back-link">More pet boarding in Racine</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Greater Racine Kennel Club?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -330,6 +330,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -340,10 +344,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -368,7 +368,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

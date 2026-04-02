@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJFYqAUa6kj4ARyH-x5ftGjZw%2Fphotos%2FAU_ZVEEno-xB72ddLI8ssinBYWQUqexbZXHjFkfwzxFBciJ6aEk8o22fzubUUusIA0TtYTS1n2oY-8nIfkgN2WsE1w0PG4i36GSKZ_IY58p7iw0ocmQoVDtIB_sqxMTLXTN8MjY7sQnPg2yYeP-hOy9iW_O9l5V14E-RVck5xWuXg7mJ4QGX4me_2j1kfneKra4HCQHiZxEs3-D3AO6toGRTws77kwG2JvCwvOFMAhu1SmNBM_dtCV481dUfGwYpVssLwlmpShC9PmFFQFc1vE0Fe1fgZiQe-4sO8zb9LcdtM4e_fBJIHitsWTf844qMQQp4_DeucHYNufvUXoQ0e-3I3Q0meYGbQi-_qOKkr4ziy7zzZyoLGr2ahTDSrKNrEKuRHCF_4PBsBSNymmPXs9FViK1rn_etx6DaTTDoF627AJ8rfw&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Mid-Peninsula Animal Hospital photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Mid-Peninsula Animal Hospital</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/redwood-city/" class="back-link">More veterinarians in Redwood City</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Mid-Peninsula Animal Hospital?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

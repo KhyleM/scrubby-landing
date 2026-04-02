@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJkw04FVNcXIYRQD2iSu0ZYdQ%2Fphotos%2FAU_ZVEETavINZ3TaLUq746EVqXyVZCJutxCJW3JVojCV0YFgd0kcL1cdcLuzBeEfMJpM_qQP765k2Iobb_1cdk2QSK8T3ezUJKdTCT95Zl6RJixNca2i4XrIZ0W-SCGdgB_5rWhZx8MrZ9FN50DUnOazJxEi1oGhvjpFjnKeHAsLMfKVva3Ydhy8U_cYB8W7TXfxL9iYzQoyHu6vM5lj1-WbApxZKh0h9FYx4j2QPLEL1QRp1hox1EdR3Gvw_j0N-Nne0Nsb6P_xw949YVWGMPY_CeG9S9WxYw2pGivHYkAncWCLsJhhkYZs7DpeEIv-0Cr23CuKgHgb70Z-T5jUxPaQUX9-6w9IkP__7yV-ASKiywybskb7qKQXlg_9gvFe291xoW2JzfOuELklFV41LO2jUaBksR-i8qE--u8OcDpO1x5uUTFj-im4LjQxKcIs2y7s&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Pup Pup &amp; Away photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Pup Pup &amp; Away</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/san-antonio/" class="back-link">More pet boarding in San Antonio</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Pup Pup &amp; Away?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

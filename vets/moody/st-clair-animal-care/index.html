@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJI8qtdxxyiYgR6iL44YUf9jw%2Fphotos%2FAU_ZVEEy5XDQTDlpESstcFTMpPdVEKQgLC70ksxn8ShTuqgyWB5ypMjXCSeDOpdL77NHj6mlycaoXyWL7lgxyULgVgrqtclvyVavRmMLE0EH7JlkdeM-nAqslp-sq87a6JsbTUHli4bDct3L1DKDnw9X2yfkOiHAQ25lGOtiLBhBCrJtDYhH77e9E7vu6gYnADFGw5xLsrPpqt8TgHo7fGLP2wT-Lt5yh-GxG5UlXBgTO3Wl6XxTmcico6prILgQ-hmrcdjfr-0poVROSxdfUZ5MfrUtYXoowMBjJmNtcUo1KxsMq8-hFYf7EAntOLNxdErEsqE6PQ86x_ZVwUZcpKDe5qPr5fm5jHpWgQukC8fg9gqcg5RSCP4jxH8OtiI84IIMfzpvwW58sHz8nCiw1NMfEZRbGxpeFJ9xjAYuVB3AuUM&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="St. Clair Animal Care photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>St. Clair Animal Care</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/moody/" class="back-link">More veterinarians in Moody</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of St. Clair Animal Care?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

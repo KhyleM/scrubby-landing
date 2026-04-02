@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJSX6O2dcZBYgRFaB5B0L63PU%2Fphotos%2FAU_ZVEE1t60r0-L_Ok0NzZF-AiiCT0A2aSftTPbNnSANUEXkZSxnbJCObWMos-GbQVlXhyy4eqA1aovv6akBMcvbTyViKY8BC_64RBznGB61qy0kBpRwfg8tR1T-cowPKIv9Y7bqrMGLWSV_M8mRQQkKAKc72fRMoTcI1_xiM8GLtDAlDqGjyt18hRUJeITRwuZNNCMay2I46sfz22j2vWFhBFyWwl7IblMrLpLtywCPxwF0KQVP2xRUTwTqvWN1ymuw0PWQ53b169p7iC-eUFeiW1Vd3zq6Jyz_m3h751sYLvyRQvRYlMQNM1fxhT102VgihdJR0trWUXZ-YQBfbu_LHalBq0a65m-jU4Xtw6iH4dTQEelj4Ltb0FjZtAsLUx4e5XiBTwwzVDTSmy4fRcGO0Igs2Oilb6p2Ha2ywu0iXuqNibnykBmwr41Yb206dCTo&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Community Bark Dog Wash &amp; Groom - Bay View photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Community Bark Dog Wash &amp; Groom - Bay View</h1>
@@ -205,8 +204,9 @@
                     <a href="/groomers/milwaukee/" class="back-link">More pet groomers in Milwaukee</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Community Bark Dog Wash &amp; Groom - Bay View?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -352,6 +352,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -362,10 +366,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -390,7 +390,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

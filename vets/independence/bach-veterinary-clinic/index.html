@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJJ-bQ2fS-QYgR39H9UJA1FSE%2Fphotos%2FAU_ZVEE8ho7CxeNDDaGV2KBJ7PUM5GBKbxUatu9F_iQTjIMmsmPpXe15eV5ZZH83xbson5RI6vRidkKl67bjl6Zl_Ie0LZzTfowoHmAWN1Id04d0pV2AmjwDWbomtczopIMrXIZy7d0RtnRR6KhWLKzhr1Tj1QTgMvv6FILEc6_JBHqMf6nStqtvojefcX1YljiNMc_B4pjt3WvlBN5DGT9oTcBd_sNtangUMyC0qxYVFgnm8nCYWipN9wLpU-78o22ah7BmnnHO9qi8bWMQQF2PrtwvVSbDht50ihrFNwZ6gGUQ7JgTh7dl2W3ibbLzYi0o5rzNIEVodldsDso9sbGldfA7KdWQ6pbJxzssgAog7YBBWz1rMVd3exgJ4out3ddQqPTpXdFGV-oIz6GcTVWMJ4nnDvpGPFNbYbWqTbEJF9WWrEq3&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Bach Veterinary Clinic photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Bach Veterinary Clinic</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/independence/" class="back-link">More veterinarians in Independence</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Bach Veterinary Clinic?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

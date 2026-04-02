@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJk11jVOYRTIYRU4JVLaPG1O8%2Fphotos%2FAU_ZVEE0xmINEkTgxVCe2zXay-Wyr4FBGtgF9etAfBp0ylenlwYqND0B4vmLRpvaXKphe2NoBxJoV8EQh73sJLuCLzzgq3OOZRDIyHw3MDFhRnvdcJvjJfkq7r5G_u7OJrQej_yoRe5Mec_EXniFoFbhYbRX3Vpq2lKajFR8y84kQr7R1ftNieu_mSK6TOdK2zj1lTopqPLwkjzxFu0Yv6GTO1jNoI7Vh6tqNSOWuzzsiUbW5k7k8K_diZwrrshrTOh7zZSq0tIYubzZJ3FaKcYqZ3Cl6U8Jyw-gf2xadhIYYoYrP7QxnKXPUhFdn__UZ1thCLDD-JuKyQf1yPIagH3q2s_rnw9z57dv78h7kksBZ3v3Gq9uULrCQrgY1-oZ5IaMhb-kirIgpzao29Rysz_9w0r_W0kOcNFTLsS-2SdEp8LTpw&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Scrubby Dubby Doggy 2.0 photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Scrubby Dubby Doggy 2.0</h1>
@@ -197,8 +196,9 @@
                     <a href="/groomers/allen/" class="back-link">More pet groomers in Allen</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Scrubby Dubby Doggy 2.0?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

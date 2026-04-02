@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJhep7XhZz04kRSkv7_gqXnjo%2Fphotos%2FAU_ZVEEKleYfITVTinYyS6OWFDzndsG3u2Khe6KIhI_AQQ90raYdz6pZVhART0TTAjtdD43qdOCTlpn2pZGufdSozGXtc_lv-oBtJqLhx6R_PYGQlV5wK7kHM0KqtYRIAoC__G7oAqhjGy3mjEwnkiz_3Jqb4-EwooOKCkcs9hTZaji1-lqTl3VgNZBDbiGeR4WuSZvDo1FccVzAVOSCvR3V4a65ohhW4jW8aSc6TYjaZRG-YQoTs92LDbuwKnz6JwXOkRzciniSqlgBMS5JuAeFKK2fzOg3E6tH2x4AV7V7GLoVSA&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Curtain Call Pet Grooming Salon photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Curtain Call Pet Grooming Salon</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/buffalo/" class="back-link">More pet groomers in Buffalo</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Curtain Call Pet Grooming Salon?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

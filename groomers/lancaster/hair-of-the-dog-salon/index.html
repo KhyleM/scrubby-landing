@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJQTd1I_aKR4gR_ywqmwmkR6s%2Fphotos%2FAU_ZVEF2ethgbQlqx6Zi6BEONMYSRxNI9mtmKG3k7SugR4LctKn55PKv39qDG6C-2MjP0wPhwC7uLguLcxCs1Hc6rUQuWCH8eNPKSsC2AjY2bFzYgGnRz8eIV7_Sx9XKU46KKlaMzMLdtqHvq9Na1Cgmuyj9GYbCZBBl26Jnwf1A_HzILUsEvRs1PnE1QwIpoYYTXdyTtSBQagijqPGm9oxx2-2ccIpt7ODMtm6uiAsEzC8PIbC66eSe3V6pfUZEd_4dDFTEVCbJsB8gO9QW5CAsO9FiSooTzSH-hko0keeZfSf-OCPI9zVRFetkVEGLiZsseUAL4CEbIYosKShjFvD4F-XGNk2lu6HoRcIa4X7YFbHHYV17jQG_B6qMbAunJKY_uaYMSsR8rjm9MxAdOrs7ccbsd7RaZMdIXhsyELrEPXWmnw&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Hair of the Dog Salon photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Hair of the Dog Salon</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/lancaster/" class="back-link">More pet groomers in Lancaster</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Hair of the Dog Salon?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

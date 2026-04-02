@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ2VKZV2e1woAR1LN1Pd86CoQ%2Fphotos%2FAU_ZVEFGwEbpVqp_ZhJ31stg7zCy1dDUzTY-jkLsAGnHabH5utYVWG-quxQf4ea3-9xZihc9VUGDRqHL6C6E-A3EM3dQhBd1ZZYIpCOAtoDf2jCX91OguX1N1iVYi8w5b4VQa5rHJK7_uhMMOdazrY5-Qxjc59aU8MZfEUhN8l_YxIzZYciGQtEbsuBlzdccaOHWMdTHZ30vfTusOF75GK4I1KZTCwavOuBS2RQ_weJ_cV2uUyKEnWPnKnhvkJB81qmmLz8n2jIxAVJahVl_4o2EQkHr9NhjHswp4m3doBOhDw-qlKxapT8JXSWnV5og1ygp2PBLssEo9Js1O3Im4rc2IcMxWVO-NoQJ6QLkVCqeO9-R9mspzFigidA_VwX9OwKye_kgoEa5L9wQ_ASIX-pX502xu5FL1WPvrbU6ZEdd-3nqiYD4&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Bella Banana Pet Spa photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Bella Banana Pet Spa</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/torrance/" class="back-link">More pet groomers in Torrance</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Bella Banana Pet Spa?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

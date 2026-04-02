@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJx03R4KcY9ocR-Z3acSQavUY%2Fphotos%2FAU_ZVEGQ4ZJPv1SHyVeNxrad1fSIat4D5KimVt7UVLw5rFAMZRqIeoQoaWJFXGOKbcWgEtaa1r6ejX74fcV5Zwf8Wg3fPVI9hKgSOlcaV9WwgbCvtEUMpilr9obk_oCYE2TD4Io-N-ZJf9FsMPmdI20Bxn_G2H2QLdP0qOOz8ZzexYAjlAgdbozfzVxr6q9-H64hqAbQi7Z2O8AhP_NElT87MMUCUnnXTnAYYO5Zevtqavxbb8Vfadzxq3ScG4D6KOjF5IxSOljygEbziDyZr0WjWAOaSV4NHKWNNAzS6Cw7mmysx_yRDxECfqMy3o4ySQTHaLZeTQwCL_-bzNjXyXoyB6iMz0-z7M1_ZeAfhevmP1dj8h8sxvzN0zE3Xh6r2lTU-ESKXSRKcVKyHwAAZkmrJPXeASDnu6kl1u0dYbm-6o9szA&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="BluePearl Pet Hospital photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>BluePearl Pet Hospital</h1>
@@ -201,8 +200,9 @@
                     <a href="/vets/golden-valley/" class="back-link">More veterinarians in Golden Valley</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of BluePearl Pet Hospital?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

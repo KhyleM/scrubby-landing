@@ -77,7 +77,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJP87e7xQjsYkR5Ff7hT_faFk%2Fphotos%2FAU_ZVEG0_s51oanxcOpqlh7LDbUuX76b9sNHwlC03Gk4LpYh-VJhmB7J9dRHEvxo2k4gS_PuTON0owHR0tgxhzSWLXD4D-9f2hd2YiPfEZTtZFh7jKshLGAmtI8SZlqt9iB7LYNqN_unnmEJCdIQrUxpM-iHPUvsldnyUZH6SsxM4iLqbKCx5oZPPuLqkGIdNjE5pI4erM78_2quOcuhqwlKM5vQf57wtrV2jHET6JqLxPCvm3hR5Os32mRV0k2VPwZTH9RRI7QSlHMdJuFz0LaMqvvBo4jUQKXAwRtrcCLtwSDoQXqnw68FaGbIMMdzP4C1NHJ-1nrQ6xq2Vd0SNEGXehcBtTg-wS2uLSqCGvOW0FQ8MkvSAuw34sVqbje4Bi4xi3xmpRpfNmc42ZczYEOLEG8O3Wp5Dx47DBlzQMc00GL2vQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Critter Bath House" loading="eager" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Critter Bath House</h1>
@@ -190,8 +189,9 @@
                     <a href="/groomers/mechanicsville/" class="back-link">More pet groomers in Mechanicsville</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Critter Bath House?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -337,6 +337,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -347,10 +351,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -375,7 +375,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

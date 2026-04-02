@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJdRXKpZLgx4kROOsxSOfiJqA%2Fphotos%2FAU_ZVEH1rcxrH5pZWD4ogpdbUe7LchZLuI8zKcEDM8ZOEIa6pg9sMgXbKCKxLOEIrE-rmdA7BgHLjY24GO30R134qgUmP5LxpWW5T_GMtzdAqzjPYrchQr6OjTihXRgSytDR2XGbYPC0ZVU_YyFqkUL2fxT-EVfkI8C6IacvoRgUKs2xwLPr5mMWdUmWePPSDxVGS_rQyEU8nvNNBU5258IINmYvjyLdaQPZYVatDjN9uX1V7rvkLPBx-EcRQ7Raa3VzaqJL0EixfRcyeBkiPr-2ooH9teqGIQ5v3fWPue4v0CyB9eR0ukQxhw2y5spHmpd4zvkKKHmHGy97xNxuybNqHcFLnuOjUGpFT8ssacu8tg6iOemSriHpSq05lpFp-9LXcrrZNyDO3vIgY3XYHQ43cZ9FzQmFP1KHDw0mPy4b_ywDEQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Fallston Veterinary Clinic photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Fallston Veterinary Clinic</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/fallston/" class="back-link">More veterinarians in Fallston</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Fallston Veterinary Clinic?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

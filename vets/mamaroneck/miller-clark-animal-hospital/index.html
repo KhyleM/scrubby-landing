@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJL1KKggmRwokRjHSquxtNwxo%2Fphotos%2FAU_ZVEGtGsL3nfysF2Ma20-2E8b1iGqH39zn0T0PvcQeS5PT7ICb3qnk4BWWPDQAj0E1ApF_TNLQ6LOBrFp-qIbsOIjVW-dVPItPVKQPle7K7TPblZYxgFXhi2LTjzwbvxZBUdbpQXuUSu2ASJkOTBr0RgCP-dcBNS-T9JDL-d-vQI7e2KFZh2ocGdSu6URIluaDPL4dBoJLgN0HEyDV2iMCn3SS2kkR5G0rfD-YgTpbG1LYeTb0ViRPwDWPtsle_xSs8eSmXf-K2cLRLZK3wbRi-_KHkJmkH6pdF_6CiXzm86hdz9ihzJKVQ9_PYyonGk5M2_k9JbY64Y2XH47yF8YXfMl3xVQGY6LJHVyNBxdT7lqbXlSdtFrpE27T0jX2-BEz8sjGX08APfn6RMFRAkWf7ALeYD3WaP4C1ZdEUv4-SLkeKQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Miller Clark Animal Hospital photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Miller Clark Animal Hospital</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/mamaroneck/" class="back-link">More veterinarians in Mamaroneck</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Miller Clark Animal Hospital?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

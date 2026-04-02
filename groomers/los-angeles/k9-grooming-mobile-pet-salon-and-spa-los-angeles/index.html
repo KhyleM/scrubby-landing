@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ62UNCMybCSwRkAFUOOK9gek%2Fphotos%2FAU_ZVEHDaTkEjMfYick-lUZip3JVqx4eaoe1Z4uXri2Q15qK0MV-axVOG4vOWhHygNMOJkugxGRsGk5xXbYo50ZiiU6ShRw525d85BBoUQ-hdyvVsImeDeVmAE6YcVgE98XDEux2WzkyrCyNn757Vh9TobkxvEQ1e4zduvTwtDZcKrjDjww1-cVgeaSjxHRvyaYWG1iSRn6Q4nvbJOadEfr3qXj-l2pbjLcMGUv7mYZ2Z3V1xLhBcb92Zgfe9is-FDDeTh8zzRZeCyUWOXJI7Z81_aYDyXGd2LSuTr3KcAWs4ctaUY39sSBmHSYd3qnlVex8NS3tZtJAROcd8OWPw7cWr2LFwdJVw6tdoWCKXc1ph7kWYt1oIFbQ8Sj9ObAw4-EYsIJUd3BlXRIqPaGa7u1nGTobZ-abPVxG3kuNgHBm7Qm3ghhbB7hLqKfP8Lp2sg&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="K9 Grooming - Mobile Pet Salon and Spa Los Angeles photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>K9 Grooming - Mobile Pet Salon and Spa Los Angeles</h1>
@@ -197,8 +196,9 @@
                     <a href="/groomers/los-angeles/" class="back-link">More pet groomers in Los Angeles</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of K9 Grooming - Mobile Pet Salon and Spa Los Angeles?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

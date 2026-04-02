@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJjR6q1Xdl54gR1dQSn5zgfDQ%2Fphotos%2FAU_ZVEEZjrm4nZ_D0j9FYIJaMwbLtpfZ2iLtGIgXb5enJ6EgczEQ2gnSKQhT5b5J8q3agq4JI8oDD5aBA8PBT3nFCtZax2qjTjB5TeXbAyxtRnsU5aQ2jItiwPRDOynRWoMwKx3_L6hPloDhzwEOdM82q3K0xIDUTX5aZ6hZ1HdiTFZrTFxQiAW-W_2swA3hlf37gax0jujqoRA6o_cx29EL3MPwozJg8M7cONmrc5jBEQgIZSiBoYXw-EwsYdz4TJvwrCrkHi5B1oVSoV2YGZUQ8c2iMW6qTNkHePFXds0lHuk_7A&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Canine Linguistics - Dog Training and Boarding photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Canine Linguistics - Dog Training and Boarding</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/orlando/" class="back-link">More pet boarding in Orlando</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Canine Linguistics - Dog Training and Boarding?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

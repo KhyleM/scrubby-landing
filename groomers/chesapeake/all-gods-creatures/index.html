@@ -77,7 +77,6 @@
                     <img src="https://places.googleapis.com/v1/places/ChIJ__9Pjma7uokRGbnulQ5o_tI/photos/ATCDNfVNEHBEaToRu5V9YVm6V6jdx5nx7meDsF8bEjwBO4pDAZ4LOht2V62yZT8epS8nQ-ZQRgh9cMSYPBIb2tUz4IMYQRWrW3GoM9qEfI0AlG6Fbb7b5TifXMOnQCllX5nApLeWSYciNNNGD6dB4FmQVrmAW3SWKB70wbPRKa2hDrpGlLR6fC2zfaAq7DHblCXIQPp42yUKnO0deT0JG8PRmzwz7L6w4LUzjfiPVdR0fuAY5QhrA3KU9HNAnGiz4O9Ou5GyIO7SRMHV_2ipe499eITZsc-5gOZ8RM9DekbLsaYke3qU-hN164B-U_7OFZlsKLriDnTI1AWiuRpaZSFiOVJYIHQfS66maHjWr3L2_CSVlRNrlFWw7ErnuE-idpx9b-w2OBAd09HUSz3HbbL7pEZbuf2-w2Xv87H0ahdmAXoxfXJMADuIvAfI_x_WLXEF/media?maxHeightPx=400&maxWidthPx=400&key=AIzaSyCpmbfD6svBtJL5OpHfeph6xPVzLlf7F-g" alt="ALL GOD&#39;S CREATURES" loading="eager" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>ALL GOD&#39;S CREATURES</h1>
@@ -187,8 +186,9 @@
                     <a href="/groomers/chesapeake/" class="back-link">More pet groomers in Chesapeake</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of ALL GOD&#39;S CREATURES?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -334,6 +334,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -344,10 +348,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -372,7 +372,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

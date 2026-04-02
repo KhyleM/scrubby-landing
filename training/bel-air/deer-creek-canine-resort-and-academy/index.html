@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJaVto39Hbx4kRZxIWMFA9qjw%2Fphotos%2FAU_ZVEF3nUpom_-evUR55g-LXNkw1gk_8GPmocB9CsvYA_i5IdWBPTTnJgoaZKYEQKIvrJWpwSbr-2enCIFQmBqjE92xqSvH-P8N7I7wzfb5Nv3YTg2HJmss4dREVp034TNgoc-jwiXLU--rM3s9TxnhILQ5e--CFYMvZLSfbLnkLWHW-zk9YGnyG5g3nwektGClsWB3Q7az-Fxg7iBCjbi7vETx7vQ9atD05GtR6tCmmLuBfIybvI8cwm7prJGSYMCX6h3cXr6dLuQzgS0ZsMqWsz26keL-tM_3vqV2WUHXnfAwSXJx7p6tD19mjX7n4SfWxBvxAp0sJhLZxynpKUjxE-FgtaOg-GJX1EWYhjuL5_MObwwK_W0eAf0y21l04qc_pO0ZhAN_mCSaAWiqfprtaC37LJV7ltkaDDss_gPCKacX4f6Q9uXRrO-zPfXVA_uD&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Deer Creek Canine Resort and Academy photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Deer Creek Canine Resort and Academy</h1>
@@ -201,8 +200,9 @@
                     <a href="/training/bel-air/" class="back-link">More dog trainers in Bel Air</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Deer Creek Canine Resort and Academy?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

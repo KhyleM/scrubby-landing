@@ -79,7 +79,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJMcuZ8HhG9ocRpWJVERYVe3k%2Fphotos%2FAU_ZVEEUWthPT1t6W5U9GL0uPLP7N48QS-MIlQDY_MaR8CSGHjgBRoFGkqATSsqjS7QbPRex3seRhUpe95_Sqb7FqVTDvkhBa-xQhCllePKYvTCjPab_e7jfw8uBI__hp0mDxqcUmJf3FlM3kY0p32MD5Iw6JbJt_qqVDTf8lt9ZWJasCzWeD-uPAPhhzG5HADoWqIL3APjeP20bp6np0qRRUIx0lEtk6n3pDh9vfW0LsJBm-OFDvWDHp6Q1VyP1fy1t5vPrdG0XBwADv4BMmtomDMqs7ZF3-QdJ1ynDozy2pUd6Ge055emCAkWVdgTxErbDvyrg3xlcdFk-4_UOS-OoBfLCPYiahkqZAmZaP55oHbKO3bsUId1NuN0iZ40igXxMRB_Ein_97Zkg6BCyyykBu-uyOqv6zf-SK0sg9EgS3-9Zcw&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Waggin&#39; Tails Retreat photo 3" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Waggin&#39; Tails Retreat</h1>
@@ -193,8 +192,9 @@
                     <a href="/boarding/elko/" class="back-link">More pet boarding in Elko</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Waggin&#39; Tails Retreat?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -340,6 +340,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -350,10 +354,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -378,7 +378,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

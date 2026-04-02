@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ8wnSv_CDUocRSllxKpZeBAE%2Fphotos%2FAU_ZVEHb2HZ_4RBAkvSovTu8Q8R4J2NqX0lQXzl6thRBmMyL27NgVMKBM-w7bWqjbqSDbjiWflkxcja5tKWjfI6uN2SUj6QQUdsqyR4YrB6yijRYktARRN1HQ2ely2YNqkQdKa0pkFU1OGd2M182c09dXOCCstatMnxYflZcJYTAec9qu9I8nXMt3ozb6VxXUNiEdZt8cnbID1OcJbApg4n1C6jpujy4TcR5Ggv2Obg3tKmMeiGBo1Ee3k3_UoYE4Zxf8Khl-bI_bgfWvE1mVkgaD73IBAwdUaCC0ooky8Ka3Y2-CQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Mountain Point Equine Hospital photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Mountain Point Equine Hospital</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/bluffdale/" class="back-link">More veterinarians in Bluffdale</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Mountain Point Equine Hospital?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

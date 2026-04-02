@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJQ_28KhG2j4AR3vSTbcQXqmo%2Fphotos%2FAU_ZVEEbsfqFU_MR-tPD2jyi8q3k1qDAILgVZ0O8AIXoSNn4xE64QV7B7rpnAwhDpgnJ7H2MrkW31EinN3P0V3xuAuh0kA4qRLu5lWjdX_QlrhDQfmd7zaZJPGLe2MWxSAbP-KnCa7B8zIozwsWaAMS-w-ZS_rfTKcN3wYa1XTT4ZNxjWskowSlGA6EmxVhbvboqrvtP5-VVMLZeOwLpl9po8hLL6kjTQaCbMMoLAe_dE2RHUGMgAGaj0k2QgbXvEU66MzjuN8MHSsnivFSB4o0Nuz7P_6FBx-NGgCsMMroZCtEJLg&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Klub K9 Play Center photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Klub K9 Play Center</h1>
@@ -195,8 +194,9 @@
                     <a href="/training/sunnyvale/" class="back-link">More dog trainers in Sunnyvale</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Klub K9 Play Center?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

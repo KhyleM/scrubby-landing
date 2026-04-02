@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJUUv7BUaGj4ARPmsz06cBnuk%2Fphotos%2FAU_ZVEEON5swJpmCDHtJWNZ54jCMACEmmJrr5Kql36CjIzDoMHOIUIjW3w0F-5hZoG_VNJ6VrSw-lGKgduqcw0XheiWc8O74v8IBzIb-ZjATiEn9h1hu-wNi4x7SlvBOtbhhT5ow6SNpb0dPbTD0SY7G_VDfx55LR1JPvxOQ06yn2EYrtE57YlJIv2EDPdljSfOLjp2e-45qcwgJPJO8IKQGVCfAOcZd9aDs_J0ZdRoeI9VTM55wJNDoJZly8vMvtX2nZZIdu2FvlyWwldT4nSzUEVn2zaUYs3UoeJa8MMPZeqCLS32k1fTBPdxy2A8i5fAg_vGZXoh54FEaCoSR8LW_X5fBAK3gur3UVG6nLUHJ2E4hVB1QTazLWAngIj6sCVg5OUL7e3m2krZH5NRycMglLIez1t5VgvBsa41kUNtOm0Jqdw&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Doggy Lama Pet Care photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Doggy Lama Pet Care</h1>
@@ -183,8 +182,9 @@
                     <a href="/boarding/oakland/" class="back-link">More pet boarding in Oakland</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Doggy Lama Pet Care?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -330,6 +330,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -340,10 +344,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -368,7 +368,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

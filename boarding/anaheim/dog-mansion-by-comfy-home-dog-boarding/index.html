@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJDxDsVm7X3IARyqmy5y-iv_c%2Fphotos%2FAU_ZVEG6O4KREhNt3cGPWlwv4mtv11lEljOXWMHjjnR3ORAlAcx5UTdRRzQfDnqA1pp2tb9T0ajpnpfQNFSIdN4sxT237n3qeVUcAwFLtQyfNriPNAVVCTzLQVny8sJOx5WoOycib-E59xwfg9O9Ig3LRDOAF5fi5wJhLyo4cSMxK3iPK-g1t4NI2PZPwE-nz6TiaFFKRB7xGE12xt3DqIKmybTIi2Rl6z4WHj2mAvKa66rYUSWWT1ii0BxzFMuv7rr0ptgYKktQVo_0WSa3q7GMejnQA4v2BEmhk2-tgrexY92Jmq6vPq4pFfzI1CVBpIKhuxMoPCCjtYI_SnPZgs0cvZU0Fcp2TpHvKT6R9f-ULKW62oYJrTZtgqyeWNv_4r3H2q20Njv4fV3yZK6qmaSpw3D2kIOJ9FDZsyn_5Gq9y-IfD2BKp3wQL6K9waGGdelX&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Dog Mansion by Comfy Home Dog Boarding photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Dog Mansion by Comfy Home Dog Boarding</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/anaheim/" class="back-link">More pet boarding in Anaheim</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Dog Mansion by Comfy Home Dog Boarding?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

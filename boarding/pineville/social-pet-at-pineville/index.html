@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJGWt-Ho6cVogRtXNO1ikvc84%2Fphotos%2FAU_ZVEGAaqPtCithZu6B1jz7q4YIyAJJ_YBMMWZ8OMOkC3wQRNuIzQYL3EcYzY7s-5rJvN5BAPwrpJ2fUIZUatu2dwfYzTvQRuQ96eqoCQw-FjMGVm01hPm9u3OrRS3d6b293MS1TQPW8P9_dXHcIwlcpA2Dbb4_k9u64WZMmaLEiDMyB0zAppJGZ_lmQMXtdiTvqVx-ZjtBV2EcLLXC-DSxO-Vqq6wlJwWzCEVswnPnMVjRXiPy_edpqiTgTteqi1xFbg3ouX-iIFh5qPu-jZTvUhfG-cDGuOgLXSlH-fiG_PWUir3SJgXNMeYWPRGdzExNY96fWdkdgTZOKMkgsbYLu7UplONdCsRRnUkebvq9pXOwDfX9sESQXafJexFu4sHxnL3kl7Lccprez8Ix5rOM16Zvc2zPvPyznayJzcMD6RB0LQNITpJ5E20IYMF_M_Jq&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Social Pet at Pineville photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Social Pet at Pineville</h1>
@@ -199,8 +198,9 @@
                     <a href="/boarding/pineville/" class="back-link">More pet boarding in Pineville</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Social Pet at Pineville?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -346,6 +346,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -356,10 +360,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -384,7 +384,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

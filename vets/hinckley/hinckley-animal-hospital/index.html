@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJAVpRlZnDMIgRJlQn2joSyGU%2Fphotos%2FAU_ZVEGYbc6WnL_vaWs9QhwCHunRq_EJvKArbseFPymBY4ekf2g8B7nS5gcHl4DtSegKsbRF8GyC2hPabXPvccy6exqp_2Hnh68udihh2huMfUVL7jqvSfVrLYfcoJ3WhvfVrdEvyBjlMWy6fp8H4aLFvc3I9yX6QEhAMADzbzH3nNu9pKIozsrgBytXWx1wdUH1sC1WBzNCCLhPBAORym4oNYrZ8Wfc51IJRl6oYUxrsahnrjUmokYzu8zlEHLUFnaq4L9VoHAoZ-p_rc4RuS3zVnEUXsbzOEsQosBVdAZxJJzQiTZ3NysyxrTSkUm4V1jeJicSbBWScWzXH-8KBolgVuki8U2q3__CMUlwt-srCBDrbVBPfMbHdpip2w1Rw0RGfCv44MOhV9sz-4NToMsxoaHE75npLBfRS1jIJnHATexPoW0C&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Hinckley Animal Hospital photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Hinckley Animal Hospital</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/hinckley/" class="back-link">More veterinarians in Hinckley</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Hinckley Animal Hospital?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

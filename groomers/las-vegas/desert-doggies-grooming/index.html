@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ4ZqINBnIyIARc-z4uMxzMbg%2Fphotos%2FAU_ZVEEA8XHOeR8T43IK0GoxU60A6esMWmn0bdsk_uNOmO-RXAb9QKvQOtP-5TvlBlJN5Rq1MWCjZ76VLfLbdO2N2WohLRAJByue9Uxbv5HI0OQMx0HjuHqKbgmgeDe34tTVJ0B1TTOp078onf-1Pm8v1gvGhLZfUdPLsMCpYbriSj-cLhDZJMGp_oQ34YAWnklk35xoGlRevAurEYPXkSt5Z-jHle8xyqYQzlaGuP1BucYYGso5FTWSZChB8UA0Mq1JZZEg2Vc0QlqULKP056oABU-BGzE11NRK4K5OU_1ZTi2GGRyQjCAdVnqcdEB8dPFp6SdgqNSH1ZqRtXQnPigLveubSleXKci2yxXumDiCDLsQlWS4HWXqqUEUzvpH5fxOQJlnozV-5RtHtGa6Bn49HLFgMGgLZkLMs6a7eQQZ_APL7b0&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Desert Doggies Grooming photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Desert Doggies Grooming</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/las-vegas/" class="back-link">More pet groomers in Las Vegas</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Desert Doggies Grooming?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

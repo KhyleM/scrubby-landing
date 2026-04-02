@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ9Ux_mcifj4ARd-A0YRu0SoU%2Fphotos%2FAU_ZVEEGv0jc4XazfrjRa_lMmpkQ84SKZCf8Bycxum6fbVybNDaD7dNryvtc5jYYIuofm7RcIEaIlwVxbq1Q3MkRWsx6gs4qn-dTgbd3prsi5oJcFNxaH0F4G4ghu_298MR3Ys0pNeURNzjSLCYHalrHg-kd_uInrV7S9ui20wR8RGG1uDSTFvrL8A7O0zPqm7vOyc_i1LvaLVnP6P0qHfWTF97aO9WOYS7f89qW_yH78SE_a2_z28K1yuub9_04q80N9uD0lgeM6tzXi6uQVU7Br1GaN35wlVLA6lvzLrI3cHIkkU84gjL5YtkZQnXoHbGRmXhEfl1ipn-c_hyAAaQq3eyJOlRobuloVuDR7O27uWR_pHjrcmdsbVrS8eP8lGSwL6BZZ_Fa2toqniI92dC5O6L7BBpO9Nypz9iI6CGsmwYNRggn&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Crystal Springs Pet Hospital photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Crystal Springs Pet Hospital</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/san-mateo/" class="back-link">More veterinarians in San Mateo</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Crystal Springs Pet Hospital?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

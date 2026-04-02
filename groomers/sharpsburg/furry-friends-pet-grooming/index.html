@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJl2vDGb-59IgRA-ZO7pe5e80%2Fphotos%2FAU_ZVEH_twWd7aQd1fydn-OFXGpAiA-pv1ughQK3ZUS7UFATHFnUAtTr3VV7BpvCThcYncxjmfU4phQ8zf80hHvIh6TX5kfgNOomLQcW6C4LK21938FihZZaF6TdafF2Q1kbiju1n-kF9OHAvrKjS8618yzrvVDdFCjMswnURJzMhYzOb4MwKVZu89ktyAduscwMLlGka8R5Xhn_K5Y48A9ahM44bqaR13FheZuhMcJY_5MIc_JY59sLGr5dSzRuIGLmlLIybKcQUcnOl-ZaTQxWSJ3BRGUSW0p8Y2gI-9NKxjTE3zHjSTlWo2myAADuls-SEMYGTiY5L7KV4TdzGQ3gVRc5AWuGx3XPfPJIFLOTXwmvbLpk-QaslTdU_HRtoHLvXCd0I7JSLz9IkPerLWnCTvkcmUh1pbOZOCpyu1AzQvfV3Q&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Furry Friends Pet Grooming photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Furry Friends Pet Grooming</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/sharpsburg/" class="back-link">More pet groomers in Sharpsburg</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Furry Friends Pet Grooming?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

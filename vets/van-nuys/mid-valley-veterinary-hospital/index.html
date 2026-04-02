@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJvxH5gR-awoARv11S4TRQWcQ%2Fphotos%2FAU_ZVEEGx6gu3uDsvPNyhO0Aw-9RIP-eaqX_CMfSWO9dAHC6ZFVdKSAnwRXadhwYyb6CAXcKqO7JSWV56JDXqfhWWg8tj8jnMu2a8FBnWJn_up_yjiakPb2Xqs1wM34X3hgFgmo8xCYaQ7-LuR-vZPQwiAn5D5cP-jGttVvp1uIMA5KOdmPKlHemnqn32tUyovYtgJ6hFnNPdru3Z3HaN-dZsZo93GcSw7gRTbcV2_U0Nwg1dQAaidOCNQA7UagGWjhdsvhqNA7tyIe1JY-kwPoU9EmFlPXv_fCPQNKzuksX09K_JthHJkI9p49Ooh64XUsN_0ulQZJMHEOPHSK7et3rXlu5XF4Z15UnMWMakVtsHhwBFje_Q8wcfyxRHTJ1J2riaSjVgj6IqsqqbGkQfgTAoiA7UEDCFzFF6jen3fRBuQBbug&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Mid Valley Veterinary Hospital photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Mid Valley Veterinary Hospital</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/van-nuys/" class="back-link">More veterinarians in Van Nuys</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Mid Valley Veterinary Hospital?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

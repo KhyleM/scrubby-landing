@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJN7K2Q8DGt4kRjAeZhXi8P18%2Fphotos%2FAU_ZVEFRyQ_x0_ydKpmC0ZVKiFEYC_V8hPyDHBGCUNmkVAksw3dClkQASQIn_7tDvrxTTpN3XzlOkmOecPZdE43rUT0RsqHendjYh9x8XVMMDFkTWHHXc6ZMNOQHS2spz7O_jmugHEmWYtLtLS4sbmrQ619d64fYqCLVhjl1cLwCL6bB4kA2J_7kt5rAaZnJPH2KKlD49EI1wgGDm6zD21wowXDw5NlLg1bikYJ03pgNwptE7-gWkuklG5nSF_-e6ZG7774zmkowTkL-MY3iX1w5cBozurgVkhFH5cphjYF1OPfoVMKj9aIxBTqtpaMqGYm6THKDy95Hq8-cHrID61CR8M5O8V8ZIS8tX60-p9wfTV-JNYG-Z9e8RDIoI98TjwlBBlt4cm4Nw7NUe8nXGlm8-ZrsIVIr4COXs9aKeovgWksl-w&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="C-PUP Pet Sitting &amp; Dog Walking photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>C-PUP Pet Sitting &amp; Dog Walking</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/hyattsville/" class="back-link">More pet boarding in Hyattsville</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of C-PUP Pet Sitting &amp; Dog Walking?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

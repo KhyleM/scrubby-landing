@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJUemqIg-4QYgRts8TtiZBprw%2Fphotos%2FAU_ZVEGhgMJHv4o2yTyJX3LUp1X9YdkAUFnCWLd9gFexD5IQW1OpctNNgqXr02fJyYjHa7gpYrmX8gDHBafLtPIMxEa-qxCit2EaTY-ah9HyP3OvA2ga85eBNpWxTewTjzFkB5ivkZEGj_byNWAg4XXG-0vbl5HCiP6Lvb-6rfbrMxZv8-qQiOvafd9KTqiDtSbR-YA5CTmSmYZVRLIA8UjOu3u7dWSmeSZgrbXxBTTZ-2vDSP1Ki_241XqGuoup6omPU-35fszCvKTVgPY4wOBSmY2RtEn4-vwtMAWnuq6mRi9qZg9uJJg6LNyM7rqrG50ytzUX5mJXWx8BVbktzKWxk6g07ZkgikD8itsXv-3n8KJDaoqUyaqqxdp2F20EK72TVTtBteQS3Ck7yxu7Mpe0J9y1bL7M8pr7xDoHZrrpx9G50SXw&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Erlanger Veterinary Hospital photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Erlanger Veterinary Hospital</h1>
@@ -201,8 +200,9 @@
                     <a href="/vets/erlanger/" class="back-link">More veterinarians in Erlanger</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Erlanger Veterinary Hospital?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

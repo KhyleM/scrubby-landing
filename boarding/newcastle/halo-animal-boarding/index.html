@@ -78,7 +78,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ_zvtzoBzsocRI_A5JKlm5tc%2Fphotos%2FAU_ZVEGPDDXsRS1vTXhtFXvTYbTEpp7On1igx8z6Wfe3WQtiC8iQkG4brUyEnlGJQJSxDrEEBF2uGznZPPphy-clpKI7oTOxDbRsYpc8zaaMN_goAX1yHsMqPepAnefjPW08IgBGUreZMdG-4ZDk0wDGAb62KKVeD7lTz6ZFSbHtjnvu7nNVntf6zwg5ZH5SVF67N_vvOROWpwiSCz-P9hH4ZxDWF53y7R1XSk32N3x_N9l0bSqdm8aLErXdBdPRg_kW-EyXcOeJlz8ZG7n24lU5FlapxLZrZN6DQmmyUtUp2Goq3A&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Halo Animal Boarding photo 2" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Halo Animal Boarding</h1>
@@ -180,8 +179,9 @@
                     <a href="/boarding/newcastle/" class="back-link">More pet boarding in Newcastle</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Halo Animal Boarding?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -327,6 +327,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -337,10 +341,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -365,7 +365,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

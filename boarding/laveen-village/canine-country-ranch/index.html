@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJj50sjK4XK4cRP7BkJ_tseUw%2Fphotos%2FAU_ZVEH6-pGp5v5Fk0qSSYZYEZPsH4e92UZF0Xxo3rKpnDJdvbzaA_auDrqhA7fMLBWreoE2NNgNZLrtln7XyHHrYprK65GO3wYdXpCjye4KTjPykpa66lP_lToz4NpRNWLmD8asPNyMMURWLoefAyVHV9SbHTuDWyWyh0o_JwYSY63C1Ikw_95NVpAwSa6cTfyYUKvBoZLVH9URQhi_GAfUzl2Dx3oQtF0Q0LbtFod4HG-WEuAg47Qup6EWVK6n-mQ-TTCMrMR1iiooFPFS8NX6rRBKix68PfiuPVKlIOXMpa7SaAz0wtj-j8nqeH3h1zkr8hKS0snIUk_G-gTO-06QQKqK-3eyUXIVrnczXFa2VCUT7Bc8y9hCtycZbC0-CY1r9g2ZiiNaNs29q3RUlb4MEtLI0cKASkZu8DE9g9SfrLxuqtE_M1XdbY19uxd5zgUK&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Canine Country Ranch photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Canine Country Ranch</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/laveen-village/" class="back-link">More pet boarding in Laveen Village</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Canine Country Ranch?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

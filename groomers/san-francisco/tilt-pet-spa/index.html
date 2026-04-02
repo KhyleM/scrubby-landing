@@ -77,7 +77,6 @@
                     <img src="https://places.googleapis.com/v1/places/ChIJW5uAAuSBhYARW7pm8YlsjBM/photos/ATCDNfVk76GSHGVddjB1qtB9Z7M97607E_XXOlmLebs6P0vtLrq9f0NnQhdrm-aRb6XUaBShLz8oVG508Bljdf4GBHzoPnd7n9_gDZeXdBdBDjerU3RvKXs6-tyTNK8rXx_NtpO1PSulD660EuaA54tdorhnVRN-Ot1rfEo96vHLcPH6c3WT0I05e5dFs7q2tse50jXIVeMKA3vhH8ESHOee2jA9bNlVUooACuZ5d8nDvObvAkTioAJEUHWK38NEIYpu-BTtCuS7lc9w1nofldI_STT6NqIpG-76rExujTfqGBL7iz2WDcr1xSvfo0_CXldBqnxLeMsvE7pR376AY1s8ltl8UMSNx7Rr12YApX8rHoyxEttLNfgcxDu4CcO5wiX6SjHRqm0yVhPaQDtzl0coC7bkOeXVVKHOIr5WipnqvNYZUZ5ZQoYrKXnCYt9x4eVG/media?maxHeightPx=400&maxWidthPx=400&key=AIzaSyCpmbfD6svBtJL5OpHfeph6xPVzLlf7F-g" alt="Tilt Pet Spa" loading="eager" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Tilt Pet Spa</h1>
@@ -197,8 +196,9 @@
                     <a href="/groomers/san-francisco/" class="back-link">More pet groomers in San Francisco</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Tilt Pet Spa?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

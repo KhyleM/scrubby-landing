@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ6dk9UBLx3IAR_25oJzLBV0k%2Fphotos%2FAU_ZVEGXJYo43C_7VHhw_7epwIZ-TdBwk1Gt9bQYhhHmwwaJ5MKsAXMrtqDHUqpb5zyEHLuhsrNcZPSegofofH8GUegm284p4Gr3QPNqZ7ajsAQUECmS7Jme_b0w15XWqsim4JGZCPp4QN99_gePLA4Ng2JdrD2cg6zZndwc1YZxR_q-9q9b89F954RUV5Xt9biRcC_MAMYh7VWWHLWYo4Y6OuLAg-CjHBNG1MvMVR677y_JiKzmwnVxlcLg_dCiaCvakKo0fK4v61vIt6rfoWCHn6ybDCQmjo_jC53XoBMSwM_b8BKcIG4Z8B-PRl0LKVk1RE3aNEtHf9E4g4-jEVCLmhQYT8O2FnlQImPvMGXBBsfPSaiQ67OuYA8BnEvAW_LdT4-Xi8roRU89RXR1kgzPewBHhqdf5iFStqWOf43PBL_8OA&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="PetSmart Veterinary Services - San Juan Capistrano photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>PetSmart Veterinary Services - San Juan Capistrano</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/san-juan-capistrano/" class="back-link">More veterinarians in San Juan Capistrano</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of PetSmart Veterinary Services - San Juan Capistrano?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

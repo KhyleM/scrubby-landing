@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ4_kqfX963YgR7Zocko1hEog%2Fphotos%2FAU_ZVEFTsi5JuRVXRtus7BLVE2zqJCAVPdItJXfXHmCCeH8_rv2GV-av8NFWq2b2cMY7pihdBtDYnHNY1ejgTlgRP6KrUgB04NwuRju_WIpHqB2Nqv2MO9H4dzLieZUg2a1PvakErkydvF8JmRog4PjjmxvhZTtMTJFyt55SzOXbXOC83HMP3rqMbAc8GvTbnW2qERQmson_Heh0rsXrcyW9GBHtyqIG1wV132I4tBrCz5y_84VuZw_SyEbED2ZUfrEzP9UBH3qIL-3F-fF0bMwY62rtAuhsmuhei5n6T2cfVeeB6cwlDC1fZKdi13VAd_OkrGDcycd49jyMQd03e_jfqlBKDA5e6wRZh6PLVW9puQZO_s7WlVm4iPt0x9HPvE3XydZfVf6TZ3KCQERfLzYwWipV8nu2uRfNF3ullMi0aj296yY&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Banfield Pet Hospital photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Banfield Pet Hospital</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/davenport/" class="back-link">More veterinarians in Davenport</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Banfield Pet Hospital?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

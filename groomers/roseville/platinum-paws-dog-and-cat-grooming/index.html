@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJK27VF9fZJIgRbKaFHnHjmD4%2Fphotos%2FAU_ZVEGXbYfs9FYX-9TnAZgI-3j1z7ALx45lfvctiErVkAu7bdUnP2jK05IKAxIvzBB8bmh3YRvp8eDWA4P0N6rGdwM_JIZ3NLs1bY06wXmJPAo3YgRh50jNubck1InNcK6Bv_aJM2rdqATZzEX6py3dIPXUmZL2RPlfnIQq-VDuhwqcY99fcWqQT2eNau-ISiwPw6TF83Pu3kS3Kf7vi3Va-fcOHfLzMkXuZGTFNmrLOemb-sCTPnA4DvMfnfDs4fDTbBfTM8owleQmDQxvdGm9H6eHuqv9L_DtrLhY5dbMh1Nh8cp6LJfPDPw37UNNMU9-GKXdBbntvAueAHIP0L8Orzv4-l8srZgwyXYzJtE5RGt59jn8W2Id65A07BR7pJNdOswYGM1Z5tBr-JGTILL6MBjPSwscLtHugcBKgh2MfR7pMSL2NwTyXLiDOQXTa8Kc&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Platinum Paws Dog and Cat Grooming photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Platinum Paws Dog and Cat Grooming</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/roseville/" class="back-link">More pet groomers in Roseville</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Platinum Paws Dog and Cat Grooming?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

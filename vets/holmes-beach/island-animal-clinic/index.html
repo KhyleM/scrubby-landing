@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ4zr4gDYQw4gRIE_dGthkESo%2Fphotos%2FAU_ZVEEfyDTwXar-fbet0HJiHa2fF6oQB3S65zTZok1xm5ro_uAMdnsLfzRyh43n9Bc-NIU4YawzGAcNI_H-Bbl4i_WBmmwB38xlovYtqSr9_Wm6BJ8cBMHKu18EM-5JDddvk87XNG3G9lMhm_8d89lcQJ9zzzi_ByhqWem_-6g7XaLANHFjblfa0WLcw_ed3FXvui6gzPWaR5PFMpVJ-XIFqU60mJxx5gZpOlfjtoRiLVlvQwwQFNbmSrBVQjl0jdxukAd7e-FfAHm7xSUgb9G72NpsBEX0BFoyQ0r2qUsHqlXhqw&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Island Animal Clinic photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Island Animal Clinic</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/holmes-beach/" class="back-link">More veterinarians in Holmes Beach</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Island Animal Clinic?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJPfQbV8DzOIgRhKqoUjqlH3E%2Fphotos%2FAU_ZVEHHSyTPUT8e7e-sLQgxVKLmoxaBOA_04w_OIrbTPDF3qldw3qzTUtYCFDcCAQu6FJmXQqeEiM8f1Gr1Ggdl1u8VpoJNGKeBhxvZdKuEmR38Y-q3iYLnSJGcJYwEk75WNBRz36XtY2sLjtAG3W6ThlmryP0DjUNkeOSYeSYOUDhn0g_oHqhiMeR_1rYAkj0gLyn_swjW2-70Wju-WDb4ivVjnInEuT856ycTKkDfzWmxjged3Eni7UBn7GThbovUBD_if1FP-0oFkzVKk5N3JwuXH1_sA0HLq-QP15Gh2E9nvU9GaqeyBhVFe7hu-YhnG36AJEbYb3cElK8uvYc-0uS67PW_Ju8C1RU1aIhkAg1O_AsXvI7cy2WCleHQryZCMyvjO4ydFOq07oCTYBTYSnZU5psDvwKrpQRCBrTijB2u2ulcno5zoJDkpe-6Sg&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Petland Lewis Center photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Petland Lewis Center</h1>
@@ -205,8 +204,9 @@
                     <a href="/groomers/lewis-center/" class="back-link">More pet groomers in Lewis Center</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Petland Lewis Center?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -352,6 +352,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -362,10 +366,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -390,7 +390,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

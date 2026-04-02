@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJeygqfD23woARQD-WdVJO2Ng%2Fphotos%2FAU_ZVEEZE8nkxq9bs3At6GyOoObbHxHtHUoM5TVJZK24nwr-a99Ty9UMyQZGxkLbCVcYmoxQ39lYZNEJAt2m5Avhx4PNMYt2Bgn1S49CceR26RUh1PTSMxgCL8gI6E77udt1o3tkprnyB7YyyOcx9mxW_Ab_G3YxcGasGuDrc4H-cObEdFVrbHjbNRXT9TJ_FZRs2oh0EbLl5Mg26uuyAQrfA8T6qmt9SRmcJ8HqJ0vPTsdtksAq03cpKC9nsdW3j8hEx-2rX5KVEx5s6_ebKc9TM1K-1DjupySHd9NPKsbhDYFZPA&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Glen&#39;s Dog Inn photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Glen&#39;s Dog Inn</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/inglewood/" class="back-link">More pet boarding in Inglewood</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Glen&#39;s Dog Inn?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

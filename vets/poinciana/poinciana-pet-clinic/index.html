@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJn5PAAj6c3YgRAsO94cAFe5E%2Fphotos%2FAU_ZVEHJdyt69LN5bo0mJgHwyBDCgb48Zh2oOQH9iaTidlp2N6o7f_oN5uYurqgI9W8x5npH-ROSPJOeMvl7iLM_gaBViAD7xqHxpPa3YO3v9akd8JeATlB5QZ7YP3rrRUh5HtbVGf6Ne5WB3JMdOXU_xanv0aldKVsXxsbDNDn9BlOkto9qjYg7M-3IT_N5VA0-sVaeL1UCd1WKlmxCyK1VYT_--zO4onE3Z2C7MFdv-s5Jd5KPBiZew1FZRwjCq8qUyC0c5VQ2qaQhLj03HWsg8ifAYBtIBPRjNj6S5K790XgdXssKjo0DbYCHd7fH5dE-DrD4c7c-FE1AbIuhDI3KhN9aZ6FrECF3t8dESRenokosShxozCdKH2EairZYPpHrSF_62T8fCVK8ktBnjd-sMvp_raFOT8LCpyfjP3f3LWB4vw&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Poinciana Pet Clinic photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Poinciana Pet Clinic</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/poinciana/" class="back-link">More veterinarians in Poinciana</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Poinciana Pet Clinic?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

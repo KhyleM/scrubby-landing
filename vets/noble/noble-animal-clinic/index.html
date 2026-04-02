@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJB7wI4yRhsocRweJ4j0zen9s%2Fphotos%2FAU_ZVEFXrAglUU7N1CsQ3JxU2p4DV27SM3sc0VQY9z7f_eE0RaW_OqDY5eRcebbWGrE7de-6x-S_SHRhXx4dS9xScsUoO7jzLzyqLSpXGo85Zbdy94tBooS5LwZoAFHwd5QZfGdmJ_Lk1PPaKy_P50hf-HzDRofOl_iEcVpc03ub998w1NhTdeLQNLTpiBvBqjCVg4HyQM37006OROkGWEs3pXnMrnmhnNTiwJJydRGZS0y0nFQ6jlD37sZ64lHKulMNwp8v5G6scZAeP9ZBajWnJiYqv0hgh-38_81RNMIEMoUl_LNB3heYWJTG8WsXnU88QBmvNx_NBk7IGPONIOwNx8dbPpnj2D7K3g0rxPsxVS9u7IUohUYdT6AO9pj95FKlKrxHLuhJ837OVtySdp6J1wXxljruG5xclzp8hzf-tFtOAA&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Noble Animal Clinic photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Noble Animal Clinic</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/noble/" class="back-link">More veterinarians in Noble</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Noble Animal Clinic?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

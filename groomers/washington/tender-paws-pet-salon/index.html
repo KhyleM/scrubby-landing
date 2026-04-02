@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJNwQNQISyNYgRkuJhzN_ssXs%2Fphotos%2FAU_ZVEEiccHL4caE1iN1XrDbwt-tDhZgHVvhhQhZzXIyADU4kejOfJFpy_RMx4P1kDiQ0exCyELwCy6lyYpT3NDMDOjQd-PseoL5yStLE6xxhqmLxLV--oa-UqgxrGOWlaAP_vJgiv7CYEeq7ugCy7I4W30bRx4DtWqK0BEvrt-7hrpRbGMaTeJcTdtPnrbPTDfd6BqC0TUGwM1lRVNYof1hh9RNPoT387s3F3ad7Kjlaj_FNUrAy8y_sCltTlzQNWMBvMaC0YKZHCjh18CB-MN910kxsVTzV5DgnYvn6s5CPE5WtQtOf_5u1A66WxGNjkP0koyds4yj-hT2A6IHvs_Jb8phP_BfqutnXBDRP-kTyFs0Z4DxnN9Qwv-RzmZfCoIXSpHJSyotRXGDcI-r9weZJySP4UD60shTcXfgctL4SjhLwA&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Tender Paws Pet Salon photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Tender Paws Pet Salon</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/washington/" class="back-link">More pet groomers in Washington</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Tender Paws Pet Salon?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

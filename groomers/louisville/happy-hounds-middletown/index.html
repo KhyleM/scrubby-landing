@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJKxm0IUafaYgRNAnkb14yST8%2Fphotos%2FAU_ZVEF1PMAKqEZ9iFyjAwZwTZh71ZnxgaEpEmCOJzHY03D2JHBt56rs95xWf9E5CRaZOxPvS_86Wh0G9d5_pFgetJzkN5wMU48Cbg_l6s2Fw9tR9FyO7wn4_7V6pt0OWrGRR0QT6hbxlDz1Yy37VLZVCOR7j1cita4GvwOTti0JmwoYzTSCgUOG5mLXnRKTQGvK1V6GuSdchEnxYXVKEeiruM0MvCBDreLMPVNl9hfDp7ju0fOaLO9o0rUBkcnp8EYsZf_FBLPAUqkJS6aGOciPgeeL6Ti9CuOdrcxVT8ZvSwRmE4NxaAFlnVesWRrYZe6r4oC-vS-FexibKsAvDMBWja_IjEd8B-VcKK87sGdB9NA5zjmC7p6yVTP62_u2JVvIGvtJl3O7VSvzw-TcFrwkdiuEoc2i81A2U0_6bx22ortFb_1JjmMpe0IrWCHiiA&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Happy Hounds Middletown photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Happy Hounds Middletown</h1>
@@ -197,8 +196,9 @@
                     <a href="/groomers/louisville/" class="back-link">More pet groomers in Louisville</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Happy Hounds Middletown?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

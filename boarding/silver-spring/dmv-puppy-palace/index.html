@@ -77,7 +77,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJQQ-6fufEt4kRe1ZWqWskx0I%2Fphotos%2FAU_ZVEG3pyMwAmFkTl26D5rRmYTz0xWQyyocgAoyxtItNxtz8XxvHoEd_VNph9DGlnOOm5-O2PUbTW0W4Ydk4RnVjocwsrvUzCihWwzFyK9Hjzo_324hZpn2MGKhj3oMYHUki80H6h3Dh7LaZSmfTfJm1w2gpRqh-99hkqaNL_Q5XHVP6bStc8hg_6dr_hIFwowwspDv9lgFJVweG4ji4lasgY-1tN6AfQGmhx5LbmDIYLhYJAJqAuaDRuZ1VcdQ_DIum30eeOQ226pn5_SG0gqU4XgqEfy-A2fHjSMGEhyDICOO_HJaF6QFXi23BBST6rHSAtAeLyMx3XJ72ll6eiXrYjEaJUlOChRqJNmKOZP7s8tQiuA7kdHFd4f8yeuBIeiAb5kOSh-MGYaRb9dq_0Md8Q5RkRtNnekS9tB1YoTWZTJ51w&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="D[M]V Puppy Palace" loading="eager" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>D[M]V Puppy Palace</h1>
@@ -191,8 +190,9 @@
                     <a href="/boarding/silver-spring/" class="back-link">More pet boarding in Silver Spring</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of D[M]V Puppy Palace?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -338,6 +338,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -348,10 +352,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -376,7 +376,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

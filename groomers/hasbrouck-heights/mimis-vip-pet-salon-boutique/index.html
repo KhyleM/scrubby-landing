@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJZ8DoOZn5wokR3Hci-Y9WyQA%2Fphotos%2FAU_ZVEHqQAroQw3MbWHc5oVhlpNrQ4NJnf0ogU-WSs2sNp-xYaL3LHm1ZVUOupnYpedSqs6E0A9Qeg_M2P1OvrFGBWwIyqePuYE4j1RobNxzLeAT_qwy384AwLxl8iNXY1bnd0bAIhJQgfOTQjLRdt6JHgfuG0jfoQmosnef-VrQgMYW0k9vJjz6G3PK5q8-Zl2EvFgdzNUpC51UK3PvH_-5w5I_s6RuggjGDLzPisTdWqDz_Nr7Yp-IBuYSglNIBcujZZFuq73BlyuM1Mm01sz_YxtM0DmOkjwER1CkjuvV5yNQiaM5V5I2hSG2CoGwhivuM-TTkPts4dut4zPgJ4I6J_KjBfWjIqmFqO_3__JlugfbTPTBJWHpcVYSdOoz-Y0IWMxpcIV1Fw7pFSj5diViGZzecEQKUuL2VsB8-T3kCd0&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Mimi&#39;s VIP Pet Salon &amp; Boutique photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Mimi&#39;s VIP Pet Salon &amp; Boutique</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/hasbrouck-heights/" class="back-link">More pet groomers in Hasbrouck Heights</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Mimi&#39;s VIP Pet Salon &amp; Boutique?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJm0XwChG7wIcRh57MH9mpHsc%2Fphotos%2FAU_ZVEHEySsRu5-KJEfrwc2PsszmL-wC0S86Ej9hFc3-J5Kybopyc8rtiEI_AL84LdiiBUnWM7S62m8D8Bl3oucd0LeZKNGxfkVN0mkcz38LGsQIkysJMUWoirNXhEivvWAXH20hY52-YiZs5maGTSP4I20x42jBGV_gTBVxvnrITBjh6XwX_sgpIAPGpqX10OnfqsLq_DoW2R-Y2dlFQA4RwqNX9pUkB29q-GuJjqhGa2uB2djgZsDngY2_y3KprcjBPr9LV0MUnXU7U-osR6WNXIi3u00RwzdT7ZffWdSpfLXxOqvsq889IIkZcMuxrCGX-on2DqecNueb8YI2Ox2Opvo2V86yA9xVLA9G2rWlp2Op57TTSX8abkrKgRNQc7I8n8cODKOTbgudeg4PXNyqVcjF5dK1R2d74QacXIw2tJ2r5xyy&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Collar &amp; Comb Groomerie photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Collar &amp; Comb Groomerie</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/spring-hill/" class="back-link">More pet groomers in Spring Hill</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Collar &amp; Comb Groomerie?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

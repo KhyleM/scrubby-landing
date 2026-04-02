@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ2VKuMer3Y4gR2JJSMarrCNA%2Fphotos%2FAU_ZVEE1f1KBkIt8HQsxb1Xr22qEgrc773hwJt923mqzwa76VS-0HxEXBmGoT-Z6anUE_yyQisVyFZhHtOVxrYG802b3yfWyVqPS6r_jEvJJ-9C4OGQwgqQRLvo4BkgZPc9LgP2YFU04ajmpsrqIfSbXUsYHayb_aIxdRi9vIJBha9moAfD_mTkUqIU5JclD-NeZJjkZhHiarBPI6h91rLBVcUleuU4zMxtZeFISalnXL27Xl2Z9961cR-kZW697S8qU9uDicSN71VVwofmcVfSH7lwq8Hi3HZW9Ng1s8iE2H9C530rxcnxjvOeDGQQWoAP0qO48opMIw5FYjKJFlADWNIkHBaDSH7Tofx8YjufT9yCVYG1Z4ked4uahS4exBrE2ihYXL6ZOLsaOkhlKLkDQZ5YQMLH-klz-ec2FdGk8FthIXRJR&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Animal Medical Center photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Animal Medical Center</h1>
@@ -201,8 +200,9 @@
                     <a href="/vets/murfreesboro/" class="back-link">More veterinarians in Murfreesboro</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Animal Medical Center?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

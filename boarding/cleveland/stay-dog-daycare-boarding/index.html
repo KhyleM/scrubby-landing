@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJiRvmj87xMIgRddEtk-FKkhs%2Fphotos%2FAU_ZVEEWKxYGqcXDYrctO9ZtLRNJO1ch7o9WgOzTITgV4ozuE9cAVpKgHasEcDY49TjJ7FYo_IMlF1HnW4y8_VCxTNJL264763c6UW-HQGGkb6xLL9eCZx0xdzsOb1YvLWIDTZXlQtbZ9CwrUf5_wRy_fmqQNSffWphasO3umk433NkG-lLUH8qL1Dgh-TDd7dubyrB-tRRCPO218Dt3hd5jjq8QAus0vgQnlzzVja6k5Nasrk483MaZJQOHt5CIn2epEoQvtS_jFb9dP7Tu5Z3429Q0k7at1hKlyPz5tiXl5dvZouO6jRMQ8ykqpRNsy8jPUHX-O_ExZbB2maX29UVy1M8Bf7Zp4n-dI6z4gfMqExKRxPbsjtfoc1qXEAT1_5rN25XNkW1_CNW_20Oq6bRlADsHM97xyzMyVI0Dm7XnqLUqPLcJHEqweHaK0wtUlgQV&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Stay. Dog Daycare, &amp; Boarding photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Stay. Dog Daycare, &amp; Boarding</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/cleveland/" class="back-link">More pet boarding in Cleveland</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Stay. Dog Daycare, &amp; Boarding?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

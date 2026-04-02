@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJD9aFVDzWRoYRq8tWZj-fpwI%2Fphotos%2FAU_ZVEGIzprJV-AsdzzUm6-wHvjuO_NKm1DA790o5Qac9QqsWw0DJKznDDdcwAKrfiOXA8Avb5EFlVZrkW8Wns6kAVtK2_9JQIaB56ox_1YoP4RzZMuPQAk9pqz4nC5FNFrh1lsgUV9lgT8rnu1ZEYLtI-rU9Zy9VlcUA3NBWd4k7N1K-9C80RJ6I3Enxwhommzd5j00w9JiuVlWRbmT_uI3XQzvW-XXk9WMSRBS_pM3N9zrraLSgm0CBk9Qzy5o3CJ6p7af2CI7mXSdo8z4HA6uJbchcQ9PJh-fYtfxi-pFmfTd97rJ0Y3UehNmfQxh8uMD7mKBQAI_4ZPA2yFP9HJB_FZkqUW2FUzrtBW2kohWOdUr7m2U6YSzeL-Aad8WrKvPZUSOhnP9Z3Jt-Xgpmun8x2BEIicbZWSrY-z3SvhuhRjID_s&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Circle K9 photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Circle K9</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/magnolia/" class="back-link">More pet boarding in Magnolia</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Circle K9?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

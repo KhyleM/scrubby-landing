@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJy4IlTd1OO4gRvGTVEYlhoew%2Fphotos%2FAU_ZVEEcu1a8FwJJBN98lF_zFWVLwCjbt599F05PCu2XuGWfXIsCgLpsLCaQKJ2FP1drZ7JoD7rVz5y_Zyc3Zd5PW30Q1OBVwcpe7tHqe1naufB80HxnM5XU8j0QGeJ-bd4BjIjrX7MpdUBDFGd2Z98Q3VO0UytCYJBkvJXdO1YSJGJJEVMY_YAz8AZPl4jz076Nit9fmZEN-9YFUeYnBInUhZbAx3JAzyFAqqbYIleIVXYDNmCq1ZQ6kx68P-765t_B8-MDMp0J8tyXdleHpAElz_Tcp_ptvcMezTAcb9COTpC5eg&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Britts Bow Wow Bed N Biscuit photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Britts Bow Wow Bed N Biscuit</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/romulus/" class="back-link">More pet boarding in Romulus</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Britts Bow Wow Bed N Biscuit?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

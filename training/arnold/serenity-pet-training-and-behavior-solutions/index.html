@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJq6yMM5PR3QsRXEtaRaa1I8g%2Fphotos%2FAU_ZVEFcR9gHHxxE5Fs94hIDRfVLbx8wYANZTCijUX0GaRxfjNpGgy0UDs7b3oUre7K1Clk5pHnZT8IKTesaxEjluDdZjowF6z0aC-i7yaiBdfW8ISZhCWA8oio0e1CtWscl9YIt1rd4-Q_8E-PDr5RWmCAp_dOTF8lmjK4vRmmAOCcZjA0rDFfKE-I6LYdaiVTNWUbm1YrZf_f_nlWlqpTJLVW--B-JC8oQ5eLU3EZ6rICQVqRVxqSdFZzGBNO6WAumQukqpLroCWIjTvf4MwUq-DhmZtojy5ylynzRhMwKRrnqpg&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Serenity Pet: Training and Behavior Solutions photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Serenity Pet: Training and Behavior Solutions</h1>
@@ -185,8 +184,9 @@
                     <a href="/training/arnold/" class="back-link">More dog trainers in Arnold</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Serenity Pet: Training and Behavior Solutions?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -332,6 +332,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -342,10 +346,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -370,7 +370,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJu0uDttPOj4ARv6n6O0al3I4%2Fphotos%2FAU_ZVEHwonw99Ud_jtXjeKEOEbB6wxz5V6RNANq-6UYPyWQFLYcaYl5OolEws8pGtl-AFShlonHsl0X2mI1V1GOpen6HWyq-fERBJF0n1ji1Cm3JwNiviPrZU8p1GFqka1COf_nIFcZYq9iLCS8nU92DvJgc3AhC69_pudoRYP7tty981FjR2itpYLnk51YMAnnOFn6qnnHJFdCr5lxVQBB8tP9RRLvx8W7zpPuS3B239ziNCVkVCpoJ3_1NpjXRR7lGHpHxfGi1U8SILnGuuJsCAwcYixcPEKH2SjThpy95aR3cdI1vw08lpUxczXCW3vqHqhJrPNJ08sBA7F_jiXGBT0CqKVShL-j4L-XZdGL4dSc5gA3nreiDRTXIWTPbQEHnGAwhYq_Bk8NOfGAsPl0I3ZAxhDHPOpjqSl5VCsdshM9-YhA&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Red Rover Pet Resort photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Red Rover Pet Resort</h1>
@@ -189,8 +188,9 @@
                     <a href="/boarding/milpitas/" class="back-link">More pet boarding in Milpitas</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Red Rover Pet Resort?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -336,6 +336,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -346,10 +350,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -374,7 +374,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

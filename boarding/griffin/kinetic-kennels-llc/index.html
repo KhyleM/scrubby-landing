@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJX6tlhZCx9YgRlpPJ4vp5pqc%2Fphotos%2FAU_ZVEF0tJrXs7h7b1jXeDL8ojMyThj0SK5FHBX7eC8-VNEgm66vYyiL0S6w5fT-55RQkGJYeppTVgTqWxuaWQ2OU-JdlFii9Zi9e6c0iwrafLW-2_olU8w9wB7tfVZoLRKuxGUsZpTdIyNtU-nLWJhnbdbgjwGR-i0W-dfAbR1SZ3cnPeMSMY9eJDMlxGwwNuZqUYjMvwEcwMu9uSMLyHsskT-oCV4jY-P91JW_z-CWLaxvuQA9_4WyerZZ6FEzMUHFM2YG9OBpJCPCCr-EX6qJQ8sH6MUF2Fx2LMiL35OtLDhxCJJwcKWq1P5HaaKYqqmyDuZqLo_2LQGWfr7ggZmKF4MqNwr0yTGr34699-xIJ_4_wNbirHaGgzYzjGLmyLiOm5qNiSY8MGYzF4y2OckWvj1b4nQUYzPtqOtS4BDLaM_5iM4I&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="KINETIC KENNELS LLC photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>KINETIC KENNELS LLC</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/griffin/" class="back-link">More pet boarding in Griffin</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of KINETIC KENNELS LLC?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

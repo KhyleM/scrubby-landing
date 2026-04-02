@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJH09e-Lxj24ARlw5qNCdwcGQ%2Fphotos%2FAU_ZVEGfpm9A1iU6vZStiHHIOo1GOf5slA2WR2EBUc1n1ddJRoegcag8fXDOgz6746h0o-_-r3v8OEiFgEPrCPj5va_XAdeg8NCOPcHCs8Lm0OkIqK8Di954Ekw2tguvDcKeVtg35mQAFhGrF2nc4H_mqgA8HRh7wh9rAOsqF7hMs5QsP1YZ4S5p0cTg_MNeQaOh4uyCTjkXMEZPhbbbOfTh4qZC96jX5clhKX9mtytULpih4AnKCk3bH32nySvFOg8V04OeLLF6D4r33ANDVW4-1h-CDr_5HykQr4XjsudMRoQHRRyzryQWC4WjLDvpiSvbYZ73bCZJop4q_j-xOB8duJUwaxWJ_ZpyLsp3g9EqyZJNlExeOLQmz-4KIta-MAgifnFhqBN9t5llkXwUC82exdg6WDqCrSIlMekSKXqNY-v3fk9i&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Shades Of Blu Dog Training INC photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Shades Of Blu Dog Training INC</h1>
@@ -197,8 +196,9 @@
                     <a href="/training/chesapeake/" class="back-link">More dog trainers in Chesapeake</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Shades Of Blu Dog Training INC?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

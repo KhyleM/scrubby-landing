@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ0zpjcuifa4cRzuPS2LzOD8c%2Fphotos%2FAU_ZVEGg8YQQWy6d5ptjbMBE3A1MQB2EYCSac_iTAkccK1UUxUDXKuVNWDoMiCbEJ3QEVMI0Rqb2BzVRUTeVT5zSKjrPlQ88t_j_nA82b-S7KAK953nHkMrr8Yv3oozja0CRZwjSwCsg7H8Aur_b93rGDt7YCu87G_Que-dQI8pKh8IJ9AqFATZW6WRthRup-4nPljQnL6-cni1xKHcnrfKq0P8a516DjmmV2m8CfimQv07yIq2kRk4gGTyb7Ew8fEDugH80uT8j1Na4pgkjAagWZHYKwFqUXMDp6cbuJy7Y47DIm1pRRawecmfyRZNVQR3eAPgr-Oet9q1N2jY4F-FKEwaAW5rQejPSWBRmMIakIqrYwEtfr4ZQvK3DASOW3Ea6MjY6YFflJZzU-0R0RuE9s8ad4hdahMXi4kYVaOK-NMRCgzc&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Hair Of The Dog Pet Grooming photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Hair Of The Dog Pet Grooming</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/evergreen/" class="back-link">More pet groomers in Evergreen</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Hair Of The Dog Pet Grooming?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

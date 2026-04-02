@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJfw3SqDpvf4gRbMGq77X1_bQ%2Fphotos%2FAU_ZVEEtQblvxojMzCpB7b4bkp7Cqr3RKvhSO_x5o4cRlh3bfNXmGadl9awuVlcxS_KW9XCHdeps6WEGSyPJq8atSge38P1Kpm-shnzX2K8USSLb-8AIh-Wpr0cEpovI9i69UUx-QRrB1Nc-kf0OG1omN13n-NRYRVra5iy-GAzhcGq_b_oavO6I8sPIAeXxRO0vsPZdN_9Ay1BgqSjGLCsJgRid4gah_rir2OTrQcyyyyYL9u8bj0hk_CNjMNfWTYME7qZU13CfNO25q6DCE4rmPHR5spTVUJE8e1jwe4mCuYJmAP4p2yhYsdBIKle1WV9T083ONynTeQEJkqhBdZB4p7Uo7kK4sq9wg0si5gJBmaIFyw39g7tivqa3e8MhTi6JQ2QuVOc6NDoRSTjaptuQTlmur4BHRLLtk7My9wKrhf_PzzE&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Your Filthy Animal photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Your Filthy Animal</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/atoka/" class="back-link">More pet groomers in Atoka</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Your Filthy Animal?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

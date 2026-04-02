@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJA4NusqKTf4gRWGw_w6lzOug%2Fphotos%2FAU_ZVEGBDhbEnK26uCx973olkW5fTJyxd2NBqUkashBm-udMV62gmkhpaiYyPhi6PJoGgx-8QfSKpoFZ2Zi_N3_hqQQ2msDmGKeiGfAPI_XGrCVQlgDtN4dCfSa0dZMgncJh9D66ZhSJRpmyvwugjmPN01234i3BqNwLGsmChV_GNKL83dMRkwVvJQ_xkb332RfJOwNOVIbVzu2cbDLIWb-1n_bZ3yIhN0-eMwn9c1T3jv9C4P8IprM9zY5ME-53eYxUBiNOLaKEgBlsIg5iZ7NcM4GMCYN-ilHMHgOvYpbff8fl7RbrCgckGFXw1QjSGPFkmamrR1SHC7vcrnkDgAcFvA-YNwBWIef1az1nFSummLyPdkLhrVeZgDpXchWRk3iDJPEm2c2AFJhsei9c4Dmu0U0XQRn4UYRPmhK6r1huSBBZ9w&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Cat and Cow Veterinary Clinic photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Cat and Cow Veterinary Clinic</h1>
@@ -201,8 +200,9 @@
                     <a href="/vets/olive-branch/" class="back-link">More veterinarians in Olive Branch</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Cat and Cow Veterinary Clinic?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

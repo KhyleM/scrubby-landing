@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJpTZjxFas2YgREx2y7llayUY%2Fphotos%2FAU_ZVEHhrFO0lSf-UPDmTYVBrb51X1skWZmP5r40eCD5RChSv31-QjN1jwW1FhhGqP5nUO_4rPjUkBIMYyzHlsqpI7gYHfDv5ioo-I3fUwLC-SQ5zzhIicNvACpdeWeQCBZZyaS-9rNYRBul7jGmVR4orprZuklmill3rZa7EME3R2rvNGlicHyahFc8zSzJqg_jpJo68GSvWsAom96U4qloQC4ciT3ckrLnhO9lOQMX0xilQpWH0uutHuxxRZWUbRXWl83iQT9zU2Cz54HAG05PImGZOy5d30OkAh50HXguy30s0vMtot2eFquq4oDDNovhMXq-VygEjUJRjRYHTWVCOWZAk5yL_Ulcak5DYPh8Gwi1avBtiJQpgv-s-Qr0pogspreMSTDBoSUyqZSc9GinEJfzZJ2luLeF2arR8rRg22aFYg&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="DOG X Hotel Aventura photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>DOG X Hotel Aventura</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/aventura/" class="back-link">More pet boarding in Aventura</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of DOG X Hotel Aventura?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

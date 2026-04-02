@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ40_SrpQz3YARME4xpDJ24Yk%2Fphotos%2FAU_ZVEH_wjiaZ5eSvP3aZGYw0hrBtqVLAWo6Qjp1WqDFSlfLsDBjEJYb3rUhtcB2OqQEzU_slrPKxbxeD1ox4vt_abqgz86QxBbZVDeEdx_aIsjQp0trieUewOvo1_cl-HpSKkBrLbOQqt-LIlYaJMP3wXKEmBN5JWJxRQPbeoNaTVIyNwX8vMYWr_jiXPLQl_yCh5hUCbLNZffVO0ybsURLFjKvSc-SjjcZvuOcussbDPXRwg4TdnmTfLp0M7HZF0Py48WmEn8ByIiQN94iODF8f0dv-JzWjApb3INbdxoZJg3UYqUOe0FC-n_OTd379kzJ2P05vjmvjhzMzWV9936qym9DvwuK0-qUZD-gPvwl-b9nEvcntJmhC2b9A9hhong10_NhB3yxYO7ZASawcKk30ZIgtms7YeJWSzaCKL2GisFPu2cpTaUHMlLSFPrqSXlY&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Primary Care Animal Hospital - Bixby Knolls photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Primary Care Animal Hospital - Bixby Knolls</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/long-beach/" class="back-link">More veterinarians in Long Beach</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Primary Care Animal Hospital - Bixby Knolls?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ70RhtIqB3IARfnICLuPEA94%2Fphotos%2FAU_ZVEEfcOhIwBc39Dn6io2mkmMK_LFCi1ffWmZBVy3US1hCAEyESzAb-nuVU_TCwhlqJrDX4Z5Waioxk_UDOe-joS9UMW6u-uzYCFHu8ua6xLQuosXaPZmGBt5JII36cpCJO165W15puDuEDTy0Nndzl2_iNKLRPtluqeE-ZIxaEAGJ95I-XTlJzX687O76rz8bocToGCR6f4BKJbDoW-salkrYi9fLnJCxaszzKxN6crCKJARhznv0A2iVOOqKN2Je4AVeM5Jo4DokJZakosOP37c05y_j67aZ3_AWPUO-dUt_NgZLG-i8YeqTHAuZxte-zcKYv5j7sB0GkIkcoZWFKzQGX6hWilP8LKW6vqJIp_R6bh1pGgSgbN6ZZYsjAzv4lBm-I2i4fWzUAg_i0BFQ3iPIUgWYXO5TcAm__AFtBk8&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Country Kennels and Dawg Waterpark photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Country Kennels and Dawg Waterpark</h1>
@@ -199,8 +198,9 @@
                     <a href="/boarding/murrieta/" class="back-link">More pet boarding in Murrieta</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Country Kennels and Dawg Waterpark?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -346,6 +346,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -356,10 +360,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -384,7 +384,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

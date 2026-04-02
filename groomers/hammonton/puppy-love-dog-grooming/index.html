@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJV8yU138pwYkRxn6eObixhno%2Fphotos%2FAU_ZVEEMqW3-LnC2s01BuAbx4VhVUhBqIM3wE0zg7PzD1QI_0Hwxc8HlFDkWex_fsishTC1uUWH8sqmR6nCjvHwXS443wX0SBzPvtEaU4aZYf3iPlmGMaO9cWYxks2dZQ2XWjOe_rW2g-DD67Ed_d4ICNCAyzh3d77KmgiWMiteVn7JZoF6u9x8yS_pM6dnnweEl8_YI4x0MdoXLnCUK1if9p3VNZEDObr0ThMy0rPaEWwWV6_yWZQO_cLDm3wK0Au7I_HtObYaZOa43Ip6Pjmw3jkB3gH4fH7UNUTsaK5zS99If2A&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Puppy Love Dog Grooming photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Puppy Love Dog Grooming</h1>
@@ -197,8 +196,9 @@
                     <a href="/groomers/hammonton/" class="back-link">More pet groomers in Hammonton</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Puppy Love Dog Grooming?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

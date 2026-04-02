@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJE98GMuYJaYgRUfwEShWEnBw%2Fphotos%2FAU_ZVEEugKmb8BcpqSaMUlk7SXfAXw7eddaWaLjqUq0TRqwkbwqd3N_d1TaQeqmc47Uh30IhXpYXGS2W7uXhYtz6s3OIs98lLMD7KXF-QeXzOFTUpuv__GpJ0TmAOE1M8pCyScZs4NL3hNz5P3Un62ENWq8gqPIY27enlVRppkTS-rC8RvCVgJfrgyLws1PRx1RkWdt7wE15RIjoFaBZM6LkYvLnhzt1NkgPZZp7AE0FJ2mLu2KzQioODMoOJ4iT3wzp0ZmP9OMmj9WJnZs-AOCE-jf8T92sFzrozotBRcHDkTKedK-u3PPdnXh2IkjBzR-QWU3vQo0ExVnY3biIBhmkVvwzCKQteggEEo4Yy9QGOmtXumP-2bxp2sTt-9qZ_N5HShC6MMAaq6eTGPNFdK5u2mJCNDKdDVSE9p7Je1Y-yl1eDg&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Rosie Dane Dog Training photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Rosie Dane Dog Training</h1>
@@ -197,8 +196,9 @@
                     <a href="/training/louisville/" class="back-link">More dog trainers in Louisville</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Rosie Dane Dog Training?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

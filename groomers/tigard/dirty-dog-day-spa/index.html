@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJXwXhh6xylVQRYpzlprE8cyU%2Fphotos%2FAU_ZVEF7JwshRu23MlATv6YVHvkV9SRrkbrjOr11iuc7VrH1v37wdI9bBmntyEIDLz9lqk8-FVV52ZDzzZewOPkJ_n_IAMSbOAiZcEFg2fLqOCfGiyKYxpPhRIMNssMqCvyvygtBiOY6hMDLr8y3gzr6103Ktp8XSzXVN4w2MjvbZf-yJB_qNad3xSdrEugZwxeRdql_798eQOWoTHaVguhjLKZWeyiFqwqQgbZE_4A0328g0J9MWyKHXu05xPi4N91KxrsqpX96mrR00Fa8hATMaO20j18vdCjCVm8DIkFp2a1yaduzKsFNiVAgCm6WXlZUHCj9ms6K04eXkkJQY2HZkEQ8iEQq5jZzTOJ_F6UZPpRpqAQ-Z3dIoeoPQ0PMSIBvmf5R_Wpz6wUmczt1DppToMLbnYNsq51s3aICqBZm7OnZGjOkF4DUlWZJ8BSxWgB0&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Dirty Dog Day Spa photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Dirty Dog Day Spa</h1>
@@ -198,8 +197,9 @@
                     <a href="/groomers/tigard/" class="back-link">More pet groomers in Tigard</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Dirty Dog Day Spa?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -345,6 +345,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -355,10 +359,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -383,7 +383,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

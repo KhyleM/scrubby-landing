@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ_S39i0ErDIgR8hFIW6GFZ44%2Fphotos%2FAU_ZVEH3xl8Z_p_7wi1yM7TkUwURQiX8H9sYWh8ASBl7qGwG3OdybemyFMaaqGBXgF9_4d7sysLqmZlS-OwLShGjPBr9r9T1v3GnOCgbkVAYjNowqI7YSjKmW_5vweFof77kGzdAmr07_ZuM4HUZyOCBTDEFO8p-l627cUTyzeopqD8ADordL59McrxiQeC3BVNPi4LrbuyeL5oECU6JimXB11I5pC3vOj9DNlu_ySiP4UOnKCoak5I2nrLPE9t7d2A3B1zc2d9B4yoDIz9gL31rFDnToO5nEQCorkbp6xgdUqn8Bg&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Hair of the Dawg photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Hair of the Dawg</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/braidwood/" class="back-link">More pet groomers in Braidwood</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Hair of the Dawg?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

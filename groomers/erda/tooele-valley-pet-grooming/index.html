@@ -79,7 +79,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJy61U7ji-UocRr2oksTWxltE%2Fphotos%2FAU_ZVEEoiVRd9QfGqjrBDLYwQJXTsMnzdbyySOVclqrhQlZcIcovzNwvY2P4URp2bUI5jRvnm9EpC9V81z645TLHhOoASZqLypgtnfzC7dCstY3-MUWmxWlmGnef8ZatWNocEBtc1AI72aCz9H0y8FPqTDVx5VvYaXNLZ9s2O5oprjJdDJT_SPLR6I3oh7qVR58W_H4nlXAiGjMeKcXawTfu3dXq8rWLzZX5WFtRg10XZF4p-YpfppW4j6FD5mOkQW_eLlnEW0B7E4FPw1dRjV0z2iE4CPIV4imGOriiF3qNPK1YTA&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Tooele Valley Pet Grooming photo 3" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Tooele Valley Pet Grooming</h1>
@@ -192,8 +191,9 @@
                     <a href="/groomers/erda/" class="back-link">More pet groomers in Erda</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Tooele Valley Pet Grooming?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -339,6 +339,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -349,10 +353,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -377,7 +377,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

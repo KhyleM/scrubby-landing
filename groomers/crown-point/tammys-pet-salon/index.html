@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ9cxz0k3tEYgRCPBilnfT-LE%2Fphotos%2FAU_ZVEG-f3pxIiJnW2ucu_us4nKA2DqISFMqA6Wu7Irjh2I5ExlJua7AC-nbQrETP7_J4vGEDvamI_RSgZSolh0IUXRhFaq6-Tz_HYLmigCgW0TA_OziA9gTLBaOZ9oJjUmF-A_nFDP9t_lZHHclfYXWvYpf-3dx8iI5hmfQPKUmOtlNYGgdzc3CADYdvTh31JrXcoFgj6dn1pEBJAKE8nfl-ApWyRofINUhQNuaVctypzQpSFstRjJxcLThFkrnFS11AfLSfIL6cyn92wHznMfKnIriaZU5X0d2l7OYizBzfepFbGYHO5hPSTI4JD8uRki6lJLCIV6hjgh_zSy1AO6Bc3pIAF5d3_gwACw9XQGs3daWhqIyBkSojw2EvUN9LY5wAyEhaAMt0qCjyBkbTx3q3TWuCedFot4kwSZ_XdJ-hf5rMA&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Tammy&#39;s Pet Salon photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Tammy&#39;s Pet Salon</h1>
@@ -198,8 +197,9 @@
                     <a href="/groomers/crown-point/" class="back-link">More pet groomers in Crown Point</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Tammy&#39;s Pet Salon?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -345,6 +345,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -355,10 +359,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -383,7 +383,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJoXupDqXQJIgR5VrGhk7HZ_0%2Fphotos%2FAU_ZVEEWXc5KcgMYNIpcR6KrvCviMuiDRql2IdZ5QDcQoZCDu80uBdx2-v-ZfXJK_A_dqjdAt5smprqbzw5O3ywf9qbIAP_WUDL78u7ESzdND9XskI2_KHHUXucS4so1wP4ZfBc2z2o07Aj-EyJtsK9inuh6YCt4lMx5ARyXNut4mB44RPZqjUP0umBoomJKpez8m8ox9i4p3YRlA0TIhOV4qVg1ighA-C9hbsBw-zvTHQ0mXEgBtWHMkvtrUWZPx_Hz8RnlA2G7Y-ea5keBPjWSh_JD1a3_iE4TwzsU2BRzBep3Mw&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Pet Supplies Plus Warren photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Pet Supplies Plus Warren</h1>
@@ -205,8 +204,9 @@
                     <a href="/groomers/warren/" class="back-link">More pet groomers in Warren</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Pet Supplies Plus Warren?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -352,6 +352,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -362,10 +366,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -390,7 +390,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

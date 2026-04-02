@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJp2h3lANDXIYRWaLEWF_CFfU%2Fphotos%2FAU_ZVEFqA9EmW1JJNbKpatEY_LVpAmckzUifQ65FoY-jkE0gPg6A1eucYuOG0xEYzdAZqoCUVEUxAwFuP0D7UsIaHcs5M7N38oiOmRCmWmt6K4EsRjPDreaUrrRq12xypGY54phuJ8TOHI4J0a6MdDcJCvhm_ZR-1sjACYQcX4FuxPW-N63UTvKUT8FZPWVS2QfsS7wXbHSGEhDIebYNzPRVRf1_39FmlcVcmnAd7y5-w4eeM2wLdjiM7ETDT8lTfTm7kD6ayKfR9UBC0h__ttQX_khGhKk5h8R_ASFEdY47Vk7WsSTG9rFh4Ujr2x0F5rYr7jLX1gUhuqTW5KT4oTVXDU8ut3PKv5JuSCmpGIJDn0rHXLn-L-bEuf1hWq8i9d9mh6BjGN_yacjEFwwzw0m2cGWMxuxw-jNxq52-e0qMIQnPFn0yqWY0UFS7meHb6g&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="PetSuites Westover Hills photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>PetSuites Westover Hills</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/san-antonio/" class="back-link">More pet boarding in San Antonio</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of PetSuites Westover Hills?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

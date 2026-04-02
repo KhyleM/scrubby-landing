@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJdZcIFYDamoAR8oVD72rI8vU%2Fphotos%2FAU_ZVEEaQeZfwgrrn4-U7PRWS1QlCpwboiVwTHeUeuFYeaGi5JxHD7TiQi7s-xr2SQf9sX8OlPVC1-CreGOZQeGp_50b92VQBmMl5G4f9aqUikQLua1Ge67o1qqVjoZMvH1Qak7hXYQaHYjss3HPelJBPxtuiS-a0VTUGYGnObR0aGGUMrG1jCzGbdDAKS1gbWtvAhuL59aa6TPfD_QPYD4J6VvZd2C2GC5JBP2T-Xoi_YvHLVgJhwQOzj_TE70Co6CMtn-ptZHo2lJak0UgSZpLFJ9qlvjJxBCyGOXAE3lnkSTdu0tC5lUsjcnOzjfY_mOPiovdOiBvjU_hphrw2-8I3Zn51b6AJLjvpIvuZO4JLqxZ7jsL4Nnw4Oz1VcEs7SdiFqA4qhY3eQ6T1aL5Is92bfHfKm1S7i_HCJQcdyp7LR-vK7U8&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Incredible Pets of East Sacramento photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Incredible Pets of East Sacramento</h1>
@@ -205,8 +204,9 @@
                     <a href="/vets/sacramento/" class="back-link">More veterinarians in Sacramento</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Incredible Pets of East Sacramento?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -352,6 +352,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -362,10 +366,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -390,7 +390,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

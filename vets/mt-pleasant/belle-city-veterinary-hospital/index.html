@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJi5uEc2hCBYgR0vK4B0_d8tU%2Fphotos%2FAU_ZVEHe791ew3ugEuMVuDSU-AqC21W84btleRxK9ptm7rQ5RWHspXN_ZTsISHH_g_OODjLKz_M9B9b7te2lkZ3dtLgdGZ-Fg2JD57f9Ze2vvfFxACzIa9uSbGv8yoObYB888sgYKgDZOadaQJqeVsOgDLqEISzrHKhXuRUJtpc5T587VkFsfOAX4Qisv9oDX6kAVKCGKVuGVnQmLVkqCDkNpKOOn_LU8QaCIXSzXblHMRNYgEP1yDc6Wb-z_3gVVSlXBkrW4BSgM5zSEF_4o-WrlLJNLO0PVfuwH4f_w6QS8seWAPZmx8CH6QtKHFloC-6EDBskOIceFu5_fxtQqXqMju1SPlgWlS2aZCw9-n_Jzp9nFIlws5Q5mw_nPMsUtF5mWpUG9as6Etwm2E5XRY13cm-82EpWPi3R1dQ_pMx0n7fGFcQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Belle City Veterinary Hospital photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Belle City Veterinary Hospital</h1>
@@ -201,8 +200,9 @@
                     <a href="/vets/mt-pleasant/" class="back-link">More veterinarians in Mt Pleasant</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Belle City Veterinary Hospital?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

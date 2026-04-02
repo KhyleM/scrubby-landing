@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJqeiF6nTc3IAR1H04VaGgtCg%2Fphotos%2FAU_ZVEHQwawPv5Lz_D7RA9nFabJYV1SDtNtk0Z4B_KkE661BxYxRDHO1wH4Fn60rxEwfcYsArSnFo5I0MbpCzdXgcR7w9r0dZsbLr7E3J_nZMNbymTeSfdzXY840LMA0chuGreQnnTHMY8ofo-oXBL9aIK2x-KUsH19Mvyx4Em6ywEML3TscqJgXZGxScO_Ca1caEcLh3zICRTaAl6YC-e9z2LnDEjjQoA6D5E5ZfD8kWsiVeHchSOZKtl3pqH5bUCJgIQiKp7_oI_15M9uk3yHn-VGgVRzfsKQ83hhJxoN9qPSgWA&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Sitting Pretty Dog Resort photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Sitting Pretty Dog Resort</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/torrance/" class="back-link">More pet boarding in Torrance</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Sitting Pretty Dog Resort?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

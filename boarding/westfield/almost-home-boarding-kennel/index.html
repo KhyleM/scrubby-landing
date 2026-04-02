@@ -80,7 +80,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJqZnwKqCvFIgRfDtQgS3Aftk%2Fphotos%2FAU_ZVEEmbntv1QFXSWO7j5ui9FxRKZTcbVRDixm1h8g96bIJG9l7zN7fi7Woye11fxmITMj6bSHCRJBFdJuQVzcu84JUpmE6EI62b6xI_cZf1soZrO3s0BeVzp5BrLhMS32se5PAAeSUM-KJ_PpHilR-UO1-i4X57cCUsvgKMTMwFeZYLrmXse-xFjzIZ1K2l9IopsLSWTsq0Wbb1WV8YEsb0SVyrjtxv_E1qPe3_WT63017XFx80JQsoqouUZMzkowM6vi3v9MeU5DyHCukEmM2A4nKdtkES-yiS47aVy1irNDe3fMyE5-5-rDJVxUoW59YbwnEk4ndl1__zS-bkPI_EmFwtTtKwgtrm0ou-IUO19GXHCO6apRdQe3nyVTHQ_VAlZb6TFgikrffeLKdUu6wZy_X4s-KUpVZk2VqfHVRSxVtsrm0&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Almost Home Boarding Kennel photo 4" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Almost Home Boarding Kennel</h1>
@@ -194,8 +193,9 @@
                     <a href="/boarding/westfield/" class="back-link">More pet boarding in Westfield</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Almost Home Boarding Kennel?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -341,6 +341,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -351,10 +355,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -379,7 +379,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

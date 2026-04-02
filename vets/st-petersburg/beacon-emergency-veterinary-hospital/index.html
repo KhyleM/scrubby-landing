@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJJwRztl7hwogRsE9a1CZctX4%2Fphotos%2FAU_ZVEElY7E2wOBpV_YTf_DSUs1QvTRJkNEfs3m5THU_MId1UKRcAte5sX7A7n1VQMqGezrWGj_kvZXl5OY4pqTTzyK0vz35oJMaVdq-Zto0HbCkAmCFILHWApDHpEqxBsGEIK1qOl9WJzGh9lXslQlkCSni4z07gsALx6h4ir-3xlul9TKBiJYIqsKCVc6P5-vsW3WFVbRkar-OY-cs5I5fGR0N5suMuw5pJYygcixgihxOK8dkwhK_YgxF-MHJbsGIOfF-ouDbo-zqB4IkeXTQuSFJ02e3eot5jX7Tn4QbEK93gHruzAAz-AYRfmw3HBU-_K9OoJFuT_WVStjDzYpskAzcUd9lxOz2XPScaM_H4bURZm8FW29n74BaQKvzwitfmNrxQahsEncX_gFmmdHiROmQkW9LwugREs4uq2_qT2RMrBS2QjHivS0ln_AbYTUg&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Beacon Emergency Veterinary Hospital photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Beacon Emergency Veterinary Hospital</h1>
@@ -205,8 +204,9 @@
                     <a href="/vets/st-petersburg/" class="back-link">More veterinarians in St. Petersburg</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Beacon Emergency Veterinary Hospital?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -352,6 +352,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -362,10 +366,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -390,7 +390,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

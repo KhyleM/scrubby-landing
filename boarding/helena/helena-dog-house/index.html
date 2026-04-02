@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJizkQeuYmiYgRzNJOPk4NfO8%2Fphotos%2FAU_ZVEH3KevtKmRTKE3BFWT6nucEUv0hgEC690O85le44lzEGmmppVCThzRHB84QDId1AwQ0LvdGnbjHBEXxKYWcR7ktdncvoAf_8bxgwT_K0W69--orWOKJpRJ0ziMxQHNzq3IzADDe0XbNHz9Iqo6fm328KbEgJxWakzFEsSVYOzoxKpMAcntelF2Pzjo8DObi9mNUFYmZXNpjik8XM7uTx_ve9UYoodjAoeH0ZkaGQkFKLBCyEi2dKHrIG_Mp62RbRG-u2gfnBEPBFB1Z3ycqK94ITVjGLIB5oNCzPbDeH3WkEVcBfi4AzFH-wXY7A__lklIAz8L5rYV8QaTTvCpTXfVdHkLzM4bBkexjENYnRmWb9dXr48hK69pS_cU8vjCr4n51-ZeKRgG6eMzG2humbLWmik5GAE0JdN1eAQ1k5o8N6A&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Helena Dog House photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Helena Dog House</h1>
@@ -199,8 +198,9 @@
                     <a href="/boarding/helena/" class="back-link">More pet boarding in Helena</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Helena Dog House?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -346,6 +346,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -356,10 +360,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -384,7 +384,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

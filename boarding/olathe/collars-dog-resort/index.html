@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJybnBOwWVwIcR6zNjFanEr8k%2Fphotos%2FAU_ZVEG-KHgS1gQrRkSDaCKiwZe_r8VCAko6lSZd5TeuQ7lQdqXTRiuBbirux8G8qkxltIxguA8-v1duAsL7hJ8ziSCMj3-NyHoNF1Bvc60TV_Patip4YWls3jg23xJYoeKAMKfuILKPOb9IvD8ggsB2GajHbmaYjtqT10PsdcMW2DRxmyI1a3eT1MPSPwQdyakto4BB-f8BhJ3UlSRW2S5wVjHXwVn2YZg7ely9AVxCLV-TQ6G8giKmEn_-Fku8YeJ5nEuFgxiOA0GWlMxKQBA02lFfvhm0uOmNafS-FeB-oJ3J1A&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Collars Dog Resort photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Collars Dog Resort</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/olathe/" class="back-link">More pet boarding in Olathe</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Collars Dog Resort?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

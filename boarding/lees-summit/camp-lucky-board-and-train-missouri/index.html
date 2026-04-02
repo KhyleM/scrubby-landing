@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJEzzB3OAF-wQRhyL_QhQloI0%2Fphotos%2FAU_ZVEFlVx6Q-31igfKiQ5nWg8lNyMZXHkTQEMGwC6pwZqbtrfiovxZe1Dy5oOlY08LKR0eou-YrXdvY3eNrZto9xMJmA9MSAIJtywmPrdlxUwwVkt2FfsHVXRuUaC-dVv82mjcoq858rphpIxgcx7-y3gw-34QVkdyO3Z0xm5QdYJ1HAo3pcr3Xz5Drbg7j9y1x-3CmQOIT63PnAu9lfVDDwMHPF6iKGQG1SSxc_NEfPDrZVQG3sI09DBQgqM_z0E-MW7oeHGZJ2NCFBNf3TvydO9uun5-Xd42yzHblpfFcf8slPfV3MsYDC60Ae2ghYLoaujVOr6usZBEye0hpo_-PNrdTIYiLAglryXnH6YErIshO09dqpZEOCt7IW2-Rei9hJPVsi9CADQ28URkI-ccH6_MOFDV4Y-Tmuhb1Q8yeS2jv9vNFZ77pRBdxXt6SjQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Camp Lucky Board and Train (Missouri) photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Camp Lucky Board and Train (Missouri)</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/lees-summit/" class="back-link">More pet boarding in Lee&#39;s Summit</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Camp Lucky Board and Train (Missouri)?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

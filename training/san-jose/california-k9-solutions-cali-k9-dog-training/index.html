@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJRRUK48LMj4AR8-vmDSNOPHc%2Fphotos%2FAU_ZVEE1rrPTarRnR5hPfUaIneCveA1Abtq7aCA5R9JVydjDbSkbdJ0H_PU-3MoAbFU3izH4n5gxKuvUkjeSnx9toiCqJKhVLUyyQPxc9dBDyuhWhN32F9c1ounZEo1CT88l8lRMtm08EO4WvYC6jpyo_-WVrYQ8kvtI1CaSeot_eeA0pvwf9u4Y2YwSoH8poxeAf6KXdruAppiMx70JtlOxsmBpMVSG0E0oVh2kELjnj5_z8su0RhFj1xZVVVfaLLkgTdwNHqifvev_55Bo7iZWPNMx7QrKGUw1E-bBUtOVx6Sv7JQxtmTf9ZgLdiq5MsAJgH_vnYx2DNn9Wk0Gq6E4Hhb2mWDq8YsoVWmWnHG6MV_xgYcJ_6XcLSZTHPpmcGmM5RKJLoyiX4ORUFi7rmHd9l9eCWWJ-nqlWqoEomh4fAk&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="California K9 Solutions (Cali K9 ) Dog Training photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>California K9 Solutions (Cali K9 ) Dog Training</h1>
@@ -185,8 +184,9 @@
                     <a href="/training/san-jose/" class="back-link">More dog trainers in San Jose</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of California K9 Solutions (Cali K9 ) Dog Training?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -332,6 +332,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -342,10 +346,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -370,7 +370,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

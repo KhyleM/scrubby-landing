@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJHZ5jVBELaYgRlR2ijpWXwo4%2Fphotos%2FAU_ZVEHHyWcEdLe85wo50_z9QLD3fveGRjsVWglSqfdklFllGLAatS8bhzdVwtkSDax4se1_dXfnTznhrXCQe10HZ79ILQa_KGoFP5D25yhstZokurf9Q5XdQT0ph8pkX-9aTmLAQs4sRhmEjAJn9xb2vDyv8FAHD7e0VXCzP7D_ydCjTFD0Q_joouGIWFroiF-DsTH_2hOsp2vXEUY3ksFdvSzkCZSLhKozH5gN_ZSu7JCWT3VT5pMtuxIp6U8maVsRmww7UPBDk8Ro3vUmfinT3fs-6BMMn2OoVmfOC_9HRxc1Lh3tfyJe4_-mbFc_b2KBsbTZ-zFard2KxN8JIBhHEtnjpcuauRAHRSvtqVANx1r380AdBS66dnmBP4UgrvQJeg87EHINjXnDBl1ZvQ_8SptFg-1O4M5vV0xWLVTT1KsN0bgT&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Doggonit dog training photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Doggonit dog training</h1>
@@ -197,8 +196,9 @@
                     <a href="/training/louisville/" class="back-link">More dog trainers in Louisville</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Doggonit dog training?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

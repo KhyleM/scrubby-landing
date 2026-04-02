@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJEQB_VYxulVQRO0xakQv9kBU%2Fphotos%2FAU_ZVEFt6pAtyOZdNHSbhm4IzfqpwPAjyIaxu6D3ngZD0UFKBSa7ws1zzGx3htQymv5QnsagOLKHHQBGN_gVjUJmhxHRu1q3oP6I0WQTK0veY04EdFJ0uqdDhL6qmTr9N4Dw24WLBTfnNqI8WBEcSv7XVaRM6mtPdRW4NKhQsDRU3aebmai8bAd_-Vgqsp2CcWvKr-ruLeRzSZt9JrWQNUIRkYwp9lBGr1yZXobQoK8Sepg7VOkYsHS41qHglwbuEdK9JF9IQJRu76NB1giTaUIZSwiYMc71oMVr_oLwDfzFA7WEH5VxU4450KR95p3zV-oE1NUFBhUyQw_VAjo-Yd6dY9V_fcRyWXFvOHH2_9i-Whzl2VAfWbzGFMqn77egT11rcIJr0RJ8MPMa2ae2IkhmmOHzXUsunORCuq6CpARQ8MCns7M&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Wilsonville Veterinary Clinic photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Wilsonville Veterinary Clinic</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/wilsonville/" class="back-link">More veterinarians in Wilsonville</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Wilsonville Veterinary Clinic?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

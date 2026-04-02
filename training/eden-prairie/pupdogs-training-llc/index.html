@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJr8oAr_se9ocRB1zFqOQaJas%2Fphotos%2FAU_ZVEHxRwYIHmm5K1RjLjCPccVZV0icSlaPakSuB5qRD1fV6mVCjELJ48r7Zvh9L4b7gTJc1i1doJ94Q5wiHd7pfxyP1WiigQ2bgFy014Em82Gst0OGfTYFE4lWno0jbKl2zG55C26cAO5XvQSgEDA2ZR5O6LW21C65a5wMEkEVYug68RBUDIAasA_FGVIjCNLFnDN2EhsiU6Jque7wWiRS4X3IA80lrTG3Kbd52MKiCA0jo306ESBx1OuelWsVBdfFKszQvSkgHj-Ux_eCjmwtX3Y9GM1msJ0DWsYiYBtNV24oJHTgzxYiNHKB4NE-otoe7FeFohV8Vw2nMih6J487h0-H4ZlGDE_gvd_Nu82dkOohbDNSgPiEaLP9dt2DcS8ukp-SrE2ALw84oz9hL43zzMPSvAs4_i4LCpoNgDY8G_s4xw&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="pupDOGS Training, LLC photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>pupDOGS Training, LLC</h1>
@@ -185,8 +184,9 @@
                     <a href="/training/eden-prairie/" class="back-link">More dog trainers in Eden Prairie</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of pupDOGS Training, LLC?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -332,6 +332,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -342,10 +346,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -370,7 +370,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJyyqPos2NwokRQkyxHtspyjk%2Fphotos%2FAU_ZVEHIHxdWpjhHV9hNBHR5R4LkC2EdAafssSAe_o54UyR87Hqs1lQvE-LkgybZ1flb_0fnT55qXAQRD06CevIsL8xDZhyJkXI-ZDGBNgeHF0DfL8sC6yWa0hMKoWQA5sUpnQDISt4yuYtJnKzPzzUW9i3jYLQxn9GkQ1PihJpxxF7tw8iXvINzBg5m_oqDUF83hcyI0kFbal6VGN5QVfG4NEBZaIesrGWXBev-AtOR_ZJ3A2rXnLK0dtEBoKj-Izsd2tKelyV-NsorMvAWt9MnCWTRRQANiu-fLFqgg7Nn0qP1Kg&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="For Pet&#39;s Sake II, Inc. &quot;NO BOARDING&quot; photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>For Pet&#39;s Sake II, Inc. &quot;NO BOARDING&quot;</h1>
@@ -180,8 +179,9 @@
                     <a href="/boarding/new-rochelle/" class="back-link">More pet boarding in New Rochelle</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of For Pet&#39;s Sake II, Inc. &quot;NO BOARDING&quot;?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -327,6 +327,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -337,10 +341,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -365,7 +365,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJSbItyyjEyIAR73mnRq9Vw8E%2Fphotos%2FAU_ZVEGJL1BpDru0Vpj8wbyhxHF6RQQVzUYjJXLF1ls2AbroNUkUZKij84xXip2fclq5rVX31zrTQPqwfDjGpRZapF-qsOzBNRmg23J-aWZkZJXkbGp3jr282PIb4SaxRPeTRvhGX4atnl0-Ae8SsMRkdvsetMY9Yw6eTyLcHlkeUGPI4dRtKwdjhC_pPVu541J3ePNILYV5ym2XPV3M5m5XecrnrCtb5dZUoBso1Wzezy95cqCJwB508SCAAAZWPj3ZkQhGOTh8hvzFaTybAebcI-eXc4u3Qf7MxPNqfW6pDR3cJTJBXi1w6CYc2pWnsYB9P5V9VUz4_TXvuULiqRZAStgvwLdLTyPg714IV9HjGlvFogKL24LVE-9foCjrDXwKNtODKrgeUMBCXb7YEsdBoklKHZadZGuM9JGzj6aOLcLCFAGLQy5sy---3SjfaDel&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Pawsh Palace photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Pawsh Palace</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/las-vegas/" class="back-link">More pet boarding in Las Vegas</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Pawsh Palace?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJLx5guCUP04kRINxzJRAL_t0%2Fphotos%2FAU_ZVEFxp8XhLu83pC6guQkRdIsA2LKN1rwJGogn7ufPJo3lymMvEzW92DKgd748Mxjo2FWo6Yh0I02_wrhpA7CNU1Jjjj2Jo_eOZWVB-3O4IeEgKbAKvM7ZVQWTUfzHaZ-A8ZBN7z2yOBi89MRNGkaoEA441toQutrVAM___Iu-157xdub-oLT7sFR1mCr0V4AW6S5bqjIdHS4heMaQu-IrURcuodhE8tI0vlGoTIeIR16jkESOaYNUDWlwS15g7kIXq66ARt_98rOJ3cEtOdbbLusmea8m37A6ZItPyt32f0DVxu7FzpRdcu-k0KIr20A7R8Cp_y6i9rqYCrKJY19fD0mAz43SNLKvRkzejoxABksfhHuUA-r_R-ZpTFgthO-i_l_X2VCS-O_jQywGHwgBO9UqmRiiS_Qfska45xnYv2FdKX4&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Home Away From Home Kennel photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Home Away From Home Kennel</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/buffalo/" class="back-link">More pet boarding in Buffalo</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Home Away From Home Kennel?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

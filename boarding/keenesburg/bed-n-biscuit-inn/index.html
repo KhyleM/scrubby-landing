@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJs3Zp1Gc4bIcRlc5VhgZF49M%2Fphotos%2FAU_ZVEGSywod0U2_w8r0cU7ZnsqLp2wJHexWwfAjFLryt5m7GdA_jbilitwwirR8j7japIm-2ryN8SNj1_TJM-RTUGb_1iNkX3GBm9d5vEypCDJJCsMb-sO1f_Lwa5TkjL2LYx5Xn7zAb9hHARDqQTESVzXEVv_2VBNvf4RyMHk1vi9lVV9rccnzxjl3HWNYjqsfFGoehCwEJuF_1Opbsd2qx31GbSLOTs7UzQhjxUlWTrke3kxXFaPlAsQVBe3LxYR-CgCzREq27IEK_qkqG-WPSZWTGTbJBt4xBwKCRP1i7DeWzA&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Bed N Biscuit Inn. photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Bed N Biscuit Inn.</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/keenesburg/" class="back-link">More pet boarding in Keenesburg</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Bed N Biscuit Inn.?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

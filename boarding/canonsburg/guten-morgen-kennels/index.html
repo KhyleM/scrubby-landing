@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJIdm8hF5TNIgR1mAZxMhWfrs%2Fphotos%2FAU_ZVEEcofIZ2s1VqJ933AjoSHugCiM1-feUaZJfK5IG-vPqS5DEpqNl98kDI9ju51iEqPqWbl3SQSPgYh-5iwUEz3pWSV6hcw3AYkcaN0OUbVwTIKFpGpjdzE96gzjzPS54COizjRky9hEjDue46P1NEj6p3C18H6Zv2U3SVoWbyHiSQptqlMMxeE9DLYCalxl4VT5IbOcutsEenfMMv4fZzCBYjrDbFf8MjpCCQ8me0KKjx0eaWfYduYcmKVu803ZtryPhpcT8NZ3WnqcimmgDnsgO2eZD9rL3tDeNxdZ7xT5r00Yz9il3WF38ExGH9yZT5HblmvDzeuz-o5-SvIq4tzdGsw9lG8olRpwyFzVS9SWUToTYB73br5hKg37kRy-uJeIcqgaf7U_2_-cilIuOY-0l_sOxvcCcwQ4-hZAnQSss3dHRNPq5x9mu5d0pBOH6&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Guten Morgen Kennels photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Guten Morgen Kennels</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/canonsburg/" class="back-link">More pet boarding in Canonsburg</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Guten Morgen Kennels?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

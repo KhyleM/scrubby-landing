@@ -78,7 +78,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJbwxKivN9j4ARQlNf6zdBveQ%2Fphotos%2FAU_ZVEGvzjwS51jIiDWt4mrJ2YMLSwnyxsn9So4E3h1a1O_p8eMVeab6e59eF0GXzLr6eQeDFAuHDBy3jHf62wscEtcUiRNA1Bja-FgxN3ohvsVgEJrNSYYSu6xoFYDxRbMvPqG4xG0j0dWx3PCPKYYnJ3NdSoplun9m8d8gB_ktGoeyByNnmjbGPlY_Xp7G4Y4io2B4IKQJBRvCOBY69bBdvNbMyklhaSx74yTK5jiWCHK0vxdS6I4cCe26Ehe4QX9j0VNccRZp9RRlMibE7nno1bgUskv0vofpHs-BmadjuIXD13RgI0ebufO9nxg92EG2s1-oW8FzefUXM6WMLR-EMJfQ040JaStLTirha8sNnt3U29cRCMyWh_Rt7D7XgKBydAcZGb-Ta4DJN5E4dfeJRwaR7WXMkhGp0AJIAxB378aivMQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Neighbors Dog Sitting photo 2" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Neighbors Dog Sitting</h1>
@@ -189,8 +188,9 @@
                     <a href="/boarding/san-francisco/" class="back-link">More pet boarding in San Francisco</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Neighbors Dog Sitting?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -336,6 +336,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -346,10 +350,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -374,7 +374,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

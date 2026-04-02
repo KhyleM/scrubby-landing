@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJowkIpPAFK4cRg6yC6Yc5WNc%2Fphotos%2FAU_ZVEEI77V9RTQ7QohZGkoQsAPD-z7JJXfxGMZlvzc8MM-9hAcsmg3bCg82MMARqCPQzr2ltfIP4zEjdaUAR_emPo6FaWjhEUcizwuYdg7pxOSSRM2yBWOTB_1BB1-41XoGXu1sDHiHwDvJeyWT_LM1jjPOYxVU51BGaW7l_-wbJlZpYl4y2Pys7aM2AfX5yE_qUpmkFKk3yoLVMfAArvukawsENPtVIGjw8hNu-ioFbduyq7KlmSYyIGXaVOeFPRCEleXv1GrZbjFXwvyINRp316Bu0f58vjwuHnSLUgW9CYFezA&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="PetWellClinic - Ahwatukee photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>PetWellClinic - Ahwatukee</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/phoenix/" class="back-link">More veterinarians in Phoenix</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of PetWellClinic - Ahwatukee?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

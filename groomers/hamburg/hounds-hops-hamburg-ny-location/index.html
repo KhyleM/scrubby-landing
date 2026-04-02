@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJZYvrLdMb04kRlvs-aNGMFOs%2Fphotos%2FAU_ZVEGFUBVBUIdgRbqGNGRirGLu9AErlKIO9T8_GvlYahZ4zZGSuQFEPKWWEByCgq3VusCYmie5lQKhw1reArA1ja0yzC4w0gubYpvhe1zuCs2NviybWw0CCSAXl919SHGqwu-ltxruz3NuwyUmVllTi7XZWIeIocOSrEmc93YZRTDgD5BnQR7Zr2Jfkm5GG9lP-hzZABrYpJOgtkRMiGPWaQeziqUoZs1shqlpy4j3SDM1YiMCswWWCVyz2nRavzpWRzeS8UeAoCN-GUiwhdRTOT5scpJJAoupyDCL9wcKRwQZMxIwCLwAgaTqz3h1czUnrN4LkCSLDTWiw3gKfQlWAL3ob5RIAOZZDUlowj1ezxJ2IwDWhuP-X23_o6bf1a2Gi5cAKbze7EIcbcfrePzX00oQ00-92n-jUMVH4XEOAmW5upwC1pDPBBg-L5N_zh6I&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Hounds &amp; Hops (Hamburg, NY Location) photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Hounds &amp; Hops (Hamburg, NY Location)</h1>
@@ -197,8 +196,9 @@
                     <a href="/groomers/hamburg/" class="back-link">More pet groomers in Hamburg</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Hounds &amp; Hops (Hamburg, NY Location)?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

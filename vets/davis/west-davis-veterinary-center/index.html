@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ7RoPzlMohYAR08-_V9ymUCg%2Fphotos%2FAU_ZVEG4UfgYoLIFFaTX77QIbIS4qQyi2Gl5jrExghso6IxPPEZHKi2RE-oFpEp9VYIgusp7cDN7KlOhuqLJPnf0IyLPEyhKDlISkFA_0_TWo7xeUxYyWJMbs_lTy23PrrJnPTiu06r7GEhBH7ALTW0RpiiL6lfEthuPlSEv3MjF7otRd7o6R4pLTVtmGq4tLxhjsx_0n7kzczY-6ufT9FPx2fOsrvrBiylNWVu3GNEhqLl9QFkjPLa9Y0-7ezogtlq02dsP89RytTxTJPgRlvbckmiyP7oj4C4fbsPAlNDsZ4zdoHmE4rBuqi3dkPtjX0x_-mSKW0xnLXqlo960PgwtiBmRIKX9pCX5pQojqJ07IvdaDMfhFeI6qTcBpJl_26sxuJK4CAk_3GlrSymie7UQnq9ipVoO9zTvCYU_gvW9taFltw&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="West Davis Veterinary Center photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>West Davis Veterinary Center</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/davis/" class="back-link">More veterinarians in Davis</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of West Davis Veterinary Center?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

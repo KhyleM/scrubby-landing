@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJr-pY0dZjwokRpBkboOVNoLw%2Fphotos%2FAU_ZVEFS5c-eWDXo0tL5hycBS1ZdRc6hmi6UjE2YXBxKgQ1huLM1Fs7O4t6CmkGEu_fZw7McaDeB7GP2OPrte0TynkFc0x_uIFY6LUKsKBZOI53chp9y2wUjwlhiwAnBZU8hvXMDqtMjmoCesMs78mRdtq4lU-CMj35t947ARkJrU99v7_SDE2irsGudxPxoo77rf3_GkGnVjmIcib5tClMVxk5qBmgB6GfRDR5ZiVowmLb1m9Bcct5fLfYtaL3z0SOVJil84sDhDeYC4Xp0Ry5XEfCXgBH64zKbpn4uZnrSgh-7_wEP8w6vs7YfaxewH67gRyhk1y0IO2oqDG45X7Pb2d-VfaxViOIq1SIRyGVryo2pjiG_Uy7Qhp4RRFEiLlKAxf_u2TOSPmEZ2o5uVHGuej5rCCEKtUmEvdTY9IeesoUJrg&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Best In Show Pet Resort photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Best In Show Pet Resort</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/mineola/" class="back-link">More pet boarding in Mineola</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Best In Show Pet Resort?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

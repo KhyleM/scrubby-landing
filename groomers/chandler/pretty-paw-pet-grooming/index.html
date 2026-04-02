@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ8ZSo1SZVKocR4huk0vfmq4Q%2Fphotos%2FAU_ZVEGr3TgL3AgItc9IERBMuWXgtnFqpgkqMbUKjrqk_8d_Zgd1ptc3LYV6HHPUyo5GnPvxjrxbMMrLFPqDWR8I0ZviYU6Zhk1UsDP7uQCYrPssbKuRXE2jPnFbi4uvQW1ALKR_vm9i-8YnkB5Erc0aAYKARcpsYSEZpKAanjm3JqqO01K-mOUwD8zWHZTNatnzVtUZ7ze4jwE0P-lr0kwaNiA0Ir4atj4j_vV4ECkD8NBdVu1Zy2e-7sCu87d82Bfbwz_qGF9pIY27saTG8ccKJcZl1JbBuWZDDJ7lmO2jcpIamuHF33Uzsgqk9Slyvas0EH9P0JNPZIzQGxjzGqVbZmMTEkGxhr8baeGPUHDlzyLYVtp5QxrazYKt0DfpIEBrjrjW1Cur7SLoVqHYBs5u9EB6HaVitV81ICvRR5KhXeCXdHF5u8Fdno4GQtQAet_9&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Pretty Paw Pet Grooming photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Pretty Paw Pet Grooming</h1>
@@ -197,8 +196,9 @@
                     <a href="/groomers/chandler/" class="back-link">More pet groomers in Chandler</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Pretty Paw Pet Grooming?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ3Y4WiKf3UocRP1T9pQnMzz8%2Fphotos%2FAU_ZVEHl3V-kVsysMnvVT-svawAX-JkuJdn_lAy8b8MJFk40OECXkR7i8AeyBhd6hgnhy6P5_Q97nNnLeHT4TsjcTtinu0Sj1Sg7be66tv-7I2E2-Ap-2ePGMUN5Eo1Tr8Jtne6iW3QxdhP5YLPvoAIne0ru5_ZNyK5WBWQ6NjsTvkEmoe38hSEFUVfEK2X6Jbbd2JkUbeVO3dS6SEUUlYs1MzmFt0-zOACLtUO3dBHTeMaWZMjydTv62j7AcCNnGIjPf_paOV3H5sjvOjsIcsxHl0DBeD9d_S3IkQFJ49IqmHlNzQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Off Leash K9 Training, Northern Utah photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Off Leash K9 Training, Northern Utah</h1>
@@ -197,8 +196,9 @@
                     <a href="/training/north-salt-lake/" class="back-link">More dog trainers in North Salt Lake</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Off Leash K9 Training, Northern Utah?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

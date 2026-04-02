@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJCSu__DrWJIgRzmKgs6SJujg%2Fphotos%2FAU_ZVEGcxCU8OA4rw5Lc8ki-cCnzT-Mn-rQ4UA8tFtU4AskntkUldRDhIHB0euSQ261TvlGPMzapNPsG3ggO0_IOqBF3zRg5kVO-f-D8KHMDnj-bvfjQpUkBSpSoaRMVjHIC1q29eeF7nyLj86Sd_DlPQsyp0FQ8Sl4zlKqkY02AOI3-3g3mQMNZmcxnym4WvSNybT6BPEVCQMiydORc8PN4WG5Fy9XXndbQzBV1nF8R1O2oE65bgnthCkCJdTjFC3_WDYt52nEwLdFYz-YRIYyKDWjmYfNWXIrvUKnUFA26Xdtof5jsXUV4e0h0smo4LnzGawyjtE8RmknZ0-JbfaLu6AlwbaacaOO_wJUv6A9jaJ0gwEArZtklT6LLFHJ-YlDBceo9ADS3YmhL7gcAJq1aHhkMK8SuomqZjPSWti10WpnSSw&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Harper Woods Veterinary Hospital photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Harper Woods Veterinary Hospital</h1>
@@ -201,8 +200,9 @@
                     <a href="/vets/harper-woods/" class="back-link">More veterinarians in Harper Woods</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Harper Woods Veterinary Hospital?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

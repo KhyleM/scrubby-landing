@@ -78,7 +78,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ615HqJ5hDogRLds6kACvXqk%2Fphotos%2FAU_ZVEEQrA3qc2xKLgiE0vnqFSq5cJoADZBDTXE7QOVIOeI4Me1nmbphXm7XF07WjC6BTNblcWiiG_rfFezJW-1dK41aeLeePL06kx08kHO6BP3xdyGIzqDocEVk0Yp_FASx2ToFuvIGz1VqkiKXEAuptG0CnGYLbdTTNHuIpziR1JscaUOZw1akz-K2wpfU6z9AX9DCLnKJxtRLhm7-Xa44e213jDvYKtC82DjlKRY2k_vp4lUTL_ALQZz1JiLNKTfjHL_joKXzoddYJ4cUbFj-6ZeP01r_egN3mEVp3QFrWlUaZCR3z77oscj3lw8Lzt4s0O78FzIX4geD7JtnkjNUEh6PJy45HV9b6t7N_aLEup6BG9FcSQXJQ4IRdULsXHTxBuiQcrHs6R1qRUq4uRqvpc0qXTwtDe1lCj0ILkNwY8E&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="All Fur Dogs photo 2" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>All Fur Dogs</h1>
@@ -179,8 +178,9 @@
                     <a href="/groomers/joliet/" class="back-link">More pet groomers in Joliet</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of All Fur Dogs?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -326,6 +326,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -336,10 +340,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -364,7 +364,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

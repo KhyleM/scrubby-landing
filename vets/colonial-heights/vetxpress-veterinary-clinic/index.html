@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJwesT1UemsYkRZZ8HaoqGEUo%2Fphotos%2FAU_ZVEHVpj67T8wIK4wk4kzdYly0PW9ysFXNjH3_eDKzsAppz-KQISnh__w3nA71cJifr7nEF_uxhISQ0DNvlLadCFv_eg4MjmQy0q8W3u8rZrYe5v-Dn9zpMXnSG2UqiJIXyZjGmU7Hli78glxJhjqGhSJ19irgEoAsy2r-hzM3WeWDTosw-0UkVPLOL_YWJq6_ybema-xh99bL-c8NQFdRiCppq2MpQjhw1eNYIC99EOb5Qqs-Nh60BFjSVnSw3zbxaai8kwAIasHBbzFar1bNgr1m09-gHB9mVRe8f_Ks0ssXpQQUMtmJ5yqvQtxXbg0SVNAU8JUqjDrXqPlFIL6rbzhkVfRZ9sh_0hXPzGPbFqrQZ3mRz_Psc-PPMyErPEh0Pcqe-moQBLT-7HlRJxTgHwDrWUbPT05_AMWsj7heZ2wEUxH8F_8p6DdkAMqqQ3q6&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="VetXpress Veterinary Clinic photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>VetXpress Veterinary Clinic</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/colonial-heights/" class="back-link">More veterinarians in Colonial Heights</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of VetXpress Veterinary Clinic?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

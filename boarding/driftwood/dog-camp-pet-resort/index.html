@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJj80oCYFDW4YRMM8y7VgOgJw%2Fphotos%2FAU_ZVEFTtt3hmEIZzL3G5_0H63wsrbVKMLelcIQGsz0a_sQdvjdY1hXN7bx-k4W-UrMMvLbZXXltYMJjhXziOSVROPaNYFQWdBvWCAMujjUpxcILb8QC7aqQ5--D1Wi--EFgb_RgG3HaCeSXaQzFFxMIBKjH9oqHd9Gv9xH8hYoOX6HU9-Gek3zGpNtsDLXH-PQ-YR2WHzdGP5Vn7EVLxvr1o627XACqJ2OhRgxFv5CDi_8h9XmkjT5LcIE-llqxYAy7VY58WvYoGkw0u3Fxv4mTqB8AcVcgfkyjRDF9LTzB8WM0cyg3eMj-2zlPr5B_lPv3IucZAQF1HQ7SCl98m3EwynE0JDA2hNWdC4FCkK7Pk3n015FV8sHy09CPIO7c7Q-swA8fHstrwP6cIMVfAzp_laoccjswAGp0uI_NYuar5fjwruLFDTac938qcNQiVeo-&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Dog Camp Pet Resort photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Dog Camp Pet Resort</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/driftwood/" class="back-link">More pet boarding in Driftwood</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Dog Camp Pet Resort?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

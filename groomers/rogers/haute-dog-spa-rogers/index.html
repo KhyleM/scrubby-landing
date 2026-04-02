@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJD21_1r9Ds1IRFVrFQiu9U68%2Fphotos%2FAU_ZVEGy8ArgOAecojWRFs633_bq3npGOEwNSQcWl3GRKRew8sEvNo3ViZZluiieWgk5moNdqpmckboEalX4GRLsOTMq3c7EB_IzHltba4Z_hTqvZmKB_41g-3qwoVtjER0VgfDWKNwbnfyyL6msaCSwanfW-wR5ol8JKr-rURuihSpmMAWsBEK6tX6KwBVxzQJ3EJ5F5zVxld_yQNIjVB_WNdpOpSc9xYkPBDPej26j-1FJb9c5H6vn3xfv1vuAOsQDgW0-aUsSEJh6auDYi9sQy5F6mRGE-NTOZsO1zV--F4XMd8CY2i26SGIrGx7QlaUZTlwf3JoIZK-ofZKvZGit_HB7BQ22PT8hwxYWZ3OQHOEWCx8NvNWpU003otNoIpaMgHxBUxN6_MEPISZpDkGlVOxL0VIuXKXx1_liGLdoal5CSAhnn06QnpHYxxdKUVhG&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Haute Dog Spa - Rogers photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Haute Dog Spa - Rogers</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/rogers/" class="back-link">More pet groomers in Rogers</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Haute Dog Spa - Rogers?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

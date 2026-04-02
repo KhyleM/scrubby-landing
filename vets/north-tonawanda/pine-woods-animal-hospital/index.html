@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ96LEVBVu04kR8D40X8AyeQs%2Fphotos%2FAU_ZVEEmKD33_stueasmORuf9mCEDOWlhzPj1heIDX-k3lEqhBZuQBT4JyjWS0w8PuugtyhOB5Jn6Z7lck2ZpZWgg_zhy4CPcnUUquL8QFZwRBEps_tkMlVoajRE1-qXN6oPg2fcH6JKNV2q5PeVcUVAc28rDaZuzlri83AcAr-dlg5VHlOJWpuMFKxJ5WK8dU8fuTXgjrltPh_XFplN9a-y4b5hLdSZIJoWcyA9k72o9J8CeTaIoH05KZR675BU-Szn26sgyrN9DNaAK13wgUqULme2GpEYtoU5LqR-sw4T9SoGHVS6fsJkaksyCE9adYNLiBhtI9Zb_IkFvZaZgpECxd7WdA8p3OEMVfSfHzWNwCYafO-j1wJqJn4Xg0etlH5Sk6RM8kbYw1D1VymqwRWPz_U66dxD9CacpNzvur8cilPdI2xN&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Pine Woods Animal Hospital photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Pine Woods Animal Hospital</h1>
@@ -201,8 +200,9 @@
                     <a href="/vets/north-tonawanda/" class="back-link">More veterinarians in North Tonawanda</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Pine Woods Animal Hospital?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

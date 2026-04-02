@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJo4EKIbz8xokRZpcDAGDqI1E%2Fphotos%2FAU_ZVEFhT286luJtiLG4_xYH3ILWOfRWp7TKas931m15bx6cLXT8OCBdu4j-FVwIUcRECSZobMFEMv8ww2zD37T3v6oHm6fP_GZyOgI_oab_FozcIap93QzedmTuFmxapKU5ObgDDEU-bY-8mrygGtbsPXup4wow_kA_83k9VT7XsfAKhdFnPPK4DZIM5mY83EDGhY-IwZ2Qe8LeUmCjFxxcSscilql1r6_Oq_zQlc3QFfo0YJdHM85Wz_bsCQZgBKui_D-kvMpRd7y-ad0aRo5J8autAz3uGBV--NciSNRiaek&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Pet Supplies Plus Wilmington photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Pet Supplies Plus Wilmington</h1>
@@ -205,8 +204,9 @@
                     <a href="/groomers/wilmington/" class="back-link">More pet groomers in Wilmington</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Pet Supplies Plus Wilmington?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -352,6 +352,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -362,10 +366,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -390,7 +390,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

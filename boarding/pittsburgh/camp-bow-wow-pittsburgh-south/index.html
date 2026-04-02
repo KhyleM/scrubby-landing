@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJg88ghLLwNIgRSLI8LKDtpbA%2Fphotos%2FAU_ZVEEU5NpL8ofRUn0HLXl6v_8BfgbC0JSbPzPMFgrAC1EveVVy2iN9vPJJ43xzANokIgPPqHnt6AX47m2eWCxxE1oAb3PT6XaAzPubVKkVcFlzjajbLOE0iJF_XaSaV7k3GbTCCXdvmRYmy4sVTVt6jf3VNmLH8KrmC4FA2YEuopuT14BpaBNQyZtM8dSoD8H1hSbqpDiY3wefac7J5wtwDi_JOWJvXAkIjc84KtcNpGl0ESvik-Yw-gSh8rk4RSqOUsL-jr59cQ5fBi9rnjNMGcWXF3D1zOVT8RpwVtqozJNi_GXpZrkziveAB6m7OHrD4cOHEY3kIn5EgefBa5Yb-RofpcXR0gwaZeIapt_t5kl4J6mZyC31269XXQG24sLU1dn0RpMTqOab1Eb-qQc13_2l7qw_MVLDb1buKidcP0j3cGDy4Y-IfJ7OcnKp9wXv&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Camp Bow Wow Pittsburgh South photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Camp Bow Wow Pittsburgh South</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/pittsburgh/" class="back-link">More pet boarding in Pittsburgh</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Camp Bow Wow Pittsburgh South?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

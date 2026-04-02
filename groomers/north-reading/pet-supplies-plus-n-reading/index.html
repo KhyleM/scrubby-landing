@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJRR7BjrQJ44kRoVAPTaLutrs%2Fphotos%2FAU_ZVEEbm0nKf0b4rHike4ZgsoZyqgUo0y7dGJdF2qhBrq5nPftZHdOluswICtGbTG5WR2U5U2fVybRLAWpV9SbUGrbVWrkPNxWMeg0awW8AzsjInv81AMwxrUZjHbghQy_ki3VFJfbYwh7on1oKfgEAoAew0HZlUF4n0jXWd54jKRiihG7pj1EF5SC4tFvifPdqr3BllpDQM7-xxr4RynEOU1wR4ORszMz7k-viGbSSo7AY_W1Badm-a12BRRWPsKhiRSvplGO8gZOUexnXduZgTPWHfglzHglHXk6wiK7Rv9s89rQgbO3wagnvvmyct4X2ZGaIRM_U6q4ejDGnK2dGrBpYuBXbNAq6UsFNqKkVo_GSMSxnEe96ZGR8CbTuqz0USz6lchE4ReCZbJzXaYFZ135Aix_VK3u2rxSC3ST2pjHPZMvk&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Pet Supplies Plus N. Reading photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Pet Supplies Plus N. Reading</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/north-reading/" class="back-link">More pet groomers in North Reading</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Pet Supplies Plus N. Reading?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

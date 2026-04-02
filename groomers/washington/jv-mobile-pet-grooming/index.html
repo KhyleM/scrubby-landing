@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ64cM6ZvTVmgReVsNN4S7Jzw%2Fphotos%2FAU_ZVEE8YFAlMtOAHTTqdPELJWgOL5gx9QAHukHd0mkJmmVCbDNSjCy7LHxVTxjejZJ46yBJYQX7c5Jk_wQVh3ViApkEqILhEXfqIKg0fTzojjyRR_Rz4G3kPa-LpYB5mTSf9jGooQ65NH8JywJnlEba8f-w-MsJwsxE1Hrl74AGhr8E6zLFNcMlq96trx0BMBd4L0KvtmiA6DPL2DQYmcrwz8WF5OW7CEq1mayYJq4o6P4WMgUOiqsYd94PHN2UataDPX3SucOMu66TY_GUPADSsWWLTVw-Thk7EcZpW9LRmF_OgL4Rk3wPDYlweDVrtBiNRp9G3kojDdGguuiqDBrEC_vzRXFon6VKFeaTxgrqUg20a_U1lLz2RjVVZtDBO8jijev8mK7D9AfqRNs71joRBJbq5NoX9__jM-I3sF-b0Etm2etLQ_Uzm_abwI9sUlMI&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="JV Mobile Pet Grooming photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>JV Mobile Pet Grooming</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/washington/" class="back-link">More pet groomers in Washington</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of JV Mobile Pet Grooming?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

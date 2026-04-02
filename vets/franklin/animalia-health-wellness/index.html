@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJEzYc6dR4ZIgRwy1IKd4s0Z8%2Fphotos%2FAU_ZVEHHcqFTcxQplCdhVI8veyh2OzQf9FzpCwLVGrx2VfBAfzSJ1zE70VIhKtGqS6xZEpSPyVhmfC_Hw0cRmB7WrGwxiepeJkU-rDiwky6xY4B8TQ7zaw0s_1bO9Ntq4q5UcCmt1uUs7Vt4Ai9Q2XoYuFAkCfuRJlwNvwPHQ_Swj1hhgpUrCR0ruWkPDaODn91jENGLqlbV24HNAI0U0aiX74hdPeJtBKX4r2ck3lObJlbt0n1DZUC4woQ_2s5hFRSBW3plelCkxfJLIqcTCwZJ2qnp7MWo88mq8QR8uH0ocBK2WcrLAh2QlJmJP9B9IJJTJnMc9EhkOCIVfeuGumZ7dYEFJE5M1c-P4Hx3e-OJradabrSCuBqWhhe4wC8-eKo5B_TN_dFj4C8mArXQfR6fgOmFq9S4qoxejev5Zy0zdcg-tZb8&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Animalia Health &amp; Wellness photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Animalia Health &amp; Wellness</h1>
@@ -201,8 +200,9 @@
                     <a href="/vets/franklin/" class="back-link">More veterinarians in Franklin</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Animalia Health &amp; Wellness?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

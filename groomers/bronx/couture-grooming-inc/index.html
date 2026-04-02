@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ___c7IXzwokRzXLLTW46K5g%2Fphotos%2FAU_ZVEGsLdjROUK-4GfS4Oz3qpa2NIKAAzi3XSwI496JtPO4LgC-oBK8H3ejmTRpW5kqRWky1sAVTYP2qW5MKvdaPKn3Pk0S6MPuaUbCg40LAidV2hxm9kTked1Fg6AjwTYp4Y_JAuN8CdTh6KR75PDahC1QQ4h6TAf12Nnh60obZmYUQUU2BsleceJ8IZEJRZ4NARxJ1bHIE4xRsm5VdccsRYP6eIxibNwVFo-dasCeQZk7L7veJCwuIRzZ3OLKqRnj6xMs1c7xRxpiH2F3TEATf4zqvpsDDie2V3fhf_anRZqlgAl1SbKQLa3vCZGZ8nCDmR9_FfZ3x-cGmWPNqQyYrtDpOa5lAW-6XKgWdpWXOv_BSOTLyHLHpW6biTzO0fRjRCy4aDrbibmmZ4gbtDFBGqPkx_lPq0A4gaVVuR2Rkdy6t2H-f8TeWQjhe8GPbKqK&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Couture Grooming Inc photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Couture Grooming Inc</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/bronx/" class="back-link">More pet groomers in Bronx</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Couture Grooming Inc?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJLzhei8tAjoAR_DWs_TWKdfY%2Fphotos%2FAU_ZVEEXeoJjqRLw2TLhnieOpbZT94Z1OBqJ5iBTi-3P-8_GxrHROYrO_gWbqoDFjMQ1u_vabOPjN2hSE2-CrtYiWY6Ltz92xhzmWZg5ymnVmyWa57UOOF7s8BHB75WwvVcwWxSeU-24KjWcffwR7os0a1taKQwNQzyHuHGdVR2n5N8L7HLH0eYWOT0iRR83yH7bbwk4BR_DuaKHJkXYPS2iy4djxCZ3ukDT4HptCPqdLvG38H8t_u_ihg5_U5aAmLeIBU_nRIGaECMk4BOn6ahdiW_xJToGznlY4dmrHrWl2NfeCjSAAcwOHl-9O3OIbIS1qcx_5rkC1sS4yVSlEa8WUuaIh1-Idm3Qzh0Z8goRyDV3ajwZ3m5pyPXRKF7ehGof_vw2yKJlBo7qKQOxZoLsg0btT9Xbv7FY3se91LuW0XRPNhZU&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Scotts Valley Veterinary Clinic photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Scotts Valley Veterinary Clinic</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/scotts-valley/" class="back-link">More veterinarians in Scotts Valley</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Scotts Valley Veterinary Clinic?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

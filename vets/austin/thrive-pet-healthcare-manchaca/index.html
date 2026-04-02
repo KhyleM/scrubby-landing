@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJX1cQ5PNMW4YR1slxDa2VuOo%2Fphotos%2FATCDNfUUsm1UzQhZbgCAWQhmOFE0n9aTx4lHUZMo-Zr48UFXv49Z1bEa8JDUXiY4IVwTUDuF8vSpMN6q0mPej3bp0K1c3kCRCIL6oj1xJERliJUiwxhq_j7J_ws-NmVphzpH8nqRrUwbpvMlUDaY--U13sosDaGS7GsJsVa9KmGGEmPZ0jPJABNltu8ABEG9GTDJOXHL2xNvshvuZ2U0zs0RSDtlPlSFRABfJMvAKf1b56Xq6-m2DB5JOjwW-fZFoxemBitsIc4MgcNwdO25UHMmyg0tIDnVYyBHabqBHCOVYWFUhw&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Thrive Pet Healthcare - Manchaca photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Thrive Pet Healthcare - Manchaca</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/austin/" class="back-link">More veterinarians in Austin</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Thrive Pet Healthcare - Manchaca?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

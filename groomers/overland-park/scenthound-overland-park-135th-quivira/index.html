@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ-TieFfrBwIcRlmSNC0mQZPU%2Fphotos%2FAU_ZVEH1HZbp-aBwtWfyA888mxK7ORHc2n3ba0mV_UhA-EqYbDmFbHJ7jWoucWl3uNXknFHCSjHs218nlf4NmW7Ng-SuN8Crf_rIOleHjwUG3MgTN8lPvuHTBk3ZBaoizztVydoHI7bWLNTvy7lSs_tvrf_kl1Un9NfeRvuJS6sDpEUyTlHMNCOkXsiOCt1AA-UDf5QvC05S8efxmdStXOD48AgkIVr0FvZJZvA40x5dEjlV-XVBnR4fxGu3F2MS1ZR9R1H5AwEYxZzwzouyaTXF97cOUpd6K3LV2UEfD5W3DhBrrioZyWK59friVvbno804fNMEqmuzbAxk0GLyE_-sSC9OkaUD75cq4v-F6a3gjl0XlyWdQ37LWezpvg5vou8MW5aguMhCawzEDjT79txQDSLdIpVjuRcQnShiOUg2v0R4xLEMOj2FdM6ROzYFMPL2&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Scenthound Overland Park 135th &amp; Quivira photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Scenthound Overland Park 135th &amp; Quivira</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/overland-park/" class="back-link">More pet groomers in Overland Park</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Scenthound Overland Park 135th &amp; Quivira?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

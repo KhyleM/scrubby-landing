@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJEer2SvrA2YgR-fjhrM4kiHk%2Fphotos%2FAU_ZVEF3PwmU6-bLIwk_lNSMoayZW89wlklPeENjkUmSjV7RGfosXBhmHHqLJxVTImlPwh7TIqg-43wNhX3xUlzQEZs8XL99I5YuJQkf5AKw3dWKGLIG3oUs_Znn2KOC7o5QfRVZctJi4aoUMUANEdOgGYiqjqpfYZjWDQ3J7pxg7D06Ffmz13Qo3RR-IdJEcIJ4U9H3iDbUER5aWOQqHHraAr3aXbe41E7LlGxIY3g7hgkmxdp3rvlSHkDbWOFI2TT12mt-SHEfjwzMNsoPxwirdbY2rGMO1K_2Hoio4mGIb2c_4PyZP7A-JhJrCr0sdlT53d_GuSkgiStiYM9tMYeqdC_t9rbopfrxthbbUSBeDDFQgt2-bJfkka32xhmvzD9Yt-fDMLqNJrUuUsi9az52CFMLvD2M1K3Fs9w6OaJzY2dXMmHPh3pDLxFXyo95paxA&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Pepe Le Pooche Resort &amp; Spa photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Pepe Le Pooche Resort &amp; Spa</h1>
@@ -199,8 +198,9 @@
                     <a href="/boarding/miami/" class="back-link">More pet boarding in Miami</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Pepe Le Pooche Resort &amp; Spa?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -346,6 +346,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -356,10 +360,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -384,7 +384,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

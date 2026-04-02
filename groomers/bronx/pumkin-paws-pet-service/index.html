@@ -79,7 +79,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJB_HKC1LywokR3eG0SvlFvDc%2Fphotos%2FAU_ZVEFQibcaLFgM-j4iXd-n1wTI2qY7YTE8p89BDnmW7joQPnrbhQv2UFns3dR2-1wZmXJ5Nt_zoqK-I7NmYhPbb93wgIe128f31er6xkmaBkkEZSwpOhA1_lRORO9v-h6BQRF3cDQK0poCP2csKkweqwpERcPTgbHxz9sBI8qmxdoNQHMWHS5JLMDjlnfAlin5VL1hn1v75C8pKHsp8SwWFZ9okxp23DHCll5eSQEN9yQV2pPrZmMaTlvCBloa7lxexgPIiznxMSDGzPulx_jBwGmZ32LBWBOSApc0CpEaOmAKf2b5pVd152e5rYLPhoJlrwzVgV37GgCgwFX_M-jNbUrpzmVaXl8DGyfN7IJZyl-ymQTGbkje-lJ4-RKn6S6-JKBgwZeUPQE10a7aiPA8eyjQxxCWT89lSDhU3_TsGqPZNOE&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Pumkin Paws Pet Service photo 3" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Pumkin Paws Pet Service</h1>
@@ -195,8 +194,9 @@
                     <a href="/groomers/bronx/" class="back-link">More pet groomers in Bronx</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Pumkin Paws Pet Service?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

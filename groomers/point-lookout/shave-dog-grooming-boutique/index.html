@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ31xmN5B7wokR3SPMnGjCfUU%2Fphotos%2FAU_ZVEEKytdZsOiAQiLBAePrOfXcDvnDTPz18Ot-8PrBXU52ZHH5wC5Ic2FGwfRajVDAcRbkYkzh0J2QdJ1Is3KZSrFLTnP8buEVAlk2SsSNSq_veR_ck4dQ-m4vUjYCoShlEsmgCG2dgH5h9EMEKUcGY8dZW_twGI5rm3ite3v-pmYQDsqfTYlRy3dZJwLJAg6hk_O1iLdANJOrhlkT-GUw3Uc1_FyOqe1FZCLu6Z-xB0mr6FFT_YRpyOZtqiZPTqUd6D5vw3cvdpDaXWLXmK0uyoJlpkQnSdal9Y2rFQWbyIoLXEWsalkpL6sBcD5FxKUbL6TYX-onFRJX7j3z6vpIqttv9AgiE4J_Rp5qchvzCU-qBN3I8Z58qt4lTl2H3g4LJnv-xFRi5OJ0GJgn7ctlLf-C6jxgnwxQ7Zs3zyuHhxfGQSY9i4SLjqh_TvuT4w&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="SHAVE Dog Grooming &amp; Boutique photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>SHAVE Dog Grooming &amp; Boutique</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/point-lookout/" class="back-link">More pet groomers in Point Lookout</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of SHAVE Dog Grooming &amp; Boutique?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

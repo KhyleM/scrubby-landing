@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJOaNV2GIDlVQR6_JU_z9EsjQ%2Fphotos%2FAU_ZVEFi6_UW4py8kisA9Sb7kMEP8Y3e4st7wN6XFztDqNvgte67CaUjPpWRjORA8HGojOvodlnzGklVx2EgGedLSvZ-bVJtjSVQiLyMyavO1NgWWd6dTNxgpezo0bKcNt26GjRYm_VbVRJ1OOLBgxDHEgEXrh-0mORiRj9D9OhR5xyFFVZFp8qFQkgPw-gztAsc5qQmQZdX7fpBxu579rViwGXj2Z2XF5JyxLfVJkDqWnAGUV7TJFf9tLueBIjG5KAE92kHwFVT1lveqtfjRmNpYWR8cMA0W4nlUOoLRp4TY5Kt2vZozJjnxCyypByg6ZJi8ayPG38cv8ps9QIgtS58mNwcSG3tpzuGJva2mgUkNgb81OFq2hylLrpmaCFcE4TuS3tkR3hJvDmMXJESIl4V4DeaM6M8nv2WWxf08KNM8FZcb93B&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="For the Love of Dogs Training, LLC photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>For the Love of Dogs Training, LLC</h1>
@@ -197,8 +196,9 @@
                     <a href="/training/hillsboro/" class="back-link">More dog trainers in Hillsboro</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of For the Love of Dogs Training, LLC?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

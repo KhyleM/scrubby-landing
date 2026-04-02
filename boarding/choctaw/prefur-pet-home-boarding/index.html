@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJmTYgxEI5socRPVCiLVKSYVY%2Fphotos%2FAU_ZVEGwvBVCy66mxwskL0qfNGOyh11BDRlpcrqmhEdyTWsHythzh1zXiWo5oxSkVm1DjDRCPc06DHrlNdVBjFRGgXGyWVQKjf_yE6z6FIIASQ7EmeWoZpCHn_0GkhlxnmyKYk2VntoSftsSo1vqZuUn7ohD0iOEDlwWuX6OwSA8UbEDvgL4SC6kb5cmkvdp6gn9yHWdmZNrEx_780mU99Bu7vscVdg6Cnp1FFGev5VirD56AWpsKjvEzgFx8nqCPQZbtX2EiCquSibkhlgKefGexv0Mi6ZDeJqvP6T_THUC50yh_A&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Pre&#39;fur Pet Home Boarding photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Pre&#39;fur Pet Home Boarding</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/choctaw/" class="back-link">More pet boarding in Choctaw</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Pre&#39;fur Pet Home Boarding?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

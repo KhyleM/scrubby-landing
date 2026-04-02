@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ5xGQfXaB3YgRLJ__4ZfLgd0%2Fphotos%2FAU_ZVEHqhNveKqUpH7x5tA9OTIEgOB1uHwps6_dO1L3yCrQGwzdHdcCFvbk9On4h7_tMjBiaoI95RQ5PaJbHf_jdSIZMGxDS8PNcVbfl4Ie2xWyRxb8mZcHyMtVOwD2hGC524DGqqxxe2Kw1vV0xQHMPtsw85QhwanUQG11swFI2vc6jYWdL-YDuzN5xKQygLrISXZ8zkJ51Ncmp177Iawb2UDX_wcYrPeJojjj-RcV0CiAISWEHbgCIgqwtT0saA8ypKTD2tevwJa08b3Q-YAQJFts83HflYh2Pb_RvOBtCGF32cL9TRRPox_HYmxTy61uXFbYW5h8Qx19rpLE44E_jnHI-eu-uSREiib9NTMuln7eevutpWDEp-fIs-9VnTUGhdMrbfmjk_vdlwXX9CNu51HiLSpH_E6CfULe7_vNWm8PtkTAElIDYeWaZNEnHE0v3&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Pet Paradise Lake Buena Vista photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Pet Paradise Lake Buena Vista</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/orlando/" class="back-link">More pet boarding in Orlando</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Pet Paradise Lake Buena Vista?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

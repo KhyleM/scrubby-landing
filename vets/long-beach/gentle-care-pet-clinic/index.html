@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJHzu5PXwu3YARQWrfrugCCLo%2Fphotos%2FAU_ZVEGq7AGp70nGs6ivl3la2IOq8P5hCHKz2ekZFTp4Dv9On4V4r_nDmeI7xnt_XlIu91N17ncFs2gxtKVYHDIITGoxKnT4dZy-C1I33tv4-5JAKe1NDE9eiHG07P1GeNmOCndrSFouKR4qUdx7Ibg5cA770mousMHc9ErpCeuRENLO7YnbR97PsCwvLXDQBLI63hnDkmyqOF5l9nNdrypVv8IX-QMlu4VVNe6pYmu6bXXIdxOd7tMM2tOB9dIXjc41UtT5ovEO5UBp6zLcj0vGmjnBANhzYNYlIA1nQyZfDaZN4KZzlOl0NIJp_1b2Bedkr_IxPnF9bpzENqeTLtTkGbrZssfjFzbMO6kkdwGlAsXWG_FcGFsDlLSJQnWT_D6v_6ITFqSvRsvM1YPUSKEMu9vZsxt2yrw9hM-zDV9A6DufsNoL&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Gentle Care Pet Clinic photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Gentle Care Pet Clinic</h1>
@@ -201,8 +200,9 @@
                     <a href="/vets/long-beach/" class="back-link">More veterinarians in Long Beach</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Gentle Care Pet Clinic?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

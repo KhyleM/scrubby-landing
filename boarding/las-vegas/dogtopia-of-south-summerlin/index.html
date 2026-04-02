@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJuZbfxxe5yIARby2M6HUG56E%2Fphotos%2FAU_ZVEG0xHkjt6KmV5a3s2CPVbo_AgH3cgXrxCSK8FsYq6HQ3tpb3c5j5ejgZiDvLhIhDkiDcuxIDhS9vlJa4AmcEizJwGWPGv9jDJ0hx6bZiQwaXFqzUkdSgae7stoNbLZgx1uesHqr-NPSq3uhcibil5QNRh2M-6wBbwHsy5-4D0zpBhLU-mWueb7Xb7kr2m5a1XUeo6_qpXz3VR7eW2A8P3M3PbSf3CAjZIEjfYwNF-gooLpHsYSsju0DrROnQweT5mdRgxyvWTwibE2Kc90ZQQx4hGA4A-RybKg1JBMu2j6D5aGOSMksLhtDuWoBprLmVHLUycleIEGUKtDlh1iesFTWy_byF4O-uUYcPM4di3WlQEZDAF5X7QGxEz97cbiogqIKc3qJjhhFib4AbUka56hvyT6u5sm5Km5i_stc2O_ABctHd4Jl6w8N33vvIorm&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Dogtopia of South Summerlin photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Dogtopia of South Summerlin</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/las-vegas/" class="back-link">More pet boarding in Las Vegas</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Dogtopia of South Summerlin?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

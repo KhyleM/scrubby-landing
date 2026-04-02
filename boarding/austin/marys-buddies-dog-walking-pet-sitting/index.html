@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJxzdCxeBBW4YRHshHMdD5syc%2Fphotos%2FAU_ZVEEBISZRAyroC6ZNC2abU00L6OuZkfR1Frb6U1vWqFnJj8xkt4z4LNQXM0DnoL925tvfxOCTYwZPMSSLw0GJjdB3DEXRiENX6srai9rrXemBwAV_g_S86r_ut8e96iPK-nFLlIGhYyjGYTC79ZDQ-s-P8bcB2mxFPsJVvWlAry10Nba88_Lk6MUGd032I74Xfssu_CUsg9INlHTyuqf5OZys8mM8T6Qlqqso3o8BAw9ISiqzyIwRms9VmcDmi_2doHWzqXDbuE_Pkpw65cicJgNEBu8dos_wMgH01QXA3iTM5w&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Mary&#39;s Buddies Dog Walking &amp; Pet Sitting photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Mary&#39;s Buddies Dog Walking &amp; Pet Sitting</h1>
@@ -189,8 +188,9 @@
                     <a href="/boarding/austin/" class="back-link">More pet boarding in Austin</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Mary&#39;s Buddies Dog Walking &amp; Pet Sitting?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -336,6 +336,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -346,10 +350,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -374,7 +374,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

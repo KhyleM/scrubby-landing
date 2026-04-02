@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJo0u5mfRbwokRG_DMiroFs9o%2Fphotos%2FAU_ZVEEFTipBc4BRTuVl8usLWbn0EmJDagLRI1OA7mv3LUXiGxGruiF3hq6FAfWxG0kCgWtBHg-aDSmd4kjKjc8mR0PwLFtxi0cU33Z5drprQAI6QEnn3mS9oxkhcT1CnITeMOV9BHJdlQlx3gNNRpXaE8EBhZrfg8IArSNVM5BBKHMMaaB4AH2ywvkCTKbGW0OGC64f2N5hf0kQqdl1Y2agnypyatm82R3AyKwPUOeU3QPcu921vRYGw4_ftW1tw4qhrD2Y-BgUq4EVPHUH2uS3IuvqO_X_heQkphoLqZfXR7ljdYCLq0IqBcPm8UPQXKim-fJxeKvWIx9Kd3luWOQmxIrO2kG6A8EugUjX531Jaw7Kd4vsZm_UaD30Ojd27yf6K7xkYryXamR6jK0kKzNse50gBZocdJqK-TFRaMhP9DWdktU-&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Flatbush Veterinary Clinic photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Flatbush Veterinary Clinic</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/brooklyn/" class="back-link">More veterinarians in Brooklyn</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Flatbush Veterinary Clinic?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

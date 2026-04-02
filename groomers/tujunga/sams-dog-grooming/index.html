@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJdxfS3jXrwoARBjAm-Ws7mm4%2Fphotos%2FAU_ZVEEmcryP7353abghMNbAY87u1WHh672skUU3WGG7CaC3G3YxdwvdQWdUpj3qULEJ0ksJZixjtscjZLP308IgUHetDdUP4KmNP816zqvV1rwhKVLM5_lOBHXutB35RhTG2Au1i3BNMxszCj3nCYwGAnPYD36lQ9DfQFcW581Mez1zMrrAYtzMc_EW_ECXoZl-5Z4eSZMPnClEIgrmWUia7kYt51BEQq0uWJr4fqkOf6T3Z73E6Rkuzpnb-zIYLDlVQmeqvbrMvDG2kzgvmZDxqHdoVOfCKIXqbMSTvit1FHzQbZr93_rSy-6yddl9dQijFROaqa5r8l0j0gy2nA0FNjeZX2wcYd6259TiQS5CFYJo5V3aMjZ62w9s8BQoSVGKm6TGeARmchhBADPHA1nysZgZOMArXoRPXR0D4xD9Y_8P_mIc-Nlbrdp-KDG0ozDP&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Sam’s Dog Grooming photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Sam’s Dog Grooming</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/tujunga/" class="back-link">More pet groomers in Tujunga</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Sam’s Dog Grooming?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

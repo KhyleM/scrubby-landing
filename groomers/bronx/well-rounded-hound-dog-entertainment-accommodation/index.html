@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJocjjorjzwokR1RQUS3mnO2k%2Fphotos%2FAU_ZVEHnSehnNxrp_D4b09CV4RNAnSYhZqQKRvMbvaeO01kx4ksP6P54OIiy1Pr7Ly209vT4bzCcK4gQhbXHCteObHVMTE8S5fUWjdKijH6sQeVgGGA2DNbExBOpFXBcw1TuhXavheHEZ6w43gMoYkAr4psYbh4_30-94JTUuTirk53Dc4GLRuf0p4DxQbHEtMDKXh9VTPdWdgSTJ9C2zBOj9ke4le_5uAUl8vv3KNp1FhjTatK-0-UAyqUjDGB4BY85ZUVvaOZJm2du0Dkx6xAj50zK9TeCWt5JWO2XzUj8Sq1zfDgeEOxcQW3zOIsr9KNBARS5yMVENpgxkx9NSUDCHitj4EmBvmzRjgwh2YBl5sjhsmlBwkt90o9OhXZXIPIarWHDFIVgedqTvUHgRLLrS1F0hUD67P3aHmm5cuC28-r2lp9B&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Well Rounded Hound Dog Entertainment &amp; Accommodation photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Well Rounded Hound Dog Entertainment &amp; Accommodation</h1>
@@ -197,8 +196,9 @@
                     <a href="/groomers/bronx/" class="back-link">More pet groomers in Bronx</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Well Rounded Hound Dog Entertainment &amp; Accommodation?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

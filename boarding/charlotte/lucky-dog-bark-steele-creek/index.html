@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJB_HUZrmbVogRrg-Z638u8tw%2Fphotos%2FAU_ZVEF5Wr9IUXuSgTFWxydxRVBfmq5265kfl4pR6Pt7zd25JExxylotzGUWJIdz0o8vtMr5_Z5vAZftbBEoX-HEpTIL1Q8_LBGxOz0UC672SvThFVU2wXdM6YPn34FElU85bIyMzkd2ABWhSpCHZklybdwPPRyzFXXgTxMDKRN4RU4CU_QJu0LHea2aJaf1X7E3FDlxQpCkYzZBxXpDlRp8-qGTR4y2w3HNkUIzBlhS3HlYXKWBcADHJ30_l2YWOMCJF2PR1lt6jfDZsMYeSEc14ivCOioCIr9bTMdRNfyGdxPKrlBSZcXaNQhw_t4X5ZNLkQThsQI2f6fPfboy-ZL-eFhlfDTai_aUi7eD2HN5kcPtc7J8hyGZf2RWotnmqpyl_S-1I58Q9XzmtPW_cenff3sspblMrd-dPQvjD8Ht3YhQSMHlIYXO7cTelvZ5QB45&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Lucky Dog Bark - Steele Creek photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Lucky Dog Bark - Steele Creek</h1>
@@ -199,8 +198,9 @@
                     <a href="/boarding/charlotte/" class="back-link">More pet boarding in Charlotte</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Lucky Dog Bark - Steele Creek?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -346,6 +346,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -356,10 +360,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -384,7 +384,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

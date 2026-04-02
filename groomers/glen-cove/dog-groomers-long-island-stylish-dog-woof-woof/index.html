@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJT9xlBNiFwokRUb36sEY5hlA%2Fphotos%2FAU_ZVEFHDHGJmpvFXwJo8AEfoqaiVhsWPb6-gVACC-K2bw08LRcgsF_eADzvHmRhQmRQ0P14v8SAGjxb9TBNvTpPhyoPniD13TwQXrL8bf9MDc8wf4NlUzjnIZ9Ukw35uktYwP8av_YxDGfE-s3iq05I-UO0qtFS6qZ2M7WgRnFFkioQUyFnOi7wWn6D0rHcEg9vv884PUIUb0aIde6b0gymiVkOxNzDmf0Tb579vpt8JS9jLN0IO7vciJoGpxS2RswtA4tMLFWVUR8obpTPzrL1sm6iivxM8oD6_xBFq_0LXV8YLNY9Q0_OxX3b8wbjIa3HCekAWnHpksh3BEoY5pYSSYnUBOPQHU7-z2o1v4GGrXK1gXwCtkvd6xmTLgmBI-I_W-nwT97Mr6QDJYGL2kfUqufd1Q4l-Aqk37F8UgLNsaa0B1GnObHNNhVCkXGFig&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Dog Groomers Long Island- Stylish Dog Woof Woof photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Dog Groomers Long Island- Stylish Dog Woof Woof</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/glen-cove/" class="back-link">More pet groomers in Glen Cove</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Dog Groomers Long Island- Stylish Dog Woof Woof?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

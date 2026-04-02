@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ14Tx-60WsYkRFi0ND6e23ug%2Fphotos%2FAU_ZVEF6GDh9TwjukBbci_gTmgCO0Eldz8pUAnZhjATUXbLTINFI4R0Ex8np5cj3JBv6L1_KPIVklxHqzrvt6Y7M98z1ihA-Ie5cOQ3I3G4sOamO5bzLl6T_-rj236lU8FU7b0GbYT_l8xm2HTQTtLVol_uzZM0QDHODAPePYru13WmeFjCOZdQkLUSBr5T3UpUjg4CECK60j_EO6DY0t_LteAcxog7aN43R30MHDFgkqfJjyBAiJVco_E1z9BGDMb6QWMPuLs8FpvfxaoEg3hldrjYdht8olhLTSKjYID0N52TBvRl_br0NkTvZbal51VIuG4sGWpC1-nN79l9ohBeIubXmQy-zu8ZRhzpvUBYv21T0u9p9ZMOhNimUNMAyJfFrDZPhOoAZmA6iDDisYF_1YT4Bl00ZIUo0yfnD6vmCd7EUfXh8&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Susan M. Markel Veterinary Hospital at the Richmond SPCA photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Susan M. Markel Veterinary Hospital at the Richmond SPCA</h1>
@@ -201,8 +200,9 @@
                     <a href="/vets/richmond/" class="back-link">More veterinarians in Richmond</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Susan M. Markel Veterinary Hospital at the Richmond SPCA?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

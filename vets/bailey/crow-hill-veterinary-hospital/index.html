@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJSWR_boMNa4cR9R0k_Ie7X1I%2Fphotos%2FAU_ZVEEXkpXUlptLhGfA95ZZ7tX5dKKJjLrh3J2K4D9quZdo9FJhAy_xy-oQyGtv3cFNc2Jd72kdsPixY6ql3s3bO5PFKplBoubxKWBihjgeAt-6frIGWGOmqWVfCLicdcNBdXU2Xe4ZBc23rzQBO2TaMyrzlEOZ6HQVGzKeYgRMj21_NqDrmnMo5lN6g_JCHstW4PPtB4UlQTTIuXbtDCmLH6kiJfRmrFUdh1oItaAKwzzTeB8bAyiSySiiSynq2Gch2bFg1bFSyQ_STRWNhSjymdFhwldbd2zlZwjawz9PKYvGlwjBOXkkN6bfgdYemUh7KD8npMBkFxP9u0myxemHsSkKaTRAdEDXg_qpWiKvItSl38G8EtVdgSQew0TnxTaYWn7xzq2LtFdRL942MmkS9G0OAEDEfLuGTCUfCKWW6J_cf_w&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Crow Hill Veterinary Hospital photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Crow Hill Veterinary Hospital</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/bailey/" class="back-link">More veterinarians in Bailey</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Crow Hill Veterinary Hospital?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

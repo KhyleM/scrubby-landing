@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJN3fe8FBr44kRx5w23Blus5s%2Fphotos%2FAU_ZVEGnD_tRvU_MICOxIYovr9Pelj-XsHH6UxB3Bv8QLDRsPhKzSQw3q1w02No-c1-zjU7m6vC9a7vJ9ovXzsEDyn4XdnWjVniaDiuBt23PTr-xKX9j6Fy7kPh8Sv_EGQP2ZySdbfQuh9LD3aOtiGhipkqvUOocCy4MYT696DcKTMQI6QHsNFesZyE2nihVOFdPHDW5Fth22K22didpgRIeyQgQhu74NvcjmqB-ilT-NHFGfSHSL-kX2V1IfQD4SKJfEYCZD_vIxXvAff-ZNiGcz0hVWfUUEF3chsoeZBGSR_4mFvyN2txgKX0wMV3tsKsuoBgto9lYohVMVBg7hTfMn4arHlPqNN4GK5A2cDkpC4Tanc-8yMY96ZD0DlflS0m8t-am29N5PWzMQLNproElx3GHsLjhKurbr3IVT8TUVqZahyJS&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="The Pooch Pawlor photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>The Pooch Pawlor</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/swampscott/" class="back-link">More pet groomers in Swampscott</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of The Pooch Pawlor?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

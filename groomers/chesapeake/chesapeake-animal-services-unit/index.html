@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ5zeAgiK7uokRBSrsFQOV2V0%2Fphotos%2FATCDNfXGuAqYGXkAaxLSQVVXPRhA4UgAu8PA58gIES9bAuVqnBpcja96jxKc-G0nreoQI8oooABk4250rhZa0TxyibFgfrVxUmGvjkHndkEbKvEnJiyZGePNe6uzwgswrgUdwufeGHLrT2Zs5EB1p_0yC45eQmh6q46kQACJIoG_unt-8OAdKzSVL005jnS6QzdsR2IqM4xYGmUcLDaOYS0Cql47oDtgF_6zPZspTULDrk6upJeeMkQiuu-QYtK_56ro9uFjxLmwPkyxtmD2Xzf64gnEH629oYD0fAXigf8Z2mw1iaoXjtY3HhWiedmp9rqntTmKNPJCWHXFaPSvwUXHAmHm3vSIvI6qbNOb-vFgEc9Un6GaM6ReHT09XeGu87IM3hTn1gLLtKTXZqMGBplfvoXDepqRqmnKM5H22rtGTTahNgxYxiv4Be5bTGQ1g0wy&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Chesapeake Animal Services Unit photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Chesapeake Animal Services Unit</h1>
@@ -195,8 +194,9 @@
                     <a href="/groomers/chesapeake/" class="back-link">More pet groomers in Chesapeake</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Chesapeake Animal Services Unit?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

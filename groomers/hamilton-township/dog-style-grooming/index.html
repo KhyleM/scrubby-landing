@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ62hb67tfwYkRkepfspOafWI%2Fphotos%2FAU_ZVEF5gyUvuxsxglGF6E0iIy7tsORFnnXEDML72cZE0nHzP8IzI9Q4lbUZS2EAYekNg1eUkd2SfX6XsL6e9CQ_AzDYPhDFD2pSNbE3rrztlqkDsyTlWJraTP7seB3A2dIyGoYTv-RC9WMh9DC2zIoXr2JXQ8IXIQz1F0pIrpKXcGnlMHJ7AU2GeTmd-JffiJC0x2YLI00m8V5YaiYPU6Onqn9apsrMCmzFhykdCMS_H9FUd-DwEZkdUbyhJnNudCI8528tLVWBLPxRcJO4_mdA8KUZglZW-_Y2hP1v6LO1a3slEJ-FVO-FWHJrp8bnasIzKRO-0tDVvbFV3nPlqbgY-W9rjqcgrmmniEX4ZJoR80FeZ4HqwBAY5WHXSgb_Ag-Kke-RhKkfYrk0RLm0ClQTLlofcwSKFx1Ylp5OTyOXwcqqz6u1mUpHI-_MX9eyjFs2&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Dog Style Grooming photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Dog Style Grooming</h1>
@@ -198,8 +197,9 @@
                     <a href="/groomers/hamilton-township/" class="back-link">More pet groomers in Hamilton Township</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Dog Style Grooming?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -345,6 +345,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -355,10 +359,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -383,7 +383,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

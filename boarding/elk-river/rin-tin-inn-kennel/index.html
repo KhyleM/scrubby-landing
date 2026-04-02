@@ -78,7 +78,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJVSFEM25us1IRcwoPG8CFau4%2Fphotos%2FAU_ZVEFdRklIEg1p_8JIIuEwxoF5lt1UM3J6sTtb6_WJOsLc5bpTrLYZ-WZSKc31mTlcyvye3LagjkyB4JY6uHagylMqnzM3m7s-S_sobikeDo-GNVmspYCeI-4dhaUPZsmq8byYOpuh9IUlryYXoKGvlASeI7Gzn4eLdQr-IvoH93sfLE2oWGRqSZkuHf3tsrKq3OUzmmnFoqNh2BPib6VhB6u5nS9PGctxx9g7R-PcnQAu3Z2NCNL4Q0G_3WPe77DJ0qL-QasRzcT1_uh7MZdYoi2LYewtHaWY_tV8F0dIWy0ZElw0N0U3pZVFr52v2l9vyYKTUJxut_8c8XBVolClNctzOfVZdoMxyfHTOmnoQRwAQnIr198HllxldONhHLMU2D1kILh8sP7KrhIabCaL1MtImc8IZJPFI1ZmMo9GN1BEuw&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Rin Tin Inn Kennel photo 2" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Rin Tin Inn Kennel</h1>
@@ -192,8 +191,9 @@
                     <a href="/boarding/elk-river/" class="back-link">More pet boarding in Elk River</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Rin Tin Inn Kennel?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -339,6 +339,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -349,10 +353,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -377,7 +377,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJX5V54-CCf4gR2o_3PxJqVhs%2Fphotos%2FAU_ZVEFvX7VPcZ1ATnKDDW-mcZS-bF2fqhvn8A-5xmdL6N_NNAw8LQQnLA6ggs4NtPLdtKmNvkxxypaMxffJKNB5ahyAFI9aL3NIB3HhCdAlvbp59xmODFtF6GXWaCU1bkn1_z-UG4V6USToeYGGg02B6IAK-YJ_a6yTbAMnu4rCFHWpWwZUbZETwBVFExQrjn3vZksKWnAf_j33ncm2_5YTJ00_5F4jx3XeDczm_D_QnZtc-w8GHH9atg6qIfqmbRvinsspE9DEuqX4XuS4bb7knMXRaBJGynQKipOX6DnjljhqcEaqgI8pbn_TtTsbePG731jcK36OhFGtH3CeDuq5o0JMfoXMrG_wAq2Xg6ItJSYpJhI-aszCRFx2AFzZ6nrW0S3mNtpwbfaTt1xTJ83AAxe2nrPhXWjS4f6qE2VlUmjo8vs&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Pleasant View Pet Resorts photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Pleasant View Pet Resorts</h1>
@@ -199,8 +198,9 @@
                     <a href="/boarding/memphis/" class="back-link">More pet boarding in Memphis</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Pleasant View Pet Resorts?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -346,6 +346,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -356,10 +360,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -384,7 +384,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

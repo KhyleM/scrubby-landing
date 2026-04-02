@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJERiGMlXp9IgRu-zD1ieLO7g%2Fphotos%2FAU_ZVEGP09l2Q3YHFhSmzRfRx7GN-HfBe_1ZpO3L6p_J-X3aHxDnb6hnTZVHsDlNSyhWBg8AvBDxjUCtnrth4Nbnb5gDS7cfUAan_pkSxJQoWV_bau8s8of9ogOzgibiKa4IBjmXxus0v7mEqJCmW69qvRNaR2zbWIzPrk1768lNu2FLlf-581quF506oWdw2s_i5kB5J2LUSnrh9pp2fx4-amAoJdqDjSyaEsQM2Xb2FFw7L0iBmOUU3JdmymQhWjVLO3QhwaWUZtl_07IxnGmDDM40t4w976QP57sv5SGv6R7vhw&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Barks &amp; Recreation Pet Care photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Barks &amp; Recreation Pet Care</h1>
@@ -197,8 +196,9 @@
                     <a href="/groomers/peachtree-city/" class="back-link">More pet groomers in Peachtree City</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Barks &amp; Recreation Pet Care?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

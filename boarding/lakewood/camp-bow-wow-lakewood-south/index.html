@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJt56UsZiBa4cROxTUGfkAqUw%2Fphotos%2FAU_ZVEEyYLPKuz31D2fM9D6R-Mg2VKsdLDVfXnIfsaI6JiF-ey-QR03P-_p35Jtn4g2_RG73vUdIbCuBkSZYoHEoRukrq_iR4krC1npA9SzHY4ao-L8MP6a1RxmjjNgFWPe7XRyr-03NWvJXCwcRHkT_DlAk1hMHJ96rsS3auYqMG-SnNeJDX9cr9CDzhUoMxJcDqeqNiMxARgguc7Lo6dO7JgM2vH3eU9ZhxPzc61PQozWhYt5X2XEHn_AU05x7EsK64FM4nRXcXqldb2i6B0sWlad9GNNdxzqHdqOpgG1OpKc1EYyVcejp5kkP2N07buycQUDJVociFBqA0sGIng81ea6F27UhAb1TBDKbqn57TB-P8vBkTa3foHkT-Cgpa0QjQ-exGDtD2b-XxRBKKUOV5AsPCRlWbtilXA-e_PcgzJ4Kq77Ig3wpxkyuFyKY1Q&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Camp Bow Wow Lakewood South photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Camp Bow Wow Lakewood South</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/lakewood/" class="back-link">More pet boarding in Lakewood</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Camp Bow Wow Lakewood South?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

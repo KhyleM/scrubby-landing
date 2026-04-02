@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJW_QpUnbRRIYRR2i6QOLa360%2Fphotos%2FAU_ZVEGZTue8AwbxQx54rpZQ0Llx4rvTE_WnpV91_rzsavjhpaTR8lq-CUCaU-AZBd_aeDMHhLW0_AqRdj2Nq8nfEc5BPqUW0jDYAykA51jPrRbBePwgHqXDL6keK_XzwhcffKU-86KBy4PwnHUNiKDRzCEsllp2u46d1w4HnoACJu0Or5mDT4HEtY9VGo_5xOpKai-c5egmz3Iyx3Y5NJZ6m3WYGDk5XpoqUHQX8_wWjFYw_Vx4oPvv8uPkgl3wa4V1_QEhyufwXJ-oVgo5_nebrKmk7Lmx4McKY45GUtvmgWNKSNcWzmF6RAb66phCcFf-CZG6jrd37wQyEA8prpFTwmL8dLPLmlUMPGMZGezda1LG3uC2s77GxgtAzNj6lKj7N2xVXVn4JbC6A7HEMu_9LCDZqF-u0JTHGSVlwmRJPAXHrU0&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Heart of Texas Veterinary Specialty Center photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Heart of Texas Veterinary Specialty Center</h1>
@@ -205,8 +204,9 @@
                     <a href="/vets/round-rock/" class="back-link">More veterinarians in Round Rock</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Heart of Texas Veterinary Specialty Center?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -352,6 +352,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -362,10 +366,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -390,7 +390,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

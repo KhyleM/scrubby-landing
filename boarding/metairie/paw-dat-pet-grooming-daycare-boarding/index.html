@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJjYzteD6xIIYRxk6VJjalLlA%2Fphotos%2FAU_ZVEE9UQO0p5vOWJHxM-KYsBFWL7GET1Bq9ToMASmEorjn1jN1X7tUzyTW6EAUE8sfaGAUhxvQHNnyYOfqG6NUShwQPqmI7L0bPURz5lcy1rUrHAQIv_XPQ8ZYDOu1KyqwcaIUHfE_ASgv8RmpvebBcKKFu-smeBHeDWfyQO4-yeHqhp1qY6KIN1HtuJQ_0wP01vJBgh2WduNZyBseSpprvdijYeu0yz7xO-etSWRRBeZ8d5NsflRGO4D3IhZ4gGeT_hAKxXOZIR6IQFwK8BDcEzsjaxI0T2LjnivGIsXblpdKpp1E6c0X0ydfyxz6S4pE4ooIVaXp_AdoA2nOIdXjH67Fo6fFH7T3mAd0TfvRZz1_20NcglrNj4v4CSz2Q6MX3Xdyj2-mns5S59eFYU3_jiCl8RxbU5hJWS5vG8ON9cWjJxjtZnayAo-z2WzQ1uf_&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Paw Dat Pet Grooming, Daycare, &amp; Boarding photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Paw Dat Pet Grooming, Daycare, &amp; Boarding</h1>
@@ -199,8 +198,9 @@
                     <a href="/boarding/metairie/" class="back-link">More pet boarding in Metairie</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Paw Dat Pet Grooming, Daycare, &amp; Boarding?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -346,6 +346,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -356,10 +360,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -384,7 +384,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

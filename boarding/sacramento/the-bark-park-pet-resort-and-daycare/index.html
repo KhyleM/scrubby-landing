@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJOWRGvVrRmoAR974Neen2OLs%2Fphotos%2FAU_ZVEExvDrZqxw2onv7iTjHdE9b23Wa6HLCTx7mWeOu1fA6KVIEOQcNzF8c9JoPdhbKuLWzQkeWQ_pEJjbWQ0m_btS__BBNGfGrnGmEI_3Np9fbvECfPT8xCJcl8muipGfXbdjL4Sk0--JsyrT_BeFx4e2l30tXXW6y8Z-PshMQbkzPeoLnmYl1zFYbRhv_ZwaYUBTn--3wn4DPhtVhd16PJ3YfSTYb9nkOix-dwO2N6GJY0AA6lOcDd9ds4uYDKueq-LE1dpXucR0Sk5CFs-vN2s54h12gQS_cCBwGM_kX4OkU_cU4Wj5V__0VYiaerPKP3B9a7psavNrY2ANWzh0wgvnOlxqVfpbY6vY-x6lcQza-Hw4q5_Uc6eKl4eHx-uysTd9RN_h0fQxj_SWU1HtL8glKOGFip-kUiqv9rz0Le6Kr2M5SG9qorNcYNDsp56gd&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="The Bark Park Pet Resort and Daycare photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>The Bark Park Pet Resort and Daycare</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/sacramento/" class="back-link">More pet boarding in Sacramento</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of The Bark Park Pet Resort and Daycare?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

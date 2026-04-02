@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJC1NiFJHVQIYReTKf4du3dEw%2Fphotos%2FAU_ZVEHFwAcuMtIBHH8wVkKWE_yBxZWh0VWHmLLHfxuuKCrj0r7TcZ0vmWzCC8RNhVvKebwu5TRCZWAC3AWn9R0v8-BMCNLwMOGFROVtWqLj871aSPBwUQjrQ-rN1WUvvrqrT6kzttcH8lC9R--1u3Aq8B8SHeQ9yKfJ5tvXUW4jlvvQC1uOfp7D98fcor0xeEPcs8pVeLWUOKz_6Fs2Q3-8BAQE3tmjjzofwzNAKpMv9Xmk5ZjJSY2_6crwGfcgMLQ6uSn6_z6kSuJnZcu_fW2lX-8yU7WXnY5tWADUkU5UAUse6vzrRT3owLnqtGye3MQ8JUaATmho7DUqMt_B3Zn5wWQ0AopqenwJ1ZdSlR5E6p7EkG5zdakueQtREIQ-3q9---PPSvc-Q12qowJYx7Rjk8H2BqVBmlvloeQgH3TiLAM79xgVmr-oJUuJfw_rneHj&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Pet Evolution - Cypress photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Pet Evolution - Cypress</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/cypress/" class="back-link">More pet groomers in Cypress</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Pet Evolution - Cypress?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

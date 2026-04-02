@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ7RbsjbH0wokRmjJWF_dDlaQ%2Fphotos%2FAU_ZVEGDZXgyxxXdKrVE-tgxyc8cOezynkNjJryErww08z2lZoZ-AJ29lOeJ2RJmalss_HUdk9kEUA1mjE05uYWYC7fGKd56ifPixIv5Ft7t9DCes0mWfp28lNNv52t8hY3xMiAkr6xfsfyUxh9jjxzTa1yMlf38JQ_SVIJq6Q0CFrPUvW9T8nia17Ts_ModE3uo_tfzPCDIEhMDJaL2UdU3uwqaXbDMjk_6bhBk27NDmkG4IX23uirYdxoGSGh_-D_57HT3-VFvfUkOeONu5GibCVP1Em5bTrEklXFpD_YXIkAXYA&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Zoo-Rama Pet Shop photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Zoo-Rama Pet Shop</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/bronx/" class="back-link">More pet groomers in Bronx</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Zoo-Rama Pet Shop?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

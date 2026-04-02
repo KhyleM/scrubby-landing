@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJNU2MMV0p3YARjr28lS1CXeI%2Fphotos%2FAU_ZVEEux6dd1ADJlF2M4zs1BQJkChTNKNicb_ZHNmKFLd8xp5wm293O0jnhqTYFUfkqu258fJdUn_Gp-rfBDdTRrkqqHAcH-2H__QgGpvrrtqFPlLmFMeevXI1P0HVw6TDZ74nepzoqxA-adfBBCFzX7pPe0_O_6-YE0DlK4swPeYO79_Yg2ngeBKjkNoORf9jHFGq9lLZIddRCHUnwnLJjUy6TxOKxJGs8Fl7nkPTTYR2p594_eouq1AvnscdBYSBLmstg3Jh8MkUxC_U1G1zxadx2ckFF0CAKNGhOQfPFWRS2V0_pWu0Zv4ml5sE9s4Bvz6mk8M2iN_KXdfffQ0AV_X_E_ivyUJVnCMP-rzdHWshL3oJUovTDSAZ3r_J4OdrPiu8Ibk2VMKqVAYqEMUjqDmEZ70cwguUr3B2mTUEB3CWs0g&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="City Dog Pet Grooming photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>City Dog Pet Grooming</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/anaheim/" class="back-link">More pet groomers in Anaheim</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of City Dog Pet Grooming?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

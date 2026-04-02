@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ9-yydGDr9IgRcxkFBuho1wk%2Fphotos%2FAU_ZVEHCI9iPegB_CSMCP-_07njQ1qeFyIujZsO3eMD0kS91VIJ7iqysUyogT9gynlDokNXGAuGbzgkHkt6jQQiPVCx_p0OZv8a9y4Q-3SEhjYgO7oCRghMOidURMSHTIFxP4u9V6-5kjp0wRa4uWYyjIc4x_tXxIiRIr12XsONEhiBYEq3wKaS2EGg_pZXnv53X5zRTPFLztDqiWyWHl4_ojLOhGK_fxrPzHmsAi6sPJ2_neHvizWPSL83_KIiX_DWWzQlwyO0lOkjZFk-xgvJXgtcW-t_-rl77fkiA--GcpZe940MHkN0OoQu-w0LvvWqZp3UMOTwYTA1zkzXceSvEuC2dcf9naVeXsNOxxDDqR7gXXNvR4ph6b0OZTzlenAJktOJIlnCSkdeMwh5gzhgWUTHlwyQxL9Ntik3yPMrTJ3MWnOh5&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Pathway Animal Hospital and Urgent Care photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Pathway Animal Hospital and Urgent Care</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/peachtree-city/" class="back-link">More veterinarians in Peachtree City</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Pathway Animal Hospital and Urgent Care?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

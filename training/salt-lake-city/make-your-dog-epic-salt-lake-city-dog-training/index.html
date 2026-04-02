@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJJe_bDLD1UocR8PZumM4FJHM%2Fphotos%2FAU_ZVEE7Zc0zAGsy4QCIs-won5BmvzFPY7zz5Jfa2G3zCuNhHQNA3BJtfXJSiu-BTzF4c9QQKq-2_Pkn8gF5_yu0n7pYDaze83iHyev6oUwbnvUqLiPtqPAOz6i368ibQaEmWZuaCeQYHm_aKCCYJLpdVkBXOhvanNDhT_wm-NWKU2Wlek0Lw4uX2691W1H1tQGkSoWTtwJGkj4vOf89Oki-1jhrsjRwElGNCL3z3fAWg9pqrMcz71yDEr6Oy-0Lm_lJFP1ZQ8n3Noi_km6TmYglMEK2FwPQFDmDrkdYT00W-hAuEQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Make Your Dog Epic | Salt Lake City Dog Training photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Make Your Dog Epic | Salt Lake City Dog Training</h1>
@@ -197,8 +196,9 @@
                     <a href="/training/salt-lake-city/" class="back-link">More dog trainers in Salt Lake City</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Make Your Dog Epic | Salt Lake City Dog Training?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

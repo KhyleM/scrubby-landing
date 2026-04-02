@@ -77,7 +77,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJqUX9CtD7KocRdpfUvKVt_7Q%2Fphotos%2FAU_ZVEG17BKFMyytR6q38MVJgMjY1TwmETjIVHup0ixelib5Cb0VBUkOxf5kU2a87uKNAcjNzJ8Q3BzKrDv8z9hOlL1hoDmLCXym9XM8sAtGtKfERH84T_H8ROFbpPNqAj0pkYM_0_ybF9515A7TuvFdM7WqKgVtKhxmZUrpnAOshPtuDfrByNe9-FGeBATHHi7vI-YfGtRrI_fT9i2eLakoPaTx3Ro1jvPw3Pm74KHQgZQ9OmRpaHNj3DxiQbEv747PNXEoRzDRu1UEWunRm9EcII4-ijwGmPbsmf1uBRbscBnXqQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="PetVet Vaccination Clinic" loading="eager" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>PetVet Vaccination Clinic</h1>
@@ -193,8 +192,9 @@
                     <a href="/vets/maricopa/" class="back-link">More veterinarians in Maricopa</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of PetVet Vaccination Clinic?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -340,6 +340,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -350,10 +354,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -378,7 +378,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

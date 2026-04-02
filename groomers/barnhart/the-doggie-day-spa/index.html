@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJN8WovH_D2IcR_up7PxIy6q4%2Fphotos%2FAU_ZVEHqdE7csG8gbUS710GS_uVzJdxS_gaeugNRyhpWm_IbNS7vZmivgWWfesprqnZaHWsNspBna5I7R4qgj96YpjxGDOBWAGdGV3FQrJLn31qdpO44i71w5ICTr3_qaeLle-QYCw_0vhS5uWBs_METlGjwl7yNSLReSfrsw7VQ4hVSEzgJSIR_dECqdaCnNDr9zQT4oeG3cbLiDES2dwIXwNNTZZogRx1AgkNXxjxq5WnoN-biEGglAQSiJlxzn2Dr7s5Ff8KVMmnrp06dd-vAZtrDuc-zmZH0ipiGZPrxYVNyUofObrnE3wJXnqPXC35nq3kCvILsV3Kbn7DJIeFJ0m6eLq7_XyT2Y9Cxgw9ANEdNuXB5MevchbMvzTfoqNZ0AEWms4e04dQ6eMoEfUuQ8D_J2RdTBRd_NfUduMBwGFIjxD5P3I8k5dUizsDwd-BQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="The Doggie Day Spa photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>The Doggie Day Spa</h1>
@@ -189,8 +188,9 @@
                     <a href="/groomers/barnhart/" class="back-link">More pet groomers in Barnhart</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of The Doggie Day Spa?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -336,6 +336,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -346,10 +350,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -374,7 +374,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

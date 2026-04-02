@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJRzX8njuhIIYRbaK8vVmuYVE%2Fphotos%2FAU_ZVEEWFSeoAhEdBFUUSgHhCwRl7AUrji92qzjT17Pw_F-uLWUgqfHvhVwntgtvktSZhbGT1L115EOvpQsj_i_PKn0NeLTEZq0mO0VFq9LoBP4YlGRekbPYkjyRos5XdB8J5znSeNwLHD4Cjt5No30_6nPpakwQHJpd9s7ySgllgcnTnaSIbwwFDXLWDgSthjMIFKuJ49JTn3ovlvLYdzrltnM4UEZLDB8R_xjsJpsUKLbxFRhS-NIwS-f73sMrcglZvnFeibxw3ahHzG4oPfBym3CdxvDIIM00RPig7X343YNvJC3_g2UAnyH8nkA7Xv8nEdqn9hHV89tV1kW-DyH56xPaBL1C8dmLsNFPCp5pjTw6UQeFZwhLO-28rDoDtQ1_lOhJe2IorihyYBjn5WAZSgYOQuIdvP1NwKl1YcT59Uswcw&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Manhattan Animal Clinic &amp; Boarding Kennel photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Manhattan Animal Clinic &amp; Boarding Kennel</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/harvey/" class="back-link">More veterinarians in Harvey</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Manhattan Animal Clinic &amp; Boarding Kennel?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -80,7 +80,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJl-MWkTWKDogRtTCbR7r9kzM%2Fphotos%2FAU_ZVEHD8Gp4t0o4Vc5YZ27cjUquQXQae61z3-64iHS2yq7UXbwevC1C0vQWnI6sqfBdXfnnsHE2iLCUOKxSlbWGrfRf7PlgKuS1iKs23vSD2ij2VU6OwA6SeZTo9O712QeRNrIRgig0pSGiltjrgReCTRoIeHI-myLALdsePCzgSBecxAEgfY8wh2Dcenu-JaC8h9CRwz6YTu8wtciHb5ObG09Hi3UsLmfXVX7j-6VCiHXdiacUg1Fa1Z_zoSsLWfyStJtb0Cx1nhf4nkb4A0HXISZ9TseptYZcXElenumESL5kUq80-zl6r7yRSyfCME--VuM1MJeQ_peQWAvKCC54vmm-GCKSYnwGba3jfnfuz4WK3W9hGZqBBL7p8dcpuTyQvli-ppdzYKio9RdGBX_HhOhDSPqnqEk0e6h9IoVEZYEuxkPK&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Mutt Cutts Mobile Grooming photo 4" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Mutt Cutts Mobile Grooming</h1>
@@ -184,8 +183,9 @@
                     <a href="/groomers/shorewood/" class="back-link">More pet groomers in Shorewood</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Mutt Cutts Mobile Grooming?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -331,6 +331,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -341,10 +345,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -369,7 +369,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

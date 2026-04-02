@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJfb5JI8gZa4gRvUENGl3x_7E%2Fphotos%2FAU_ZVEESuv7DIPYnVB4P0BzqPlMJK4JQCwEsOFqq7PC6U8M-zwl10QXxsViBAEFgVbXV6tO20F0E41ZEt3ObdzUGhGb-trzmDp-DFJhMrxo0JmJZkU18TLMC1-E6dVSC9S0pTEw7kLjCRqfCxBNtJRMaD2HEj0eaf3mKg95eU33CUzl-LOy1HJemsEiDNf6qNDc1yBz66pMtjVX55CuIifPfKHWnFZWhC5bKDTTmJPKhDUohM39Tj2cACCDvLZ3Z3rL8s0BGqbgVqCTUrLpUe8VnYs2me8GaIHTJbA5ZTHnPLElDte3nFqe2s8FoND_DrCDv3D6DqrSiKxz29vK35vufTIfUultKUrMF29VIO4iVMZqbAE0MxCDUB6cT-t_0TOq6ManCztmg03lPidejtwVhawKf57R-pluYezSVlFx_FiY&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Pet Supplies Plus Shelbyville photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Pet Supplies Plus Shelbyville</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/shelbyville/" class="back-link">More pet groomers in Shelbyville</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Pet Supplies Plus Shelbyville?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

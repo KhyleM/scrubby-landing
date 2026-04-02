@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJkeaeqeSyFIgRwR1yaOgMlQg%2Fphotos%2FAU_ZVEGm1qCGBpJ5rCbywkPaiu7bTRg6AszXOmzzfPl2HuZyWSBeHUDb8DfebB-uyo9pB0pSm-OLd9IjwWSejyz57Lq4ZFh0c7p38Gs41-apC9QYk8vi_IbETWGG-4tFhnamrLK1UR9j-Nz8u05LbZ1TOReO8YLpqxowEMv9DWkm8ihxDMkg9rX6TJO9jNIHhd1ExuJgwZI9wLAjFt4FXO0EER_IM4HkkWUk4Dyz8ZoMOOpOShqnqCiXJLebw59w9bVIWWebJJ2zwOzIu7cRBgx2tLhrR1az7YDqAiEWWZ3MrE0nmTh_E-OIhX3An3U2CA_1LEhP-as7JCsERr3CMLtKlgGiTTKJ-d9Eun-GFX1hmMXH8TmxY44Ab2l7TI5MuSykdQW2g5ECsg_yMw6qztZ3MzfJPkunmW9OrXqjNq_dBfufbwuTcHaTK_CYeOQgqw&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Off-Leash K9 Training Indianapolis photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Off-Leash K9 Training Indianapolis</h1>
@@ -197,8 +196,9 @@
                     <a href="/training/greenwood/" class="back-link">More dog trainers in Greenwood</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Off-Leash K9 Training Indianapolis?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

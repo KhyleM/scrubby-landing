@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJFSlFzhGFbIcR3QQFaCht4LM%2Fphotos%2FAU_ZVEGWMcUdxuBUnbW38gB2HJHi5EKk1lQ-PL9gihlZnLFKMJ3rCrynwpw0ZCNyxlWXKYyrpH6JPjtrR55QaEGEXyEyd3fXIfLhcW4k7nF7P3hTKOVL7N0-rDWIflG4GaGVkpqpQGeEGX507aVw3nCySnylP5cooNZh9vLsdOHuySvBiEyduW3uphyvjkpabC3bIDEku6pW3epCO2E5IGHl4WyhaCtwePySEyHI2Q6BhhmqIUSVTEvl0gJFUg1o3AOSBg4t5Q9ZZ9qtStORjIiV3M26Ksp4kZycx6l6RVeon2B1W8lF0HWMgpxeJfXZLa2y88cikxvaOlA-RXIHWT8vrkOq_a1oY2285GSrEnK3S-vibWBft_r5mMcwIj6cdul-mrS6LvM5rkczFTerDx4A5wR974k46TXDlRm9syPIk_Y&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="K9 Resorts Luxury Pet Hotel Lone Tree photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>K9 Resorts Luxury Pet Hotel Lone Tree</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/lone-tree/" class="back-link">More pet boarding in Lone Tree</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of K9 Resorts Luxury Pet Hotel Lone Tree?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

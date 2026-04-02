@@ -79,7 +79,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJxQuiAsiPrIkRgkXu2CHUGZU%2Fphotos%2FAU_ZVEHPTTT-hsKx5kjeMDSm4nWxUbhP9_UrUnUgQlBYtd-yoce9HANj9Nw9ntRCil6jDQ_3GXMMg1AE5lVf1HZkZYV1euE5F3VDIx2yDDrcvDUlO_rDeISFive27TjC1Q8DprQn-gL6Di9tVLXJQ9z4k34MeRCcUOWLjVICKDvXGULaMWY5cl-nZ83qdWvv9uPiMNRlLTnQ2oOtDGhGyBdAEQyA_AppNjjjWFLy0ISz2FTaWR3xgUlGSNDM6EnFuKKx7d-YTBNu1fOfloqiHXgx_BHCe5p1Xe6N4uzFqJEDDaS92GkpyNzkF7mH96x2HlFRpZ0BCFlJsDIqXFRUAgcejefqzqOUz0P32CSMD6qyso0vDiJ4aC2_81P-y43sTThgu2eNGY-YK8E_9cpVcet1RDbw3O_HJzTlzKjLf-_BwvKIgqs&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Wonderbark Dog Grooming photo 3" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Wonderbark Dog Grooming</h1>
@@ -199,8 +198,9 @@
                     <a href="/groomers/fuquay-varina/" class="back-link">More pet groomers in Fuquay-Varina</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Wonderbark Dog Grooming?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -346,6 +346,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -356,10 +360,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -384,7 +384,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

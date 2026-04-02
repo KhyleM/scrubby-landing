@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ03BV7D2_woAREcymCTkdCVY%2Fphotos%2FAU_ZVEEP68GdwgIEOwQANwCze_a3KOdE9DtxdsyU-Z7Duv_M1WwP-UZP_DeMGydBWfERwYm0w_XWs7Vs4dMXrDa5RJQDitgOAMGR-d9DIYutDHmzC0tlaeTTG6xQaQooosdzCiWw2ddfa7xZLu6JMo60LbLpIx14uqIu1fOKiEPy-gT3XEK0AOhROGXj80E1mUhAiM8k6Kv3vRMdZ3urC3-A68-3oOLjGBOMGtuHxT9M9kqi5AGfSvJoNOriCa6g1cgo8wTe_E2xinYbSfZqfnAHynxx02eEyLuEm2eSez1JlJfnUTn2rVsY7Az3Mi4DQsoPhibxSVWWkIQ9cBO0SHE85T-iLFBXTIb0T2093EBPVe2GOPl9bV1trd5nnNReZ5l0tzV1Vaf3stQqNQjcCTd5bSt_nfIzbB7qT1e15i9d81_Vchx9iQBgFIK5Doe8gQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Whitaker Dog Day Camp - Dog Daycare, Boarding and Training photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Whitaker Dog Day Camp - Dog Daycare, Boarding and Training</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/studio-city/" class="back-link">More pet boarding in Studio City</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Whitaker Dog Day Camp - Dog Daycare, Boarding and Training?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

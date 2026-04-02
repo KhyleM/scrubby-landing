@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJv-r7uNAPaYgRdDGzzAiHpcc%2Fphotos%2FAU_ZVEFZdHWm_VRmZS-ER7axtf7NThwjr3mwmDKqc6MTvTCG9ll53-RUShXpCIVSZIg9EjL3_BRCxQ4etcZOTMM-pcVJ_G4DvDxGwiVf4cE5yJ-d47jFcF7mi3Tt2vaddqX3j1kpk50CooEqeragPUpSdfoTanqvuufhW-O7Pr2oPHFMTXi0rNbCPbgCW6SegjMzMt5JLqlHUh2ryP6PunReZ3d9Udmhr2b69CoJNJS3ilk4P5qbelqORbmQ6wwcjFay18SrQtfLK1nEcKaPS5huR25PogVr-Zn8ndKLVgv0vTzrXj4icJ86zVzQ9iU3-ZTjDdH03flAiRqj86YAGuSY5R8XJ2j-nRzuTndRNmfMubjmoF-6Y8_B0FrAlgIwA2Q3YZIjdIVrlDv0FNhGwAmhbszBgqYGzKwYILwN2feCPyUAZblcD3yXkfsy9QiQBQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Bannon Woods Grooming &amp; Boarding photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Bannon Woods Grooming &amp; Boarding</h1>
@@ -197,8 +196,9 @@
                     <a href="/groomers/fairdale/" class="back-link">More pet groomers in Fairdale</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Bannon Woods Grooming &amp; Boarding?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJn6P4AJ61woARdjuc3Hrq8rE%2Fphotos%2FAU_ZVEEie7KUk7FJf_xCBLYUq83XXsKVxsGPRbfJeo2K9df_ZXKSjvW36tWmOm1iTk65MxHsRLO8DW6j2FjzaJH4fiynG-eOTpIeFarz3mFIatuhO33PneogHeaq0GQ5uATJZO38O70SohHEcyqgGRP-rEg-x_O5NfzFKa1tscRv5-vsgOVrnUuhf9aQkFAqjS2Kb2iVHivSbYCET-jFM_GUdapdMREZyVqG_LnXB8jvtPD2oOiMPyPmg3QWWt6tK7ez0bdNcakBrObCsu3xH9D05S_vjeCaLnOVuGHHen6OxdL0H6PQG0r7953J5R1s7yEveEEZpSgOn5gDQCAS2xVDnQUdP_w537ETG9YX_8cjI6jCFpD9Sg5GgxuGrV5NPNlqpMZNsZ3Yk0yZ06_9D4l_cwXbT3Wcbmc3aTE_6-7IR369mp43&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Wow Doggy Pet Salon photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Wow Doggy Pet Salon</h1>
@@ -194,8 +193,9 @@
                     <a href="/groomers/gardena/" class="back-link">More pet groomers in Gardena</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Wow Doggy Pet Salon?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -341,6 +341,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -351,10 +355,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -379,7 +379,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

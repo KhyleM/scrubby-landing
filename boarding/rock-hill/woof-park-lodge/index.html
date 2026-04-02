@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJHRiI6LiJVogRpMD0SXIFCgg%2Fphotos%2FAU_ZVEGtU0vUbzgYYVYcf6258ts6BeGbanVsA5uuU4-usxQdnvvdNIRmnGGW1qNrARihrliFQ4T1yCnOYM82aScX-GApahjM6nO8fmWSFypcMeFN2oX5olylEIuk7lDSyodX4w35zfg1Pbn9KqlHAryOOARTxHz8YnKLCQ1UPNAPLOeCxaD6WcZjCQJaY4rM4GlZ3lcuf3kGEy_rozK4WRbs_O_MSRJMyoX3Wtpi4OsPCePUUMl736xriRE_6Y4l-5TqucMft_ZOlg1dgkwRaY4K2gOJp6k9s6VImHHzSI5OzrRy-eaz38N13BM1RYpV7I46XR2jXv8GftNJpQa3ghbPZ-_laHqlQ0ybTpLZWl_vTg98KpPJeGvBl6w0HHbgNok6yREwUaypB9J7zo_v-A2FmIX-LxH34fHyXZHFhMTbdh8iMAjdQKq1Ww9dDppCsQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Woof Park Lodge photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Woof Park Lodge</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/rock-hill/" class="back-link">More pet boarding in Rock Hill</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Woof Park Lodge?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

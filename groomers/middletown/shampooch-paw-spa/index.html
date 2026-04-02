@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJS4L1zWlL5okR8jYQeiZX3p4%2Fphotos%2FAU_ZVEGeqnYFFmQjO8qSv9K3vi50Ngldg0L7NmyFWsAEHLBRAIFpLeOjIQUimKVBR5H8gRNip5wXn6pAOYpId9jjTuqRPgWpTIl3IeJY2KCwAdof-xb2cCsUsD6faH3ZZAgpSubIYkeOH9oripcx1aoeX3llfxYQuz0XVou-zwurMcpm48NqyRjLIWxKphMXuz-lvBgPa_XtVfqODN-bEj8HZsfwHeohXna1BIhPW_F5FYxbX885TPYwSFewQhGCOoLaIFz5vyS7gGd8BQ5aA-B1mz_TB0gix3co5TQeMf4C4ZktbH18P_xRznm3NI53U9jcOfy193E_IC5PDfdfY21-4rbcbhk4n4ahpG4C3CML1qcZiadHcMYKQfhAr3WPumTYgNCKf5WahUcpWcZesR0Z1AqtlP8i63G76bBNDJoCwMbTOg&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Shampooch Paw Spa photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Shampooch Paw Spa</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/middletown/" class="back-link">More pet groomers in Middletown</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Shampooch Paw Spa?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

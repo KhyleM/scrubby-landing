@@ -77,7 +77,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJcVeQsIrLj4ARSfVH2OTMZ2E%2Fphotos%2FAU_ZVEGYiP11VyR2jItCjGT_U72Df9m1NOkCfyMPq2mb0UkfxV7D6NSIgluWcf1Qf9vT7C-XB3uu4s8uIYOLOkXKsbOHRtMvsgFUlOfnpOBQ3Y2RcOkJaChf5UdqUKnWJpd-w9rRBlglJRwcu9bT-agFLBSQP-onakvEcCap5t6W1N5b2xJtbDguD0m1LfwJdwjD1uAiaPWZv17seHkT7wfWT9GWX-Q-4oAg64e1Wuq3OOxDcVFegomhMqoHqMKVcmH64yZmyWQLgIhOi6-IcnSaxRvCej3Q9fo5IoFHvGXI6fUrczBdtbz1AFmOMadJR9OPEoZVOLur38ms9z8Yi-eev8_t-FHQDESP1-J5HZnPZYQ6pEx6G7_pUXIWGBqRHE8AvM7LT2PkQ32MuCHn36rSFVUUrlH5fM6d3IuXu_EuRuBuHB1uM8z2-4QpORzZdNv4&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Santa Clara Dog Boarding" loading="eager" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Santa Clara Dog Boarding</h1>
@@ -188,8 +187,9 @@
                     <a href="/boarding/santa-clara/" class="back-link">More pet boarding in Santa Clara</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Santa Clara Dog Boarding?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -335,6 +335,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -345,10 +349,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -373,7 +373,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

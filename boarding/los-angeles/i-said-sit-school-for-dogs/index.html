@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJf5ufRIC5woARty1A6D1_lp4%2Fphotos%2FAU_ZVEFk3XjduXyjX0rZqWUhxekkQKmT_J7c_61i-YKnGn7VFouHjr26C2GlvIjFeKVPATK4dKRdp52P3OK_CukQx-Wx3qj6pqGChKub-jhNFRnwC5v-Eb9jK-tw7q2Sg2okeJfOT9jrvbf1qL0aHOsxHzR1t_z_Rl1Ul2ElvMXUEf1UjMKmUxK7ONFgxsLBU3SIsJDETZLhXfs1m67W-8Afi--RBk0Dx9Ec-0xmFjMkwfqTDEmm8qE2O5iYwTdetWMUK80Tjy0JhYd7BFi3LP9Tf1R1EJKBYoJlooNS0NUKvfxnPiStfBHoA8ECJ9hUxPzSI2krY-pxL1i63bZob_slpPHW-ac6hFMZ4wy8AnUgpBehG7kwYUtV9vAWCnk303Ub2f2LTxjPSZhUmmMihJjvJ16uFF7mdgXc3Yv7b10io5U6ZZktoyjgGTGs_j5nxhiU&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="&quot;I Said Sit!&quot; School for Dogs photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>&quot;I Said Sit!&quot; School for Dogs</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/los-angeles/" class="back-link">More pet boarding in Los Angeles</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of &quot;I Said Sit!&quot; School for Dogs?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

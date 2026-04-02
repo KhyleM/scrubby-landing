@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJjYuOwQlda4gRd97PF5Cvytw%2Fphotos%2FAU_ZVEGTFQAQWCdx_pl1zzRJUV9afhM4gX0z0WuFbeinOt8lz08a8qtYlNcezqdua0EW8HdhnTKWLGLhSzpeU5Pq6H1tXsTDPzJ5z8qkz1wC_QAuhUAXNaghNUugu9ew6pWXyh2N3Zb6CzAIRrTDpnPLTE_htFDNahvDvf75B9642RYo0r1AEgIfI5VkCindi0Onw_VGbDGr2rmp7GoFUahjXst6E655gjJjY2Rw2_IBTGvOeojl0LCvM6JZlsKhX7bP1l3BSeKGIL4tfQfVljDI0L-9sCAZ7XtZrdzNSeXj4i2UdtM7UOdlsbRu7VaRQuskY7s4EwAq9ZQTv9UWPahilfZwpv6I-x-oOYwZNd7TR-07Z3nu1cKr6y7P417Ej2LrV831d1PD12iLJkQcvLE_i_hqt8w9Gt98MI_1AE_WdII&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Top Tier K9 - Greenwood photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Top Tier K9 - Greenwood</h1>
@@ -197,8 +196,9 @@
                     <a href="/training/greenwood/" class="back-link">More dog trainers in Greenwood</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Top Tier K9 - Greenwood?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

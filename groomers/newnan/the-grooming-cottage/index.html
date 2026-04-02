@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJfVVxKj3H9IgRsJWVHZu8nqs%2Fphotos%2FAU_ZVEENrWJXEF8EIPPlbc2EaGn56u9CKtfL9_CgWD-dy8EfteSxuSgam8vty2qHBvrsQUccfKzt21_OIjzk0quEJXp9650OBwrfB7YKzargtOkLZIsVoqN3ZdHsnvpJKqkn20WxdnQyc-W8LM8C8WEMRkP71SkQhZ8i1CdzymiXh9xmga3EOqtI6yg3gN_j7HsiSz3hbkF7pFQw58wi3gGcRvi7wqb8IWa2Qar1Ri6eWRtYd1MLBt3lPRve8p6jsO7VLllg0z-zwKQus-wpZkZ5Ef7Ar1xFEA_lrwPo9k2jh9DhIDPvwTsIgtRpILKMgpQ4YSMiGJOxwq7HLWMUh_vDKJcldLcwB6loi41GsrG_R9M9gehT3hhmaAuu3jJ5M_jWRUAmtHsiXtBFYco2csC4g0i53GSVLD5BZT2FYs7bcosGXyFD&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="The Grooming Cottage photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>The Grooming Cottage</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/newnan/" class="back-link">More pet groomers in Newnan</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of The Grooming Cottage?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

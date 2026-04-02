@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJEUG8Ng_T2IcRjdU7oaE6Yi0%2Fphotos%2FAU_ZVEHX53hiM9yxJ9AVOGUSrDH50POGnla_Z0PbPijaMXyaDjIf5RWQlQAavfImQn3yv5Dbf1KKdQv2hOpib6_VI2GMTys-1itdVdKmgOrfo4nz3IsFLeunF_qQGnyNacW-qxWUwqXE8D6xILbkoVYQGTQABapkyTmAIFag9JF0LtuNpOrxcPiabkjzLEpj91L804JgtWEAlfKMFwr4NBccOmz_4Vg00_q5ML0lmVONZsMB4knDiWl_uDLikmJ_blzY-iyUxoB6wDwFe1RvTkWDGPvUZE3cMM_U2tTmEE0IZsWhTNmwONq3tTnt6602NZj86WW_nvCF-MY8G-JlJ1rV3IRAEj4H9VArYR73gF2dMqzNwOzBb4-8b7pdkw5d6GJ6mXV2nuWNJAV5-YUb2v4lsAw7TaITOLR48QyWLI0CLAavNefVxLX8TbSBHaDru5cX&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Country Acres Pet Resort photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Country Acres Pet Resort</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/manchester/" class="back-link">More pet boarding in Manchester</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Country Acres Pet Resort?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

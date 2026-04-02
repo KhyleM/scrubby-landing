@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJR7ADdBPUmoARw88h0vD8qiA%2Fphotos%2FAU_ZVEH-775n5AXLY81KmW87j8C2WDGFWo6_Gz48UX7Lr2xBUnE1IL-dHVhvurWHrTCaxUADYf9sYVI4IhPIp993Y86QRg5KCrKBbY57NHwE-ZxsR6xSoy3JxVaQmkl1bB0QR56M_tVfaCYxtri8KqwyhfXUxzDI8hubxJ9LlK0TwM__Ei9Wd17X62ykJmwXmW9t0bNSvxYGseliQ8o9RoXSzIOLD0f7ApEeFiYpWQKOrmfahAny-61iR2V8r1LCJuLe1h3JOGxGJYRZu12OUja9VSzML3LvMKqnUI2Xt1ML_CvJC4-GqdPaT0Rsv3QZpCBjzxwAclr409PL-OYbferuGXEIqdDowe6aPqc6u_lsnfAf3aYQtNqyZQIbcsJvTG1BnGoDnPCqKBturH_Z1IZ1FdQV6zp8yMY6ietPsGGhf_75d0_K3t9irvveOKpCCL4y&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Elite Dogs Training &amp; Boarding photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Elite Dogs Training &amp; Boarding</h1>
@@ -199,8 +198,9 @@
                     <a href="/boarding/west-sacramento/" class="back-link">More pet boarding in West Sacramento</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Elite Dogs Training &amp; Boarding?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -346,6 +346,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -356,10 +360,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -384,7 +384,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

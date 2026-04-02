@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ31pjbPwDw4kR5bMVEePIg2o%2Fphotos%2FAU_ZVEG-FHwZlqPSJ0naKcJPRmCqkHovzTYncvDk8Vod-WIaXNmuiEZgH9-uVY_R4TjNzp9oloiPzaWtYw8uqv4oj-v7BVTY44N_A2xAMGJq_gV4Ons9TzcNKClFcw5aqwdIB4p1_TTYyIFZO5yNcm8JjMx3qWoyF7a5DrAMKILYTozRMACXxJ0K45ZAt3IX1eBhyujqry9d_qe4YjtZdjQzLooRInTYPurnkOn5FX4dZmtU92FNdxQHivSSdClhWLpWfXzS6AXtBJV13tYtICt0GQlos0ILMj7oJiiJnT6RRYmp4rxCyVSddMdJRSeLLniQhGHYZ-BEZtgITY6GDzeBevtixkAX6h5lEXH3eyC5opnTf2nIsEvyFUReXetaegnplXO0R5-k44NoKubUotaHt_eGtp6uvtPMRJ9pFLExqsG2Pg&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Willowbrook Animal Clinic photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Willowbrook Animal Clinic</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/fairfield/" class="back-link">More veterinarians in Fairfield</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Willowbrook Animal Clinic?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

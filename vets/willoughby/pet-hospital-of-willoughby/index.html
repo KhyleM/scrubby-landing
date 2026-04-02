@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJPaioNAGpMYgR9eielGH31ZE%2Fphotos%2FAU_ZVEE2oomaG3KsS4UqYnVnu2irCwcwkHU5lDeHzL5ViqMhiCBuYKCUrbAioDPomTa2AiW4QO5MqA4faBRa2-EsdNAZZlbIdrVR3M7R9Nmuv95iw43BUidS9AEbDIYVcqQc60eWg_93cdqb1Nr1VT4d9vMrE_rKcq0XQiAv8BY3nFkHrSz-nHwu1Lvxh0Jv-RXuRvwnKduzZL8KxkRsHMzwNMlLc3_VI8uVHwULDuTMgIUdQE2gX1fdT63ZkNJSSQVCrCYCAt18VnyaC04trZpZKMruEYYpYw1GO-N6100p4NirCg&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Pet Hospital of Willoughby photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Pet Hospital of Willoughby</h1>
@@ -201,8 +200,9 @@
                     <a href="/vets/willoughby/" class="back-link">More veterinarians in Willoughby</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Pet Hospital of Willoughby?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

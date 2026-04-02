@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJKYUcSqNvO4gRuj4qdJ9v0Rk%2Fphotos%2FAU_ZVEFLOk97ZbQOW00VWMdwt-DNnJMTKKWlGJkhxpfbjttHeFW7xx0zl8gWEA1XgYwcbt0hNT5R2sdIMEeJ7Xc7bCQH9Ofh6Ka9Pgg8IPkp0iKoTY3fZkcaoDhW5ut30zzU6qYywpB2Z24LiBQ-Jhg0xLyqBqUrdy-cOw2_xnIMrN_MhGHKoSQH-Jnw-vodukkCKPJ-Gae5UGjMt-uq17-8t5xS94JW58xjgh7NBHqqc9fWbkQGJQfieXLQLnLS2Zwvmpt-YVGECJucTki28nG3WNpYP-z1kEWUgumU9YeQPmF3OGAq2LSXWdIHVsFTvluAf_RqHNd8I5vWPKfRjPcZspTXVbT334XwJVyfp5RWznfXfNdgj4EwROhSry0WPXccRX9A6SyXrsH_ZYICiX-o0wDZru8mibde_KytzGOCIdfPfdx1&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="River Raisin Veterinary Clinic photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>River Raisin Veterinary Clinic</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/monroe/" class="back-link">More veterinarians in Monroe</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of River Raisin Veterinary Clinic?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

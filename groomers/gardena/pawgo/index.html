@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ4akytTa0woARuS8PIlTk_Gw%2Fphotos%2FAU_ZVEGqCnA_vorGFr_6_KvErg2R5g07KU7wKcuootykFPX8cH4eNt61RFG9BCslVWyyZuZjtamvQ2ncci0a2MgHbMjF7ptD9t9mlBnF4MXREq0JZrF5t4l8K958wjbI8IkuCzeKBcOGMom_6p1TFCrunPVz8ffQ0_6BtATYEe6PkXYhMGi67M9WGg4EJyIRL0kmaK1a6dFSJnJ5QlakN4E1SyzpLDBY-ixJ-lgCDcp8JXjyBrIFlfcA24Bl-0t-BOJkySb7CgGlyPVF86R8A6hNxBi4QTPgBChLeAeOl1niCA9oc6KbBaSELIHPOGsAp-Nh_A3r8BfIAN5fv5vcVFZ9QtrAYRkogi73b3GGUdbNYtwwGvYGSDfD3x1UDPfg63sE6kgHrnbc3J1bIJkbCbybHoxtgw1vL_-f1Ic0rLHQEcUkNlIoutwLpNt4UafP_A&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Pawgo photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Pawgo</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/gardena/" class="back-link">More pet groomers in Gardena</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Pawgo?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

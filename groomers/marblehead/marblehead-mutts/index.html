@@ -79,7 +79,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJjXzRhP8V44kR4Hut84WsROs%2Fphotos%2FAU_ZVEHqOapEyZEADRhhvsJCntE-sps9mAjAXtIBrXAPST9cSQpnq32L3P3269dbmwz5ktQN7t2QN9wKBNvZ62caI9j8BHTJr6BoHK8HJ1cgWqEA794nWmxSKFemZ03RjXjhMjAFgGOUHHJZ8Aw2W986z1xkXhY_cVmdwa_UVsZupnFPqS8Gddrb-_O5bcJ9Vt8qKC8vn5FaOq6ueVtcmvLyrpeT9UwgVx3qSUqF6H3SZMcdmfYo3deZbhYSfCOc9Z7c_N5wcaL1GOV0IGIh6Lw3BsdAZuOKPKSiHTLsD2sHDD-bZA&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Marblehead Mutts photo 3" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Marblehead Mutts</h1>
@@ -195,8 +194,9 @@
                     <a href="/groomers/marblehead/" class="back-link">More pet groomers in Marblehead</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Marblehead Mutts?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

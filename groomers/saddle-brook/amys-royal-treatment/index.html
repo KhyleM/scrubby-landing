@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJT3ADU9z7wokRaD-CM4L8SJc%2Fphotos%2FAU_ZVEERxwo8goZxW6gkWsTdeUYJOn-2nMup5CatJXE6LMZIR5KjFYNkYPOoB7--MSa-uP-Q0KX7wdo8EHh7dfZTkUu5_Fg-_U3ehGj4X3yxv4ylhQUjlHll6zVLho254ZQR8SYp4FOuFaZ45UCiHBsUg3g7gNvBOPrVuiFKjfHc_U5sEfT7biwGQJXhJXG6Gg7hhqkWDYi3GORtTAm74WdXO2f4D7dxxKpkEA7Ipi3o3RVHcVS_P2ADASlMshMkcA8Mxdsg2s5qVqYZ0vwz17qjTtZzm7IGvbNHemeHkDg6Ebgqfsgh3BfoKs43dJaxytLtqAOCSNotDza1YJvE7qitkrMrfWqGdv089MfBtxr_I7HpxT5Dbl2AxkjI9eyyPuB42iA0RTxpH0AM2ZLxE40c7dP8yPz50fneIyHvKl0&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Amy&#39;s Royal Treatment photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Amy&#39;s Royal Treatment</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/saddle-brook/" class="back-link">More pet groomers in Saddle Brook</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Amy&#39;s Royal Treatment?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

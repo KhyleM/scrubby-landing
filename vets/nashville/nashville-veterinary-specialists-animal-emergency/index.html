@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJIadtN5FlZIgRO23Y6FEElFE%2Fphotos%2FAU_ZVEHJj8yktfAV8sGtmD7Z0wPQJpiyQdtQzLOiZDNRgoUt7v6JSA_lrHdozhnKZFtFvgjhath_CZ3NqyCdGNvWZMflz5EvyCfl1XL70l5yUTmuilUQGFdPlpIiFmAb_oODOkESGt-ggAWCCiwkbAC4lRWq7rjGYj2WR-2J9dmo25vkY7z6RpwFJdHJG3B32BS9n5kYJsb28fsdwshyxenwCvamU-Lqq2yAgSE2-nAUzmvSnt81nwY1qcNyXyYKQ5hfERoJSA5UjiXBF1TpwPUNZKeBJbWFhaiMXeWaeqaE2SO7-0Oo_KYsu8YTMa90IolToCs-21IFdrOTTQYHb63F3JT6L7avg4qXbYH_NrdWVYTWul7B6zaXKK6ABpRe7JNJHclMzuAZX6AJVptFWvB7FUq6aSWAHna80SN1cUE3skSQc3tN&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Nashville Veterinary Specialists + Animal Emergency photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Nashville Veterinary Specialists + Animal Emergency</h1>
@@ -205,8 +204,9 @@
                     <a href="/vets/nashville/" class="back-link">More veterinarians in Nashville</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Nashville Veterinary Specialists + Animal Emergency?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -352,6 +352,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -362,10 +366,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -390,7 +390,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJLTgPh28T44kRRkcZR-_S6xE%2Fphotos%2FAU_ZVEEJft3ZllF_pXxgZJKuOvea0PincS4CNo18_pz6GDvsAFs2uciX4VnDMnw_e5a7cFFCEx8gRL62pYfpFYFpvEiujMdx5LoeF_E_Axg0gbSiFh1q77bVNE9n90TNKPNCdozkL3heYx9AhGo5LRSnszfe6_jEl2nV6VZoWrbp6_8bWRpenTfSH6Ap2qRmpTkg_iUyqMoPO4XfCxTQyp_fLnMVBj18FxPpuHXD3VGQ_zQnokCDEVxIFJ7PvsWxCENvhu_tsS1QLGeh51kLPqpgEmc1zuQY8UEeaVcQ8VJ5mU4BVvJDPRIRnEKZlW8M2vQsmErPVqd2V1i1xNenAKcZfrFfYvyi0pkgOmTDay3abB4KeJPTHnGCuOdKPM1cQR-wwlukmpP0VSRI-ylHTMn7kf5FuQgmrN4xOSNjt8oODkrSbw&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="New England Veterinary Clinic &amp; Pet Resort photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>New England Veterinary Clinic &amp; Pet Resort</h1>
@@ -201,8 +200,9 @@
                     <a href="/vets/salem/" class="back-link">More veterinarians in Salem</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of New England Veterinary Clinic &amp; Pet Resort?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

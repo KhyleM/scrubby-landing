@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJaaRBzBXv3IARBzVzwRvXujs%2Fphotos%2FAU_ZVEF-4TaZFlgHODbKVtOK2qHwUAW__C1UstXnQ0fvdGNeDGvXCo7pi6p_4wk8kV2wEo3gnw9AqBZAZiK_omj9CC7moY11PITudJ5TEL0OC3_GHgUX6Vpbh4Yxwp70RnE073VlLK1ZbG-WBaSckowN_dMPs7RcY1qNr2tF2Ph_pdKTBQKvqV_Jw7siCxFukMMBtbTTYjfr-vLeMaAWxbnMEIAZWAnp2ozEKVuvj4G08QW05T2U_JnsF4v4H1D3O-wmMvg3_1a59hLjTJBrWu_PKRNOs1MU2lOHoPr7PxK3WWvRnAFF4bsW9uGyuFgHTl45Bz7E8uiDngsM3bpN0E5F2EboNY9Eqt3UvNaHaEgsxRRJxLpz_rshZYrTtCF3TDvBnNMYiIvwp0vcaZ_S4sK8lRCeykQA7ZgxS1MZCChxleLZsJ4zmgdQTnjiUbx3eQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Niguel Animal Care Center photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Niguel Animal Care Center</h1>
@@ -201,8 +200,9 @@
                     <a href="/vets/laguna-niguel/" class="back-link">More veterinarians in Laguna Niguel</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Niguel Animal Care Center?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

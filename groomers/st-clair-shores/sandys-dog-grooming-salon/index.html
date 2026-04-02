@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJt0To1iIoJYgR9tKUOhoOFxA%2Fphotos%2FAU_ZVEG5FpFBYy5P1Yo8Q7NqLxJhE_TynVWGb5HqSD3PaKB_sKq8UMz8c9yj7UGixXDdj0gXH8-rhNB0DmUnWPR-_Ty0rW6bj-kSpYbxfFKTSveGxjQqGgAf-rGzJ-ADmzUZTn0C-6MxBrJcyfqI62uMe1K6HgrUihqU8r0MubsqFT6NNsiyGWVErGnj9kn5Ga_1ZsjVwoXrAZ-YrD2XRm-5NhYtssbnk8Ixcn9_1aONA5BnwhFNkAjmubzPtlZBLKBbGghG6DIwlr9_tK0dI52lMUQ3gI4H5YI8rY3HSBiPfCAzW5Rq3Rr58ABPOWXWgisG5BuIywCxmLFjHiDcfceSZSArEFRssbipEIZ_ukhLtXGB-pXEI3v9cBaez3ostcE8vAgIMU5nVMJl3-JMetc6Mv9NjS-RQGgl9JdbTZNWcHQAma1T&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Sandys Dog Grooming Salon photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Sandys Dog Grooming Salon</h1>
@@ -189,8 +188,9 @@
                     <a href="/groomers/st-clair-shores/" class="back-link">More pet groomers in St Clair Shores</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Sandys Dog Grooming Salon?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -336,6 +336,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -346,10 +350,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -374,7 +374,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

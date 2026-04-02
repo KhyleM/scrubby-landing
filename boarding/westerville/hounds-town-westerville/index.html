@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJbbz2Drj1OIgRrctfEp_yBao%2Fphotos%2FAU_ZVEEQZsdnAUqs6-MOmIiVJgLk4S3NwvPQAmCb3tY66KSK1CCelosgkhGK4baW-qbeYz8RdH134ImHPXPoqpFgTFz6Ech_TAOLtwA1Lqncevr0UOfimOuzpNfxeWrQiT9vurAVOmuScLb6DGgSTzsl0hkIAuUsUldLvQJCgYbhZlkXIVTjktw7IxayScwk5utIiE0H6kinT4Ne5CY1_DRfGqnxq-T8fJb-mgiB757Mvp5OjCCzRMuuxna8BEJFDBl5bjXc2Yf2o6HrHamuxIPcOP_Rv2kft57VXq3moEOljIObWlvkSB8GwQwIgFiEFtyXImrQ3aj7Fn270bq22YMKcF-C8KGXLzIVNOOMwfpI6ylvQvHE6sxnIP6OMPbqWKcEpNjFLKfOAvmSoPoEfgNd3Rh4RuR5eK76l_Xrnn0GYfHBYaV_wljZ2OIitZP7R33O&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Hounds Town - Westerville photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Hounds Town - Westerville</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/westerville/" class="back-link">More pet boarding in Westerville</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Hounds Town - Westerville?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

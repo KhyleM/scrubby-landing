@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJAQAsysTdx4kRsnANtc6h320%2Fphotos%2FAU_ZVEGDhu4BLBl-YsWVQ0WEp7LLDumtcycsVGrYt-XGgcpQ5K2O2CYyGLrft40qMJHj_hoJ6iE2Z8U-xyl6P-iZsoV6oergOGFBKXMDTwSQOGqO_wdHduMv_fE5fGitd1MsHZTFo5Q9AZVJrvxFJdFU55pBf6Et0_j9a0mOvQVMSpsHvOiHmGiTF3yJZ4ABkiFrItGTuMyXzCdoqw8ooqp4ZSCcai-lyAsep2znvLTleEybW-Fqq6FTeyfn6f3ljYITTsMj2JI2Ug1kbscxejNC8W-qODhLdwEoSZaMzBvB2hjYwZ9LwtboySVyFYkkeP4Ic5Cl6UYNVd1wAa-RUno-90lz1kiXZLfWQV8d0mGbUB5kBKHOzrHKmSnro4CNoLzt5gpTMEu4QFqCycEz__uIZ4nlBnBWJdRgSy1popGoXfuaxk9E&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Romp ~N~ Groom Doggie Day Spa photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Romp ~N~ Groom Doggie Day Spa</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/bel-air/" class="back-link">More pet groomers in Bel Air</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Romp ~N~ Groom Doggie Day Spa?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

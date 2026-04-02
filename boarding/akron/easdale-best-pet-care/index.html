@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ7a5QsS7aMIgRFfQHsX6Z36E%2Fphotos%2FAU_ZVEHPZgkTwgfVQJv7dawDw_7yxhAIMuVsyI5RSYjnNADhdIHLkqvkXA0Spn0K_kU5llqtD4EVwASnILC3a_yYHTEJiZ44MNEMYY6DXCEBNHxZVVgjskoiJlnAVUF7PwL6kj1ZLhy-C3uzVGg7ZMYqQkXhsXMqATRyOV5MW52MuScbVSC2Hy6ZAa_hlqfrKYgl4geEAvf-6iAqIp0b5gdfo28W6zawhxx8gzP4t6YLCbJOzIDmFKXaev0WAaGswu6OPQSkQnAnMCzvJ8lYK2BpnFl1twIWPtrp9PeGJ-kdS1gFtQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Easdale: best pet care photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Easdale: best pet care</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/akron/" class="back-link">More pet boarding in Akron</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Easdale: best pet care?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

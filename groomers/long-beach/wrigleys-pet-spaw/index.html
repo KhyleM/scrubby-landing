@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJx-jqMOMz3YARAGZea6OkSqE%2Fphotos%2FAU_ZVEEVN24h43brEd91e6A1PTpHX9WXsAWPmq03vcVnuTs9eI-L4k9L0S26575qlQZpoTl_O2sZJHQvc7J1PQ2dr6PbWd5xdS0AHpI0K4JSBQplyVbN6Es2NHhReTKX3iD2JeiNh008rYLx5YVl4-sWdJr0wBW6a6aAygr9wjrXvBqdKfnekrKSnRh_djJCoo9tGUnEJ7l_9sTp51GsUBOq-QEU3V9YGg6v66eRiztQ3MedRCmBJDOGcsrVeU2Ch_GX_hECS8HqC32YDM-ZrVi5QNxp3JpZ0pOUWRyJXYFBdnn5gPvwJTSrV8nCIsFvlkEYFIetECbZW0-z_EtEkZYIUU-0V1Dx94ggtLm-CC8c21eIZ1qkKGFaB5fM1IIMw37Ar9sf0kH0xBsYOP_ccLoT1PxGjgQ53nPzF9PGoOoPZf458CoW&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Wrigley&#39;s Pet Spaw photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Wrigley&#39;s Pet Spaw</h1>
@@ -198,8 +197,9 @@
                     <a href="/groomers/long-beach/" class="back-link">More pet groomers in Long Beach</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Wrigley&#39;s Pet Spaw?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -345,6 +345,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -355,10 +359,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -383,7 +383,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

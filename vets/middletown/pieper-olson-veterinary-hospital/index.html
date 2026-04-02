@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJMzbG3Io15okR9Zazk8v_0rQ%2Fphotos%2FAU_ZVEEPSULgWmJ1ShvsCH7zz0uXOsnEGgl0d4sapx7T95XSb3UunotTTaf-o_8ikbSUXMoTCV7b7a2Nw5Xkm1Ids4nTf_DcgUfS1hamVvUDJU9AsW_6Q7jdEREhpfs5hlBtCfzMbM-pdTqU3sDIdziyf9ciGFsfLgL_WYVvEhBfT2UqXrIrOkdM6TQeTwYpXBO8f1ZuK5iPmOvpjCioDXiL-XbAkIpM1IcxwRa2q3SP71UuB8ysX9_TJlM-IlWu1FdjID6YhJzcAg0P9f6Rmg2U72Fn3TaMACOFhDyEgYpGUANi9DKyj2X3Zi_eK3MSJsmhnaeX0SJkM6W1hjRpcCL-jf_jHxyowYuNSWiJ9il4L9RG2_dtpk7g20SauUxZnflKsRltqX_TVmyqwxCoogiAKfcwHe11NAFyQg8w-DpM8zUS5CD9&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Pieper-Olson Veterinary Hospital photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Pieper-Olson Veterinary Hospital</h1>
@@ -201,8 +200,9 @@
                     <a href="/vets/middletown/" class="back-link">More veterinarians in Middletown</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Pieper-Olson Veterinary Hospital?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

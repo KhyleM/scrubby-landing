@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJOUiQTDa_woARASGecvndA10%2Fphotos%2FAU_ZVEF6LRHHhWzkAEKIx4aVjrwMua1dPTNuQWQh2641-O3wtgWqMFkhVbSUAQNTF67--JpF2R09ZQG_wk9ZatNcFrSvlScGz7_Re2MkUgsIzXJSQL-Ol7H819gZsZx18C9i-Hgo9IOEXRJKhPpJdizfYAndYwk0cxkUe5ULpwKPTZ0HSjQGQhCy9Q6j9kSq_pb-4CPl7QYrEY7SwqNdip6Ee9kExZNqfl3boipoUvB1AgxBItiaEE1FBuaXtqWoybCJKvXG7NyxkpLCg_yEmVxeUvq0ENCefuI_LFhEkekWwqkEGK2tAx10jVU5gRfPXwGErg2XPDAtsKzGyiK7NWy2cX_lItqJvXfxi_Ni8oQiPYr2OpQFLuNKdzkEb8rLGiNsXC3ixnpMXv9TFUxyi5CYq7iLjZBRGpt5oi0PpFVOM0AIBB8fC19RUw4PzAab0dt3&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Duke’s Doggy Day Care photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Duke’s Doggy Day Care</h1>
@@ -192,8 +191,9 @@
                     <a href="/boarding/los-angeles/" class="back-link">More pet boarding in Los Angeles</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Duke’s Doggy Day Care?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -339,6 +339,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -349,10 +353,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -377,7 +377,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

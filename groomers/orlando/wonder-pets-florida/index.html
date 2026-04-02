@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJjZ4hzM5_54gRjHsZlxmAj3A%2Fphotos%2FAU_ZVEEmieNA9Sy3tFiT1t-wshKUnB0Q9SnQEZkphZ4Fe7Q_teNXTqLRGFatzxj78_3ts5-1gEJMy4uQce_-08zMB709ovXeHLswJAwLArsSQwDTyOL2mxTDT7JL8ynJop-_PpFYDDZ6NFOQKayQI9t3H6p92-HAkKiPbeBgaMnzlLoj5ELOyac-HC5A8ynDVepV109HpEQdcewsRQoc8IH5C_uY8LSdy3CDLXCSXmno-dv_N0YK_8b6BereY336YXz_DhUT91l5y1JfuL04OaK8L0mms8YtjgULzGvYUtdN2G7P8lUlrFMYqBdRd1R3URMMPzC47gTONS8ACHWnMbHkgw6SiOi03kLGvUIg5R4h8anWa2AamJ32SWllgMirESde4hwcTCcWzTW_RsVDhQZfjLK5N7zlv8GhaDer_FqkbZWtoJ3wsIa-WsmvNse9rP1o&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Wonder Pets Florida photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Wonder Pets Florida</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/orlando/" class="back-link">More pet groomers in Orlando</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Wonder Pets Florida?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

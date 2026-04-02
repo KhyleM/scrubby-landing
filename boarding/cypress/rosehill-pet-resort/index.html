@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJT-_T7mDVQIYRKWAdH29tZVg%2Fphotos%2FAU_ZVEHf8BOXB4Pr5Xgch2uJz4wf8qW2dgSAuJ_3npj8w_GOZrlaRwcu0Q_FU4620FeV3TmcvwhFmBQS9wxRcv6dTMXsYajPdNS2g28EKwRGl3KY3szi4x40x_Bgtrr9E7dmxvm4ItxKO6Zw-1em_wfGyvLQmR9MZml9NaxmNaLSyUwBGuqnN9020VYDSlMFDyV-KIMNhn_avSaxxrRDdx-L4NNjhDRf1_u6RnmhvCo4W_M8PZHxax7epQGKqr-NIlHVSZzi-pvoq6qjQ8GXPYkozh1x5BhLd7tAWcZsWYs60cEBIWdPyf7p2nAkyTSeHZ5fKoLVjxHSsc-_GOA-6ogeiyZA5OvnVDZcaKfOE2b6_A9AFLSgYL8Cy7ULLpecDx9pMjC_MliqNNpp4ClNgnuvIFjQpZjg2xz3FEdgELMXRsNVeGT0ax4qPKwRrLE0H61H&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Rosehill Pet Resort photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Rosehill Pet Resort</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/cypress/" class="back-link">More pet boarding in Cypress</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Rosehill Pet Resort?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJkzbGdtHw24ARZOnd5CI2f_E%2Fphotos%2FAU_ZVEFaznmHLwIFBH-XdUj009piJjRp3OV9VxKv23jYPwkgtbalQUPI_n6VLalB6iMng0ejkCmS2YiJ20pgQjsHr8zs6s6AutdaBUw0FQ_GXPDqM3NFCnMYBZf8UhN6x3hyQJV8WeDGgJqbgYV-v7_5cDL2gw0jkBjST9n8J4uFpGrfNe3ZnLJM3Vnj4WFGJwKbCeraE5I1LloD8AVXyGjLiLXICGSiAeB9TdCZ1pyIFPeAhaBuU4teCHg5LUXplrJaDWAVpnrX_dBLduQTVoj-92VzLfItT0pI4kR5hzBtthqgXQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Lovable Pet Sitter &amp; Dog Walker photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Lovable Pet Sitter &amp; Dog Walker</h1>
@@ -189,8 +188,9 @@
                     <a href="/sitters/santa-clara/" class="back-link">More pet sitters in Santa Clara</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Lovable Pet Sitter &amp; Dog Walker?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -336,6 +336,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -346,10 +350,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -374,7 +374,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

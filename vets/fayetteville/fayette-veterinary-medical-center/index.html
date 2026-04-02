@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJgdbE0znu9IgRvxkMhA-10r8%2Fphotos%2FAU_ZVEGXF1ZgSyTZdZTvZkVueqnVMPsbdHnQSdPFs_Dxkj7foGWIJLul6D_6GpElejJCSxRa1pq2-YacX0kZoloWM67sIAc8A9QBsdrbIFyVzwcD10msXeis8U2Av6ci1SA2u2_dSZ5wYHanW2K7425lk29wCRpEdQ5etZOQ9AaRwzD-9qauF4yQWbC3kAnialqzuQiCD3owhZsjyDTxBp2UvKwf8eHBIYnbHEh_c5fgF1Un9L7H2t4J_H-AMOHZPjhJl9-HzzQFhCAwixA1F0SDmRKVJx8EbH_RvJYWfPY9ThoclXcxztFUrMNsSSRENEehznuxuIVzxaLF6uNJN91FLoUmON1wf3Q98pGRa_kqJXW11ViWQwz4M3fT4tw4w6yrMzlIQFTzNsQT-s5DzTTRxt7l05zJkRoN0jh7L1u_rpdKG7dz&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Fayette Veterinary Medical Center photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Fayette Veterinary Medical Center</h1>
@@ -201,8 +200,9 @@
                     <a href="/vets/fayetteville/" class="back-link">More veterinarians in Fayetteville</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Fayette Veterinary Medical Center?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

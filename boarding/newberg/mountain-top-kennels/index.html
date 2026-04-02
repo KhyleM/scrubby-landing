@@ -78,7 +78,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJn7hp2TkVlVQRPbdVmvWPV_Q%2Fphotos%2FAU_ZVEGXWogo2x353GNiIjqAGhEXea1XtSMC2b7-rHAk4vKMIsLiQpbP1VihgRDavD0ZyAttUQIM1kyxFhiOhgEmcTmtuhBT9JG88oX3gfgODIK17oxQyiRyXXwuB_qcMh6IxpiNIAdmNY7KNJlG09M3XvH1aVevM-XD32A0yHXnioQ7MfX3y-6FWKj-hSivXoyrWuz2RIcggiuodsGU37qglebVRXJgkZ2X7VuNsyaTJJqOpRl0ygdT5iPNBLpD9jKox5Elhqe0Tg0XcTyM_5Yv3psMEzx987YcOFYgib46k8Naxc6aYzgu0-4iGIEaxuVr3gdB2pxkDrvIcDXE0IdpaiGSm0STwNU4o9Sx6wV4nqQ-7K-hzw83WB_w4d0sG0rAuz65LH-9Qk_AgqZ9SsB51cOlc6z-oYzrrMgDpCP7bFU&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Mountain Top Kennels photo 2" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Mountain Top Kennels</h1>
@@ -192,8 +191,9 @@
                     <a href="/boarding/newberg/" class="back-link">More pet boarding in Newberg</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Mountain Top Kennels?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -339,6 +339,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -349,10 +353,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -377,7 +377,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

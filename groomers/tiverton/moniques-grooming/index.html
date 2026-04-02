@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJrbU8DYb_5IkR_0rpRfAjzaE%2Fphotos%2FAU_ZVEFLAX63JqILqZdUIo7gof0oConD27dsy7AKs3cZ09PzxqD2rxO7B1kyoj49KbvCNR99VJsP7kUGw2egwvq_mFdmypsQXSwZlMh9mAV5suDN2Rn7OjBhh4FUIziB50ItHf36e7wkoK0BkJ30Rxxda3sxxU7JGHi-67B2S_6q3JKBdh5ZvjEXtD_8a01ZCh7j0C-Ar3JxTR3D-QogbA1GfZxCnOFYoGr9uLRqqKH7a7TOWnFE0CVJOb4uz3IbuSraH8PUZEh46vWUsA6RtQJ0yAndML7LLvheOq761ktI4QSnWd1xZLpF1myGKz7DXVrfF6Qu8rexoOm-xxA0e9upxnkBtvCpRE6Be2XAF_dFcRtE1XMGOq3yL0i0-3cN2pYanFJFzB9_HXhff1lI4i2a90XS0XxSlKvhohUFVQwaoJRO8SqqjEN8vz9Gw8OdFmMu&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Monique&#39;s Grooming photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Monique&#39;s Grooming</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/tiverton/" class="back-link">More pet groomers in Tiverton</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Monique&#39;s Grooming?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

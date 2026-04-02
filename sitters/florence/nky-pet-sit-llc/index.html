@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJDT3fMV7GQYgRH_uQdh1K2zs%2Fphotos%2FAU_ZVEEYkRbA-UDoZ3hoIhJRacyhES7J1hh8d6cl3D5BxjDmPa7vvUqFgU2PiF0lukHh2kB2f3tBO7oe4i2MGu-vOngI_VkUujGUKNyFjAhUGktCqYW8xTQo666rpfIGGXuf2FSmG_sKH4l2e-Kpm3KfkhR4xMI9RylT6q2QcF4bWtcc-vM-QSo6DwN14dLoUa_g4tfWNXRHCF5Dt5oMAB9cEDtN-55QL94vKZicYFegEXSfYHtNu5LahHC4HSKRRfGhQhCsqdMJbNtTeiToeiTdEVuAE4HhYcQlTioW0eH9fAvHFA&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="NKY Pet Sit LLC photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>NKY Pet Sit LLC</h1>
@@ -195,8 +194,9 @@
                     <a href="/sitters/florence/" class="back-link">More pet sitters in Florence</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of NKY Pet Sit LLC?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

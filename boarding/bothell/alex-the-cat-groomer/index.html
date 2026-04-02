@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJJR3GA38OkFQRj4ZhsneeT3w%2Fphotos%2FAU_ZVEHH2Z-srZD9u2RTiHDoy_wT-tvOX4u4nzL7zuK1uWvr5GrR0M4nLm6CmeoCqbVCmbRywgQjUlJRW30BbvA0oMppItXj6wgxR2_N6Pawkhv0agV2A-ob3wZGJ87Dpgux0OUAdr9qxaKwaAYw6JfJPl6ua_LCK1Ae7H_oDlkiQMdgDDKw4rUdloWmOEVOFeyTGkQcAu78Ay1CVPJFUlmgXPymsgUWnJgSVQAB876y472JEQk7Ht-QQL2AkPi_758bMeeMdHSXhGOUxvoxdWUL9nkUonaoDpQQhZS-U4Cwxx6g9bC4_twSMpnhR-DCIoxM7dlzXxjTi9JkDvTzWPBdi08aMmVKE2FTXvVntA4TsKwNXKGXpQrP7zGpJqTIQ_koUEsHykFo5eu2X68sMdNB66Lqksi9u45-Kr04Tcw0mGcXJ7t01TwLoG2Q1ZFA1Qxt&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Alex The Cat Groomer photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Alex The Cat Groomer</h1>
@@ -187,8 +186,9 @@
                     <a href="/boarding/bothell/" class="back-link">More pet boarding in Bothell</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Alex The Cat Groomer?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -334,6 +334,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -344,10 +348,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -372,7 +372,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

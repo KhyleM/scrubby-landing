@@ -80,7 +80,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ8UUATueBY4gRvrHdKOVD1kQ%2Fphotos%2FAU_ZVEEnQlozQzuFQ6K6n_HbRoIdcXYlshTWECLVAupGFxVeN4r_M3HSoOQc1yBnFRR2Y7L-B5-U_AXCChmPv_XNbIgpJWrynptYK7oLIiZfsgm7tY29EYVl3L5hUw4d9lfmSKN2OCd5FkJN7YhP2nxYmRQXDb9Le1W2kCt8zS6E4ok3uxh8N5_IzRmY8bM-buBlrsW-5DZCMRC-7ryCC9C64_a317M_Yl0YdHnaCQrhoNqYmn9iGkeZyzgm9LBicktD_bPDVIGSF_5kV4VHfqpP-UHVfR4JNUy52_ixWsSzgAAeKyrMAInsckTZQSJtjLGjEqdLzFJCgvEDKoDzGY8Jhl9liWE_7p2VEthdNKx-ErMZo67nMoiHJRNmHV-b0BANcV1HTUa8fgRRAiuvCEqruGtb8Hu-aw5hhl2oLJHrfAL8x3QN5vL7whagpNXH1GOl&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Doodles and Whiskers Pet Spa photo 4" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Doodles and Whiskers Pet Spa</h1>
@@ -200,8 +199,9 @@
                     <a href="/groomers/thompsons-station/" class="back-link">More pet groomers in Thompson&#39;s Station</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Doodles and Whiskers Pet Spa?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -347,6 +347,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -357,10 +361,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -385,7 +385,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

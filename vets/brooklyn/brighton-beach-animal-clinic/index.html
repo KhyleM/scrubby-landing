@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJx-vRBwBFwokRJaifipNwnW4%2Fphotos%2FAU_ZVEFwf-2Lr4e008bXMcL1UyN4K1lGUo_FwbGhGaoOLX4ZC_5DZG0UTJTyq2zigYvZs5mS-XRksNxW1h5XIsJwPwO1B6tfYGp8MOx6P2WNT_InyaYQmCMtxj049XFy3rO_VYG2m1_zu4C_XipLUOVlQ_VFsbIaqrPeYsMBNzOAicaq6y2gjodJYin0eI9p3V2Bzwf3G3CR6KLhoKkJQjPtmfgeOczI_eeVl_FXgCB8DJ6RIMRnVsvkmOzZkPl--rysFhDUxLwSyX0bm-wvzD4w4F5rfyZ7K-cehXfWgqdyM0UgzUs-T2GOgx7glvOvhWdCdlsHT2zd798MWZly5b33DPx7otFJKNzHztvd-pwW-4fQbbUE06LRWnyfuma9-ArcZynmQiiCtpKaX7iDEiLO1gwOAPshvnN9gMl7k3xHgJz5VJH8TpBHgqizLkw7W4yd&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Brighton Beach Animal Clinic photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Brighton Beach Animal Clinic</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/brooklyn/" class="back-link">More veterinarians in Brooklyn</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Brighton Beach Animal Clinic?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

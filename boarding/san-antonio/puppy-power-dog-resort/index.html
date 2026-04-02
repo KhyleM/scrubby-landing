@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJX-Zf6JvzXIYRm39BqSM-Cm4%2Fphotos%2FAU_ZVEFmRA1zAXib0rexJmCpxljOSlu6h_xaaS4mxDuYGWSaiQjP4VCJ6AeZjnX3rgIHn_AhV-e7Ny1KSfbpbVlfPHxRUpOaOCLQYELRFhvgskEr-XvfwkFXnpbjrCdyCj_vvcWNrnxgiNWpeYGJc9Zg4u_to1f3R3hXV_D6zcL9-_ymXh6uXWWfW10uVKp3WjR1UUZHDc2UAfCm6Do4YDBgb_rzBfiDoVEh4LbTxolbAPBq0nckY6bgZqznPqlHl_bAECwAT5OL8rz0mgzDIYZou2BiR5_HAR-LToScH5pl2WkbtTVjJUQv9u2bFH84KNN9Hv7vUS1G9ujffBoaofnfwPlRExblSisSccTqBk13RvGaGUH6wnWT20MJDWSvmvRTAi1S4KV8tQyxC3dz4licnJ6JWcMpEwQkbNs9ubrvhKEep9J_pptcAIdlVqxOxJCg&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Puppy Power Dog Resort photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Puppy Power Dog Resort</h1>
@@ -199,8 +198,9 @@
                     <a href="/boarding/san-antonio/" class="back-link">More pet boarding in San Antonio</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Puppy Power Dog Resort?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -346,6 +346,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -356,10 +360,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -384,7 +384,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

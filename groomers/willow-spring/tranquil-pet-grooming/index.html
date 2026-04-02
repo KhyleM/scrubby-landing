@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJBdFR8yx9rIkRNAofX5gkop8%2Fphotos%2FAU_ZVEHsvSh72om2iY38pFTsgFGbcVRZrtZB5g9z4HeDPPdm7JnFS3vHcaXlIg-9RZggaB2nOR7mwyMCQGlcONFypTj8m6GnIlAVJbUgwUv5b8xe0SRoUrJtSJ6pNGAsihw4WWlp0f7xoJNzkxy7kVr8C0Py15CwaAaB92Da2d_mXzW0y13szSGJpw0LrfRSzd9oP8nqnTjLtRIxqT2N7O1oVcUVM6G2pyFv9qnSGqNQCO5GULSyVZZtN_WXUDSYTa_QvRwgRe3oMCkOswsLZ6XDW8qbQSG7sBzEIvxhfoYAUXMTsA&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Tranquil Pet Grooming photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Tranquil Pet Grooming</h1>
@@ -195,8 +194,9 @@
                     <a href="/groomers/willow-spring/" class="back-link">More pet groomers in Willow Spring</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Tranquil Pet Grooming?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

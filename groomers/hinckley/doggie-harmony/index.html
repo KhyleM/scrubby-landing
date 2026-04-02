@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJo3DifcXDMIgRYuB1220VaDI%2Fphotos%2FAU_ZVEEym5LKyRIiopSKHQI07exETzPsIrMlwrxDID37kjYXYZbG9hJQ5NhUkgQJ4tNeSKr3xA_4srCx4VhZKIPRO2oqiPaaEvhv7I-JVoT9ggT67sN6uw6GzjCsUPxGTvFKfMM57Gs8oogJVPJyfA4mbYb40k9KDTiM8mlrIlSI4s7FDzFVVDMWf4vO6Wmjd5WkD6Ka8QX8sMqX-RopOupOROgnfbEE3AHxSIUpUEn-SlqlsBx934FCQ166fyE9h7oLn7Ln7UCI8AfxbRgkKnNH3YHvj98tUwynXlCGr6BHpEjN8unY7ZJ8u6sYdE1rnlAFl_8sGoDHWsQy3u9KWdqK8Yd6TJG1TfRE4VzpWMy1hw2gFwXB5RC2pjlpk0U2kDVhDhcZBvERNBawwJe5ZNun5j4GNc9jqXx9yxis3j4gO0k6cEkVDbIPh0LU8BVjdA&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Doggie Harmony photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Doggie Harmony</h1>
@@ -194,8 +193,9 @@
                     <a href="/groomers/hinckley/" class="back-link">More pet groomers in Hinckley</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Doggie Harmony?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -341,6 +341,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -351,10 +355,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -379,7 +379,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

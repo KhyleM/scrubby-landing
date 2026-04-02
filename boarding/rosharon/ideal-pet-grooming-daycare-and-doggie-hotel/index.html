@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJC0xpZT3tQIYRXItLh8NhbQA%2Fphotos%2FAU_ZVEHROAQXmRF7lAB9WhgEM9YdV0mrMQrg18Mdjl2VvnrX5xVwTcq7apKW7HE98kMqA7X4qTflb_0ZoDqdPTRz3Hkoa2CQUZB1K_kGiVFHJEpp9lhKJiIo7OIktDlDuf4gxlFyPt_UyxJExEEZoSuyzGRGvc0NooxZwBy6GSrtCzqfYNToxhPtlwKOTXs7JnzxSvHqWrVC53fOspn5c2LNmoM-wuO-Pd-ckq2gFsBe7Fz7aoTFUtTbmrqsFqS5nVB-_CXbV9I-OQcgjo9QcrLj1GOabrfEsY1e8HLOfK2ieT6xvJ6GlnyOB3_bx7pr9ljFloPg00ML9Ovd1WfiB0k4tcAcwTwoUuP57JyQ-rCbfX440D3Gcow5SAPEVa2xYasj-pWUpAFCj6jz9099jXgMVZqA8eedxXXw81m00fXCYHmsChMGxNKcdXb0QR53Qa3O&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Ideal Pet Grooming Daycare and Doggie Hotel photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Ideal Pet Grooming Daycare and Doggie Hotel</h1>
@@ -199,8 +198,9 @@
                     <a href="/boarding/rosharon/" class="back-link">More pet boarding in Rosharon</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Ideal Pet Grooming Daycare and Doggie Hotel?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -346,6 +346,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -356,10 +360,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -384,7 +384,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

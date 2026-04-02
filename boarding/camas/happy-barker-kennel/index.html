@@ -77,7 +77,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJSy-dk--7lVQREwIkE7NwQo4%2Fphotos%2FAU_ZVEEoJHzFI6pkVZPQf1YqDxEvkPKx4PfKfCmbg2PpX5kMAO_8gs3vPaMCUnUGhPcSx-w48F2gXN_llM7hYZsKfJOshIofN9tfWYJUoJW0nfRXsEDT8bqleJrZvgicMFqZByVN0EY1Pod4SDMEmqqlfi5ToR0VFzrJ9SP-6pmIXH20okEAB6nSJLp9EBKo9Iu57e6Tb0xm3wbLkg3Euv3caicbH5B3V0iarz54Z5vRL0spYsbgLPWsJcP5Q_LZy2zdlGiB8-G39ZyY5vzHo-92U_UTeFLteRsP2a-t-OwNyMfnsYm4OE3kVP-mEUR63F3hn6MLUgmUlDX-UKd52GwH8APfu4f13YXvDQAS-a1cCNAebl38SgQ8JdIdz3kKW-V90gtCi2gm8loYSaxZJZ-6561-QfEqOhpfW-Q6mqtNXiA&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Happy Barker Kennel" loading="eager" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Happy Barker Kennel</h1>
@@ -179,8 +178,9 @@
                     <a href="/boarding/camas/" class="back-link">More pet boarding in Camas</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Happy Barker Kennel?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -326,6 +326,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -336,10 +340,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -364,7 +364,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

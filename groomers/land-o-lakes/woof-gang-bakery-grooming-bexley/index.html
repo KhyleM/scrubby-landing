@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ91q4GQW9wogRstnSH_y8p-w%2Fphotos%2FAU_ZVEFIh3mr5DeGaznrbjQHtg8mdAGU9D_zvNRXXS1HiLKOhy207T8wgS91inaSndz1eQSpx54nx3IzwQ2q_79JElvx2433jHUNy2DcBC5Vcbkt-Vs0FNeEn16rS9F9VdrzQ6Z7Tw2I78Kh888I5FXmPjGf2spxsTaV5JbF15buX-KAmcwU5euDAl93PL9GXhNk0TFVvaKExOnVI9hPCKb3H13Oi0rs983Jf_7mbPqgd3GCve4MKsB_aeaAag8xQh-s8ZcPkvVo80lBraMri5zrXgmDXT0D8Ggza178qUO-08c8DfZFv0mQfDAk7JyQ5AK8RMpqSwFQsyAN0fn2vwTvx1nr4t4NPVNqslSekEGIIJZM1o1WEsJWOI6PX37kyVwYgWJr6vOs0EXZHW4WQNQlUAe84CN8zBSPs-5_iAKgh_yuA2NRSM1wrwqnZe8jH18t&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Woof Gang Bakery &amp; Grooming Bexley photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Woof Gang Bakery &amp; Grooming Bexley</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/land-o-lakes/" class="back-link">More pet groomers in Land O&#39; Lakes</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Woof Gang Bakery &amp; Grooming Bexley?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

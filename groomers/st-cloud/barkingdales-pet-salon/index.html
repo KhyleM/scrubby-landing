@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJyd5V4huP3YgR_hLTUaYKmS8%2Fphotos%2FAU_ZVEH-GjzDap-l5VFrFumZxNVM61yqu7RaJ5QOaJFfcHT8rzDiSHuBtRnfDEQ_PrvbE1HIzNgnWenvpt6zWjWPgcQ06XBR-0qS-_YRBA8DgRZrI49dzY6xUJWK-0WQuXZ1Vozm7jGTKoORpgNBEL4F1sGfqkQ02u0hsHDfcTzSzT1QcBzIO-ojPVFNkwQ5RCMJNYdGIggJw8OpqWaVJCkCh2CE1782EinQqlQSwe8KRZRg81ptrf2dLYWabUd9cMlMCznC9M0fNhghQvzmd76Y_K-Dn1NlXoOvpp8ih19q80fBoXUa47f3JW-r6nPbK5Z2x9jedZvV5xOUMCYEDvVZ7T5p-ZUyxWneMtR4CLL6oDKEt9mBOFCqqFQZ9Ai5brKNkef24n-9Ft6YTa3DYbRWmJr3NXAherz6DJn-oPidwOTQNw&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Barkingdales Pet Salon photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Barkingdales Pet Salon</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/st-cloud/" class="back-link">More pet groomers in St Cloud</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Barkingdales Pet Salon?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

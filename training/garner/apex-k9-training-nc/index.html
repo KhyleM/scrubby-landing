@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJi7FOK9hlrIkRQIeyju17S9k%2Fphotos%2FAU_ZVEFWEbKCCvDayDvrQ6Ighk5FLdE-RIID2QvRS2kN1VBZYlgizAE4W1Y6nIV1l8mD1Xu-ZEfDiQiFyTNd0GcWss9_E50Fl3x1TPkG5ZQYFNbnWGfV-7gy-zJLnk_I2LncogQH40Yyvh04lmFbqNEH00zezOGrwWcGoqDoUOw9rwEElJFGtCTjr8wdFKXI46FAkh2BTn1XnXhsxNagaiVgZ9Wg8CxF4n_JOKn6b-7N8V-O-r-pM9PUZOk_lVcZc1yBSFhVHPj3v9M4NVQEZzQ8_2M52Z226-sBHUXXyU2oDLM2pzhjqzEWleBjpWQRw3mpILJi15BdhwjAxRS-UiOJC37o5f57ngCghWmEgVV62_WCmWCCUVQVzMw5AVuxHHzckqgL4nH9EFZ-s2S-yCOf2FgxFS8GHS3wFmrh9CaNTLEgxgE3&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Apex K9 Training NC photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Apex K9 Training NC</h1>
@@ -197,8 +196,9 @@
                     <a href="/training/garner/" class="back-link">More dog trainers in Garner</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Apex K9 Training NC?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

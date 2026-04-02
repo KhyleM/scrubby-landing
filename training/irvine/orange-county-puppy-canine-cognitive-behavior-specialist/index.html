@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJaVbfZ93C3IARRBbxBQPp5rE%2Fphotos%2FAU_ZVEH5gt1cKuXp70cvSZNT0WbE81riWFRpRynFt4nYqTagjXOszLJmyCjVbVgRJUXdAAxC5MVlpv1QE0VReG45PD8V-KI7DPqXBJARs_jHGzYlonV9jE2Nu-vt1vNFoeS81hLGFd1TsonOh4zhUFFd8ZcR2uzSVT1VYofQXKl9Evk85f8BTxipJCf0CkiwRkXB4wTMSpkco2RUsCwg50iG100QTT6NONQ-dJYv-U83KPhnsJn9boiwWDo8srrPstlv9ii17y9HROwaiDhhQMTQSWaBQ8SuEs_T0jz1A7ksUPEhrn3U8jeGSodC5wWZxWPIEFEKsGt_W4N0DCKLqZKFGN_kQ3lN_hhHlW-87uQdZlD9Ldi0mTO3SNW1PBCmIAcTQ6V3PyK7b9C0gU3rtrahYxqlgxYdj_kgDgg7K6wb2_W6Fw8&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Orange County Puppy &amp; Canine Cognitive Behavior Specialist photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Orange County Puppy &amp; Canine Cognitive Behavior Specialist</h1>
@@ -197,8 +196,9 @@
                     <a href="/training/irvine/" class="back-link">More dog trainers in Irvine</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Orange County Puppy &amp; Canine Cognitive Behavior Specialist?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

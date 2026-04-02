@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJBZxML4CtD4gRn_psIEdFyg8%2Fphotos%2FAU_ZVEFkZPq6kYtOHzqkydfPTjZczpN4TdJNZlpTIyd6iSUsZhowsOfvMpNCpEXZpr143PJUO5Gf6FILlhPL_CJO31EstNHyEgodcWelsmdrpsyIitssy3vxgwxG0E3Akivx2VtFEn33t72ANeZptXSdqiCcd1tKVa1z94i2cFEGysxZRe8dXbvU35TnGQIqQ-mM6t03HVpUEiYM0EONQQLLh0aXcw1CrnCMT9-ifIdEivObXCI_1VlzOOgDn-DaU9uoQ_vo76joS-vGgow8dJ7E7GViXEm4iUu-VXL2hxN6yIYKKnMt84hTvKJJcw4Oft48DJI3TOU91-5bOrcasp3zsNeDUtyHVmXxsPBIPetl85X3NgJHlD4xQ0TLKJzX530-6maTxrsuUtM_7_3mJkel4V3V5Hlu-3b6JPSlV4rkKBPCRw&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Addison Animal Hospital – Urgent and Wellness Care | Free Exam for New Clients | Sick Pet Walk-Ins Welcome! photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Addison Animal Hospital – Urgent and Wellness Care | Free Exam for New Clients | Sick Pet Walk-Ins Welcome!</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/addison/" class="back-link">More veterinarians in Addison</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Addison Animal Hospital – Urgent and Wellness Care | Free Exam for New Clients | Sick Pet Walk-Ins Welcome!?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJR1Lq23Qg3YARUPer7IyZzPw%2Fphotos%2FAU_ZVEHpek7l9XomHjNl2nyLho0oqiPd23shSPvYbZhqIXSOYNg7ewrhZKq4Z-PyG1g49WspRaGfaWLD2BEsqwOdycFm0mhe19QKI3q1pAykmNaycNh2DNsV0L_1nRhmCk2YoaTpCWkqnnumwzxFvWeZRBHbtBUmFpDdBnXoo-gVo_HdAiGYYjif6ZsXf91aMM2Oml3LKbahP4tnF4iv4b4Afy68lIldyY-8daVr5cHgLBJ4QIjqeC0s0vIDJOEMCY29kiGIuc44J1dogIiIzb3ndt26mSgzxkg5U510tQToM3LE0Q&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="The Puppy Playhouse photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>The Puppy Playhouse</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/costa-mesa/" class="back-link">More pet boarding in Costa Mesa</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of The Puppy Playhouse?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

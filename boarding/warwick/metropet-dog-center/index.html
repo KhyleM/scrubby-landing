@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ5Q3-15JN5IkRbTkFVEU-nt0%2Fphotos%2FAU_ZVEEDTCAfhH7SvfW42UICSBQz6Zr6dKPY8z3tmGQDFiBu9TAx1fPeW_rQvBW7cIT_IzokG_XH_GfI2mSpB1lb68N5lt0jqJKxgRnZzf3I3EHVEIohsPA51hcIDJ7ggJDZJNLSZb3oAgQFopKW_WcTMAIr0jpvUTXAS3DP_Zge8WLwhr1K3rWzX024Xn7W60uMrWtYGsm2TAxuKy5B_-7JqTo0rM0I4YI93QjNKq4OBzqv3F63UUy7pK3RvePqPsKX6gmhKuK7aikYo4pxHlU9OdSgOePL2LHCZEP8rab-zfHrZmpxpabEQZ8CkfncbpPqcRM3_fAVRFWn_A_-bmbUZXDZdk_J1HWmuBcVe5tSkcRaz7idMf2gYGDUUVyyjJAMIFG3_N6AD_EAH336Vl0xl-s3vFOIgsUyaIt6HQsG1iAXvg&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Metropet Dog Center photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Metropet Dog Center</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/warwick/" class="back-link">More pet boarding in Warwick</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Metropet Dog Center?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

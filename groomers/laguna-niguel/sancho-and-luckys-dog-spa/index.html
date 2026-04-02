@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJnaZtbk7v3IAR6tib1uJV840%2Fphotos%2FAU_ZVEGKOrfs478U4BM6xj-z_Q1fOC0FFbgXUm6p6J9cKZG1geF5EQCTAxMggnKER8fcxiMr1npnnvd9cqUrNIB3QqH4XGJoA17iVKnhVwSZDqYh_v4xz_eONe7f10CYkgMqtn9PzXeOZX1z3Pts8hXFxy35q24YIM4WJVFpl49MjxlkvONFlAVB-mUytfhHCrBKlJZsmyUz9BoZ0MI6ub18cmNW7lUQ2PxyrZeUWAkT5mMsRDxtLiNhhAHTa-NPDvu9kLwPhHE-VOTN4I_TpXFNz4jvEiejFjnZ0iTNNZyD5bVi05BBnYfetx-biQJpANNwnx90Ef-ne7GI7B84WC_49gGG4BDYVf8GjPa2kpCNfEgg-5i1lDoMthor0IuTvoPYT-pOfe4aOyajsMobumq5g8NzRVFA8SjqVernYcYlQs_u2QPdLJBn1hv-JmQwrabe&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Sancho and Lucky&#39;s Dog Spa photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Sancho and Lucky&#39;s Dog Spa</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/laguna-niguel/" class="back-link">More pet groomers in Laguna Niguel</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Sancho and Lucky&#39;s Dog Spa?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

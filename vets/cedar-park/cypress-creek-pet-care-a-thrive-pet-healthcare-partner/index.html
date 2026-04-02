@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJJ1h0xncyW4YRU3QNqn4x81s%2Fphotos%2FAU_ZVEHGlqRYpR7d6IVRw03xUi947JcqnFGmjyTav3P2Qp-PWLLTk3Sz0zGWo5h-hB96-c3cRZBSybcbnw9eB3Wj1fAtVQTHVs8AjDVcpyg1IUwAEB8692mSNKwHaSi3RBEbC4XBAntbX1nfefXaSIqh2QApu0aI97mRBlX4iNFbvE-1N4XZ8pC_6YatoKFB5eiPcUNRgwlEdZn15Gf7lnL2Nt7_IdYYZD7Buhijm9l4pDSWz_y4WdVte-PSkZv--6INfPTzTJEBjdyeYeWjtFknZVMe-g3oXvbtRJ7jdvGic_yjkg&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Cypress Creek Pet Care, A Thrive Pet Healthcare Partner photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Cypress Creek Pet Care, A Thrive Pet Healthcare Partner</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/cedar-park/" class="back-link">More veterinarians in Cedar Park</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Cypress Creek Pet Care, A Thrive Pet Healthcare Partner?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

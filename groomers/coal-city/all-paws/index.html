@@ -79,7 +79,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJlRyCGIiCDogRGgQsH6q2B6g%2Fphotos%2FAU_ZVEHO0WCZ-ta9gvNJiS98ANPJidmmVwb_qr4ws_yeQeFCd2Hd9ryDffI3cAPrsQZ4fhO1NBuyOgR6ppk645SI66yeJ6Uw_L4RVZmiII_k69OzYk-F_zaab0_kk1pe4B94s8h90WYOEsBEJJrGU07xNvdbz2pSkAGSYvGVk5zBxfdJNShomW7MAgXIRz7CDFTqLYiKx4DGPS6wB0bPq2HgsWuq8a6tEYG29-zrx0QPwFy3ctNKsOIJ9JXjNgfK6Urheq1oYzqjB8of1BYquieiBTSFgb1zWsteIRDbAZooJmRivspuynYwN7sQP8O_auybIf6fUGoavyunMbQsQ7WBx0p7WwmoxIV_muWrq5AX3SA1x8W5XqLfb_XAeee_D3tmwYPXpGac3Cu4z380Gb2mx2lgTK0ngS8y5WOM_YYcquBSQQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="All Paws photo 3" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>All Paws</h1>
@@ -196,8 +195,9 @@
                     <a href="/groomers/coal-city/" class="back-link">More pet groomers in Coal City</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of All Paws?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -343,6 +343,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -353,10 +357,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -381,7 +381,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

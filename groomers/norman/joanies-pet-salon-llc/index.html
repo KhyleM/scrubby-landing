@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ2T4E0nBpsocRVfQMkmRFPH8%2Fphotos%2FAU_ZVEFLTkX3fJJ8saMpu8tLsk_cwGXGrtsF6vqFslIA1GE2s4ptMr-5AX_3b4Ik06p5CRLXzhGduEHbSchfGFx_pSgtWdV4Kbr-P5vwhsN--WPTiFnQarA46Nc9iPl6ve03SzvqyrsHo2K3dO5ErUvDV5A3tPieBWvAXJmKI_vjFnPpebtqYXQGvwXzMvMY4wt404TqEI5m7Hyx6vQ8ZaDG6J6tJ3fSj2leCi3YEPa5Ok7EQCVOscopV9Ix7-28kEryf1N5TMDmPWjtqqnuyBzassemfXCzKA0m59Kt6OPkXp4ujA&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Joanie&#39;s Pet Salon LLC photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Joanie&#39;s Pet Salon LLC</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/norman/" class="back-link">More pet groomers in Norman</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Joanie&#39;s Pet Salon LLC?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

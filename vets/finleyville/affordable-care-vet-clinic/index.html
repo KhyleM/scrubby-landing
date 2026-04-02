@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJOQl7Jyb8NIgRagN0Rho6PXE%2Fphotos%2FAU_ZVEEyP1LETIrmgkODD_ZL2cG_IWsB1nGeijcQYC_szUq_MxTKeI68cw_j8JFnT7LrDpkxY6O40TLjYXq1zkj-9qg_5yrv9spMv2dXWNSztcEnWIXUgBTZu4rMy45Cp-msuJYQz3RLvwcGfUUK1tZPUmzbRX5gGFkXnj_MyY3Kk9OpKdJZoKvc9C0VXl0b09l2-1NdFTXSd9iv3WFb5b3A4qbLXwao_-MvnNd06TM9TYhVuAcpINX_WR-RAdMswJo8Z2HwiQxeZM635ru_rmeH2lJzhy6xH-VAqvCLJiKtMvaA6uYdOIB7P2q5kx-37QO_BTNeIb-2HK3AWwZAY8Z2ocAw70t-g2ArKocN4__4icRU2vq5UVyEzimc46gZN9sVnTb7mOF1XNeuH0YPeHK3r8KrOl2ahMcfiAOt1mEeUIMJZBnO&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Affordable Care Vet Clinic photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Affordable Care Vet Clinic</h1>
@@ -201,8 +200,9 @@
                     <a href="/vets/finleyville/" class="back-link">More veterinarians in Finleyville</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Affordable Care Vet Clinic?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

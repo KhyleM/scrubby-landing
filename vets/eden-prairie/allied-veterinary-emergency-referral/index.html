@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJOeOlTEsZ9ocRwMlwYm1ozFI%2Fphotos%2FAU_ZVEEjyMd10zBv8WHeFxCNYVYDu6G8LRVAupWKLcXiXhg3KuQnkajdNL-Q6wEvN_swVZBjdd3QUa0AUPRfgoGQLF4-W_2qKQ5XdcZSXPttkOz7XSA1oONxa0sLT4IgIDXm994utcdRhvKpx9uxUewGdnZ0e_qZKmM0sw2gfFvRpFlTLs4NDyaEmDYBH4opMBzf-j0llHGYm2Jzs5l8I9bBzbtzd-oWKHQV07xSsVeWoVBvC4KVglKNTVQg8qem6MVn0gO5jhvNie3qTkRp2g8SB8LeNnHbBnLbEGrHwNvtS-FG1joGmjQivUxbq1SUytI8dpsfgRSmQdtICPbhlPI2m1JvSevIvEX5qMy88_em0BtKd-NxJUcFjStx9qUTuO7EHkq_JD2bejl1xyA3aaEROAamWLe9WBnMfbah7uHXZbDoiYvlF5EOce_fC9qXWQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Allied Veterinary Emergency &amp; Referral photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Allied Veterinary Emergency &amp; Referral</h1>
@@ -201,8 +200,9 @@
                     <a href="/vets/eden-prairie/" class="back-link">More veterinarians in Eden Prairie</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Allied Veterinary Emergency &amp; Referral?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

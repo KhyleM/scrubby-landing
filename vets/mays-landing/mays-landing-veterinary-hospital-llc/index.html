@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJM3RxY3rbwIkRjLrY6QHyI54%2Fphotos%2FAU_ZVEHTM_vkmmEU0i6L4cChBoKLvL2Ea7kNF5w1FZLd2BALmPDya__FrX-HhgYw01K1-JSWfIQjLGUuYB20SEvtYBY2y9ehv_Ol7fQKeAGrxr3kQ12qjgyB0A7UDTSoTmMYPL3KBGPlRZlUcVAzetxcxKPUjkv0XI3EmjNkFAXBsTAWWx64_TzvckrpBucD6WL1ffFW-UOgrZhj1BQHcZNBpolphOwxE4Y1oSy9KktMjr0mt-vZZibvztap2AHsKxax3x2t-vpahpopXnh7nRaw8D6TJZRRj4a7NZcS2K6T92TCZIGmNrCURzwE5KUvfMqGN0n99sLRl1sv1zvbwvxJJhChBfzSdI5arMvWBLhirpmHGBuGcgx6siVmXwunXN9T4FaV7bahPF5NzBQQOX17EWEXJqVGIP8iqodqQEs1N3PjhkdX&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Mays Landing Veterinary Hospital, LLC photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Mays Landing Veterinary Hospital, LLC</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/mays-landing/" class="back-link">More veterinarians in Mays Landing</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Mays Landing Veterinary Hospital, LLC?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

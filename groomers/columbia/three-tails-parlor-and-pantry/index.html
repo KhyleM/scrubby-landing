@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJBczuVku62IcRboENVCQH2yc%2Fphotos%2FAU_ZVEHwzUgFhqftl5-owvayZRKM8FOjPseOyTpOvtwP_6dVe3qxyJse65pgEyxXILhk9tD-Yn0dZzhlxV_i5SSbpTP8B9O0ZU0faFc6YGZK6W8aIX7kS8kFBVzXRMJTYKu74WtOVx4oQgN26DdGhTAW8vXqBqgmhpWTbQwQ-xZ4CAl6xrRYqXIvCiLmzzhSUh8TvWSQuEXl7tGljao67TqEGrQ8pqOFcu8JQCiqt0eQRNb_8DCX2tTu1qbzTgtz9O4Mq_XZ5KRvRGb7C8Pz7Esuin052AyT3DHDeHusfqjANlu1lg&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Three Tails Parlor and Pantry photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Three Tails Parlor and Pantry</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/columbia/" class="back-link">More pet groomers in Columbia</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Three Tails Parlor and Pantry?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

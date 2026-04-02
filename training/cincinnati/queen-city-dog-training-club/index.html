@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJz6w1LbtRQIgR3EWK25iiPYc%2Fphotos%2FAU_ZVEGCZtAtpkI4qaKNkFjX-oVR-KtYt_NmkYIJRPLTyIcL-PeSIXtjuy0nzsiWLlExhXKBlDpdj82jUzcYQPPsZORiEerWZ-uH40Wr0yWg5pR27f-yCtEMviA7ou5JZohIsddl5uc5lQsILFDZpSSbb0zHksR2w_XmovdHv5VmfTI5NPJpuwTKDXvmLe-Gv3aZcMTsEcxNq2XCMmh70u21tykebOnF77NExoTz_W3KhdzAYbhH9WZSvYVS6mQVnnflXCLyJLW3-nHwJMZ3IZM7dOt0GdLg_LGtE9KSKqQiop6ZAltPk1gcIX4v5_tM1lOFmTyJJxL5JIZrSjy5U4tsRKczn6TDnUDrSKcg7NqirpFwT6YSyLyi2F84I1KoFm1SWwQqO4NHETW2yo8G--U7wt4HLyF8QCsndGojGjpzHQXuKAB3&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Queen City Dog Training Club photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Queen City Dog Training Club</h1>
@@ -185,8 +184,9 @@
                     <a href="/training/cincinnati/" class="back-link">More dog trainers in Cincinnati</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Queen City Dog Training Club?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -332,6 +332,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -342,10 +346,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -370,7 +370,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

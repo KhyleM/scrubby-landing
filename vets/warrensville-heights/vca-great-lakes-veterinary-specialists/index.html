@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJAT76yGsdMYgRTPb9REt7Ghk%2Fphotos%2FAU_ZVEFW1N8kRZHzPVDbX91WrkhRtLI0Gp102N_cY18CiMU_nOS9VWZiN1jgBHWUDjZ_AFpnKI7nHIJY0BUKCowIqrMrA3sRVlNypZuenW7kaBkj72_yHqd_SribF3YfcZSWrMeEQLK6aMeR0wQ9kQKUUb3_iXAr4cmpPIeSyHq3Gu64pAaJ-NKZJloCNFC-H0T3JBdwfPFvOxKajMo8YEdmNpL3TVvzxBPQA5wCgjUG5ROh8cUIAvg5xt5sUC23Tz2jHMxVYYgkPu-5XVfQhuHGlckEPz_2enqr1Vu8masm_7iF6j9wDQGuv7DPfLSxWgE8YFuvswopcY7PSclJ80K_OF-_hR5sGpseGK_xS2ol_cX_OFUWqCOKGKeznIrTMzFC7Sd6bdvBL18GjKN9x3GL1hGvvUFhGExO40zKcs0OlJI&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="VCA Great Lakes Veterinary Specialists photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>VCA Great Lakes Veterinary Specialists</h1>
@@ -205,8 +204,9 @@
                     <a href="/vets/warrensville-heights/" class="back-link">More veterinarians in Warrensville Heights</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of VCA Great Lakes Veterinary Specialists?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -352,6 +352,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -362,10 +366,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -390,7 +390,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

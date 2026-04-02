@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ___bgy6awoARFfA-O05JvdI%2Fphotos%2FAU_ZVEEUoli6t92WtIfnG4TDqoftiIYRBb7pPEuFzrFqRw3eVcmmRRLjD-41MAAGPrCKmpxcuIn74WJo5xuFjF8Abno46GKp0HJ3wvsnpkVcQunwGsHr5GB_LAbEIsjf6LvQPKp-4tdjmady94ym6BThbE8SDfN0w8D-E4H_sOTtgN3cnFFnY3So6rNeUrV9LB_0gaMycQJ4dYDZa-7Rl0mVArzbidghd_CEJ41j5sp1lNLAOvdrLB06UEUny96sIZ7mDSjiVFoFLfW7pko03OZmb1tMBGfUFsgxlxPQT9Nq3j0M84lv0rTR4PSbAyq4EB4-4C0HcIpG60BNFzagx4yLKmm_TXqJq2AnncLXZiYxm53nHvefoC9UQz8_K-fRajAzsL2UfnewEERmg3PQls0so7RVUs9rTIYneEQ1urUi0m4taQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Vida pet grooming photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Vida pet grooming</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/reseda/" class="back-link">More pet groomers in Reseda</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Vida pet grooming?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

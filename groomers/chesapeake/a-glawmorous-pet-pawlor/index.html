@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ_____2-8uokR9i3SG1wUwyc%2Fphotos%2FAU_ZVEEddi88cD2pfWku8XQGef8iYRFRlpPVhOm0A0PEOBcDocFwaUuZPs4hkmPDcdeMrnlQdEU0io_T3gglP4s2gRUsXBCgz_wc0Y6gzssvKPRBnONqOGVsVtTJFl1-sKEBoNGjaC0Fo-WDi8a2VtUDHRwqje_2OCYNwt5ZDf1bAJayP_Ew-GvX5MBS1hLPRO4pFjmo6N0JvfjlBG7cl9yX1BLh3WjV-m4RUbn4BcgyJEWDDDUAVtF5o0sDcq2Whr_2-RCpiONcTPMbM_xPPTU3Hxds2PIo3QXy2mQhQ43mCglkTJLe_BzaPx7GJOZIxiRjD46qIBOqRj3naWyEvwjG3EYfHqGYyAzUnGJlCX_9G5CcuZdQSuExO6y_7fx1iZks7Fs-LiVAEmh3VG4bu96QJQ6L6JBUPO-t0GlI1SGBw2lPcOH6jL79mB5CKzbWsQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="A Glawmorous Pet Pawlor photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>A Glawmorous Pet Pawlor</h1>
@@ -197,8 +196,9 @@
                     <a href="/groomers/chesapeake/" class="back-link">More pet groomers in Chesapeake</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of A Glawmorous Pet Pawlor?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

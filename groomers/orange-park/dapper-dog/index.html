@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJWSsTrj_F5YgRQ8En9MSX_f8%2Fphotos%2FAU_ZVEGsq6ryWNEeJpzhOCMhhJkXMBI3zifbXMeWtKnv1RWQ176GyNfb5pTFk25vyc-RHIaZ4cZhqtUyKCBXexhzzDWWGP0aze81lGJd50THVfcJguFM_7pxsukta__UYzLbC__9oPSsg0D5vjcyGAIWzddeL4DW7xf9Oy3O9-G4h6Dlx5uLUUfJMOI0EZnxstbdH7IrVbmVLS28cDEmkQzF7gyT5g2aLk8rhZ27AGxet3_6tq80VnRS0GANh252AxwY66doeeVNCNhX_9RedhaAmRLWrmeHYq44g8vLst5u4AGFM3NHCKBViIz1XZkD7b2XiC9XqGSm70FAEY16T-oF9EOj-8vCmhLFnujTOIA_iUbw2jlqniAro40xTAShsMFvqSqiA-cVOhj59GzA0sDH9sX2-9vXgUG5ee2GL-vRlfrli8dj&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Dapper Dog photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Dapper Dog</h1>
@@ -185,8 +184,9 @@
                     <a href="/groomers/orange-park/" class="back-link">More pet groomers in Orange Park</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Dapper Dog?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -332,6 +332,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -342,10 +346,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -370,7 +370,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

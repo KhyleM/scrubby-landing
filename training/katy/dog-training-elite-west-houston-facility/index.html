@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ81Y57XUnQYYRqBFlXuQhQ8U%2Fphotos%2FAU_ZVEH3qtg-4RetRcoiF1S7ZSeK11QxzLLNecjlHAjpGvR4zxdgRWLkylENyL9wXoxLCcWCP-HiIyxbm6fP3CYyZtmf0gD20HuO3qB1m4JvS9IO6O2yviZQz-zK4iQgSFinq1ha1YwVgbjn3xcusI0wGT6Nmlv6bvHYXvKCPr8_wEjwdXdB4dSE3FFXFJv4Cj7ThbpXJ2urJ5ZQftfH2fduBT3vdhzqhAknKHgrjVHqbweGFYodAkBHXiGZlBnU3slk9oaxpj1zuvLgC1IF8KQlUxQRjr-_CEKXfa4vOZoOMempKB32dCPQtzmgUy5dmUeZE9HDN6gLDa1NiuaNMq971NyygEIgZ7JXGEGxK2aZn6Ierfi35fGKYN2Nl7xWY8-MkDB_T_801pDl4I5lmgVXuv9GAnX0EE5bSidHTL7e-mxj9w&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Dog Training Elite West Houston Facility photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Dog Training Elite West Houston Facility</h1>
@@ -197,8 +196,9 @@
                     <a href="/training/katy/" class="back-link">More dog trainers in Katy</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Dog Training Elite West Houston Facility?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

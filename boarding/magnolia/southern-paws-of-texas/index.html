@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJkaMcQmIvR4YRvqiOg3HhUKw%2Fphotos%2FAU_ZVEG0N3gvTBy98az4GA8KVBG5ae551L88ES5kuhHe7ARla5nbMnPm9nC8r-odu3AQASdt-4lq-i4NFbIdBoFClDEI56uFnziNQejNKLZ7u-cVADoXTokMhstU0cz1WT6Evinr8eiR7psYbVwddTyt2s8QMHr7JyHNgb22Y9Wp2C72XeEGGwPwA7-g-dDrJPGlgOgiCsZKc0tjm9FJ0U2-Aooj1w2y8TxekaqV-Di8kvHt6fYfi7Mu8503W_R171aCWJ8kl7imLczm_SH31wmj1d1aJEIlIF_oloZ6IIC6ExbKF8peY2wvTAmjGHMT4BNpQWVcszrDGhHkyUrflEPZL9L1zumS8Y4fiZHCJ1aWi7RCKz74Y-inVS_2kitXAWRAfZYRKhEmG4PPxiQJFTHSZZ2ure6A3SeZ8YWxooXCVXdPdg&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Southern Paws of Texas photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Southern Paws of Texas</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/magnolia/" class="back-link">More pet boarding in Magnolia</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Southern Paws of Texas?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

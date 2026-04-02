@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJb3EHAbXHmoARZGgXf4C2cm8%2Fphotos%2FAU_ZVEHZIGwreT-aMRwoQehcKD_ie1_57pww0V2-v4x2OYDuzkkdyqJHhjGTY4rnCgDGjhWPDawNO-KZozjrNpXwoGhnj9ekPwa4HxelUnmzWYPmnOOCBKGw6MD48_SJjj4wMaXFL1N7c5sA0Pw_SHX-AIzPXHCmtEA5ZGi--aK0T-5WSQBFw1Fc50I5ACUvMvZbpsUpVmCvU6ac3nXyeZ3jsfHCq6tL4bk9M6Z1CKwQ935eQTDMRWc3X_5Je5GHE8ETBUmo9F8VH4h2pqGyTuSPNMlo05u82NieMTfxZNE6Hm4W_85t2-dkLfBmHe4buCd1IWDe1auTp_NLh9UP6whUDnsSVWT-yVmUjPT9IJkEZvLudnWGZ9VMPQSedpBZqRo6np5vpCCqk2u30jdn9QfblL0abSBLRqALTHtpot_EcHkoSeToQZvH79mldOzLwzK1&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Jayla&#39;s Dog Grooming photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Jayla&#39;s Dog Grooming</h1>
@@ -197,8 +196,9 @@
                     <a href="/groomers/elk-grove/" class="back-link">More pet groomers in Elk Grove</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Jayla&#39;s Dog Grooming?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

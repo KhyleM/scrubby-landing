@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ4-zq_JjCwIcRArYYVau5UZY%2Fphotos%2FAU_ZVEE7_glGS57gmh5tJ8NqsmH4j4EF1CayeQfufLS_h4Hz0USDHpxZwKfvLL4RNHcZtjmZxdUPgi7IKkjt-px942Y_4PNJ1Fs7XzwM1lrTL0zCEs9xE6XeS5D2QYY_pPpp-lxM-2E8bfC9ou4z_0sbUcHADVVmzomKLhEZlLgDVb2FnQhSBE4WF8qmeisxlJDQgMqMgv3NtnUr5VOMw62FSrLFhHClIG5xF29fzKa1GoRjX8-Dk9D4whIVuF_eUdLkHgu_uL6yEXZeGfVwfc-wq-5F61CzhJd0zaD0nf5zI5rPY2EkfrhjRDjTAnI0gvTRMF8G5PgZniLXeKImhdqA-VVYwcb0jaEy7dGs79F-ixaKZu4y0aiSzx3SuQ0SNxaG5d-BrBKcWFH-c4P1Xe584aCecEUF-YKTIhU84xqaWJI&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Old Mill Pet Grooming photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Old Mill Pet Grooming</h1>
@@ -197,8 +196,9 @@
                     <a href="/groomers/kansas-city/" class="back-link">More pet groomers in Kansas City</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Old Mill Pet Grooming?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

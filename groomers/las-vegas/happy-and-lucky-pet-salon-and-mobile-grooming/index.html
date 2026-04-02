@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJGdLZ_LvByIARMmeYBIN1YrQ%2Fphotos%2FAU_ZVEEgdAGJHO2pFoX2x3_5Na8R9TY2j6g1rvnccj_-c5FXEDaIDooUS64s6o51i5KU7OXz1w7xrH-Vd85vuAj1dlpBP4UbwQ6GaTUPXDW4Bcz_NfQ0WLDuVedJpNxLW0ru_DTDqO352DAoV7LCnmMvJgLFqM8R_ucY7JsDfD25dYidYqoYmlQVBcX0-YrGTHQTSGs3IQjGrFmSMBFpOxjAT-koBs-t1G0SXP0M5STtWdrqxcBrh_vEsJIrfWbeGzPhyRTlsuN5ngov0OXtroTpWEW9wfaKCQ20h3C_qOhKw8t9f7i5W4QlCUJOSkf_t4EBJpcwGKitG9KLSCV2tR1XhIjU3KAUqatvL_p_Ogf0FVFkduMiF96eU4AXTTtwfBm3NlhwUa0s2v67QGsN2cNcbEkFDwOVRnq8fS0lwkfXzA0AaFHiktOWgdnCIanUF_jM&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Happy And Lucky Pet Salon And Mobile Grooming. photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Happy And Lucky Pet Salon And Mobile Grooming.</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/las-vegas/" class="back-link">More pet groomers in Las Vegas</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Happy And Lucky Pet Salon And Mobile Grooming.?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

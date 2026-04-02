@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJvxwoXw8ZsYkRJHmjRfgl3RE%2Fphotos%2FAU_ZVEE0LO4kredWxswKODCjgqnDZGjWLwgEFjsedYzkO2y-OCXRQoecDY35iRgN15hq1ERmE_EIh9vmsYIYYKZ1SRgN55zwriO926yPJl4AU4mY3OR37g8HraEyWAw8s6mnXBWr2Ng9gfOKU4UbopkJeu5-SsuyUesNezm8jHYghPO7RVZ7_aBPOwkhyleeDgJSdyFm-YBbiIeSU8tTYYyNSKCz_h3_1QmwTk-tudKwBKZ2vlFwRkagfTicQTbzzQo5ZJ2hctlJGksnD8fR1oLxP2u7V2tPx6wknsDcA86vexkaJhf9pZgbXFUNwSk2Q10gU2w-BqylF08NwMqb_HYuVneOFvS7DX15fSpnrc8oShxsldsgO7O47U7dvdSdYqreb3rhzmaim3OgqMQqSLOllZCvvkqP8P-JGQEgRk9_4903HpbU&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Riverbound Veterinary Clinic photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Riverbound Veterinary Clinic</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/mechanicsville/" class="back-link">More veterinarians in Mechanicsville</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Riverbound Veterinary Clinic?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

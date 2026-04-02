@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ828iY4LRQIYR7dIFQKbFSJk%2Fphotos%2FAU_ZVEGJXYsi9hGd2MErwN6puyiuAtuepOQpGI8YL6lDd9WWS8Bgw-NaQs3S369bZ9zH8lO-HtFATHieN1q1x6F7VvmPMvu_xzGOow7Fl9QOVybL3xbF1_Dj2eq0ENMhFf8UnYvPHVmUkdJe48eBgsgo1E9vgW7r1FxgbGjm37Viu6b2e_y9u_5QuJx8ZCGBloWJzY3N3aBvJldLJrPr4PkA3YbpZ3Hr8fpsy2oJ97QhJ3Z7-gSMWjvmkSNnYjXTjN2c9rYf2RGdW8H3Uh02ExrpijaLx6zOvz0k6qrEwHdvBgBwWRGE_Jw60zwY03GKWCmRl57E8WDOclHCslxGfV4dqoq0I3hgVEIhF-zCQIxiyRk3G2lQkVC0ZSt9fMx-Rw74hj3JfPMPZOrQVOwZo8P2fnXK9DVHcyzloiSzq5zRzsfc9dg0jzurnLuwPF-Wiw&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Pet Supplies Plus Jersey Village photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Pet Supplies Plus Jersey Village</h1>
@@ -205,8 +204,9 @@
                     <a href="/groomers/houston/" class="back-link">More pet groomers in Houston</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Pet Supplies Plus Jersey Village?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -352,6 +352,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -362,10 +366,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -390,7 +390,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

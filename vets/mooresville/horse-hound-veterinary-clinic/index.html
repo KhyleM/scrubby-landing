@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJXeGWBq-XbIgRUIneHmuUUQU%2Fphotos%2FAU_ZVEGHw3rUmwchy7woB-d_VCaCj8bRTaTD4Q18g9j0g6_yzRgTQAsQD-zH78sgvgSD-7vOvHwSTLVnZqSx-089NGBxqPhg11MCxt_lGX8ODrJSWf82OwvZqlOA6g1Hv_6ay5gmxFqMrmbbe-Sa3_jXm0Xcjpqx-zoVa7Z7WQ9MltOGTMeg32t5hjbc2UsDJqawcoyZXLeydkx-MDQL_zDGfFuo5M5_KWjTO-rErMx1-eJz2okISf3IZU_LLQoZb9X_hSyulCtL9QEBcd_CVTomT5ij2PBTzWFQy8ScB6SOzu4UEDtEaN7gAzuJEhWWik1cV7Iqv9a7Krv273xDZHf1JjLyn4uWAlF6BHjaB3dT5C0cggoxnm0UEivYnlT-jrOnSkhlwqGdvsSQ4dFQiz4yTCAfQyT6ZzOTwlAwcWZ7sGc&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Horse &amp; Hound Veterinary Clinic photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Horse &amp; Hound Veterinary Clinic</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/mooresville/" class="back-link">More veterinarians in Mooresville</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Horse &amp; Hound Veterinary Clinic?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

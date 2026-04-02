@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJeQ8SHILB2IcR8alKfzJ86Eo%2Fphotos%2FAU_ZVEHquWvhtBW9Q6yB7MhLhq-jETu9_5Tix7vrECxhcevFeYeDFId499rrMtqAu8R6a-PvgF_LcmQUEcxsyanboaeoEtZIhLMG8PPoLWiy1sayhMwOAS3GyJmCAzowgg9R3u6YyF29o-ipzWVkOSrvP4PTOt4T11RqMjPLY2RiddhHc_8i4TA3k3xUDBCzHMzz73oHe-dNjYxi3JlBvbxpzJwMA3kXBIQNlB1R1IrhAJ9CCMgR1ZOyZfF_gQm_DhM8rTYJg4sC-lgdlRfuR5jUq_XXKSrJfgoxSIK1wAGkQ84AEQXodrHWcl0RWoy8Mgv7JsLLQbWF18g2ZFrGHpje4oLguhw3OKK8GgOAnGMjb0cNlklhCG5Fy2ZaT9SgcAg0YK1830Ru7BW9XDdKVNYkxFdBfCABtpyn9WHvO7strBrV2oFg&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Matty B&#39;s Dog Training photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Matty B&#39;s Dog Training</h1>
@@ -197,8 +196,9 @@
                     <a href="/training/arnold/" class="back-link">More dog trainers in Arnold</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Matty B&#39;s Dog Training?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

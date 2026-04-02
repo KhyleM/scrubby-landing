@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ7SyIz1pfwYkRcpmG9zALEYc%2Fphotos%2FAU_ZVEEup0klTtc96b1F1Sgqw1MS8jA4v-DajvZbp0zKAdMfvu322yS2FAFlKuPbtWFShsgSPR6jAEymTUvjf0PgPsmlpdUIbhrmppkBWm3cIQkhvr2Yj2rO_KQwpzr-iGifGXaNTdgeraatQfIGBu2Rvy6p8_Fwd9y2RFj26N82ndkldjEzXjA-zVjxWHaK8nhEy7gcSlrmErD-mVV5nsHXXJcyPPL8e3PXg7cIl5cCazE9Vm0lZHhTqPX2orrIpaRsDvspFITw_gxaijZDraaMwCwW4JbzIumC6hYpuRYExaFleKytqnFxdLx1Qo4JTUm-mWExYlolWt5CmwZPlB31_Ys8nfuKgsIStgLggXd0SYPpRWfJ1NSCNHH1uwg-7CP6xabGU3d-3dbaUG9EUpd0bW2S-QdJFPmjqNkw2m8jCT54DfvD&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Mercerville Animal Hospital photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Mercerville Animal Hospital</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/mercerville/" class="back-link">More veterinarians in Mercerville</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Mercerville Animal Hospital?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

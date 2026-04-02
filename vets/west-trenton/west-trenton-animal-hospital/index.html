@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJE47xsXRZwYkRYHb7WSZ6ygg%2Fphotos%2FAU_ZVEFv0wHrgloVVRu50melCmuuro7TdXiB9JzL5nVUhLiMBvIFb4-OLcpyPKr93zHY23_hfmWeqyvzX0pVkDVZppBOpNV-L9eWZ2fU0UGnj2FqSW1Ybe3MHvAE3uY1LSFMKZfyzTcRp63UCXXHF0J_yRBn7onfbmtjIhJ3S_P18MbdP3Z1ouMPHBY4uDAxrmcqyYzxgdc7zioneJ8_EENU8ioWhww-iFmAXQjHML9asJdkyf2b3DaD--XYV9PLy-EjLLW9l1VNeyGOOl3HaZrJd9yzB5CcOwV2dzk9ZgMWOt1i8Za3E2Y74xOjRgIVV2Slzb0ve7J-34zmnrxg-qzpf10KO4Q-52E-xI9Q8MAgpWZ4YYPFkLYEUzZB4I21Tw1XhHrhurF03aPu3M0vMkTbsmEusEC0N4mQkIBHvz5T8TSK79U&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="West Trenton Animal Hospital photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>West Trenton Animal Hospital</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/west-trenton/" class="back-link">More veterinarians in West Trenton</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of West Trenton Animal Hospital?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJp7DYYbCcOIgRID7dx_5eHD0%2Fphotos%2FAU_ZVEFvMYr5OzKdNc8HTmmDj593Duo8Ob8CziBhJdrWB4VYKOpLy7e2KArWS26c0mOFHs5LQTyeehg4dbhMRzdx3KmBVi7qtf6G51IzOR6SGqBzMot_E6vjMslKBzOkgoKsmi87fZcIYou3Odjmey-NPCJde0HQPPMFYD-GGfJ0olLA8wkiHofOYDywHKO1gdrpWMTS7Il-NvmxXE5waUj5cLB9WJER9_oDc-ViLCk0MxQfm47g4nY5i7pNQZmJ4oW5zlUj3oKWG6bc_uGbE9Ht7i6l8785qgDtH-UjYdAWUslkzg&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Professional Pups Dog Training LLC photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Professional Pups Dog Training LLC</h1>
@@ -185,8 +184,9 @@
                     <a href="/training/grove-city/" class="back-link">More dog trainers in Grove City</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Professional Pups Dog Training LLC?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -332,6 +332,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -342,10 +346,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -370,7 +370,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJP3q1-zh5a4cRa08-kLvvRu0%2Fphotos%2FAU_ZVEGtc8d-jQqtK42z0e6zU7iYDMVSITCVB0IY36IrN3o6LS3dHIMxpuhrYcHXo-minSFf24zu34gB8KhwvQ2wBFc_qu_THkBqCfJYISPdBkjRH24KkO9ls4z8jykRYnU9pS7nUD8wT2juY14riGRyUhokZWjG13rcnA5sIPZmgT0CWewDIqICBPfxnwvZjE3uc17O0xeQ_NrU8NcLmoNYQW3ShwZVJZy846KvD92lkklaJAPpBj2mBqjh0OSod3Sb24QlALLPHA8rdHr89Uq4pDehySTkT_NesAzN5VF61El2YhuLYVO0t53q7j3_xzJIqeFIJWiRMP-NsbwZiUOXabHeBVlAbl-GFCqJKE5IjdQOEMRO-bToyDHgFw4d1MvAjrPj2VklI4ESCQuThywX8oCHs7PVGuwfcfQ9viEuXsOJYDcNFwWuXGPGd22OZstC&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Come Sit Stay photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Come Sit Stay</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/littleton/" class="back-link">More pet boarding in Littleton</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Come Sit Stay?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

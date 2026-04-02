@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJf57kaFnbxokRgNEWMQKJ3-s%2Fphotos%2FAU_ZVEEP8bNSOcj4Bn57MS7nLWyo6xTIGPl126ceOE3aHNTww2Tz9EAbnatYI-FWcd72i1-HRZtURD_8xr_ycbcxWsLqcMWJVE_t08vfDXMceXGb0LjMU1T26b2kIqCQG3v_RlNQ934Iw-3tmdWRZN5CBQejcczPH0qrjgUClH1HyB0744ptTCbFbF9vxkYsYfLw27Fh3Ha0pFnVtshfLDDkKFMuL7kODyJn3QxE3Cv4zAw7NFopAM1ltboEbjX7YmK9-KtynwtDSwg-8erG3XqC4fI_WXFOGPsGqoSf4Pq3Ah2mKN5P2V2ekog_JYjXugxRmznw0pk7bRxpIzGozMicdcypi0Bw037uMmrH6RO9GtnJDvDJy1eT4qI3ZgtQRbu1wPa91kJ5rxUx5bD4ARCHoLeTsW4LXpaOTTn4P7K1rJnVgcWh&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Paws In Motion photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Paws In Motion</h1>
@@ -198,8 +197,9 @@
                     <a href="/groomers/sewell/" class="back-link">More pet groomers in Sewell</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Paws In Motion?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -345,6 +345,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -355,10 +359,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -383,7 +383,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

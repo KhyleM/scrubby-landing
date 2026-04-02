@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJHVX-hGl4t4kRFDvCD79Tkqo%2Fphotos%2FAU_ZVEGPA4_ux00NWrdSV37T2ZXFDx1PnPoH5_FbfD3BknKrc86OADlSy6RJk6khklyLDiw-d62PP4-uzYMedA_CJYnsj24EKFwGmUcNoZoRezZlsGLUFPJiD92wE2KJgSiHXO4KWSe-4jatedpXjHOlM2sA_gYthmom8isd8NO-DMyVwO339mV86FOIVfqDst6EjLneYGZCbCYBsvm4eL8b2Z5AQvXwk0SC-Z0ve0TMdLITX312QxH4FzcEf0mjd7OtA0FrQwA4eNtUFK6TCUY8_6ba6kgfiHKqlV1erewFoLeYk7B5ymnaD3NgpEGBU320g7QrCfaf6xF1rPW_bB83jgHx2dyCp_jH_U5KgHp1xPNy7O9-9PQ3VVqJ63O1gtsriRwrL761kc_Blgr4ei5svLDs89M883vRS57GX7AHqxWI_Nwi&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Rita&#39;s Grooming &amp; Boarding photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Rita&#39;s Grooming &amp; Boarding</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/prince-frederick/" class="back-link">More pet groomers in Prince Frederick</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Rita&#39;s Grooming &amp; Boarding?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJlRP1Gtr3UocRoMQkkFvh-QQ%2Fphotos%2FAU_ZVEHqg-NufpmVjCnlerhUnY84yFLwHI3rP0c5GMshJMEEp46Hdx5hr3lZ_6pGpQktak3JG39Axn5UIIpgiHS5YgXc7Hsh8Hlydw1LZ4yJTJ6Wd02apb8hWr-KifSwazLq5L2FCArmJTWjwI8ZObkiDw1fZ0O_lASnzvuDP2T1In39e86KbIEAMzTsZxDhBpozVAUym5n5vz5eg8kXpPi4pWcS_h6F8pXczjKWAG6B_FRq-xlsux9Rbcw7vm3-zFWi008aEhO6H4F_96dBMl1U6RsEMR_YqDF-IVt0s1krLB2TOax_yaUmhYo20bTPD4rhuUw3CDxJ_voZkb6_9FSXBIB48PLhMRcrlA5XUc2x7mrjNO8FLVas-ss3fI834jztqiAmN2FYVwG7UhXM8hCGDYqYNrROWh2AhsAl_n3nuaP_0fku72P7YjA-JDvoGg&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Ruffin It Dog Boarding photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Ruffin It Dog Boarding</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/woods-cross/" class="back-link">More pet boarding in Woods Cross</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Ruffin It Dog Boarding?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

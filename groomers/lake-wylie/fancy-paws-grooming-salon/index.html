@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJI7o4QwSRVogRpC2BRTb4haE%2Fphotos%2FAU_ZVEGSLZNXMwhb19EgZZAq_O7o9Al95smoWzOicNanrDiLlL9ChMA0_5GcZmNJCTBxVjNymTrAEFtJYVEwgiMTS0bCOD373WTwuc0kiTv9mDe3afewKIdz79oFvvtl79gE4I6wEgbRoRgA8krdc9wE8JUTQLl3oMNNe7UTMMtHvZ6JILaNqOf5_xO9_dWQL2ESMh-RlO6up8hEBOHpHYu8gdVJPYAEOpBhYt5eVxxVYlGlkRAwYSZjwNQM1DjdIjoFt6icuxlIjZbhrLlP9ulq1hxYXcyShaSLNO1Rj3ytBRJfJCygjvPHNKvksK7bIxd_d0UwKOn8PbtiXAqU-XCnJyOYDg7JYUaDrgjA3ecj9Rpe2hXt3QXlCA9uSivGm5RLxvB9pb9YNKHlMvJPi5NlHNU1uNRxSXvqHJkZfYzdazzlOQoTM6xUf1n7oy0dAr0m&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Fancy Paws Grooming Salon photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Fancy Paws Grooming Salon</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/lake-wylie/" class="back-link">More pet groomers in Lake Wylie</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Fancy Paws Grooming Salon?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

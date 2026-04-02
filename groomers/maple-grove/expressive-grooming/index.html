@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ10weUu5Hs1IRLj81DJe--mM%2Fphotos%2FAU_ZVEE2NDorCXxkR8DCFFiBcDutxxVuJvbB9RfTXKkslRKn4XnUOetgBoH3C7zlp-W0iZhXH4r7Go54ifqQFgOkYYba15hphI6XZDsyDb8Y-tUTHxb1QHAxOHh37_0TjrwCunW54LYypiJ_6Mnsp0u3BlzIpuJTdhAKLcOXNvLOrwsREvXPnqPgoZr_1gUyXopQ1j6B7Z3v6_VQNvggTDC8yNgB4uZtiN7omMbtSImEw0VnxsC2hx5IfJ65YV5bD2dmBNdaYq3kfZ7nObc1ZVjTSIS4Q0C04VjB_I8gytWNyWZobR8407eUp9n5yqAvCoRQ_C-XCzK-tK-4cREubdsu751Y_2fzfhg78HdCipU_iTO65qOSylNFxwjgZccuRU-ibWfl6zliRX39N4LVN5KwR_f5w2ZkiYhjTbcLYYgfk6aSXfbSi8VnqzLJthi8DjHZ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Expressive Grooming photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Expressive Grooming</h1>
@@ -198,8 +197,9 @@
                     <a href="/groomers/maple-grove/" class="back-link">More pet groomers in Maple Grove</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Expressive Grooming?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -345,6 +345,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -355,10 +359,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -383,7 +383,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

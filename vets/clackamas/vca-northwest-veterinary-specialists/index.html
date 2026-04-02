@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJZV8iodB1lVQRd9vcpLT301c%2Fphotos%2FAU_ZVEGmlp3LdgyQUicmA0ZbX2RuBPis_iG9ZfP9ThJG-r9aFah8sL6s3Jo8SVND4Cmw0Oa59HzXXsH9dQ7WfWarFtQ1CyXAvGLn6NDH5rs-QLNJvHA1OPVqrbKfSzhwGeZtvY7SEyK9w_PGfZ4Ot60mFq5Yo4ipr6DrrQVC12JWJ41s5CIOjP-COM9BSC8CPEyh8UKpY383nMO2ORm2CuKz5pIKwogmZQ0Pj_g34IOa-Y-SYrEBgH3KZ8v2mQ-yeaEZhZBqoqGIZDl2s12cr6c0ed-lZ7lkcG_G4X11FDFqP1KHpxqYtmSIMR-7bShC0u1azebRNuQ7XJCspt8r214C9sDkLGG-N_fN3JQZzzEprHAYj3soCNql3BCJ257wSXCDLxXV_hHF3IF8EO5N0XlUqfB2w00uIeFUssHxRCgtN-I&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="VCA Northwest Veterinary Specialists photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>VCA Northwest Veterinary Specialists</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/clackamas/" class="back-link">More veterinarians in Clackamas</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of VCA Northwest Veterinary Specialists?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

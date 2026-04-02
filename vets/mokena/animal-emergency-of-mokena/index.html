@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ68GSbh4VDogRsUeHXOB3cBI%2Fphotos%2FAU_ZVEEnjAVAgFs8eWcDCSV15tQ8BSauqS-53fIhXc9ymbRsuhvtm8Fzt_JwdbSEOi54fGde3ZosnT1Z7Q_Di6d9n5n83Xqv4gAutI-VFSEhfocHqHnDq--X_veHqw9554NlyDaOQ1m8dj6fyjx0tuWo2ShYR7FAl7VFZCI4ez-c-Qq8shpf8EDZO60THaF1i4PpdzHzykFsIp1jfqmeDsDpQUd7gp3nP0R6ilezGncYW1ELCce42GLwlxx9cONXqghKprvaWWnd_zFEr2GSdz14JQb9zVuejs-ZDX_5iA_Zkr0ALx9XUBGfFzwi_dSedqIqUMHrREN8qCkyjB636DuSeZJBLtV7w3FXRc_lnp-VhHK9yDoG00iv8O4QUnJbuMh8-yKI8K9ITsNbw9bNmkW1whQ_krvXK4grWj7cYR8WPTk&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Animal Emergency of Mokena photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Animal Emergency of Mokena</h1>
@@ -201,8 +200,9 @@
                     <a href="/vets/mokena/" class="back-link">More veterinarians in Mokena</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Animal Emergency of Mokena?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

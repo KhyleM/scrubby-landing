@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ89b0Ig0xw4AR1gSDEkVmhBQ%2Fphotos%2FAU_ZVEHtLLqo3iaUOEcVTE3u49jA1ZIUF2Ix4YJHOWckk1BxqBQDqLbkPEal3JD8yNSi2zNbeTTz5txsVN4HnP5oG1koK_b7bb5ShsLxaEtxReCK5aps_mS8lV9gMUkMnO0XcSGkZ3PG_3z-Bksb6eV6FOBeyBhz9LbRVOYKjTcHmtw2fVpoPZzj29xhXYmi4vCUcWEfDik0Ub2rl2nd01Z9w12Z90L3hhZ9mVLpFjtjBS0-iieK7rjlmzRZOUzBZqFD-StstwUxU63De4zW0Q7XSC0KwredQip51qotJ3n5g3uv7FGHBt1yyqF9LADVFPcoCGZIbsLZ99wwpcBG1iX57cWrp3LygjWBBwQBHijPkU69XW1FeR206g0XJrZM7SOzviYvIL7qh9NulTVxccEXq363wHygM-DG-Fnx7e15gb2VXUtGYLs0vph-Q3-WIffX&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Heavenly Pet Resort photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Heavenly Pet Resort</h1>
@@ -203,8 +202,9 @@
                     <a href="/boarding/upland/" class="back-link">More pet boarding in Upland</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Heavenly Pet Resort?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -350,6 +350,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -360,10 +364,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -388,7 +388,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

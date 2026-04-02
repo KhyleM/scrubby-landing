@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ-aIhnw-X9IgRbq1EcEmqIfg%2Fphotos%2FAU_ZVEGTBqq55xPnNNTNDHLI-CaOsbImSj5W8_YGM1NKWdEHXUjdSi5tB-e5iQhymZL-Te3S_4JiZwFM1HMp3e3ry4f0vyi_up3wS7Y6MovHe1w0V4wSnti6U_pkBK8Q0a3z2hqCUWkQNWuDF2XYHiA__SQPUkwyer0LhgMt6IZGBEkG657Va1jsybR0ajYA3u79FFIOymG0MBdqvvy2598ecEJcp8E88HRMrv2UY9oOV87E5AVJNZjJCjDEgUzEymNOhux0nFMQASHBX_glbif_QkPc4es8RP-BLecftmtIGkKz10Jg5hBinqVLEUM43TVUmY-PObuJasY8vN1_05AO2ocS0VPJZsrAi2UokfWyYZQg07mUljR2s5NyBnkA11QcjnmEAuToalvUKp76YuaKLzpYaa-41TvWdv8TJjOn8Z33Gw&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Petsense by Tractor Supply photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Petsense by Tractor Supply</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/griffin/" class="back-link">More pet groomers in Griffin</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Petsense by Tractor Supply?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

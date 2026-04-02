@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ26nY8kinIIYRBYsOsiWkVN4%2Fphotos%2FAU_ZVEFzv5T66ZG1cb2Eplh8e3SRmi3KaT48we0YM7PumWIpawAUUM4BC9H05U72YqEgReZG_--LVOaG-D82gd3eHvtHAt7trNVeej5BqNveQsZJT8ixTz64W9Fr4ctsnxeRzi8ZlIGw6bkmNFiVfZ57GiKVJIuAUi4IKjNfbnHNuhb2lQTF5GBPDvVq-NTO-GvB_ywpMAL9XJPz1xQbEBN7r8ngChJHiGxQxKTiFvXnX-jUoaRHvw4QqjwJzbKMC1lkYPDNYBPdhgMjYV_hxIOX2iwSLMmoGzOO5HFfR4irdHsCbh2r14t78jzZNPjvabL9D7dycT83TwlyD2OCN_zFoqtm6xvbv2gHh-5QdSrBSMTtlCNNu7DYwLkNZzT2BwKBPlZrLM2BsBkQpCoMFin9qawwR36Q2nBmhjLprx83TsZjf3oS8JiEv3CUWB8Vy9wt&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Poised Pooch Grooming Studio, LLC photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Poised Pooch Grooming Studio, LLC</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/gretna/" class="back-link">More pet groomers in Gretna</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Poised Pooch Grooming Studio, LLC?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

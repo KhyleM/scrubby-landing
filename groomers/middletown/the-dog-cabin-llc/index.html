@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJO6I0lfVK5okRshYrgu7-aXc%2Fphotos%2FAU_ZVEGeOCjrxSSSUBlHUXYUjmSHwLmZ8VQaC1I6qEEJNcDiACapBBs0MdHLpRYu3GZQAhuuduT0N-_SGUdFj8MvfoFA2f0b7xKGtZzust2FENiHN3QzYEUE5v72KGiA0zb3VGH5nAN-1jmaoeYbB4tRwVFFuo4QPzCuA5D5DZV0WftifiekmcU5pQlf4Ku4I2ltKu_XXWy1r0qPS1jGLwSXgyp80TkeK7BE69g1YGQsqQ1CSrr3U1YEvqoYD3sNq6EOiwAW6bId0qlJGooAZbwRfeQd8XIWAdsjsbi_5XHw5QT3nQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="The Dog Cabin LLC photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>The Dog Cabin LLC</h1>
@@ -197,8 +196,9 @@
                     <a href="/groomers/middletown/" class="back-link">More pet groomers in Middletown</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of The Dog Cabin LLC?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

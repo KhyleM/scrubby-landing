@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJlTz-6tX95IkRYG3y9AZck-o%2Fphotos%2FAU_ZVEEo-5ykswg5sGUx_1MVPNL74JMkCOvICfTFDpSZnFHrUFX28kpA2oNTVrbIu7N0HBGts0rX8_rs9PKc1HG9GZHfjo8sXgiuKV2DaEWjtmSvpmXjRDvatazzetwK0g_9tbgNKoJqzuzFYtukjAKkQyJ-G-WE0Rr8NgU4tD2SugZRnm6mv6kPx9H6VYzIZFxMNmDLrMpblgoATuKmQDnrTQpFJX5r0cGP6nlC15OHcLxCDps3MZnh1A5UvvbVlL_Y2t-scVJeLauRExq4yZbpxSyb8HWvW8w1j-nc_7PMjd3x1XLD_0O8jvnK6cZhPW9bQh7bshY3KgjaZ2ut3JRs37R0vvNYVswTKU1b2oU3eJ9fyYMWO3Q9eB79FdajmBmRJxYnRwhlz6qOKhmyjmt7LAsbaRL0Jlkq9_XAVOkPavj1nqc&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Pawlissa Pet Grooming Spa photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Pawlissa Pet Grooming Spa</h1>
@@ -179,8 +178,9 @@
                     <a href="/groomers/tiverton/" class="back-link">More pet groomers in Tiverton</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Pawlissa Pet Grooming Spa?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -326,6 +326,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -336,10 +340,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -364,7 +364,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

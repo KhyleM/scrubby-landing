@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJa58k3F6PrIkR8muJSp7wtuE%2Fphotos%2FAU_ZVEH30fmVE-Qo2hV2u1IA3bBQbgJjwbAZeG_UtbyvZxdU_OXQG37PKMwE8_mPNU_dHeXQcXAunPabRKtEXHUVQiPyN43h8viZ3nCJexyEZDjViyGw-P_mEM7jKoChg-8kOU_GdD4oy7h5Cje9AxuwRW3jfP0Abe82dEZbrHdEmjUtK-n97N7_jB5R5jEIvU5d93u35WjdvUYyatKeloTJ11g_30dHcldvcZWoT8tmXW7h01AzV7UqUqKVT1xaI-gIIL0WjaAww2LjDaKzJf7jkWAWy_LXScVKk682uwDNLh4TRjSi-IDk-NfM5tIOtdTm-OS9Ty0GL4JVR8lFz3b9xejnIErGGIYYWUhqaGocUxrYvS2eI4lWMV7N_dvABe46iOdoyO9ZvmORUb7Yhhp5SrCxLjzk76sZ80WTp0ZzP7ueJjG7_TbGwJO05uEYPA&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Woof Gang Bakery &amp; Grooming Holly Springs photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Woof Gang Bakery &amp; Grooming Holly Springs</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/holly-springs/" class="back-link">More pet groomers in Holly Springs</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Woof Gang Bakery &amp; Grooming Holly Springs?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

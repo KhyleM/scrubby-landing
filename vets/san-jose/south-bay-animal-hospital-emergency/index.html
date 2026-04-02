@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ5QMpOWC1j4ARVCKIiHMniII%2Fphotos%2FAU_ZVEG2kGZvg1iNL3WgTpb1iYxlaTfGoDnP8vdODtehIOZQuESzd4IHB5mKIs2M6z3MwY_QgAR-wSGXmSSSs6Q0lHIqFxMfueAoPzBq-gwklm2brPC5H_rRRSDhJAstN6_85RoD-7wtAdnSq-4YC6dvYwQFOF-_FiwrKj9qku9q7EwcDUss3SBCcf5VFCJYA6wPHdIxwKXRxQD6YjW0000Ia40iJbRvlC_b4l4aPReYFrVv5tLR6AM0jLJx-yORiuX7nK2X3y4bU2uWZEtxIWxEDT1kqWfpUTw_oi6_sg8NRWzJGsLTC4UdECgcLsl0Gj2PXSE3n5tc7eLFuqFaYLt5eRpCuXDYQYOxhzDoIw8mlVLqRUTdyP9Uls1bxy1_3FEiH96l-L6ZCbqf3H7G0Mc9NuEFLY8zzcvpG-JMKBCwXMark6Tn7bo-Fj4xTD7PSQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="South Bay Animal Hospital &amp; Emergency photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>South Bay Animal Hospital &amp; Emergency</h1>
@@ -201,8 +200,9 @@
                     <a href="/vets/san-jose/" class="back-link">More veterinarians in San Jose</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of South Bay Animal Hospital &amp; Emergency?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

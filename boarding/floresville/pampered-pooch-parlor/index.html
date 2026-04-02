@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJubYKL70fXYYR2vhUWBU-f7s%2Fphotos%2FAU_ZVEE2MGM0em4OB5wazqHhXIcN0rqS7IWx6awsUTo7P3mmPDes6Kt2WYaf8YS_o1ZuuLyKMHWyswHuwyDuea-CGwmc1Ejn8LJPQmv6QmkQnU9sqZ6EisR17_aOP1pytPnvjYx9_Tv__Wwjr5rPEXqfByChtkN2Joz50eMlJplMOCUGuqw_Vj523ikOODYsgqWkwsiu6i9ockZdW-BJzWxTDmbE__ULEt_rGTp0OqSP-USxDE25xQP6V-hhoXRAQ7hvOp7O5TsizlBiDbcmvhXuzpwaLNLeDHG3SPaoo_h6BENiruAlUQT8KuGfFvY1oFe5pnMGvTVBsG29rx_moYn32mMuulxYU265A9Vllmt_k-_wONOHNM2T54dPfsHwSxcfp2QK5MuTg4l8KBMzmKc5WLv5nhkN8ZOWMO78NGwVWgsw8QSJ64AdU585YnfLi6uk&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Pampered Pooch Parlor photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Pampered Pooch Parlor</h1>
@@ -199,8 +198,9 @@
                     <a href="/boarding/floresville/" class="back-link">More pet boarding in Floresville</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Pampered Pooch Parlor?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -346,6 +346,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -356,10 +360,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -384,7 +384,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

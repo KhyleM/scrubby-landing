@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJqxxtr3qjwIcRaepnmBMlN1k%2Fphotos%2FAU_ZVEHi8I0DiLc7wlma3nVaqT6AwqIoXOP5rVTSHlwLBstjPr2mSGBMCf7JsG56CNMddKt-6X9uocdDZJlh-Oj1FHFUaEo5ryOU8rTi9AqVoBERy-gnND0jY_B7MTeNB0T6qZ6SuGkGWjOMR0Fu3Y4AxSVAwDj39stgjJN1enb9vAUUJ8H3vJ4U5-VUAwnAJUe_wZv1LC0N78tRO8CwBv96naglBJefWKQk7ESNVocQJrWxC7pVdNdnt2mBf9xOArxbTtC_7xdNRA5M1zbJhOYD0r-54vnK2LRAVgWG2rH8li9BjzcxRmRFd34xMpp1C2zKnYaR2aGJEjy2vu37VGll0mTRwLoW-VLFuL4Xk-qhivuQVCRgOz5ffpdHwFOlQtZGJ6wxrX70gBsU6gNJB_T0YbQYznzzyA2uggOwn5-ROoCK9TrvQTKw0a-EIWwe-803&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Pups-N-Suds photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Pups-N-Suds</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/gardner/" class="back-link">More pet groomers in Gardner</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Pups-N-Suds?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

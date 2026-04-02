@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJq-mLi4Vt44kRW_GIKUhhAco%2Fphotos%2FAU_ZVEFtTa6Ut3Adhuy8UTLXOMfpyLhKhIf8lFvDFbbeQygY_6hDvlvoyj3j9oHTtBmYJdmZJHXZp92D47CFfqdAXsJL97d2t1iCFr8ywrVT1mXegRyC_eYxHUG8l6XHbdZluwVdP6piv3M2h421ld3dQUd1NU4TfndNrZNX7ktoc1ams166ZknxHwJ29090r3L7XvYKWiXKV5LlQZ1poy5gZlIyQxb-2IEcdKoDNlORy37Uu-W5_tm1btbjFqQbnz_VZ-D8ZB_huk7cK9TLqDN3--fSOathkXfeszfJvquKuKibrPZ7hB-rX2u4dZj8c8ce3PgE5tTfgSV720q_MjvDzvnaaJgzBHRt6tTnSIoN9PbjjhTJN1fb0S7vBqwLMR6L60z9vpL3WI-iMz6RueYzc-B47r3Cwo_ciC3zQbrm70J5bg&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="North Shore Animal Hospital photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>North Shore Animal Hospital</h1>
@@ -201,8 +200,9 @@
                     <a href="/vets/lynn/" class="back-link">More veterinarians in Lynn</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of North Shore Animal Hospital?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

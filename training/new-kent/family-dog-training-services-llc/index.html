@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJywVRdE0csYkRbEkiXMwjThM%2Fphotos%2FAU_ZVEG4-L4NwhbARv81mwMfGiYfeLhL9NgpzsHLBVvppVjbDWIlzIm_dEKaex8gzMnkTYEwgR1viGBnFv9bG2KDRQBf-GDs2ZPeVPd4qb6yLZrFbPTLznZk1c3WVYeog_bkqBxfkK5pGFWtHMvD6xrKoD35fU4g4C0Yr9FPAOez6Bukgu9Mgg8jPkUn8JQDjGPWplParoPRXTdVAnwM6V5wpQ0XQQAltdZujTvComJzSTzllhnp7GJY3IEi_bRqAK85ZYGuogwTlve5rbzUZqFn1lOaDIL1dSCvrruwlarAX78EPf6xTuqODORXMllFUhwINg0r-LOCIIYSz8r2rKUpmJ9uOPDifXX-AX6yXSDchd2HieVtAiAxz8E25iSkYaUdnpYdSZ77I5ScF2RDJELGe7Vj6WvApkiHMjhwK2u1z32eAQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Family Dog Training Services, LLC photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Family Dog Training Services, LLC</h1>
@@ -185,8 +184,9 @@
                     <a href="/training/new-kent/" class="back-link">More dog trainers in New Kent</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Family Dog Training Services, LLC?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -332,6 +332,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -342,10 +346,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -370,7 +370,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -77,7 +77,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJI0BCJHRI34cRi1w-k2QBbxU%2Fphotos%2FAU_ZVEGkYR4473k-VA_icmWB8Qt989L2xipsRNJCh6ma1wZtwZfTYYsEc_t5J9taTvKYk8teaRjnejAzMEOHWHNXuueLeDzYYogTvytUSwlEj9xBj06QfWJvSSbxYL0KILwhO91prFgetF0Ib2inAyTcO5VCMuNrJ4LzBClzgCA_Sh14phnBy2zuLt1eYuKnzPyGU0WwdF9v6agVfe_DztY_keiiHJhySsgGH5IMFiDldArLXIF2yvgWzWbowkw0pqbzNmsjZgMwnFI2m91EbpifLtIECgd-clkBLXAuKa7btdqMWa6FcL4W4YtY2dJISg1daWKx6L59QLr4v7xqkcI8xHkDMGqJYMPSqltv55Xjlvwf9pe1tDopznfmcf0TAkN2GBeucSsJEf1d6oOZUasue9iv1onru8fJLi3FOkOXAtVuLw&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="North County Obedience Training" loading="eager" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>North County Obedience Training</h1>
@@ -181,8 +180,9 @@
                     <a href="/training/florissant/" class="back-link">More dog trainers in Florissant</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of North County Obedience Training?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -328,6 +328,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -338,10 +342,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -366,7 +366,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJCe3YfsMP04kRAgzBg-9O9hA%2Fphotos%2FAU_ZVEHmunfoUv9T7DOuUldLDirZEKi7G-idp1r5yCtWUt2v_jSeBglND6gAQGoewytAnbcxSDWi1M82m9gKOqz0H3L3f_V_J0l8JXsjNUwAerVaRm6CcR9YDfMkXtXKUTaMCllGDv-Ak4OrdSpWmDdwMYQa6xEE_N7Fl88rdeZe9MEXZjJHaZWQLGspOpGV3Kwd-8lyW2vW8O8Ls2-qkm28uK1qqssCn3EGcWOO1b1i4TFJgr8n2n6NrHV0m3z7VG0haBkjln0m_V9Qf36P8124GTrb1fqSC2kGji6x_flGlR_p9QUFF93fcduXT1fy494Ee8aDP-bPBeENrw1oW40pnr1HREWI9Mm8-Mk6Uah2GievZ4wmWnt3C1JDq-1b4cbC7wUqQWBWILmbDdYvkFwby_ExZVSoIlhsULsGt000kbfjK8De&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Operation Pets Spay/Neuter photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Operation Pets Spay/Neuter</h1>
@@ -201,8 +200,9 @@
                     <a href="/vets/buffalo/" class="back-link">More veterinarians in Buffalo</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Operation Pets Spay/Neuter?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

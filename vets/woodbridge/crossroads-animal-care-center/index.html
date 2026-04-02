@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJacRGEgBXtokRWis7KE9NhJ4%2Fphotos%2FAU_ZVEElSTuxEc51qFmr1IqXG28RAD07rQ4hSwQPKUvyiMYxA9MvNZF7Swct69WBnnRWI5LnY55VOJOvRJgaA8Nb1TN7BnNdRPj4eAGl5cuwml_niBitLfAM6Xz-1rFmUFxLPaMdze6drHE29BrtIWes11CCyFdm-48tb6Zh56iW1z2sSJQSTubvyE0DV18ZPxd2Ja0aUGYu14ysZpYn5fAa3TCkndWDKgf2u3pHUUpstJKZfEgb0XtVskXHtn_pIkUl1uA9Ib3ASKNLpht3vvV1sePzQHL_5YWZEvADdshC_PVzFrC6NFaCZotGR6bnhVAIWKDxKm8xVuw-FxQPvllN-j4J9VDGCAy7VcI93OBtTjUzn4nQb3qNOrsy16vzc2cJFoegupyMeNKszVTGBB_p_6ybfh8zy8HcW0fq0zD5pIv1og&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Crossroads Animal Care Center photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Crossroads Animal Care Center</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/woodbridge/" class="back-link">More veterinarians in Woodbridge</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Crossroads Animal Care Center?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJGfiIVq8d04kR6zNoAIsD5x8%2Fphotos%2FAU_ZVEFq3ZB3wWJt3awG31yG7bfBxs80xPs4QmlyPpNIYs3U93bppqYDqldrmNup0drwOK-zkt2ZMXeYn1d3PN_c2cqLZlaj2iwCdmgK8UKPKhlx8jnJ4w1Lu_BCZ_FTID7nubuCuITiPXX0Ce51VI46COCSr7QbcuQi3p1uvBAaQ5ag4rjjOTnubvf6VMN6Ged_89cEj6wC8Fm1Lb9Zyyy6oSu_KBdhwzB1n4kwQduULlKiYfNzOXUlg9Y8uPRKMGT9HlSOFDOoYtsqiHHXf46BJ1VKxFYv2JIDVZDOC9iItxeA8g&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Eden Veterinary Clinic, PLLC photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Eden Veterinary Clinic, PLLC</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/eden/" class="back-link">More veterinarians in Eden</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Eden Veterinary Clinic, PLLC?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

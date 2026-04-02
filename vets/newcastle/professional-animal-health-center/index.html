@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJxen9hA9usocROASozMFjras%2Fphotos%2FAU_ZVEHzxxT2KWlCKkAiHeVWXCEh4kzQRRMECvF90qB-DYwBe_4ETzsTYCllO4FgG7YKk008k0BZh2RGcSOw-SCYKM-J3WZG6yAHyhLyoVVisXFM8vakqVuIhtmOgqpEokgwJZCqqnFfrGr9iaSqbZpAmT_X-EngLR1bCXHc-vSo6691x0AFcvYg30PeCj8BsJwM4p0FnwPAkqr5nT-oNSew5YjvWLFLbzDpu19gGFYIbK5eSn1AEzP0v6uKLiDJ-xspdQbPJcrMHFsfxcd-9yR9ylVR6QAIhJvL8_zJb6CNt_o98Lt4v-bK7nvUPc7WN8vR5LmaROzo60xc79tNo4BhJmZaFR0g7JruvuZ0B6wA2_7Qws376hUtfuU6_KRbAfX8n9D-gYoZUJxdgMzp0xnAjISA9ag_AtptwxZMcS9ksD24LmPe&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Professional Animal Health Center photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Professional Animal Health Center</h1>
@@ -194,8 +193,9 @@
                     <a href="/vets/newcastle/" class="back-link">More veterinarians in Newcastle</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Professional Animal Health Center?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -341,6 +341,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -351,10 +355,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -379,7 +379,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

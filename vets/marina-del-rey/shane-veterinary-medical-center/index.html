@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJX5v4z4GwwoAR8sgOAepptrw%2Fphotos%2FAU_ZVEGqJuuNXtmYQw-Kq5Q1dzsI7LUeDupczoFqsBF36q5W-JKFP8VqgmK1gN8ZySmimwa_NZPXKCT5FpSISiRb1TRY9FKKPn5SbYvXniJesE3tDrq7mq-xGdPzfoYonFa0A3NRNbpCh47i6sAqtFGp3PJbPdPV6rArm63GzLkSA_tUtFMQSRjbdHFOmaXJhMbqrOekCFOk11I9u0REqhiAi5Z5rm0lL0g87p_UR0rx-uXGHl698tW4Iu7S7hwX7RWr_ekyqA_XdXI2n-RZwmAMlkTWJ8aaw91EsrQIMAKOjwmHDIny4ReCFffmFm_kOUbpMm7tSa9cmfzJnK-1mPSIClzF8k1tf9wU5B8UED5-_p2aTO46vxgHrA6g-d26k-bHlD_aHFBoZGf3MaSFuMgIOWXKYByV3jV2Eu-74ct2nOay_yGRU90PCqv_LlzdmqmX&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Shane Veterinary Medical Center photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Shane Veterinary Medical Center</h1>
@@ -201,8 +200,9 @@
                     <a href="/vets/marina-del-rey/" class="back-link">More veterinarians in Marina Del Rey</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Shane Veterinary Medical Center?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

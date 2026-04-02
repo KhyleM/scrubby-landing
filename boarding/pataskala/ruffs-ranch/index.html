@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJj37Yzz9nOIgR08Q0ZGD_JQo%2Fphotos%2FAU_ZVEELWETPgjMjXfXt9uXWxZITkdwNBo1DqSBFmNU3s2uCKVF3jn5L9jCKSOo77SmOs_l85KL9OeR96xO-yxIq16-8-rtLPuq_JDLXQVgp0s_h6YYYdKIdLU1006r1mmYCnBt9PJayv7UfpLBH5XchWbiREjWcNFlwmk139lbiv80qnAKwyf3o7k2rAS32BNutPENlnmUSr6RrfyzZRfPEx4a8ltiIJFLkMH7XhJmSeH1RoIfF-JMxfa8oRm1NNNh6pS01LaHOZ6H1eanLDo0OEAguvVWYDzsD9775bt24iP4GjQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Ruff’s Ranch photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Ruff’s Ranch</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/pataskala/" class="back-link">More pet boarding in Pataskala</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Ruff’s Ranch?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

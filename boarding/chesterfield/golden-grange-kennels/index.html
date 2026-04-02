@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJt3jqci1DwYkRus_6WnzF3vQ%2Fphotos%2FAU_ZVEGAMmmd-9qfPInvm9_cJPq6HuadXMWKugAc9t_BD6H4DMkV2QGFg-B86-ORzoBsqf2vp0kzahr2nJCaVyfr8exm1-Vee-t8YxMI9ZBhOYyV8xS52tk3vwZsouhhh6QSxl6p4lBFeWl9OpK-3Mikqt2k_tu_AD9ubD6niJwMuR3HRCxN_9IzQ_hoqaqj9rGd6VLwBTExzZZ0LiIk6Sr0vXuZoOxAiCByDx3Pr3Qb_DHmFw_hDEEu8RP3I-d-ZXYCzu5Qkz9OckldRT-k9l-u7Gl083-7EUwhKHJoOI8MWmNcR8HDrQ_GNUbf5DyrKR53hk0hosjjs_-msEWTFWbFNoCnfFHlVHfKZht3WXNNg5tHog3COQoAksDbaAkuBtWnQ6LcJtwX88wWhqQkGLjwlS28ZjdIrIXE5UlhLfcIGW645w&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Golden Grange Kennels photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Golden Grange Kennels</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/chesterfield/" class="back-link">More pet boarding in Chesterfield</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Golden Grange Kennels?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

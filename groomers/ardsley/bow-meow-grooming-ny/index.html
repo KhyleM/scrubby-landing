@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ943oB1brwokRWr73t8QUWHI%2Fphotos%2FAU_ZVEFRf4USN11PL9mXYNIc0XfJNDY_4PmQjv2ylqNspG_KY_pfWZ795wxkuwSQu2gh7rtJegvgsWhDOsLFbdri35LXkG4V0m_RWtUUMAaf7t8go1R6pQ3vUGaqBdeppWFuJVI_gw7AacJkVAFH0PH4tZGwkRD9lKdhXTNWHMIlpkFH0lQ32W-M_lFdZh_Wj4ewC8j7Voa9qHvOZ-oy0VKarOUbwXidLahzLotEgDjpA7fgLuPv9B1BvwY-Sg7LMCUjyT4FBwVTypxBG8q-KGvxX5KSVfRIY0PAKTj8Atuh6keU7r6gU5y6x_J4ZVi6fy28L5k5Bye3kGB3b8TqWbzyD24ifpRMhxFe60i5_OEvGSYiHO9wwg4XDwBEAEkAvra-NAkWrKF8zh5O_h4YJtsxGi78ZLVw2yyP-8qht7RNsVA&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Bow Meow Grooming NY photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Bow Meow Grooming NY</h1>
@@ -194,8 +193,9 @@
                     <a href="/groomers/ardsley/" class="back-link">More pet groomers in Ardsley</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Bow Meow Grooming NY?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -341,6 +341,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -351,10 +355,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -379,7 +379,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

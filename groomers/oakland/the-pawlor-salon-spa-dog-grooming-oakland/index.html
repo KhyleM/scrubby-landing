@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJI06Cu_2Bj4AR1ePgYU4Y4ow%2Fphotos%2FAU_ZVEHBP2pvF_DIJ5IsN5qoW9lVprTZwPvI3sj0Mc-V7oEjkqZxBmgXiSW_gl_LOFQiROmUMKAwuNgHBj63SW9wh7JzbAvYUofiqJuM-qF9PV_vhWylWFdxYBPN2tVd5Zvxe7njgerWlEg2uEwrRLRBMmmn-Vg_5TKpF1MiH0VFOoZTKxVlhVRvz6sEwpZ42BlAJ0bN4Ys-YiPuFhOOixn3spfenrn9MSjjX58qfpER3nOJXpp9r3sC20eVOb41RXPrIxLlGaRlFHukHoPcINx8ssGqkFDxKo3527SjOLmU4jXbo6yqoeTx0i2M4OEexM1oSD_bRO9HRClf1KMP43W4P-UhxI_kAKqNmnLBL4a2HvzkXFapVYpKEwEnAYXQDc7kuiD03_pRXkq9LQ1Ntx8xj81tPmEsNUTOXEXx1Y7szIYfIxlJM-6_l1Gmjc87ZkdQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="The Pawlor Salon &amp; Spa - Dog Grooming Oakland photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>The Pawlor Salon &amp; Spa - Dog Grooming Oakland</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/oakland/" class="back-link">More pet groomers in Oakland</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of The Pawlor Salon &amp; Spa - Dog Grooming Oakland?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

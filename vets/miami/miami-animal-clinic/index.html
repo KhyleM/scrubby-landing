@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJX8QWbVO42YgRTov2Rw4228M%2Fphotos%2FAU_ZVEGlGVlHkCQaz18th5J1YB7d2Wr4-r-j7s2uCLgbXobUc-itIaMKdt4oM2VJ6seNw45lMrG5TGxHjE3Nyhw9fRhrNFERtGSOxzxVujCQBTQdH7Yu1sLYVCk8cAXEIZrxY3xGqzFg1X68xykixqotyXKqqfNVWKAxIzqf9JMuJHTAOwBoVhKgn4RwohFB4ZTfMT-sm8QNDEcPuJAKSQiBJR8ihtkV88zjHYLOKK8WSdIntHZyWykl9InS2d2T3-N4v5pB6rMRwX4_CdvHRwKlSxw2StxjNMRTavczpYZvPjOYGIzLueXAdAo3mmm2Hqx5liwAVdDikOyX8nfaXXa8-qzeFWBa25YdpOwIeMcVIFHCHDOyJO6fbrLkkNY3ApuWeckQLS7y4DnpK8H4QVgmi-qSSKW-UulgqPgDzlzAlJn52I9X&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Miami Animal Clinic photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Miami Animal Clinic</h1>
@@ -201,8 +200,9 @@
                     <a href="/vets/miami/" class="back-link">More veterinarians in Miami</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Miami Animal Clinic?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

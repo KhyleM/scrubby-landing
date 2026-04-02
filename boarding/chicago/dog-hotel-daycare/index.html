@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJVWdWBxgrDogR0V1YHPyXyMI%2Fphotos%2FAU_ZVEHySH2cFJOTOWR4ntBDIL19xfJP0Mc0ZquwOrux-lV3s4OD--Knxte_Uez3rA2CPDjedU5hv2P-u49HmuxhDV7cz3gFwCp2KxXO7zoO_XqhRmiPyJW6YAm9qoAKlUnIkPVf16jegIBPqDPLZ1tPlpByo64AsHBStCMiZxB22BlbJJWLk1y1FQqUdzGR476llev1RQjiAq658EHqV6HQJowsiU92G0tLheAMjH8nFNNlde08o4XMVbhCxQs5X41C5zuxioryxklxbqqbktYPvFVrucHgAUbh6krPys6NyssImzr4N-6mn1_ug1Yu8onIovhk3UfFcSqsZrb9Tz46XjXDFJK0VRKghuXJSwvNv2zWJGbGCc_gXoyEOqIJ-j3yVq2pyF0Kj9Az99OrAXN21eeBCrN4Mb6NsxPYwbZQhdcb2RtVQsrofNW4HaOMJg-A&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Dog Hotel | Daycare photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Dog Hotel | Daycare</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/chicago/" class="back-link">More pet boarding in Chicago</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Dog Hotel | Daycare?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJxe-EYUdL5IkRdnq0auBqGyw%2Fphotos%2FAU_ZVEGtGrd3HlPvVV-a3KmiTCTAuHIzZKSsZfudMXKXVIJQ7RTOejNb7_hO2DzJM0xzbolNl9vmA1OvYoRuNbWFM73CiGqGvwaBiVGznF1yLKYIzzgqQPJdJT2c89jvrjTV7yJ11eNSk-h3Jq8Axgst2w7l3eEjdl1Mqf_aaFcIayZwJstCPiKAVjVUf4XKkY_D1G2FEhpBhR7vBSMEaGeNY82q3mL8txvic9U8TgPhSElGstgYR4nkycpqF4nri5CoxBYMhg8iKX_wmazzPk08gEMncmAYflEJXmcPtf3E3gQ4I-mvyN7h5gLhmUcz3FevukQ_L4I21sG_UNJcYiGVL-GIF2Dt-XiHsnyz0q52Tz7CgmBN-_3LTG4M2HEr2A0yNZWiQVyMnDWRwaRE1S6YllomKINclBd4SBzgvNPh3ti_a2K0&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Greenwich Valley Vet Clinic photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Greenwich Valley Vet Clinic</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/west-warwick/" class="back-link">More veterinarians in West Warwick</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Greenwich Valley Vet Clinic?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ1WKf7GRPW4YRXgUJ46auPi0%2Fphotos%2FAU_ZVEF7Iy2zhWkF7NqtgLd5RoUJELKwpUWPQ4yI58dUx-p2tPGJWeOpj_Q0xw01cTyPNJ1G6RRrnwZJKFlez9wOw8lRodI3viTG-WFclYzkZ8Lzut9DViM3W7ONCPtSsxDadhUVFOVjz4C-ny-azzbgVhDygyO_iCE2DTKEvbcM3C6VlMyfgFbmU2iAAzOflXqi8Hr3eAzsHHJvq2VheOordwFy1O1WGcsug4GC4kkmP81VEpZg4sXK1DCN9TpVAiiqH4c22MPoVG5G_AeDzO3sQk-4H9CiGjRPKKR5Bm3SUK0m-AQyEG1cReeH4bO_VarSmgyybsEF6DB7tygMAmYT0e4dxKN-_WVcnM2IrEC0Fo9TFNxNz6wKaX-1jIYPRZnPNQHeYp8QYHV5563Ys0iTnFOi3aqXubaGm4uEO_UFsnUkRGwl&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Austin Pet Ranch photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Austin Pet Ranch</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/austin/" class="back-link">More pet boarding in Austin</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Austin Pet Ranch?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

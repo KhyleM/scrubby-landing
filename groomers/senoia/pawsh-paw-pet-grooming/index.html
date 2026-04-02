@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJm6xUDs6V9IgRKjxTCdD15oA%2Fphotos%2FAU_ZVEFuEzB14XM_uGa0eK8xE-EcK74rCWKcrBg1gzL3YUIga_DEj84SWg-o4UXQ9vg066mwcpeKf0yJWhUeCsRUYSvl6TzEieAnVv1IjMqL9H4m6dMtrJI7t0MmcaBFgujdWWdjSNcKQqClsSlGOonK698YEcS7xx9qQough169__j2zPjRPndAwEDwFeuzYyiNa3IY2UP97j8iW__h8Yl5UFmM2R60iuiKp8xncPzKK3NnFiISjU_qusoj1V1BGNZTDlEULWzk73DUvCjnV80cAyFl4m2TaGGvOG2fwWLnt2vtXzgCrwADToQNhjstavGyqI43fc3ztONeYOutkmKuaEyfzL3bYEOdhcXp9c7tCi2cAwX5n7Y35ySOzGS7U--oBdFZyTsMe9UPYXUdiUxMhrBKXe4UsRZEVegkROSym1AbELy9&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Pawsh Paw Pet Grooming photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Pawsh Paw Pet Grooming</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/senoia/" class="back-link">More pet groomers in Senoia</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Pawsh Paw Pet Grooming?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

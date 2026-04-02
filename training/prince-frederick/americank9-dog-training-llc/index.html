@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJPyOMe_J3t4kRxKbRci8d5Zo%2Fphotos%2FAU_ZVEFnDz7PnfPgreQTXJbK3vc51-47YLZteNlvLXYOJ-XTp9MUnnyx-VFlATo6l_VTy43nVGjDS4XySz01PDlPQYXShnlTePjLjnUx23cwOarr5Nffc7cnvN02-MRx7j7iiydcS-cWmbSftud3QkrYZMc8-03an2oP8VGj_fU-OeQ36g_ecgnd4phDCseZrX2icWcJmSU3GYyK4jQpUxID554_rsinPQSyWRydx6UTTsvfsFyJ5H33uvIKwuj_unBtetYRfXlotIzGg6r3yMaavn6ul5k-EUz_xFVoitCpLf8d-g&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="AmericanK9 Dog Training, LLC photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>AmericanK9 Dog Training, LLC</h1>
@@ -197,8 +196,9 @@
                     <a href="/training/prince-frederick/" class="back-link">More dog trainers in Prince Frederick</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of AmericanK9 Dog Training, LLC?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

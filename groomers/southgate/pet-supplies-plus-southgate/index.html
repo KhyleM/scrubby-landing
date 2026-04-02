@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJc7lC83g3O4gRp6NYvSMoVEM%2Fphotos%2FAU_ZVEG_MpOHjpnvUxEGYcORxEvJVrkCkyZ1AsJ4QMbeKHFV-VsbStRbeKHfG34lrFtR5ACnMnWahG3UXNqObTnI_mHZnhHyHgIBeHi5edDUvw38eiYKTl9y6V1ypfo-5-w1FdI-v1tONlWQ5nZ6fwxPbvT8F5k8oayxzRl2SFZ5pSvHFQCzovY0AiC1DMeiW_k34l0mvM7JbfuE3a-BzxfEqgtetnVgWXHPM5w7YLipI736vs9kSeXdBUj-hQkJL7Qfx7LLKSQKffgAp82DOp5xu9unsHAMSO9ybZHt7ThFci62gnuy9RrdqZNUUwgtnECZuPu_u5b7OQfswMqA8jYn7UtcD5JAhS-L-d_0IENQdEjfBqw-cC5Tb6BTxzRxzzbhZecpfTGnyYNNdtVqZyiiWahlZKZMJ3j8RTuvyFn09K4QqYRU&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Pet Supplies Plus Southgate photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Pet Supplies Plus Southgate</h1>
@@ -205,8 +204,9 @@
                     <a href="/groomers/southgate/" class="back-link">More pet groomers in Southgate</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Pet Supplies Plus Southgate?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -352,6 +352,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -362,10 +366,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -390,7 +390,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

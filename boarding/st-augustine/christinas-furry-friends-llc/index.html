@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJjVV65Ti8-U8RzO2QKRzirIA%2Fphotos%2FAU_ZVEHp6GSuyOccyainI1HqISLAj8XSHqdmCSvvcS7SR14adJGaVgpBZnDSaZgr9W6krGJn0rQ7JzW-OGAM2YqMLStbCy6GvSMaYiC2ArTsGsACNr8iIv2708F9EGeMHkEf-nhipNz5uSSrNPlD1RkIDjjdwKXTo6fd0AfDYI1bezQga5A2letE45bSLnCLvC4qDV-SSyirrlAQvxdq_XKVfe33SnKXwy6qHdhGOIWnfBou4ujwgYnzVCLuZgKTl_abp77GY0uh7DSYgdhcDGvx_hIqzynunEnI_upoGOXx0gnKPg&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Christina&#39;s Furry Friends, LLC photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Christina&#39;s Furry Friends, LLC</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/st-augustine/" class="back-link">More pet boarding in St. Augustine</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Christina&#39;s Furry Friends, LLC?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -80,7 +80,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJDUbYrI-Lt4kR6Xpp9ChlAUg%2Fphotos%2FAU_ZVEFPFKpbyJvVoU8agz5USYW4tjOTiBNTvUBIJAh8v6oyIfpi-NTNYQ45vbMcp4JtYsAjGRw01TQkR3n8qWIndMzmRWP0JXAW9uiZbdt2nP8kJMvKsmDjD2qptx1p3e39V7oWJ0BRGs1jVgFzs26lzWz5eHUpo-alhPD3CXah-1DS7l7gEXdDMe46PNy9iqV0YEy-FoOCWmN0Qc7rajffAPdsQZFgTE89Dh4-x6XkcGZvH7D0jdK6fDic6WnlZEepdforcZodahnQ4Ch4gb1V36X3d5SwR68PszL8wer3Xy7tcwq5p9kAUK1agdwJJjYBKcX-0dCiIRxt9nu2R8cxkQOuo2xMO4wRksNPO8JGWAAOOm0bewEfu1ah6x5017cLqi4CDcaRN8iqqjrvnYwT7ehxNqQHZWBD6aq3z9JEZII&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Muddy Paws photo 4" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Muddy Paws</h1>
@@ -188,8 +187,9 @@
                     <a href="/groomers/west-river/" class="back-link">More pet groomers in West River</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Muddy Paws?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -335,6 +335,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -345,10 +349,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -373,7 +373,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

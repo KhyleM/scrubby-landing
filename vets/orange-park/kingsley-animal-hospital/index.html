@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJl4eA89zF5YgRBraVHUsrNgA%2Fphotos%2FAU_ZVEEbwF5Z1oXQigf-7Fq00KdZZwhWUXnMHDxijpAmNLwVOjqF8tarlIllSMVyJbHyfWl6kRCCwPHI7R0DMWX_CQ_YzSPDg5iJqOl8UCyoVJd5mWB1slUg1G_hzDp1I9sAgTgJsgY2VlYjPqGHEkpP6d9HVen-XA0jvOlF8bo0lKn1XfMKO-gQ5kSV-rASqs1Y3XYdxdET6xSpN3BNaLQHlIxw5dTBVOgcq7F1szZ6nwM7dL4PmLTFBL_c2uG8qjKigVK_IVNEzwHCcW_aU0LWFvVhdJ4SitrXpJPul3jng5aILYLYPyf2wJUv7OrdZAWyJgFu7tm5LmKa8dYGPGg9wED4SxkEcvn9hZebp4WR1iVGpYvTddO7LttsvOSqRvcPveW2X5xsEoYcRFro72aKj6fMwIJwSOmdUg9OStZyrrwvcA&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Kingsley Animal Hospital photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Kingsley Animal Hospital</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/orange-park/" class="back-link">More veterinarians in Orange Park</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Kingsley Animal Hospital?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

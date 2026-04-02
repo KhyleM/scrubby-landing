@@ -80,7 +80,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJS7_IEJHiEYgR-WX2WH84lro%2Fphotos%2FAU_ZVEF_WO7z0wjW0RPetYOJzZxiXe-OLFFeOKprsXT3Kvne7WdSKAGTfOsjxVeOipyJplUr_NBOoeJhet6D_baNLExVldgoq_gA-dZUzVbiafUjvXd__4PGtb0iyT2K1pklPfZpmrILuntEGVOv-KbuqOPT429PrOJ1CcKMNK8bTVzJZG7hmpv3em-jkX-4WCxp4Jp7dekFhDwklk3ATHxHrQB9xY8cc_8FwcUALnv2Jc8x0LWePh4IFQ9q2Gr8vfAbxaxFWoG8UGz72Hcmo1gqhzGooQM2cYvIUBUlJ_eBeZUoIfiKePXcxeNuwSWOhEdnbHfeWY6PQ1rQqqjRrXYzsEObG3GaUq2njtjEQCgh8PL_BVBPzcKqYMXoGn3Fl3HvDs2SkYhBaOoMBNVtinUzhnkEb7Daecdd2CxJSCwZ0BiS_MLO&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Ivanhoe Poodle Grooming Salon photo 4" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Ivanhoe Poodle Grooming Salon</h1>
@@ -181,8 +180,9 @@
                     <a href="/groomers/crete/" class="back-link">More pet groomers in Crete</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Ivanhoe Poodle Grooming Salon?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -328,6 +328,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -338,10 +342,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -366,7 +366,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

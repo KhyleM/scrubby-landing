@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ0-dsj9mzuokRtgIVDdSTaWE%2Fphotos%2FAU_ZVEEGI9b4x4Nw9MmO3xX1id64_Cczom5m40jP8v9I6_9X1aFJzF6bLi8C4c2EHgtrIeELFgUFQ_PQI4BiDNNttKwaq-OF6OhDwyMVi7QAt0dztaM9Hb7De5GD28SIl-__zxEVzpsKXJmzsZWbLKC2f-Xmviy3CL_ht5OA5h-bPxeb7emAP3X_qUya4XeO-H5gPfoHT4ywEqSaUUTMQx2_3EfeXahReMXMq-bbr-ThJv70Ws4X0HV8OtBxZVQOLbR0xY8sT59i9uRVc0cH4fBbIgbWMeITEN5-DMsZP4ioBqIxZ0Fab2pw0uAm0fEAPWwdMg3VbIAadIyHY0_uHE0g9Obqf10PxsQX9qhmczewWtQ8HslMHDCSwqrXP4S7W7nU6fEDvxZlZqUxhkgDlI_ytKohuo8yAJQqDmPXd21O2UnKyaiWIdqBsaSjcjsvmw&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Woofalicious Grooming Studio photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Woofalicious Grooming Studio</h1>
@@ -198,8 +197,9 @@
                     <a href="/groomers/moyock/" class="back-link">More pet groomers in Moyock</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Woofalicious Grooming Studio?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -345,6 +345,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -355,10 +359,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -383,7 +383,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJa8j4jTMH3IAR1wqg87gC714%2Fphotos%2FAU_ZVEF8yhLCjvrh08lEZuAXkwv8B8J4KLti9BPUuKpF3qhk5QzDczDERDYl_XDe7LPJDP5v0DjTG5GQ2UN1o0BBOeY0cITMfnim5ldXFOzVY2nTqTDW2T10vlC16bHnESf73RUpq7aNwC7gkL6ot2bok7CWh8sQg5opnwLse06hL3cdLmUcdNang97UNyj3dRelJOoHuoam4DLLZeusc7y_kIcKJQ5NZ5e6RjvPNEAdT1Mv9PmDKPf5ZGIz_jOdoCOPPn0UODLcV8i6Hlp-gmehVSpXDw_wTUOwvG-ymlgyaiqDow&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Hugs Pet Sitting photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Hugs Pet Sitting</h1>
@@ -192,8 +191,9 @@
                     <a href="/boarding/san-diego/" class="back-link">More pet boarding in San Diego</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Hugs Pet Sitting?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -339,6 +339,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -349,10 +353,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -377,7 +377,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

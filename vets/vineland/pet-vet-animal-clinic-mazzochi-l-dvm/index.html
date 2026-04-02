@@ -77,7 +77,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJk1lEICItx4kRjw5nS_wvN7A%2Fphotos%2FAU_ZVEHqEa2DXOknE4zBAlp4uvkB0VH96Xu_ji1OrA7-hlmna7yfSyuiP-eL1vb8auWQWqj_l9C3QB_J6IpIIic9XN8uvBadplB82kwHxCXsu4tEvcryQABb-7339HLT6tkdXlH8r8KtqD374iZUWbG2kUGm7gbasEUKt8i5Ecvt37k3zBmAFAfN5MYHIz8KaWiHWBMxedLAl_L38mbOAmTEuvhv3qe4uOgcTiXNmSj2PFRVslWEQMDJQl3Z9cEFvNm_mZtRFAjEiDmvRSona0-UH5VWhVwAlVaow9wuhphPePyVzNLc2M0vhwKY1p2GVOZQxVglE5gKjv3_MWGLw4UUD8YLOf9wx9CepxlTsZTKzToey4KwP8Id4gvlPgaE7wgIsq_hN0Nfe2WAFQ5YIpCKcoWzwn0NJEiXyjLC3-jsksIXgu2-&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Pet Vet Animal Clinic: Mazzochi L DVM" loading="eager" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Pet Vet Animal Clinic: Mazzochi L DVM</h1>
@@ -178,8 +177,9 @@
                     <a href="/vets/vineland/" class="back-link">More veterinarians in Vineland</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Pet Vet Animal Clinic: Mazzochi L DVM?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -325,6 +325,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -335,10 +339,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -363,7 +363,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

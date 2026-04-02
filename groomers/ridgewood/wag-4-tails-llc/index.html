@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJn0J41eTlwokRMGH7KNAv2d8%2Fphotos%2FAU_ZVEEEYQD6zTFKij-_ZVxKvotVtbxvUnfjw0fEhK8oOhhqnhzPxEF7nRpa0bzefoP0Y6lOv4WXS1fwk8SK1Hu3TOn93uJJGG17bpKqACr4kFwH3hGoS7wDH5cI2wyWOCCjB-Naj-Z0P-W-IN5B1ko13ry-oY7wxsssK3BMT5WBL846SJNwOD2Tec55J4R57Y62FNEa_YVUNLu6pxomAWZ3-lV2RQ0eendVOS_vKrYqOEMHRGgyPfOo6mfggpfmb2OaS5zaHAJsa-BirJthBmfYQmLSMCWB9708Ss5d1A2BCkC4_g&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Wag 4 Tails LLC photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Wag 4 Tails LLC</h1>
@@ -197,8 +196,9 @@
                     <a href="/groomers/ridgewood/" class="back-link">More pet groomers in Ridgewood</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Wag 4 Tails LLC?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

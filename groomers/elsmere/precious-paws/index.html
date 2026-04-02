@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJo2Qwg479xokRadJkur_FVas%2Fphotos%2FAU_ZVEE5NJujUhZAz5g-jLX9JS4_EsxeLkYzwgqcONciWTxZn8XNh3GTNB8LUWEa8s-xtjcu5GT479-70Kg68QNrXifLe9ehiRISjE9J8noGj9J3d3kIfVi6TlNxbZeLhPB_kS5ftmAEWZgaiEgEd3Sl6RammBoZqJu6uUfUfZjMMey45AV8U7lBG0GHRtZJULo97IJo0F9Ua7HrFD1T0z2k_tC4fbBV1O6BLbK3TeS5VUNozA5DYZ3VlkUVgZk6hOwn-4iLLmtE816LlX99LNeod8NcXXpX7YEnARCQOBu7Gu6zq7rVwSxC0xCcMKUwOvA7KtibX_ozgGQ77pi9nrcztiWpeTBi3uA9f45DXnDpMZEESW6qLRgyqI0uB4pd1fF1Iz-00pVRennbZ8XD96i_rv57mzE5RpPUaz0eGicBfQsK7g&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Precious Paws photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Precious Paws</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/elsmere/" class="back-link">More pet groomers in Elsmere</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Precious Paws?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

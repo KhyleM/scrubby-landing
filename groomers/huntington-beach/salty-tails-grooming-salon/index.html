@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJPRuRErwh3YARDyb_s2MN0hs%2Fphotos%2FAU_ZVEEtgOpIMvl6xJFvlEa55FNRLK0AiohmxdX9P8vQXKl_Z31bsUrkPX2muLY2uVDspzFZ_xYAwYSCv_rGw67_aBacPxxfSEstSsesCGljeee8nYBkhp0N9XQS7G7cM0ZiRIaMGjuKi43FweqaOPjNj3RiUuuvzJd4mCqhQrtnZIq2TpE4iEu81B2V_0T88UeiH21msfH_KGYK_6mhEBv1q7eniZROmOv2rW_ZG-G7Gpumf1kc1tPHDlLdT9swq3annPwUERRF-CUB0sTCmE_YWGQjI4gZkK40GFgdGsQNHktBgmiHJ96X5ISFpvNZqHorCXtoliybtOXrBnuD2YCJhxDjh-X8mOYhvD6qJfRHZvc4iFUiZrjlewvWUiOZMdXQtwdvMS5PIomEoqlJm9wph16J3wYA-zM20U_0qA5l0voXHmIyCx0ivsshys1wzhnY&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Salty Tails Grooming Salon photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Salty Tails Grooming Salon</h1>
@@ -186,8 +185,9 @@
                     <a href="/groomers/huntington-beach/" class="back-link">More pet groomers in Huntington Beach</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Salty Tails Grooming Salon?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -333,6 +333,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -343,10 +347,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -371,7 +371,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

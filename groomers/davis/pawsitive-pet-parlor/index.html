@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJSf55hAwphYARpI_YjQEUfcY%2Fphotos%2FAU_ZVEHsC7_JW602OCsgwt7joP8sUK-SzV6jhLUNamQs6EfRhHHqpaXnRZWs70NMHSustSc4w8P1U2adDckBDbJA5Cci3kd8AmuNmC1mEjzR-vH1ZdtG5BBUDXYhZAncgCL1Cjig4YI2TKcDD5-DSBvl0y93qUvNLAZ5AXTBn6JJJpQuPp_skSdjZJe7Md8gs_PGr5CC-6TFrI4wbLSRnefA9EQZoFH8WPRGKQQI5n7gDfpm6VRGhkKjBIkrLVBvl3NlJQD9OZLR5yWNq4yhKYI8l_recuvBfzQLb9M4ULm4ozBJkgDre_5NsxqhoM0Zxs0Sa8SZJ86jHxUkWFLxDNwhGas6hqM8DkLbuQVsOuCaXJ0_liFqcCz5sCz4A6_bIItiYPlD9GwGN03vYqpfMVlV8af1TCHgWNFm-UPdhQciaAwZCzGB6zNiJCXLHEFYxrKj&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Pawsitive Pet Parlor photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Pawsitive Pet Parlor</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/davis/" class="back-link">More pet groomers in Davis</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Pawsitive Pet Parlor?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

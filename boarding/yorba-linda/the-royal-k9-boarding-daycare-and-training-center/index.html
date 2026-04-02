@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJx6M-MFDT3IARxWMZgC2Rr_Q%2Fphotos%2FAU_ZVEEh0xvKl-gknNKkN_jKcqEEmc6taxBHkQhpCUNSUxKqv5qf0MYw4HE_y-b4zfxISwcI12AcdV8TWLBxvq34hv5atf0eDEY9HA8g6nH1F66LKxECMS5SGVGDibNNHvdzpxjsFYujF6DWdnh-eHBhLzuXfG4oeagZKY5dKQvROCVkOau9wRdfJow-SFHRwZFd0HuMmzNcv6JyoKxiVzxEf-sXVjLnI4ZiIyBG2kJgc03LgLvgG7oVg8xvDFkPGZPrlizBlgxtA87ePynlmguzfebKyUwds6GHer2V2UMvMRU&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="The Royal K9 Boarding, Daycare, and Training Center photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>The Royal K9 Boarding, Daycare, and Training Center</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/yorba-linda/" class="back-link">More pet boarding in Yorba Linda</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of The Royal K9 Boarding, Daycare, and Training Center?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

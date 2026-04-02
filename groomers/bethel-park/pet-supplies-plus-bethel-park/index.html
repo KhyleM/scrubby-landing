@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJOVo1R5r5NIgRmdV_5YQoonw%2Fphotos%2FAU_ZVEFpdADlWipt7GR0VSFWe2mkhbQ04JETOCN_DdAj0dw9XOtsQDwzlb0LMJTvUZwV5h_6mrW5SeGmqYc-AeGEuH7S4WJCOQtbbRejf9Ydo_Ul4S-JMaRTTFiRlGDdaKTrO1AzaemNTtzbOG_3K9IGRB8iT8dBW0ZHAl1I33N6Kpj7pTbQ8ld1-jjiavQ9fsWC-lPcGbgCAYMwmLEpeyAqYUcgklpfINR2LqxkDDC3XMarzpOZDWdYmjJ7MxwgUIvSzHjiUImz0GVoKVfe3EZJKTSqDQRDy06h4QZcp-uUDhaz8yR1OHXpVk9clJ0qLa5c-C5R9XrTskij_bpaVX0ox4sQgnTETaaD1Hm-WzEvSp6VJYcYWwk4S61sVrlv4xvJzmPP6rwosITtLLVRkYUz87HYPTwlT0dmp5Kn4MwGhC8&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Pet Supplies Plus Bethel Park photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Pet Supplies Plus Bethel Park</h1>
@@ -205,8 +204,9 @@
                     <a href="/groomers/bethel-park/" class="back-link">More pet groomers in Bethel Park</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Pet Supplies Plus Bethel Park?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -352,6 +352,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -362,10 +366,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -390,7 +390,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

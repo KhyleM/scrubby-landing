@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJdQQtItT4tokRBs41R-oF7og%2Fphotos%2FAU_ZVEHJR5vimAaP98FegDKl1J5EhXQ687C5-vekALtUXcLIuoj0LdBMMldpToce1ZiWcveA9EcuL0lwe2vugy_AIucGdHEYnh1Y3GX4Nm0lPnJbCmU6iejW0HK_E6SgolbBvS-8gq_E2LNKzv0YuzAv9RZOvXyC4YeRhYlsCtGp3SN2Bmhj038-5DbJJDj_6c81WjDpCTrRLeqXsh6_H6SVVkuP4pOrpd5fLIyE6J1b71EvhauO4oWiYzVw0ghAaurO1cCQSYqeCCb4H2rWzYGs_OTPiw5GxCQTSib2BogfJzSqDw&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Paw Keepers Dog Walking and Pet Sitting Service photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Paw Keepers Dog Walking and Pet Sitting Service</h1>
@@ -195,8 +194,9 @@
                     <a href="/sitters/woodbridge/" class="back-link">More pet sitters in Woodbridge</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Paw Keepers Dog Walking and Pet Sitting Service?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJmzookwHAQYgRq7B0TcRZ6tg%2Fphotos%2FAU_ZVEH9aNcDHeITn3kzDhiImbhlbWmk6uj0Zk2BU65-hKBwMh6qXix62ElTxXHoS47crH_wC8vb8TDE3uqEVk6d1YI2ykdmQQ1HkzaJnOzsuGTWeMu4vNZJjCNSLQRvMzztYp304JfFmSkKM5CGjg0MwPu8_WL4FcjXh_qQY_btVcTf2RCsgGaecMPLwb09DRo0Egf_oQwaSxunPxl2CLc8Ga_qmTK57GTzdMHTOZEqmHl4yTNJgII2hQECIiwUQpigFTGSb7xX9JjL25DrEulJGKmtsiq0c3L47iigZ7MhgVRqB_pHqXs5V1_KJZR0w9XXa7syMsC6WtIOII_KdS48RnsuvCprHLBPuwjzYFmkhrAuFe7UrPHzw7RJxyYzf-NKiYOlq1lDIfITPo8Ae74Ry16KIOrkh88wUR8JjSq5o40MKPRi&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Barkin Barber photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Barkin Barber</h1>
@@ -198,8 +197,9 @@
                     <a href="/groomers/walton/" class="back-link">More pet groomers in Walton</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Barkin Barber?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -345,6 +345,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -355,10 +359,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -383,7 +383,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

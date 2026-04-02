@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJWYUHDYRylVQRkatMVfztar0%2Fphotos%2FAU_ZVEGFe-3pLu1T9nXhLZDCBVkKyL-cICRMqEoYeY6M1zgyxa36LWOJSBcDQpdJ2JnCTQf84yjQGwLIGUyh3Z5MklqiNX1gHIdk5grqidi0ba8pp7_iHRNTVBcVSdoebTUCDyGZy2yQwcjw7LsF7XyPTiwJBQ8RAJ0jYIYSDoh7h8BzWBn905R30GgHnsoB6NqV6j8An0c8rOmTRHyPgcEhMThudqwnWAccyNaqiLqJCYmn5ixCnYVsoVNqR8vBtSEh0hSosae3u1FCOhTXuY0AH2S3R_p21sZhDKT1JoAGtYKBo6-zIuFzSdiGRiEeWXzTlGdvgZI4COCn3Db6cFWM4SJCQtdedW14a9iXaSBYeP_V0V3uYy3UXuu1ocwT0niq_g9_8GfuhuwfvnXb_tSZO5J9aGxz0fzf3F3UwjdGTh84ooI20yYodXGbnvpXGyPd&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Emergency Veterinary Clinic of Tualatin photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Emergency Veterinary Clinic of Tualatin</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/tualatin/" class="back-link">More veterinarians in Tualatin</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Emergency Veterinary Clinic of Tualatin?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

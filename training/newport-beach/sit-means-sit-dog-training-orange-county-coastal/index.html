@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJuSChMKXuzwsRtsJws_FMioY%2Fphotos%2FAU_ZVEGxRc4Z9POYZDCk0Im1xhwZFEMuTajGtMZkCEfs_y1-g80FO7jV7GF8N1PXXxc8N_eqUTq4njPoT-dPkCgOLIP-ZROW6j_8JJWiZGfjtzQm1OhBtcsb9-08ln5dn8eA57JyAxCqaPd9C_cREI4xNbaBM1bY8u8xo5IROmUFvktrgksSGUN3J5CkTGyhUSo_6EESv3bW76l_TE89SC6Hb8qxnhSwic5hSAIcmaS-aSnldKTBXmVuOPi1P0Ud0i7PTt07PFTmDaD3ab1MndX81JRqyryXPX9oe5WXAO4r6mM0SjU6bdZNGJf0DJjHnx54AIrOea6Ilq-QeZ87zyR6grqEu-P_RSfg5rv4HC-NMqj3k-gkDFQIW48_l0xfUGYyR8g8xGxV8oQvuyTU5le5ELqx5S5aNEaAc9bLbyCYwJjX4kEi&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Sit Means Sit Dog Training - Orange County Coastal photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Sit Means Sit Dog Training - Orange County Coastal</h1>
@@ -197,8 +196,9 @@
                     <a href="/training/newport-beach/" class="back-link">More dog trainers in Newport Beach</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Sit Means Sit Dog Training - Orange County Coastal?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

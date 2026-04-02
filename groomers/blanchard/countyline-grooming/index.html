@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJw8dpExNxsocRsC-YUcYMO1c%2Fphotos%2FAU_ZVEGOjSbPcbd4Hwf09JQz5NwK6rBhNxChIx6RnDd4HA98OWcjcFDzHBZaMTVKXW1gMeL8w0Q8UfyE2vQ3VaP_hYXi-B7Vveh82PAQeE6FfTsfb0Xu5--l60As_o6sKuKnejeCxUE-dblJ_WZnIKFdr8nVX2IAm1ITowfDVZGD_0bzHbW_ZTsMuPJK7vztxjvHWnORdLvsicmHg3QSBna0Y496_BjiN4O5xP-r8-n5Cmk5eX-KEGfbCE-WUToMqbfuTYoUA-bIjnS6jmzw8KFLnNd-U9YGBKmM9xoBSWFhiP6p3UTNrkRmqDaxVDlvXNydR6ZahzvSYPsBkD8CewEag1PmTb7MIiuzti1Mourfpa4JBBEjpDAulKvWUgB7xlsHXCFV7gwpGFujamJxqVzgPu4N59ueBHJcfk7oLSKcTX1I1u0CUKW-oIHFVVoy-g&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Countyline Grooming photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Countyline Grooming</h1>
@@ -182,8 +181,9 @@
                     <a href="/groomers/blanchard/" class="back-link">More pet groomers in Blanchard</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Countyline Grooming?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -329,6 +329,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -339,10 +343,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -367,7 +367,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

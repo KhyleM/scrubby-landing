@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJay4_f3r3t4kRQYxX6wrdcw8%2Fphotos%2FAU_ZVEF3irRTr1taex6IbhcSByYxJxZIOtrfmjuBPNb_SphHJxrfNTsh1Q_fzPpPSoYmIjkjZ6oJQivT8IL9EBfB4kTyBXjaeVzWoTRRcjP0Yg1uRDIRQ4XwU6SxwmFzNwIpPmDvrPmRiQYJDzjdajuL-hgSFOAQS7Owvl67QQR--pqogZUb56xnIrpfUT7W9amenQMyi3CplxiNwP_fH1Dwx2q198qleV3hvx5NQnU8LjQwqkgKz36QlXpjtg14WSyf6BXVpEHATAMahLLvrmwK-hVmxBJP02U9auKJAWko_AAdZEr02x_pBK1J8ux5Asc1BnLTeVXbWQa3oMXoxb2oSOpg90UegqnlQpzF9m36QczuOOKKZi427xKtmixYIk4SBJV5RL-hOu-sYo62TpjSf4Y4T1SZJgrDjawEC6q4CN1dzFwM4-_iOR_5RLd6aQXk&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="BNB DOG photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>BNB DOG</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/annapolis/" class="back-link">More pet groomers in Annapolis</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of BNB DOG?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

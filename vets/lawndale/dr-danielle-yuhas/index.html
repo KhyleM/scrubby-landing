@@ -77,7 +77,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJfz51ilG0woARVzxk1G_F5uk%2Fphotos%2FAU_ZVEE6fJ-d03spQI-Td-pi4RLo6sR7I7edZ-nCLFvR4p9ic8VV5RsCh1oxHx--XTqFZNKfnAO0SgnxxpXb3ejkT1ls2faX-7XSBxIu_6CBod6-S1F4Y4Z-8_VgJlKQvD3EPaRj84XQDg6O7K81WtFiTj6yt-Bd_5LVT1o7fTOwaPlWDokCu18X4dxVyQOKnKq_8ASMTj21Hv4C6C44V9YsugiB5_2PmEfVsYNrqOJVXPY_I0mKFe8mif5Bw64wdN3lEJngN9V06h8hvsVWagLBmF9UYUFNJJs97zd_uQWR7EkoKHM-o4YdQPqVCQ-m-VyWzBAX4QBFNjcm7oCHUQp50ZrtIOtOVauwd_CukVMxH43reFcaRPPP1Onqfm1ATTcLfnYjtDMMLrmDXxnh_UE3-q2YR1l4X8inUDKe3tmxFDcXp-Y&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Dr. Danielle Yuhas" loading="eager" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Dr. Danielle Yuhas</h1>
@@ -193,8 +192,9 @@
                     <a href="/vets/lawndale/" class="back-link">More veterinarians in Lawndale</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Dr. Danielle Yuhas?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -340,6 +340,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -350,10 +354,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -378,7 +378,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJR8FLGFR_P4YRFZAKBCK4SBI%2Fphotos%2FAU_ZVEEXZxye7z8wlsfD1NdUkJ9xLPSziAurgp8flfajVeJE8bOEfCpMMCGp2hZsejT8bJBazgc_NBiREGuWSb57Qnk3YxqblLQyPDBOgCnw5rlEg1zXyw97S8TmfASI35Sjuc18-2XlPfJAE6CkMR4scKF_nhujbfqsvrfAFjA2G-bMfNf0zJtMEUNmwufqIiZ6DT6bJvUlXuqz3A39cG8zKGaoHT5_lSFaWsj56PdvG0Wg4nZw5xDPOcPsAz11xXNSbb5ISieA_Zqk6ZSjtPtGAuo0Lyj_sJJ6AwEzQBA7KoyH_STf3Naaq9b3BQsUup5eYNhotOtGGg3eX-GUQDDn6X8IdF5PBfwFErlf0fwgC_bF9idnsW1KsYBOHlovqSgsHdb1Wv5ge3LJZiuK_xOyjh31AH6Ulg469D5f6V-mra8af7hO6Hwt9wuUB0zAu6n_&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="SiD&#39;s Grooming and More photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>SiD&#39;s Grooming and More</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/santa-fe/" class="back-link">More pet groomers in Santa Fe</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of SiD&#39;s Grooming and More?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

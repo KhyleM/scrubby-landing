@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJf75Vntrjw4kR4urdO28cIHY%2Fphotos%2FAU_ZVEE0kdTtEKLtGFMX6Mtc1vfkXi70cOJyncCZMZxSaboM39wXkoMBZ8eq2X0ECdt4sHJkJLFVAOs_aLDSHo6Yrc0Eoy-xSzYkY8Bay7cW7BRUtwvzC8jj5Fp1ft1I_HYb_VFM4ez4MKIwYcMo3ShCeqITQpOD-ueIfkc42Kk0XSi61Bo6HqxYDy70-f3EEX6MdSt4YcDDaqyZdtU-anAfe4LYRGlHWVh7vbZL5TtiP9NJhvNhP9xnq50qcB-Ud0jW0v8GjdBgTtUvnhbEZYvj-7BXtk4Umt24aSGS_VDAyOJEFwBHrYSfzcuT5psim7qhu8mO6smyLt0Wl97kxEdAQtckBFJwZXqcPf2H_QC8ccs_uYf6-jLo3QanCkzpHXX2HygP71sWrfU9MpB1BBsuNlErCxdjESkyJLDfAUHza2sdFQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Lawrence Animal Hospital photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Lawrence Animal Hospital</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/princeton/" class="back-link">More veterinarians in Princeton</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Lawrence Animal Hospital?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

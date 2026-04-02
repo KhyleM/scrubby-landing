@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJobFGEeXXQIYRCw3oGLZhhQU%2Fphotos%2FAU_ZVEFlRfkplwa5pjz-Tae5X1oZs5RjjGqpb1YsWEfVPP-ZnAk0viT6C1tJ78sEoiooAk_fuggt12wSrso-1Yj9azTf_7ZnqEupbt9iteJYoUDg5j4Uzg7nfdgoW697qyTRj2aVJKpE-9EKZmgGRUah8UFlDcHMmQICWYNzumKnF2jS5w--3K0qPQdBQlXN30ZCBuIPwTuPjjUiv3w8n4f9nbc1t_T1bC8XIE2J90-4MHMeqEg3ikRBOf2Wb-oeBbP6_QPAuyieaf0z9HgE5WgM3N9l3stAK58jBuhYRxwFb4m76aQOrLN4rx4oj9Jl5O_7LoyRpMAfzbJ33xMT97-Ee9bcmTtp2aoWubnamw_oLvoq5BjAaiAidR6Exkj20bxdg3PJu3IsGOO6_dWYudnGAjldnhvzmIhaUdG9ybFXSXA&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Affordable Pet Clinic Katy photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Affordable Pet Clinic Katy</h1>
@@ -201,8 +200,9 @@
                     <a href="/vets/katy/" class="back-link">More veterinarians in Katy</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Affordable Pet Clinic Katy?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

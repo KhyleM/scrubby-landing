@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJhRKreuhulVQR4eELuk_Rzoo%2Fphotos%2FAU_ZVEFtFpdi7H9OEXt_GPzYW4E9eF12czzvrEj664DiemJ5rff8V7vT-Xd37Tw_cmzldvBv7wqrvMWcvdAZV4NGH7css2RK4H0i8fkLfsAEybvyHMLUR1YHOUFtj1vLf8w3rfNnWySw_SCOW9n3BZE6ASMBoEj-E_QvRK_-0kpEJDgXPB_tCC2IOtCtN6kDshiOzoWx0nZhQQCADTu9nvg-bE2xOTOF_Kw-uEzZhx6zvW5S0QwL__Ta4-HcPLFl1_Lnz1QsRJ3QQLr51Nxm3qkJjFbN4I8v8qY7L3_3CDSY4vkFjIUeuqhiAynTq7LtG7vKUeFkWw9AETIGU3b06tNCrnhmEgRdqc68qzREOwAiuD8-IumZZlyDrGX-9Uyex1HoHBMLRLCl4P1zpdl0oBKf4C-RI38yB0hJdNP0HnEPdGxEwec&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Eva&#39;s Doggery photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Eva&#39;s Doggery</h1>
@@ -198,8 +197,9 @@
                     <a href="/groomers/wilsonville/" class="back-link">More pet groomers in Wilsonville</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Eva&#39;s Doggery?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -345,6 +345,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -355,10 +359,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -383,7 +383,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

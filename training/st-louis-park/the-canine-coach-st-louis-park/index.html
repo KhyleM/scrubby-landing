@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJr05Fq0sn9ocRsq4L4pm8Tws%2Fphotos%2FAU_ZVEGaeAAT300wGl1Mzgn-531TIrJuBMchQs6IJDE-v86lEio65-XteXvsX6Kwrp7r2L_4NzAfiALXJv841fP7Io3PecsVp0HFF3I3Qdaodpy12_c15AZS0dVZ2qygH-IHDScTI1ZKYhQOhknxMZulRaldTD_edAqv63mNUGXAlh7xBcTMgkHu_I4Zs4FOkCEhv1AuHa9vz8LyQZIGTTHziFCniWV4CV-pDsMp6ZjCYrlhcAUVIhjPacIgZ5UYaY6yb8cnMNZeWuzadPuCNScWmhfw_Vo0my4AugyJuD3rRnCHMDzVmee4hcJLo4iqJdPbtEfKqK2qOV3VTFEvQk8MX5Yol322IftL65OvQBdlBwUqwKUpSeGznTuQTcfsProhELjBK33nNe_dUA73PTYxqbpMwRHVmQqDiNLLpKWUjb21bA&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="The Canine Coach - St Louis Park photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>The Canine Coach - St Louis Park</h1>
@@ -197,8 +196,9 @@
                     <a href="/training/st-louis-park/" class="back-link">More dog trainers in St Louis Park</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of The Canine Coach - St Louis Park?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

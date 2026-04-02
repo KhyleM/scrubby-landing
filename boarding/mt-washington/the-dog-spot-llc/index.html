@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJO0j9Ut-naYgR3q0b5ZcvoHs%2Fphotos%2FAU_ZVEGmHzmGybfiHM3c7OI4C0-4JYZEUaGwCXtRizA3RyUGxv20JDBak3JKxT0ZPNMKKHhP8njhuB9ENhzTtrAC_IIZx27OsZgpWwgmSJ7tTDbdj3m9VySoiuLhJ-O0E-kfXbFkZe-Uw0SmX9wCBSEe5jg1f6PanYBXES4I197l_tclJlDAMmIEBCaGVSFNdqnJ5OxjssBpDZLY9sZpyt_98iG4ICaZJaMPC7Ais4cGHi8U5ksnjy7zHF50v6Bi9Y0XXCc5qtca1OWZgUU-yHHHszAoKXdHIfC9GoPCwkAonQPy1CFr5O0xO3bL8TBuLOPV2xJw1Ypug_nM7hMYTaHC35l9Yf-ACLmzTdQVdr7p_sKYQZylXpab3QyPu4vn6kGZVfLXTrXOScAz43hNn3xZQbfZGvYtBctiUsY_FNZrwvlUoii9ZhdG7ie1d_SWdkRn&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="The Dog Spot LLC photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>The Dog Spot LLC</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/mt-washington/" class="back-link">More pet boarding in Mt Washington</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of The Dog Spot LLC?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

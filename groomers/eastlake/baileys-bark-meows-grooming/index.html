@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJr4l1796uMYgRMPybPI9v660%2Fphotos%2FAU_ZVEFFu38BRgK24X4kR19PHKvlE_o4PjX-PRO7dY4qFTWGY1SC1leIgYkV8Ot6cUYViSL_K239CSstFjMzIZiti4quKZ9cVrCmclfMXI4xYUupcmzJZz_X5CAz_5Mm_AqHn0W79Qv7tTfKgzCOWMU3PSgEcwnCx-PcteVRzMgvuArKhz_9L7apBM3IC6GxbLvo7XyZRhzjIyPGO-4ARM46I0frJhwSH5Oh5r9QkkfjqkKHCi-kwkkdqZl7HbT1fTNMif44hG3W3nLvP0H3v3GwTukMLAf45LSadSLK6i9YRqZUjocoTJ06vwKbAjMIJau4O-Lk7HyeklHd68s2IQAv09pn2exUfccu3xVAw05yWTlOR9RDgHpNJNF4F1aAfDCadml4e2MtIGHYFHTkBDmfri0Whn02_olEHd7laseWDg2uJA0VD1zZ2iqRcRBpDA&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Bailey&#39;s Bark &amp; Meows grooming photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Bailey&#39;s Bark &amp; Meows grooming</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/eastlake/" class="back-link">More pet groomers in Eastlake</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Bailey&#39;s Bark &amp; Meows grooming?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

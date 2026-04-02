@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJAQB0RMx2XIYRIYAPPOm55dE%2Fphotos%2FAU_ZVEGTQ8DAgsmIskvVb_W8M5tfr3A-fM9alxnxwbc6hFSWn7IbjiuNvG-5EeVd0H-HVi5LVgQ-SMfgaMO-CSY05Rcc22l6E3_s0d_NxxCH0qixY5vz_gj3jZnaOHJKaYJZJvBGC2tJXcgg8YbCVddqpU7bBHnCq2GB2YuGVaXrfRGsduvIWVVFbIh_sDkspUJUYlM9cvrOtjuBTZS9AMhUbkN0JqZVo5a_S0YbPCgP1BSowqfnTOF5at5pgxqBe47jNhmegv3uIiapLfs0MBM2LEipg9x-5S1_sERcteFtarSSfOt34J2TKqfNom2hruhdUlbC9D6X3IjXxuEYj5wRq9g3kRowpAuUDZNn5lxg7rPGYHA9eR82kn3nm1gJyCCfBqSMi3XFyqKqaw6yJcZ54dk8y2Hevq4VgpyEILrCUxHU2b6GOOuBy-iu8MstLw&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Double D Dog Training photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Double D Dog Training</h1>
@@ -197,8 +196,9 @@
                     <a href="/training/boerne/" class="back-link">More dog trainers in Boerne</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Double D Dog Training?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

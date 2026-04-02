@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ9dC1x9spx4kRELqVy7pzULs%2Fphotos%2FAU_ZVEEVxdCGKjATtkx8Hc4tAR5XO9K-CRJsohlvsoHUCd5N-L0KzyvrVSQh_Q4JnslEstiP_onkuvSG2bntgwb6DY-MD4nlq0PU_PgXf3ezjVNdfzbOBronSumQOHui2HqscuYGiSQT_hOdpkhBNwZB_v5-KP_lS2xnKm_3KqcHr8NRyquzOn0XS335GzhVST4ZnZofA69nSXPmsJzLcW-oRiBdMwhGtafg7K7a6n_hEOe97AkggIB3wmvNlzSS1kxYSBuZ86Uqnxg7D-h4CFT-xktx7YuaSqWE_KHEFUPFQCLVq34Mo1N6O-D6vujq_OXNz4Vd30gnwiA9CUimZxDqD2qYCLuk5RyhHZab4rFHHqevJHO5Va01ODcwauMTCtGo70eXqNqBkgypDftoAhPEi0ZeQBXozFvwcCyqqtspCPGETaPq&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Kris&#39; Kennel Kuts &amp; More photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Kris&#39; Kennel Kuts &amp; More</h1>
@@ -199,8 +198,9 @@
                     <a href="/boarding/clayton/" class="back-link">More pet boarding in Clayton</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Kris&#39; Kennel Kuts &amp; More?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -346,6 +346,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -356,10 +360,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -384,7 +384,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

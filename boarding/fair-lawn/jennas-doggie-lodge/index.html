@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJaXKvz4b7wokRYQ1f4MDhuzw%2Fphotos%2FAU_ZVEEV3OAaJ2LXbCTwAq2NYr87MuCxPw59vrSb6y-J7Br9NKpW8hRGSuiFvk7McAxLLrcB_Gf3luQTazSeC_l2Snvah2GkIZnmBcrNIlP2lolOcFMKfKYb_7aE9vSXl2MnzVtcO1fQRFQB4X1wNC0oZVRNFSwe74e13OpT60mdsKmo9N5kNknlLWcJs4c6-UgL6aus_BdKlh6TT91M0Sk4VW4ov5T7SxllY1umKYnrftF45bb37xUaLo-ZeloBdBk6TeovoKGN6wSJR49Izs-aq0jJ6e0SGznj7Sl1z4T41X8jLQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Jenna&#39;s Doggie Lodge photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Jenna&#39;s Doggie Lodge</h1>
@@ -192,8 +191,9 @@
                     <a href="/boarding/fair-lawn/" class="back-link">More pet boarding in Fair Lawn</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Jenna&#39;s Doggie Lodge?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -339,6 +339,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -349,10 +353,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -377,7 +377,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJjy6a7gkLiYgRxHnlfJU6CiE%2Fphotos%2FAU_ZVEGf7_CUmTwKIhqFhJi36x1ess7yG1VI4p-fOcgXhnQgWy5mjSuhjoJihHBUJOU-9me0Q4XULq1z7qnGCyxi1H1ezvXC70Fm3-yJcl8YrbFHx-3_PkwP452o0pImea5ffTwjYIWvHt13LqFktk0ssyyi4ob03GUrlNslbLIrJYVB6FuGLSUfAPnOOclVl1-VzDGx8iTiczPA7EKuqKRqckgk9BKc50KqgXkmcK1yVqa2jD08Bi2oT0OFl_m7S4xHLhGjmN16SSYFxmGui7WUWO1zAVszBJTbA_GD1V3sKBoTQpLb_7IegVW8Yvd-VR2MG3yQdWc9Ti5d4eftVeOlAcPZ60wEtZSwcHnzSjh8vBLNjpDenkTIrjky12bd_kZtfX2ycdjW1xLlT_EcyVj3dObFgkF5AmiFTq6EcBfBjvuAxg&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Clay-Chalkville Animal Clinic photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Clay-Chalkville Animal Clinic</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/pinson/" class="back-link">More veterinarians in Pinson</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Clay-Chalkville Animal Clinic?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

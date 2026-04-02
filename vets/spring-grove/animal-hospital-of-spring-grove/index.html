@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ_9AMrmd5D4gR7IIKIsxs0hQ%2Fphotos%2FAU_ZVEHTJQ7qGka9LeGvjf3zcedspXRY7qkvUc37NEv4DY8y0cmOxsdQb_SMgytGYzA6EfAWqwl6Cw5xQqofeGMaNPcWza0qfJ_sKtN6RXxvH3A1M8Hl4vU3_PBrKGwYW9-gTGgVj4FmqvOm96-mFl8LREvTv0ihFV0-Nzrv0WQeIIaX5GLLCVDs4JAqqQPs0W8lh2CWVll0iiiG_3t6XnCVjClcBxGx_5VgVBW3wP3SjCa1W8vRd6QXtMyldRy3e5gR3mzkVDV6nmZ9DeYW1bnE7wXJlfDYl5KhgzfXoDpBp12BCaoBRmaPqD5DbEdB50CoA-VZwWnH_98YkwJz-fMontVe-sVTrPIVBDYEhLIop6D9uQgSEnHZRhkht73b431KgtPjzWF4q5e2wDywxuo2asEhGuXEa73KK5vHKiEWLs52xg&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Animal Hospital of Spring Grove photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Animal Hospital of Spring Grove</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/spring-grove/" class="back-link">More veterinarians in Spring Grove</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Animal Hospital of Spring Grove?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

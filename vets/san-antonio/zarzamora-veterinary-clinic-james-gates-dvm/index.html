@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJu2xXh9FZXIYRHndMgLfw6Q8%2Fphotos%2FAU_ZVEEgb_W5AjwuJTNOOZaDbA6ym8WjEYaRzbVrawnc_7D6mwXm6y67dDnHL-QC7_8S48McjDWZuAlUoNF0nXNTKAl8RtbO7twbXq2P7cA0N2apwxE5zHIV0WJcnSNwUeDiKsAnEuWuvCw28j-B8WrVdGgfrXG-J4UferXx-2E5p_XAuN6HsrE6CqDdjRfbf65tTg3FkMLJQ-DLPWnQpfIsWZnEyhzdKihC-UfcgiBnzsV8HSdNuc1Cwg-WE6Z83pWc-5NUHBXMsDhj_Aoyhyy-LACHevetxHzdKfGxkCBRoRQ9HAZi8TA-mZddTL8VnVwY7RpkncQKXXJkCfuVeyRgiaal_hFlRKsiHl6fd5Um5ro3FW2GaHc37Zwa5AE80reLwVhLldPO3wjM2zb-OFVWQHxVpy6nGFGG-XnPw9S2ATJ2bNo&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Zarzamora Veterinary Clinic - James Gates DVM photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Zarzamora Veterinary Clinic - James Gates DVM</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/san-antonio/" class="back-link">More veterinarians in San Antonio</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Zarzamora Veterinary Clinic - James Gates DVM?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

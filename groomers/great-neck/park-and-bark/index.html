@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJNdIEwxqJwokRT25TWzYzaUw%2Fphotos%2FAU_ZVEFHpbWkHgKM7kXOHLQ8zdBQupaHQPfl9T6EUrGIqVED725Tn9EvO565G_2s9ey4FdkRFjL4ZH98GmXd49i4Yag80lB3Lxh5unZjoF1Rwsvz5Ar2uyuzaOU5BNOhDQzqtXMQdCGkojJBCMN39o-Z7OLKfMMbNzhziYa0LiONCPG2oCzebsoPFpJwd6aTKR4FQb89h97dwyFH5dy-zTwTy1klUxWCyCJ0d6eV8haWSvkugMVxnfFbk9VehaeoYDm4ImWTA9y1i5gtC0t4tgBC4J2iZdLbnKZm7W13aQQO25Q530xUajuBJdB_dlohY7PJw1D48G8wVgGWLhWdnjEna2TfH8lemD-FB4yNPiuXZbLjTEySRCJyESzXUEGpFboYkEgMZ5ryaOePm-k_VpcgiqnowRPZOFlH5y4DYww6fhMD5uq5fD1Eu7pKI29pwIB8&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Park and Bark photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Park and Bark</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/great-neck/" class="back-link">More pet groomers in Great Neck</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Park and Bark?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

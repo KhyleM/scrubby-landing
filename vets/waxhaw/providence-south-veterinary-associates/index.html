@@ -79,7 +79,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJvbTPWdcrVIgRWcOhlRPGWYY%2Fphotos%2FAU_ZVEHhWcYEJTC-pQkCQVYMD7AZ_xuRtb1Mh-2u2b18Wz7gm-62wxKCqwhNRrXczOEK7ljtw7oErrVywVs-_FvmZC3K7KQVDMTwA6iK87VqyQPLXPHUSIWEq11Tj8JQNVGOw9aFLTDcaatN5Kr33ocJok3f6q7H9QgLHzLmJRUnHsg7I6kr1UA2rs9BNv7eX735qqN2lwRsOjbUxCvIbsHjN3BFkNA26J2WVQwCyDTIeLjAb4pcfSNbGupQvRTEAnrLCdEoTxL7ruEsRMmdqsZdwH7CT0F1DI3ND11rgazuMR_30zo2d6rsH2xRVe8a4e3KFaP069tYj1aPyqJiXPvjYE1XAOXcRz1AwMaqPV3QTRO9EaeLGHUe80X8BEb271NaCeFe6ff-FDlBuq2LzB053vGlj1gnxBkVH6xV4wOHi-yHstCl&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Providence South Veterinary Associates photo 3" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Providence South Veterinary Associates</h1>
@@ -195,8 +194,9 @@
                     <a href="/vets/waxhaw/" class="back-link">More veterinarians in Waxhaw</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Providence South Veterinary Associates?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

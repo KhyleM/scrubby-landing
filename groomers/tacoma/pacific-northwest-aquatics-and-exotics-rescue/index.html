@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ5d_RJiD_kFQRTd5ygM_j83U%2Fphotos%2FAU_ZVEFqWbWfx22lTt8_thUusIM-zdQOHQdQvHayV8TvdftpNVEW_VmZoh1-t-D6BEWZMMdTm8DVnfFSr3i5RGkI9-091Eiyp9WgSZW-kgoogwfR3HmfLaAUf1OJH5N0hS3RsZPixmFhfKwUnqmk2WckRSbdYosMzfqYikZ9l55RKHk7n6oZ-r6SwoNdtFY8hQ-aR-sM2hK136AAUw8Ox8Rks_xqg2flY7oHZjGyAsRxiDS7bQae6i1Hd3ZJTEz-phlopgMBe3ngNiT5Lo7OB6iabqyF_NYtg3OgJM8DKoD1kqKC91xVJRXRyzk4Tli1Gc0RfiG1WxUnZG78SomwBU4N45qoednnwrX4USYdUO3EzXJAfBv6A6f559zOodvzbX0ER62dYS3RZcCNwSwcBrLvKKO-ZNCB6sHBBuO65DwXrNk&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Pacific Northwest Aquatics and Exotics Rescue photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Pacific Northwest Aquatics and Exotics Rescue</h1>
@@ -197,8 +196,9 @@
                     <a href="/groomers/tacoma/" class="back-link">More pet groomers in Tacoma</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Pacific Northwest Aquatics and Exotics Rescue?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

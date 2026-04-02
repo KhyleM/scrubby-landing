@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJb4gbE9Ldx4kRHYqmUTIYoCc%2Fphotos%2FAU_ZVEFWHpuc5MSDk_BemmDHej_Twd2UPTi9FVaH22Adz2ViSD6kbZmke3ch47kowvFht3kxM3otHpTJA1y27AizTczdgpNnCmJPeVXqkpSlDe2p0Yq6I6oilTHTO25BsFeOSAsDozuQ_TU8YRRxT1u2QeaQzCKEEHm4FC1M7zxzfhMMwuW_0yhkfk8lREI6a_V19jMwqbgrY0kipWngljPK8EmcFpTncijB4HlYQQXA_RujFL27SUwEJAZxek9iDUXN6SjswAgeDSsWBqGlyPHbh7nD0RVFhkJJpsd3XxEQ-zJjMre4FpwYPoH1u0DBa5Bzmiyj0mw0l-I25QoAKU0Ut6onNZZ1956helOdmM4e-mtRRCWp6_4T0FUXiY0fd4bS6blTkMONlv9fIRqT3oVx47kI9s3cDbPTaU_LClYX6lfi3sfq&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Animal Medical Center of Bel Air photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Animal Medical Center of Bel Air</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/bel-air/" class="back-link">More veterinarians in Bel Air</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Animal Medical Center of Bel Air?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJX43bzXyr54kRoWF44o8inLo%2Fphotos%2FAU_ZVEFstYmydJ1HMSScxm0EeMi9daj7gDl51I8tA45rBBLlqGYS2mRbw-TJDjIAubVBs_wBMWqcXn2Cf1nZDwwsfEHmZ88XJwinzv9j0lOAfY1cmnZDvkLd9kHvOeWc0GG18VN-K3zh54LMACQ9qjbGe41ZV0GHPW68Z9bJ2KX2lvw4IjPv6LHGyWu9mXjqM__1QGcxcu_9QuvjRUm_ONWOjnTM4BioSzDR_Jua77ZBa3HOjLgfDd1RDglL0DmhS6h5aqD1GOQiowDYP9G5vLebb62aCZdp45eLzB1arz_-4LlS7tlwl7Ed5JAoxQMpxQLEbFiXHFrmLOq3Hr74_GsIoOqPusxz0sdmcXZFXzwxDZKH5R1dtSFkvUB4b7S2WSEAQ3Tp7sCP7A9VbMDY5jmOG2e-a43ep8zx3Cr3da_2820&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Pet Supplies Plus West Hartford photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Pet Supplies Plus West Hartford</h1>
@@ -205,8 +204,9 @@
                     <a href="/groomers/west-hartford/" class="back-link">More pet groomers in West Hartford</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Pet Supplies Plus West Hartford?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -352,6 +352,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -362,10 +366,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -390,7 +390,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

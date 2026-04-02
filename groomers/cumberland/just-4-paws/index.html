@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJn49Xfi9Ia4gRIF1aT4SqHUw%2Fphotos%2FAU_ZVEFv1pdWNbSGmBFujdGRMArOTDYgpEgKKpOeEwmtHHKbgcWcdD27dmJALKPFqsfHzgzp85xhpTjzsEvYcdZ0B6uB5KyGJfpuvEVz-gaMvb3gAvsvzTvHzEBF1doyvDGRGBCineVZmzDmHYS00HoM7tSIW92JK0FjXLckIkI-ciysRth0JAfkQP05RvShEppuhDRmS2K-we41Q6G-9NTKjiFrXpIFIMRa8DFWcG5YGbLJPF6RMo4rH5EFEnPBqxcI5tp6eVRXitNsBhlj7g1uIKHlbQWDTziU62sqgC6CJPgUxAiTW1EIBepq7b55zsxFAU7EPwo_Na_BSXFrg35bSlNtW8E6lg94Wde-ZRUCj741gVGk7LkI9xcti44ES0aDQiMxdHCvMWB4M96mvj3OP1QE4VzIUpcRuKnRKiYmoZZeaQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Just 4 Paws photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Just 4 Paws</h1>
@@ -189,8 +188,9 @@
                     <a href="/groomers/cumberland/" class="back-link">More pet groomers in Cumberland</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Just 4 Paws?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -336,6 +336,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -346,10 +350,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -374,7 +374,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

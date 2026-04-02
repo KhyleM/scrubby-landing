@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ_xmRu4aPt4kRSdmOQkGGmsU%2Fphotos%2FAU_ZVEEcpLUb3Y-bq3we4Hnu2s4Gb4m7txq5zvAp5-6zks1d73_mpcOjZzjbiDUsbhKYQYmjZC7BcKY--Y-JHuclOGlT2LIW4wX9BJmjCqCsebv2JGawgwEy2lrQ4fm94Yn3rYKtq1IGZYvHcw8p69o0871wLIyvOkZ-tYz_zMg0qreC7-hHde90XTsyLhQsIBJn_z-HI8uEWBXwt455xwV9_WmDm-CBJ81pTG2QZJIFBFqMI1Z_YgY_Oaqjx05RxpvDOygU0l1jFHR5FsSnmVFD4pTqGOZ5rKpmf9IEIe4iRB6utwYKPIZ9UP-_yjr4RH1qHnZodlrT8WQ_O9vQn-g4ArWQ7AH0ejhoOY8ywefSf3ANEMMHahw0-V7LqDLl5B2oynfQeGHFV6BVi9Dm6jtYREEvg9iuhjhF2jnB4QFVaRNTPg&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Chesapeake Animal Clinic photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Chesapeake Animal Clinic</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/owings/" class="back-link">More veterinarians in Owings</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Chesapeake Animal Clinic?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

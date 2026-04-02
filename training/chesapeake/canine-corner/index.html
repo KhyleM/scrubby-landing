@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJMR3nS-e8uokRTmDmFVum0Rg%2Fphotos%2FAU_ZVEFlUp_zMtsJNvv9NOkmfljLisW7gKi5k3sV4_nimK655KLZJ99RLMk42fNibUGyV2s_RZ5NwGwn_Fsn-faZd2-E-zIi0TdS3i_sXO_vOgs8unw7CPk_RnnrWrDOQMHUDoC9Fo1AGxc151RBAB__kIsvJjzMPHseqAHW-H4j0QXEh2F4VOyVdCrAxnuU1eJNbKj46yGQxeMdZyF3mOpw5aROcDAW4jvNxV5bVcYRB_sl57EONXkHoaDUGA9dPmE28P2--Csly0Nv9lLrvnzLRS6gSho2X1_W5Hh2MRrELvdr9ilxjWeO7otUoZxMaUxJRTqsgfPAjs1dxgf7j-HMY1_tB_LmJV7MSD7rE0nG3xF9ELEAj6UVVDxRPmmIfe0DwZIkvFHhGDfITZ6IrUivzbNYpuiNh2CCgz9gY-QHidFhww&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Canine Corner photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Canine Corner</h1>
@@ -201,8 +200,9 @@
                     <a href="/training/chesapeake/" class="back-link">More dog trainers in Chesapeake</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Canine Corner?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

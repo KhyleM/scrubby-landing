@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJxSJPjpYXiYgR3dxxpbUicRo%2Fphotos%2FAU_ZVEE8FH6UThZH_BhpkJUKWZn5GpNFgcLKWMps-s9EadPOIC0U_jimEk30iVO2iepY88OV8jubLowqPk5a2ufmtp5agB6MtPjw4SOswaGHANomTfQn0e0NVJCTAOTT40VMX7Vla45cMXkl1iuKXhqGbXzwFQPV5ScilV9rrALhjUCY4Bl33Q1F9HlZoJ51ngMDcKZZeKuway7HbDh17u_k1f6tkzBhc_NtFZh8FLy3SV2R0gqqxNpuRaNhjITby4UsDf_f6BRY6eqa-z8mOvg69uPWCaoFoqUfPsd2W4axFTHLk-BQ3neV2IYnUU3qOfs-jUj7oY6soEQvaR2h5Rmm9QmQx1G8JHouYWE6aV9apZ90fcux9CZsPu3h4E0s3C5LgBfG_KcFfST0rKPEfiTHEFX3Qayfy3yMZlH3VSgcWIGeVf-Xq-Ug4hNb51L2tJuK&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Dog U Day Spa photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Dog U Day Spa</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/birmingham/" class="back-link">More pet groomers in Birmingham</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Dog U Day Spa?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

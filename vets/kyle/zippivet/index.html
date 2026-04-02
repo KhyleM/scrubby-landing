@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJoVkpSwlUW4YRihjl-6TICYQ%2Fphotos%2FAU_ZVEEDvLN0hCrSxw3kegtXxzN38k8Bz8gc-3c-RZ29K2QjM-IsMDavzKjVNOL6Eyypz93UfU-eDtG2MaR12d-w0sdRF1CLok5jcyzDNQXjNL6bm5g82Av_FsqJdBvaYn8q25EJeIU1nhjUjWHP47vLr7rYcYEn7sz2nQf0GujJ42VynMVtpYRhtQy2kvZkL_FrxGCDm8YOSAodEUFaWYA8PX80GyPOUSK83Ez78D-cG1xlyKh4yGnc-MVnmKrnwZfAdHstwxTNPU34uN5UpjukbRYiUmAeE-1CseSZ57Wu8LZN9WCP_QFN9mWdDP5b2O1BGb86BGlhPdo0z4kplXTzjBOjGzbE0_w4jr5s3bEZTdnnijTUQF0P3E9puEYv_tjBMh-DB2URb8eRGupBVAz-L5kDu0309ul4mahsAOENu6c&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="ZippiVet photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>ZippiVet</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/kyle/" class="back-link">More veterinarians in Kyle</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of ZippiVet?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

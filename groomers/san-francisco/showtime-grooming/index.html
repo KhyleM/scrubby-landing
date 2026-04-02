@@ -77,7 +77,6 @@
                     <img src="https://places.googleapis.com/v1/places/ChIJB9v3II2BhYARHWj7G0wQ7qA/photos/ATCDNfUTGMmsv3xXbVhDEwnwrmAcz0pR3dIKvI9Vv_qNhNak3-x9FGmrBJA5_xv8PWVzNEWmhW22Omk5GcoX4ya8ooD8sq4fRXQm-ZW1QXhoveKJ5cojrOgYE8_d-1Ltv7O8jEQxFBBlq2I8hPY4WwowG1hhZqeaR6wUyOjnwKu6FLrNrebIY2zJc4BAx37fC6c-Jw44JGeYHoWspCMtD8CX_v7XXdGxe_yxmd9tFC462bgTNa2TRe8FQGs9BglAwslqz9KNE0d0H5s3PSH-tw69rlC5MZNGpTfr_vEPGaAF6Xt0IzXX0f-Gc5ATJxvmc3JzIfMFpiG9WkNHXzw2tj5XLySFVvLaCbX-VJNCid20EW1eSnZmZf7f_0zcMkeA-Ykf30-5Va6eSJTE3q5M_ubyQGtqQDBwCnZuN6iLcivnZF3SyBWn/media?maxHeightPx=400&maxWidthPx=400&key=AIzaSyCpmbfD6svBtJL5OpHfeph6xPVzLlf7F-g" alt="Showtime Grooming" loading="eager" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Showtime Grooming</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/san-francisco/" class="back-link">More pet groomers in San Francisco</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Showtime Grooming?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

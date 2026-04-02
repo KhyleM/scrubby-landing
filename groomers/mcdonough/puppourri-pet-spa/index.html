@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJTY_a8DVZ9IgRIuukiciHVjg%2Fphotos%2FAU_ZVEEMG1kV3H-gwvIgPNLujUzMnCXieDVuLDXkSYZV8c4Wr9LQAyLjb2SxTCMlY0O7GcmYKYrt_F5nIAHqgFTJf6z8qPRTY0TnbdBEK_--vjYVXWpZcvpz6pdeWBqnNj23Jyi3D85lsu5ZTHrfg9hVwfE3iNJ9u6PDRWc8susWe2x3XuSnPFa0q7EhsraJhBy9oCuSVRti0gWGmLbWOycClHjC_uTYtIiVfieDvRASzWerLZLTXX4lVMGBrvjNllhU9GyVX2JB-Da4cm5o668ZSL4S6OBrzkfidmVl3OXy05Bdr90gS73axX92kFoaNzfhNn9hjJgk5O8Qi3IX5trMPTyO0MvEmTlQVKWNoj1Qt1uw0lJmZj4utEF4c_mfCrlfL_mA-lYuEdX6mazbByi916zFsqMPbwRZvK6e0xbyJL-U5NLxGSoxzHvHh6k60YTX&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Puppourri Pet Spa photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Puppourri Pet Spa</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/mcdonough/" class="back-link">More pet groomers in McDonough</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Puppourri Pet Spa?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

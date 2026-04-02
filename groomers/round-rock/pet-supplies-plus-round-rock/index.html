@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ5eJnfBfTRIYR5Iipr5Vd5cQ%2Fphotos%2FAU_ZVEFpFNrPztP1ZF3evyLrpd_bIZ0QLCJHQs5gv_RUM56fKCZ9kHAAOLzWX1pnFSZHCYq2oA_Ch3VknpNZw2r38XECjJ8B57dLOxJNQKuMP_JmpevUnT1bOid7aa1HsRigAV7hu2_QPi7g-sGqB0ug_BJOcADTWw3jxKCVnJB9kqZXseEAE7JttxyWvC1VU_BMFgMVQnwDG5i0175FYYETEd-WGpdCvBlP_6_t3sqbvBsquH66VnEJgxMnVUnv2gfkBLfiX6WRSL3rWW624BURRKJJtpwt-yQNnARcQ6NQt0Po_p47YpOjl6d9Jkp-LMelJtt6iWqFkucjQhDE9xLcWcLwHKYikkBttHEmTceg2fh0-Rmt_WtdHM_D4MMHGye9QoxEvWBSEgh759BR7cdrVcwV42T_E1w-tCMxj546AuWNB1av&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Pet Supplies Plus Round Rock photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Pet Supplies Plus Round Rock</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/round-rock/" class="back-link">More pet groomers in Round Rock</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Pet Supplies Plus Round Rock?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJkdQttL4l9ocRLIBtE6E7BFQ%2Fphotos%2FAU_ZVEHF3DtMTtvf880Qfx0p1R88gQ2YuFVyMB5PzqjYMu_AeQUkSaW8RuAtSWNAAbSS_ntn5bk0fmCUD1SV84Mzmv0XlPjS3YiY2OznC6xy4mr3wZMLLf-Sxq4Wus8WyPa1SSz1bSMJX37Vj0DztCFSJrUk8jzt9fvHXaje-Y5grMlAiNDJnDUf-bV6Z1TZgrhZ2UaSTOPsTydOa0Ii7z8D27O7sp4Y4rFaVmiVSYZRP0S2bv_yXpAeeQYRRlgQm8dsTt8tZFVLJ-Y5P8Bxe49y3YgeL7cKIvC3N-PH45lRnRrF8ig13InE25qh-MmMgJ5E-Hwp4BJUDTc2R563HsjhOR7VnPGiOmAh7BzEHHXioUZN_43SEJoxQaWNCf-ssvcXBFLWexYCV0_rJr80vt12lh3PJy-EBF2YOVmsj0M_6LNKcd4&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Bloomington Obedience Training Club photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Bloomington Obedience Training Club</h1>
@@ -197,8 +196,9 @@
                     <a href="/training/bloomington/" class="back-link">More dog trainers in Bloomington</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Bloomington Obedience Training Club?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

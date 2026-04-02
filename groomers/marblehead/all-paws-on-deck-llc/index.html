@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJK8-CSkkV44kRC1sTxno7lOw%2Fphotos%2FAU_ZVEF_F6_9QO7QcLANi4PBuWUqUz66RV1iEGgnH2ygfXEWMuiP2ORoqEfMkH4hZglkY7_4dJKRQOz39T6khznHtZa-WS4K4C2cG9AzOQb8ou6Ggj_yucd0rVA9MheTTzW8WAXlFr0XnKHbemvqBsbaLie5Oq855_hnjX5wRX2fOmC5bSydA0_Tpnpl7-MREu_tEOgnk9qP1MshRtY9lW4FQVaOByGbOS8VGzqE-HpxZWcHANp1S4IfrYagTz5A8BsUtXCT9EbZPPPO3JSARlHHBi0TlDb0uMSGMrbqiiyvcABeJ3QCoTmhK5ADIhWaQQpSIpycTeTVeAfFf_fEZoAY744s-uzjJdr64Qf0lvY6YRsl-H43zQzwehO5_D6n5A8s7M6Y00GJYXb5yuLW52bHMxa0pYk4T2mL03m-NGeaEse2wpUzMP4RcI8SeGcbqYKs&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="All Paws On Deck LLC photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>All Paws On Deck LLC</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/marblehead/" class="back-link">More pet groomers in Marblehead</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of All Paws On Deck LLC?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

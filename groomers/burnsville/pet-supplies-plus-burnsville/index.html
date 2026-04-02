@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJCap2cbU79ocRGyZYSrQsAls%2Fphotos%2FAU_ZVEGLtvyJxk8jp91ioHTh4bYLOp80OYka5udOP_jN-VeXwumu-2GPqlmBq6bGT8E0ob2mnWYekxKJdxAlxj8sP41O3YQNEOSFsGq_1VOwA7oRTrTAu-6vZAHlZzTLIsUCVgjbhl1MtXy9N6L7r0SEQrDxzGAlEapmhBmvBmfmyD73AbOu6SfToX7ohITJtviCdZWXfO79zoq9y5XWTUxva08BWdJUVf4dJR_P2EvN2dPFSMXStqpaVs0YzltoiC7zllCK6ihXQciUD7HZCBzH0sSCFX5jTjq6Njb4S-vav3JZg3HLLhyIdSm7OvACCf9Y5xRse4dfqMogzz82SG4eKA5Dtvu5_kac1UDfwv0tys1v_AY8xNip7_QlhcDTIRGYqAlsBNFNjkZXx93rn7Kg9C7mj619yPff2uI_LfL_uhihBw&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Pet Supplies Plus Burnsville photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Pet Supplies Plus Burnsville</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/burnsville/" class="back-link">More pet groomers in Burnsville</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Pet Supplies Plus Burnsville?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

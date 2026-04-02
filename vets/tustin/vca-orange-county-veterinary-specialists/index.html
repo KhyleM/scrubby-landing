@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ86wHRmvc3IARmKuGioZq_tw%2Fphotos%2FAU_ZVEHNMW2TyrkHmnuhdDCaqMUdyR65vjQJD70jQ97gGjPgmHplS4vfIC2CdV2NwpHY4mlx42Es-peJGud3uKs9-61Q475yiydyR8IfAhudguuKQvZmIF9mx0-VFoIb-hMiIxIpe-KZGCa7VGUcOrHXZIsc__4Ofm257AxwjlDdwY0VCUNEd_R9Rk_ZjrKld1OIODUs2tbZ5kAr5n_T-x_ieSKmphSqG1VUgvvSDdle8Fi7jfAzaAc-ED0RnK_ED2QfVf9iQ1g-BcL17DomcewSzyV6kKCESL4f5-eSXTiuJVUnig&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="VCA Orange County Veterinary Specialists photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>VCA Orange County Veterinary Specialists</h1>
@@ -201,8 +200,9 @@
                     <a href="/vets/tustin/" class="back-link">More veterinarians in Tustin</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of VCA Orange County Veterinary Specialists?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

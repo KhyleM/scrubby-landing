@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJPfbtyyKG3YgRndISz4Eja4E%2Fphotos%2FAU_ZVEHusoi9j1yW3doRGfmSK3A-8Ds66bJ9mmKX4qqpVryrevsD6i-JomiRfktvJ_UHEE1ETqKsAR43cMCzw7h0rQeAGGXp57AkRrI2zf9YZs9WjP8YNwhjqk436W-H-Y7bPNbgBXWqNnRKndszFjDbelJnOiBNdnqsUnbXjxi3qCHR3Dnpx84DiTFACqIS7--GNGmZLI03F4kT9CcaP0qdbGpEGSJo67AImK0QIB74wAne4P7pTz9IEhIM52V5u6gjFaRJLe-iyWIVc9LPz1LkpMLGrH5-aJaqh8jH9hKSjkIGJ-59vtwm81E2w112n8ozGvCROZAfNwjZ0BiXUv616SogvcFGjMZFBVR9mC8RvtNAp87Xzo4Wa0-ndA33vVuXl_WAbLNkHaOtwWg2RJpGQmippAX_23hRqovP_9Dtlbelan64K1Ehd-5c7mR2YQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Pawsitively Beautiful Grooming photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Pawsitively Beautiful Grooming</h1>
@@ -197,8 +196,9 @@
                     <a href="/groomers/kissimmee/" class="back-link">More pet groomers in Kissimmee</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Pawsitively Beautiful Grooming?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

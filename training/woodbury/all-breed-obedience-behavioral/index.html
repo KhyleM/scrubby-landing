@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJoQW4-FDRslIRWudtuP8aGWA%2Fphotos%2FAU_ZVEFKSo3_u70eDC35qXmm5RFSvl7qUDPH77URjqkcbENuS_1cSFw6DaZ9Rc8rzoIc_X2_-EgWNyxKi7XKYM85TwMnZqVyIID8uy8DWqjmYA3I8IHD8qJ_sddEYBQkjC5Qixc1a1vsRbT9rFfsklRXJW_M2pvBpYsVlj3X0lqoHRfqz72H0-EZhYENarpDidkA-StbD5qDK5A37_4Hnesw3IJvtnBuPSqGT4Ufd8EIFoitOmRKlIzGUIY9mcXqQVKVrkoug-zDuYc0h--rUqoaN1n2nTGkyqK3z1WTo1ZqQHUc381sT1wrTdlUp1qfAbUrNJAUopfwhDVo_UjZPvZYeY22CUhHBYKZzGmF-EpBwEteTjyDVKHQ5NjNJw5fzIqhs0XJp7iWRaStcCYErvo4uTMq-RWuf3k0R25zu6swxrPHyEBexfHwcl4i2UYMoGA7&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="All Breed Obedience &amp; Behavioral photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>All Breed Obedience &amp; Behavioral</h1>
@@ -197,8 +196,9 @@
                     <a href="/training/woodbury/" class="back-link">More dog trainers in Woodbury</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of All Breed Obedience &amp; Behavioral?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

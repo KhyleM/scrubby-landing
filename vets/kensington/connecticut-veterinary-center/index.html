@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJZaPS1--z54kRPxTqYYeqzGI%2Fphotos%2FAU_ZVEE1qXjJruR5-w61I5iUW1raAzwCGhVA162dqLEN27gBL4OEnRLQGaTzyasZDIjQaJvyi2ivWRs7Jx_yXJL_20Pr4tQhAR0EFbZXW0xL9KusjdzoI00KOOMdgFmj0KMsy1GyuEybpCdRgJq9EXSZmCx_tUM202vm4I5uhNwlIt09OG5aZ2boTCp-aBtWicOiZ2SlxC1tWtsOnEL9Cuw10GzTk2cWjbKk7oDUdyxRg9t50DLqu6vW9Uo_zgX0nicXimUOwErA1tb5eMrR9kWZt9dRBtSbIquXFGU9ljFvQZT-QRkkGBxD6LN0Smd8AdWLaMTGo2J-ZXRYupD-tiQ8vka45BOh_4Cha7ucsTLkPBlrVDW1POLJy95AqfXKyP7sr_Ksu1W0UsXkSgv9MTN_jYHh0Kx0zxe-TlpysoenVSAblw&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Connecticut Veterinary Center photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Connecticut Veterinary Center</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/kensington/" class="back-link">More veterinarians in Kensington</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Connecticut Veterinary Center?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

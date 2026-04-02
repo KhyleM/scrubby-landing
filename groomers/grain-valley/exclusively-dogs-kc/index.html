@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJn-b9mWcRwYcRpwEjFzk0JV0%2Fphotos%2FAU_ZVEF0WDWuwjfINS8Q4on7_3V1R6t4ANVXS_Ju5C_LMamj6bYPqNP7cqyH6-FUVFVP0ujgDygfRz_GxJTV5IfqiXknDIEgeEZTjB5S8oBvZwZcLGwZjekxTVCPB4V9rNqiK0sftJpvPUFRSaMkPQubtNwJ2ONfsBJQp-839FcZPAHwu12qfJhvFNp21CjCZX4s2zq856SvyknJy_ja-znOdwuvWID0yJHA4mg6BZBGpK_etO1fzth5bCg96utO9gTJIlFOAPDO6xi0tHb-1R03w05YzWjIUCa24KwJDutUuUAGkA&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Exclusively Dogs KC photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Exclusively Dogs KC</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/grain-valley/" class="back-link">More pet groomers in Grain Valley</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Exclusively Dogs KC?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

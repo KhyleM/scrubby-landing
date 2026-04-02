@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJl5duFSG3woAR73hU5Z4E0JM%2Fphotos%2FAU_ZVEFicqE0Hx3DQMnNgTF_pVDJ3JUNFKpUHT3XHRrlbvXmxaB7qK9O6PydBiFUBSIA5M2LRqYkeYr-LyR2SUZM5u6h49b2Sl4XQzX2j4MKiPhTi03sZXXlDV-pnxLflKDIUNlCfWZmxyDW5UFYE8x2g5MtAc8mdEJbSJ3Tt9MlQ3yRmhEXR2Ob05WuuLAyQC94LGQMQ_vGCenRw2fiTgIrMA_xcBxcEck5iMa31WncIxzHSAfukK6VB5_k7OGwdRN-AEqw3e4sJnroy4cqxp8eaDwtJdMFQNQZWfv2fV1l2K0toUPuAM-iuzKzD1XE1_2tyBd12CzftbqBaAT-8DvTddn2IFN6d9nUBt1BcDB-ELrRI1PmkJJleNzMUaUemcbmOcgFIikd3pMckKDNy1ZSskAiGNj3z4RJwRoodtCE19lCe-cIVjJd07WzEfo-HLln&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="5 Star Doggy Inn photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>5 Star Doggy Inn</h1>
@@ -199,8 +198,9 @@
                     <a href="/boarding/inglewood/" class="back-link">More pet boarding in Inglewood</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of 5 Star Doggy Inn?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -346,6 +346,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -356,10 +360,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -384,7 +384,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

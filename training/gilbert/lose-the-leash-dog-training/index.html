@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ7ebW3NvBa44Ry8RejcxL-r4%2Fphotos%2FAU_ZVEHjSDa3gcBLHWxiQfaX80AlVKUJKRfeDHxY41nNGztCh5p6FEqDhqZ7zjSKjp8crX0VxGWPdwoUfxE2QerXx_TOd-h9oNspP7yjBkxiTborol6FNJpewaNgQj7AYlIKyKXcRmn1o3OwPGQaI39_D6sBJW_uJl_T9dCRZCkNYLgk9QQsiFoSPNlcEMuDdDlp57AM4eQ2hlxxiD83M3MAooWkKtt2FYLjQ4dr_msY9lMIQ2zUTaQgiO0Diz7H6l6OkROac9H_zXDeA4csLQ5T780_4RzfniRlvNW96dJjWXFV9FIeScQsWz3xPr4tUzYsWlfDWWF-ojNpcAjmv03Bb_cck677XuFtAI-Uk5UU4L9UcNN6uviRjRnadqiOqQDQhfhYHWAQ4U7sJee9pz9h7Iz-jjYX1ydciR9S0XPCS-wc7GqBWwjx9gyfcGwzzveF&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Lose The Leash Dog Training photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Lose The Leash Dog Training</h1>
@@ -197,8 +196,9 @@
                     <a href="/training/gilbert/" class="back-link">More dog trainers in Gilbert</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Lose The Leash Dog Training?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJhTXN3lyP3YgRoBan6_K3dws%2Fphotos%2FAU_ZVEES003aVwg4hhilQumIVGwj0GZlPF6FJyjfP6U8wEHK-Tm3xz3mOIe3d_2d9n6qa-Dpjii2fdoNp_WY5z3CcZ3EFMgHr75Y2do7l16hsi1JAsctgat-VgzkEBN84-0-M_o_hS-BphU3RJ0ScPtIChz33SSX_q8JzQ1JMCa2k58nPLzeCdP4aRgKwUYeKBDyD2h3fNsXrlehOqS3Ky0sm1xttr8cPcap09fDll5AWZv77pSBAewozHcn2ucyVGD3QiifTHxAYmK-TBcbI9KGr_J4ZsWmthol4lUvpPweM3K9DR1BNKg8LNMIflGATiiMEnJH1iicb9dSZwBLzTpoc1kMX_oSeI8ngO84ttYquaoIII3CTISy2pxNY6a6ssnLKMFChGAHECZ4za4VTnk08k8oQEnwNTTmlu4xcQskINRqzYFo&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Signature Pet Salon photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Signature Pet Salon</h1>
@@ -198,8 +197,9 @@
                     <a href="/groomers/st-cloud/" class="back-link">More pet groomers in St Cloud</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Signature Pet Salon?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -345,6 +345,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -355,10 +359,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -383,7 +383,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

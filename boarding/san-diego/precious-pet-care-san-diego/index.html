@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJwRoq689U2YARN6qhGB-su_Y%2Fphotos%2FAU_ZVEHV2DycUBJsWJAlUv9l2TD2QP3X91X_l_R8fbwzMEIf95p4ZMBAdR7o6iAHd2OV1p7cmgUKT16ahhD1D2cQ88Lb9RDWuOSYoOajrM7uxT5XSPM0zecsvAPQ9MeoLCE8fynu6gQ91wVnfukRCglX5-3Ku1Z30gflpO2YwPmRCTF7M3zt9zZ4UM7XrzO_2b7bLWfINyklt7ANaoFHuNaXfpNpB93lqNvSjIHa3mQizBbeVcUVP2S4UIxrLzVvLdOsjSF4YXkhjBXXcSdYtGbnc57jkjfme98VDNZnprzCfApbIHyNVQO7-o0EHRIBdh4CnN2u6OemMqz5dQ3iFITru2XbqEEJ-xaAz9ETRxUdX551ks4ufKbsykj4Bi4sR8EhDDRfXqrpS9agg8xKdhpLUpDeWesM_DJdaAHyF-rP0D1OmtTigbbkLnqAVCUi9UMB&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Precious Pet Care San Diego photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Precious Pet Care San Diego</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/san-diego/" class="back-link">More pet boarding in San Diego</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Precious Pet Care San Diego?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJm8QrNT7d2YgRJelWlplptMU%2Fphotos%2FAU_ZVEE76enrO0wRPjG1qLY_uVtT4RPrW3Z5Dg4dG9Y9KAwxnUimHF-5769bP1BMvlZN2jxre4PhvWdP7Kep46QMz1icix2Tvs1NerxDX2e7xcn3lVqmHR4_IBeHoyqaC2_OY8LJmbZm3o5Z-TsOPMbLmMM3aZiAdDrMIOpBDTrNIuQgipKrw5DpZGiqcPztvtcqkaG89RFp77oKvtkFg_AImd7sTsm5FgwCY2Na-BNQm_kyNwW-liHgHz1FnExbD6I2lyOyHchLIIG759ENvqBgzoaJKcN0mmTvRQnOIOlFVJpbXz0zHCQaHCsMB37DI5GTY8wEOhqbscm4c0J_KmG0CF66qTsJoRPQWu9UGsS6XfllyqBd2aYncNeTi4LL1u9TAAzuDQ3HlH35Sh-DBYi5DUQhA_6rE4eIx8qf9S-UI9z9Q1YJ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Gilley Animal Clinic photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Gilley Animal Clinic</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/homestead/" class="back-link">More veterinarians in Homestead</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Gilley Animal Clinic?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

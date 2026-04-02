@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJI1xb6iREs1IR8xyLDjvGmx4%2Fphotos%2FAU_ZVEEZ4lsIEdC5RaR1Jaq6TC-6yqXWGs4QIh1GiZQ1lWgG0poDPUk5Dn_YhPxpNOunNiS5XsZMoZHqChxFeqy5Bt8eP55Qd5qeE_y-IFy1RSvmF28e4NP1HMS73nVtquacVpDqS2mVV8yN2-yheJE3MLsGCQW9vd4SeQ-xJ_8tzMvD-CjbTP1Z1c-pjeC4KvYolCdjeRJA3zCUg1TfjeAS5o8x2-kGsCJLipQSi4xGFGv4_gzf-VQfkb2LEkX-f_WIKVrIZx4ExLQ3eQwrgSLQY12koalsreKr7DNFTKYDu8j5xg&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Red Barn Pet Retreat - Dog Boarding Maple Grove photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Red Barn Pet Retreat - Dog Boarding Maple Grove</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/rogers/" class="back-link">More pet boarding in Rogers</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Red Barn Pet Retreat - Dog Boarding Maple Grove?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

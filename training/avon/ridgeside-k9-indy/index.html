@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJsQSnOK-vj4YRt-G-BG28Rs4%2Fphotos%2FAU_ZVEFgv-n4-LvhGS_YusKfwKAWrjrlfBr-OIYOXLl3-OS9wlt0unxMDW_4UH-mHOw669m-QKSuOMPQ7bcWa7vwIJ2pUYlSWlXeFcm3YxhV8Ks7zGXixZow25dr1KZ5h_uaRrUSNmxACANKXsRgndgBu_0FEWE93lIm2DKf8DQeA3qpHNMrPPEV1_BjzsXv8orLYsIsfB4zRlH3r6L2CFwBIcYzRDauIncFVdxxrLQdKGoTUxDWztyd3KceR4q_gyvC7mHOtolosJXknBL6ElpRmcMqhPVoHwil4nJ8Z5OW8h9zAOGQO0CE5W9BvKYKCUXepA9MqjQ1T3vYaMKPgyP6pLmidK-Uc2DSFKd8SHsQMF9-LQFmEMFe75hdDOQ6dnta__Errp505I6Te7IwRG90tAbX0LvUcXupr9vwBwkSh7UV3dQgDP5V3k3tPgIw9Q&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Ridgeside K9 Indy photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Ridgeside K9 Indy</h1>
@@ -197,8 +196,9 @@
                     <a href="/training/avon/" class="back-link">More dog trainers in Avon</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Ridgeside K9 Indy?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

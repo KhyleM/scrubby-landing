@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJNa7RbyvOyIARSbYhyD9OegU%2Fphotos%2FAU_ZVEHthViAHr7VWThMA44UfUYxTbsru33-7KaF5_3KsjPWj9W21At4qn5oTB3EFSeMlCBVHkqo7qjk2CgMlur2_J81g9SnLRcqjiNA3n_Z8i9h_uUb_RHdZkmOVHfZTEck3UtJEZ2jvBAJGNBhhiW_8DiWL2hjRNWjok640eHeAx4qH7NJcGkWsGi9QpVozpbENZY__snGujcjNuLJJ_qP4dbx6w7CcyIuxFqY3NfFjbNtmTSuYSxtDPrTGmhrrDh_9OG96D3dYmidBIPFClHPAHb_FzrmvtmX5UOLzFXtfpoXqQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Come &amp; PET It! photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Come &amp; PET It!</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/henderson/" class="back-link">More pet groomers in Henderson</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Come &amp; PET It!?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJC5nSMnpqrIkRGlP-eikRims%2Fphotos%2FAU_ZVEFsVX1Q8Izb3NCX-Ui1m4H6K9eXcMkZkwb81n2CcOinTLllGpm0lrFvs7GYjBQKwNBXG8zXXBhghhNSCwzpmzkDDMFVMtomAPkpyuKUYJ9gghukhmCTTBzHfnD1O_SZ8naLxOOWR12G2cPTXFZT-6ZG_9i6QgL_DODEfGWBtePeg38ouulmAbtN6qRf9tSYENdyaOJnM9AeZ7pgmlZeqz_kKsUkPH0BDCzQYcrQH9K20d8M0pzNusTz_WmyaPSxQrCkyqm0SZ-YbPW2BRMf0FoCLLg_sJMjf1Hv-1EVNLFhQ7Vc6LO0AzDhMjs61LkCDzr4ObR7sxvvAv49jyvQQyXSX7559XzZIbbbuAFA3QGeQPFAVf1CFNNL0WFCICudm2MFCtspFD1pT2WEnDRlHy5rsbI1yJf1JG2Re002pi0pvw_k-g3di_xQHDrVZw&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Blue Line K-9 Dog Training photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Blue Line K-9 Dog Training</h1>
@@ -197,8 +196,9 @@
                     <a href="/training/garner/" class="back-link">More dog trainers in Garner</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Blue Line K-9 Dog Training?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

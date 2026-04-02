@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ69ggA3tdXIYR2TuuEz8cOmc%2Fphotos%2FAU_ZVEGKofZoxwm2dpQZVe-RI1IaVltOSAy-SyOT8tzSP4Gdt6pyFBMtHqPpp6ioQ9QHTUxv-Al04epwI5yRhA6UFdC5p54mfnme1-gG4iTm8LPeYArDpD2dPWnTOYXNI3StnScCdcM9HpV-kWBhDWuR2P4CW7GLl4ySK5GtK88bUA_4Wyc2PwuDyNtoKI0f1aM2AFaX1ZqL8iIWYIplPRjlASPtR4L58Xn4rsUuXIWUkhj9bT1CgEoZCfVU4n3q8yBSJJ7ytWgwsFcLQ6MGJPeNEWHajnk40bJ0HrSU4nC8O0fj0ZxhiLLDSeD6Y5649tjcn6t0NqvNNi3bby0F8BZwA8PifSsq0VnR6HGxHgICJIcAqq1ExaQnJDbKm8SsSJS1Qo2a2Ci4-QLELFImnsEgWGY66Ga59R3SABnQ8Y1uPhuiJQvn&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Petland Leon Valley photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Petland Leon Valley</h1>
@@ -205,8 +204,9 @@
                     <a href="/groomers/san-antonio/" class="back-link">More pet groomers in San Antonio</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Petland Leon Valley?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -352,6 +352,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -362,10 +366,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -390,7 +390,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

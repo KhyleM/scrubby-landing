@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJBYzEeN9slVQRjeqP7WBVHQg%2Fphotos%2FAU_ZVEH1eOn-KKJZ9QIB78yG4n-rcXU4dvzzk5o26dK_EruUp4pC9njSzkdBIXstUTnB48LrfCwhG8bcoKOSkbmswjZ2xdlq0r8rjtwfoCcw0YwtRb_Mj0w_zgqkib6vKuYEznePhTiBIhfalh4sRLZYRWbAYMOe6CmtdWTNgMMOstjm_1xITxxZL6qvM39AwMDA1Oag_ri9QmDzQYcF_oJAcnqX3r5o-mqdamZzwqzEs4lhKctkXZ2IUQtz6qvcWwMiRJJP3kIrdt7wqEDeyEPX6U3VLw7zLOT5HuCOhnDCw5caQKqHaDvUjDi3Vy4XRT35tteH_2VIY_VT5QDnSLfwVje_NorMgWYvFf_DwVL0RbYYCJPlEYMFGTVCE8WInXN-fOd2NPB1yVmigd2zpPBQKloqhs8LtVJaDTrXInDSkuzuzG17DRY9UiPPojT3Q2ya&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Paws For Elegance photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Paws For Elegance</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/sherwood/" class="back-link">More pet groomers in Sherwood</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Paws For Elegance?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

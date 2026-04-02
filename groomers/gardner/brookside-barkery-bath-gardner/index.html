@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJXSdFrlqjwIcRws1LCYKr0aE%2Fphotos%2FAU_ZVEHVj0CcgL7SxJjymT9hKSyYHJW6BEcZ9pdq9Ed__8Le8iDjRL8cnWELlmDSYm0om51nhwD5e_bnCCWrci9E3fZ3oNfSC2-k2L7eC44wVqx8pNTKBzYcpebd_3psY0qA2-t7_P1kLcf6GEl6zdxm8oYm-SFTDvCbpqrduFPGYBZH5Vasibccyum_zlnUEWOrnJ0e5lWeC4OLBOSEP3BdFQ-7nvoRWKq6sJ45_D28_Yz5IqPu-w4jh_-zZ6J-MYGUcJe1Ve2vzWtUYOz5KJ9fx43tQ7MbwyMrcQx_cbif9FRSjN5gylPD4PHNyZmAivWS1wtSQB-6S1SJ4izVCN0EmhJ3TqwcLn2FGlr5oDVbrE7qkPL4tP9Wr6_-N5hIK-TwTSue4PQyldQjiTE7ij68rmF2oRV_Q2j7REcF5NNL_BJ_DaQw&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Brookside Barkery &amp; Bath - Gardner photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Brookside Barkery &amp; Bath - Gardner</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/gardner/" class="back-link">More pet groomers in Gardner</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Brookside Barkery &amp; Bath - Gardner?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

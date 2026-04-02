@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJlevp8jGrkVQRLdfXHQ8RNVA%2Fphotos%2FAU_ZVEHLiBrAfSqe40RALBvML4XGkM1yNN9mVIoxt50qCvnM411LXm_osAzWMf9G7OrqK5jyNFoPUwIR-OQ3cArUTwu9_8KD6TRfLbQ5RRfkdDceDywKJTp57uUBX-5hT-HNsz09Bvm1OLYFPXBJFSqwFcx0Xram0nVKaCF-vLiwn2h4iU0tcb3Uf4MV0M44oBm5XYHMl2wSkDmksF0WQ3TeNTMFH9s8d3-IeOytUy2fyFt0XU01BKQjtAmrwJXxVAUd-E3DnzoH1AA3IZkjzwd8x3ttR2G7g_j0iUOh88-lP1fsDueCFo_lMwUCiry9kGSR1R5162AIT2fu6wPYXDgORdwyUNUGZP0hfOWWdVQDYH76jPq6bJfe_ai-e8zWVzYr1B5VwcGraDdxbF_lIn3td7OQF7LOiRiY4cxc25EqbdKFtbBRth8r4wNmNKciVqqt&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Doggy Paradise photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Doggy Paradise</h1>
@@ -197,8 +196,9 @@
                     <a href="/groomers/tacoma/" class="back-link">More pet groomers in Tacoma</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Doggy Paradise?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -78,7 +78,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJBdXiWWnqt4kRl3tecc4iLI0%2Fphotos%2FAU_ZVEHqvEMop9B9gRfgvFnxB8hH7tNiuwxUy3yOgLh5Qt_OOGLFonXlhCSs_jq63G5zDdAIjT1jy9k7WN7kXvQ8NOO8C46OdN0JU1wcjjcf_k9ptN6D9Ep-9yKVG5WvHcWUxFUZCq1DRQ4mF-u5UXPu-3qSyXYnSF7MbuwG1vDi1dcOFVW5B3hyRcvPwqbKlTisArXihbiVsuTmuMNch0CvuSzuV7Tn_fUxQE24QaRdyhcq_nr-W1WFnd9Rt8ZBNMvPUaMLilo1yiPIzFG3EkgidB7I_NX7-hXWRwdqkA5jPDSRygDS_KFrZ03r6yELCly1EKJFxUzWESjxsYVCa3ZjXAyF_591lJ5yzoMwfOF4U_PySg0BjHSOclJcTrDRqYQ-qy88clZaWUlcejj-x5MkEZQuil_8zJlScJmxhczivus&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Vacation Boarding Kennels photo 2" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Vacation Boarding Kennels</h1>
@@ -192,8 +191,9 @@
                     <a href="/boarding/glenn-dale/" class="back-link">More pet boarding in Glenn Dale</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Vacation Boarding Kennels?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -339,6 +339,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -349,10 +353,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -377,7 +377,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -78,7 +78,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ9XA6rr-AhYARXRaj-TVVUAM%2Fphotos%2FATCDNfXCazVKJ6Gu5HSgiKrj0h6_P9AwCGtclNoK3wk_FTuB6k33k73J26X5RmKL_xjI8pZsDL2Mg00su3LB3uYapa0kqmoOvNDyUHRBy5Y2TKkr1VOwYM4bdlsZIgWzBSQd6DbJ_9unDg3X_q9YpH0rPlJ7-oQ3fjF1N--DYKMo4d9qXa0eVB6oK1X3RL6lqths91E6-FKpQC3hP8FADs9VMq4Sw8us4PYY48IrUZdc8c2J7WjUIEax8IuA0PkXmb0xu4Wsi4Z-vle-P39_lCktqKtlYKWS6YgzjuQR0DUfAz0WNA80pOEd5JIccjkQrWSVomkRng3ofJOfzPfi4Zvy80dcBa2G3lV-xMC6XfV6dZwl8rrTsLdy7UnRn2RrTFisCOIRx0ciYKiDR0smrgHAH6ZdwwUzfnYkyED9XAFKSbihTRoH&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Walk This Way SF photo 2" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Walk This Way SF</h1>
@@ -187,8 +186,9 @@
                     <a href="/walkers/san-francisco/" class="back-link">More dog walkers in San Francisco</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Walk This Way SF?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -334,6 +334,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -344,10 +348,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -372,7 +372,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

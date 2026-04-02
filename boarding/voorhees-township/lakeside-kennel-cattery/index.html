@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ3y5gOgczwYkRpzDJx9DseTg%2Fphotos%2FAU_ZVEFhbRBDz0bL4fJphV3p1ZHXEzXMzEkU7xeIADLYSOtew8bR3lHbu7bSItPCIF1Lb5jxwt3afw0S0GBuIQHz9oNJOvnQSSZ2MLhow9VLMfRIvKeusT8fjhD8V1MfXvSvNHvaGOfrTkoOpo449REmkHPQaMyiZprnALdC6sEljFt-WvX9qk8has9w-FkK04oa738RtGpS04-0O1Kfitgm_0jOVHD3m9Q_3KmYEIDJknOyErY4RIuF2pFaj5E1rKKj6gs17vPxW7SIcbZ5om_ik-HQs25ym0KencL0OKWdwnIC3ZcC3cTdHrJy_xTskV0V9ZXeOAH-qqNaaVE-_s6iI-ZpHJIWc2FgnIR9tMlvkDeBnFq9SPsH0Xf-QCZAse11i5oGVhNKDl9uyxhSG0UEe5Aal0rrFp0bvbGgL76deB6E0c2c&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Lakeside Kennel &amp; Cattery photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Lakeside Kennel &amp; Cattery</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/voorhees-township/" class="back-link">More pet boarding in Voorhees Township</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Lakeside Kennel &amp; Cattery?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

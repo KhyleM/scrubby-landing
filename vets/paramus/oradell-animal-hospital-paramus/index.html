@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJZ6mh-dP6wokRQmU0lNy0MzY%2Fphotos%2FAU_ZVEHm_SXLHW48WWCRGGkveicesAfYZ0ZQHKqnJcxLqw97h2mJjPb7e3EWnSpcZhIlR7m9u2UEO1ddFaR8A2px1Q6unJT8qJhiQZ91DVr2Afrtyz91TaFO796ANYnpuiJEKMV0b2XzgFMu7M6fpcg0aGh42uxfUTcO3ENDmvFC50zxJdzqAPi42QC4wjHJ2Gph0Gejk8WSAJ-Snx0u9rAY3mJCOvZkJoqAww-9N89G2Hy6ftyKCBJyOF63KOOh5MyWpDRKu7BnU1LiJyY_izkB6fpb6kZznOzGqkuvjYH6JMWmvAT0ISvmteIuIr8_ValjsOH8svDJnF1JlN4F0AwRpDylEMErBOqaONLsB7o04j-6HAx9I_-OP6rQd6X76RDLi_W3-X8zSXztNIwFl2SQRfP8tuL06P7nAk0jp1msjWAUzQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Oradell Animal Hospital - Paramus photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Oradell Animal Hospital - Paramus</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/paramus/" class="back-link">More veterinarians in Paramus</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Oradell Animal Hospital - Paramus?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

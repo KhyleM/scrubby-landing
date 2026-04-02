@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJDXSo_zV_j4ARFB65Z9Ki22c%2Fphotos%2FATCDNfWavjzYnov3HtczstjFR9rcOyOBedngf5VxINWkkuXBhsSkffsL-fMlilUvLiSAHJxVKkQWZFsd1vxmuu2arQhSDKVEIfknVLzjVAux3ZV5X4TBVidXd5obU0JfAQyQr0L0UGLCH3T4GRikLfhnYH1Hw9_RwwO1I6BudxFGXwWjBtUFGm_j0blm90DJ8MZOmPVE7PYpr7OYjH7eEa962PGXczFMiBUMvE3mSyLWShmI4vziPhST7fOEj8-XP6dK7HfNhQXJiqlYyjzdDCXMiKIMLOvS6fmVg4XeoPUj2OGqkQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Juan&#39;s pet sitting photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Juan&#39;s pet sitting</h1>
@@ -189,8 +188,9 @@
                     <a href="/sitters/san-francisco/" class="back-link">More pet sitters in San Francisco</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Juan&#39;s pet sitting?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -336,6 +336,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -346,10 +350,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -374,7 +374,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

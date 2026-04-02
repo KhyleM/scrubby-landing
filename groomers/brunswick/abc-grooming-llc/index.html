@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJNxvte-rAMIgRDn7J0A71laE%2Fphotos%2FAU_ZVEHoHHYBTTKz4-NUxx4GtbDOWNp6LRN5GvsJ8zcl1B5R1duKFgHtPu7SIMsn4bofk69JvroM7edHs0qtC99-Y98Ai6npWHfR8vGijE5TPdPQjhcN-sl4lOzzBmn-rzVTJrhJ_LjpRaNvEef7RWuh_wKdzHKGVDHxaNOCiBUfByvJDoSvy2mm-mtSMIAjsWKRzdXrezvHwiDa3yNEX-wtEU9FTmgditwUbyDpKOlZYRKOHJabVP6UFaTHw4Fjzpt3nOtBdvmbUH5E9_p_ADxdYt_ITpLRfxDvJAHpkIu95KdehYog3pB3OAYTS9W3dqX1K6US4w29SWf0XfUcOho6c5Sfy_B_axkvxKL21nHzEpVM9qcu079xYaZ0iLer9OMiWpCapi7TGfHwnV073WzXe-UfVxH13RXVpbWaDh8P8gSNZ5AXtZa52NATB1Vr-4OZ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="ABC Grooming LLC photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>ABC Grooming LLC</h1>
@@ -186,8 +185,9 @@
                     <a href="/groomers/brunswick/" class="back-link">More pet groomers in Brunswick</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of ABC Grooming LLC?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -333,6 +333,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -343,10 +347,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -371,7 +371,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

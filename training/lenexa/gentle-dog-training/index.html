@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ06xMjkq_wIcRzrIil26C9dA%2Fphotos%2FAU_ZVEH8HMk5R8QBD9OmGK9p7ozCDme-q2Ua1yvi-nsP1PhLIyGrTtfLINGH7Sef73qOgq15ppEeqe1cimDKvTlwyYZzi55CFzqgNJNH3h22wFIpoSNDjwm9in3HL_Bb5N9AXRAt1saRKYcwXWf1heW1FyXyeYUPD13QeHz40lj5nE7En-pay_9gV0iZJGBzqo61slif7_629n8sIpy3YLo2Vb5y_rmJRS57Z-1C0YzIBWq6RUgxaEqm12wOwA-xv_Ddcn99LYs0VaE0WFk0XbYgHCXfHcGoxeRowGNGO3mZ1Sll6m2W2Oq55wJ-FFSFd3mnaWmF1IPJtfQ0jRGbsn2EmjyNMRE355VAq9ltpC19_UvDQGY6Vg1H1bNZy8mgjhuKz36irFRWsJ2PBRZSEZUynfzZk00NpxUeTbOhRljSg-Or52CLU1LE9sWpjJ3R8auw&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Gentle Dog Training photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Gentle Dog Training</h1>
@@ -197,8 +196,9 @@
                     <a href="/training/lenexa/" class="back-link">More dog trainers in Lenexa</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Gentle Dog Training?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

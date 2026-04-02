@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJC1mdoFCdf4gROGcfs2m-yZc%2Fphotos%2FAU_ZVEErQyQVG4xca9ieWQ77f3BsOs9VuHjysjxO2tDEIvZ0AEcGb4kv5vxv5uFjAFjxrzknx7nVsuK8v0V280TYeOQfplTsjBOMjK0ub7DoazVwvTgJYfWVtzJuTU9hIP_tSY18b0BeJntuhtJF80yMm3PWRXNIK4YI-4j3SiDYJbkV35CD0pZA0iMK77lCnlHZn8-LRjMJ1eReW_-4U3ehBG1k1-gX8-tgbnqqlyssx3jlevIY69sBXJv-sDurWmHIL015Tl5yp42srGmqvPh0CYu3Rkat3leQEn0pR-0C-a8nz0hCR-Z7nFj1dhHeEA0E_yP1RVnlRCKBBkesFBtdieT1fGi7pxYJtnCI4o4h2y438oBfx9vxb4tkI7OFzSjPZ-XZbU1YBmt91_9n5xU5mqpePjkK098ouTV7LkmyMdQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Pet Styles Grooming Salon photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Pet Styles Grooming Salon</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/bartlett/" class="back-link">More pet groomers in Bartlett</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Pet Styles Grooming Salon?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

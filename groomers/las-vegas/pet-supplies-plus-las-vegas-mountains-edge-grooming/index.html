@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJmf9e3iLJyIAReBSaxc6OVmQ%2Fphotos%2FAU_ZVEGRY7HvMugp43pJuhqAAyl9jcutdYSthmG_1bJo2kpMFihE56gDP87aDTXcUEQm5dY-YyfRALhgP57OyfsKSB1eehLPyX0MosPB3tG0GMZ1VyXUAmHGTmWiGSC7G6mnwv3BbAK8o2gAfiWjQ-bKy9ogPkB3EUOiYQJ7hjJL0IBLwsPnWByj_-IMrCWv0MnsrmYR4XkqYI84AL6DHwiOw-JE550_-uyZQrZEaQiqymj852L8BHI1j3FxLNqXE40IwH9tlY8e5mMnhfQDVqTfy-oI6Ha0BcAwGdwiw4Fv3bFLCfmVOaAUCrb8UGCk1dtEdu9vZlSTrueH5BAJ1UVsgC3GCZQpIYP_VzUU1KJM3nzvcukVAiMbqUMcGW3TN-47mN3EpJbCNiBVDxFybOn-H4cYecoTuWD1vxWxrKxiRgAd06xS7Ol5PXimGLpW5iU3&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Pet Supplies Plus Las Vegas - Mountains Edge Grooming photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Pet Supplies Plus Las Vegas - Mountains Edge Grooming</h1>
@@ -197,8 +196,9 @@
                     <a href="/groomers/las-vegas/" class="back-link">More pet groomers in Las Vegas</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Pet Supplies Plus Las Vegas - Mountains Edge Grooming?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

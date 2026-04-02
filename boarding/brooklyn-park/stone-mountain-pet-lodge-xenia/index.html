@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJvZYfCSs6s1IR2UsqpVQgtdM%2Fphotos%2FAU_ZVEFe_UKJ5qDK1FKRMYfRhpwCWfow4XNlgwPCYAjxb__hdm8TnpE6mjsly77ywQvlCdPLqRKL7BjwJaxpyW6xEzwR1R9ZrkrCfZtwfpB07suomSzhVWa0WabzpR_hvNsj5L6QwPvqdklpo5MBO1WQ5nsgThoWpMniq3UgJ5q-E8aTQN5Ev9JL7oH0rXpx-CAxn3OwchOj0NCDRtOd-pYPQnAu0xfuPTxwes3V0VBH3wMzU7-V1S9mMh29PVJniS2g1eeifTmUFvJzrDKUeysdLRgz2hXbAcU5AGkcphy_VUZtykO5uur5r4_gSUbL2kLwumcjwzuOi3ht1pdbY3Zu694InwlTOuJpYCV2ABLykh5EY8ZaWNJcmLVd0V6gELyBMhDaiLMpuBlIU1x8Lk6oTSNS9R37xk__v9_BbOhkVoQFdMA&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Stone Mountain Pet Lodge - Xenia photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Stone Mountain Pet Lodge - Xenia</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/brooklyn-park/" class="back-link">More pet boarding in Brooklyn Park</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Stone Mountain Pet Lodge - Xenia?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

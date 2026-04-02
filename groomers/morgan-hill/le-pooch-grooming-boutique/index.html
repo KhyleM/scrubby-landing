@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ93kL94ogjoAROfltixc-Su8%2Fphotos%2FAU_ZVEHBUEUjkQMRV57cZJ-z9bhiZW1nqvj1qykZqoq2pSTNofl_Ga-94bwYBNL88z9dpm-0jlns1-thG0RXHAQAtFmNryOwT8dS280EHxl_vMCgiQnrW6stuzvjvYrojAc0BrnNfYZ5JHcaHd-YAGOq6oCyr6oUnEKRRJo3hKx84ngguLQM7PY6DT43poqHjhe_GTC-WFrNlVCo3gBokfMe46LqVDZ3bmOIn4jOT2Ht79-0qdn1LbTnOF1yx5L7dKXhMPzSQYWBcoo9AqZPCXP7_-XaP6CNIhpDFvleSMuJDH1Q6G4jrGqrmZQ0eo5ZDG4L5ty8KAyWI0U6wc0iDRR50bRDsmitvHxRaokMbJsuEeGcfRsenN-Xkt6IJgbUY3NRz0KN-ppdYhF7JjWxPYnKUhXHtLedNW-euGw_XGImO-DUr_A&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Le Pooch Grooming &amp; Boutique photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Le Pooch Grooming &amp; Boutique</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/morgan-hill/" class="back-link">More pet groomers in Morgan Hill</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Le Pooch Grooming &amp; Boutique?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

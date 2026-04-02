@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJb3_3MmBS5okRLCdj63ht7K8%2Fphotos%2FAU_ZVEEyOInMyZPYq88cPl5PLbXaEGA1h3HdZ7uPxMWVd4Q-qNmx6Gs2-G6auX_w3J5zFNaswz6tc1z7bh5OwjPw1C2DqTt9xVtQKRHaR28eEngWe258sHv0GQfFizadCLehS2DQLwA8lnQE1rCiTVY_7z7vROasiu7Dfj_IkYCoeDzXUDDmxu5L9pIdIkdMBwxV-m3K8Qxm-7lMMl6UiWz9QvaWCzrZJm5XwLQB1HTNbt8SQkczlsy4elF7KTL1WdhBPfoipPfW5T46Iu6z0NU0EPXP3_ZO0N78htY-2ekDcYC1tTuSClPcUcpCjCVo6kXr0M9-a-OY6jJXZvkoQbBhVMeyKaV8yddNkuNK3T8GfWjUtQIHN3omp9r5lCgJOdWIfU9mtXzD0CvBLDBr6xUORG3Q2UA2po570KpOQCWry5ozCq8N&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Ooh La La a Dog Spa photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Ooh La La a Dog Spa</h1>
@@ -197,8 +196,9 @@
                     <a href="/groomers/wethersfield/" class="back-link">More pet groomers in Wethersfield</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Ooh La La a Dog Spa?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ86n4jW9CsocRmdm-joyQxfI%2Fphotos%2FAU_ZVEEixsynCm7dLm2jvp4MAah8gEM25xAd8bo4kCciDHIG9c8rD-nSR6TPTpcciMJXW8_MhZCoh0mF4lvYVIydRlOsO05C-UhhtGwMlGWCrJNc_VtnWAlsn4gxDyASqCweH-0hiMCj0Ro07OX_GpWC_NFmBhdx5hj7m7XUPHw54T7ulvNmKVBFotHRHEkQvR_eprDaR9jQ6JbMx9Mc1MaBp6Cgbnq6pss7MSdbQJe-D8b1ofL1z4TTNwidNTW-aRdwTTQloRl5tmg_1UQ_lowbjeLL5avZMZJ0EbXzVpjBbwhLWCcQDEwCBshIqN9XKAspI3hT-0FAuckq8OyK0Y53IZveKDEuTwmHC55QAmaY26S7RW1LLEE-WWZhsKrCc5TY3ZQf0zpXp4jxJn9GRBJy_2qe8j3t6P8DTiNj8W-B3QZjLviC&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Cat Clinic of Norman photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Cat Clinic of Norman</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/norman/" class="back-link">More veterinarians in Norman</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Cat Clinic of Norman?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJAw9ROTOdbIcR8YhSzebxIe8%2Fphotos%2FAU_ZVEFDrE3giBBuKSftGrdE58zvvwiwWrSgH_PjHqvyvarC31HZPvpJDht49F7RVDeW-73kO79WaqVdoPdI41KaubaRyzf6EZmJ_Zc1P8I4Dha5VO32eeSqPc3Fk0Xu0gHbxXZvRqUuIxN8wY77oziZ2fvYtOODUGRkph7NovUMCeFVPNZ-L7iimaPOlqDyP4EKx08CHtAxnIt3VCj7si0DFRZquZ2pPm_vCgm6UqA8h8SQSdc96WbjWQoJ87hcRKefeFRwVUgOvUOpaR5XrzKzRDtxkzaVntba5CNeH6K3oek&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="My Pet&#39;s Place photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>My Pet&#39;s Place</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/littleton/" class="back-link">More pet boarding in Littleton</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of My Pet&#39;s Place?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

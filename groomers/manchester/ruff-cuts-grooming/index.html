@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJhUdX4mFX5okR3u9NbNouFBo%2Fphotos%2FAU_ZVEE_8J0FOeh7Idhc_DamV7xEs_bItzxY1R50ag1Zn6KeygYl7xUP1nyy3cmRk_mNcZaRkx0M1_ivgP_UPqLpRN66LaxyiEFJ4bCpz_WQu3T-YPPFG_a0z7xOutpHV_RnHV77wSfCP98L1zk1Mz6HzEtRjkOuhN_Y8J2jkVv4C5cx8Z36s3i_cAUSVPcqsJwueQniyYrYB_CGllvtxnsE3W5jiuB_llxgy5kyjxjXkiijPeQA7IG6xdro5cQBjsrtHcLsbSZzfjCJDR5adLzowLFkd_MetLDmd8WIDTT1tfzQER1Ja78imymv3VucaXOyL3fQWLJP2IKLKSBQs23h5F-C9Y5t5EggV8JDlz-qJzxNvoS19P6aNuGYk6dn0qznkMNoN91vnk2rrllHgM-TCab8p1oy3jGjk1cTiGe-9ugZVLb1ethWWLzFP9V-7_1g&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Ruff Cuts Grooming photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Ruff Cuts Grooming</h1>
@@ -194,8 +193,9 @@
                     <a href="/groomers/manchester/" class="back-link">More pet groomers in Manchester</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Ruff Cuts Grooming?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -341,6 +341,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -351,10 +355,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -379,7 +379,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

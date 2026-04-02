@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJDXSJZWFPs1IRAui6WXRpANU%2Fphotos%2FAU_ZVEEVcsKomHCT_z_DoSdkh8aWwMhqYE1WOpaQ0LPSrCAq7puGPu22UYA3v7xwT1lEsuaknM1x3ypDer_-S_jgiDaCJ7SO4QrKL58mmFyPz_o7y3H2N3C0PA6SzqsznBlbzKRPmdzRia93CZFb4EV-7xEeqA96VNxRWlP70FMel_pCPWSnw5Rc6wZI5sol2UjLNVE8VONxaiiQVoe1j3GoGo-S7-1hszJesw_mrBZAxo36aiLghoiqpKN9zZK-3lKriQ6QOpEBhhOBsYj66g0sGpW46NQwX4Wn_CH6dohGzxjiAqaGCO6YYeemrG0yOqL3QxcsyWm5hzOe4ysb5u9s5nBboaibAqwUdjwNTFlqCs9wSma1E1l4V_IMfwOgNsm2GfLlY8mR1fjs2eFtGL9WsnT0Dh7eAI6obevBlkslf7jSohTm&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Corcoran Pet Care Center photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Corcoran Pet Care Center</h1>
@@ -205,8 +204,9 @@
                     <a href="/vets/corcoran/" class="back-link">More veterinarians in Corcoran</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Corcoran Pet Care Center?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -352,6 +352,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -362,10 +366,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -390,7 +390,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

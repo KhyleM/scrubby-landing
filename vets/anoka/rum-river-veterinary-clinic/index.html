@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJQY-vne4-s1IRxHreW7I54M0%2Fphotos%2FAU_ZVEHt2R34qrHb1cM7k_S4W8hx5ccxmQTlO0Tfl1zinL13tk4xMp2ii83ekZN9VXbz_x2wLhNc8ZcDMrbtmGn6Fgd5H_wN-OJDfvrMqM09fseGCro9XBLYvlzVrlz95IYAxCXEM-uksxOGITlNx6WmjJTe3j8HOAscXfzCrZzhu-sFxuiHmd1P1-CyDHYawkhEXHkDjg_jZJ5cK2dQotmL81tjNe4ImAI0GW4uOmdseTxLuTQPO7oE8elEOQ9y6zbjxhKcCKhn8TGJS9h7fdTgqw9nHnfs3QnbGCxeAS9hHQ1huGzwcbdmh0hUQSn7rVez6LblHhYD-4wkVUhhRPB0ybHAktjoRDIYq7wsZkQuzSiG9PlaSn_yWmbOXVlFEBc1SGpWDEOhu-ewPvfteK-dJygpZe3x7jqN1Qe_qujDzxZsDMkY&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Rum River Veterinary Clinic photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Rum River Veterinary Clinic</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/anoka/" class="back-link">More veterinarians in Anoka</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Rum River Veterinary Clinic?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

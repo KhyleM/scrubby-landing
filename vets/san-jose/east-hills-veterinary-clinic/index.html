@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJpZN8Q0TNj4ARQO6RhKqZ6lA%2Fphotos%2FAU_ZVEH8wVpa-NNy8Uz4umv4CULCOSCO_GLX2AOuT-mLBTPNYB99412xXfPYFTz_X5PrJShnhK4YISgZppOrjtGqZwHnsPxMIctvK5yIdsIbKxX3PFtb1gMQcV4IpivB2zf_c98eNcjHFp0plTz5Ioyn9rqEdu0x2RW2N4AfkkZAdawq8_JNRxwKsS70dHJur6i044wHGGlDHiyMgIDLLvQXwidCNKBaeT0Ba2k0Y3z4fPZXXZLwDR87gQHXfZCGhm4ZWVHW3DcrvMwFTaTMNpmYfEZVFWP7qkaQfVQyFyKFNYiJ2sjqc1R8L4dmJYgEE54vloeeKcvEzxrOSByohnLOWXTBUY2ApoYBtveNP47Jp_0yygUoxd03EicyDfdfcDLzQYMd0Z79OD3igWCPG97gU_JgIOWLsz9AjTrEkMnHdu9_2rbSqV8NxMdYqsz5luPT&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="East Hills Veterinary Clinic photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>East Hills Veterinary Clinic</h1>
@@ -194,8 +193,9 @@
                     <a href="/vets/san-jose/" class="back-link">More veterinarians in San Jose</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of East Hills Veterinary Clinic?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -341,6 +341,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -351,10 +355,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -379,7 +379,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

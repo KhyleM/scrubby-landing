@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJnSQlO6Ux3YARa8SEo3FMk1A%2Fphotos%2FAU_ZVEF6HkpQrn8OA5G91wjP4RrEdH7BwyyG3uh1bTwOYjHomAlmobIdPx72t7QacwHMK2DsvgKmKqk-A2eANTwXiIHOWYkZpeq4uAcD9WKEbKJ3BesB6eoQY9cS3qWAInonRRjJ4cJe1ky9QycJfcyy-miayLTrdUSyHY2JAodbvowsL9BkUYCR89edDOBhnV3LnIS-_DfAYN-fmwZaGwPO07ZDQxrfgV0BfSCQGcnJJcP5teycG--O7sFkmwHYaGnZvQSTo7Ofh2g36e_E29W96KVB1MA_LKKFXSNB0mFTns1EosvEif7_htvILy0cb272akAvk5Sr1WodHplJKFQ57aJeaabvdHoUagBM1OOFw7r_CE_JY8Y6iLMQgrCN571kibIBSW4uALovC9w9Etq1RPC3gFqCawtml3g10r9uuXlfr7nn&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Trendi Pawz Grooming and Spa photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Trendi Pawz Grooming and Spa</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/long-beach/" class="back-link">More pet groomers in Long Beach</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Trendi Pawz Grooming and Spa?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

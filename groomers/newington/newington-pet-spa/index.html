@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ7yme-P6y54kR8sM0NXvn93A%2Fphotos%2FAU_ZVEGWRnaAqh4jQylYUOAlHBffWkvUUXzcuptZ8MZZE3FfKjXa4PcMw3EzZu9myzKuQcGChvyMsga5D3c3dDU4uzxF39IMvFIb0yCqnGxgG0Xq0qUgV_QMj29jfdQIW_PbGhUT3CuBCcS1cQbZcsS9rJHafLIXv2B_zsdIvgZz0Deg4d50Ng495hEcPFOfZHtQen2gIpF3wSwbcp_6F7PYU33wgIYlP5G35hJ1u8N5P2a9u9aceCHkdlO7oOrIcocbHZ4sR3Z28fv9CBpey36_pKJmqqQEL_MJTpQDPueFAu3vWUv2QpJGZkSEUzocEgdadydI3CHI_Nde7bvL-HQ8hrBSFOWVlfOatyzxgwvXDuPLjXWqnyQ16MKyfAOnxjQpFnP07RYjnw3CNphns6fMkrf__f-2EnvntinqcBAu7IxkTDNn&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Newington Pet Spa photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Newington Pet Spa</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/newington/" class="back-link">More pet groomers in Newington</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Newington Pet Spa?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

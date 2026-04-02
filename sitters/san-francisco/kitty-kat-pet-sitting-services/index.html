@@ -79,7 +79,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJhdVLPYyAhYARYQ79SNklrKE%2Fphotos%2FATCDNfUZIiM-zR7CrBih0YESX33ZJaf5YXU_Xr--X6nkUJi1obhfBxDvBIdT0DYUOCStYwDlPb8L2bB8Aln-F1MxpuKJcQbH0lf6ke5auKjsvvDl1vXCoj3nxOG1KXqw11R4E1cxSQKEcKZd1PPTm0m0y-UzLrAUb1Mj31737iQde7pc-VTBRwqSJ5FquxfDUSuZY0vbXhCgvu2PCZxNBgagBVUwng0qrbOv7m21EBETnKafLwBWAaoBo6jcy9H17Kj7wnHxSK49dCQc4chYNO52E7Yrbnze83VD79A0PdEbwwQoLg&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Kitty Kat Pet Sitting Services photo 3" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Kitty Kat Pet Sitting Services</h1>
@@ -187,8 +186,9 @@
                     <a href="/sitters/san-francisco/" class="back-link">More pet sitters in San Francisco</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Kitty Kat Pet Sitting Services?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -334,6 +334,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -344,10 +348,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -372,7 +372,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

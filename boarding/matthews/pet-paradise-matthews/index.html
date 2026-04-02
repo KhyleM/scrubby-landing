@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJQ0LPzgkkVIgR0cK8h6cZvjc%2Fphotos%2FAU_ZVEHtPa_XwuvJmrU-meIJhzyOdQb_intUi-Zr332p6QiMVQXZegme7pnY58RN_gTct1R029uPqkpWZmoYQNJAj0PrJ2Ay6uTmACZBOnVPdzSH3FEjMpPCjmoaFnj1vJg1c367gV7naMtGTUR4STvALsAq46I-ACKmXU2s9aebk3YOxOBoTpsR87C0EW9h11fznomjHL6DrJkMkI9SpofLCikW8_LVvfmEszFZ4fr7cp_9tKyq5YzzbUHd8Tv6FVLZr_UtOy0H1BV5ktgQo_F9xyyzKreF8dZzPdVfhmit2XC3OfClS0xNuq-pYGtPUW9geuPOQF-2AE3z2zEWi9uJdGlvb1I46xCmeFtt6TOli94kviQQPBV5TiDKnnxAqkRVqdaot9l6whv7b43zytQUXpagZw9hf1J5y1VGsOSDMW-Mq3Lt84uWir1RtFKvPA&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Pet Paradise Matthews photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Pet Paradise Matthews</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/matthews/" class="back-link">More pet boarding in Matthews</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Pet Paradise Matthews?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

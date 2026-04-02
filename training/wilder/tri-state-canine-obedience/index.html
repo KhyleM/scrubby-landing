@@ -78,7 +78,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJz9-iFIDFQYgR1mFJki6_Vc0%2Fphotos%2FAU_ZVEE46AM8uw948GFoNcdEQSGL6glMzuZREhpifMPfD9fL92Ud5_Rc5GMBkqZ9gCYihEKC8547EiWoGBySZai2WFFctfNMlNOVOZ7MITMeAqLPb4wXF0V34E9XNBqvwsk3sqQlRshqB2gAJXOGAhlx4tg4ONAvvTkk3kTrxovGTJoIvIdG_sDAoZKQWFRR0zl4mWBX-nI9bY3vjkZ1SwT7MoangespkKykylv29TzskOxA4xdYu6U-wf86y9NXo4Xbo2SJ67IHx-b7Oxr2_LgtRP0j0pO-mR2HB7wzUm1lZSQMJJ1x_CombHumVpFc6IV_DHuT2saa4y98B4e2zEoYbFKy8eWsonsqdAvQrznI_HBqlfA6KiczWMj074mYjh2y3eDXX46uBkDJ8zGhdIQxIIDstwvqYdgI1zFZX0ytvwSuxGQC-pGksK1lqse-nB3o&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Tri-State Canine Obedience photo 2" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Tri-State Canine Obedience</h1>
@@ -194,8 +193,9 @@
                     <a href="/training/wilder/" class="back-link">More dog trainers in Wilder</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Tri-State Canine Obedience?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -341,6 +341,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -351,10 +355,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -379,7 +379,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

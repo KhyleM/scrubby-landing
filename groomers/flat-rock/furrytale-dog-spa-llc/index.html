@@ -77,7 +77,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJGdwyaTFlO4gRHjPuFKG4p1M%2Fphotos%2FAU_ZVEHhtSm7KAEp2XxlzMl8eyHBRGjGU-wQHpyal1OVhTa_iSE5NP0DbZrX9qqDNfip8u0NgtcgUI9xgPZ0WVIIn-BjeyHCyUkVUC0LzE2O5XTc7NWxkfarsoH6T9B1Dpj86Xc0_0nuASndaVGvDV4hmGNsMoz0aDEO_a_YIPg37enwqb1w4RfWFSdtftbsIqFovVxZADnY9tOC6WIsxdW69AsNo6tDDwvZQXlW-FsxviI-kCWICYU6pv1MifD4DDqioZNrB9OnlZ7ZyCHEhOjN5p_Bs0Cwngr846bvpv3bsEC82sqW323RMQQay_q2eNTKVYHQ8znvIn4PogdVF06pzvYrALCaWFd81dssV5oOaqfje4PvZBjc1mDn6V7Pf3OiwIQ-rS3at47JLcBERKPHY4TddyJ0cnanG8ohajn7F5PNU6W0&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="FurryTale Dog Spa LLC" loading="eager" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>FurryTale Dog Spa LLC</h1>
@@ -193,8 +192,9 @@
                     <a href="/groomers/flat-rock/" class="back-link">More pet groomers in Flat Rock</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of FurryTale Dog Spa LLC?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -340,6 +340,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -350,10 +354,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -378,7 +378,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

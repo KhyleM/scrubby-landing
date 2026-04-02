@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJY1ehRtH2t4kR1p7xun8Ll7g%2Fphotos%2FAU_ZVEEdNcIV23qfjzqwrYpKcubrJBW38ICPLx4n-cS0QrpFT3vtJw7Yf7-TFLUz6zdAPBOHkErNBkHPJv2N54U6X_DIDlynE7e6oqWMIuEPChHxPU5B9Y5P8_XWHoqGEYrAP8Wb6JGDFgQihtju_57eFiHoAjphAA3Aklcz1De8ya9qkS6DebHeBeD9mGG_QIPi5Po5NJM7FgMZvihfLAilcb-5wT-THJSnrC-jH5F9t_k0QxbmKWUD3X_Vbmu9PCxrVGyh7neegiZDEJwPQWzVkGt3Kuh_jb82vgRfsu_o-8CELw&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Annapolis Veterinary &amp; Wellness photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Annapolis Veterinary &amp; Wellness</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/annapolis/" class="back-link">More veterinarians in Annapolis</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Annapolis Veterinary &amp; Wellness?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

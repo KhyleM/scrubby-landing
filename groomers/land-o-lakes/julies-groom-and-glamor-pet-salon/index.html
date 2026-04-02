@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJa1tKQ6m8wogRhfvn_1WH7KA%2Fphotos%2FAU_ZVEGp2GT9IkWzcBtVbcbIIJK3aS5HtxDKFvdbTRIdpJrSpxH24HP1yObNXxjJYeLNjyW2VIV823Gru1ma1s38X05VY6dR-r5tAxSgg1kzekDV9OHYhDrwBIz8JR7dr7EP5zzwylS6BHsL559-i-XamstP19qSaOxa4YMBa1h2gMazSdcOhokzYc7fBooUCU4vYnX-XpPj8ramh41GumiCiGFJKINaAWm3uvVinBmLe6a-3gLQO5OIAWRjoifyi5u6wxVU-K6cIgu_ykinyvfhbglLT4EjfDdFzA4L5Ifb9uVEU831CVH7FH8D3DbEYpPbY7sXGIBLxE3b4bDqsfvwtwWAo44irUAOKPQ2cNYMlExM0r3nuROrMYcA3qG3PRL3eoWdq1dA_-Da-ITy91jvj4zN1AEH4acLraAiSHb1bWWujHJ0&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Julie&#39;s Groom and Glamor Pet Salon photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Julie&#39;s Groom and Glamor Pet Salon</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/land-o-lakes/" class="back-link">More pet groomers in Land O&#39; Lakes</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Julie&#39;s Groom and Glamor Pet Salon?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

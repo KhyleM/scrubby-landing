@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJYTsiOfAcnogR6g_pMipZuKA%2Fphotos%2FAU_ZVEG9YGSZRlv4_jHjnaOLI44mIzqSiSZWqI71SRK-l0iCZ5-HgHQcfpLe3-9Fz__E41zbpZGVoZKdXWHfBw0CzLg-jSpeXq_UvZID5mD3YCDoxOukW36E4nIr0eldOKt3Ul6WRgog5HnfxZG8Hd2MHXP9Qfa5sUPrmK685UqkUIcynJALCrh_B88LiJK43cleShhXi3f3QJPXgt-3GwhKXGyVQAJ73p3kStTy3kzOR6EVA72qbz7aSxYdkwod-lWpSAy7T-jfrUPjdT-bZ3pSIg7MIjVASPq8zCpFdjHBTTo1k2LhCPfdc_NczgxQ49tY_SuXCbA07a-XsTFw36ETOxpXkpngqa2g37G7zuSmJ2dTa7dio8eB4Ov49FD-oSIY2E0ZOvmY2tnKyh7DvIrUtW1c9ImKSg-ts3Tf5vjH17mCWBUoP1iCXz0r4791H9_6&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Pet Care Center Chalmette photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Pet Care Center Chalmette</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/chalmette/" class="back-link">More veterinarians in Chalmette</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Pet Care Center Chalmette?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

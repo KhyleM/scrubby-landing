@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJhY9rBcb0wokRy-HVoMCMZL0%2Fphotos%2FAU_ZVEFrjpqjnsAimOlPAw2YyZl6ZG_12xQdpzJTio0A9IYoY5U--86J5LwtnnwTyPHnzFld8jCZZI57t8UEA1S0C6bGEkXgmCLUfnZcXQXg6NWA8wfj5_p671SV8COhi1O3UEbiRD1ieuqv1G_mFhFtVtt7GfUpmOw-GsRwMcJCERiABq0YCBb8A5fGlZ9_5IXRc__ovOAEcX4XidjStTTG6zCtzjh_pq0SjhUJlkN2ycKzwc5sAd8qgmE9eeA60Q2wnftkUm2X8zNemBnh9itpAas7YGO-LpTltSctsIWeBj5rKzsy_FSf3wv8a07PJH7vVnYbu6nclOjMuLKPyPFwKis6_lfqHUHNx085Y-ku7_WDxBxsYr4c3PysI4O7MGMNwFrgGXHOoEfsKarU1N_fz9d8i0BndgA6_wwF9usPoBYTxw&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Value Veterinary Clinic photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Value Veterinary Clinic</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/bronx/" class="back-link">More veterinarians in Bronx</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Value Veterinary Clinic?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

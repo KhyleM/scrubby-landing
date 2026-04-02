@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJBV6F_iKRwogR8l90wJQyVsY%2Fphotos%2FAU_ZVEFP37USXnN8NeL-Lq63hmjn93aUqkfiNg8RFl42RdXer7oFAMFfu3J_kt2wl5xvX7mq8LgmS6Od7mhbVJJ_dKA8VJpeUPiujPdl0vbN3ijefpBZI0AxSj_6MkZD4ZT_ZdJUgjI9gR1_qmIApHWCRO5-SKs76L18SL80rgF67A3gMcXozBfygmo8NZMu4PPiLwAwhWuShnEcYrkhBrtPOMTxRUhsMEYOYDPToNOZklLFjGtaboXBPH6qoGWc8A3jd1dK5CKJKYs9vMz_-w1zyQmMxFsnna8FTVK235Md3z_4GLak1GnC8c-H5srDVlrEzRk8U-EddrFsiPezNy7ghXhQql7RLYLwqXZlQlJbsjAW1MriCR-izMvWZo_pWjWsx4NEXva3RNR5vFj8MdgtBrVsCkNif4UMG4Uah0pA1lw3Vn7nSTf22cEwHNzG4shV&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Paws On The Ground Dog Training photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Paws On The Ground Dog Training</h1>
@@ -197,8 +196,9 @@
                     <a href="/training/new-port-richey/" class="back-link">More dog trainers in New Port Richey</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Paws On The Ground Dog Training?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

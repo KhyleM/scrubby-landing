@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJp6kz9ZHn5YgRxGBYFAIjqvQ%2Fphotos%2FAU_ZVEGq-ZAvVwtqJ7wL6qfD5DKu7SSzLBR_2gYiq4TILZvUbwN8NtW49-oi7PZvbm5IVy4LILEboU1PYiM4AIpAPnRuXmzzWwvdkH3CShRQByXwNedMXp8G-7NPGo8Uz8xkXCDKkBjsUstrwePVaYpFKQN8ubL5jPP8PUcfSomli0cdf2Dbj3hvVe9rOuBTDU9V-eAZxF3SNHM2jCoZ6nc5sF6wZqdYKbs3soSATlyzU1twJef6-E5MHeXXbfkR-UBuGoEOAIBpcs1MYX7M__9rR1YO0ByixR-3fwxrJ3z4lc4qznRSIJjRqZa95nv8wBjIr2_a1j61-9dhWSpOU1cXQxcdDEaHxShQ7JT0qEJGNrsvQG0DzWq90C9lkXguo1-kup8vq9tkTnzn6MW3VhaHH7n8u45rDo8vYNNRGpTLLkeSLccn&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Black Creek Veterinary Hospital photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Black Creek Veterinary Hospital</h1>
@@ -198,8 +197,9 @@
                     <a href="/vets/middleburg/" class="back-link">More veterinarians in Middleburg</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Black Creek Veterinary Hospital?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -345,6 +345,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -355,10 +359,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -383,7 +383,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

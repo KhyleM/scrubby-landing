@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJTx4i80n25okRtzu9XPVPk44%2Fphotos%2FAU_ZVEGxBpQk7AHfegwxrvsEXtZQBWG_aYY7SvjvT9Sdy-yR6HPKoumkKu_4dKuAXiMF-FCyNUdU8ZEo6N6Zu7dnQ7Rv65z1DQXxYOY2DzCYrYWjIyujhyR95-fbY45yn_1djGLtqZZ5bsRAfF6NmfXZUpadhrryOx_25MG3WhGLcwyiIcEDftG77VOLLkjQ7WK-tVW_I4SBdHRqcZ5xOvkj5lwoKiSvDnxqhI2_0RdJnTh7AdQhS-uHWzLTuckZYO2HlkaEgW7INZkpQlyh6_Z2fY4GM-iuPuof5U28gS1L-8kWztvfy0-P7j0jMJFUc2hpyvslQtCVSmngTj2R52ZgIPfDTQnr6kwJUuTzOBEjMnYhPfpGxZBvy-QCZFx5zCwsMQaVCEPFGyO3Hyz2I_BGeFC3I319y0TZozDBU0Rn4C9FLTw&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Town &amp; Country Veterinary Associates photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Town &amp; Country Veterinary Associates</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/vernon/" class="back-link">More veterinarians in Vernon</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Town &amp; Country Veterinary Associates?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

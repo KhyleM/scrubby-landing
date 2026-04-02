@@ -77,7 +77,6 @@
                     <img src="https://places.googleapis.com/v1/places/ChIJRTJsKtOxj4ARxgtOqH3M_nI/photos/ATCDNfWce9mQPCtIk688nVyqlyqE8y6AAFZkvoObioQJvGxDNlkt7An--KnCc2WPhxQGEaMKPadqp1YQg44KEduXwHNj5V4gfA0ceW3_vgmRWYFwTnl1_PL_VLwdY09A1JRIcM0ooU9HWCHaOFC9MdlLodoMT5XbcVawsKXEbsEM1T7Hjl4dxboOd_Zcfukx6iKD9ST_NmF70bUESV4BY9EEJutCjkw5kUGEysx_DTRaSa4C8HAwS2ogV5ShZn8xU9TsHaf1o4c8_5BzXmUu1UJaVf_lRB-ILe3sqdLBuvTI-KrIHz9zLl3VNsOEEXSC1btiRk4ay76ZZdKKUkwEHpI7oiLl8HgmqiuEUMJcWNbckxURxJthnNjR3ZJPF7go41aOU_sCO8vkNjwD3DdoObj9BiC4FFUSXFY-yUoKgB8I1-7mprMHhTkOS8egU8XFbvgo/media?maxHeightPx=400&maxWidthPx=400&key=AIzaSyCpmbfD6svBtJL5OpHfeph6xPVzLlf7F-g" alt="D&#39;s Pet Spa" loading="eager" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>D&#39;s Pet Spa</h1>
@@ -193,8 +192,9 @@
                     <a href="/groomers/mountain-view/" class="back-link">More pet groomers in Mountain View</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of D&#39;s Pet Spa?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -340,6 +340,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -350,10 +354,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -378,7 +378,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

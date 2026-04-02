@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJnwi00RScbIcRlbKjojpIyxg%2Fphotos%2FAU_ZVEGYR4Dgtjn8pdagiKns-mhlWyhmEfsNQAqYFrLcpX8cVR__fEF-uIlSjwp0wbVzZ9AJ1Uq9C5ivJ46AAAq4FmcqBPB6n4ebMnjkIIs1OmbMDSyRmPlixI4w34CVZvle1w1rWDYBYpmuT9hKBeioDk5DQw_IzgTX3BvKylbSVGwwdnNsrI2aNOnXrwPhc4p6PkTFtdsySWiH-h-QNg7H4kWjV7No7rg0WdxwkUevWIxpqSNvLFH2BTxIFEYp4TNs8z-QPDI2hn0N0FyJEjMiKwCpoQiQE81H8XNZHX4o8I7i6YVt0TK1jhWC_ZctQNw-yWT24dnAbWGU-VLNfArmr9W6ux-nLTQOuP5K9U5jag--wVmND6XT3ZQv0U_UpvoZz1pU3Rv84XzqJvrC1CEXzrfJEFP6wWZb4Txzq14S2R4&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Bowser Bubbles Pet Salon photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Bowser Bubbles Pet Salon</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/sedalia/" class="back-link">More pet groomers in Sedalia</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Bowser Bubbles Pet Salon?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

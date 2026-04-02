@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJVVDOCmDlt4kR-5O3Qca0_jU%2Fphotos%2FAU_ZVEGkAhS2FwbqPPTqDZSiScTx5UzTskSAxtlJDwCV46378iplaHkEVx6Oey2R_wWiutghATqU4Gz9oZ9oskbKNZioR6lWI_1gSiEU2T8YW4RmO0oMog5RUefhIUh1eOP8Q1yeB_RpDEPf_iqYQfR2J0R9AY485bFxTXyFpGag8pmubBN79ERUfR-_KGNLciG1RrnX40AGgfI30miDyh9YXqG9D870EantVjrH70z8VLdRixUqnqUiUyKa4cr-JZohsCsGijC34yhs7OdpOiF_lByrl-hhHft28-bNBtOE5z1a_FXan1nsiiRWtHLbGhRgf_1FpBXgmCkDBodOJy0XxifXH3MAFbIoWbPwb0WH9INPVzGZBJhPgimqzdAqqzN8fZsvum4mIOrI0d8YAi87FQs-R2apwp7XdkeJJuuwIUc90PSG&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Sue&#39;s Sudsy Pup photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Sue&#39;s Sudsy Pup</h1>
@@ -197,8 +196,9 @@
                     <a href="/groomers/gambrills/" class="back-link">More pet groomers in Gambrills</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Sue&#39;s Sudsy Pup?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

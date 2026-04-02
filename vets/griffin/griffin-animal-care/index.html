@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJa-71qmGK9IgRGEKqF_wWEa4%2Fphotos%2FAU_ZVEGE2GDEhr8r2_MwHU8OnvaTf0Q4q2E3DKzA2UfTCTLWHBlv50wJZBnX8xCxK-R-PRtJpbXYHNO4IWNKrfuiKomTUtg-_Em9Yl4exxjoumhzVeOjS5OtjkqaW3Z_SVUc1zHdxYlCJZyh_-PqOuxhlmJ7FscOy1Ue-mqGLxamkfFsv58kItJ6sH1V_tU9fyfk8D-be__u3NS0gSEXST6T9p3F_J-tJ9knCnfnMjIv_jiR8ya_ILVJv0oyKPCy5gSwBIlqIgnCZZbeI9ono84h9r4SCTh-AGSnsA3xRLWegXEqy6CXO-P3auoPT3ev6zO4uhqOzS5LAMpIAxYA-v82mQPjBPm5MhdVPHJxw2e9XjFHW9WS5rnUxNbFLUy1vv2UOG6Q2ESOwZ6YYm6XDDgaH3OjLKxxpDs29PptJuuNcALBk_o&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Griffin Animal Care photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Griffin Animal Care</h1>
@@ -201,8 +200,9 @@
                     <a href="/vets/griffin/" class="back-link">More veterinarians in Griffin</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Griffin Animal Care?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

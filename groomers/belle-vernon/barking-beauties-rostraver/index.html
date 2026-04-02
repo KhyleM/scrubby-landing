@@ -78,7 +78,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJN_e9ItMfNYgRPPu17-FDPNI%2Fphotos%2FAU_ZVEG_jGH-dn79GNnoot1w-nEhRc1bysIy8ckII2uQnn0Fvq4r74Bcl9wncYOIE-FHLmlPdg_8jTJWetMG6__Utf6R5wdKU3tL0BBGwVFo8sL_LxiRtf2PjephNUH4QUu6_drg4H2vlGBC5srN3S_LiBmmiJi3fy8WURSk3eM7Dob7L5COjvD3ojflVt8-GCJnifZGkniemoMn_3CsRyK57zpVN0yokEK-8w1lNC8oTNgkff_kUglc-jqKKLGuPHKAEJptog14tdHD4X1WJq2B8bqIPEMm1jg6vUZEo55pJC50nbrRMGxZajQZ0R492vILdIebakL3IGqJ6t6sWJ2momSYhYNql67dc4-hCgk4FxHXXWN5bZDAsl3hNXdVZIcW0vY2tvWQ9DnknxXNNBe_787dbzqPU2rj71xyV9XexWbrGxDLIj1MK1MJIPVxOlie&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Barking Beauties Rostraver photo 2" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Barking Beauties Rostraver</h1>
@@ -194,8 +193,9 @@
                     <a href="/groomers/belle-vernon/" class="back-link">More pet groomers in Belle Vernon</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Barking Beauties Rostraver?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -341,6 +341,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -351,10 +355,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -379,7 +379,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

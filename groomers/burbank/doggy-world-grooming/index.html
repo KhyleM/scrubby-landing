@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJW7v3pQSVwoARLt_BGKwhwRg%2Fphotos%2FAU_ZVEF_Ia6HUmncJYtie_1lnGjQmHf2SJyIGEDLxNm8DDrf8WY7ckIJdaKqLHS1gkPG5iGAJOX4caaDcn0GiONBrrD-G0jq7xmSBCkCy2Ua40gmTaVe1x_t_LtmHrRm6jqfREF0k5C2VOll2qeg08oA-q68uxHTRCVxi5CgxcqZnQ_G7KhLWboG8-xEqLMSJclYWyNi_2LzQKaErdkx0znjIaJQwkbBlUs7Ax8GoGoTR0OG3gwM2mz3zGfCr4n_7BJv0mtCkYr16N7P4mG18BANMtU8cn4MeT_h2zJ3rBvj_8JhW9Q6Po608r680vixU0P-UEqpdD_2RGtxauQDxu6qx5GxtEA0KuaKu76vZ_WTiMWjPk6WKgIBm07RtMybjzIqvCRrgYydebFtfqr3qAQJIldJQk7FNZCtJqPZOGR6trrgT2M&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Doggy World Grooming photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Doggy World Grooming</h1>
@@ -198,8 +197,9 @@
                     <a href="/groomers/burbank/" class="back-link">More pet groomers in Burbank</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Doggy World Grooming?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -345,6 +345,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -355,10 +359,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -383,7 +383,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

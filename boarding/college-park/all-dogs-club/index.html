@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJScxBMKrGt4kRgr-iZPU1jbA%2Fphotos%2FAU_ZVEHhAjzlesYsIh-LXFoyoBn3MVm5jGPps6Gm8XEmOpnfwiyCUggr3hVkTR4w3g3XMLOFmJtfWsX6ABuceDGNtWCjELHMCiuOpvx6g6AO4hKe-7_NsQwoYaRvzUvNSyjShbNO2d3rXyVGvyght3gRXGUWbAoxAt4KjL-R7wMoq6yBynUiDmv5Ig6I5xbOXbKUedwyJkbR6dKaHXO6dgbwy30DugpvU525tuIQ6B7V6SbIoECQEgixZ3Rp1K6ml6KIC5-dxIO0V4Ypl8R22rR7Z2nDwPWt_3j32h56SBnq1N3uzlotekNLEm9sAG1VwIITSzVJtBDLK6PslTHTnWpkftRCu7mhG1ipPIICdFSj4DPktAaK6-JFs3L7LwbWFp2wNJmrwj6Pnj5NXMPYfE3qfhHD0ZaWOBNaUGytLeYMCYSqXIzn9Vpwajn0N0FDPFID&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="All Dogs Club photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>All Dogs Club</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/college-park/" class="back-link">More pet boarding in College Park</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of All Dogs Club?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

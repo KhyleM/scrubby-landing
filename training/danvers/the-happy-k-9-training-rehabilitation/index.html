@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ0aj3QdAR44kRBg3AdW0mQBg%2Fphotos%2FAU_ZVEG2OWDlC8yqUkLCo-VIHY-s-2Hw4ZTv33kp2Y4GSCdY7Ab_Zzm0PLoYQtQVTSbDfR5IuWqD8zhGUUmHfw96xQkfzPKTnZC4Ah5e8awbuw0yjutb-nnfSlHKIDiBqH9eWtVBKwNvi_jyy-bOTOhFgx88eLsoIcsCKUYKb7AFJyQDSIquyIl64TWnlswkjEGb5clE4ezlhgFm17H52KfVixZyRyt8rPBGqnnuhpLhk8YAY-GtcSt-RLbucHzVpSJ8TbQWYn3te4ztuzcya0xeWZY2jCREboq1fHCSdnXTn9AtuSUaL3boE3T9VuwNiNbxHhlzjIrCggdUAiSo1P69BkjseMnMX0NN4uM0xpkOXoIQ80spJ4XCu-zjL2KZW4JYU1jt2MV6TLq5awEDhcqvpgGUNICTXnhYZ7Fa4ggK4fGrXqe1_2iTGuTCY3kmXLaV&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="The Happy K-9 Training &amp; Rehabilitation photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>The Happy K-9 Training &amp; Rehabilitation</h1>
@@ -197,8 +196,9 @@
                     <a href="/training/danvers/" class="back-link">More dog trainers in Danvers</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of The Happy K-9 Training &amp; Rehabilitation?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

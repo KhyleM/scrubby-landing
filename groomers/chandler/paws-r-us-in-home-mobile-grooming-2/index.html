@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJMaHHpLCawwkRcIulyhAF9gY%2Fphotos%2FAU_ZVEFt8y3PyNBZqKbheT2GO83i8UmVGdAtLMxvJvqy4kE5S5Gb3a4s4MU4m9hih8PpdDVTWaBVJh053rN4g3JDLBUnCjwc-djpDhxppjwHr1eptyxyMxhrCVzVvxw1l8Og6PKrHdOKzEqHVKyh4RrC-gCjCT0phTBHh9B4HpZHnynxsLL9e340g0eX-uuX3yyGA8uFr38i9VzIsxyhPNPBpYIwi9cxP7CIbgtadXzBP9WtPXP3Xry9duvrgLsMfNi5Fh2z1jpepcSZ2E12gXSh-1TTz4aglSIL9UjFi0weGwqu3A&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Paws R Us In-Home Mobile Grooming photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Paws R Us In-Home Mobile Grooming</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/chandler/" class="back-link">More pet groomers in Chandler</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Paws R Us In-Home Mobile Grooming?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

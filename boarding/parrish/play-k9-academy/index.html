@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJe1_y9fg744AR6DBcP9DER3s%2Fphotos%2FAU_ZVEGP_mLG4up8FqStwbC7ELgYKmVAFYjwHNiT71X1UrmqvmeFIoprpE5YNs9qghSPuzw8NwdkKHpBFe8qMAtLEAxjMVmr0zywbwiokXEYEkb4rzP5yiuCYc5wmL_1jJJLhaDgKAxQnrnANc9CIorDlJPerhaj_7BJ9w3bk76CIcjUGwDBnkSWDp4zoioCClZf1qTA0V3nq8vr18YIRDTFEoT071gGM-ig09iFKIWpF9PgsIOThTde7bhM36AnidB2tXswiOluC4lM6sqPil6FgHQ9JPdyOnas_J13xcxxLrzZ8qWZCf_X7zSCBGZ1hsbHMWGw6Sy4sYWYlF-myjF9SPdG3H6yWmAdQBHcinyf9ykw8VuFQgMyGv2lMp7P-G2TTm4m87T7oggYAMWI-QkIaELag0d_0bjVmdsKiOLuzvg5M-41j8JPLeG3ETh63w&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="PLAY! K9 Academy photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>PLAY! K9 Academy</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/parrish/" class="back-link">More pet boarding in Parrish</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of PLAY! K9 Academy?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

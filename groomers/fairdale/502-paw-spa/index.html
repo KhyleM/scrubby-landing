@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJLxCWBgoPaYgRSjosaZjd_JM%2Fphotos%2FAU_ZVEH53pX3EEaKOMJVU1KJRirXMeoD3m7kcyZTMaVW1rqYQpc18LRRp7fyYYgM-AHKW9qy4Km8jpxPM1DeosSBX8SAUBbFDq14mC6Zc-KTF3QBumOUX8WbCI3V2gA5gLu8IOkEnen7RMMU7MslpuUSbdP4BU5Glcxnuh3harDiv0isphU1C1HZgaD4jmEVRn303lHs0Jcnd__jjPhHjigZ4tuJDSNo7NrIYMZKPEUzikZa7xgNzxbd1dhsRqngAaDf2gWYorMATXI1d1o0ESpnt3H2CdqfvI_qYZwW9XK5IBzZk5kSzdv3h0rIRGPchMw9YEqovcC8HkqJm8wvE1oycVBOVnmW_IYlDQ6gkCo3m3ommwe-o0rg_hFZN4bMNMdi677TmpQ3K0Kj_lGol-aFPIR53298xYOXIiYm8ehy6LPqP1PKPsMv_bz_aj4DRQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="502 Paw Spa photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>502 Paw Spa</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/fairdale/" class="back-link">More pet groomers in Fairdale</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of 502 Paw Spa?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

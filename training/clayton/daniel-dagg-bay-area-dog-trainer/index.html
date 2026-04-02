@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ93VmcGFfhYARQIwDLMDyk4k%2Fphotos%2FAU_ZVEHwzyFAZztUFbeX71-YSxVSqs249yM-aP3qGDeY6KwNODNNlraokdx7GN2vTa7xqLHxTdI07mz67GHZfBve-DDiJgn0btWiRxZQlTqLjiO_MqINdYW8B_QhQlvSannKtDP5_Odc41inq6XEE7oSOhAY3hddYRX8fpKKhNT3-S7EnIx7BpipEwNLi23S3jTZGpz5Kubg3OHM3DZ_xZy7RnXxMfADMNZDo2tGA07u9pAXrLXmCRXSmXi79FQC8DkmWLoujpXtAzDGfTtOexnz4vRxQT7UHRPqnoglaG5SPXZnYNtl6ThH4lcgYcAEIDOaPFIqp1vkVwdgJ4Rn2e2-45-nPdqV3jDdTSDXm8DmYJl4vrC2ZOQd56UWDDH2a-fEGx3ltTSFndemb3qaFBclIpFLjrS_m1Kgt6au6xFzH32Jw1ZX6iGn3bue02wivp2A&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Daniel Dagg, Bay Area Dog Trainer photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Daniel Dagg, Bay Area Dog Trainer</h1>
@@ -185,8 +184,9 @@
                     <a href="/training/clayton/" class="back-link">More dog trainers in Clayton</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Daniel Dagg, Bay Area Dog Trainer?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -332,6 +332,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -342,10 +346,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -370,7 +370,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

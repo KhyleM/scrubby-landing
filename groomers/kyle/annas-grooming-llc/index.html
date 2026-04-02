@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJEzLZQPhXW4YR-Tdj_gxQS7M%2Fphotos%2FAU_ZVEHmXb72v5Tc_r7OBEyGwCDwYdGB8tJaSlpyQ4rSF8dR9x66yJYuCNPEIa4zYO9VwsgGa1T-3sX4K8X-zbPzz9Kpd71tBuLnoCqC91-WkjyWdU06Ey1ZaJVpXu4CND_sFMIb9Qsn46i2u5foSgaetiF-Vekd2Ppi3L_Zr0K6FHzBnVttj-MTwIWcp9sHuT1PnBG69iT6eU987QQ6OxozX02TP0_IZN0lrt0r3jWSt97IneS9cB0m0jWr0I0zo_8AqG43GW2AqlsEameOTRzdoWvIF3kUSuxt2N8JJu74WaWK9LSauWtvkgWjsNABWnkIAWy_DXx9TS6v1dld6opEWXKO16fiQfEELUyu_ZeGR3WE80BF0WgBWtL-vvbfPeSSafgc7oJ37cEqUWlgSg4xKJGwmCItp6nwI8PFKvYzz0p58g&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Anna’s Grooming LLC photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Anna’s Grooming LLC</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/kyle/" class="back-link">More pet groomers in Kyle</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Anna’s Grooming LLC?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

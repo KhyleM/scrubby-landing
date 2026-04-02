@@ -77,7 +77,6 @@
                     <img src="https://places.googleapis.com/v1/places/ChIJvcy24B1-j4AR_C5TYll96N8/photos/ATCDNfXKUqMjSEBh3eCL3vkEVCiiwoyVDxysQ-UyyjasS4FLgdmUxoqx9CxLHIwnTmJFiqB2Zmf7s476rG70edmA-9-NBhqfic1FO6_-p3KKEK7I_tB4hS3PxdNaey1wstDgxLTNHdGL-emrlI5bWkpxEXTEW8d4ow9NN5FO1QcQJR8FK3PAY7lXLg0Ps2_D91afIDz3Ux-dlN8EIkNgoiWntlM9hXVjnplPp5khHUsoV_VDClX8zrTit1LOZOK4K1s9ZxmyoWmL-arXIOWuQ1nUoxG3fshCiaxR-vPGF90kGBvP9Q/media?maxHeightPx=400&maxWidthPx=400&key=AIzaSyCpmbfD6svBtJL5OpHfeph6xPVzLlf7F-g" alt="Little Ark Dog Grooming" loading="eager" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Little Ark Dog Grooming</h1>
@@ -197,8 +196,9 @@
                     <a href="/groomers/san-francisco/" class="back-link">More pet groomers in San Francisco</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Little Ark Dog Grooming?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

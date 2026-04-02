@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJj-Ea5t3emoARwgoWgEZSWxM%2Fphotos%2FAU_ZVEGMAqvqs9jgWUH2HSCl185CtW0p6zhSsCgBExzMlA36saXZF5GGC_Q_jcIh5R5U_m5bEwm1SUqQdLvkDUr4WkLDj1vWplg0ycY_xfOxDL0m8Y3qURd6MqfUDJ-2DGJbiBZ4aV3Hp4fiApp4bO486Pet7K0MxnKeI_MSCqNdqg2YahttZncTeK2hIumjrKJfuyWR5B-6dFkDu8KRipQyWM1rvlLOYkYITmH7ASwR2mvDQFjO_hBy8hk3mVf6XQyJS-scdv_Gjo1I34HTHV302KUD3CYfEpQuqFZeBykoGo3M0YIFv4vmMkR8oTK-v5GANG19ty_Cf6oe0QdEBTiL3DBwfcdE4iQXgLtGzldUgQVdQD9Kp3I0NDzAM4lWWdGK_mgbUjYH5rzyq3W8VY4FDYuTJMmW_lEdgpqkLhsKEW4&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Arcade Creek Kennels photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Arcade Creek Kennels</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/sacramento/" class="back-link">More pet boarding in Sacramento</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Arcade Creek Kennels?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

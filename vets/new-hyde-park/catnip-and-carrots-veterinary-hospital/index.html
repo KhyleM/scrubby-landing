@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJmbFkeB6IwokRhYKf-2YiUKk%2Fphotos%2FAU_ZVEGXhkIr2goU1rOipzOJLxgo7-U97nJtI9jfgjbz_kDec-RQMDhw-DrerC7htb0yUQVFLqlE5T6DkAjvXhbz9bozEnZoh0AyfWWE_BqAjDW1PTmKlf52s38kOPrKwQGMSwzuxqk22juHq8dvg41e-MzqwJsyvI-7S-SMKG0zNQ4z08_w3-87GF7q8SDV9iaEEmke4yiuzrljHFbssbW9nlv7CVXst2qlrzB_5NAjIfdcM7BCPOwO2MQU-8mVl7aHkTG5OKuk74WmpldU7k4irW4GgcXatIbAu1i9BTe_PvJ7u5OQknoUGEQz0yjexoS8-HDFApnHbGkJTO4UV6GWmEolDqWlUhG26I6Cg00BQ_1gcUdCFUflITuhsSrYRLzbJ3oBrxQGJjwNpGxGtng97HpvCefACK5uSa_uT-ygq-B0ug&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Catnip and Carrots Veterinary Hospital photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Catnip and Carrots Veterinary Hospital</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/new-hyde-park/" class="back-link">More veterinarians in New Hyde Park</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Catnip and Carrots Veterinary Hospital?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

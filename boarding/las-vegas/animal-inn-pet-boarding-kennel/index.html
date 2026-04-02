@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJBdqCHN_FyIARtEKzXaJm2lM%2Fphotos%2FAU_ZVEFAZSSr4cBsvgAtJvFXNsGncZPP1fSp9FFOtUutcy_xYJM8Dn4HoQXQq9P4we5wKbnyfJ2DZuDWOOey1yWg7nRSSs7fbDfVUje3AJXbd50RC9TG6lvFQbM8hXLblN64p6pXi1a94l5RdcDGUyHsfGSI3bD2TOGjpjsbuDSPnxQQ7iFM4nOPNAD8mM_CWCjOHpZY_jbTzb8LSijmVgMl2DFinmvpS2e7cpargO-eHCP8B-U1AFKI_MrxWfIURXPEjp_twn4TFOOlH0lLaD6f0F6UiNvm81eSwF6130dtqRC4jgFMUcxVwhISU_FoczGQMLVLneZaPgPwyf4A49Sp7e5gbaT3cBQyi1bnEz9ZIb-dCjf1JGAzS2g2WEfTkyukUhM7k0BTXyCts8t_93Vo2hZ_JRh7sxKdFFU-x_JMxtK_iw&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Animal Inn Pet Boarding Kennel photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Animal Inn Pet Boarding Kennel</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/las-vegas/" class="back-link">More pet boarding in Las Vegas</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Animal Inn Pet Boarding Kennel?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

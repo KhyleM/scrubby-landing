@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJXyRQJxQ1joAR3tPKewBH-Tk%2Fphotos%2FAU_ZVEHEKYDTx3rOGly72Q_-f8JcbYPjdm_ghWi4DaqRtbnsKF35OuUFrq9jrSoQiLa5ejV6FY5xS4fmAZeHPXSE8wt6ryqZqzdMb1xS3JDQVvtQmQbI6hR1DKWKl4bhH2xlaSVTxnZUrgcio6ms6H6uI56SzkSpoDKqfCFOOHDe0OI-tOuPS3Q-88dzjC8AqvyuFEL46xU92Yg56o2MFjT2NUZ7Ju7jU3iUFJHaaPpC0jH7L3BSbGadPEscBZaaCFwTbWFsQr8NwtkzMZ3llVh6nQ-5ggacrKojRwE1pSMz3rxiZMl2N9x2lMZatlYqNrGDExNITLjeD_U2fvVJ4qVgpv6Se_luUGBx9Lj10jYWp2jObAbiTO6_866FTFl7HANRlbxM7EZSb3GkZzJmwUEtnr46QR70T2826k_p0c2r-XZCfA&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Back to Balance Canine photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Back to Balance Canine</h1>
@@ -185,8 +184,9 @@
                     <a href="/training/los-gatos/" class="back-link">More dog trainers in Los Gatos</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Back to Balance Canine?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -332,6 +332,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -342,10 +346,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -370,7 +370,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJayrWHYepK4cREZfs-8sjDh8%2Fphotos%2FAU_ZVEEb9pceRibw1B5O3G5mnnF4fxWmzKqpAH5QdcUhH3OWJKzuLE5yOwITLj5wllsXvsuguhi4ksqCkJdGxObHTRRwgURMoBpmLsnLKy4CdH6tHGg3do2Ran6bn1QD8e33Qtll-Q0G6ZAmXob4EuP34NrQOSHc4x7PlO3Fa6j5oy4nJ2ulsk-Xq3g8KUZCEbztz7TPeHPBtpmiLBu_3yi8tWKMSUjjQkDZIzRJnB8IH-xHRW2ebR_rwVbj6HfzK1pEZPAPRQqJKderFZwwvwW8BN_Bseyxldb7KlTHFM4NakvhbGmPe_664_YRCzNxU8Bwre2vrtR6-R4d-r51ZHIVZoeI8K_tLsPpdsHvTggxhCn7-BapDFbZqKM5kCQ4fk5hEGNngxDnkFSnImpwx9OgYmC9S2BATwS7L3tfqr61ug5QFFeX7yAFezWVS-QK7A&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Doggie Steps Dog Training LLC photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Doggie Steps Dog Training LLC</h1>
@@ -197,8 +196,9 @@
                     <a href="/training/chandler/" class="back-link">More dog trainers in Chandler</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Doggie Steps Dog Training LLC?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

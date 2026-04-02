@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJZZiuc8uhwokR8-TGKLbVGGA%2Fphotos%2FAU_ZVEGyPplwRXpvGPViOYQamBRkPyIebKwqxv9SGuGl4Yq8wBY-shOMrSpoDvIsxx9dtSmGgIA7kWF61jG8EKkCChlMpx6ypjD0XifVNrCjARu28F3_HfKv_TdYM9PwIRNkmXVAfWbVOm9o0CHB-IccfpVNKLgfBpL8otFAT_GsFT_LcopwvCAzRjBzoVtEoC2enS8u6arM60OEx6mCxEAFh8_YhRvOVrUX9ZuIMTxQAXg3FgOCMxlp7kNM1bPZQdi0zx4pc3uJ33V4Tx7o59gU98pbMJXv8eDDt7n0hQzWt1WVJ82fhCan_nQ3ueDdWSO8rjrM20nau-JY-Fw4l5Qs9lVpf2bJd-0eAtEMQnHjg9GdsNfSQO0NTQgP5h1KnAGT-m4ookx4r-QLZA64kuX1ffkCBWMVYqQicgBP1y-a6ak&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Just Cats photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Just Cats</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/stamford/" class="back-link">More veterinarians in Stamford</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Just Cats?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

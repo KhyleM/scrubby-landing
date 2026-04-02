@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJEyJzLHDNw4kRkc6IpTQNjh0%2Fphotos%2FAU_ZVEGIFRkDvEG0D7oTKFcJj44mIT4N4Y2A-8yvOULrvQMtGUSCVJ4GijFgHqYxPH9qn58xXb9JkpZ37EynzRkxiKW9awGdgWHD4hvnt3MTT6nYHD2eftaCEzkYvZ2rBztXtLRh0Up0JJkoeVaFg0XZ4jkEBxMNDspBPptq1KFxTCSrWtp8oRxOTua8iHCOTekSplxbHmWt_H0fQcSStpaiDCu-r_HPXHHeiVp5MIXMQjTIxhMKl9iT04O-RydlyTH_QBwAnxZR5bJCQq5fuuUoCIvvqirzS9vgUJ63hZKsqtGLzGENAZMShuzKJrGDHHodC4dVEMn528KR_ikHWZMEiE37Pmo8jl6bM5MfIuFojDZ39-9nIu3-4M_43iyisU4YCppws9F_W-POeYvviQJG7Zi7f5X-As8sdY451fgCniibWIIOA-szNZ8hN3gXvKxX&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Hounds Town - Old Bridge photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Hounds Town - Old Bridge</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/matawan/" class="back-link">More pet boarding in Matawan</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Hounds Town - Old Bridge?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

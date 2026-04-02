@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJlR6tueGQOIgRmC1lYfIvEC8%2Fphotos%2FAU_ZVEGJdANb7yB-YqJuZKScwNn9IUoxV1onJgGp32f3l5EyqKDXpMQcib1l9P0vQopgGu-Qf54NrT8m4r7AIOGq0hKARm6oVjoinDyAG0vDLnhOHORPr7DnQdruF3vf9DiM-Jt7SpRnzxtewm7l4LHqV6VAbMkyLdQqWTFb_fdYCQQU2hqUCUt_YaAW9xXKnCmWTT-u2UNDByYVKGmcZfnnK4VY538NQKB-yizn1X_mVQPB9U3ZekeXYNvT20EKLYYNvpLROnEMrgm41inOWdiw0q47HcnFfmg3jiJO3lvKAJQyZC6ebXKJP9s6YP0S623y3_nKvYLmLLTSE6trHeO9GVJO4mb8bHp2FdU8vIBwBM53w39O-c9FEjS0JKh7IH8EzSrF0kJXo5blpzx1fh8rsZFb1Y1VE8DCGcpzMtCmz1qJvbxECShLhBBlCK5P0JOk&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="MedVet Hilliard photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>MedVet Hilliard</h1>
@@ -201,8 +200,9 @@
                     <a href="/vets/hilliard/" class="back-link">More veterinarians in Hilliard</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of MedVet Hilliard?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJldYmJ70nQYYRPkOnz6ENh18%2Fphotos%2FAU_ZVEE2RJuNpoQ_YQJp4rgoxSshvGzjbekYA5NEC-gOGV3dLsqaTdgXD9gjqj1JwUUt7DTUuPLGGwfqCN4KGHT1BkaRCjxM7je3EGidP8FbKonJsXolK0fE7ZixlH8CmODdN4rHDDa2mdZbPipc_RgkWzSnOVnH3jq9JcjiRSv1PBw3VfQDed8UKaSvtStxWxEmLUzaf6U-NShG-Lw23lp48IiPHu7TzEeGrLLRZbAgxgSgJVbawtO0OT1BnFnbBx2le4IfYetWpuwqdYP-dtmnCrEauKdXyY_qxKqpohAaL3ToPhSLx2gQW_bLkwDeH8eC6GaqxyLiXHFuobEN2IMjtKcpilLl9ExBQqkfMfuuiRWG_IZ-B2GTCOHLsB9C8JE4i5wcTeeE_3haWpoHF6Y1JByo6uUMejTeaLP17NC1OTAm3I8Ykryf5-7fP79-MDb-&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="K9 Resorts Luxury Pet Hotel Katy photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>K9 Resorts Luxury Pet Hotel Katy</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/katy/" class="back-link">More pet boarding in Katy</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of K9 Resorts Luxury Pet Hotel Katy?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

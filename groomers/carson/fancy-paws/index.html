@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJYe5QLRM13YAR4m9weVmRAYI%2Fphotos%2FAU_ZVEEnm64AUBaugEWl5bm18ng4sudxsv3xYPJVByjNZFQMHH6HcIHP4qRjiTss2713Sz-j8SiRtWSYYio92zNXG0avOJmbIAMOc8P7wTNBvD-sfs9FyFuXtoOVZfKJaW0_JF-xig_EmgGl1mSdSw96zFndebFUbxtODF2p2l7xHMfpv6purbWSulyZie0Pig5-S-VvezJc_juFR357SyBDRqcGCGnGJZ5VwWiAngKys0HXhbUhXJXWDUIuG-opFS8n30jyAlOBIfYpbTZ53jKqEQHGcnxFMjaGJ_A6e94iVcpnI0V47tFEFE7CMn9MeMrx7dIEmNHGCPWxgbznCpOlYNEQYx2W6CLB4zAA5YttgqLWF1nImDWeZkkROh1QHtPIamJ3EsDgD0sqEQ9wBM_rJEBmDmjm5PKKfodqt_fa5xpL4OZ55njmmlnJDOe7EHAf&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Fancy Paws photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Fancy Paws</h1>
@@ -197,8 +196,9 @@
                     <a href="/groomers/carson/" class="back-link">More pet groomers in Carson</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Fancy Paws?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

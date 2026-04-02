@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJhb4MOk5f5okR0aO-dGfZiDk%2Fphotos%2FAU_ZVEHN9lK2WkSBY9YW8VO-raNvt_rWsujeZFvDRNvk2F0Q195Gdmg4btXC5glV3Z3pwtyMPxLXTIJ5pEBRPq_Gazl88mPAZzVVcvurnnPKNNBVQjz-UTnzm_IokvfBhtWa3sFJVxQHch1Z7_bogXhAEUGmQwTKSdSpLyNZUZpOIBkXqnLciCBKGGgaV0lQ_Wdi8o0cjQiqrlTNqi-GaLFbmVveEOOLGBZcz6t5k5cHHyiFd3ASOcQ76vEceomEPx15DApGdF3nI6FxlOi8PFqVpaX2hylFu8LogwZMWm_fTtRn7EpuVV7eRlsyc6jeijStJoNGGxzYWPE_wLHv-bSeaYfUCQGyKYUtB1bu91mcg1XU4rbyCLya48cOJo8549KjoNN7H6_5H13qzxPHcEqABQ7KC-A5x1hUmB1Y5A23_6u668Y&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Bolton Kennels photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Bolton Kennels</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/bolton/" class="back-link">More pet boarding in Bolton</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Bolton Kennels?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

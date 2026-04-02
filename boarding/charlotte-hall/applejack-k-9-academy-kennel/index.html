@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJOdJJc2pzt4kRQc-gL6vvz_g%2Fphotos%2FAU_ZVEHFi_-bT8mHMSf79jNSZJK6-IvAmCuwwf_1JUKzKl7chB1o8dVV82X4riK050_OtPANICHe7YNtoKH6UhScOxtWwqyZHlQy6iA6FgRkjdZ0QBE-AdTL6fFqUhE_JS103rWION3aYnb_enBYOxu_GQBOourXyaHVJCV0rS-1tMbGCA97aESur9LOrBDSPsjQfwx28gQ1zNwoG2w54YQ4Z36ctgh41QZg8s5LKOaLcBwKDPj6RiNXtHMJNWh0bz6_gU71xMVbJRVyrsvO7wuwKu-Lb74VaNn3eq-WsXi-StpTKZxdmbnStkcOhLu3mIIvtcigd_e_v78irBjVMys-OgusVR5qw0Wr0YA_x58HjX5rtJ9XbeuWEBMWCuJ-wjcdjHwdt8kUtTX_K6wdQtpu3n8Fi9Y6b6nc5hUJTZE4-LtNqw&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Applejack K-9 Academy &amp; Kennel photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Applejack K-9 Academy &amp; Kennel</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/charlotte-hall/" class="back-link">More pet boarding in Charlotte Hall</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Applejack K-9 Academy &amp; Kennel?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

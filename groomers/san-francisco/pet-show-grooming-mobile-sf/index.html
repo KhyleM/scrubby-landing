@@ -77,7 +77,6 @@
                     <img src="https://places.googleapis.com/v1/places/ChIJBSuHvt9_j4ARtO5fW_TESAI/photos/ATCDNfWOX8MrRvfEPUPlWyj3A53m5SkCn2km0cvNErvRmJlcAlSn0iBFPGuZqv48SkFHn_-g1dQqa6s83M9a1VWZFVw_oo-HuZOdNHxxVJMja5cTtR5skg_1EXDBFKJcM7Dy-88ChriEfaHBej8uOhQ6xO0hXp4Seq7nLntMaqhB1fHvYVqlRywteSRpVt9CEJD3ODhr8ZMWcPIhEyYEFMTWjJng9rh-xMgs6PXpJcDMFGcxT-_Ic4nM_K_7felWKtyhzFX5ucdjtyFcjq0vAcl-UkwJYn_6QtnmLM4YOBp5i6o-KQ/media?maxHeightPx=400&maxWidthPx=400&key=AIzaSyCpmbfD6svBtJL5OpHfeph6xPVzLlf7F-g" alt="Pet Show Grooming Mobile #SF" loading="eager" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Pet Show Grooming Mobile #SF</h1>
@@ -193,8 +192,9 @@
                     <a href="/groomers/san-francisco/" class="back-link">More pet groomers in San Francisco</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Pet Show Grooming Mobile #SF?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -340,6 +340,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -350,10 +354,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -378,7 +378,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

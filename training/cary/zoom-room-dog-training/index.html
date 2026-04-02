@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ5yDf40KNrIkRXHL55Y2Qx4U%2Fphotos%2FAU_ZVEELsA1XXOvGXsN8GSpTo8SPg2wDgIrf5PgHsKj55FfDTX1piY439-OwN7b2BU62DeYk2OpzN1ubB2PpR8SB_l_NDq5UpcZkeISLA2V6NK6ren22xbU1axFgspWkold7YFB9sti1F65onffLio7x06zBikx7ddav8kaWShmQizWRmkBIDAl63a5rFDzQCnSyEBgi_nPK5GpMy4QP37X7skwso36dSEcb9Y9LHERjU7DYy6LjhPrJEhX1fN1rjZOaxt_dn3i_r8OZEXo76DqLXu7bHBP5JBYyJ2_vx-N0ExdnUwRagQyPl0o-9RATiVtvonT3GgitwWX4ty4qxX81qMiRht0898MLfYtsqEsXA62R3G_ryuLI2h1IKCScYvT7YaP4M-OntjeuoZBykm-sbnnccEQZIIG1PMY-lrDLbaYRfyR_NjQwsBoGY_BwFxWe&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Zoom Room Dog Training photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Zoom Room Dog Training</h1>
@@ -201,8 +200,9 @@
                     <a href="/training/cary/" class="back-link">More dog trainers in Cary</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Zoom Room Dog Training?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

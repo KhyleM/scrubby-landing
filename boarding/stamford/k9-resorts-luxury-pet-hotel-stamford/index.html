@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJCfGsYVaZwokRXC3K_xFXfiA%2Fphotos%2FAU_ZVEHz6tf2eomf_rYDdPdt1H2sA6M4KVabJWWJWY0G44xR_zA614ByO0vVnMt28uz9c-dm4zDqniJ6x58dcNuUEJWBobqu4Zzd5VUjzhB-noLE5fnwKZ30viyaid6kO66vpCW7R43I0gCkuR0nFmw4Bm7a4Xgb27FIIRwXhnazi0c_WFwUd0E9KOkgpfFyCFfqkjpsUoAJE36xAZ2zlpLRHggv80g2xTBSI3IdYe00dFwkp6P5W9ezt_QQjv8Z1xBgEERuNmy8vM6S504bTZDQBpV6oZBRuku7a4v5prSdr8Eu8lMOe9d2CFKARP2BKzYaC064kJtKi9m1o7YZjtnhLO2vTVy-9X4DfsgmGdOfNMfi4_tquetXaZyRYacVT5SKDUARTuDyEPbCg8-w02aKWMQiQM6IT_JoARekuoAUBFhpEW4&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="K9 Resorts Luxury Pet Hotel Stamford photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>K9 Resorts Luxury Pet Hotel Stamford</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/stamford/" class="back-link">More pet boarding in Stamford</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of K9 Resorts Luxury Pet Hotel Stamford?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

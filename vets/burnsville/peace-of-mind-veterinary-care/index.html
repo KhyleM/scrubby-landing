@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJe9_MFMw79ocRh7tuz-k0fe0%2Fphotos%2FAU_ZVEEcRCNgdalVgoJfM3R_yNZuW7xFLW8xHBNchqh3a1hJby-5PmWAfT4VPpzvb9VlZG4KS4HJvFpvZzx6m0-Z_Qpf2Pnh_fNQzuUKOrNwrsGVSHgNaEJCwIaK0Q1nLTkhB4301-4quJV2WKHf-mbaoOuxew5PGNqOlHO8y5OP7crmPvjty21_huV0Mbfh9WUQmVjeC7eHKY_woF3g_KZgnl3xxt14543geD6nJ_St90YiVwoq5D-kQ0CYS3mwrYjqwplFykkQfKruNc5X21eriqk5hyByY5Z5oKbd2zlwMjTpviiZV7NCxXVt3h7NO0e2Uo1P5z2QC1l-4xCyodeLXdg8rpJelUcx-aQ-3nXCsr0xZiuk-9HBZW9pCkAP6z767ojjl_kcxxUT6UOP8oW2ou498KnW8fD8kyPtpMnt_NUMpyk&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Peace of Mind Veterinary Care photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Peace of Mind Veterinary Care</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/burnsville/" class="back-link">More veterinarians in Burnsville</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Peace of Mind Veterinary Care?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

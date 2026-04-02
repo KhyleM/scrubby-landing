@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJIXYxOw-4QYgRrKn-POk0kSM%2Fphotos%2FAU_ZVEFjXxjhHB6SC5XtVNZefDWDEeIt4GENPZJ_Au9dy4MEIsemk2ZRl8BzqextUyh3o2DmMajdPIc2J8Tse-d7s_qKIp6N0har9PbV2VtL8vEfBXySS_ZbAyZ8UDsUJRKTR5a-_ZWN1ExZSllCPklnNKtdBtrMF0CSDVKOJsKXuWBiFLNzfO-p13DB5KwYUh6XH3D4VYHvNkA4SFTKRyMSVYfHpjUhxyiax8J4HRMFWeAJWNola2yPiMnc1FArekBpazu_TGh100j_7h6WxZZpgRyCr2Yf-OI5TPXyp_nrXAhcofo7rBm00Qo-fiFSU5FcQ9PiinI8df98319le3jdLX4ZX6SA0z9VTUig08sqF5v4nRNK96iuAU5vAxiwsyeEdvtjzHGATSTFtSUZpwY00dQ13K4HTSC_uwQ7nFm_kgwoSqVf&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Erlanger Pet Resort &amp; Day Spa photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Erlanger Pet Resort &amp; Day Spa</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/erlanger/" class="back-link">More pet boarding in Erlanger</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Erlanger Pet Resort &amp; Day Spa?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

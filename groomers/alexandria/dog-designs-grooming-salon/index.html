@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ7SwzG1-kQYgRWVqIKaHfiUk%2Fphotos%2FAU_ZVEE6F81RAAXC6Hlde2Js8kdETo9_A4Ayublbu0H7MTQ6UPfesXEaeaUISX8bqiYXwZTUpktFGddSqgXfAFRQS-RLQZb5Xcll0zJwk6ZY427zuPTYk1-avoNm8DIvskqU-9zWqh2ONpfPfXmtsr88AyMO8EXxanvEsbbNjo_WU40nSeomwW7OQi5HyFIwnOboN_KpRPa4fz_3umxCMX4OpvbiNY8iwRB6dB-aURMpZb0rfUy1jLoLQDY5F_XgjZ5XMXmJT21APTS2IBKC7WxHOAzs54tchi14mulstXW7xy2UBnAOGGC0bUrbp8s_ORb1yiDRiZcnifjawX0fw0yn5BmiIKlygZDm13OJ5bq-kkKuWEs_2TVOQ0r0eUBB8v1kqN4UUPbwbbMQn6hRrCb8mf_sKcj0qspCm158bDenlaGjMh12e2Bp2DRG6_sAMbJs&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Dog Designs Grooming Salon photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Dog Designs Grooming Salon</h1>
@@ -197,8 +196,9 @@
                     <a href="/groomers/alexandria/" class="back-link">More pet groomers in Alexandria</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Dog Designs Grooming Salon?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

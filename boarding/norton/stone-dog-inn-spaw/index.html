@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJd2AKIYCK5IkR5gtMQiRPNh4%2Fphotos%2FAU_ZVEF5OoZGqx8EX1eG_Tq_c7ob-Nr56Di1IG-7jq8Xt5Owz5I1-7JWCoeeJpV6gwDKXZekwzx57VoXzNv_AAg9hFbXj5u2pjhkB2Q1mFNCUGQPovelLOFBD3Iaz4fvzA74JMWxWr4lmWGqSmqFzw_VgUsjwA80GmF4pOcf04ddqOiW7-dqb4EW-SSfK7wD-YP_iUbf4tOrg23qKD6gLt70QUUzdlNpKpGTRA-CUTI3HAwP3hskb4Ni-1uwM217axwSGVGlk00DEqCsw9570T3hKuzS03vXPRaRXITincN8S6E9YQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Stone Dog Inn &amp; Spaw photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Stone Dog Inn &amp; Spaw</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/norton/" class="back-link">More pet boarding in Norton</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Stone Dog Inn &amp; Spaw?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ_c4WF2Xsj4ARUC8bLVZ_u8s%2Fphotos%2FAU_ZVEGYiZXwKEbL1gTP6Bw5tRlwlxLgUvEik0afmpruOmjR7ypDYloE7DsnwVC2kjV6BOEl9tj2tpByFkaM50n4ULOc7aKO9fG5K5XvUdBte4qv4Ly4E7dYAmZ60warzb1YAFcssIKSGZDVsNijJTtveTgh47Hf2KJF1dDmqHMXi8IZ8OlDUMMqnTTqVXgvrLtXPZ-eBZKXn6dgMb33MsO9XdItkn0bJLzC4WtZImbD-NT7DVa9AkfqpzXPNybOhxYnjpMo5uTAdrjLGZg3gbQfVKCViZyMudbMo0YPwnEcvAThefMk3YpPhh03y-YDnPSWz_NWOP4aSun7Bi12eruN_ECMhKibKxXIJVIfaLQ4vAnoAbUmNVRSxnda3sajiXEo0TSQMWZ7yren-TYYbEtQmhiBo7sMCYPw9Kl9hJ6fVi2pnQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Dublin Creek Kennels photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Dublin Creek Kennels</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/dublin/" class="back-link">More pet boarding in Dublin</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Dublin Creek Kennels?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

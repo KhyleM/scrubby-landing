@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJV6dOJyf3t4kRoaIwMvDtAfw%2Fphotos%2FAU_ZVEGVnn8TJlCqEqwrEwfkKYNBBJl7NiqJ5cmZ57JT3S2X32F_dpguKctneA2aH7oiZbcYKWw5flsWXdfg96bK1yeY2Y06TTAUlgHSuZ73Xp4BnNu17FSKIpU2xwOwQn7YLqvoAHAAXJ5G6NNnll2UkbiVkd1OEIuKPbtPLlPu1bORwWbbMR3q5fzkId_Lz1nmSSdcVyR4mMAKBu-AxnpSidRfW86k8YPjY8Agxtt7dXywoXWMF_Av5rGIrwqNXZu-KPsR6H6PByiZm611cZfAjJT_Hm8NxQ_H91WydQa4DrPg3Ov4QHx6jrWxbFKCULIC2A5PW3dfEs8fx237ixRAWybzPEjf_2nfpDJbDEsMhS_JFgdeVhajnzSA_H6c9GWL-xQSBtKLbqj3Y6bizTHTQ39ZBCG51gQ-Rf6xAiEP10kMBdaj&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Bay Country Veterinary Hospital - Annapolis photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Bay Country Veterinary Hospital - Annapolis</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/annapolis/" class="back-link">More veterinarians in Annapolis</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Bay Country Veterinary Hospital - Annapolis?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

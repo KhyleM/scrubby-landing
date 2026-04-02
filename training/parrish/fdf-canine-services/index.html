@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJvV9DSCPM3IgR6unWkPvX4_8%2Fphotos%2FAU_ZVEHZyQutenZ90Nha5grmNpVdYU6lCBj-2nnl1nlECDQjEbj74Euj6jUxf_IhqEdvPBEBO0IqKR2lTAMRKEOsL-j4sYQxNmj83dIw0WLxur9HsXtF_zFhmfSE7-dqWpbPtvDaM5_gnALDVqnHPL7yiyPwdOQUTY3wfQYikbZxIZm8hoRqPH6dZHaOo69ehwrbuUR10SW8m9aWLP_3AZ4iwv76UK3CeK4DTWm_O607l06b6uzpr1IaxGF-GkTEl80Qs0fP-TKoYWNGoaOot-Lwaef3uXl9RpNcC2KygzMwtS6tXDo2g-5f7_tav-BkOiztQZjBrwZstwQ_zYjWA6LK3-k7pM6-1MTyAXKtpAWApxaABULW0rv4pz8g941bjiVGV2tI1TyDqNdFLSr2IW0JhbXrnJQ8oICU1oLUR9WfNmhYSTND_lnmhPwZXEgoE2XO&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="FDF Canine Services photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>FDF Canine Services</h1>
@@ -185,8 +184,9 @@
                     <a href="/training/parrish/" class="back-link">More dog trainers in Parrish</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of FDF Canine Services?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -332,6 +332,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -342,10 +346,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -370,7 +370,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJsQgIM1hFwokR1TxtzwjoYkc%2Fphotos%2FAU_ZVEFip8nIGI5xmR00irXRjhO9A-qjjyrPII0zeOA-JzMIBZlg5rN9t0xA1FIif8nJqRqhd4NxXa6NyoEJnQZOjhxdy7lAgEAcHZIw7cL1glKH8TLr2CFOUpr6urB7Ez3hFG-u_2DqGqDF_hJA2wQx7EhIoC0KnYR6miVxt_LfDspYrq44GezbyL-0Yv_lekigMm-aK33rI8m4VEMmVOgrf_2tQFUorLKOdUxz2rT9I_ZRisJCqKT9aQzRj2tdsEarvUHsvb2c3M18HyJK4_3av9kfpWTE-G0UHmvL-l_7-Mh7vFmGZWbPHH4e18jd1ZbgP8O9sqY7xNqcuHcgE7FU72mbujWzqdyPD0WzR_t1d0q8RhcML2GjxCVkTUrQ2f11-IRac3ML4MzU99qF1h33VU8Djo8XphZRWMX2n1xfYYxCarrs&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Fluffy Paws Pet Supplies &amp; Grooming photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Fluffy Paws Pet Supplies &amp; Grooming</h1>
@@ -198,8 +197,9 @@
                     <a href="/groomers/brooklyn/" class="back-link">More pet groomers in Brooklyn</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Fluffy Paws Pet Supplies &amp; Grooming?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -345,6 +345,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -355,10 +359,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -383,7 +383,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

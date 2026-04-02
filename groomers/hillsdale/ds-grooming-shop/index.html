@@ -80,7 +80,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ7363qZrlwokRtopeDRkV69E%2Fphotos%2FAU_ZVEHmfbi2h4jUHMQjbNXHRP4k1VS1dABssr3W2W5re5gT7nA2t1qqnbWFD11D6yDVb09qO_laN9DWu90hIJzi0MKUJb_zFSzpCJYrkp3wyN6W9hpj6cRvDwY0cidoxvh5CM-_2v8fj2lJ4DVynPECbvOy1hKJOX6m30Llr2w3SKkpZ42Y6ePMJoWvTV_kDkmR_JEjY3NiXYFEEHaZp2Uyx5r6rWcy9MR3x-pzc9zuOy6gZCavf1115kjF0x_-a0FRBT-fmFAnc7SyEIPU9n4WADCxydRckbUYW45xOzX0_CSB7BGZInHpnhH_zRHQ5jcMIUQKtJPWaZjmlbZs2LFortSyfcKWtOyMIILwneD25N3c9Ltuojn6yfiP2SBnI8RjOB3gkI8uU2asi-fqh-vPQeNH2BMoivqqXMyWwUPc_zkySml9EDPMfGc2xanz5g&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="D&#39;s Grooming Shop photo 4" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>D&#39;s Grooming Shop</h1>
@@ -193,8 +192,9 @@
                     <a href="/groomers/hillsdale/" class="back-link">More pet groomers in Hillsdale</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of D&#39;s Grooming Shop?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -340,6 +340,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -350,10 +354,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -378,7 +378,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

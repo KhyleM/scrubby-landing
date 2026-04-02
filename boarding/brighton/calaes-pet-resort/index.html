@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ5RZ_kNFybIcRjIvApJQSOOE%2Fphotos%2FAU_ZVEHHHrNM07xEDMjj6xQ9dCuy3pJRw0uTXB7jIYQTZESCfsy8iBcWdb88K6g5n-ev6oNmXcD_UqxEsYilnFVf-VnzfWHP69F8wEifOYWtZf6CqxHSeR721QYcewB7NyggNTXbX8PxXjMHsNxCPL4GobWlrF4i4PeNksh4kU_qYruAV3G53Q0uYUaKWIvR15QDWVl0afjZln59ak2p00thpoUQvQG_o_o7gUZqHY9iyA6VInIj3rf4q4x6NQVO0MBULaQV0dZFBZm60-iVAK5Pb5LKw-yQQXVTVqRjhJZcrtklHZNbYco6oxXNG17e1nJbnJhiGwTWsUKD9BtFItMNSKNuxu0Tw8hWt5CREjsPi7s6vg66p3fS3BGew8XdqUhlR_JIp0oYaHM79-5Py7uXMQx_kQ4fCLlyrz2Wgvy10lL_hIM&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Calae&#39;s Pet Resort photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Calae&#39;s Pet Resort</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/brighton/" class="back-link">More pet boarding in Brighton</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Calae&#39;s Pet Resort?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

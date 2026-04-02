@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJVfuwm87dx4kRueHuncz2h0g%2Fphotos%2FAU_ZVEGXOep3B6As-9P3BRG8nnT8kOAHoeYg-iN-AONNJ2q5nzqxiPKwOMpt4gjlwsy1phMrNQPRDcYMmxERqGfHCHcD5gJQPEdthRxZgvu6Pr_tALubex_Ry6Q5yKwg6T745Rmg-_AvtrQ2pHe8PcFWmPgrCIj4BEE53YXKrYLXZkl5ywwgTfYcc0eZDoMYs0Zl7JrKbI0p25ps4e0pY1Zfl74fJvba5yJi9cNRikgXIwYAhzhAJkrTAACtjkUUD4p87_ttlYoMowFx3HEkobfdVam4X59o1yKFtc2-XwFtMMB_fjtniIDdurruGJfdRtvci2VPv_hbdNui4oLcqjPA0kFB36RTK7E8IV9DzL_pVafBsgAmdLu1xKfqmo2k6aQ9rbIHLWAxMZ2hYbf3WqwgA1gWiCPsGkuJqx1tQZte-eU&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Homeward Bound Veterinary Services photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Homeward Bound Veterinary Services</h1>
@@ -201,8 +200,9 @@
                     <a href="/vets/bel-air/" class="back-link">More veterinarians in Bel Air</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Homeward Bound Veterinary Services?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

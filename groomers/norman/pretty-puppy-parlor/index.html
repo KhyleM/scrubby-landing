@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJvfPVvOlpsocR0n17DcwN1-U%2Fphotos%2FAU_ZVEFW-DaxEdAI_mHaoTRpOUM-pZU9XQxk3wHty36PSz9pvuanOr620uecVxo_N0Euk0eebBw7MP_KV4pJLQusOVBisgzj2xsxygZTwK5Qnj4ygxjE2joytSqIMLuQ50UTl8chLWCKBJ5LXmpcHigp2mk_SKWOErYQS3ey7CmmkZUd9DaaRGdK6QL86zbXuR9VLBnzCJ52xFY6VG_-yYbvPBWvEXXqQlt7ybH2d5OdUYHxnPJW-yDLUySki7leVedjI9vFxDkZe2jh9qUkabEkBP-uzN0yWzvV2L2S7EUw5hjNx-zaPUE14KA2DFqpR0ZGxdhfT3dBfrBiWPmpKwB95GWgtd0Qw76-8_zyqKY7eXAYg5GBe09HAqgntEiQu6Vj17ygc_ZBVa1eBlFNwG5diD7X7BBOQYYZoIxYbeWvPjz_Vg&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Pretty Puppy Parlor photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Pretty Puppy Parlor</h1>
@@ -189,8 +188,9 @@
                     <a href="/groomers/norman/" class="back-link">More pet groomers in Norman</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Pretty Puppy Parlor?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -336,6 +336,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -346,10 +350,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -374,7 +374,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

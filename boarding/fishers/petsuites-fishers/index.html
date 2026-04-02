@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ-Rs7qQW0FIgRpUsMTQLtYJ8%2Fphotos%2FAU_ZVEGOP0ggolbYTaPidO91T7L4QzEaPxMjaCWRg4btRse8Q8lOa3Esiqh7cQ_lK6bNB3paqbapF3WRBOKKj5-pYn5GlUVm62OkWC66SI2-SIvWAG4hGbwvh1WaNM3NZ77-0MsPL-t9NQiW7u0Fq81V7pPm3ivBUAcGJ8VwvNH3cIp6ygehh4Fpyaq8TthBCFOGTwEpT74pWBcC9FPWwSE60b8qh6vhwk6h_Gvo4x5fd8TtUwZsyEmdwubwz5qxorS263a6ceo5aoXjLgn0_SBEFACtA_Ymq6MzIHcNtku8ffEGzoiRFlpgiPdWpBxeslfiAOSSHtv4ZkZdxj_HejqcL1THT7-UUm6ZOcv56c3O4FNSBk_an1ZbLEEMU5xO3GIhx1ME8mrOGo_9LYyrEXjiKzcmge5_2SXH06q_3D8Aqr4j9hiVmmdJqtYIMaUNNQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="PetSuites Fishers photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>PetSuites Fishers</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/fishers/" class="back-link">More pet boarding in Fishers</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of PetSuites Fishers?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

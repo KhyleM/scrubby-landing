@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJm6Ww26Ux3YAR4eAMAV-Syts%2Fphotos%2FAU_ZVEGosJ2YEc7uVksingQXRyJE7Lz7Tqw1LFlkPughTMPqcfj9PP3OD9h01UU2K6i5Bee-ci5CoWqLnQXQ-LJHeAF7H_eTeD_e9dZpRcCy1rHgNEL0QpdZFMnixOh38YObgbeXTOXnSY-6gdnuyaP5TBi-MEYdr339t1YSJ0DCV7G5HH6-UVa42mYgPN8S9uVBGuJoAxoG4j1RnaK0SdmHkyUpHHTsS35_4H3kVVtxf4rAPhL2WDqPLefXhQyfZA37j8ObodCs3yAPvT71OCL4X4Cn4BwXUTA8580Tr5g0e-TkHA&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Cats &amp; Dogs Animal Hospital photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Cats &amp; Dogs Animal Hospital</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/long-beach/" class="back-link">More veterinarians in Long Beach</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Cats &amp; Dogs Animal Hospital?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

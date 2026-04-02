@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ4VA2tA5hhYAR3t9R12Fo-6c%2Fphotos%2FAU_ZVEFTeetCBP81JSCB0u8lBD9wmFyAS0-3vFQXBfN2XnjsM1hcD6CAyc2DHTfamZYc4gqoyA6yjuvN1wWTUPzuRXgjFVN26r6cFMTzjk7qI58zoCPOHGM3uVKz6hozLPjn6XhC_qKO0PaNMWPdczEJ-HnQ-JTzuyiZ-8XQBif3JqrBtSPo9viyS-LUFQKa9yTrTsJkWc9zL_hLWbD1zfvbuXAx1Vzm09GRZM4fWB0YRgY_p2tH24u2VjcwHCYnXkKl69N9r2tM6Fx-xRxYQsLjF8TKFE0sSdR7wZ9bcyc5UDJlxdAzIf0t-5sFs3QPHjnGDKv7SQmKK-GDuFtZrYjDoi9gnynoIpbWJKQQeHdvvOfK44OM2i0OM0mXDVczxMumLOrZfHTd7xsKfEjO7uOqkkim2YHfkb2h4p3j2nXUbv6b7v77UNBU8w2Jqe4FaF3Y&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Apollo Veterinary Hospital photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Apollo Veterinary Hospital</h1>
@@ -201,8 +200,9 @@
                     <a href="/vets/walnut-creek/" class="back-link">More veterinarians in Walnut Creek</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Apollo Veterinary Hospital?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

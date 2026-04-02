@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJIYhjJJYalVQRniwRxpR1euE%2Fphotos%2FAU_ZVEHI7HKjd4Mz4j66modsQ41rnrYOtEKKcwIqJfBJT55DLSKM1KnPnNqq4fgWaKYyzkZoGwI03A4KWOL7gKCVZCiQSFxVG3JLPLLHw9dNGw9d0i1lvIrdfTKJJe6n1Q1u3SIjRu25nm8d5rtZ_fGKVRikpYayDxKEHu6HTDdp7gBr_Tmlz9of7U92hPV7YIQfF4Ca5_x6x46au6Yj5FK1FU7Mzs85Lt0zHMBYPkt7cNTPAJeEUl6RUhEMcX1nvxqsIHn37vPKgFJH_xvmsojJlaKM_J29zFL05s7aqZXVCZmKhouwA7nnQys9BMpubtWnrlBTXbQWYFBlG4CKK6mjrtshtJvhztGevhRqP50PWGqWk7EZW5_CfDFn4kXy9nyGduvgNo5NfMlgy4NFMuaTQ6XvlXpziPKflwyEq26028UCslZmlDbhUlv3KO-HmpJC&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Grand Fur Lodge photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Grand Fur Lodge</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/hillsboro/" class="back-link">More pet boarding in Hillsboro</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Grand Fur Lodge?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

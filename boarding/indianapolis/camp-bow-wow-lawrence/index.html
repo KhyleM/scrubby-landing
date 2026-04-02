@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ535PzK1La4gRdCgJfK9EfFg%2Fphotos%2FAU_ZVEFc3KwrYtAVqJUSrm6fqcH1H7bbsg7Fh4pg76M-_VMVDcMBMP7dyVVS55ZwqH5ej0Op5EpF8n6gdbbFtpgbWCgG7axzd8CUNfHONL93ruNHU8cstkgSYukypNWDCu80k8cceg4q_MDjvQ50amnKX2tjSZjSgcMEyjFWVq0wWyhlk2H8-g29wvpOvmnBZhyM6hKWk92vWlogKG9_F6lxgKZpsbzbDLEai5lDIl_s87nNJ4Ekka4V3AILV2D6xjbefuZdRkcEfY2QPj4jZyY95QsvO5x_2WEeM5L7JLyd09u8SxHcR7dQOZSLeMass0QploADl8eCfV9gN93QgYAZgJ0X0EVNCFeCJE1WOhYSYdJKsQCofW2or--LroQpDWFI02dnAWkJnfrZWFXO4J3YSgqSeA_yQxvnhHeICu4VhXyY2AcBeg_6UycDcYezww&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Camp Bow Wow Lawrence photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Camp Bow Wow Lawrence</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/indianapolis/" class="back-link">More pet boarding in Indianapolis</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Camp Bow Wow Lawrence?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

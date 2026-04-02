@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJn0GVjlmbQIYR4LCpdXumZ6k%2Fphotos%2FAU_ZVEEkLlGRsGjUsaPb8uhnEmy6YP-Ap1enTX9ZKfQ6kQEv9vrGsV8OrWT04PlMh-Sbi8-2H1TI5RlXZsEvAOCsyJuO9tQNNQVQvvBtVFMel6E3KJaqkP8FkwDykLBBga3pO89CCd1YKZ-2BaxUC5Nrhy4H3l6WI9D3MZwIY2VeZluN_55ZPIYFl_UfSO6y5x9BA1wuZX6-8FuHl6pZmgNcFJUktu_ambwlAWH8zRcbIacxGARL2hCx2dgo679AMmKZbC33oPfp9IPu2RG4DFet0oXOWIpa3hokkUlFuXvznpWKU96STGY37SxKAP8TA23hc7Yd2lbed3FNFmQTHgJ7gYTHmmhqUOemk3VbyKvO2xV9Q2shfi6e8swVRTRr9m5WmXN0TQecuUVfxQKnk4elOU2mPzrcoKm1YsFzUmZizU1K-lPiMhHaLpyjavhI3dbI&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Woof Gang Bakery &amp; Grooming Friendswood photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Woof Gang Bakery &amp; Grooming Friendswood</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/friendswood/" class="back-link">More pet groomers in Friendswood</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Woof Gang Bakery &amp; Grooming Friendswood?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJH8NJDZfLuAQRvQ-5A2hKCYo%2Fphotos%2FAU_ZVEGlBnsWkwG4-7xQVHZ9bW0nyE52Ug0zkne-Rq5GtQoo-2m_8rC1pKmjFvBUdmJStM2Shx86JX7VRinLs40JdmPcYB4UKafybrAN-XFLT_6IRlToa-y_2wJL0Vh_kai2jrrFpZByQ2rsdJm9-O1W3Mtwi_zRtoIeMVIgwV_4cv21THvxUfWGxIxF9PvE1SjM-1LQSc-LWot0QwuHX_6bxn7LNhshW3CIosRDS7-q2VnXZgIuiXA_S4KCI-tk-3ClF1f9EcwUDMcPfE6YthSOw-Owb5UPPVyPETdTqOMH3JhAIw&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Doza&#39;s Dogs photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Doza&#39;s Dogs</h1>
@@ -197,8 +196,9 @@
                     <a href="/groomers/east-palo-alto/" class="back-link">More pet groomers in East Palo Alto</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Doza&#39;s Dogs?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

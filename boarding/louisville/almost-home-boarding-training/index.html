@@ -79,7 +79,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJD1p7_aufaYgR0P3kEbxGDfs%2Fphotos%2FAU_ZVEGH9YzKapUGvDWUB0hWcyDre233T8sOA2L2B9MnBnrI5DNgihe6cc24y_Z9PyHnk9bSw05p7EDjlg-wNz-ybPF2-qnfesLd8G09gwim-8YYzW8fLG8eXkv75jwYyWW0rIxpKrsC2ALfzsJqFI3Gi08aNOoGlMYxNzvjWiEYyYIcvVBaK8v4ZsZzYWGLLHb2R7ovhJyEMC41LlAtLHh8lrUa5sUo-_Q6J9s0tIzDAnWn2m7Y5UljMiwEgLtr_ioA_ZYdAiyOnJhckBwxkHKQVVGmjENALWiXMStaA10245TjjGfRydR2qT50g_00gaHLX-HCKidDDA-ckh73RCwNy5UdvA4Rfq70CYt3VvOuMxXN2qfJb2J02oEuD3V0MXfNjUUluAAGlhuIuzBPzS5gTBw7oi24QrbPitlGiPSe_he-skuvw74k1roMuZ1pkw&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Almost Home Boarding &amp; Training photo 3" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Almost Home Boarding &amp; Training</h1>
@@ -193,8 +192,9 @@
                     <a href="/boarding/louisville/" class="back-link">More pet boarding in Louisville</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Almost Home Boarding &amp; Training?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -340,6 +340,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -350,10 +354,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -378,7 +378,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

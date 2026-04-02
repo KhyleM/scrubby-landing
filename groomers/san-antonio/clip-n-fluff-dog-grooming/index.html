@@ -79,7 +79,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJEZ1qArtZXIYRh8360lQStkI%2Fphotos%2FAU_ZVEFYnqIHQpSIEJa73yXWaBfx2OzGapH07TwMerzeXfeloYZbDjYKshLe71P6YVYPt9rnk54EOZ4jYtZXj84f07yxuEgehCTGoZOZxSb7yub5dGqRR-0YqWnGK4nXbrbJNrS9ho5vfCNkrJAkekQLIX0Xy8oWSRnHbBJBQneG_k0DFtgYmwPdeVb14hVWIozjhByklK2qkmi3XKAyaTOsWsDxGErv6o5q668FzE-Vt5fwLEdxTfKGBIVo5QdFXuc5kwiD7jfVD-2DeRipBEQrE4R0kTPM-cd-Genu2-4woPgQJkMpk14iZ4fCqtDk923Zih-cqLif4dAMk8E4K_qroEFVMv0rvsiuqVo620HVb08ZyyGbrDuT1bqPUxD6TaIhgh520Nibk5KecBvPRPV8KiLilxP7Ii6_kRw-qsowUKQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Clip N Fluff Dog Grooming photo 3" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Clip N Fluff Dog Grooming</h1>
@@ -193,8 +192,9 @@
                     <a href="/groomers/san-antonio/" class="back-link">More pet groomers in San Antonio</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Clip N Fluff Dog Grooming?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -340,6 +340,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -350,10 +354,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -378,7 +378,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJh2FVzABfwYkR00bA8JpE-MA%2Fphotos%2FAU_ZVEFlXP8lcF3BtDn9t_SDLsmwSzK5PwBbbWrH3Dty6SO6vBwxVfnudlQM-WGJWFoqPccKN5b821LR9lrPfS1h-9pqFvG_L8L44IQ-6gXVGyQeRNkuUGbLQqr6e9xvj7hRH7yH9TnnCiN8Vhe1SAS_vj2F64meUKyWTH71OfQlrJ7HcAF5JdBfX3WxZFR_8uflElkp6XkA5uGRIsUn1Krjx-uXrKzTTzo3_Jz1oow-cxQclsxpIyPeBV4t2R2LSYvirQkwzHsXyr-I-2D_DKNuJ9OckS9YVag26Bfptsas8uP5QbMhzleQn5ChC4UeMzbpK5yUPMowiqQ4DSru2d5l8bPV4GzVieEDQZmT4NnDxoDXkJSGK6KpGNaBF4zuSd-_PYLAJGOARbt0SJzeVrFt0ldDZxK2DTHa97GwhI-E6PubMMjFZT2IDb6dmriNYg&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Happy Training photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Happy Training</h1>
@@ -197,8 +196,9 @@
                     <a href="/training/hamilton-township/" class="back-link">More dog trainers in Hamilton Township</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Happy Training?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

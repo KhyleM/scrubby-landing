@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJiRRO_xNzlVQRf9lToBt1deg%2Fphotos%2FAU_ZVEE9YZ3Ni1nwtUXbgn1ZQ7ohqSkIVUybt0huq8E4RN5SGuccQxHw5wmvdT_Fc8L4MYzACNm4ZLFKG_jiwaz3r2fTP5LPyZa27utaz6O32KqsFxQTqrtDERZ0Bx1l1J2CqUB-YWb8HqVM42J8JzrIyXIKLv7Aafe6FXaXleXWxRB_7hMcOLxdA45YrhQWOTe5AvFtQpaB-nV6e1W2ejps4Zg-cbtuPXi1gKGeUZES6hlMGtWdGyMy3A86o0bqMOUXVNjF1Oj3etIMA2UqHl-Zm025wnV5PYtELYWQCryHazLq-Orhjre6HDzS93vDqlxflpzZkNbg12fKDXKmW-nX60JEuR2plGKXYoQ7daDI-CPKIegSuBMtAO83GsCoXArV_l4vZF-68A-AshapWI0Xuxg0ve9ATxrZIJpnM6BlvmVDNZCjfe7fTI4tsEjZ9uqI&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Bridgetown Veterinary Emergency + Referral photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Bridgetown Veterinary Emergency + Referral</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/portland/" class="back-link">More veterinarians in Portland</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Bridgetown Veterinary Emergency + Referral?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

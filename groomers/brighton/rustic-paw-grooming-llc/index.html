@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJaVP2Kw1tbIcRT1KHotDKNFE%2Fphotos%2FAU_ZVEFmKkdiZnY2mfvqtq-4PReXcBCHuyrOcKrUybd7yGHSBIaqiAFVcmxtGdv_X6CuLRjYkG1-FTZzf7d2wNGdrCkToY__q9yEhsMILwgVGVWwjQ11mn6wYvWKSnSKNlLfFz6DBehm3tyA2b-VVZJMwh6nd9jnHQRNG31_ao6NJ93hG5rTkmTx2EpUuwqZnWJNzBwd4dEWBKMh3DCbOixK7hnAiab9_AnjejvZsM07RxOLINxnwgww-9PXOZer3GpFgPyIIb1TcH48LBTuNZ6otZB2A-jLgssijpfGBxeqxeVSlbAlaNenzkBOhu6uCqI8A6XmecNYRv6Ld8d-QS114H_1dCpNaU-BWn2UOYrWK-TQKisBAJN8Pg504sbAB1YH5Z9OLMwHAy5eGTwAa-ft0K3_wFlXzOqYhUHUGY566wbODnGKfBVkfjA3geC06bD6&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Rustic Paw Grooming LLC photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Rustic Paw Grooming LLC</h1>
@@ -197,8 +196,9 @@
                     <a href="/groomers/brighton/" class="back-link">More pet groomers in Brighton</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Rustic Paw Grooming LLC?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

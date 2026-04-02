@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJD_S5sMC-QYgRicjahh0LAx4%2Fphotos%2FAU_ZVEGCpNAQefODhKTYaqmqM6HEVH2yL7u5IUnkkgbNZPapfy2thi1fscCgHNj4DIAaQNJJJvHo2rB4dmzpIxm3Q7Mp0xad6e2tYL3IDKIDu5TZEgGoS1Mdh2RzdmlOw27I3coZQhkb_qFJNGSoGPUxfhXE3-yw5KkXU5KCZZupJMmT5rI5uifbtRbE_0PkVQ9J3ZjigQjazkv6A0oQFPRjC5GLrBCa8lLiZo2h1Ry-NG9Cn8rBWSiQuzWS4IJlhzV2DRiiDgqL6DAKT0ZTOE5XFXh2e3UE2_jSjNNrCKrrifkU7LVJqBwMTHQ9qsMKUuQTrvqGwywHWZmlK_wnDQLLnlIu4JoxPY6CZ-NgRaDvIn2hUtMOkm99kGbrFjBmt3pT2zfDKBwsHwjpURqe9tDysfrp8EEmYiEgOvPceSOr9uNMpgqS&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="NKY Animal Care Center photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>NKY Animal Care Center</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/independence/" class="back-link">More veterinarians in Independence</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of NKY Animal Care Center?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

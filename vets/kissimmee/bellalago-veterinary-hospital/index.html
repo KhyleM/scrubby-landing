@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ4V4jlI-c3YgR-OWFwi9k7x8%2Fphotos%2FAU_ZVEGFMnq7cT3ZEur9JGt6rH74x4a9T8_F-4ZTo7GAvqpuaNWSRC6swT4ab4WvM9N4H4c5OLhQeRPcMKDDycK1_IJbTKfTVzI1XepGU58e9htfdjLTBWDwNgvheqdTrY7ygdkWIbDSWHEfoG-yF6mht8WeKVcTFrMOK3l8OaAoAOzqumlIWc68PcyleHfa7G42l1gd9GpD6ejHXLL9jXyJsUHgpXMzetbDu2O_C7Fc30yWftARgoSXryK_qvfpwRuxtzgwV6d0_Ye5QOSgJyWwR_TDoKj5MjByshw6IKSYfb-WmPcn-hE7IAXKQjOdlF_0XtseS1U6hPdnd0qX2c1XBE1OyZ9V7oI1pYJPBbHCIbm77WDwg9hHBQdTfJt6OIQwCEo4c7CA_UJQ-Jr93l_4gJBB2JcLsTjpZK__tLTF_0cFSA&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Bellalago Veterinary Hospital photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Bellalago Veterinary Hospital</h1>
@@ -201,8 +200,9 @@
                     <a href="/vets/kissimmee/" class="back-link">More veterinarians in Kissimmee</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Bellalago Veterinary Hospital?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

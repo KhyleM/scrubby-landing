@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJhyf0B6jyrIkRC1PR6T7NUOk%2Fphotos%2FAU_ZVEF93Ru3QwQgIrrj40pnmAwE_7arjAv2yUoTc_0ds0ijicnDs96S3M37h4qZ-UFOZNZc2_0l09b6eskqWqSAdHqVu9oQRrixWcHLLSSet4QEu81yKbl-VQdGixABurxBNsv-jX3jyVmYyRR2G1oCAGX4rVKm2eyFiqNfW6ZHnUkr0OA9EwKjDCyK8tLLAFQvpsTK_1-hlaF1fMQIBO4dhizh8X9bQKC8e74lj66G7Dmnerihe1Ka-Wtir4wSMZ9sifiUEkfVY8KQF33tNq2EW5rqeJtJDmWHcWuiufdTRR30sw&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Town and Country Animal Care Center photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Town and Country Animal Care Center</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/apex/" class="back-link">More pet boarding in Apex</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Town and Country Animal Care Center?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

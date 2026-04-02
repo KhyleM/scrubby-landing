@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJf3SwxqA9TIYRJteeuj5m2Ko%2Fphotos%2FAU_ZVEEx7vbQ0DgcUQMx0uZz1wP-RZX95rVcJhQqy9KivvMaxo3KF4Bvm0d8Ddl96wm9OdFgtf1qQHG7HB6nQhq6Zuqy9aiiE8jied6dY7GPfAYsF2ES_MrFnFn-Jed1Qnf3_Hb45TfyTrqQBWubeYdGynhheYb00UBL-5EXUoK07qbmni1iK3xltOE18v5O703dHQut8_izJzUS8luW9gOzV_obxq3q5_Ki53-ZPoHlvS5RVzGektDu1x9FLNEHTii7Eh-b7rPpKydWKPqsV-j1aMY6MZAarczFnNOiAtsnlA7R7RGW9ymP_Nmq6JwN1Lyt0zTbGvJV6GqNK-kCmcPHU40BXJgwALZlI9YUdI4i-AQJ_rceXpHvqMdTw_iDpJ2hrEz-bSqdWRUejjLPJq8H3P-Hq-viTIdvce5tfNhW427pPWjokhxNBitPIGkUkQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="All Dogs Unleashed Dog Training Frisco photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>All Dogs Unleashed Dog Training Frisco</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/frisco/" class="back-link">More pet boarding in Frisco</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of All Dogs Unleashed Dog Training Frisco?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

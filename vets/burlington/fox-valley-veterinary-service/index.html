@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJkQS2tdKdBYgR1pW20TmAcYM%2Fphotos%2FAU_ZVEHFvY5CTZxRK1xXUoBSDL0hAH0LKkLyy165RAOkfICQE6vVMcEHGpGN7EqA5ZH4SDtAoHlNK1w5bHV8FR46kh5do64x2UIhfyvDk_VBpndi1UhSMvnHTZDqZSQd82rdaq4WsNuuZNqKOibuyMtEWQDh7oIRFC8XrMaHcx5ruEFhULhz09Ml87GRN7d9it69JJpyUe9UNWYGP3fgF_xtisZABkOEOz5Qj1JnKfNWnkRqlyk23Z0OfHiiKNvP3v-zgJKNd6qsSTAnoueelgul_va_LaAmTVu17Mt71YZry6ZXhbZj9TCgR9pZHzKiN7yLHRicBa1JBTCY3kkhkiOu2M9IuM-bPZnXVoMNLTJuy1yX7qAac3bWoOmdMsvQD1BY8Jcw0ablMhA_9XlP78sUm8e8RwpYSL--32lQfc83Cv730Q&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Fox Valley Veterinary Service photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Fox Valley Veterinary Service</h1>
@@ -201,8 +200,9 @@
                     <a href="/vets/burlington/" class="back-link">More veterinarians in Burlington</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Fox Valley Veterinary Service?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

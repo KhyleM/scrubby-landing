@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJoSsV62YA2YgRmcTrD2PIrIs%2Fphotos%2FAU_ZVEGROr6hRaggtUA_IKzSP5YDN8vuHMtzOcMEONzK4BptM2ac5h8Of_CTO86bQQkExfiLs6PVGxSvLOyLMBmindu9h3x7YyGPsVF9v8qPrH2pwyvy6hYfT7ii7NsOXfz5Q5n1rkuyslh3mdGDQEDUZv8B7AkaKPjpF4ZRnd2kosCM2dox59ncYdIn5BvVJMiYAiA1ivKnoFgE1Z6mfYPfe94D0FVcQd3BdoktOGRDQbugVZvRtFsnh0vBBp7IIezK90x7GNrD8dR3Rqu9T4QJUOMCOWqIwlDPAS4Fp1PY9PTFH_ng8PxuWGEy4cM-kvp7wgyCJVfb7Ngd3qMAoxs93l2SpjQln0v2axDOt9wYaZ-yKexsREkgPX3LZkToJrD-3QyR4nXtVRvbCbfVziz0MmVRpg4t0_oWgBOUrmFWKzHX5NZs_zq6ifC9UNFJTOI6&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Michelle`s Pet Grooming &amp; Boutique photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Michelle`s Pet Grooming &amp; Boutique</h1>
@@ -198,8 +197,9 @@
                     <a href="/groomers/fort-lauderdale/" class="back-link">More pet groomers in Fort Lauderdale</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Michelle`s Pet Grooming &amp; Boutique?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -345,6 +345,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -355,10 +359,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -383,7 +383,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

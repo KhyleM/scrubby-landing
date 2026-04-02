@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJR3hd-3EgjoARknONwu0abfg%2Fphotos%2FAU_ZVEE3LxJ4hXOsghFW91VEYBSwAwLeOVne3_JgSgHkVs7YhnCzFwQSa8IntHK62m9JzGhSNZkHFPY9vBjmSJUoXxIJsmlMwxdsyc8ZtFruNUeSQbiSwXiwlPG9EGuFs7CmJbGP0JiUjUIhWDqj8zsCEZGN6YxqkQJDp4aqnK6W0IEVrmC0cTfocGy_FtRtOuL24-TKGQgPNmWE-ksmbHaCIfV1beTBe0sjzUSjk4jazDJx6scykttD8O6IVK0tFajaI4hs6n3qu-bxeKJGB4hyv0LioQ1hBlORu6KGnMKTtEm4p42-M1rHOuH9zqnKM5FKs4QJY1cVPenrSJJv9WwIX3GAgHNp46qSUay01ASoXokP1N_gN0ymCzS_cj-yx99tG1KiZL9k5NBK1D8lOSK525aSbAub2bKYmHSnRUOWb21fbdY&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="South County Animal Hospital photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>South County Animal Hospital</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/morgan-hill/" class="back-link">More veterinarians in Morgan Hill</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of South County Animal Hospital?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

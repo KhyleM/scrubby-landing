@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJeVdpkUpqsocR5Z_THoFlD_M%2Fphotos%2FAU_ZVEFZm0HuQZ94Kd-oats3z8xu59U0uplbKUMIpWAxVyU1vW2kuP5SxB4DEhK5qiWOWPBaJcJ65iCkxgd01qm_cXGPKJWKuJcKDzYJltpk1FcOBxnCj0j_u8QcENKwa2Dh3BhLnS-kV_INb-Wakj1jmqIOMPXpl_X7xAqYgwWYlfgG45dNmBHZfLud1ma5O3-rTA0OCl6grsmhSbqBqQOahxOYb-SSfcyIyLTW4vHzHtbBmeqV5MrJSAKQNkRBo22u6f-VSNAEOwScozmoSF5xRT_PTaHg_wjb7sq-Mz_uaiXGRAqFuHlO7jyi1lRJTHUKtmgV5T5FEStwI2Kaz5QZkqdMNvE4zCCRMst1Lq_EuAMTgE3wgTjPOmnxVDl-H-fL7ULvE2bfHcAuBfiM6y9e0kmjIm-bvqgh37Y_VEQzjT7LFw&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Fur Night and Day, LLC photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Fur Night and Day, LLC</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/norman/" class="back-link">More pet boarding in Norman</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Fur Night and Day, LLC?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

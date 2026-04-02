@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJz3Wb_b7jXIYR1_iH3NWzIxA%2Fphotos%2FAU_ZVEEusGU_dybuzQZbskujt8MSArs2_ydyK_xqEQbL2OJl4NPX6T9QApDXr4Sb8voo_l8vBy11CJpF7Db1dhRNtdmxkZsDqHAN9IgmlBdIYLNTEPSChf75j_lBBLwbZ2Z-5Vm9_xcP7IInf7X8LdBbjJUcA4LXzqf5EeswRfQTJkkGVuwnOBJD3_m86GmHO0fpLG-_QvME5rPH3ytccRWMjYdt7GaXdw9SzBNB_IQ5DtMLajz2gk2Rd6jzejBJxxKnWTqyvIxCggVHnDFYlyFiNYyMSq_Sch8jzqyFGHWUOTY1DJ1K-JaTZGaQKccvnh4DEokoLC88lWW4Pv3y98_QSAQdz10O1ApwPfnKkSYm5wPWdfAQQ9jRR4kESHEI1BM3EJ-UUIMLLpq8Ck0Sg0auhGA-Eh2hvDgrfukEG3ZM5YD3qms&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Animal Crossing Veterinary photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Animal Crossing Veterinary</h1>
@@ -201,8 +200,9 @@
                     <a href="/vets/floresville/" class="back-link">More veterinarians in Floresville</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Animal Crossing Veterinary?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

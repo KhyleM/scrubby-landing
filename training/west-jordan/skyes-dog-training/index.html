@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJset78bmOUocRNmBk85e0mgs%2Fphotos%2FAU_ZVEEkEytvoNi5J3r70pZDFGTGONHxomaYg9c_boY3ZXpJrc8LvFjHrf_zM2W48aTm05mAavfvM8D7kSEr6-7URsHYZiMGNxI9QuWvNwZXxU9z5QPUWMG9lREiqFQuZm-b1pTj3dyn4TuVA6l3ct8QtvadIrwGuZHh8vH5WSQnAcUDmz5mCDiEeeu-3k3MdB_JtspFH_eDqD-YwHFm6crXTwK_d2p0SwRHKWSvrgjwp8whqD1ufkiY230zFSxE11Y-VXbmPd17Pq8XdW8hCiA3FZWjnSr5aHDk1lOl5n4Yps9fJ786ew-_zN_u_0DZJFRhlslm7S1PIXhINmdvdl9W-C8QLBdFmen_RPgYdO-R6LrdlO8JKyCKGAxPYC-jX9o5gccXlKh04lZWYNeWYGWivIMx8zMsRvmskFaF1QFHG-NwSdMg_XwOq7IxH3GaFPHh&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Skye&#39;s Dog Training photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Skye&#39;s Dog Training</h1>
@@ -197,8 +196,9 @@
                     <a href="/training/west-jordan/" class="back-link">More dog trainers in West Jordan</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Skye&#39;s Dog Training?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

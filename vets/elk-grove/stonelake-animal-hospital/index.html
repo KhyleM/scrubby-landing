@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ8aeTofrImoAR1aE6g8CTxFs%2Fphotos%2FAU_ZVEHFe2fjzyA4g4c-ou0FFv4uZ4lyq8F5ESuqt6Vc103GEfdPk8avPYLGTeUap29_6o7qC5jOHEb7uluMA3Ok5QaP0vJDlP_RSUIaQIHOtlLeXCsbyNqwCfh-XeGFO-GXW4O8XgvxtRE6aaO4OQS49schJJkkP3UADLL6KDYMDwcLuAy-Hn7X-esRKLRo-YvwP_GJUDGIjwP2UJ-xSrCV_H-GExnzkrYgt_3XGZTqfL8qybEhd2b9J2An3VjzeXgQlG-rPPmXJVM2mRiTRHgUm1gBoZZJVNqBIR9g4GcEEDC5m30vvqQTRvJaItcyd70t728RqbGYGqqKS1sRV5mAPdqDSX0Oyca7TGXW9qVpSmOevqXlmpOC_oIq47HVmwBCKu_biGjhQDzj-ZcT5em7q8IblteLzbpzhVycgFTLeVnNJE27&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Stonelake Animal Hospital photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Stonelake Animal Hospital</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/elk-grove/" class="back-link">More veterinarians in Elk Grove</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Stonelake Animal Hospital?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

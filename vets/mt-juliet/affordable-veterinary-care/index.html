@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJv7y3eRQ-ZIgRIa8WUeIUzwo%2Fphotos%2FAU_ZVEH7MoRJiqrTpnudIfRFmxwg0fAzTwunk19JgSueqAoyPRwQp1n3INdIzZTGTgsQmQ0_61Q9tzD6dOP556_freUFFnrbt-BbIVd8mjkuqlL7oKrebDqzQdqZu_gsaiE8l7vicNl9fIzmEIZ5BWb-R2uqTYmUdj-rlSuugIXLKkfoj0zzxIZrGwgKLt2dAMiBLNaDodTrYyMTHeHhescicTyLXMca0gkcXFD91OlO6b5Ef5KnlfoMF_mTytWNFBS24DevyCTvOHFClgf192EmduG2CPU2urSnWP95DwDrQ48kDNvFdSAIKmQ6i8_o2z8P5KY0fEY08XiF6RbR4v5Jk6sXpDGRTfolpuIBPfrK4fcVzJrPPjfJSH59DyIp-PK67zvWxVT8zMDDY27NUzsgp4VYxOtv2h0bk-0qfVyC8phdKA&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Affordable Veterinary Care photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Affordable Veterinary Care</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/mt-juliet/" class="back-link">More veterinarians in Mt. Juliet</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Affordable Veterinary Care?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

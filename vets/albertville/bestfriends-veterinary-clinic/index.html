@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJD03YR4Rds1IRABX4iZxBkxw%2Fphotos%2FAU_ZVEEQuZ7UJK67c5UJqLuP2sFgFBlDSXAThTG7nMUqKQJ9jwrZwTqwRQGuXnGFRgs4dO5A7jNMbnHb1RfgG7Z2alcry4l5YZMHaq6JryA1zH_QV5FUiRPolXXZqyE2Uy-254BvgaK58ZdVJDGtpWvH7hxF1kvHE4VuU5E6GcXG3xK6ANvY_K3eiShrwbaNG07kDr4oCK6Bh0NFucoAiahPcZOr_F6gll3Pt52F3wEzL7nMe3N1fk7XtH6hr1mUe1J2ScHbrD5jN7yPz98SBgNcWWGyAqb98ZQ9Q7JdvlcbQOI_fOzzXkwHMu96RJGKovW0jFwGr56NMjSarkQ4hW5kSDaReshTeh5x1XvwmOH06633BziV1wcOaPvRh-Mp0tIvfJOGrE0l5WqT_GiXGEDX8JLB7-GFOslUxbymuG_lYoJYSTE&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="BestFriends Veterinary Clinic photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>BestFriends Veterinary Clinic</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/albertville/" class="back-link">More veterinarians in Albertville</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of BestFriends Veterinary Clinic?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

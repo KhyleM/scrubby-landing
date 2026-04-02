@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJrxSDsnVWtokRkCTUCO0mZ_g%2Fphotos%2FAU_ZVEE0QXORq3fTLWd-QkpOAbWO_qP5RKqAdixXeBFv5gHmbRCPv-V2JRhcjp14mYygyyqWL8Uldtq76R8quniu9xzVXh8llxSw-rEYUvjw66iAZ0QGHPKlkGkH8OMlgaPZTuWzZYeSDo_MxMJaurkBqFysYBGSMqlVOni7j0tycHFaMrBOyxCB_P5TCuE_maX6kNTqp0z3kBU9lRYrdb9yvqcAUjfcFR39UgclmLlBNxlK3JPV0zrg93bZt4gOuSOUvkjfKyqGEDXG4xyG_gW3NBzLX6e0ym86KlIEOcM4R0f4GM52E92hKKT4Nqmv2YIQZg9HvSRnyPMc5kQJHstuDItQKrCQApMJEB6NhWn2YuYpuZDw-gcTcLUeGyGXbsOyJ4DTIoCRCbur-xkBl0ySGAuXEA6waOGL3lYJHoZSXnuGJ5U-&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="The Dog Eaze Inn photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>The Dog Eaze Inn</h1>
@@ -199,8 +198,9 @@
                     <a href="/boarding/woodbridge/" class="back-link">More pet boarding in Woodbridge</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of The Dog Eaze Inn?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -346,6 +346,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -356,10 +360,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -384,7 +384,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

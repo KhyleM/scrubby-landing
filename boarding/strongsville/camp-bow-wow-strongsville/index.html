@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJey36t_6_MIgRGeu5icbnhiI%2Fphotos%2FAU_ZVEHfffFgu_nS-zpurvplA8wTnUmKzHKT145vULcY8xdtDOe7AULeFz8AGmYUuvblje3aaV7gUNcvbVpHuB8oTliHVGlte5z-xwJgf7rKxaBQu9UyGT0FLIjYhAFTCXTu3s70tSN2ERmQs8C7zNmmsB8lTvF75AecQjzY0PG8TK4a0YDE34_nhWGwXdHc3QHx5STlqYKLnnSi7amxMJePx6p8hOVwrOWidg49dgL-OwvmRvDl6Aa7vBADba4tAzuRSKOW1FlOAcqkzpYEWIrexHz8jClXpv6PK4adV-pPwWk9rVsD3p4s65I8oofCbGyVJcZ8kJkr7wXHFgG4M7jat2Xo4mPLnOOdvMmsP2jixr0KZ_Ta5MsAEMRlG7YCBO1m2j7AGQp7Sc11H0bpwRJqtb-BpxG5hHvSbagPuPEaIgooqXG9od6VUVkNeSzNLg&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Camp Bow Wow Strongsville photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Camp Bow Wow Strongsville</h1>
@@ -203,8 +202,9 @@
                     <a href="/boarding/strongsville/" class="back-link">More pet boarding in Strongsville</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Camp Bow Wow Strongsville?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -350,6 +350,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -360,10 +364,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -388,7 +388,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

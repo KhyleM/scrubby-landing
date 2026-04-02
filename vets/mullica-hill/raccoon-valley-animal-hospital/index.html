@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJWRLdp_bYxokRlbGLOXzDzdI%2Fphotos%2FAU_ZVEHNzCyNI1vwT6h9UmqCCvNdwtJhaHJFF2h3UaowthRJrslKg_rFamFnMUqTFxnyliqt5h3PjBf-4Lf_I_gu25ywlip-uXAECWWhtRdLFfc6T7PkZBIj_MgUlZqb25OwZjnxhaxnMTFtEeW-_H5M3gtcsaEgA1XZr7MrP9lnUT7QfFFsZstUDOxzYhGvlImMPeubMDcM5uwtAzksPpsPh2MYRJ5vFaWhQ5trDfSJbWpBIJ9Yxgl5Qqh56EYekPV1kRvEN_TP8e6vXYrg9vmcbxuhlCUfF4W9dLG2CmK0BT6h0nv1IBx2w-oN1_tmhqoIIkxB0AW_jJg73eAmFRURyteOFNeMFecb669EqyfsQay4ct6ph_9Ln-00Q4Yk2DNzDZ-5-9ywSCj9hoQdYI10kUxyPY9Dc1JKKDoWH8qljOc&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Raccoon Valley Animal Hospital photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Raccoon Valley Animal Hospital</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/mullica-hill/" class="back-link">More veterinarians in Mullica Hill</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Raccoon Valley Animal Hospital?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

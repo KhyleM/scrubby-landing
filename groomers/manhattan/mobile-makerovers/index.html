@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJz4jV87lxDogRbBDpiyE2IPU%2Fphotos%2FAU_ZVEHA72YJLLimDWsWqBcPAVwcxgDduR1BeuClUln51cxXqnHcjmjGxnzNMSoJMzHmTc1n0R1CidW3whiqW6PeZMqdESuvnN7QzgB7LlD0sb0uhprTj75PwyjsEWLMCsEsDcskYPC2Orx2F8mSJ3rvKwzwyB07wOgz0zPEtGFf4V68mZL8fVrQEfBDITcRT20qQP-Ds_YJv2ENLOAnMq2VV_u6fIfkXz-11qvcA0dk3illLm9NctIWPj50vXq7LuSrNlwPtg0ZzLlKHS-J6ysEudjazGfWY9peXLHwGIQ4cGZyugSfS_-Up3j1dUXTXFP_j-CDVn2hyvdBuD6V3o5Om7V4qqp3VVt3CVUtWsz-JmxkCBZ4W9WKi6fvjNgu40ucW-Fv3-mzTnuCFRHztN2k76Elsqj8AXMdIEifI3etcKONQJ29&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Mobile MakeROVERS photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Mobile MakeROVERS</h1>
@@ -185,8 +184,9 @@
                     <a href="/groomers/manhattan/" class="back-link">More pet groomers in Manhattan</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Mobile MakeROVERS?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -332,6 +332,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -342,10 +346,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -370,7 +370,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

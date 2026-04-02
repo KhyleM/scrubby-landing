@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJaxRXdlKgf4gRRkLAoqrE-hQ%2Fphotos%2FAU_ZVEGkuHOfrh3gndmy7bM1WeL8xfREq8V7SBdKpIDBhl7TIiLCx6D28EqZeyUptPLSi3RDerJNcRykt9TQiHkKPikTd0suNm-PtN3oNauKRQLu37p48TgUyPzhNOvOUwPKVxcc6X4QFZUMMEkhMGFwAom2evt3o_Ty7_z9o_guKbVVMbEpUElEP8SksmO2k5rdHO0MFmQjja6Fh5GZZSqZcsdGL7n2sMDK7jscbSMwHll6O1FywLeZJFbHzaipCTvHkCFvLu-V4Ykg43Z-LD-p5nKj564MrFnwhFxVZ9k-yr_Tt-ZiaB3Qc1AaLsjiBuoXXoKOmYvMPjFIYDhCj9dbdzJAO1GPVRsM6fQ1CDc4d-uttd5-xGlPCl2TISWGDX_ZlKK6BhKdVGfqb-K-V489uHlOE4Q_MD6bZjV6uPfw-PrNwRqUQRhV6qliTO94BSfq&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Ruff Country Dog Resort LLC photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Ruff Country Dog Resort LLC</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/eads/" class="back-link">More pet boarding in Eads</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Ruff Country Dog Resort LLC?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

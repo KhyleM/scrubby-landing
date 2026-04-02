@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ87wwA_oL3IARvwCW5eS9BGc%2Fphotos%2FAU_ZVEG8GSOD6VFn1ANS73h0HAKfqs3EgtzuPnDkePt8EnimoALNJlhPrcQnQAFDpme5GDeL1XyM2eUDWWDpN7HFBK2yTLKqu9YQIa4CCldP-dT-jzFenEkOQe270xg5QN8ylntn8NpklQLeQXNUfFjdXMSivGToHuQeLfmlfk6lifYJtltJcTtBE5fA-rL_ePHj5767cwxpjwy90QYxtdkCLLMw0zdkoZLR2X2q1pTxv2oKSlleasZyLcBnmoWhfM8roaA-nWyiNvsyC1TuzUdZqhy5GeSAibFAMw8wgR6CpmwVW8rd144i2gPYS_Z7Kg3SmmFG1HfcpgIenvCAHVH7r_K6RGJVXuSDY3gVjY-NB_mfv-IsENccDuthVB-lBPnVaRNCTngzZT2ca1Nb9hFQPyqDFgX6MKpCWdA7WftbYGbneVWJv5qDu50_p8TfuJaG&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Alcala Country Pet Resort photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Alcala Country Pet Resort</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/encinitas/" class="back-link">More pet boarding in Encinitas</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Alcala Country Pet Resort?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

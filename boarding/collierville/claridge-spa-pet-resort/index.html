@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJK4BjmI-Yf4gRqlTESiXvSEo%2Fphotos%2FAU_ZVEGe1Y0tT7RRdcRHgPH8BCLREjxATcO-WeYRipz6lTQIqZk3_0hdVU4MiW705GoysluCodPg_FU7yqPADtDbrPMWhLI4Z2XCSam0HoIf5blozXAfovEh9Kt2UX6mP-bxmRBeHMn4zCukZWzPlU-zCFAY9j3LxakK4eu2ArKvugk0FvOWsc7N7zh4DKj-qjnBCXczWC36deZ8exoQi0-pw-5CXrPEwjc_dkiDP5Jg0qiRWryQzBVl0Z0fSS-DNYomyOLK5dsWR84ggoznFpTwaIwZK6UrPvDv3YtPhihziElcRaw1z12EpxseStYo0Wcj8SD3V02nDzRUn1tnCxunskM7p0Fr4-wsTM1Tq70w1xsLDRKHkfteVOsZ6qBzHNxyGqCsCbvhhI4qE-L0gm2rwGU2dJc09YrWfEhsmI9hoPrGme2okLLO0U5n59DJ8w&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Claridge Spa Pet Resort photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Claridge Spa Pet Resort</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/collierville/" class="back-link">More pet boarding in Collierville</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Claridge Spa Pet Resort?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

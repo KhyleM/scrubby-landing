@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJg9gm5EkHw4kRxpDHNQMWx98%2Fphotos%2FAU_ZVEEfaoptQn63_JeVmMgTqNX1FDNXx0N6zkhfiSTlNlEktSfwATsXXnhInEamhkG8viXKpXOY-oK9MGvKwM5msKfDeMvMlNEqqP7BIIePWIajy8y-fI5-cXPy0-HrNKRU4xhKGIUznB7skQAE9BLys1PSpjFpfSEyifaMUsKDEQJcsUp5BuzHrmd29WxcM9hus9XK3weOdyPNn0TN5OAJJrVPUIA7w1kT-QKUARuU_eJRlzzOUArgyeGjt8IYFm2QQPl322pYkEO1vmrNL_CkTgYVaxWEPXfwbglBJeOCkIuuajQfgKAiVV4MDjnj7IVL1ptGbg9kO3I2mQlE4FFn37RUDGMUXFBT4srBxFfz1FIKyv20NsGKZ6Evi4OpyZYQBQtoxS3A6vuDHFPDaSvL1d7_q5K5DmPXr2ouJhhbVtt42OctGVbEU0F0Iipn2Aqc&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="K9 Resorts Luxury Pet Hotel Fairfield photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>K9 Resorts Luxury Pet Hotel Fairfield</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/fairfield/" class="back-link">More pet boarding in Fairfield</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of K9 Resorts Luxury Pet Hotel Fairfield?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

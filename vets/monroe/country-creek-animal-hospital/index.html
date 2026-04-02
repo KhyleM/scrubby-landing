@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJi8bT33BvO4gRb4FZEnVhYY0%2Fphotos%2FAU_ZVEHNv6fQVzM8w5dyyVCbdQS4RWNHaruGrkZQwNrpYSvlMTWfggplj1decactuWthTSTp8hyyNvl5glZw9NfFKCXCZekOinsBoan8IwcV_h85ZVorlMwYv48wYbBroOYQZyaVn5daYO1TZVavJQzugYu9HpUa2vVj-dq6nsheLo7Spm37qZu-wkpGX_SVVv1A26VQnYeE2mIRs3XD_SlfcPTujcAKWkDkUBzLFlBWaR5wxkStuvAHqZNgOjvHop1uzl2XoNoIjTL_9RXS-t4pfntQzKm_GvCYcH0K5zHOuV-qU32CFFtkb1HfXEMF3UvcaKAUNPYHQQKxDiFxqTux8WYJNLvPe-n-1AQXxv_joGxwuCNq5EVbhiwmbVg8ocCdcUwKviHjDsDLVx1hfvORzaLOh3FRKL-1ACFuR9jYabb3sEywfXIGuyHoC4vmN0wV&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Country Creek Animal Hospital photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Country Creek Animal Hospital</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/monroe/" class="back-link">More veterinarians in Monroe</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Country Creek Animal Hospital?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

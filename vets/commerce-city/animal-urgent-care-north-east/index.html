@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJq2o-1RVvbIcR62fXnU5QI6o%2Fphotos%2FAU_ZVEHOWWldRZB3TLFur3oWfMNuYMwtb031Z2Vzk5tgq6UiVYfkIxUYZ9a6mDQXPxuGlBMcVrdjx3itB3srHjXxjEwKlzNO0Ed29FcOvGrSx8MJMozCTmI9PtkZZG_wxU_1OykOARRFEux9v333LI0pbRMmL0p8h6KncTv_y4VFELDKWbTlsXHnOWrI7ZnqHu4JZxFhBZaUxVOlQpYhxTX9Em4XxIj_vB1ySRIw3baSmNZBL5ds5KasprVQzft59klf1tGkZOuq7Ys7rw4Lhj5o35EKxu6hEQaQ2FfB_x1zCH2jC_pBErL5IxV-FlvcITS_ng4aj3j2JkFLF9dGnDZl2hZ1VjD-AVSo_dZT8nreaQ_JoAcLjxds6rWtGP0i6sRHbMQhIv4jEXalCS8R8ONVKhKwjspH4IVDf3WfNDqTQwJ7b8Jf&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Animal Urgent Care North East photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Animal Urgent Care North East</h1>
@@ -201,8 +200,9 @@
                     <a href="/vets/commerce-city/" class="back-link">More veterinarians in Commerce City</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Animal Urgent Care North East?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

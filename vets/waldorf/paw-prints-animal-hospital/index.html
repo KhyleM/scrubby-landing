@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJO-bMsoqgt4kR7uKw-m33VXY%2Fphotos%2FAU_ZVEFnluNSZzS9JejkIsz7txpFInp8CTKndXukNku_g0Wc6Hi8PYl_E_GivD3a2XpyFmHUNveQCqlESzfF3Qme5yb-YxvCkEk_LJvbiWrNjYRMTRwxeVULnen8fo8TorGKMh80e9MLyD-JKdA7aIKFWNHzf57kG8Y7VoDXOMfRHXDO70qBkGEfdfkNoMkd6H-ihu9gYmC2TvmH0a4Jl1yR2rnXtKbBaLRZDjWr-0f6_QQTRX8IaYMSg9R_fIDBETvVcnB8ax7UQndJa2WDJy7_JLQL_qj_xgPJw3iDypNP78AxBIZLrr2YB3Sn5iXzCwAbZzehXTqZmrxoOR1nOSA_IllfangNV8ViwpaBEGMcTCha9SxGPU4dOCyYJd4RODpZ5YUKlgMOeKEtaSyDPSSUMWEdyVolDPDaogP8YEN5hvbfGQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Paw Prints Animal Hospital photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Paw Prints Animal Hospital</h1>
@@ -201,8 +200,9 @@
                     <a href="/vets/waldorf/" class="back-link">More veterinarians in Waldorf</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Paw Prints Animal Hospital?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

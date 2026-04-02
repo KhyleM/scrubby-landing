@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJY_cGXAX1UocRMS--USX2_Sg%2Fphotos%2FAU_ZVEGF9Wx1p4QlSzxyihBMg1VKBKcJKhnvd75ukWZnajKEPYiwdobqbKE0pdJhomMxf1eKTQse_r7tNBaBUDXFHaJZ8UYvLXGYlhW63sUzZnZqQSKUm9aIhVGWZljeeg94QvXmphopXdFXa_kklru-TqBRsJ65vwtDhmk_kAPS-C97hGwKOQi1Zv9MetL1Njtecr6GS0v4J8jvTmr-dbe-_WhgW88lLFu7qPJ_QFeO0fIyTVJf5ymxwP0GUhDyAvV4GDn8a7f65ghYx9l-hWDu4QFfuenGE5xs6sQZBpe9CbjTJSK0ETBlyRa726Ag6Yc3NIB6OWKveVTKuHFydb7TPUwWA0PPvzQmSVO7dqzoXz4ptYhh39b683V6KEVhIit9w4G4j9aZqwBHZ7Tl0Zx2OFKeC_KMDHX7QRO8ouxv26_qTZEfwrW8xZD5bdrVR5Xx&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Dog Training Elite Salt Lake City photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Dog Training Elite Salt Lake City</h1>
@@ -197,8 +196,9 @@
                     <a href="/training/sandy/" class="back-link">More dog trainers in Sandy</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Dog Training Elite Salt Lake City?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

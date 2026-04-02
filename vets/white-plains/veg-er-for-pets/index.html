@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJw4RvnU6UwokRlD3O6qxSLzY%2Fphotos%2FAU_ZVEGrGTmSWyHEtkSZ2fK3PaEIpKUePa7O1XIwxgNT0CUqT_dpWHD6_MTofPjaEx3GcTd12prgeQR_MrZjVlZpsg2J3znHhcUnb0H6FL113GFYkG6tGmiOLw17ecXSpBvkNU-1LiX1D9sd9t-jOTe6W5tYNjZcIOhYc7Z9O-sF7pHBv3bLBEW4TUYFLoa1TRvlZwK286dwGwrLyHO_5SxpbIzHcb6awV9FOD7w912HO1C7O4BY3y5SfQ8aoSYlrnKBVbUiaQ7dmrMwWKcwrLZgDfxpGRA1W44ZY4YtoUxQ9kMR8V6W_I28atS_Vw91pfqFauj12uW8y1z_H9kcqpkz2FsVV4zPyNQcTKwLSFXgDbz66kTi_46ATkh0BSKj9rfjJM5tw9n4N8AERP8vf2c4NRn_EZV3wF3NfUDjlMEyuFPQUc-fPuGXkL02adIvKA&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="VEG ER for Pets photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>VEG ER for Pets</h1>
@@ -205,8 +204,9 @@
                     <a href="/vets/white-plains/" class="back-link">More veterinarians in White Plains</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of VEG ER for Pets?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -352,6 +352,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -362,10 +366,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -390,7 +390,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

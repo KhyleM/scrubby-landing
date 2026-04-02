@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ-fhWXwhfwYkRyplQM-6b3uk%2Fphotos%2FAU_ZVEGKXyo5DjHxRhTQ3nBKjl3gU38w1PB7LRlIABKaWHKYNE4z6wtDXP02z9LVeRXXDXSWN1jOtjP42tgA2h7kJvynyzgKvv8AARxM-sashK53umwQsCl9mEv7HktbIK7UJoZLxAxxUe5xYGJHa-L8UQuQWa2cG4z81ULwSbX6O_Te-LZwHXt-xrZNPz50L1iNy0A-W31gJGbrbWVFYVTYO_v_pzqhHhq6rsJiWWQ8ChB4zytYBul1lgLvooW5J9rcxjyIP4jJXh2dTel0VLmAgf-VpYZKiwnZOPyrFHvxI3nyOjGt1tQ_Mrx9BQiEDMhOESgRGZmebwHvdjQ8wtNqGTUdiksRtWEoU58O9UNiBCDy9lhGaobvRnh_oDw5-nZA1mP5I8xZlMw3jtp-2NIqJQOQRTa-8NYIv2oNEkYYcA9AhtirDcQnE4-gkFyuuN61&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Pets In Paradise photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Pets In Paradise</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/hamilton-township/" class="back-link">More pet groomers in Hamilton Township</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Pets In Paradise?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

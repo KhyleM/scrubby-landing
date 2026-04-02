@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ5YFYA6EBdogRx5RIaCHbPwY%2Fphotos%2FAU_ZVEFg69lGPEwT3jasUkEKZ28as3rlKTFl81lH0Oe_HTp7kdkogAmEhTXMqvo3vwYl-zrp79uRhsy0r3WRcrdJwGQtJsqZwIfyvTHONNojECpbg6W5YdQxeCdt9oPTtq9WPhu4IdxDiEGMP5Xw-TNRJKeBCTQCFbyNL1BVi3Xqll1Rj-NW4dIzvrc-fSRoO3jHvI_6PyCjepcrEcgkUtUywS0BeTBf9waHqXDrcMRTkOfCuldQjPuCyZ4qWOsYChZc3yTPQ9SHQ_k9FE376loyrHAzJhX818NYXT5Uz_1U4V9B1uniIuEiWBravEZW8KypsT4IToIUk_PNF3R9w5a1tFccvsT24GymNYJ6oec3kfP0IANERgmveIM9-GrNjxv9j9XAoINv4QThqI82-ifT86B9npkoYt-TY4jLSqyYpSWmbw&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Kennelwood Pet Resort photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Kennelwood Pet Resort</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/ofallon/" class="back-link">More pet boarding in O&#39;Fallon</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Kennelwood Pet Resort?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJVRFeF9JhwokRdyQaFyY-Wbo%2Fphotos%2FAU_ZVEH64CP3k60bt9e08FKNMl5W-xVhgMjHeU4Yenw6CH79WS-ivogygSOPzkfcE0qlwz_VvV91bQzhMpfwn939tSbFWb7PUj5yd3nH4yYLRv25pI2yA7eIechCuJx5GeEiVNiyZU0FjHFYTYX5YhCGZ89kNMssIybGpo3s-SGZQTu1qyN1UGv8mxg2ye5xiuU4fZMpBxYWgI8RfjHQATCqq6vlNwMyUXd8t5yqg_G2WY5s0CBLXBDLxnRwgK7qYl7T78f0_yz5eIb3eW6c-tLQM7QuJn0mTXxCH-LrcbjVfTIu1n9jzzi05LPIFt7qmk067NzjVPwPAF6NIO7l3Hp_Es9fz8pMEZZfe_XW2NmvuLWBRUAuymn9s5fj47M76q9SuAC1BzTmA0GLg9ZbsLH5k_SvUNxMsre4ZhP4NULDmwhi1w&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Animal Clinic of Hollis Court photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Animal Clinic of Hollis Court</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/flushing/" class="back-link">More veterinarians in Flushing</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Animal Clinic of Hollis Court?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

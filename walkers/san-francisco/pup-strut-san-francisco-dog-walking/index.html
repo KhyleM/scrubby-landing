@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJp3Gba31hKYoRhZx1m4MmVKs%2Fphotos%2FAU_ZVEHSYmJCm3d6cBEbMI1708rlHcFmIUS9JvkwEgmxxaZhCsuVTK0pP_B3hlWJvTMl-VmRxJETg7OJ7F4umwzQ2h7oNqm5D84hg2BT63URfDUcDxRGPzHDNbuqF2aMpM0EkktEugPMEWx97ZJJGtIm_TM3lySJsUDM13whVS2MBRMeSxeATP3ldXZoipvA74d6nlPxGZ5j5Ry9UOtxORujRuNhpX6OtIG26mSaR0ArRElYDCBaEw5rlpFi2-wbOLNVFSC8sau9yNsyO6LxufzV1i2D_-dLWTFgvZ6klDXndTye2ruD9_05Wu3EYhgw5_RKZFzf8tx6M9CX4naEMCPiv8HkjT7D99heTrCCkBbb7VYclZX7grU13a5IsDhmJI9A_TDspRGHj5MzShgXsQ9TDX76dNUR7JlobSZZlhLpgD6YzYhrbTpjR47QARTS33BW&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Pup Strut San Francisco Dog Walking photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Pup Strut San Francisco Dog Walking</h1>
@@ -196,8 +195,9 @@
                     <a href="/walkers/san-francisco/" class="back-link">More dog walkers in San Francisco</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Pup Strut San Francisco Dog Walking?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -343,6 +343,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -353,10 +357,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -381,7 +381,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

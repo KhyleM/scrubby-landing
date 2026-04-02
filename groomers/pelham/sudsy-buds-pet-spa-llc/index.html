@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJdWNOtKQjiYgR7p-fdX3tLL4%2Fphotos%2FAU_ZVEHfJkPKwdFS5UMmlMes0RLDBoYfTWizyuBUCZkCS1KuJUg2Tzwd7mNYnwYgU6334ZTSx-ZVpeLPbiful_vni_lrPBHhHXj7ltCDWTvhuCPML10WsectFfyIO0KNG4Io5Jg7fFgwEK9PYm7xEMlJ27ezm1szrmzI-HxOUqBhVWk59wmve8lLeaWOBkd-FVKDanCflaEWbsw3d3JjLbMfYBipfCpDORhnumoC_V-4diEtKoaHQmr53QnUwq1tCxWl-2jNUjy_5gyxTtOzG7Oxr2AytZ8rGhNfpqBrxtnbZ1U2jw&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Sudsy Buds Pet Spa, LLC photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Sudsy Buds Pet Spa, LLC</h1>
@@ -194,8 +193,9 @@
                     <a href="/groomers/pelham/" class="back-link">More pet groomers in Pelham</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Sudsy Buds Pet Spa, LLC?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -341,6 +341,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -351,10 +355,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -379,7 +379,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

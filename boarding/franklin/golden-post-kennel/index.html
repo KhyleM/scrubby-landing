@@ -79,7 +79,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJUeXbP99ma4gRcVTv4EEnF88%2Fphotos%2FAU_ZVEG7rB-7OO1OnKTzmbNpQjblWE_whYt2Wl-ZLg4RG7ehuNSSeXq7cFb02eaoVTsiJBK12PHCkYhJ-IGrzgCerf9fGcU_Uw-imgWV6_1tpaMu0TTgv3s77Dy0RvJKbSRCzcPlL7NZ2z2hM0OI48YOEU_PdcSz8aFyj_NcewHYkGZ8P8-tMby911iD9iP1GGOm6E0gJ-dKd2s5wbw047ToRNHE4AMtVxs4XOg6QfoVtp1RyDhoes0923_Ll_d3PVX7x5E4bAR1RLVZNo56n3Xn_QucbedKAFzM0jsp4HXKZuWCof744x7_OJidzmr7PQb1dYR6dvuiZyROliEjH49mh5lD0_DO0rd0klC3bCw91ZtwuBnng1Hiv_uplVcSex9HtOdbuizBqQ-0lOKV0G5m2b5BbKzELywIvfm7mDWZb4EtM75n&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Golden Post Kennel photo 3" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Golden Post Kennel</h1>
@@ -193,8 +192,9 @@
                     <a href="/boarding/franklin/" class="back-link">More pet boarding in Franklin</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Golden Post Kennel?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -340,6 +340,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -350,10 +354,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -378,7 +378,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

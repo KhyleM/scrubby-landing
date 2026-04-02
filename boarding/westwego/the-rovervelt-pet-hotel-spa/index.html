@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJDU8oXcClIIYRKaEGCOdyiiE%2Fphotos%2FAU_ZVEFCYfSko6ueYctJFgeNeMUyFsxcEsy3QJbSNTUV7kmdlUcJxL6wgmgPQtwp_C4Zs6N55PtM-qV6ZfVkUty9OWLo56uGivFTZhnBJsxDu2yzHtBwEk-CJcg-Xrv2xvAbmoU8idYVNdqlnVtafPmVVmlGTvHE_ndmPXTiPVlf0NRx4_7nHGAlsKUfVWZBGfphkzorffGlFfOIIwtgQSGI97wTsA22fsJa0PsEZpfUL-AvukCGRPLIXorqwoGqLKWdVy1BFojswNe-3qfHJjXNRz4xAUT-dDsnZBLxx2ZkEqUqf0rORcDnRUoxnAz3AgcrP8F-8t05mVy97J65Roi3P_NzuEk4YKJT-DJIbiBFNCQ7BKeuF_8Z5weSJApMvgdSaW9bcbqFB7SzdxvPCFxQEqUfk7Rtvp5fp7wJ9cHtrorR7zsR&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="The Rovervelt Pet Hotel &amp; Spa photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>The Rovervelt Pet Hotel &amp; Spa</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/westwego/" class="back-link">More pet boarding in Westwego</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of The Rovervelt Pet Hotel &amp; Spa?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

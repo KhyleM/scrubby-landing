@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ1V-cTBb2wokR8auY4TCFOu0%2Fphotos%2FAU_ZVEFn6ZIweKBCHVxIXbscYOFZC0dPVTN6QwhL9rnMe-pNZaPzToFNOv1_UsAYYGbanrTpYu-qQpCCKjT2m2YXZMEN9Jj2Pv5UQ6fQQjSrfC5rjVPLjqQ-4hEg0ivg2oJkE26-mQ5iHR54o8XxPDu_Rr4y5HYiyCZ8oe2fHRfuAAk9el-nHnyPwUJNwhE8lMroCEbOePfxi2j_CxIe8At7BO93IcxBy2uOCAlcmTITqu6RNot_Y0Y8ztIz3e5fIccoH2zte8MCw_bj4-LBqKANRv5iKrPYuW5up5kC2_TFJNtCBVhhaLOiqvaSdGVt2zMh63v2MUDBuD0kuMxOUn17ocOVUGdLz-ux1UxfkOpoF-mCKtBt7c-TjmSdaM_jjRbyxCLQz01wNzRe0QS0DuTh95GFlVLA6zXlQTA4RqvhBS8c98GV&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Jessica&#39;s Dog Training photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Jessica&#39;s Dog Training</h1>
@@ -185,8 +184,9 @@
                     <a href="/training/brighton/" class="back-link">More dog trainers in Brighton</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Jessica&#39;s Dog Training?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -332,6 +332,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -342,10 +346,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -370,7 +370,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

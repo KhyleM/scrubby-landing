@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJT7hCSFElhYAR1jjxYf7qcrM%2Fphotos%2FAU_ZVEHNGm35q9bX9moqWZD5CmBMmosLQhDiQWe4WKvFAnpiTV8Ke-WcBFtwabCRM8SFsF2QZXNWWapI2YZu8kP59r-SF8iSuYUyB9TP1l0qVDzNXtgd6Q9yqmu9W4oiH1w-1ULE8dfBkk-P67a_RxaV24G5Z2ufNJhC5N1RIvKTp07t-TL37wMT1jDU8iJ5ioWNYdgiJWlOBIRpvljjP0D681DYBa3nxqq3f1FHXVANWu2nW5wAC1eaoPqvzaG-13gFuVtvuCEMAr_zcj-b46k-jG7AAe9P75IOOjbMgHWMYLAH0A&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Happy Paws Kennels, Inc. photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Happy Paws Kennels, Inc.</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/dixon/" class="back-link">More pet boarding in Dixon</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Happy Paws Kennels, Inc.?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJs0GuNaaFVogRtSMi-7ZPBYs%2Fphotos%2FAU_ZVEETHnTJcf0JTgw3LBG1j6NwUn21U7pDjmmPeTarXPXOTu1W8rGU8iyLLFx25-HA3OJfXpchH-U-UwZud-_htSHJbOZ2jAH82_gZGYW54946JpF48874ftx1WGyW6UusKg1ha3IEnfv1Kp6lFRWZJzLjneS3Uj_d09OymcXBdlQfboCg7whm9ptpdWop_j0coR8ZFuhgIa9aQCRZnzJNpmnMvS58hVhJd9g8gKX7BXGQx6bD3LAO3KxdE1wRA7hD-EYmkbdQ7LexLYn3aCnPa_IzGu6ocGvcotwu8w-YSsKieCrWy7TQTQg1h8jAgV4lho0LFXTBuCzs-ZGHIJ3AHV5SLhpjXM950OPKh-ufubeG1vR1c1Deix4KnGM1hPVVm86fdXVz2Ll4C-j3wapN8G_3l2a98UI8lYJ4uYfPOas&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Dog Bites Munchery &amp; More, LLC photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Dog Bites Munchery &amp; More, LLC</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/rock-hill/" class="back-link">More pet groomers in Rock Hill</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Dog Bites Munchery &amp; More, LLC?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

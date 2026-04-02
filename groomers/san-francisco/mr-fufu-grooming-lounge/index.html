@@ -77,7 +77,6 @@
                     <img src="https://places.googleapis.com/v1/places/ChIJPTSsrIqBhYARinA-6qEQGV4/photos/ATCDNfUiYoUfNRDBdoVc_HlpXjffu5NqzmxBfA0fO8bv04Kk7dU-mc5MiPPuHt8OVlWyszo4FMhWBEbE6hQ8l6lffkOeleM0jJfgRCh0oss9KydIvS2t2_ORU8hQHdC8zSY9a_SBoR1jbF2kugo8XLWY1SFDfiVGl1raTw85w26ZUaSOcF0Ndwuqep-CZT4AHcfmajT_XFV42H78I275DGK1bLlAbDJp4kt_xyZuVHvGxs-bmr-GktO_qvbZaqUA9ERCDllOAzxeQ_xnvLVFtBTVCL0xoL3ZOc8p9IBJN4uWVf-TVw/media?maxHeightPx=400&maxWidthPx=400&key=AIzaSyCpmbfD6svBtJL5OpHfeph6xPVzLlf7F-g" alt="Mr. FUFU Grooming Lounge" loading="eager" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Mr. FUFU Grooming Lounge</h1>
@@ -197,8 +196,9 @@
                     <a href="/groomers/san-francisco/" class="back-link">More pet groomers in San Francisco</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Mr. FUFU Grooming Lounge?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

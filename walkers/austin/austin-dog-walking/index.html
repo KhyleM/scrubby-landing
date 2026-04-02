@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJzyWxSE8BOyAR6NTwjZYpmdo%2Fphotos%2FATCDNfWPcgm0f_50BpQBss8UoKqOkp2CZyma18-CC-l-PbSDdU85D7SEn3uYtWfR1yq0ce3jbfjM__I56YCjiWYndON4ALUAB_bT4ri8C-l9ovN3W-ebwivjUL-vdT9TfiKEzH7O_8eOwcEplOhHa5jjozFWuiqs8LEf7D7PfW2fDsrM0lpaEoBhcuAsieMEiQDbFmfBMYGwERNY-WuWY5HsAlQK7ZDLQ4EUwVTrX8CxzVbCY_cTnwBn_GCzXUPapJtO-eO4MhmXyxn3iQ4lqjA8Cz6tIgOptVFM9bllyOR7gkmQ6A&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Austin Dog Walking photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Austin Dog Walking</h1>
@@ -190,8 +189,9 @@
                     <a href="/walkers/austin/" class="back-link">More dog walkers in Austin</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Austin Dog Walking?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -337,6 +337,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -347,10 +351,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -375,7 +375,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

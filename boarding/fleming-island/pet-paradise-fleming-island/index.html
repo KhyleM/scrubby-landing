@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJz1DXywbb5YgRqraloG1M69s%2Fphotos%2FAU_ZVEH2Tll_Axjerm4Qpr4SetGc47NH5gZOrYHytYBKnEXVJpLKC72uv00mLXcFB8V9H1tWUUZUfT0MePAc4SJJPJeLnfnSdWaVT8av5dM2-zdAbOpS2_UxRg6QW4ZXPv0GFfq0zupx805ZjXSEM_2halBSfBCQDm33oIK7DtYmqmAoVSYkdGR7F_28oqF2BPLbZW1To3b0OAZpCS_m69upfhuJgqDYKAIE0wTlH9LaWrTKnRAPMfjtX9uJWsDvmzTRmDJeFCRiDQspStQ17Q6AMTfImLgOIzDCP-0AzLl5dsabKF_Z9JiGtfIKoI6PgfiBAPu53nrNIiXh3ILN96ERUMPpsnGpfNsR923GF9mxsfv_UvxxyuppsR93myi800uxzK9TCRLhePhWI0XOcXo7tXdmNRBDaW4_WCYmGmMJ7QqoVVE&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Pet Paradise Fleming Island photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Pet Paradise Fleming Island</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/fleming-island/" class="back-link">More pet boarding in Fleming Island</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Pet Paradise Fleming Island?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

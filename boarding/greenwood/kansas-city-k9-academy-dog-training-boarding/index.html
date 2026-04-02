@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJI3Gf1vMjwYcRHD3TX3jscyA%2Fphotos%2FAU_ZVEEiJsOWgo_U-gs4ytMF5bDUeZXJcNgDiK5nsXCYa8I0aiyPR3D37c0B5IX702x-geuFxHGi1tANcZlUh_Rtus9J6PjffW49Hbz-SxQ0jNMm5RoJf74_PtRxwE1JAo5dYQpCTc5Ly-d4hXKSIbDjcApqdBxfQPDUgE08ja51bBJoGpnn3wugT1880RyC7xHxmqeTT5xc8_8qCuVSQuf23_Hr14twHJUp1c_1rCHEdXn7hw1QSsm58i1DL2ACll7arqeibg8uYDZ0oaK4a7bDZyi_HENBkAFYGVIJI2wgbrZpQ9yEWNQSeYxARSN5UpF6pDE6alHqrYmJtbBe_6EVafRoq30jj6ezeHEW4xVbHFmlqlUqbC0gpjfwf9-FvTeEs85xXaFOSVXw_g1xQbpA4uTEQ6zgW9lzE13Yk8kA4-FS8mgp&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Kansas City K9 Academy - Dog Training &amp; Boarding photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Kansas City K9 Academy - Dog Training &amp; Boarding</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/greenwood/" class="back-link">More pet boarding in Greenwood</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Kansas City K9 Academy - Dog Training &amp; Boarding?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

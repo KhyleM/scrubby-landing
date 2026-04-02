@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJfQ6EsVb5wokRrmcAK5dryw0%2Fphotos%2FAU_ZVEGXng3gh7c0K-19ewR-AHsI9W2a0IDG7rsAoQLKxR7tsbNT4Pi9i8Qbq0gyc_BLEyFl5LMuYe-EXRqZd3cF2XNvs0HRKUM__7w9NT1e0eRvxqR49zmxzboDvt94oycPyK_Z6KKLYDklYZ-SymGeDTGWZ5y7Z0E4xwW0JPGxD_m4C8ZqBS-v0k-3icJP2k92OeEnwk9f4Iu1b3TkWM5yY_6ofQU7ENLQo8Nt0eYKDWSvou5GuOn5GgqqONMuJvwDGJXdmgbzufHvtuKtkrIMBV1vdUHQGonssi6HAplbbLihS89dy16BpPtOv7hWXYIORI7SasA2YR-EVhCwxUwWpM3wdMNKvJ755f7hu_bvwzQL8iMj1zhSbQMxXh2BwI9sPEowYywfY66E5oHr2dUv-cc0i-pVC_WCY3lwf65AcjJNrvmvabZVChKq6MgjBQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Garfield pet groomer photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Garfield pet groomer</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/garfield/" class="back-link">More pet groomers in Garfield</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Garfield pet groomer?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

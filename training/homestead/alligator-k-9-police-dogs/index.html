@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJy49vfs7G2YgRIVQ48PkTyMQ%2Fphotos%2FAU_ZVEHhFVSDxa-HgOsfNIGFc83U4bozqPQVABewrQsmFBFkeWIBIV-tt7XCsjYKqd00ez_PQu4JmE0hsi_kOiZpYXZlKouFleQwucWFmoJ_9trlaVD2LPB2ueHI2_FUzxBsUuHQNHbSazACV0FHhF2pVF4QQhccZI0sCg-3-aOCDPa2_eJFn1RKtDpiFygg8rXRZ4FHORR59eyjKZkjU5sS_1MKpFHbh0LsBuOx6Io4ZIIEDx7ngk_c1lcZifStuZHIk8-401J3gtrZmYDRHTh3QJWsMd0jCTnBMHB1UrxXg96iDg&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Alligator K-9 Police Dogs photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Alligator K-9 Police Dogs</h1>
@@ -197,8 +196,9 @@
                     <a href="/training/homestead/" class="back-link">More dog trainers in Homestead</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Alligator K-9 Police Dogs?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

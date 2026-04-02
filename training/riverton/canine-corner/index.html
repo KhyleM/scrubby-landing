@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJn1WLfJ-FUocRPxDOkh3c0rA%2Fphotos%2FAU_ZVEGCCrYlrCXsGPiffUpHj-lm1Tl_G04244mQ5xmOZ0oDw-yMySzWXe8xkFBFS7Edq7DYLBu4THkHYfzWo9II5hVvE2YNHWQkFmz6asAFtmkPgP7KMjRgtV7i9ih21SvMkhC7Rmp5JSk2JuqkN1T8deg9zYaHfmRMoEWNuRun3ieQ1I6cO0BO8cdGWc_59aJbfPrkOxoK6cDN1PxIfx8KGvg2AoWUNK0tSWR2PmBf5bzb8gaaSTY8nV65og-V-o_nCtQCq0LJGzP8Wsu5qSMykQ7QXMXdxRkrLOeqhIVHA0N7JNGGpfmW-LtFklbSNnWIkvy14eTtA9QEvbBO_BgVa7Mp-_AEUh0S_5E4bMhd8ceU_yWv_sJtV2ic5WoRWHHWdxXgmZ5FJL7TpEmvl2PguLrkNHYtDKsn3shOihLuS7Bv3TsVyMU4MSySu2wHia8w&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Canine Corner photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Canine Corner</h1>
@@ -197,8 +196,9 @@
                     <a href="/training/riverton/" class="back-link">More dog trainers in Riverton</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Canine Corner?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

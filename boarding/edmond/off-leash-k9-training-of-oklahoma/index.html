@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJH3EPFy8gsocRslvmyuHVwrk%2Fphotos%2FAU_ZVEGp7iL2epl35ZmpSzDLmNOuVoi3_oFvsbtvzJCuUr-g1TxkHPctJGfKULwO_9Bm5X961Y1_wl6_Ss4iCqrr6zJBSsZZNZbuQ0fnmNdA9IXi9m5mWdPK7r5b7ga1oF1EtPAH4EhWzyPx04IEa9CvwP7K1Ni3vIdrj_-_aQ_kk0Xr2O2qi1cZVG7PvfnCVSsxhDqAfwrnBU_pn6PMmcJQYtahwE9_fW45EqPSBpOwIItUTAhbHyozBMUW9QxDyRWeTJTsIL_dBLpojpmjb5NXGhlN0m95kkJDNPUEztj58sfGzAUVuWcJx97kOAtnsWSAkMe1L9p4uOlkcg9Gss1aR2X6oT21HQnlhINJOVU98hmmdYevWCui70cyQ6OeGwpxpZKyqbOabbJFHk0aGn0VX0X3BvAfsnWh9LGYI5BIiofGy6E89xqARxENcoP0bhdd&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Off Leash K9 Training of Oklahoma photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Off Leash K9 Training of Oklahoma</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/edmond/" class="back-link">More pet boarding in Edmond</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Off Leash K9 Training of Oklahoma?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

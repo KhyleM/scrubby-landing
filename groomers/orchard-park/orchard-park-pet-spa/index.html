@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ3TnzaKsI04kRktPXg-0ZKn8%2Fphotos%2FAU_ZVEGbhfy9wUQZJuJmA6a3vjcR0j1BBnIIMbp1JPZMmnvqSzfHsHsEGbAKJEeucAs27_RZ2uJ8Tf6rJQFVovPevc57Z7m81yXUC7zFBDBiQ5snLZcOu5p6yHTv2U_HsO0py1VH3GSVKmJMpBJMfyn_Nm6Qz9hT67mneDM_fryDBbTxjy7kzkdMDVy7QFbpX-Am5DGdqC8Uk5BKiPaTpAjmc8EErMST8wsIIsO6qS3z5xw9Qd4Tb-iXFnfoRZEh9vRJOXJOSSrc4aVUW3A12HzoEoXSOIgkZ8MmamhBLOi3hTUbFJRe5QGTLBgmjqoK841tl_bbJ7wCG0Fpv653KZPMjNp86GQKoNuI5Fm5qci6OCA_8XUC8Bj9DFyJ7wWMXJ1i9LmQl9rScpPsub6RFv7FlK3z2BQYY0OHE_UCDJF7-V7IJvV8mP_snBz_Dte8UaDl&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Orchard Park Pet Spa photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Orchard Park Pet Spa</h1>
@@ -197,8 +196,9 @@
                     <a href="/groomers/orchard-park/" class="back-link">More pet groomers in Orchard Park</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Orchard Park Pet Spa?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

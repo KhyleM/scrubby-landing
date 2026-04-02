@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ0U5P5duLR4gRaQz8mctmJhc%2Fphotos%2FAU_ZVEHX2U-e2LgH64MWYprESO_wNTJu7sbL9FXJKrZ-Am7dIdbTaARnotNFXs_QrK7Q5bzqnImRQCdrs_mlQ4B2BLB7d72eeuY7MERwLULmEpBm9ScNs04PQAWXXH_vygcFe9tZitfb5LQDtD3mqqKojD_2pnXOdR75BqNnKHpr9M25egZyT0SSjYX-Yml00qXiB4JqbV3ys0v8KXO05QqXxNXU2rKwgewx8cEyvsNo4EUvqXTd_mkij2ML0a-hbqXYBajSFuXrq99mp2-nmYEcUNjC4sCJmGMMfON-cvFJuS_y6zLdE_r9NIBfD-BD4w92NDuGmGlK1uNzudUArQbPFz6BP92fWLMi3fLFhiopHJMaVh2xAPSrl8uy4LRP9Hmw8_UII_rbmuLO9N2YOXJXIw5VJ0n3Bmk-PZzYqvg1u3nZvXk&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Pawz and Clawz Playground photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Pawz and Clawz Playground</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/gahanna/" class="back-link">More pet boarding in Gahanna</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Pawz and Clawz Playground?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

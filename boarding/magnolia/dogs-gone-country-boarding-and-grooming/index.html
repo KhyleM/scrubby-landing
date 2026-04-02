@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJddO8_zrWRoYREp5_vbqzIFY%2Fphotos%2FAU_ZVEF9p76r_eWHtRaQS6wXumdsGUkoBHqD9sD-03H8g50ABEEkQmCa7H1XRnQsRBCokP1iKS2Oe9hrG8eZEU3buABQ9KR5AUPo3x2An-5h5q0hQIhCFrb6wb-v899TtgzNVTVbzhTxoiWAyF1p6O_vB0gMpjKqOxu7B2-hCbi7db4Q7YpIxOEw8INrq-8V8in0-11xYvYw8SID3x0sNBVihxbFv_r0IxUV_QiwbsaiBeIr0pa1g7nF1KcfiuqccYjDDquz_t4qaXSNgfi7dID_puQfuM-FPey2SRDibVCitZ68ed3x0uah7kciTiZItI41ZBHMyAOza995RFy70o1pjb1fKr-H_PmycOMY4OdS7W2UGPSW8j7z5CAEfzAvfoYSLvyKHRt-7NweAcV9T_s390MQYZ7MmGxV7cUsxWC4eN8&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Dogs Gone Country Boarding and Grooming photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Dogs Gone Country Boarding and Grooming</h1>
@@ -199,8 +198,9 @@
                     <a href="/boarding/magnolia/" class="back-link">More pet boarding in Magnolia</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Dogs Gone Country Boarding and Grooming?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -346,6 +346,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -356,10 +360,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -384,7 +384,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

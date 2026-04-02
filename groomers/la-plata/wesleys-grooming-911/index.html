@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJMdBxzXzmXKMRsnhXWB-ZusA%2Fphotos%2FAU_ZVEEpCvYpuaHOHsL_YnPxbPdigQ5cjaKokxo4CX8bypw4oijXAIMe3K7MqE_tjc0l7qDzsdm9M8K2O6K565i6ZKSFLmpKlx1osl7lM3j6IXmrTqkQfq4Qb1ciBJorY29IXx7SYAdUKobW1TmDkstA4BKiSBdqDRFRA0TUVfXnSJPrKWjQyVbyrTZvuhfAnvFqwGW7imO4aGqHAqJObaJ_czqaOY3hsQGtaHQ9B_o5b6CUbL5QaBJz4ixTx_zptmGY05cudCCqBypyducpGjA78dleEfocJ2xbYoRlxENcS6P8bx--j_a5NlhfZ5woEIRSnCH2UsGpj_rZZ0dX7DTSCLD9d4aqZjO4sFSvmHAZ6d5x7Ka5_3QoFH5FMLuXAbGKeP6uPSyOui9qW4VRSAf-bYJO5MqASeFDCuLDDglUg4sdqwiSQR3PzDpdh0pK2V84&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Wesley&#39;s Grooming 911 photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Wesley&#39;s Grooming 911</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/la-plata/" class="back-link">More pet groomers in La Plata</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Wesley&#39;s Grooming 911?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

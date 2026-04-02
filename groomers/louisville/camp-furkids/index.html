@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJA6PtI5VzaYgRw8CXCL4yR_8%2Fphotos%2FAU_ZVEEXvRWOig7jB03afkcZjXAeZk8ix9NVpiP2i3nOTdZ_1qq_hUh6j-WW72mHKZ-JN4wz1TQGng--yaz3X8PkpiWNX_BTOcnvEDJ2713qNsIbaDra1ebUb5XUc_soSOLdSeWZAfGZcZqCosTHPDd8jOUhVyweP7fo48gZn6nqn_W2JgfdkNEz3E9abWJIAAzWitVD4XwV45wezHvES65va4qh1uAR0cmEcwP_D22DwGPw_2XZ8GueeVNN_k1WKdLkUWrRwdt9h54TisL0EZiyir-iIr6_FBwfJe1LVpotkF1gU7o_m-l6LFS6j_BX7b2DSovrt_r4jkMePYqQ61ihH3WaB5aBnMLeQal9nFqjUC2JcyhTLQdEemzEtuhk6fz-7-Acdx1wJrtnib1mqgGgd3g0zwjUwO0SCSDLhuembbIVxw&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Camp FurKids photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Camp FurKids</h1>
@@ -197,8 +196,9 @@
                     <a href="/groomers/louisville/" class="back-link">More pet groomers in Louisville</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Camp FurKids?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

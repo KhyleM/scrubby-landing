@@ -79,7 +79,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJVaww3IbG9IgRCXTIt3IHRzc%2Fphotos%2FAU_ZVEFEiLg9Au8rqGmy7g-T5xR0pFb6RIbKY-VNp3-5HBRXAEx63UIBhb9VFCO_Okzu2CN9Hdn1fyKEtXetHYzFUm1kx65_ELRznkrMymJiHy007WFYcldyRW2_oxUhSm2pXj05eEhBXSKytIs4AmQicrLJXGtpqqQFu8O8RShCiml3rkjgDBkUraMSZgOI6l2OY6OEr96ZF6tFCXs7B1Nx6NouK_DS5tIWc1K7VsLQFNIv3wNQEoygGlzgum8kOwfLBFmSFKXinkVy9pdUEJzL56tpXcsAj0vgdJM01mvwJdV7zNaCkeK7HeIzyTkhKAPRK8zkVWNdUHM9qJHfEgcH8Qjei8Ty2-j9ff8pHqtBqpPgKrMtQE-FqX7hIDIUuoSIFqZtwksioE1MDeuXXRArOJWt5Dqt3MzOzqRGtkbS9PlKbFbl&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="USDA National Detector Dog Training Center photo 3" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>USDA National Detector Dog Training Center</h1>
@@ -183,8 +182,9 @@
                     <a href="/training/newnan/" class="back-link">More dog trainers in Newnan</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of USDA National Detector Dog Training Center?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -330,6 +330,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -340,10 +344,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -368,7 +368,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

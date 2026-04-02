@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJk_rQkij0UocRcUydl5mi9vE%2Fphotos%2FAU_ZVEEfoc6lmeVMCI6GnYaEOp8ETby9eW7AAaIzfLV1-KJV-gCa9ysIojROzRQSCCNZPbaiuQvG5gYes6_Hv_XhlRrZvxb_J22-HuhEHDwn9b_Osi1G-j74j8cQAwYKTsQMVzx0PYzKb_GBRjCXoh_jmk44i5SAFq1JQrqhYDjA52B-VQ9GbTPWpgu1EI2b2vZ72bbjq3pYib55Qr9jMVMAGwoMibmUHY80NCLa1mJpWAazuXxc0jyAVJH-U2HgJzGIXY26k-yG8wHlqhzHPVXELqJMHjunQnK_cQ3GO6z0tyH7GxHM1RHu5IytCeHefmWbRYbg9gNkY74e4t58yK57zkcE-V3_3E3ZdHtyNDl-zTJsgiPSuY6x94nN-Sf0kUzSykvl8mSNonNKracj82g7TtXRXxHd9UHtFF1sKE7x7SM&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Cowboy Joe&#39;s Dog Boarding photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Cowboy Joe&#39;s Dog Boarding</h1>
@@ -183,8 +182,9 @@
                     <a href="/boarding/salt-lake-city/" class="back-link">More pet boarding in Salt Lake City</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Cowboy Joe&#39;s Dog Boarding?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -330,6 +330,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -340,10 +344,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -368,7 +368,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

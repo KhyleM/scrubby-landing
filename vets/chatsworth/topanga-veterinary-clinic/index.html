@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJTSKMhMmcwoARE33dYxSFNuw%2Fphotos%2FAU_ZVEHEXxCl6v01ZTHyBbPmLbYCnGYVZiL5Xhx-TsYjIvkD_SiKFbE1563zVzXtJU54ZYaheLzv36T4Hl9Wq4C3LZBJ7tEyDEWQ9cWGG-XV1R3xdhSkMeHM4LoRzzeqId5tt0w5_RlNnl1Xq6kGA_9dKuj-Q888iyqOtuC-hZ13snnoKHWecjhtcgbPBfwsZgqHOQ_Tb28iYc8y7ERnpklnietzAQ55OcW8iVCqNTYV-IkAOKcm-BgeRC4fmg2UOiZOOkKIzzE6jxIk_9x1QhRoauLuaIP399HydQU7dZr61h20u2OUSn5lDPs17biHeUeumgoRHKk4c6MQWzIGzVQqXBV-HOtHzLOYXdZ843gfNLmMXaK3M1YrESly9OeTleYTmPkXYqzO9MTkG_Xa-n8OQia7JznJ-ZZJrNuCsnexun0GLW7Z&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Topanga Veterinary Clinic photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Topanga Veterinary Clinic</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/chatsworth/" class="back-link">More veterinarians in Chatsworth</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Topanga Veterinary Clinic?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

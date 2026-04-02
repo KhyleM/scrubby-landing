@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJMRg5u1GLVogRRlfyj7oKPls%2Fphotos%2FAU_ZVEEtYEUpPx55e1U3r3E8gBRDHhTi3Ms889Mz4jV7E9Dc1Ds13-ICwh16v-KYh_3jr4btnHoKv_PUrmidryOYBBJX9wZOQOnIp8Wti8yOJ8hgxSpfmwwdoFuOQ48NEz-X3WDF3uWQPvZeKJ2cO10GIZaRoNn5rJ-8FOEsDxHAILfgFdgQLjxc12mcnNh_Q3Esl6bd9kJdyZQZWhhtRmtDj2DQyfxEqBrA012i304a1Z3Hu9bI-gMjp7_ZfNr1g_EW8AZNYNOxyVUXW1CSLUB4EzT9rFKvbDJqEodWd7AGFZ5QGQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Newport Pet Boarding and Daycare photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Newport Pet Boarding and Daycare</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/rock-hill/" class="back-link">More pet boarding in Rock Hill</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Newport Pet Boarding and Daycare?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

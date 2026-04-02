@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJh9lfog75NIgRwR-am-AqE_E%2Fphotos%2FAU_ZVEFUiIXgL1Gc6Ps6wuIui3lGMHR5kILLPd6YPDWR2LCzN0sbiTSUbHicvQxRhe26ffPTaTntW3mh0qG-pvDlRwg9SzLg20D3gIVZBRcWMSmx5eWaFlFR-VjuVG5y8bmKbyjqoJDkSnvHI59ifNBXGve-jQLh3-aCC-tbimenSe8DbHqtgW7v5zqxaOITZMNQ766hRawwyFMdzypeQ03u2vwfLFGuTHaFOh3iFsGFzb9XzsXZfTpA_Z06oCqeSzAaxUcx05zarIsmqyqJyUugcGDgVlVdT1GoVah1VWzN2ss-qEs4r4lt_ZjuhOhq2RdclF3LhE3P0GzYriZw2ZBL_PLR1_D-OKPza43Rq2xiTZ3C4pmjODrC1ZHKseiYUT9cGzGUrOXtkhhYk0tb6JH-sGVkQOaDCDJkfH9t2bM_KNyxVQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Spitze K9 Dog Training photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Spitze K9 Dog Training</h1>
@@ -197,8 +196,9 @@
                     <a href="/training/bridgeville/" class="back-link">More dog trainers in Bridgeville</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Spitze K9 Dog Training?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJRXJ_tUsv3YARb0h_khWbQjc%2Fphotos%2FAU_ZVEHijAFgDJ4sWJ3Kb8lQuc6IZ0djDwqjjLxlaFg6rWguKRPua-dy05kEiGD2HWFCsh0gQYYsiWNaQiOtEOWnKzJDej3PmgIGmfsRCT7e1TRSlBZ2kkmJosWSEzr6_WZQLHGRdF6eu7NbQocpJ4bSK-IRSSP0f6iVe2HkQKUcs0bJvB3W6HRjSqBOmp12PAT4Q0dzU9DveKoxIAHr8NHOfofoRT7Uz0wL8q9uUHQ_w82n7X1xw7YcyJgbwMNqr-YhCRHVDJ7aZC0z-2vho8GCMItplCom5UftBfKZmcQTecNrW6sgiqi1XdG3R_LJg366lIzmPce3CTmAf3KhECEl-ySt3NpmXDCoeRy8l-1mS_oqVF2gZl-YsUFZEiV8tzbGlD_bHGC2lNB1O_wGMHYM-WWMLtN-zb3obhduivByj5FHARk2&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Little Cottonwood Animal Hospital photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Little Cottonwood Animal Hospital</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/los-alamitos/" class="back-link">More veterinarians in Los Alamitos</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Little Cottonwood Animal Hospital?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

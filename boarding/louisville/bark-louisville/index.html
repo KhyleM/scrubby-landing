@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJfRNVUBhzaYgRpE-XV22tW-c%2Fphotos%2FAU_ZVEHln1fZ-ixOZ15e8IdCM2lsjybVzhmewEmd-AWXS4yQXbY-LTWU9wx0yB335hdlRqYBOqR42aNBtlZEtU9WQChZWC0lGY_rdVlP-Qe64vWpaL5GpCJWZGmPXhiy7pvMt-9IWosxjNkVQYY3ez9ddwRJijFhIjpguxf5jF6iL7GduUWN0-WVMQaK2ra3E5VUXXS77E5_IXhWpjJQhhBuAojyLE69wD1UHe7a8-UuCuldPuOy3CERph0G16GGjqKgm42H4lSP_3cFY7tPOdYVfKvRTVJ4MhwH9-QGkJaZN_fUqmrAMyY72haNy4CIsGyBwsIqRk812MOytZ3CrJN2MmSU5tA6qf8K8TjHshrNF-HuSMq-vsMEIDxeFMeYwOSgZtpMcx1qCRrZ8kmMOptMQKreSONQRhp7io4_6UqakRdtK-wf-f5qtK-2rw2_LLc6&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Bark Louisville photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Bark Louisville</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/louisville/" class="back-link">More pet boarding in Louisville</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Bark Louisville?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

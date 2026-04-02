@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJKfxBKKGI3YgR2FScmEw65NM%2Fphotos%2FAU_ZVEE9vLV396T5pXg1EkAeeDiJvFtoRTgfU6IM0_cfbqDiODFc5v7ytppmTHVjIENsouK6NPb4io7-3UBG8Qknw4oFVWz1LhgRHb7Wk-7i0sK5uTzWk597SyPwG4PklK6LHrG8G4aP4V4O6Um-6_qew2Maf9UedmQ3nWfjVTh0CeNyZUI-ofExgcV-nDfV682TpS6fcnR0rZ5IsUFKWcQeg_9QK0IeNukPHK_Bf_qyZoZPfi9MRrorNYorR0FvkeGUmXNvSr0perAPGZJvz9aYgg1oQPnFiqommG3FMXp7B1e9PeK2iAASFT3bRGMCT682v8YCux5HE3pvEuKB71phToZ-Fk-8-RapBakbehWoAdSgCQEV_QjW9fEMuun35i8unO2qQQfVF6VdbywJ5Dyhf0iG5TEn1MsJwohmgWQpzr5ptxBnsQ-0-Q-58u5R5A&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Fusion Pet Stylez photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Fusion Pet Stylez</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/kissimmee/" class="back-link">More pet groomers in Kissimmee</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Fusion Pet Stylez?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

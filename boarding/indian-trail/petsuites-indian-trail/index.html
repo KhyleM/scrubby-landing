@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJRwaVcOAlVIgRUnnatwXSkZ4%2Fphotos%2FAU_ZVEHUwWFoeLCqCZIPbRvJpmhDielu9jZ-iiIUko0G70wDJxAE03YY0JnQrsSaF0qRf1D7Xrfujf3Y1zD3pgyrv4d5sV2jIBIumfdH3VRP2jjhddvNU2rN3lkdmA5TMyX3HxTiGIr9BOiwy4z99O9eFhzkx38A_gkU9Aqq6RkBShOel2eoXIGeS5RPSqU5Fr-xVp4RegGZ6PWsQAL98A1hMpcNrS2hHjdi-Z_77zf6VtEXsINJA1KKl4npM9d850mWoPA-3SanZpHTwXJam2WZXq8jT7hS-9X9cqxjnjevt0i5Suxv04iQYo05bPEW1doUD9s1nwPtnjRx-Sfo7Lw8rcfLw_oZT_wAjkcTEPWoR-3XB4UfWNFRq-rBwuFglmhOBf8OeMMXSEKm8kLHMZ_BDn390-PKc0lyB5WwyQztyzg6qs2IE-aATSJb8_oWw7pz&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="PetSuites Indian Trail photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>PetSuites Indian Trail</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/indian-trail/" class="back-link">More pet boarding in Indian Trail</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of PetSuites Indian Trail?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

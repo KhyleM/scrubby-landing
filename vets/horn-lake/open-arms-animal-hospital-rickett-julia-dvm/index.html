@@ -77,7 +77,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ5d2PTCxi1YcRbpp2m-Qt8T0%2Fphotos%2FAU_ZVEGkCHjpRflSs1V973mn5vBue2aAFOlf6OTKQF02y6LGthqo8kJxvdErzH2yjeDEaQU4FhVzG8uAhcqoBOJJSDsDBxQAmc8YNJK9FOF2Dt1PFO0-kUGGCNpCtZHCyaTer-W1WESrKbS6RhFrSAj9_YXc4WpIiUx1h5HDA7UB9Od3f9y6N0-kFUQvy__Onmhi4zCiOHC--6K3c9F7tNQYD2qDqNJ1vnL2XlYxVyVAwkWv9vyCn9IXpjsf2eZr6PArU3E3QVnA2l5ybAZmBp08gi2D5VyC3h6IJncMddTLxtGdbQZEPzIH4tLVrBihztyTFt8xQhINBe0OFCpX0puWleQFds9M7PszESCOckliGFp46N_WM7PnY8mNJ8lfbuXgnWLj-V6BJkoCDC8NFoxxyqso3wS1MVS8OOAzjiCX7xXIHQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Open Arms Animal Hospital: Rickett Julia DVM" loading="eager" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Open Arms Animal Hospital: Rickett Julia DVM</h1>
@@ -178,8 +177,9 @@
                     <a href="/vets/horn-lake/" class="back-link">More veterinarians in Horn Lake</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Open Arms Animal Hospital: Rickett Julia DVM?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -325,6 +325,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -335,10 +339,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -363,7 +363,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

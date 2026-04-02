@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJebsjYLw0W4YRcvty8I5TxAk%2Fphotos%2FAU_ZVEGvtC6AIXTonYmgaU77bBh1F4M_haimUxu9kcWm_giLYfQhTdlY9QbtrpAeQoapIekI-BFKN7uz2BPO6FPbBRsvHhcsleySQZmZd2gF0iFkFALH-_JjrcdYlvrZiVgW92Q8Y_XBRa5JB_nlrML67UqTsP7Plhyztd193GgLbA7NArSP0yQydscTX6bJSNx8CHGC380HLNm7UWwbPhXd8a0N4CPtCytmc-57O48SXW8yVsD1Vd7qTMPWwu_s1Lw2byMpOyGsP5VdRDl3PkKZ_IStaGaFNXmmnOwaTY4zpZvtk1bdMg0-cficDYlNGiCvV-xQnpc3GJIz01LikH3ZSzsQCbBOWSqonmgTWaUiK1u-9O3_Ljqz3wPfZqanRJLI54S3Fb4Dm4jOdO7w0Av5UyS6W_P8y1MgjZXNRAk_0juIbCrX&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Austin Veterinary Emergency and Specialty photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Austin Veterinary Emergency and Specialty</h1>
@@ -205,8 +204,9 @@
                     <a href="/vets/austin/" class="back-link">More veterinarians in Austin</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Austin Veterinary Emergency and Specialty?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -352,6 +352,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -362,10 +366,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -390,7 +390,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

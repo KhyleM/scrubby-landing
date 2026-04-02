@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ4zI1Mops04kRXmy6JE_2nJw%2Fphotos%2FAU_ZVEGz4di1p2yv6zM1_ABXuq20rdqsb99F5nJLnUT3yKtr8WimxMY8Wsb3_Sb7HYb2rD5T_gO7yGmmi_r6fmBdZiwszKzTNsux9HaB2D88RWMLKH9FkOdZe10vpa5QR6Lvf2NC3JabhritHSg31yLFdgteDeqrTPF2QxfDjAc1Qpk2TmPUzAdw-Pr1Ktaszyy71d8EtlJlRkyWH-fx_wQTqNp2VcYUTMbytxeYarWGp_JQ0804c8vRttcglprPnOUbIPeeqx-6LtncB8ejG7ccR4hAi3tQHkk74Sc4Y5noZsW_2ApOC_luOiSBr9g1g10jawc4XX3FOL3C_bcgZQTKKps4VDu3HDU6SZMLv0mmtz5MPM3Nz7tH-Xf5LrODbgnxB3-h1EvwSpvRuUtchqXe1m7UHmbqeQk6a-qu5Ys--d6MlPnih8mNsiITeADVJpPW&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Camp Bow Wow Tonawanda photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Camp Bow Wow Tonawanda</h1>
@@ -199,8 +198,9 @@
                     <a href="/boarding/tonawanda/" class="back-link">More pet boarding in Tonawanda</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Camp Bow Wow Tonawanda?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -346,6 +346,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -356,10 +360,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -384,7 +384,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

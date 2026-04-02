@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJSfqFD3apaYgR1sy0Pp3qUao%2Fphotos%2FAU_ZVEF_Mc1IPViMUCvs7Si7_mkS_fOq1IP_OHxANMlQ9wZhAuQ39nijc6jfp2D47DhwRc_Pfu_2Q9Ejprhr4x0CoNC7XjKK5wg47XNxCtG3RVbw1fT409CO-F_jB1XfV_OVvWEDfc_s3vMurfc6PGlOPeuBB4c3fK-pDHqjS-HSvpYQh1VSBSq-HwGdWrCMhbKfEVugUS0HhHxji46kiruTao3FOqtOIUv6b38oQ2n-5H_F2PxDG6FYNJM4GbyIVDT8CZ24ZDG67eqB7WIB3VdnxRjqQulPU_pewN5YWKRusuNEGCLy5-y38qylYn1dPyMvlsvOESr6cS9jk-jLL61bIOue8UkZFgNIUPZciYk7B4BOjKSr_U3v907ZQhKZFGU_q3p3M0BfYU56hFoFltoovomwD_sWTvSrptGTjc99wKYhgUkLPwv3i2lNSSQK6u14&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Shag 2 Chic Pet Salon and Spa photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Shag 2 Chic Pet Salon and Spa</h1>
@@ -198,8 +197,9 @@
                     <a href="/groomers/mt-washington/" class="back-link">More pet groomers in Mt Washington</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Shag 2 Chic Pet Salon and Spa?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -345,6 +345,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -355,10 +359,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -383,7 +383,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

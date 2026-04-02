@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJS1kAL6ysNYgR4Nvs4qKh8Kw%2Fphotos%2FAU_ZVEGux0m8dRFgzGQ7NV5EjCo39s6nqim69P6-ANEVjrHLkItuYdiyC9OaWXZRCIiQyO5R4TCTqResdQvlG1cIyJTvLsu_NmEHlu2j9DG1ynNE3DwWSilVtPM6f8nuIjJxmtYVA2L2yiToPsmbSEgKCxEyPoPnQeLodR5beQxv-QDWuHB9qNo5gF6xSrhPG0DTSQxbUW1HJrkFvgNr3iZE8svQXwVoM4X8SuYhFBvyESGhdIgkRTUf0pWcvzg3ri6dSKx3l5_4OU4kdCTPynMIi76wd7GGZ3AVcLx2Dec8MWRGH8LA5y8GWnH0o4RwkQxHIRBUv6JOxYk-ioIedCUZGBNWCeHRgCET2SGk7bC_3G7g8PkLXyYqyg6jqgYcYjvRU6a0aBFk3dU9cp8HTIVn3oL0yAulse_HA6TQkouMNm6Eqi5SHBevJ8tf89f6BQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Off Leash K9 Training, Pittsburgh photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Off Leash K9 Training, Pittsburgh</h1>
@@ -197,8 +196,9 @@
                     <a href="/training/washington/" class="back-link">More dog trainers in Washington</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Off Leash K9 Training, Pittsburgh?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

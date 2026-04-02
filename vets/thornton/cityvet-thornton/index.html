@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJH754j3dzbIcRFpmEL1X2IZw%2Fphotos%2FAU_ZVEHnASmG0ar4p2xNFHqmb1UgFRC2A4Op0b4bsUMB4A5-BEJtf0Pa351-GIMxcjy5xPq62oJaFUfPt6lC_t0UXN5P6d3rf7KMsAwKtCngm8Eqi6ii4A22n6G5ppSDWVkpAd_8EwSiWMyI8g5puqfntmdNbs_KDKsUmHmRGjothdB53opX0YkpvNCg1bVGreBMXYv9QWVJ4el-nW-ag0UH_Ltkj6PLCp0p9T7pJ8_tWhy0MT2GM1RuZtaebvVTWQE72A_6hd6xHWS_TvmOOtsvj4b4Qqhonmo5RIh0qDk67DtlnbGZGUAJKKCpocZnOC7LWuB02V4UH3y306ExthSVxXYQls80gIQmOOTgilGqim3rER74FjyQ3d_gK5RGKE6IxqzIXY0l6nHGlxWxOwwYXGpwUGbCUuS6wq_z4ViFaI8nqw&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="CityVet | Thornton photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>CityVet | Thornton</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/thornton/" class="back-link">More veterinarians in Thornton</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of CityVet | Thornton?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

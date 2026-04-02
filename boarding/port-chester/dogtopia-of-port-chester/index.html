@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ-9NdsFyXwokR_JjAQ4kO2s0%2Fphotos%2FAU_ZVEGnVOqRLmbpvp5kX68Z2adLHMvH8ysQOhpPpCZBPX4pvP8Uo6wcHYYnRVKS8GJ_iq0YJP_IKADQJv9_PPv0ALTVEy6m1uP6jbYceT0Z2i3e97MTqunYTuvX1pG-CjoNCB_ELIJ5rMrCjkzWAApAwmJZKydnliYSoo9344e9ufTLVJs2xwin8NzG4N9G0-M56BQ3rkVfeG2LJISebJvmIZx29hVudkntcC21II0XguF-IHCu8J369byj-JX0lqQtcGdltKgIj65VchKkK0Ua8pITriihS5RX1ilh5viO6wZXgQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Dogtopia of Port Chester photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Dogtopia of Port Chester</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/port-chester/" class="back-link">More pet boarding in Port Chester</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Dogtopia of Port Chester?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

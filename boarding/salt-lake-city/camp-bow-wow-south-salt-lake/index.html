@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJa53yGwCLUocROKmGFCEWBjE%2Fphotos%2FAU_ZVEEba5-XgZuXiFV0xHDGq9ihtYfFmC0Vp67acyrSFbO9k8ILSi7hgGFSky-M5bIfO09RhZWZ20bc6SIhUugaLs8TJu4BDX7_NRW7wCWC3cIfmts0n2fiWE30Mgv-VxTyIINxitRYieyuVo5Ra0jMBiMkkvCOgrMXEiPD-XP7rhCxHhgQytc9kMceNct6cvLlyntT9BSK5gIuuOme3JqyLiqqv-s_PRctji6URo4Uz9RvrbC-3dfNhtfIBg79xCpDqk4wPrKhi-L9knippuyYcLPP8wP_WO0rKpXJ1w1-3l9YoQKOHa21aOBiCp4VRDPmlcqey_zXDn4k1SEQWx5WOkcV6t0lXVdxeT3YSerzve2dr5RrE-yz_w1NmTLSyzR6eueuaHog6IZ9M2-2j1aLzEqGLL8GrDh-Hn-EBjsqoUGnSQNqYFijfTMR6xp7uw&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Camp Bow Wow South Salt Lake photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Camp Bow Wow South Salt Lake</h1>
@@ -199,8 +198,9 @@
                     <a href="/boarding/salt-lake-city/" class="back-link">More pet boarding in Salt Lake City</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Camp Bow Wow South Salt Lake?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -346,6 +346,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -356,10 +360,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -384,7 +384,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

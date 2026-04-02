@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJK28-9WWBf4gRpW52ISly0e8%2Fphotos%2FAU_ZVEFKyDnQl2v6w-gResRvNv_0D3fKsLY73W_oA78hS8mwGAJhzZ0CVGPkeEmKtYlAH4YUrzttQatGUAwIW0kig5I5QJJbg332vP5ZZ0OYW6mtAP_Ulh5OdMadVlYiljs3ZeE7IgEImq256l2LpmaKzVnv6NkB3bfNPb4Qw_LxW2v1sBkaITpfBZP_rMb6NrUH_RnskRpfZrZn9DnFve34t8TwiFapSe-WscM6zc6NFAApsrXkyLkO3dRYw34Hdl5TttyX8ECiLvtTZXsq49Mm5AbKhQvHyvoiB-jW43ouS5n1uCQ-KvgU0xdgX5owlI67s0Igj3MQ5dXPNVDKv-SioPsyVLAWP8aeWiuAIK05V-LIJanQNatxV8xW_5DrshUpOJuZfpJfi-VLMFsvADySfCk882M5qeM4JjkAVg-0F9A&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Shelby County Obedience Club photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Shelby County Obedience Club</h1>
@@ -185,8 +184,9 @@
                     <a href="/training/memphis/" class="back-link">More dog trainers in Memphis</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Shelby County Obedience Club?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -332,6 +332,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -342,10 +346,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -370,7 +370,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

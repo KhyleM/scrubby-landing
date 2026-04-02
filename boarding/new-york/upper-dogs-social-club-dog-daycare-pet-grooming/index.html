@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJVzdbYzP3wokRd9Y6cc57F1k%2Fphotos%2FAU_ZVEEjQPRKLZKrfQvl4N1jPFWhAPocZM_qpEPlhJPRgzUjFSQe3R7fj8nING8hkMk4O2DU0DRtQBgZLM0M9Ij1KaaBGbROMig5pIkReHOW8iZvfFKqKpkPdmFwOVs8JhxyIV8TEZIROtP9Kh8x_qu0xP5mLX4qZJan3184ecnCItkwqmbrSWHv1QPssslsa9tmPKrK70QDtNHA3MNWAg9R7K2mPu9Kt69HwrmtGy1KtcDyqEQ8CzjQg2JHnTK_oymOpbP1B4-zzLIKAtI3OppVK0nGXdj7rAMBGbITJKx30Nl9EoW9CFYm5b2nmXC2F4pFeMfF4xqrqgkOUDjcxlXhh90OV1MOicfQA4Ir-kWEqC3WqfLvyEkd9Bz_DT_nCc4Mm8iQaCqT2ddvsDUXqm7pOQcKVtoEr3Qs_XbnZbOOgVjwoBYMq0iNsmKIaLBAJyTP&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Upper Dogs Social Club | Dog Daycare &amp; Pet Grooming photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Upper Dogs Social Club | Dog Daycare &amp; Pet Grooming</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/new-york/" class="back-link">More pet boarding in New York</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Upper Dogs Social Club | Dog Daycare &amp; Pet Grooming?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

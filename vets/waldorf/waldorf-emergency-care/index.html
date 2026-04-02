@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJB9EfuG-ht4kRm6iHHd-n6sY%2Fphotos%2FAU_ZVEFfbD894Q-uRWVf3wdZJpAr62XEG9ZFbx6oZHvg1wWyVNWwImfAV8vt6cclxrzdhdFvCaCLuZf81KcAwzKyt2vimqhZLX-SjWfAW05AznSdgG7kxxZADl8E7c22B-0sCL3H9oH9wWykqBCAS-jb3luLSu2zO3lKL6aBqLyWIIoSfsfo1yfDVC1odfmlmf3jwBUUkeqk1ZlAfkW-4vLsFsSaQu_KA8438FbtwAbJGE2Ql-Hcu4VI2dVPKIvnU9OHt7j1UOsRAoz6G0EFNUQJytYjQOd1gmuyR6GowzU4mjtzOuD6zjTBh5100bvDFH8Y-bam-lZUqMluPt9cigaUrXLG_fK99y_TReE7tJlr9108teESr9DrbzHAFWmj25OzY5XFofO4dDy1QD0nOCKPuQ0vw3lZA1oSYHehBBQrMQs&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Waldorf Emergency Care photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Waldorf Emergency Care</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/waldorf/" class="back-link">More veterinarians in Waldorf</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Waldorf Emergency Care?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

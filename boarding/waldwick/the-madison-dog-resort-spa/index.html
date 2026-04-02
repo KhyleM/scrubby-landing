@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJe-o4Y3jkwokRthBUjUIzRmg%2Fphotos%2FAU_ZVEGATnnFhe4rxb24azF3OwoaF0ulhIVEZ3gPnDBhbS8ealwx6OyGKWt3aYIKUB1iLDr1C-H0knsI0T8mXoyJg-p0Segiv7luC-8XTrEIJgLSn5OvuNbAKUEuTPVQ9j77es-Y1T_jCUYHETdZEklcc927acxdhpaBZy8wcwSnFYOltbETRSv7LcgsRQVIgt9Uqp_OR41HKsgR4Kd_RmIWjJNhl6u25N9NQx55y24GpM1eZAwdYU9nOIkCIWYdDKEQGD5r9hh1P5bk-CaNp6QNC6uMndEwfYRmTZTxQplvUIz4MA&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="The Madison Dog Resort &amp; Spa photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>The Madison Dog Resort &amp; Spa</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/waldwick/" class="back-link">More pet boarding in Waldwick</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of The Madison Dog Resort &amp; Spa?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

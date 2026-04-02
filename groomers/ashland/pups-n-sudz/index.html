@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJCxiqDOA9sYkR10AW14CSE2U%2Fphotos%2FAU_ZVEG-B6lchZdlqDVeNcgXWsqDwY-MOgHHrMi9SXEhU-2s1-MukBb3q0VEOTYucckinenNk97kVhFBStF-DDLJHzyP3rHJlu_zAczLKECEQBBKlONOWOFyCsvnchmS0JhHUguH8u9S3zKSiRGg6kzlkPfwRSXv2Xc3BRwuzkSP6WPDNSDHFmXq6ZuEYpEiB9Aq5TFO-WZIpjIMjcv19TCsPD2f4buqyRUNKRIFx6k3dshmp3cIwZRbgyoWMfxlLoLcwt4EQWAFEtnDwB9expLjAi1gRSSKYoPGQ-lZG6ZidsM4wA&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Pups &#39;n Sudz photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Pups &#39;n Sudz</h1>
@@ -198,8 +197,9 @@
                     <a href="/groomers/ashland/" class="back-link">More pet groomers in Ashland</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Pups &#39;n Sudz?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -345,6 +345,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -355,10 +359,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -383,7 +383,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

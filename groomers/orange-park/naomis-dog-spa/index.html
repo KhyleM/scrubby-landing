@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ-TxcQGzH5YgR7LJ1SbtS9Mw%2Fphotos%2FAU_ZVEEXOCikmVfVGMAmFb87-gY0afrNUPBPd2qMcJrPzTCnm3V8S-NDqq57f9yNFUontJ-gipSKsV4ydANejQ_qm8-LW7CXLucZpFmhnAbo7059RImTDtUw8oNeEtda1YVKj5lkyHIwHJee6OV4uUPo5E5qxGBXbHrfMtU1tXu34V9QjEQdb7c01wsDuCnx2vq_YAj-11ayI32zzpUAe345Z6jAPoI5RR2pzNAYBVmGmDCmFSsN0EvbRspWqEU-ge0jtHzc3sUDrg0Bet_szqMmMGjOnWhNsSG910aCO8JyR98d8CQYEA9J1vUWpdDtAlVURHddrfkHsG4kmaExwcmoWSplJCNVcfOBHMVJBwoIfOoVcBE-z_HpDibx_1sXTaGC37safVF0P3j-2h71J7P8llqRcwyJKbU8jSk210vJsq2SfWMrV5MFd8ekq8c8tBi-&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Naomi’s Dog Spa photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Naomi’s Dog Spa</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/orange-park/" class="back-link">More pet groomers in Orange Park</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Naomi’s Dog Spa?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

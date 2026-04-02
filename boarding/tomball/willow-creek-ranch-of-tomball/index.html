@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJTYPyF6EtR4YRHMlLha63Y7I%2Fphotos%2FAU_ZVEHq5Ri4wLMmvkoxYHkziSS-M4_fVXHeXLpLlkjMwMcak14z2ccAMiAr6DCQqQdWgMORWWhw7UWM9ZdpbMT4ZQNbmZfOY76ZBw1WT0D-FYRw-H2P89oJa0hzJVkfABvvcR3pltFr1p87yyPHNp2R339nd1tSypyU5LfcMOc1HLoAPQnnMTJLm39lQtl2ZBToTNhSJe8gDZpYmDMbCDxpTcaX8Sn5gWGCKlTbv2ltagwj4308qE--tlKivvcNQR8Kvdyaf_EjvSRnOtcGcpdjQHj49un_DdwVom_JocOF36G5IRLFPE6RX9LIIyywzw-3R4bSVIQQH0DPQR7jnuIJ_-AVZoo5R-MKD-jrVIn40iVhAUmxPGpImFTFDdmAa3X7qG_2SQkVvow0t5jvZkubstUWpAC8Iqk5HQ4o-0zn5PKN9St29LCXL8Holh_hc-3-&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Willow Creek Ranch of Tomball photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Willow Creek Ranch of Tomball</h1>
@@ -199,8 +198,9 @@
                     <a href="/boarding/tomball/" class="back-link">More pet boarding in Tomball</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Willow Creek Ranch of Tomball?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -346,6 +346,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -356,10 +360,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -384,7 +384,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

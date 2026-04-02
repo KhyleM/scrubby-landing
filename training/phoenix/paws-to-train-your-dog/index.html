@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ-cq0qdcHK4cR2hhYyyAFQxM%2Fphotos%2FAU_ZVEFu5imoMhSSZiDj6Wua4tDbNqSRoDVxtnOzd-Bip787JSVW2eanGq-3_AjEVKkx7erLwpo7yThoEWmT28z9eTd-SDrcZQi5iJzy8IVQwIlok1enB91ONaPnhZPXfOuaOCHBiJm5hhMZO50kMXrx1nVuJCX1nVxXC5GvcKJAaREvFAk9jQsggan-MHV58NzZwG0kRXMYX-dOfzXXpQuFXI2sDdvIcthc7u89qS9QZ_2FnOoVoTYT4YXz_QOqJJmqELe73LYoycvY3sjysMo3rJqOk3YJvqZFftATbDsL1EWkJMndPymG7anaJLY5ZZAqRVqTmoam9zqg9WlDUV0VfjLFkw1kBXjP7UYFPkjjsPG4PNMbSIDED_1cpziXnXDUXFjatOoJAAJ_i-_PV1IGYnivvmjNb8dYfkj3IPZ0NHJG_w&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Paws To Train Your Dog photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Paws To Train Your Dog</h1>
@@ -197,8 +196,9 @@
                     <a href="/training/phoenix/" class="back-link">More dog trainers in Phoenix</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Paws To Train Your Dog?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

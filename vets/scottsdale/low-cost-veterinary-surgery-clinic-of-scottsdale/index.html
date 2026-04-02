@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJvc51IuYLK4cR4bm0EVva418%2Fphotos%2FAU_ZVEFCJitp7dWWw2-QLXJOPEksOkacY-p8UlxGN9fQsbUIWIhPz-wf2lGbq9kdTpCIRO3SOelnDEIz4kh-I84N-geB21iYyNV4ThLlmbIS978p-R0pLPa9kbBtmGVkF-QU5nTQ0lDpbvkTneudi2x9o1L0uLjtFjPz57wpk-_PDN17vIBeTSJ21LEEjRvQTVTHSalZ4uKH5nFr1SkMasL0YT5KzE8dxR4sAFSEaP3sUcoOuepecSQBSlDrSp7TCGc0-eOtcL61CVvuAtgSvTul_2i0McXGC0Gmsubt0a3x-02l1an8pM-L9usD1x1hGvDXBEo4xY3UyGCN55QJM7HOb_8vtGAxXoQxpi_6VOjRvNARjM-OJJb8G3FIYRYGCCteX73872cI_rRUJY5aoRMQDesnAWkpMPCbLXOasOJI2h-SBhg&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Low Cost Veterinary Surgery Clinic of Scottsdale photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Low Cost Veterinary Surgery Clinic of Scottsdale</h1>
@@ -201,8 +200,9 @@
                     <a href="/vets/scottsdale/" class="back-link">More veterinarians in Scottsdale</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Low Cost Veterinary Surgery Clinic of Scottsdale?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

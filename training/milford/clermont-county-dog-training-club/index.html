@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJI_X56f8AQYgRYrkKd_cUQik%2Fphotos%2FAU_ZVEH2vlXHXRTV9_Ixwuqbb0dPZC8AZi69fUL8bpQuCb8guXYOPq8Ik9LXpv-fu8qz4MRCLlW4NDIh2-_ss3gNFFmDY6gSCOEiLg1lbCo9ktqGlMjafCQz860f5HbcHFJ5iPUxiW7MFmxere8yJJ_YmY3oWm2wlvs1LCuB1fO_jA8l610gG5oFZG6Lh9FBuqL_MDnRAerS8SRTW8mlnvWqp8bpjzUQWoOQNFAmCrTLV_os0V7x0JNtXFYfWhmffS4WdcqGqHkIIURUS8p1D1p_IobUGLH7jZpgu-CoXf3ZPDYG0vjMKnE9jYCVvFndtsOqEu8LIC8Zmd3iO91iEFkUIBz1q0ZLcWmh4yB0cg_lCrufOxcpJTtZSLpGbcgpq1QOx5w_PpQvD-8lKshSXhz8-4H3OgUL5sO0GDhyI-e-Mi_WNg&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Clermont County Dog Training Club photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Clermont County Dog Training Club</h1>
@@ -185,8 +184,9 @@
                     <a href="/training/milford/" class="back-link">More dog trainers in Milford</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Clermont County Dog Training Club?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -332,6 +332,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -342,10 +346,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -370,7 +370,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

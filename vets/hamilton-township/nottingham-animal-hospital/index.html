@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJdQR9JT5fwYkRCEus7olJQj0%2Fphotos%2FAU_ZVEG_LU-PqwSf5DA0M2sLrDoWBDlC0ixqiPAPhIsh7Zqbbj5y-6I5SYFiQ0SiBp7XHY05Rbe9UrUtz8PbPbD6e-027Om17vwowa54_qOixTuWj0CyfmoW3mH1wlnQi8g33joREgG4_wQuD_736vGb2o-kX4gwGC29axIiZ-EIP-F5092TC0HhaJtM7m7tKE9xuLzfMLIna6-9tDIbiZfLr4LCX6Pps1Azb1RWDRU803dXzKJDQQqTITbfNJzxCMB_IM7e4-7bEZE0XYaA2dM1VyRdwznj4yI934SHg4ztn5ujH9sqry2nhmvXRUu0jaWn1ZvI1tagvPlnqoUn1ssX0_w5Fz93GzpwCQBQAtdI3RxYUZAbFpn9q436ewP2Xj918qp735p3Lix-7t9el9f5bOy1lqxgnib-XiS6TfmRp1_pvRM&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Nottingham Animal Hospital photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Nottingham Animal Hospital</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/hamilton-township/" class="back-link">More veterinarians in Hamilton Township</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Nottingham Animal Hospital?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

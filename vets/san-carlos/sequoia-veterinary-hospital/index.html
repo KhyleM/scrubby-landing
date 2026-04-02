@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ3y75gK6jj4ARD_QUytD88cY%2Fphotos%2FAU_ZVEGBLaplLv32r5oTvY7rYCozm0x0bTygTXmoazuqjC1r7eBfdTSIngQ_sGMj_BYCdsZonuZctyf4pZ8XSkV-BM-Btwa0C3e4lPUKfRjOSPkCcqFrUgeEo9Y3O26K2wguxt3utrmdC817NBV77sPod6wPuxGi-uVOE6fzeOgyEsD9qSqD049pbpQg54l98gL63VPjabw1U-pgMFW1fcfP73kGjSFoQuFDyLTr53lkrvuiOkEJ-g7rbgtF2ZTIdhaCHYOlNBL4s9EMtnkM0kqe1UtbMRbjJZhvUUFV36bhR9jRIxZ9SuutrX9wDF-u96diJw2RTuqtvHF6JYZGHqsHn2DOF5g5tQeDiU-N27La3_dKjtjEoSW3VIPBkmxz2JScYaSMet31FWax-jAp_3-llXIv_lLgnx0c-LTJKulj5M2H_Q&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Sequoia Veterinary Hospital photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Sequoia Veterinary Hospital</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/san-carlos/" class="back-link">More veterinarians in San Carlos</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Sequoia Veterinary Hospital?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

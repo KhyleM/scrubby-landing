@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJN3Zvoz1xaYgRuD4S21bvtEk%2Fphotos%2FAU_ZVEGeQF98VzB-qLo-bP9SI6vCBXBJH_rlzneJj-GggZ1QEMKRJdd6H3LcmM4Y9pav6T7JmXuKELW-ILcJ47__L0f-uRTXs2GWhqI__nRUbRQT8GHzuPrLejyPO5023ITolDKi7TC1uXHgcw4YKgf7Z4BKwFV2SLbJYKvoR9eXr72mKeIW64OLl77pNeGdP3zdz4byQ04VF0hk5zWBFolTdS3N_xGLsslt2TZsffr5L8WMadmFgAdcNxzkWjboeAbIVDNUCRIf6zgIGGIG_stEoc6Pt4leD-OsfWveOKCVPWTJC4ViQGHujNz0rbM5iQczR3d_pMu-UaSm5aX4PXb39RogzuHfC9UM8qJ1yyZeewf622fVz0O3_MQI-fRG-_jnF1lTL-a9UTTpj5fSvRVSzCHRax5MgwbsrCTT3SkuKVRcLJqSenJyq27eiVv-xUDs&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Dogwood Inn Kennel &amp; Pet Services, LLC photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Dogwood Inn Kennel &amp; Pet Services, LLC</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/jeffersonville/" class="back-link">More pet boarding in Jeffersonville</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Dogwood Inn Kennel &amp; Pet Services, LLC?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

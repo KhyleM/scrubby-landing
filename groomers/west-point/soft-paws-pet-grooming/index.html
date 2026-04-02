@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ__-rp0IDU4cRmTEA98DKI7k%2Fphotos%2FAU_ZVEGDCbK85t2AgP7J2fM41qyNBIfPVHLYZk8seCAq3Tn4KrmmuL_TDouaMy8f1qieDsqgtemsZPIDMraKse58Y5_uzBNLUmJBY4nUoJ8jwuM_in2EpDoL89nT5s9fZ-wG5csgkKRxUA1dFA8Nl6jpt9Le3c8BS4t8FkVffTSrYmfH_i9p9Rt_wISL55Pvf92K6FETL0bOLPmYPhfNTwsI4fs8z11wXar0BvQqAYC8uS9zSm3ofEDgCd4_GitTntb_tWQafyXjS2OFWHtwOCoVnG7sN5Lw1FJD9Rjm08E9BZMM29VpzPPutKNIR5REg6jv-4nbZHFGJ05ziXInPWy_UsGdTP3cTr2RjlizL187J2hxD-X4ytxqX9ApYcl6nrduHuMrjCco4EYHJBpuEit2bctKhU4J66MdlL4tA8EO_MP8jqPfOXdhlSurgxKFcyHB&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Soft Paws Pet Grooming photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Soft Paws Pet Grooming</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/west-point/" class="back-link">More pet groomers in West Point</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Soft Paws Pet Grooming?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

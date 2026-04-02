@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJFZ4_XfhuOIgRUEQ-L3d1Amg%2Fphotos%2FAU_ZVEHhhnkaNEuNpNQ4KqEsRMklDyyWZnksfg5FQUfXXJ3QzAkum2GsMOVlhVLI-uEY99226Q8NDA12BNQup0xd9wvwo_T-AXwlQTyE5uwDxc7QoTtQr-lzTZwZ5EtpxZrv2ZIUFao3W2ZbFeSqYMfSGkCCP_H2xc5JERu19-tVYKNcgrcvMuxskZ0nJuVtMSdvt4x4z3_op83grQsTBcmvEj8_gillFkFOP2QLgolaxbmxEOjnSzZy9WyFLW6bCoaR5Xn9ulDJpDoFs7DhjAKXgAin8brJZF8avQeOXMGp8KX1TM31EQnSun2rheohHX-AJ6zjFvjRWTrxuFUj2cJy6HTODeUf4TczgLC-jpxd85ZI66LEhWUW7PSMbINZDTAxkNm-ThLHDy0swe-P6ZK9UaOamFkVhCb9gfQ2beADyUYmF8U&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Soggy Paws photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Soggy Paws</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/baltimore/" class="back-link">More pet groomers in Baltimore</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Soggy Paws?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

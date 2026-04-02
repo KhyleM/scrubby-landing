@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ82J1EmG3lVQRlGwRYZD9kY8%2Fphotos%2FAU_ZVEHNmdl0VOkMb5JvPqV4e7--8I2YZZ4NslVxtsMlQSr5HJIWtQJih64hjRaM7Y_7gqPw8QquNQH1_oEYIva2gtanVjNHCL9DhzwZxcdTTKEf2Lu_7Ej24XZkFjj8xEb8wAVHWEa9UbfbRMFffyF3Tp1W6TXVHtBSmTLfbhn_nLgNhM0XhVuh0Byw6rSxSB8tqLo5KcE9tZ7C82fd4wBZptZL1NGO_8izXLp2c6Mr3_qQkEyCuQkp01pX3YcMrA6sgoNEBSC4tFc8nRjgM4pM2deYp96tDmYqwhFY5uw0NeoPerKn3-5nBLMsIoDK0pGSCqhivStyWI8SPG48RFoqbeY-XtuS_g9nNk1tjmx3ST2BE1QFs7kjFRD-0ToRfdDOnCv8_uom5MIE_YV1LGlEAT4oOFHH1Eh3UGDdlYpxCl--kLxruA5e02gtTCoVlxtc&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Mobile Grooming World, LLC photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Mobile Grooming World, LLC</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/vancouver/" class="back-link">More pet groomers in Vancouver</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Mobile Grooming World, LLC?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

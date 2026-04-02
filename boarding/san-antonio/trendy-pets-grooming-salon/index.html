@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJX7DgXJ9dXIYRssY7Mpp69d8%2Fphotos%2FAU_ZVEGI0JQLb-yDUm0NQJ1RDWz4F4SzCC_vdEAWlSxdFPFfA4itKmz9dRFQ6KlJsJiZbr7DqwPH0TH_4DDtB5ZcjeMCHHr3WppXoXw1LNFbF87-sx_w_dX3WZCmLiuRoRTj2-vxEBSRst909itbm-Bn7kldfL0F9H8VOJIfgJQSrGm08anQ8jjnFdZ0baTFo7ipsSNHHvfXu-v7qwXkTUSI7QEhR4lD1UIRanzLiJ-GCTUj3u-4AIvLr8ewE56RTCvLQeVKsVrg74qga7GqedmGp_gb-p78tqss3lPEQ3-Q7sCsKIdRSV_89Wu5IYEnt2UKlXy34D2ortmJWYVQgln3eAnHMSeLGOhvmUvkSGppQn2tG0QGOlBxO98wQx7a4ab60Ih15eS0osgzzVo6FfxHyoHMJZXZit1GLdqRuHSzyrjSs8Qg8mRvctl16YsaLSZM&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Trendy Pets Grooming Salon photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Trendy Pets Grooming Salon</h1>
@@ -199,8 +198,9 @@
                     <a href="/boarding/san-antonio/" class="back-link">More pet boarding in San Antonio</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Trendy Pets Grooming Salon?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -346,6 +346,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -356,10 +360,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -384,7 +384,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

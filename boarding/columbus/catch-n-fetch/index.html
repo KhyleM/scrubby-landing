@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJj-PiVt1jOIgRniiUPsmLYUQ%2Fphotos%2FAU_ZVEFY4HPFIL1N8ckud3nSjGT7DU3nJgd3sFcP8L_jrX9tRWbo9Nx_4d23OLSHW8sghhv-FBAGHDl45a4sL7YDqvBeeU4sIQWj4CbnhhNBbRYdJCcgHc79OY6bRfivWsmz3VwfY2FWbkI-7mpWZAlAd-sIh-MhrUMGstCw6EAP5OGE8L4NellOyqr1W7MJPRZ3kqAEKisET_6R1tlFoHg-VCsFBzH62Tm9p-cosy4d-L3WGhY1vWp7BmHrjZZl73JEdSmQ1iepOApQ3Qy1PGJjZ7oiUqCwaL2f37YPFTeeu__ACbyVklTmN24rd3VAuCGWD18iPklQ8UCclQIu-md_JjLCQrUD9Aw0wEW-UWIr1yryxvto0LB8QoVvloU0ITHQilK2fOiKSBd12jUNooGs65u63mDCfDwjg0slyig2eIDIqQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Catch-n-Fetch photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Catch-n-Fetch</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/columbus/" class="back-link">More pet boarding in Columbus</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Catch-n-Fetch?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJUYBeQ2qqMYgRalQ0vUIX4ic%2Fphotos%2FAU_ZVEFqadhJ0doPWIcHpiQ7FwqkaiQsR3I45uDB6o-OWGZVf4kJCEqLsB-QiK2zZqCio7F0sagn9zYWH_mheCqZ-mrb-NIH19QgzvSGKFDsUXCG5fjMMdaIY0tSYBxg4m706C3lGRVOVafYS8OCnsoihaWKsYtOsCQUW7OarYouP9L9xWmescM9iEdX-xv0TOulT3o9cUWkdpLqS5TPCJfL-NBCTqgFvXo2y7uMvy8e3-w3lTmBJcd3-qsBoSFT994krakc8P9jiR4ZIVB_MYwdqv0ETCjCNXt_51kByBjJGuHjkk9eTmck48Z9benz76CjiB2aN6IGszx9TFDdziG1Z9eLRJ3BYqC1dD4ftecambvPch6fF99H26zLG_J5YlF0YYdzhyE43LdK21NUL3NyXyIPpqyjtch5BFqXwhiNWksE-fdm&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Midwest Veterinary Hospital photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Midwest Veterinary Hospital</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/wickliffe/" class="back-link">More veterinarians in Wickliffe</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Midwest Veterinary Hospital?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

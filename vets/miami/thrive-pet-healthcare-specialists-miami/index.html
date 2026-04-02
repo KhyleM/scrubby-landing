@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJHwLFEevH2YgRUVNV1pofTN0%2Fphotos%2FAU_ZVEHNRcGtRXezxweUiLOk7VxN_heUio2J4dVDro3DMerGIORLaF9gr4sVLXvF51j_kZdvzEgtEITN9-hDY4NpzIZ4FWkmBMxrTDj5LmarqBKSYKNRu7cCZ_5bNXuRMB6tWpcrSK8SoJtUop5QN9r2Ky74jEU08jShe0CbCNOOnsZzNNzgiKtpupYyhQfZTV_N22coK8P7iVd7RDe2RqZBPHmeqaJ8vKDP4iVbly4FP1QZo543U4g5Af9lsbIJUkCodjHLM5FN_ibblQbDmOIDnaJ4yIlWxDDxlq8emynXoyZSR0MXoaymBgUZ2bSZQo74-hBKEtjylsIsSKzLP_BH80C0855FEYFOOYaYgL4h__HIMRo8MWTRKZJJNXOaUHU_36PPpTaqxSFs0rquhJFBQMXhbivUyr0aDg_8xzx4MM47HB44&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Thrive Pet Healthcare Specialists Miami photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Thrive Pet Healthcare Specialists Miami</h1>
@@ -201,8 +200,9 @@
                     <a href="/vets/miami/" class="back-link">More veterinarians in Miami</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Thrive Pet Healthcare Specialists Miami?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ03r9eMDXhIARQV3E5qFTF8s%2Fphotos%2FAU_ZVEFdQur4wzdAa8yyiP3VjVBLAdMj1zawl5Fz_iwgWnTTDvZ1K-QTdrvmdkGlIvrg0rYTKDtoy1a9ms6X5PWIuFQJqkPL6lu4AykM9n2j0AkxeU9ZxephvlsTrdLpMPpCveR53wK1CWRqqo7juCHJC6mdA7iA0A2RjRtQqMrUzNEKB3skoxqtyGq5QAMBImY-JIHSlC-NInir_9zhiT1Na2NuOfCo4OXLImJ8ngIZUNznuJm9nUtkjSsRNhVEAAiZ9KDXtrn8UFA9N09PQAKgmYqzZGvloZFeE0MNi3tJW4G45-Jq4-HYgo0Wodor6f3HzT1FyK7OvzuOfbcoqEyBy3MoDAoWc-49GbF32-sdTfm0izuasOV5WlQyB_-mmAKdONYAOo-mjFU-UJVnQlhyd1OWm_-bKtY18BN7YhxyrFwNEXQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Arrowpoint Kennels photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Arrowpoint Kennels</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/woodland/" class="back-link">More pet boarding in Woodland</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Arrowpoint Kennels?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

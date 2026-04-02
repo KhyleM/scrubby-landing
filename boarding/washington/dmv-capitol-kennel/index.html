@@ -78,7 +78,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ_Z2FOMC5t4kRmURRa-u9BQY%2Fphotos%2FAU_ZVEEJ5wjO6NlBjQ-Z0PvVkKGAQlinNG8qNY81peSZSlAmq3TjMWOp5dbFP6yYncblmNWIenA20K5tR48bMVEf0NDH4PWjpccPWAp5Mh_9DfHe6jSND6zeYE_x-DGoME39FDGsyW0lHjviOtF9FJLAiPISOeJeE1cRkUy4BAY-rTUgDj35q503NdLOUd4FLSfOlle_G32vN3Q0H1KA4RFDSLprEaJjKvcScUhmIi-Uzyi1IXtQcEIKMNgR7rjw8Ep0x1w2ZXj3HwQg66Gy7UgzfyZR8DO4yN_XprML3IlBJKvMcw&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="DMV Capitol Kennel photo 2" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>DMV Capitol Kennel</h1>
@@ -189,8 +188,9 @@
                     <a href="/boarding/washington/" class="back-link">More pet boarding in Washington</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of DMV Capitol Kennel?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -336,6 +336,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -346,10 +350,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -374,7 +374,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

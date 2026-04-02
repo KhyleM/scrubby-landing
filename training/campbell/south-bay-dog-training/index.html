@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJuV2umfM1joARr6PH9Ouvjus%2Fphotos%2FAU_ZVEFHlXdPXZBh08ePlroNftfMQOxE3j-1tp4deMN8vRC049O1g2CcR405oOJNModmKdHuk78L-WHRupjHi9mcT0WtO7UgfQDS7_3uLdaCH4S1Hs6JklPc0wqgXMFqq7v60tYlBNL_qU06FBd3wda-IwmQFSQ99EHQpVNHuizmBlKzxdCGVpcJ_kWS6Br29-Sb5hcAcPRDUhA_A5SdPGl2jXFroyqxHNdOeaZXbVpWHIgExxB6kUZ4y94YH7hdKcPCvSHtg9ZS4bRscW4r7CKPr0NQG4WaOqJUnITNm-UbxXkH-UvmG4xZuF2LhhULbxVnadEDgS5k79Kc9wu4_OL4-nNuZ2UbEPRki5QA4Uu3CXXXNpKXXpsDR6xfmbzViN1tpdXyMQejjgYQ2ryCxHgf_KAyWC79PjDoMamRWMMw_ts&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="South Bay Dog Training photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>South Bay Dog Training</h1>
@@ -182,8 +181,9 @@
                     <a href="/training/campbell/" class="back-link">More dog trainers in Campbell</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of South Bay Dog Training?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -329,6 +329,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -339,10 +343,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -367,7 +367,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJy13NrszMj4AR7OmZAjqrtic%2Fphotos%2FAU_ZVEGAsnclY7OgbxwlQYNImgZVs27AswrDht9GuA38RwrMHpoApzt-XqFkQvcvU3FN8jcReNJBMTaTi4GzK4FyE9SFf9Qi4u6ymsLOJ4dMUIGRf8-4Tmn_vocImkCzkQeDWc7CAXoBGIO155qW3ygsZm_BUC0bAs0E7OwaKy5TH2u3iiJYyQP_Sz287078orTBQM8hCax3oohj6JYnYzBqeVgPww9FQWBgpvxn7UI-XFYTiBde0ld6CGYpxok2wfMxKEEm2wH4n_xTrk9C6-AsfC9OzOY-E_KGtVn4usow_rKXLcZl6iX5RO25-xPGYboJcoUzTtspqXd6pMXph8nxK6rKW5bsdoGk5LEqq2GknyLuvUYAJD-WuXRdBAPkLuJ5m-SSaYrk-5ROluEokGGPfAULQGPiTE09Ec3Iu11cULA&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="PRECIOUS PAWS DOG WALKING and BOARDING photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>PRECIOUS PAWS DOG WALKING and BOARDING</h1>
@@ -192,8 +191,9 @@
                     <a href="/boarding/san-jose/" class="back-link">More pet boarding in San Jose</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of PRECIOUS PAWS DOG WALKING and BOARDING?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -339,6 +339,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -349,10 +353,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -377,7 +377,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

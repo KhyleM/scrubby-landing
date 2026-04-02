@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ40tBoS8eJYgRR7vkODaL4iI%2Fphotos%2FAU_ZVEHJyMdD6Dfi9JVqZ4PkXnwd1p7W8z51ZUBbdbOu58n7BKXpWOA0lprfmysPRWGVyZMOLlAtL64i5d7An6ISxZtDDBuv6VYnAsr0sX2Eq5utnxl9y9UIWLbQjDewOKQEhnSeXmdCkxifL_FOu2jMeLogLFQAdCT-nRUMBiHvnktldUvZt1xlD8rpHFsqX165VgkHvTNk9zzg8pEo9o6CcyTz4voNE0Agy37mShA4XunSLARQ4LfMxuCVqMs0R5m26fmKj-8ZlX9E5hGVwfAjDdzlpb7TqXbUWb8HSjzkZ2Cm1joO8tQJMDUVgrD9EjluK5J92khyhHbCLje_EkuzGLXaP2AUXZ6y9pWYfjikpthFRPTqvgESYEokeDFE6qZrxK8M9OcirJ534z_MxFSNb2f7nIC8SpQG8SHMtHbaiyo&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Schramm&#39;s Country Kennel photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Schramm&#39;s Country Kennel</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/macomb/" class="back-link">More pet boarding in Macomb</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Schramm&#39;s Country Kennel?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJZVcnYLh9ZIgRMPpC28KbIRg%2Fphotos%2FAU_ZVEFCxxEpgL-Lk7Boyu0Z5iq_OXPzVfTtAkACrV0KmiHQ-Boc7rTrT1r3GjPQfO3rFSmCw88xDuqpoZJGfFj3t97FgGZVIHTVsvbwL0T8J6D8mRzWSX0BSFfltvEUpFg0HTd0ukOnwB2xFW-sQRr6vvQ-ED3gJDLoEqjxdhg6X7ZIQhu_ew3Zz3k-daN8M2A1NBrPGw3flnGL_utvix4xzgBDck212zkWaKAUs1BU4hlyxeIWZ4DbbX9sWZ6wS3ohqcmu_eWJQ2yP-4huXr_1coKmXj7STDJReOStJE8v-f1FBNIkaaiFhDGqeEvSpi6QrfwWDhDkcq6U3raQwWmoYondvYdHSKj5VQXqoleROY-4rnebCRIRPoEwN8OrllJvC7aIseswPk-EfzIj0grvvQtSC2AGLo6L1O9Jkggfc78JSSSvFWfbh9bBLWgIP2z1&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Scenthound Franklin photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Scenthound Franklin</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/franklin/" class="back-link">More pet groomers in Franklin</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Scenthound Franklin?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

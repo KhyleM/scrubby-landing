@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJqRD06mcpwYkRoOAUbA8_s2Q%2Fphotos%2FAU_ZVEHvNTqEqw5J0vFvURUUIpxv-exiVGgmfyh3D7lylJIgQX0_Zxhqkt4ichrO5uM0Q8lQEbjuMDUBwrUdQSsSKbE1zkJzHcqlDYRC4ENmlOa_ye4q7KVFvklQCclnd88whW9Cekge8XLnLH8OvzZVnYa5yCCXk5E7uKCf6OwzTnfOeL3WP3g6xjpIRvLi0WVuIz1VzLE4hBgvjK0X-7ExZeFSRXB8FAlAP8OB6ao5gCFO_gErWtP1757c10mGuOWC8I5-LYzx47GftoXvP9Jn_A1lyTiqzAQgI9696e-T7OWl8RZEhnv6EdRMirMw7EdWjMTmEbhPvAk4efXAQrZ8Bs3S2xs46Uhu8Iln3I_W8uqWqevnr13rFam8DiL01NuMeqDXPZ2JFprV6Jl48q_3xg5wspBnrABXTjr_u-6_TyNPD9pH&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Paws &amp; Rufflect Dog and Cat Grooming (Salon &amp; Mobile) photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Paws &amp; Rufflect Dog and Cat Grooming (Salon &amp; Mobile)</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/hammonton/" class="back-link">More pet groomers in Hammonton</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Paws &amp; Rufflect Dog and Cat Grooming (Salon &amp; Mobile)?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

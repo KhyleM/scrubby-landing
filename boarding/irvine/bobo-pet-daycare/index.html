@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJzRtI-a3D3IAR0161IB8qWiU%2Fphotos%2FAU_ZVEFek1h9tr5L9lwPlWGXM_hHQd2YmV9UWUYfXs20Bds3Rho46lHf3ldXwZW1QjjuoLWXVAS20IUizGq69rTysxcGw35h4EM5pAE7ZGgmfDNYvEtajA3D77QJatQrRw3s9g2lf3B1lq5TrSmMA-fqB0vx0Zr9q7Y7e9VccAsNUo_ndrMhQznBAEWqUUGcaJ5IhNyzDWwjP3BfFQQrfNGXd-fdVQ8l1Redb_XEKlRzCM-xpOVs7foa0gHA_4TccG13SuehP0HAUB8qM4GFU4_T6q5cFoktWEeEPND_jICd6Dm0ew&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="BOBO PET DAYCARE photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>BOBO PET DAYCARE</h1>
@@ -192,8 +191,9 @@
                     <a href="/boarding/irvine/" class="back-link">More pet boarding in Irvine</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of BOBO PET DAYCARE?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -339,6 +339,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -349,10 +353,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -377,7 +377,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

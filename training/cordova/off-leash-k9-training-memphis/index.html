@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJB0vE6JiDf4gRcyRWbnXFrp8%2Fphotos%2FAU_ZVEFRvOk05mmCZIEqUl4eLweF1Qh55ZJlBWhSv6jWTbueXgfySI5RGQdTPvFAmzW8QnK5YM6D3vOpqEyY3VarYFoeN2KOycXK0r8HG5VtHHURxWmmS9P_6fsQ5wEO4luhEjRgFs0L9bVQa_NQAXKMErTkCkgEKz60ZnyXuRSAm023-oHKn_Mbn_Pfyg5PVWHS8Ro3dpB-7_dmvKzZWKFde0PCiGt25P5G_doHTsPNBOWok-KU9-30yuZ6TlGdAnJf_eJMQBsEeZr-rOrZxOvyesRNYunH4E0dURACHva4j36WMUULkskS2Z5xAdBYQGbdhsPLQuZOvZzbgU4744aDR9Npaa3vilqYhrvleelcrqKYTaurNW9TXMQ4ZUI42iU36uZOsqsACZ0qT-_4vGs_AuLs-9R6zuaXO1tgq1UiF1brJg&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Off Leash K9 Training Memphis photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Off Leash K9 Training Memphis</h1>
@@ -197,8 +196,9 @@
                     <a href="/training/cordova/" class="back-link">More dog trainers in Cordova</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Off Leash K9 Training Memphis?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

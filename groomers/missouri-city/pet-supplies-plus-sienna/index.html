@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJv5MYF9HvQIYRKL3DCIJh3es%2Fphotos%2FAU_ZVEEzkUolgqhwn-Z2IRVgspKHFkuYTSMw5Ksw6wRHPA1uVzJev23-KFKDazxZBc4xkV0Fxd70PmzxKV1Mv5WKXbvq95hSqEQZj87Rl5qBv7TeTZIc6tYz--VcRu3z1sWC9pGJD_6WKVTlidIOrmBoUFB-WvTKShN2Hy19KVJ_EHBsEIcoZVRqXoLGKeTZz6s2Jje5NuCKWjGn7njKWK1AlEXsEoLGv8Aio_kJA79-DKcngVZ9hjoumE8kj6CFrsxdROAifrmc4akeuKgEkT3Fl3FSvIIu7IUn25pNgitJ-ehy1M4UkaMkxoDA8uKGqyItZE9rPpg0-Z0p3yD36g4OBT3SIR29Al5h19qPq8B2NKkY6Kq1nE7maV7VEwMjUsNLzZELM1kJFhpYXlON-Qa_1j7ywM_QYuumlFH9RpRGdyiAfh2H&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Pet Supplies Plus Sienna photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Pet Supplies Plus Sienna</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/missouri-city/" class="back-link">More pet groomers in Missouri City</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Pet Supplies Plus Sienna?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

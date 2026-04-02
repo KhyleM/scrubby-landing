@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJIReudTEysocRidqxVQGVI1I%2Fphotos%2FAU_ZVEEHSWZIyBNe0g56WAPC2hfQPrVGHisrWAQ0iwZcSysmuFvBy7eKXO_aLJPkGulEQT6sMqvoQ9Y9xiBZkRfQK8-cSY6ysZqo2ICfFbIFhp5AJEejTm7iQkJideKLM_7KXUNvf8fXJ01AY2-_EZslrMke0-dR-_IiYjVwy772xSnp25mmpemQ7u4xWNF7YS3udSgV6ZzHFdclolEc8gAiUOnql3JRNrU1qM-hJKr3e0NNtAQBr_2Ff4s3jphYkM-xQzALL0o62g-e9u2hhW8N2Ryiiv6B4PFcL9qlwWbZUWCkOOQv5T6YF-1_Up4V_30DcXdQNWUVluJ1okAFlW2BdfJcU1IxYYec3UVw7SvpZx7MCQNU0FD9GNvxRlWH44AAJm4f067H8uMUWIn2vjnIHBF6d1GAyIarWjG2mpQjglqc8GI&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="For the Love of Dogs Grooming Harrah Oklahoma photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>For the Love of Dogs Grooming Harrah Oklahoma</h1>
@@ -194,8 +193,9 @@
                     <a href="/groomers/harrah/" class="back-link">More pet groomers in Harrah</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of For the Love of Dogs Grooming Harrah Oklahoma?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -341,6 +341,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -351,10 +355,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -379,7 +379,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

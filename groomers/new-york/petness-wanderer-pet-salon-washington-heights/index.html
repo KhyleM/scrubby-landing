@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJOUv6DnX3wokRSjv4u-TEAO0%2Fphotos%2FAU_ZVEHYg-6TNBnRVuykKJz2Sx0qQ78tq5lJ1kSqlAUum1UVe48drnjotNSlL5Z2i5-Ia1SuDVRARIOuX7SE4_IYWtUcBJNwOQk1ntrS4OhQWKYf-1t0AKxjanblL-gLdLXpbkthO6TgcTrbXqbI_opT272Xmf0wCDNQr-5t2t60b5mf2yM_GiSSCsU8vDe-AyzmMR58W_Ell1E1K-WPb44e0XHPjiMzfnWHOMbY7SBzw9RroLsQeQSyiyNwsV1fW3DsCPnR0wgEwMB844Ti7QDRTEQHjPKGPkZXVuNUhkKU_n3RHptEWz3CqL6c8Pa9ypf667wa56gg3LWYD8mNQ4bevZIgrJZOoBeeinTVfqBqKdXBLEsMnEcKhO5Ajl2n0gKPtxBWdGGffnx5_OKtt0cJXsi-ONlbNSLr07bHb9Znx9F_HOxKOl3pi8BO8qfSMrol&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Petness Wanderer Pet Salon- Washington Heights photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Petness Wanderer Pet Salon- Washington Heights</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/new-york/" class="back-link">More pet groomers in New York</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Petness Wanderer Pet Salon- Washington Heights?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

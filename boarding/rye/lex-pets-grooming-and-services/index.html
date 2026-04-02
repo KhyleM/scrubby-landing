@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJozBEirGRwokRIk1ohc_oDh4%2Fphotos%2FAU_ZVEGrA2Xy3CcYBhtmWkAePNYwbGVFqW_ya82IaM74S9cgpn59gm4JJ4FtaXYdx2_c6NHsJxqPKsjvnpcqxTpZJii-w6s7qa6CXbZADmu9vZ2b0X7O5Z7dZKMAdBhh73ZsfFm3FDJvu30KPXlQMNOtawAz-13-yCkwsU6-mYX_0abjHVZmfkN4ahYBFoIn_pdwgzzS4Hjv-c8hXyesQqYsv9944vYqvScrB1lQXgFRXGkeXMM6im2IgQ4DQEgKil5TaWvui1pbPfOfqw3rZ40MueT7tmLFVf1D6-cMHkbBSvHKKGHahnMfYQILN4KsA6a-XP_B7juLbQwT3n3SwKM2OOO6RvO37YtEHy5kgNQMt9jb3ruuvrcfUGtCo1j7-Yl3F4W_U_L6roDCdN7vIDdigHr4YkuXYPSI7RK52L8K3SxU3w&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Lex Pets Grooming and Services photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Lex Pets Grooming and Services</h1>
@@ -199,8 +198,9 @@
                     <a href="/boarding/rye/" class="back-link">More pet boarding in Rye</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Lex Pets Grooming and Services?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -346,6 +346,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -356,10 +360,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -384,7 +384,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJM17C5x-lMYgRrYUD_LsaBos%2Fphotos%2FAU_ZVEGLq6GuMWRzn7yFhhj31wW2pSzBl8TZkfINI90anu9t7i4gUV1YqoXfYzCmDPdYveaxOU_x6wLdMmm2BnfZpFGEREgiv-gsamuxzH_8Ala5Qcbya4Nyiw3amyJzYk2ibAuD2sCz3COivPapL9qy0oO1LODxQU7DobOYGawLbWxk30x_SjwNGSF4gDMdNqLh_QyJdhborbMv4hj3Eo5vQ4ILU16vDcwSYTuaYM9BjNZzn5HMAYOcJqos3IIe0oSfM5Kx2cfXqVSb8Y5G7_bAcIJN2FWA9n1ZVUvxrvtTYkqbcXuY6IW2tdm1_sBio93-M4Pmo4pLLAwlrvwnHo3MMlRP9lc8E4gjlgqbk-L8yuJHxYum-856xgjj5WnpOLXRJtdZxRBd-tpNvCnB8w_HSA6a9WLu5bGY3MyQxhnnh-aXgN6P&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Elizabeth&#39;s Dog and Cat Grooming photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Elizabeth&#39;s Dog and Cat Grooming</h1>
@@ -182,8 +181,9 @@
                     <a href="/groomers/mentor/" class="back-link">More pet groomers in Mentor</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Elizabeth&#39;s Dog and Cat Grooming?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -329,6 +329,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -339,10 +343,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -367,7 +367,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

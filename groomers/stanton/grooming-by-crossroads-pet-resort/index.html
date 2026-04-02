@@ -77,7 +77,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJo7nJ-C4p3YAREUEtXGmOl7o%2Fphotos%2FAU_ZVEGoIJwSAECcxTxMadCVRtlO-qC5GlvDMqRb-GPRVDyjrCNwKoNq8eiwrOPUPAePEL2JORLVvumOzriytayhQPCe9jC3rRtTkL2UfR1KhQxSU3f3CjuVGG8LpEcc1inWwnA9mCKtK89vXQRc9PSgmNKcKOrJEbSki9kvzpTSPHY-OZVU37b-szMP2Afa1X1RGvZnnVSoXirRmAC3mIm3PIkfPEzCEbp6pN_-98t_SnZuNbe1LtRyfSFB6RZjWtdi7ze8TNLipUiWtHdWoYT1kUwp7VLZbRQqD6ib8-GcX0tAgbjRBefGtXgvvbdYoTDcAaOZPDeXgmU93wY03E_7X4FIe0M08aPnvX00el8JrdJuoXZoC-MQ33VTvBoxg9O4r3vDxKowfCaQBybTorYw7d7R12kKhXIMsAPqnnWXbSNwbXCKcyaGvk54TwSdM2Aa&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Grooming by Crossroads Pet resort" loading="eager" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Grooming by Crossroads Pet resort</h1>
@@ -193,8 +192,9 @@
                     <a href="/groomers/stanton/" class="back-link">More pet groomers in Stanton</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Grooming by Crossroads Pet resort?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -340,6 +340,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -350,10 +354,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -378,7 +378,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

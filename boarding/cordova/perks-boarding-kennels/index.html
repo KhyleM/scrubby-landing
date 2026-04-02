@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJsYG1w7Sdf4gRXDJKNcV09KQ%2Fphotos%2FAU_ZVEFtZa9uJQW9OUYj1HchQyxgv1whO0_Vb0MdGuWPrwE7H-UJhMcLuAi9znA7Iu_Fn9z2t2lYdNOsXk6F8EQNxfuoHEwp9Eqd3oFkbo1GUEspk6EO5iA2bWLyAK77nqLFHDJABRYdl0DAV6egTZ-eC0pT0-O8XMAAC_aWQ4YEovivIpBOfyg7trkzcoTeiKk3JpAT2zcqDbTDSYVKxJg-lb-fn6OzLR1ha6MtoC68d2b9AA60N9TRfZIownWaSy11mwnPY19BalAe31eaNDgsznTYx7qZHQ43UNCBGGz44bA&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Perk&#39;s Boarding Kennels photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Perk&#39;s Boarding Kennels</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/cordova/" class="back-link">More pet boarding in Cordova</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Perk&#39;s Boarding Kennels?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

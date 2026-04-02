@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ9UczzBtW34cRmFT2vmLNq_8%2Fphotos%2FAU_ZVEEQ2foiHZJK65La8SMG7piD3eqVHMzdZGmiiq9uaqSQ0QpFYXHcK3Z-nVj57dyQs0yWlvl-TiRn-FLlJdeNq0D2JfbHOdPO9nUX4D3THHQ75bS3lLPwBQqfn4IwL3_IhMPATNHtfFI7sq2p971Z1_iH3Hls0aLQUOwVxzrGytO0BFDbwTKSc4GxdjR3YuIz9Bx8f8d1GOI4pJhw82oAiXeoxSOO3ZLmB7u9bVCp2Hg2iQdzlPVxeVokmMIT5xbvRB21AIczMMn1v-WVkH4HZK7HrUef13yk4QTM-N2fbTfRX12R496T89R0tIsjRABZPAlW3pVxibebwLlm8RvD-hZVKojYtyakC8GC7CWZud1wzMlSrqQoqWYFMajK7OX9KlMakhFf4X4SV6iO6iky1F5qyehlZGhKsseiG3_RTsrZfG4&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Soul Dog Training photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Soul Dog Training</h1>
@@ -185,8 +184,9 @@
                     <a href="/training/glen-carbon/" class="back-link">More dog trainers in Glen Carbon</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Soul Dog Training?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -332,6 +332,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -342,10 +346,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -370,7 +370,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

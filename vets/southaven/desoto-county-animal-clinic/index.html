@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJAV5bkmhi1YcRN4jqChVG_D0%2Fphotos%2FAU_ZVEFMPn5usSMYOeuP7LggaDTcgXDYrIB0AHuotqSGjtTWt-ezZODDLUbKc-SO9yQgC7wIuxX5i8lu9YQ6Ci2BP5Vt1f74XDDGS6Cu_0qBF1TKoItQayhctEooX3m8G0VWXxThWm58DeAOjT4QYkVfCjYLwDxfoBlwB8PM5FeRH3THbSPkKLydOhv6cgUNkL_PkqpzBMh-B6q9uj4_IBJ1nXkzfNu30NBsBPCnwQXIl5ZTAhTWVvSQPaoQJib4SJ7sLvYuQpaPnhr1yjjOiz2UJm9-z-DYCcpCG5HrSOqV2iDkuLGMcfB_VzS_F9QIIneUtefhC2uzSeVoKICJa-0OHVJxGI9WO3etbRgvY8Wj-naHYGaMXnXwiLLDpdEE9FCH2hUOd7xKQzm1gfxeFr_KB--xv8WZZwBfzFxcqHFTaOF-9RmI&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Desoto County Animal Clinic photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Desoto County Animal Clinic</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/southaven/" class="back-link">More veterinarians in Southaven</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Desoto County Animal Clinic?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

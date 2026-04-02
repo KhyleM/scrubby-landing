@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ3-DmXXj2t4kRmrY_hI6LkjQ%2Fphotos%2FAU_ZVEGC4HwLh-cNsc2fk7vjHObzA3uOwAI4URFsS67U9lmSlTQnQMgG_cqfaAmmApcMY8Wv7eHwQ60AwN2CRrpii6p4GlzScUDkwb1nKHZ5Hu1I2PTY1mZDbgq0ha6l_CmvIBDIOXTqdLPGL2BY-3UYyhWHb1dZ9JCz_BEpmN6LjWabw_YQPAd7Ca_zEOAFtlOkanlluHkHB8dBQwHJsJF_jAks_aYdZdKinZXpZ9dNB5vlj2g8hvI-NJ37s8OkiD33KY31AqaTdEnIwj0Y9wpR5KFlwMKDSZUdofJtD3b_2QWtG8ech_pKEUYAdefVdOh2X_ZKxi0MOO2eeJapahW5RTNFBh0yZCXjwxLighAkhC58r2pClnvn0CidjTiKJDDrBlr7ZQmupr5gg4lncDUPCqnXVAWM69v9Tj5J-_5IVXlP35Q&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Bark &#39;N&#39; Bean photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Bark &#39;N&#39; Bean</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/annapolis/" class="back-link">More pet groomers in Annapolis</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Bark &#39;N&#39; Bean?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

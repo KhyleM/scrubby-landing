@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJwY-KiDx8j4ARuie_k3UnQNo%2Fphotos%2FAU_ZVEE2WBLCRSNOM8H7LGsBsNNcEAl0eqjQodNzCEe0-a22c64Fr_-NU3dgzBRuecQ2yPemll3ioJPlw7Z3jLSR5Nf_edb96-wMaQssBuD4pVgW98RdlcC0aiCgdVX3T6oilJQmQhRiV0-cGVEkBtm3ZujPCDQ0pAbFihIPjully86h-50cof_VN2dzSbezu3FVTgAf7gpUY0b3uz1XFq36zz9wkRW5fyvalycm_ESREa7Lbql6-9MB7A4KuPTasrjNDSBdHoDud7sRaoM5-Dj-q8W19ivnPYDJTBNcvvty4Ft74x9DCK6ceZjR26Z6hCY_qBkJIaJSmdSeG0-WYPBhdeEREzKnzxjwM42bbY2kkiwCeT0hwCd7hwp2ymSVYQBpMfKHZzYDxziggwHFk0k4CFoiP7hknC3Tux5oXYXnEgib0A&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Paws Pet N&#39; Play photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Paws Pet N&#39; Play</h1>
@@ -197,8 +196,9 @@
                     <a href="/groomers/daly-city/" class="back-link">More pet groomers in Daly City</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Paws Pet N&#39; Play?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

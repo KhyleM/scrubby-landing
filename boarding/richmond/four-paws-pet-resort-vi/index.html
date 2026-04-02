@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJc4JlnyFzsYkRUeH29EV8BnY%2Fphotos%2FAU_ZVEHqFr3_pd3kOqfC6tkT4bJFU2mqNaoF-iRcU7TnRditxMqXdwPBLa3XwbmgH7uv4FzAvhH3vbgQsRLKwmc0c0_1A11Iik0XtR-4Ss4Nd0SXdTPyMOAqzJ2it71Oz64ag4zQWWq4nG71_w869AbmGA_Ei9KtAil_K0PIkSCijRidZLV6np30uQ6zOfE1smwsmWnM-_f-DNq-Ql9tHsCJbfYry_RHBFBw4uZ9stVzEfxkIQaFk-lIXhk9eY9R2LXYR7rWw2WHNirBCXtH0MZXHfZNEgdb5-8IX0mmdjaMhpITh3652euQHZlmbBIQWCCDh3To7Jltz0sQBSaAz4k2YWsgCrg8cXUfpwI1ZMJFXR3wnVWUIpSeHdI9QtDw6Bkd2SaW5ycFZs9IaikYMkJWDcZY2jNi1ZBCELl0DyOyqBLe_jzz&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Four Paws Pet Resort VI photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Four Paws Pet Resort VI</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/richmond/" class="back-link">More pet boarding in Richmond</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Four Paws Pet Resort VI?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

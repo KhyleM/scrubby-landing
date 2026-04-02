@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJDdQRtT_hw4kRcuP56o827N0%2Fphotos%2FAU_ZVEF-g2EbPjtaLSXgKlmWSh5JiXPNI_2xMfsUKFBFNYofkFDUrqygwG202BSNRquTEORl_gK0c00UqLHLdoJRQn0BjHI2rKaK-xCyBCLkCo1Fn6Q2Jn7pc3hzMXp1fWT4_Ozt6EPRenE9sAZ9ZuQtCuSR5AP1xXi6Tq1-YljAQ3-S6N1RODpDeMSOceUIxSkEq_zIXj7zLq2Gyia1dgSwhgjV9TJTLbpwgAAUGc6O0X0P4JkNHEN0hAFou7tVg60FMtGmp4bTp5fz0W5gbnRIb7F5T3CrWPKGMOwRwVzL2PmrwCrKxUjLZBU5rtJhJAeBOrj8ywO7w_VsLoz8h3EsBjYuC_s2xCKh7fwRcbgGUMY7Qqk8PBOyhT64zJUUv7X8mxNqRwcSwCtT-Wv5HRhFuS-OBK4PfXH49pSvmow2BN3lCYWgYnvl2jxqFKGA2asT&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Best Friends Pet Hotel photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Best Friends Pet Hotel</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/windsor/" class="back-link">More pet boarding in Windsor</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Best Friends Pet Hotel?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJBzwYBOT1u4oR_Fa-Rjgyhd4%2Fphotos%2FAU_ZVEE4h64qbfgHDxYXtK1--acjxN4hazaSL2Qq0mvlgLHiDq7qe4uDjURheTh2km66YmzElossEnlqEcdQTkhrZQc0jBnNicpDL7x9mrUD2gALitZf05oUAepwvtZlitgyeUIlnwIRIK40t92AED-uCr-tIi5Fr6L4Ng_5sG-qzugMKwAX171xAqGiY1pi9FvtlIrwOk5vihZiwwThIw0OfDz7g_huJNUyIn6C__k6jkc63uJWnfaNg3lYl6n2Im-HX8H9zISIQB7yXH-iEL499JA5LNmha6LpapA9t6TSYVlXxMiD3zTvlFBSZ29hOFv4zUm0pzJjC5HwortCEfoev9InE1mGntskjtQCyDw5TWc-mZlXs-Ut8E1-5WqCn4EOrDiyjq4Y1qPMSiQbGZFEP18Fss1OVOQJDkPKkdk6CNVIMuPrUf3pn05otRkY1fRP&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Paws of Serenity NC, LLC photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Paws of Serenity NC, LLC</h1>
@@ -197,8 +196,9 @@
                     <a href="/groomers/fuquay-varina/" class="back-link">More pet groomers in Fuquay-Varina</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Paws of Serenity NC, LLC?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

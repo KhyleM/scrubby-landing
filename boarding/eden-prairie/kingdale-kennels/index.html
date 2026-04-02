@@ -78,7 +78,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJDz4TVuUh9ocR5AV1O3nAZR4%2Fphotos%2FAU_ZVEHQKakiHE44ZsvpCoXsBzT3ke7X8mo5H8Xpwcce_XocDxNs1ShS6ydrgvl2sYugkkqKr3PnRjVYUMUa1Ng2buf-P0po4FodmY4o9fxCGVVjMQLpyBexq8jg-AOM4z_LWZxAsenlE2Oskg7zEmbfS07gBgPw-ddLHYeg7vuSzNAptXdLUBEzlTIpeaUH8TFfIs3-mNCGtycze9PiLKzMCPm6FbmT1HpyyBN8C98TuJ_Kh5J-QdK22JD_fBSR_I7HSGvXjRYPFWBrSeIN2pD18EwUS20SXqVBN8SoiIcAdJ3bYluUD5FjpCAVSJbRr1iiKR0rR717FC7t0kRTNJMFdOQBSnGR5nmCx4BG2806CRmu7XU0m63dD3RiyaV-sogV42AdXDYTVFK1qOIfEzoV1KUY-C73v2THqElQTIF79qNIow&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Kingdale Kennels photo 2" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Kingdale Kennels</h1>
@@ -192,8 +191,9 @@
                     <a href="/boarding/eden-prairie/" class="back-link">More pet boarding in Eden Prairie</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Kingdale Kennels?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -339,6 +339,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -349,10 +353,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -377,7 +377,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

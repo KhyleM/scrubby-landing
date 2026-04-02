@@ -79,7 +79,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJV1fMwo7H2IcRKKDbHdshbRg%2Fphotos%2FAU_ZVEHJEWE7tBYRuDt1T8lnaxnJ4zSn0JrRCTCptaKwgZePuEaMXQ79FCcjCl6lWpY6AnmO4_Mq2LlkqlgVqiXUmdI4GSdKGKYmih366v2JnMXHP9xKWKUAL2zjozBram2uQvVJJG0qrLDc9BvFu5kkNlgr43LJgYq5C-iN8HffLZbL9Xn43ZpRre_MVpjB0dLmMjTWXaavd5yjn0SuNTZ-buS-SC1kM8SqaAata1TIuw_LawWjyFX7iPRHMeRhQfIt67TmDeKRnGUDf0ZgqgzkspDl2G5djQWYJzR2xL9eiEIKK6EWdHzhE8FVL0J1ObD2waH3s0RlcnZy9QWNeawCyb-aV8fmdSPshUzUyuCCi6BlnQRjB7aKaAp7Ox7VJVyFEUKkoS6HA_y5sj7nPFd_SeB5NNDgBM00oiJAiRGCHHcx6Q&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Oakville Grooming photo 3" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Oakville Grooming</h1>
@@ -196,8 +195,9 @@
                     <a href="/groomers/arnold/" class="back-link">More pet groomers in Arnold</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Oakville Grooming?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -343,6 +343,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -353,10 +357,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -381,7 +381,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

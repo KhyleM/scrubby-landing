@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJobHyHWRT3YgR7bgh2pMlzR8%2Fphotos%2FAU_ZVEERTP3yb6vmvKLO0J5XK0RxHd-lG_q--zGBMEf18mPS9bxGf01VXgNoYi7YGLnsfP9DTc-tBbDjGwZRNqDlJuXNoxAg_JclcvkCFZk-zVXUHmX_w-EM7zXTaUTGkAtYgbFXv-ag_7lCh1U_W6zhXwtkWpE61TZIzX4gUqHV07oToCxE-MGXef4zfVqoMXwLp1vn_B2aHKd2KkfUP5fr_6hB0GzbRz49LzA-h7unPR4pj58R4Ux0C-ssarn1A74TA-F3OoWlUhaX90O7QStTGRbCoOlKJVmjoW-7I6PaaHf5Ng8_Tn815Nu4D5-hTtfk0f2joTYDqX8pOXVRGJKr5hfIw0azk5fLRbtI1UnwiJXof6vfis7GFQ1EmJdQbX_zFUEeEsmqDcbtsB2qE8CKnkBy_NOl-k6L9kRdCbRRJ-71hw&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Dade City Animal Clinic photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Dade City Animal Clinic</h1>
@@ -201,8 +200,9 @@
                     <a href="/vets/dade-city/" class="back-link">More veterinarians in Dade City</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Dade City Animal Clinic?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

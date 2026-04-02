@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJxdCfl46RwokRBIPMSFxTYZY%2Fphotos%2FAU_ZVEGbwMAN1mWj4Oi6-n40YJ-9VIflhbb3TWZG3llsOBcgNpvxfKFkpoLf3pspqLSY1EHUjxRS9w2oUHZ4PS-Jyv5BZDdtgcSd9laAgliz14n4vrtO9l30hQUbRiAjG-4yW8c2tv9Gu7lwCkoGpTTtirKmFJ-1SVWrR3llxaE23MyvvC3nwWQvO7JGAbxw02ysYmVUsqfkiaRTIxxwrRuOhytcTjPKivbMVLy7vVzlbFrzTLvVCQMQoDy--FYKsHfqlxUrXJ4WnkeqjQlKwK4ZvbnMjWX85nK3JwSUQjcam5ecsb3mkEGExK4cxX7FcYuDB6FCWHeULP_1ljZZkqdv3vazJ0m5K1Oe0P0vaPF70EF7k0j8C5Ou1nyTodH3hb8TXsT-4-aGMx9AFEBcS8jJhowQG-pT0zPNK_WnandtrLl6jQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Grooming Tails photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Grooming Tails</h1>
@@ -189,8 +188,9 @@
                     <a href="/groomers/mamaroneck/" class="back-link">More pet groomers in Mamaroneck</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Grooming Tails?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -336,6 +336,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -346,10 +350,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -374,7 +374,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

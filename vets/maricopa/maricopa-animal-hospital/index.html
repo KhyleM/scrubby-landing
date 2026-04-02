@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ_3hUKSvlKocRz44SAqAKU7k%2Fphotos%2FAU_ZVEG6M3i-rc0wxlbdAZm01zi2FDJ6I7kUH28UaIBk78e5dMgJsV49wR6c2Xhrg2oeA999ucrJFB092axudxxvJsLFjB-0wPYylDxG_fRachLnvqyHpjo3DLDSWZn1Yg_PmjSTIOTCOALwt8F1TwJDsKQJrzUPVSyGiNY6EUbz2pcaVokUq_G-zwxKmMURQuwSsT8Q8z6CHPM7jXr6MpuOZo1k9shT0pu_1UgKhE6pPaKiwOaDOSS4kq0_g9SjT6Q6c8kbXeIcJAsajDGAde5DfPP5EFXanq3wHzS_UXUsnW-cCm_6d0X4xLm80SPLcxB7tcrK3t3EL0DZrCcqQ91hkJ8DA-4PYIA2txhh57rdISk6vNrZxLsN2Azk5l0kDHKxsGgF5bl8i1M3Ph3tnDnm8D06nfP4aquYSYDjNIOeJw4&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Maricopa Animal Hospital photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Maricopa Animal Hospital</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/maricopa/" class="back-link">More veterinarians in Maricopa</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Maricopa Animal Hospital?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

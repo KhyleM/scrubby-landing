@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJtfLlyGx9j4ARKgBHWOkSU0w%2Fphotos%2FAU_ZVEG32b0N-XvMrSowTl9gIKVbOzUrkoKdqO7c80FE9MjhzuCvnlhPqw1rNaNhdpNHPQs2H-5h2t-oeI1LZOKOYutCoq20dhPWtlw5kpUbsjK75PTetdDSkZ1oN98tn5Eyv1v_lljmnBg-KAVQU83U4KOibVgc4JbCdmRLZGV6NIGk5_zWL4M84TGaQxsj1J1XUlZ50f3_dIcumsP6nPH8IDQGpctXkQM5jpbrL_YL-seh8TIOsjoDkOmo5eyW1MieJpkvUvzDFuxEEQeR3WZ1CsJVCDIPlzYVavfAxFwVxFSh9XzfQG-9pEW91v2LTZqprw4bfTU9g8gvSYrhn7VRCcXjAUikaQ2Z05YWRXRH8SH87PFTTIJY_NKVo-0HZQVrz01T-lIoQUm4dEOyLeXePEnqL3vNqqk2QErFNYV27yYp8eDBVlEwUmd2KUijoA&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Ruff to Fluff Dog Grooming photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Ruff to Fluff Dog Grooming</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/san-francisco/" class="back-link">More pet groomers in San Francisco</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Ruff to Fluff Dog Grooming?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

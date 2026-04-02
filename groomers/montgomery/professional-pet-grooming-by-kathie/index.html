@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ-erBtnBUQIgRMmrXkl6cPb8%2Fphotos%2FAU_ZVEG71P_rGnnPLTORLLzbPId-_0eT3om41oGJY3LEJi_4BbpXtjnuyGywJLcuWTi0cCuY10VJhK6RFp4x60nGbEPi8jc7wd2C4yord5t9XO9o63RO17rXBZgIqmuTRYfmmjPlU9Ddz86HC1wr0uvnVXnGqBQzSRuLTDD9SBabKE9RtNmXKVj5r_X0zzEsAMFmzkgY-ue4liI0dYWi_zetE7JdsfKzRFXCBxiW0FR-3lcTm9EWzqp94vKR2cEqBhVvU24UWvO3zlKWh-VDwkSDrfbXqoEa4zhYKd8TZZUloRDBenaBjcYNd7JHU3C-p7zFYd6RE0dTEOH550rnDE0B02V92b-yl1BmN_pJiwzp3Jb2bobx28eXUFG3Ylqr97BJMGMKJtPIhqsmmvfjqQu3PI5Uxv9Pc8k1QsDjd3-w53a-zQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Professional Pet Grooming by Kathie photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Professional Pet Grooming by Kathie</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/montgomery/" class="back-link">More pet groomers in Montgomery</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Professional Pet Grooming by Kathie?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJcXlnZalFXIYRouNIWyBV0TU%2Fphotos%2FAU_ZVEEdaZ0HRBwGyttmVYygCljnH1ARRPlhVN1vB0RlRMBk0SzYJASdht8_s3v8hEwsXbhnjvQJetcjwrk54C9oJc9EGPoT6s5oHbBXwDMuegsVHkhc4w0Q0-gJITuY8PC4xPMbuztaN2wQsY9rnv8CkkKJRo43Hxrw_q8yGT11pU8IqFHVx9nzG5jzerdFnb3oIpUncunoT7wIXC3Nu0D2WrlHa5_ESaC5uHkFIUt0yj3F8nOQQYiAc_eIMJpRB5Fp-8nYrH2LmFB4QS4YZZEQMQBJruc3Fy1r9Er5PuN43qegQ4lhIdAR8R2jsrh6yEFFATRAHKsRRNZfdFjk8UHT2otZ43dnxnR6hKM6Tg7ZfjOOLxByYWDUZbLDlwaJYxShMQKL91j2XCVpnQ2nDE9VIgbeNaGfUbLk_3UHlyS5QCmFNnhc00XNp0L0s8DZkXec&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Ashleys Country Pup Dog Grooming ( Lucky Ranch ) photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Ashleys Country Pup Dog Grooming ( Lucky Ranch )</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/san-antonio/" class="back-link">More pet groomers in San Antonio</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Ashleys Country Pup Dog Grooming ( Lucky Ranch )?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

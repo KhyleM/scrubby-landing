@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJl9aQejHfx4kRgMNaqd8m1ro%2Fphotos%2FAU_ZVEEDllbyK303JZSBwgHCH2B0yyHAXNBxQH3LJ2kL0M9QhYjFEzGqHzLNO28Mk80efJV25WUZxtcpZR-Aj6-6OUt067mnaU4MtOVXcRh2y-ocRC7LVMpt3oWxML5svXI2qzZxSFG3A4EUwf8jZiI9lCz0Rh1DTT83gvPQzG_DFydg2bDPpWKUT4z3Ka28Hqy862BLZLm_MWdZXZ0aWG7F-FQiEpGa5-jDEtSf7u_hPBassOCtH2aCH5in1zZdHAWsqWMcb5GXvuijbI6g71Ic-hsmcDNjr7iNkB40xHD0YuqFQw&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Polite Pooches Positive Dog Training photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Polite Pooches Positive Dog Training</h1>
@@ -194,8 +193,9 @@
                     <a href="/training/forest-hill/" class="back-link">More dog trainers in Forest Hill</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Polite Pooches Positive Dog Training?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -341,6 +341,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -351,10 +355,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -379,7 +379,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJgcYRWbbZsIkRKHqYfEkrE6k%2Fphotos%2FAU_ZVEFeYf_WX3RUyMM0fBCvPOPDJsjYm-K6Db_IwVciMbucxlrooS6hcA4iVjaWjcSTxTbQQ5IPtoqybb4UEb_ZKBW71oOyKeR_hxRYm3xF0N1rCw9c7SZ4aPBrKdIpo4-Eyz6XLUwDFuAOhh88HwbMezuYXOgq2PeKP2mTNGre1wGoDCkSKPyz25Trx8pA3DdFeA4lg4WUl8VpzH-7gxe_aAp3Dy9efrQ24v9rmr5hQgJ9GQ2UJYypjH1w1-n4A3KRq7ju7WkPV47loQ4Qf9RRBggrT7fUswL8Qhx0KLB8P_Lu8tBuT9CyPsOa3JGLEZ2HYeaFKfILnxrdm78_C-7KCcr6hbtXrzGrkIByVPAs8A-vfsHaVs6opDfN8L_ul0_MR8IHnwgcoMO80fUpw8VwTfdP5v8Hcq81GXT3krSlyzA9qdgAhf0CtsKmhvLxdUJA&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Furry Godmother Pet Spa LLC photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Furry Godmother Pet Spa LLC</h1>
@@ -199,8 +198,9 @@
                     <a href="/boarding/king-william/" class="back-link">More pet boarding in King William</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Furry Godmother Pet Spa LLC?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -346,6 +346,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -356,10 +360,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -384,7 +384,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

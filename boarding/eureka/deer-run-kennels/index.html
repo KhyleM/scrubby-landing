@@ -77,7 +77,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJD3qU-Dkm2YcRFQ0_XnBPPuQ%2Fphotos%2FAU_ZVEGk4_OYhHokkc6hb3nfcjPI6pn_jkL1Q_eZ5t0FFYZ_Dd3nuQfg9zK1Ewvya0mGZAycDlUEZ-LuNolceVEan9pfiRLnKB-GVZsF3ec0D8tNS5vRvL2KWYZvg5t_tfQ54uVD-rGDIfm6sORdtySQGCssdq2TDJow0Z7MvmfBRgRDSAdceLrA9BfcL0swlFTclY4mQIrSefZmzsasEc2nxYgXCtE99154QNoa91n9v12wCQmJjgPPfTAje9wCZ_YNrH5LxEGOvBD1ZaV9ACBTZlsOer1EuG-iVcNvPVjI_9aGwg&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Deer Run Kennels" loading="eager" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Deer Run Kennels</h1>
@@ -188,8 +187,9 @@
                     <a href="/boarding/eureka/" class="back-link">More pet boarding in Eureka</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Deer Run Kennels?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -335,6 +335,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -345,10 +349,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -373,7 +373,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

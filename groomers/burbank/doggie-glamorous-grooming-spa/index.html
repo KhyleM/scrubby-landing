@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJBTPMQTeVwoARoYrlxyCihyw%2Fphotos%2FAU_ZVEG0tWe_JdDLmCdjqZlH46gXkS7tE7OBwit7LbUxnJ7_N9qIEggTk7RqI_5n3R-I8SnPLDbPoEUfSeK4UL4shjh6N-sSwK-nC9ihiEPdRsUJjL-9j6339U82N8TtYb2gCqZEkUTkldM99Lil4vWzr7VmpG8Et6bfYGMmtoepBW91um2PmhdhTczEDr0elAR0U9zi8RzXwUrAPSH8yJyPLCTtlTNrmG2gsi6ROmafduw3po2JUloCKmTLchxFxTb7NpymMV-XE0jDUQB_9olq_if9DRZZrUZG4bwFeXKHKx13CynTmQ25KbB249vVSBDXNM5lmIzkR-9q1Xn9sqsdD43i5R8M_zCjvw2l5qcKW0eOjDuP74cYanqNRwAwlpSxlxFhF2nQ19BMxqfyFGlnVdaGBrRB3yY3JVn5x6DhJaMGUW_CU8Y22FFVv6zpHw&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Doggie Glamorous Grooming Spa photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Doggie Glamorous Grooming Spa</h1>
@@ -197,8 +196,9 @@
                     <a href="/groomers/burbank/" class="back-link">More pet groomers in Burbank</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Doggie Glamorous Grooming Spa?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

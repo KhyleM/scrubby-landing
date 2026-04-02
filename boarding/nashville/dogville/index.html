@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ0ddeiwlvZIgRU87gFY-TLpk%2Fphotos%2FAU_ZVEGvNAzrG_i1DkAUpEeHSkRkBX2CL2JW8RI5oTOaZyTqFoK1r1CRfiLRRjy8QbU4_xYsuXbM6HcTe6um3GUOUceQEG6fDmfG9U9FybqPM3AeX_pK_zaqr8R07NiH8ZQSWnR8gyignpcFAuHxbi38cbScJmWKlJuIZb1xInInqtLufqE_FevcMBhRThu3MgEnj2rzMlL9cidhM02kGqWbGJZFc6TWN7aQOs8Aa5rHwL5dkoZYS0dYAUFvu0rizgGG0yM2Gb5prrriZhUwPiZtkF3gTT49xZm5zytPASDNCwNM78BHmTOUA4CBC746ofZTqv5UQmf9m8kGnUYX9Cv9KxlGJFRX64OqtK4b5NfwO3rAafSS-ges4P9-x5V-uIVKX-wINa7h9J8vEuA4KO0lO54EYE54TGfF8ZZJvk3GHLhAY3-U7S_eT5XQL1l6tyvU&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Dogville photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Dogville</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/nashville/" class="back-link">More pet boarding in Nashville</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Dogville?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

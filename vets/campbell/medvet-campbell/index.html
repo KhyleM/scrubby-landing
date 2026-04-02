@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ4fy_Lh01joARTii_O04he58%2Fphotos%2FAU_ZVEFvLGTAv4zW6y8-fdijYsfbLr4sySMiWX0lp9JXwXxnEnxxNiJL-ZJkUCV2ospK3PVqSmHdCCPzvaE2jycWDaEZ_sV64If3pVLlIjOKyTHka3NpMKqFMumtdYC5PHPUYyrf2v0lJEvL2Ak7kn3_TtkhycIbNX8p_t9pOYdxb6yi0hjdE_qeg0PTDzQjBKEFvfQ6_EyZfjcwk5B242dlBq5tM73pJ9HeGX5WGTKBgObgsn3b7VreO1qeyQcnJsgvSv9LWkPL2MToWTtzaAPsAGRF5WAZe5VSDd5jjGy-uPkmXtggokfC2gfUS9hW8WaftwJu1JerrbCQzk-QsLLUdyHj7YcpFwbKchAd2ar55k9_0CmDnuX_qq4LcoN2QKLNAPad2bQi75DcpeLX9xZ13IxW3fVMfDiVb-9UJtVW1xvyyw&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="MedVet Campbell photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>MedVet Campbell</h1>
@@ -201,8 +200,9 @@
                     <a href="/vets/campbell/" class="back-link">More veterinarians in Campbell</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of MedVet Campbell?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

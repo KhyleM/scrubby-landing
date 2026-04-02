@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJnxRxs_RgDogR7xT2r-pv20U%2Fphotos%2FAU_ZVEEHDc-hibqmNyO3sMeDu9W4LrJSqhtUG9vSsM_Wj785FYCJYbuq8r_z3LptkoAEG0fTXM3DNSQTrdi442HP19kWGw73pHl0fp_db0Ui6rBR7CocJ78BnG5364qSE_xK6KYUIKwAwdX_VvT9nVO55sRsR5AGq0P3H7p2u3qk1MwxqYb2AGNfzUn-rej70thh_iBy3Bh3i-_GMfcbKQMZtsYJiRjhcK_jAnaFemxBNuwDmMhcjk3Pk6S9doJGYLMCXOLDbRV19pd9Z-gKXinJBIYEIC61lw0qK20UrogLbqHTfHTjbdd6iW8RU17TCM3xDfYF1mIxCg0YxYEBmA3nxWtm9L5wc8qbF4VJx9bHyy8OEKRVp_1_Ss760Qy332G9JmtsKUsaBaeKt0S7HFlx235xD4SsBGqzbs4ljG0ooPhtN_TZRH5m5kH05bi1yQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Crest Hill Cat and Dog photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Crest Hill Cat and Dog</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/crest-hill/" class="back-link">More veterinarians in Crest Hill</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Crest Hill Cat and Dog?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

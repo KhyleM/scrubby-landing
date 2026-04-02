@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJlyD9AyuBbIcRploRvlOZepM%2Fphotos%2FAU_ZVEHhsXSO60yP3koAlBh-diym25TRCYO1dK7ct7_sJJCwUKvffSj5zDUl7XXEON8_f8Br8rr5Vz2UdK6K9QXI-A-8ZAON673SJwYYJ18KTz2sVBQLe8JQ5FSdpWFbJsRY6jPRRMeLTKyCXCIobdepK6qkp6n8HxfSdPEXU3tDhDeM3lgngyfV5xx_DQKe3b0Abwq4NpMVdTuW02h7g-uVL_d-BwGpPlqprLo_o6QGZWMJLho4N8XueGV7A3N2wheG3qwfWX19wR52y35LH26zzHhjTmhSaBAjp4y9W00Go8nmHHSu_m3WGn7sSaqYSDrDvy4t0qtcFG7QqqxQO2IY_Ql_Oye4pPvXtHnykxx73IH5FG_Hn8dK99K43HH4JnmleOl1MupYQtI1wVNJftfzDVsEJrvU5yYRkZFqaGe9TnozdtEW7xkEtWkybpM4zxgP&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Canine Coach Academy photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Canine Coach Academy</h1>
@@ -197,8 +196,9 @@
                     <a href="/training/centennial/" class="back-link">More dog trainers in Centennial</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Canine Coach Academy?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

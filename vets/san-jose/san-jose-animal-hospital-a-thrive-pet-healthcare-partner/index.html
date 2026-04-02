@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ5SwgwGPMj4ARUQfU3t6VVwA%2Fphotos%2FAU_ZVEHx6nMkzNykdPzFe-t4bmZAqsxW5qJ-H_Ceid14vpylCH4-W92OPJeVGPnGHm5CYa_Kkmzlsv7nS8YZUAvsdfZ8uuGO2U7W3LbPzGLPcCYhPF5vHh8ARg7LTfTeXLu3O__OxzQhwXL2rxMwrWX4N6WAYAXeLZWN8YDC2e__xMD3e-78TtzJqij6iG9MtoIH_p8xGvF8J3DsAp3rGWhn9_SsHBAnj04ALz9JCvZCEeX05CwcxziRq1p4EED4lUnV5pDTr9GmP3lg_yYddxNxVWGZAM3bVsNT6aO46PMjyJ_JJWM3XlxEDD4ANv8T_9dqB4uftm-4qS_K5Tf45oLAZOtyv8R7FrbMsO-vOtdY7iHUMAAYKrlzeSCddsm-7RHnco7pGEjzC8f78ubdW5DZeDJJHgVui0co1kJggNBwak70ny1V&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="San Jose Animal Hospital, A Thrive Pet Healthcare Partner photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>San Jose Animal Hospital, A Thrive Pet Healthcare Partner</h1>
@@ -205,8 +204,9 @@
                     <a href="/vets/san-jose/" class="back-link">More veterinarians in San Jose</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of San Jose Animal Hospital, A Thrive Pet Healthcare Partner?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -352,6 +352,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -362,10 +366,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -390,7 +390,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

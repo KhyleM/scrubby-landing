@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJT6nhalWfj4ARAWaqLYLn6FI%2Fphotos%2FAU_ZVEH-ElLRP6083gqmT1vdQAC1TtE466umcKPU3_Bc4VzW54lfsteHYvgenx86EQakEN48Ezm-CKPcpfMWVPqsWoVJtbDfRrR5CK_CEQS9JDkTYZmYW37JPju2KnC5Rzph1KHyU4o6jRn2581nVFY7E0babEesvrLjFB6qBLgvAEFHwXqdxJc9Az4kycG_uuQsiiSY8WBpEFgb4utd7tw1BsnsfIuY6zzvkKvlAd99k2ZW33elx0TmHkObIrGP9dpCkgLII-Pmf-dPhayIWAstPAcVZdX1D7oHthk199xgepIhlV7P5ja_kmoemKnYblDmR5LBwSB3IFrSjK8nle30eTJ3j6DXS3d2VfCt1fqOLG1w1BaDtJ-1YFuCs0w5DfmWgTf5MUm78CaXV50dZgraUuYBZuvCX_0JD-CDjma5nMGmgg&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Smilin Dogs photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Smilin Dogs</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/san-carlos/" class="back-link">More pet boarding in San Carlos</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Smilin Dogs?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

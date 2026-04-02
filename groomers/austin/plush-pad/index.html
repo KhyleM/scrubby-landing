@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJwx_V_KbLRIYRW4Vf49TCH-I%2Fphotos%2FAU_ZVEHfUHrar-xDe02swMPGFvfGxgB6cSbW11Rv8-2r_jpEQkCMUZ6REVV1ZJKu9HRg3GTB8ckk8edq8DM2tW1rA0gzxHgbgtnJVMSYi1K1jPEL6LsD0RSCp0JQqYx0ftqTsSet0Y29ryu2em931yu2ALT4b4irZc6QnEgenQhSoH1FbfnDDILn3XNWhCHE2YVN558bxgcu6moSr1eUXsAa2gMMgJ4I7VBdFeUMpHtBrKOK3G9FxlAa5xp1E_CaD1af090sAuXuqJOaYaoCbxKZxaj-4RpNWRZ1zy1TjPxDTjDmjgZ0HOflXk6IJ3UlYB2pwmXoulnZ3p5vpCdsvsKO5IBUox14DwzlabP9ff8g4-Rkx-TvxBOaqUPPus-Vcctpn3i6jG2qi_h6z_2r-Fu5dKa8wFbIM2xuQQGk7Lz-sE1m0zH2w7VDY23TubNyDRdY&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Plush Pad photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Plush Pad</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/austin/" class="back-link">More pet groomers in Austin</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Plush Pad?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

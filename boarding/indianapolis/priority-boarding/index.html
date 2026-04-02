@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJR3OhwtSnbIgRhLwvqr9KCyw%2Fphotos%2FAU_ZVEGusFPhmgYD6GiA-u2B9lk03BNgzM7VALNR8zbQZmEDKDaLGovzHxJJG8j3bd6SgDIUw66j_JwRTeQJoSrSD0hLXQJyoPFvOSERYXFOzug7zaZ_nGIQ6Vz-c__yx5e6A4bpGkf7T7-pgBfuwHdWO4O2rUuWvLDytda6zNFwanu9jrml0jiU98A9POyJKsmeRDs5kGKS1txciesAh22xZF3n5NyveS_O02vC5BabxNpQoBF93MHPbjMC0WDugQNRY9eqt3WfZ1W6BZET6gHOz198e7zZlf5xrha1QQS15BrGH9p6c_gjaGsMO0aWZn04D1T4pZbz6Q94v9ayiz7HP2PJDFdqor5M9VwUFh-4fLCnQWYxmr1FjwjwJ8NGdmSczUnYd_jbwu1Iuztbd_G-f68SRyb6CWEy6bIoG0gR716I1zas&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Priority Boarding photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Priority Boarding</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/indianapolis/" class="back-link">More pet boarding in Indianapolis</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Priority Boarding?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

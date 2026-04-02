@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJoctkr3m1woAR2Z9BY7zGYpM%2Fphotos%2FAU_ZVEH_PZIQt7G0_X_Tv6o5ykY6CcuTFWZUAxYMiF0pW-ALAkHFZHK7UbuXLwAH5hI5CdF6L4DDA_jM9JnQkGr84NKrkRMNTV70JO_i9B377HUWxy-_XsxzKN_Czt_rq09VZfslNk7OjxcEYs9slQCXHNWQPfrm6ePWEgUe69ACKo41ZTXJvLWerhoxhsEUsacdYp2ZwLxMdcaVuyl_vVKmH3JKV5Cx6RpCaOtSXiIH4oN-jykUoFwJnKb-qxSWaF4V9YYaPf9XNr5w_JNm-w7PuOzyDOvAUCp681QxcRrYkwqrXORhgk3QuRm5CGrV8bZyXe64t7CV4t6916c3EXgiZVcefNrsDCQaXWuEqYiqIDbPWehj425Hk1WasBt1UUou1wP7d5-8wgQOVl3LR6TvWHBS3YxkBTB0fZrkE68U7wtS-Sw&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="South Bay Veterinary Care ( Veterinary Hospital ) photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>South Bay Veterinary Care ( Veterinary Hospital )</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/gardena/" class="back-link">More veterinarians in Gardena</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of South Bay Veterinary Care ( Veterinary Hospital )?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

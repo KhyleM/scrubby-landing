@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ6fXt8avTRIYRBTbrqYQD1V8%2Fphotos%2FAU_ZVEE3FMFavlQhsfnDi1mtXCUiUaVLrq_f_R5LIL6Tc06uq1j4uyq7vjntghZCwfWeV-bSrj69KaWvv0U07twWhqTNs4FcqIoUytwJ6N-TqYjisZTzBriNF1BeXcd3FCUAgNmBhQianwT9axYu5UYhPfSv0Q58icCxFKPyMpQ66NnDm9GhNZ6j8jxit6SzKlEIRNFEbHpyJ9ugT-NdH7wH6HiVNMVFajpydKXR-e-stVdNlWsAD1l3dZim2jeynD_MQDavy-WgdyTEVaj_yM8YofCRo54h3tGLXvwUZXJ7yHtuBSG0Ya8AHO08oSC3eqWD3yxsuo-MpOYS_LuL5Ss3i41rkJOQLT7N1QNTGyQMczpbDtKHKcc_YywZPQ0zDKtBXKImfTnExmNXKp01xYF891kjeqhrFi2EWuNadL2dwPk&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Shady Acres Pet Ranch photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Shady Acres Pet Ranch</h1>
@@ -199,8 +198,9 @@
                     <a href="/boarding/round-rock/" class="back-link">More pet boarding in Round Rock</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Shady Acres Pet Ranch?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -346,6 +346,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -356,10 +360,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -384,7 +384,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

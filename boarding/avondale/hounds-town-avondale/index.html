@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJC8zcayg_K4cRsptnUFg79hI%2Fphotos%2FAU_ZVEHM4Bxf8_9cgWJ2HCvNV8XEUCJCEdzqQjCtlTOZD_yFnV0r2TfDDAX0rsIJ9gTJw05LaV1KepvDe3aa_hiPM-pdJP2YvFt2oAwzbVs5-8724CLKCKbSv0I9oGArjWncuoTbcDKD1myRXxNz8bR_JR18SztHpuX5B0_7gK_U824amZVFbJzATmkcj1_36ABHsXxuSPQY1qHGq3DgXonIobNo8SU-v3-lJZCu0YHDFCTgRawatVQ6Nq-LGpQOYNnAtQofm4yukrJhdbIP9uBAMh0UXGQUFWo3LS9VqmAVMddS9WbzjsxJvZsPnbRcvohHFQhAZ8iZohSrxktrjJ58BMCr4SlK0o_D-ahNZNUtN68CoP8ZdKwYznlXkzd4w3rqvmDpzZsxil_Y6wcMwXoG_JHn67cbzDaI5KVp3sV9edt53PlUnArRW0XKldIoUw&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Hounds Town - Avondale photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Hounds Town - Avondale</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/avondale/" class="back-link">More pet boarding in Avondale</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Hounds Town - Avondale?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

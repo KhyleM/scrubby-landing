@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJvxixr3EyVUARhGxnDcXoqsQ%2Fphotos%2FAU_ZVEEHndUcam3MPYNlq5WR_N32M_IHUyt-N0EsrWWVhTd3I3gkMXAoZz9IwI1At3Qke_wUA7EqE9_2PWI8W1tlKNIhqjWprmepZupOTc3FUugPqhfa7hn4IP_D_XBZ90mOWdxMEKInmcXYxrVQ2M5ppaJOuII9ISeYLFSJkR-2MtVwwy7c-Af5yxokdnkc9bFGy3rNtu-2zvMfEXg1zMyy4-tJxH3j70D_Rgxsk0IPKC0RVJATZ2yrtK3yNt9vS0HceXOfJeBzUjxCMP7vL9VFD93xEBVcYJ4gxpEVkT7LztjnJSVk2DH_8Jzqdyjgt05NwVgaxIhIff-zush7JUFR-qBDFNXaDEfoFx__JkSjpS5HyU-3ZyxN31FOU7B3ZKavP0JhxXAoPKa9PG4kZ03iDBjHHJwPuScFaTfAgzNpP4c&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Mt. Hood Pet Medical photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Mt. Hood Pet Medical</h1>
@@ -201,8 +200,9 @@
                     <a href="/vets/gresham/" class="back-link">More veterinarians in Gresham</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Mt. Hood Pet Medical?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

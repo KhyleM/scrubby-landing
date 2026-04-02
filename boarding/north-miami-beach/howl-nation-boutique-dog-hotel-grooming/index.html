@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJu4LKAxSt2YgRPEyj5nEplnY%2Fphotos%2FAU_ZVEG_xxPlJsyURO3bPxJttgxE2ZXPE5bH5t_mgOTM6-y9T7gs8H9aKYGJ49iijvSYzc-apldfKw2vFC3uuGiiB5Wlf3D2fwqQYofSdmeLSmCvpSqacmBHFSs1jA-WAsfvHV-mcHlQseVFybZJyH20hHDDnfGaU3RPZXwUqd6Y1Kd4EE0XVLGl25y_abtPKofCHBU3hmO7Lor8DVf6aoLxtpGZ7bfpw7E1udj1yGwBVRI8PJt2Ysf4lr-Vfh8mX99VP2R6Bk6_Y4fJp78W4yM1GcsEKL-zSQ7oJh__piH0ZNEI56Rnw95TJbQbS5UEKCUJlZSpatmJgFWx6onBlvv0KOYhe_srn9J5iIcudHwhj1yTcXyJG0jYJDLZ8S0s-3pM3ET6L7Aez3ZSgi60o7tB8I6-M8c3S_GkpaV5jyyvL5TR7IHf7p1B-etdW_ckxQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Howl Nation Boutique Dog Hotel &amp; Grooming photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Howl Nation Boutique Dog Hotel &amp; Grooming</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/north-miami-beach/" class="back-link">More pet boarding in North Miami Beach</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Howl Nation Boutique Dog Hotel &amp; Grooming?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

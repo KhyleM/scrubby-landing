@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJRYzTnkZM2YARdU0x9MbjjPE%2Fphotos%2FAU_ZVEEf5zBDzPUAt7ujZpND-zt8nxnGqZUUK2KOC180RAqxT8RgWBh9Ob7Gjk4M__Aawd78u99b9TZ2d7Y0TBgh7v0UWsfWWhbT_d6aCVXDUMy-bRUUPTUuHU8kS2Vr4LpmHyw_CBeXFnNy4T2okKqdoh6l0oeGnhicz5-A6xYerGNNvuil5nPpodRu1ah72yTxswYnFninvi5I-tcV1i_PTeoqg24ElnbpX_Dc13mLrfQMWfIsTKWnqSBxwENwV3XqV9WbqFVDKsrE6en_0-cEUrZtGMF0dgGD7SL537DLVBEuKvXaLAvl_APMjrXfrPa18semRyvb3C_MAMTjTR6bZJUBaNc8sEmBtiMwrsMBnJa3pCtX9lT1NBkocZYFrT21WDipmSsCO-JlLh-ZQ3pH5NpUVfg2hwJGMHsL_vyaJHic8JkC&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Imperial Beach Pet Hospital &amp; Urgent Care photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Imperial Beach Pet Hospital &amp; Urgent Care</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/imperial-beach/" class="back-link">More veterinarians in Imperial Beach</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Imperial Beach Pet Hospital &amp; Urgent Care?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

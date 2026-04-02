@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJaQ2oMdK6woARLuk4rT1oF_U%2Fphotos%2FAU_ZVEHfI_BdnL4hItG838A_DMsDUMPfN1DyqxyWatxWFONndY4zVV7s-tM9Ju9jE_ERrBrxoSx-TeeoOcMFWJiWNiA_NxOp8qBPN9i1unMvs6WB8SYMXpB13JsLZDyzIzN_i1mY3yQp772JZiDE3mgYcruQM9_UCL-KkGbwQPPf-gl3nu_aL2BX7Iyf1Odr20h1Y9REN0MWbvZyTKTtITruQGFFRrS3ND6LYcZ8jVbwAtd502PU_CRWVbKXgySDMDboXWMrKD15H1UGtJpmC2McrouWMzdqfVHXdtHxTfNEdyZsPcYhQBqGbpA6nPDrH4ngCKdVxkry0ZjwUDyGIiwI17Sz8UirtBva0vVrDz6vTzJwfcl92tJTfj4q6Zu8j8e_07ZhWzfFhxmC1WYQ4s0p7QgqyDkMwXHqNhDxMaBNkIJ6UL9krCUzDMecGXG25odp&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Animal Wellness Centers photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Animal Wellness Centers</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/marina-del-rey/" class="back-link">More veterinarians in Marina Del Rey</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Animal Wellness Centers?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJzZzTMWNDW4YRhP5Z6VAlDZw%2Fphotos%2FAU_ZVEH6UrNgtsm__owTQueI2qxK5LE2e-gjKh57qd0tKqbwzdX2ewlYp93pgbw-U66EYryeIVhe5A-8DsBPDq4mY1oKlor3iIX4bulSqgwb3wP6Ghc1XXMoVTa0CohpSQt5IXN9BadiSbepRpMhRTpHTkY9u9OViwiTJzxJMHY05g7ic9PADwiDYEIELm3PbjLawevThcHC38fyqsdLkPBs5olbibYLWnOW5CEQM1T0NcuTzrSGzJzYvJ0rRkejh8-aPEN-bWDPI_SDrPM1FTEgxNvLCp4heF_SoRSHjdNYS7qgy8wr7bzRI3nOHmMyMSYTOMJVAcQJq22AnvJHjL_xe9YHVEoItqZ_BUoQLxX9AgRZK9EiRixAtfGiC5Y3-NVb52St1ziiYuossTcxEzD8Cl4s5hmuJ8U93FGFG3KKUCrEenbZ2L7xtFg6V77x5qLl&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Dripping Springs Pet Ranch photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Dripping Springs Pet Ranch</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/dripping-springs/" class="back-link">More pet boarding in Dripping Springs</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Dripping Springs Pet Ranch?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

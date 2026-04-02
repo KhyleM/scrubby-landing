@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJtQKdhceSwokRmbR1ozo8YXQ%2Fphotos%2FAU_ZVEHbKy3K2WnOX7FCX6E1Fy00KZ0raKDH42HC9CCdzaJBAbDNtCULCHO_OnFdQoLDNwt-Pbis_zegokHXvCWchKDMZ8SFTyd45xa9C6OgJFAx4SiF0qsxal_JbXmPt-2YhGBipO1ykwy9ZCyBY5toQezokoxMT626aWQtAy3YzgeE1X1D3wc_7NkVLUgxE3QziDakIgr9TA9q9yaFtuTAS39u7l6xRQ0H7dU0_B8zIobJjK-OomXg1AeRJ8V7qBw1l-AKGfDAvnqb3g1FQ66thUx71zYtnuxq2F2aqwSEY4F0R7rxBDcfaKdaGGFGiM-BqVCJbc8r9hl5NxoVrfZF1Q2FpD2brGF7nksS7K-2JFFmEM4WPfAXh3es0UVcSVfTXljeS9SWJea4eXoTDdEy4rFoaT3f__8xYmT_C4D1OcWbxg&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Tuckahoe Animal Hospital &amp; Pet Center photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Tuckahoe Animal Hospital &amp; Pet Center</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/tuckahoe/" class="back-link">More veterinarians in Tuckahoe</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Tuckahoe Animal Hospital &amp; Pet Center?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

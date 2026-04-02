@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ4V5i9-eqkVQRBYPxMcHNg4g%2Fphotos%2FAU_ZVEGgndzABsGggErmdDbfYszsmBq5nOx7jqWTxKpaP36OGbH0ATsGJOPLPfBmApVkH_22M0Zl8vFZl0niHZy9n7ys7_hNjQrxDvhlV0bTbHQ3VU2pjb-P7MVuytMHz6LOMwa33WEDSNikbmWxmplMjEDHMlSYZHL0ZoB2khTmCZTmNFzkD_8A-oipjHYWfMCbt4LbccpHaHFTQ_dVCWJDhMM1zoHugM48pR341Qds3r_vsSDHgwcBb51jndFM553W2Du2iDJKzvwuqzYjYwB_7F3mlY9KKzDASrJaNcop2J2RtQVlrHiVcIsIMUw4lr7YqJ6nj1jd5-OaBUGrwrGgGEbFwV7sdSRX3Z4BTM8z-BnQaV_5Fnv1aSKUeIIXu57UID850KxbiiM4JJxH5wAi7PoJg0ph0zP6AbHreNoJBQ38Fqvb4u2Grk1Xy00_VpIX&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Fircrest Veterinary Hospital photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Fircrest Veterinary Hospital</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/university-place/" class="back-link">More veterinarians in University Place</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Fircrest Veterinary Hospital?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

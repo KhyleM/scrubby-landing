@@ -78,7 +78,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJZdy1GmGXwokRcsUr-2p6by8%2Fphotos%2FAU_ZVEGOTH6HNzGCJlwxGEaVq7SVc5wEnSblzNeTynyIepuJ_pTId5I1V-2n_c5avvRaDsJhudtqBLkJyy4EyO7h7XY4r3CoLtc3q9YFO7-EFMw_jN7kIbASh_sXJfU4zHHGh2DJCvluEYTf5Bm2t7yzonxpqmSo3PzN7VfoTHbeNzmLQNTZYoaAbDV4iQM9zpi5FjS21EP7vSGWdZ76KsPcfy3nP4N6zlEql6wHgpBRzMh5cK-GXSXypxlFwPLoQYaHm1tbQfPFQMs8iKdxmZxml9hwPVvPSE0czqbhFEB4T7Zz_zMChtD_lMyJyDHeGBDXo3py4DEBKXSxWb69riA-pSGvUP3vFTkQ8kjURTfsS_PZJdisnyh2w-PjXjs65OfdS0SYpZWuwpwiPB4hfZGZu8Nmchyzf-9vP1-XJFjC7r4&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Port Chester Animal Hospital photo 2" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Port Chester Animal Hospital</h1>
@@ -194,8 +193,9 @@
                     <a href="/vets/port-chester/" class="back-link">More veterinarians in Port Chester</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Port Chester Animal Hospital?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -341,6 +341,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -351,10 +355,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -379,7 +379,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

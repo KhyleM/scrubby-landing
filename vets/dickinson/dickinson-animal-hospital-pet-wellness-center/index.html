@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJU4D_z0qCQIYROvMgiEgFPyk%2Fphotos%2FAU_ZVEEregrBbwMS1PXsPWq8pwyh2BLCyFbfPKtnuOPrQ-vqvJT0yFHsGCbFFiJswbaSj9y2fxwRGiUo8kKktyRtwBS51A5haFcEcbCm5hFa8n_GnF3CHhln7-xtlGrwRBXNJdI61s7ak_eptR9FqXzwsTQTXQ7sx_XOjxLhmVOBhaPbCIvjTLJuoae6kiMKTnSt89PthHlyMUEPQHHbwrb1XmFYoOJU-i0Iays_kkgP4JKSBngD-QTJ-p7nWH9uyPiEj29noQf13hRSR0KbV2MZ2gLeKFQTCpj5v0XXKI5MZOrBPvFukj29867RfBqmstLOJzChao6-3v7A95CUy61l0QNz9xVJZOAKHi98pCbJNpYzgaW6-tDEgvN9zQuCHFHIkOsKZxqKYMkjXJUmH9734nYYoBZVFQWYcuajBOqn-80XoM2D&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Dickinson Animal Hospital &amp; Pet Wellness Center photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Dickinson Animal Hospital &amp; Pet Wellness Center</h1>
@@ -201,8 +200,9 @@
                     <a href="/vets/dickinson/" class="back-link">More veterinarians in Dickinson</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Dickinson Animal Hospital &amp; Pet Wellness Center?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

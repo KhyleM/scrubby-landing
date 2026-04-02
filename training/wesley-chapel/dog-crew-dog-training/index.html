@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJAR6MZ1HgiooRXU-cQ16_Cuw%2Fphotos%2FAU_ZVEGXpEtGmS9Sf_ya2BT6ztONs0gYJywkqRjhBRs1SwQQEoQilyfUuU1c2Leq_zCHWm83mdcrrozaRicyddupFRhXXca0mKaDWBisiTNvndGnZZfonbsBUmDjSMmWNLmOqU7WUnN6-NjARa9ZwmytOeGh6RjVNI2MnxWgdEUX_OxYJiv01_iU3c_ERynY9ZZqenew7fF31hybVfYZHAcoh04sFxhDzXDAeQGW_jjVl6Q91R2itPGAcZ3sZk2Kyng-p-XwAQ9CeauFvvDwRjw6U9xEpcFTkhbwLYrw95snOrW-p7CQ4Dj-X5WdFnYFsG0DcX_wjWsmpPg5G6cBjkxDcn92frzuqTc2o4_pcta-bqAmY2wkHCuPnl9k6XrUxqxK4YKnlWRQUVpUVL9LIpD963e5IeBi3mHmYlmgaLd5CJafWfyg4UQI3taYIK_5rjAI&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Dog Crew | Dog Training photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Dog Crew | Dog Training</h1>
@@ -197,8 +196,9 @@
                     <a href="/training/wesley-chapel/" class="back-link">More dog trainers in Wesley Chapel</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Dog Crew | Dog Training?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

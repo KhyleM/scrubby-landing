@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJBRujUH7zQIYRZxqUMA7Ro94%2Fphotos%2FAU_ZVEGgMWbQavY_KGcyYqdW0VyKco9IojVNyqGa9wvHHHAaiDX8WU99_2Xqdab6-bcnCmc5B3FcA32I-ZP0VQV9_9E3lvS8lJx-XtItxOyrmsvm6byaVmRoUmYrpTyVTpuV8gwIQrqs-arH7tLNGs5fSjgujE-fzuHiHp02H9rp4dTP_aAMZaPt_dtLNzzg4ZOYcI8-RYF36CMD_nWNTNy_7HDZKonGBsJy907Utx5sWIZJXnOUqjjgklX5V85QLc915SKG6g_PqSwn0ZoQej1HsYE5Z7Snbxl0qTbph3REMMrvuA&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Furever Friends Care Dazz photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Furever Friends Care Dazz</h1>
@@ -197,8 +196,9 @@
                     <a href="/groomers/rosharon/" class="back-link">More pet groomers in Rosharon</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Furever Friends Care Dazz?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

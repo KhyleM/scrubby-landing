@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJf6YGi4NylVQRi_NF-ne6lic%2Fphotos%2FAU_ZVEFm6XsDIbNj8ZHunl7dmKb-zxirAxTeTuPDKLjuJTEAnXy6tEJIIyWwhejzmJeY-AU-wxjZ9HQC5CpDeOc234W5VStT3omhksqyF_ruDuVTQ-IbsVFOdGPlaTKW5_pj1APOALIhFFQGoBn1eb39OPiAt30QZgKg3UncRGqKe-WB2CRds4VQkp8DZt_VI1viocoQGsSoOFxF-VqR4BXtjH35IqnvK34B0HgKA7wjqjM8-lJpxOnwdJUbHOw-XY2EYtEWEG8bYovB2fkQci4F_hkE2OIBRYua_zjCIqS2jnlgmAj_fUHFhZ6lzm5ZvKe_bQY98lanAGIk1Hj4KjgXm1SZdEAQNkPjmnOwyrws5JWdblfIDa48h1SYxRxvvutCGIC30MIpNeomMk3B0lmoSWXvtaCd_C4gSJ2Vs2Xp3AFw_Q&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Noah&#39;s Arf - Tualatin photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Noah&#39;s Arf - Tualatin</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/tualatin/" class="back-link">More pet boarding in Tualatin</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Noah&#39;s Arf - Tualatin?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

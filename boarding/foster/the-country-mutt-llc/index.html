@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJd2GaUxw45IkR-Buc5cvSvd0%2Fphotos%2FAU_ZVEGk_ldw_dilBtItIdb6obP64VXlbI0ri8YlNEwJjh8R_41KCjwHnBhYHXQ5Qep3L4aFpJ9Em6qBNrk_vAPk3kqEHV5IbT7P_-4uY6YWx5z7QZWWSbpy-CU1ZLIUoFGKzjsupb4_20bM6GeilnDsDVT_SXzBjHeGTRIpyNKpCcDXeB7PuO12vfR9K6r8ganjpbU1N7ADwCTUlLVOxsoElcOWPh1H6zPTuQItR1Vgg_XiGTAHECWnJBxMrfEcuybga9_rvuwItnzz92DJGUzdA2bEC2t5HpLqptoxNCAmgkYGYg&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="The Country Mutt Llc photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>The Country Mutt Llc</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/foster/" class="back-link">More pet boarding in Foster</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of The Country Mutt Llc?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

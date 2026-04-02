@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJeX9k7XFX5okRU_DSq5VlEnY%2Fphotos%2FAU_ZVEGmGCZdEmyftYUH4fOMf8RusCCFPfhyVdPDS6R6VQo4Mq-xDgCJKmpV5ijZsl-MMTscQjXaWnGNN6XV-7adKlV4WjtuckefhWhlvQOBvGrCxQahTwg5V0YC5sDrfTO5mBXAZhILr4Z332_koCAtUqf6gs3tNhamxuOaWTvP9z4w6d6ZVrsr_eWLbc4znQwwgu2Fs5LOLrcf4gAVrEhAJhItvWx57Swh5NrPzKl-HM7Xhxg3mgbCRYBXJFIGLJ9Ljyo5CQeMFt_QDzHQheCSEg9HEuzZYD8ek2bE51usNUTdNuoAqeV_mdoTOTfI2xXwH_RemwLHAN95A00066mbxassdOUhkv4Qgafs1nODoa8ZU7ZaG0g4pJYsqjv9t_wN3qwF8lDXcVU1VFiF-6k9qxW1GpYPTdFZMlwfyZzfZ58dOFLQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Pet Supplies Plus Manchester photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Pet Supplies Plus Manchester</h1>
@@ -205,8 +204,9 @@
                     <a href="/groomers/manchester/" class="back-link">More pet groomers in Manchester</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Pet Supplies Plus Manchester?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -352,6 +352,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -362,10 +366,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -390,7 +390,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

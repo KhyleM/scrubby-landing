@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ7VzovuJ1sIkRCPb7poWDYkw%2Fphotos%2FATCDNfXqofC1XCBI37n0edWY3mTVvEqJaN_xTz_OiKaffm-p_JfoCr0C0Lj3W4n3POgzOIG5NYDXKgYKCUzYLxWGTUju4sz1ePrh2fPWUM3rMtFsDRz_g_o0R07yOgM1LY1L0e4CICdLqano9nNOn_bSEn-TI5WylcuHEnBuCEvcf6yZ_euYNQlZTSnIo27UIinV9I9PUMfULSOHlnwMmp6UE7ej2PnG41VIgvrS0hXkL7W3ouOqQr2eL4BkRda1GnJxCO3OniLE84CgG_qV6Sw7iyxv7-W4W6iJHKXWr0tY7UBmYA&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Caring Hands Animal Hospital - Suffolk photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Caring Hands Animal Hospital - Suffolk</h1>
@@ -191,8 +190,9 @@
                     <a href="/vets/suffolk/" class="back-link">More veterinarians in Suffolk</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Caring Hands Animal Hospital - Suffolk?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -338,6 +338,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -348,10 +352,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -376,7 +376,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

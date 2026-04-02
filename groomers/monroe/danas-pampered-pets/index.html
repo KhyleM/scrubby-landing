@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJD9146SswVIgRIppZiu2uh3g%2Fphotos%2FAU_ZVEET7rW3dftv3V-eYtN-TNvdzJyxKj55RgSPvvyiLGlAkoYzL_7M-9xSVgzkHQmq4pnEapSCQGfxLsjC2Q7-gbsB3laSB_ro3an2IOWOOpKvzDL0UY_Py6da6MB4n9gVdcgkWj0Tn9Qgd6_DkYHuMAMQlT1RbKO5s5StvJU2hvn1bLIm6xaGPHVceuU3mkpjgx3VxvA2IFm9NgiHcDABYuKPwX7P8nHVa44Mdq-a2pGkc2Jvw1Jl65rutM4uC4PDbrB4ivhXaRmMjZhujsSKFnlfuofakliba2Y3qXjp-_TKBQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Dana&#39;s Pampered Pets photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Dana&#39;s Pampered Pets</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/monroe/" class="back-link">More pet groomers in Monroe</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Dana&#39;s Pampered Pets?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

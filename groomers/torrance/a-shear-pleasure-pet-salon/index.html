@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJUxT1ZrpK3YARy4wxslZvwww%2Fphotos%2FAU_ZVEGmtull94np4xMto9zA9kAnV1Sw3XXe1KVkSDAC2Pqo5GaWe0-oUGDoH3i19z-9zb8iKOo4LUVOtt7_psH-MGQKwPkxmgac_boDYKZlxkAFwcxE9KJhN154B_GJTQuBmRO_BIMUaXU4wJbIF_d-lnzgVanfNg-AYC5PE4WRoTmsIy3cDsZ_mwkXbljJHQmGn-6IGNqQXgqVUpHOUGhNT5KXs2K0gh7mTUmhKAuuajh7so6wH6Qq4qSmtie6YB2aV6qAQw6v0E76slEmT28E8SrwnaIOwGSA4SLvfPudcNjt9rhizEvWalgriqO9BBOKTnrz5xS3NmvIeTGOBg4byswZPwIo9hOJANLuU6X2dWxdcabLq0kqoW-6sUr2D4OYsgK-FswGRp07TkVOqUrx0Asq6JzkrtXhR165SJsg0GMPkIFIHSeP0jfD02lYyadg&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="A Shear Pleasure Pet Salon photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>A Shear Pleasure Pet Salon</h1>
@@ -198,8 +197,9 @@
                     <a href="/groomers/torrance/" class="back-link">More pet groomers in Torrance</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of A Shear Pleasure Pet Salon?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -345,6 +345,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -355,10 +359,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -383,7 +383,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

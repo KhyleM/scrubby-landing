@@ -79,7 +79,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJwyzF8KyLEYgRRNw7z8K2QRs%2Fphotos%2FAU_ZVEGEz7m5tdT4IuQuYvtrFeeE8hzA10zTg_pUmZlzDEAAX7PxIQbNpORtbimG5-ShPYABUcgZ87fBZWCAiOkXT9EnFZFdtMhWYDIVpITXZbETLUpHnB9nucKbKJQXNKylOIdbgud7ttNDc3XVIUBny9NW30o6Y4twuGJsBtXGdyOBLlyuIxTRNyuzx48_6V4PcAB47OIMiog0HiD4KD53g81B2h4g1fqncecDwpfqQ8EaS87kxt5arX4jeEIqcAime2-0ZwYW08haT-bx_ncF6bxnIHBEWJyJZPmWjN5kohHK4sVzBYrnWEXlnNgI_R1zPCiuR8lH0tzm6KRS0h5WT6IprSi_ibaXpq3eHBwY4eC1hVkYCOMJP430_2zCCJeC7Xnl_gFgxs8h7Q15YGvbKLWVdfewd7z22akm2cZrpQifh2GE&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Greener Pastures Vet Clinic photo 3" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Greener Pastures Vet Clinic</h1>
@@ -180,8 +179,9 @@
                     <a href="/vets/hebron/" class="back-link">More veterinarians in Hebron</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Greener Pastures Vet Clinic?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -327,6 +327,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -337,10 +341,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -365,7 +365,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

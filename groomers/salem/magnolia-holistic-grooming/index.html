@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJZxbUiWYU44kR4AdTBWdm4WY%2Fphotos%2FAU_ZVEGJiaikAsswe2njuvyVTTNESnwXbPEv9WnTevUe-2yV_JFQr9KMQfL-2FDPEGt4a3ba4PO2yLfgOIsFiV-ix9s9YbKz2g_wakoiPWB9Loe2ICF7aHPhvAWqjDKJWu1MMlUOzvBJvX8refZWggRwnmmtUo1aUnGlA8rw7eDP359OJHu2l9NQ-R_Uaa6079HDwz5LXT-6RIVrXzKdAre6neEI4jCTkAcjPJmD207k3DnMTRMUgqLPVLAhIVR6i-3ODTk14BPM2NaGZa-Zd5FGoJgE48vk-pK4I2YgBXGMXhFjnWx49RlBuIdV7yT10xiF45hEuqUXYVkwCb7I_dyGOBK_G1cVtSkIRZOwk3JZwYS5Rbh_g41y4_XMHPItqbVd70aE6cte8764sIPoybMm5QjTntd3VIF2JC7tXPPZJfb_NO4&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Magnolia Holistic Grooming photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Magnolia Holistic Grooming</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/salem/" class="back-link">More pet groomers in Salem</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Magnolia Holistic Grooming?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

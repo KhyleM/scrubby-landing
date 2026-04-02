@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ3cufsIcphYARPV_wabFNPOc%2Fphotos%2FAU_ZVEFd_ZNb_milQfTmODWii6IhOGzoiPAIHgZ_MH_Htspk2c6pm0yVaf9O3g6KCLMTJtU8owiqAKri8GTpeC3wHOn6qvHeIKpcm0ZIciUpQPPVrfIgABJigVooioaVvnGOwJJGroSlhAm_97qaakUna1nQyCVZu8EAF4apHX4iD50Ij1YMVxht9YyL6qTxke7GytdQXTczwvmTAfR8tk0tgXCgs7xWh_ng9Ei37eX5fGgzYI4Psem40muKOMoDly-XkVLglA-FAQo6AidHK-hGMTfxYcMfG6ZtqY_3sEV4F-sekyrYWJpu2UY1HGAkqV0VVwuHn2iwk0NQHfqPhlVzqN-eCtloLehvzh7KO-WVU8KHZW5g7R0RzRLXZq_DHbqf1hMPWIYzPuXxSPOljdhBJB-CWbUb9VO5DJZ5DGIUk06QAw&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Elizabeth&#39;s Pet Sitting photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Elizabeth&#39;s Pet Sitting</h1>
@@ -195,8 +194,9 @@
                     <a href="/sitters/davis/" class="back-link">More pet sitters in Davis</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Elizabeth&#39;s Pet Sitting?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

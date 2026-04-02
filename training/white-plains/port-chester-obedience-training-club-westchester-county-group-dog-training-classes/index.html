@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJD-wc0LSVwokRkeSfP-6gB1I%2Fphotos%2FAU_ZVEEulDsVSAm8sdZUaqn066SSuk0H_7DHZr6zYip3sxyQDSjhFaCCLuvwiifY_bbP2-I11umkqfejSw6LXOvYBZm3eHizUHVnqV6Qu6pt0x7fkIiO3g8CJX0jn4xJDo3kEoXCmvme6OL1Y9OI7mcAGsHXLT6YfgGe9j3o4NZZ6O2ZRGgjJzec5wdl14gbbdedatp66ndT_R-mYv4p-N91M-ypnpVe4i55J-sPOF58Tj09OmWf9TP-Jj4rAptWq49VsYWatRdF-8_7ZSYD5yBuftIoLYEhKcznSxBQT8NcczHV9iU-4Q9k_sIFaGbS_RCkVOTGvZQE_MLLg3pZZ_pmOJ363liEKfDpOJe4e0NHoyyMceuVUyfTRg8MaakTfoHOeZVcrni_R2k0zVUijZg3ZAfJwOsXN4D3QVJYFCHC2emruA&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Port Chester Obedience Training Club - Westchester County Group Dog Training Classes photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Port Chester Obedience Training Club - Westchester County Group Dog Training Classes</h1>
@@ -185,8 +184,9 @@
                     <a href="/training/white-plains/" class="back-link">More dog trainers in White Plains</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Port Chester Obedience Training Club - Westchester County Group Dog Training Classes?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -332,6 +332,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -342,10 +346,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -370,7 +370,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

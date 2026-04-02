@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJfxt5iuKF3YgRfIw1PDlnww8%2Fphotos%2FAU_ZVEGjS_OFF_BOrj5XESP6hiooIS2FxolqDZoiS8gFih6HghyI4ZvEeVgMCzfeuqJ1Pyw-uxav5tQ_jZY07Gg0zzrB1-B-0_BKLaRE_GsFXg1MerJUPUcMcZV-2iWreIPEWKG5YKnxd8n19JDMvlMySs7Zg9MUwYo43gSV8etk0w8HxMiDu5D_S9G701DEJkHnoajucjY5f8MHXZPldOvpDf6TnL4laAS2o2I3qm4S4RhhuBOBDH4gA7_vjcOEzOR768KaR_6TnnHAKflSuxS-wS1JKoPuJ3YiZN33FDDSUjI3fisMB9EUqwXC6xznpS4u2IdHK1Yw-gKp5p4aCfCsDInOkws2nUxo_Jb5cKc6fUH60g6LYt7XIUuRxHbRfCZ-cPhrldTyHzJcqKRLsMt29LKvjLnYioFXCQgHVrr99Ytvcg&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Flora Family Vet photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Flora Family Vet</h1>
@@ -201,8 +200,9 @@
                     <a href="/vets/kissimmee/" class="back-link">More veterinarians in Kissimmee</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Flora Family Vet?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJlbeGKKZiUocROp33oek4hY0%2Fphotos%2FAU_ZVEFVAkNFQsv2eI4atlsmOeajFv-EJSdTvx6P-IfnaMjqsJjPfoypD0T22xrY5bHdd6s8zpRylLFl8kwD761ye0gSk6bGuY3-pBfaElAbmQvp7TWD9Ef0nlIbT21q1E3xSCCJp2QfzQwWuCbsF5uU67tjd7WOue-8z4gTvtdHgN7HV0O2MCxe8eZYGVV-UQDq7KP3jfgA8bIfiLWpwTkER8A2SAuOkz-xA_dOjtnGXof_yHxxvfHgzPXrhDHWf18W3aSgEXSRtRqnb1bcSbSHRGLbmUoRbastmDAXCIbhTAGC3DQKPFiqQQPA0P734aj1s7MK6DoBtULlz3zcWEoTas4QJmf_FwDqSW5w0panoAXCEtZiiTQ4payPVARPHRzJbx9sMCMf-V_uQYMb6vYRKn2byqaNoYJyQSDALXWS-s5JCYY&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Doggie Castle photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Doggie Castle</h1>
@@ -187,8 +186,9 @@
                     <a href="/boarding/orange-park/" class="back-link">More pet boarding in Orange Park</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Doggie Castle?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -334,6 +334,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -344,10 +348,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -372,7 +372,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

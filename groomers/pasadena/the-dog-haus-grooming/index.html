@@ -80,7 +80,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJa8fzAQD_t4kRRcwFGF8Teis%2Fphotos%2FAU_ZVEH09HVZDb9Ez8Gdz6ULOfKkNxAR-pXBihSp1EMF1cDT00pOR7kvPZ2l68oBdu4wZ9WGrNfNi0QSUcEigkPrQvxZ0LMKgb6w6S2SdUumXRZ264PEJrXx_k2q0THV70hqD3pMZdW-THWYD1udqp95rpBXXv5E3K6ou0KdVoXwAGqisYf-Eif_PXlEuJkWJeBroRmwSdqID158SQFjtIsGf4-ZdxbcEBB5yDNeRBGZBjIri4P-03MJKOtbwkOhfv4_daDoxKrFREy0UxPJbonzr34xLPXt-6HWSZpzYuDTShXtTYkWReSGQUrEviRWE23oosWJGeXCiwbJe2czoRLl88zv5nILtCPnXBFSYI00HSwVdEnVxNbufbbQfkHGhOnsEvwRGb0z3TLzRDvNTxPa4sG9qGpGEF6QHBF-6HVzNr2Wr6s&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="The Dog Haus Grooming photo 4" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>The Dog Haus Grooming</h1>
@@ -184,8 +183,9 @@
                     <a href="/groomers/pasadena/" class="back-link">More pet groomers in Pasadena</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of The Dog Haus Grooming?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -331,6 +331,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -341,10 +345,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -369,7 +369,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

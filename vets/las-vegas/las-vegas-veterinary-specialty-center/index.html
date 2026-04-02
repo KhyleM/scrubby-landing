@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJcwrfVl7HyIARmfnHFLXqHFU%2Fphotos%2FAU_ZVEExXmhlhqR-xlnZPqLG-qbMLebSWYXFY1ShYAu2-eyfhR0hltOVC6Tajjw4c9eHyJxQvu1b9MXTJ4OxutowL_s7Tshf2m-T7KAN-NW2jzC2xIA5OqbKUQwBrqiSEzF6-BjWgUapLU7Z9oCvXPLsuMvCp5qd1Hq8v6ALc26Txn3HQ7QUZKvSkh5r18IzMueUsFMyggo5UPr2jTEj8BoE6l0qsUtFPkLbhp0oeq8e82aiyKO7nxCKo_Hn4BIq6c-KexMN0VRLGG4JPz_akjmVl0xyAvKOwmj1ZKyrXwpXrgKUKQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Las Vegas Veterinary Specialty Center photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Las Vegas Veterinary Specialty Center</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/las-vegas/" class="back-link">More veterinarians in Las Vegas</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Las Vegas Veterinary Specialty Center?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

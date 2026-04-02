@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJO4cmwoet2YgRLb0DYdnMXPo%2Fphotos%2FAU_ZVEGzTIsxKw-kZlS3li0TJQbclo51-PkAAIfdRrLW_Lup2nnJwmaiVsL-21vNagcUeFg8LBs5L6PZo4oPTxzAFXrZeNmYoXS9o7XScpSTs3WnXLUltm2iPurPc3apFyctPIPDXdJeYHKycVj07AZnIx871x_y8daH9rt5rvsVwZQHJ7o-1KE1yBnj7ECKdE0M_sSoXbfpqXnsknByxLT-vB7d-jrhG4oR_Mw2ch9gVTTUn3Se0mLHx2bHykV2C4vFBpfF6MCGOABZ33JmUiLn1UeNVwN_izs0iryANm0A60No6tWpObnWJWscrW9Ml4g2_Cm3FgNCq4TNRIOtzViG3zau4Sbhq2Yy2T7pq-I-j8eCSOhGuhtIldetjz9wB6aExubnPifrM95t_z1VyFpY1TANJv1vSgCR8WDHfF3ZLKDneA&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Pawfect Cut Grooming Spa photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Pawfect Cut Grooming Spa</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/hallandale-beach/" class="back-link">More pet groomers in Hallandale Beach</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Pawfect Cut Grooming Spa?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

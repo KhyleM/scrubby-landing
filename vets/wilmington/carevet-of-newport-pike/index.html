@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJtZjKZhMCx4kRGyCpwcDIjyU%2Fphotos%2FAU_ZVEEiMTXVfCT7GK9zOdF7W2xYutCAvOsVR_aD8CXJwiqrhrN6HOK6Q9TwqJI8qX4kGEvpy5DgVJvra--Aa_p87SRLG7xorgG8_1loudSYjUHNy6tHf4wZW6tA53MdFlrC8xAggJQiLa2_80rS0c5nZyqqh1VDIJwpUJh3eYBTaHmYsoq450hNvcvhZm-pw9IB3jJ0v5Tg-N13i1sNi-RqORqO3brFeFmhc9tXVt_ZIsZHbJTm05T_ZFu3_5h3B-kr_TqPmgLvEg2JfMmimMZnE0-J47CkXxLAZ9EgwuSTDVRAMiPwHdEjhJuMf_PJbTN2F_z2SJG-Y8nvnoNjL8TvGGbKyAgs7l1A62SGo-aVb17YosGTaNGgFy4Ct_9pa0yeJ8eBQImVDJeyXVGQ6TbAeHzBRf1XVAGOo3zlZNRMo3Wbmg&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="CareVet of Newport Pike photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>CareVet of Newport Pike</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/wilmington/" class="back-link">More veterinarians in Wilmington</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of CareVet of Newport Pike?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ6VJJLh0T44kRXo6uByCmU1g%2Fphotos%2FAU_ZVEGwqDlqcnKko3Nih22vd6GIceVqVbbhld2COVYyBp3Fc_CZ6uXnt4uUOV07d4bgdr2oholdZjOw1Rsge8mxPGWwyGVpy2CK-AgTBZ5lrVRjycSfQFMDyyBbNG6OL55aBEvo3wTB_UCRj31p9am497p8CjWI29TRffVv03hjZcksG-Y6CBFmcFJBs7ouZCt_kn1D6xoS1QcAf9o1qbxouk4c5fBnky470-BX_M4_Y829kMP83L1J1W3khjxAWecOtPmbY3QMGqJaFQxG1EctBgI4X9_KgmgJGbNXrEdRl5H51hdmRSnK6HLW_NCjDuLiaK9y0o0kxwAshpqvTi8YW75YrGEF8LKNslIsTJAvNkG2AL3HaXn7Ymaazo1FhQu8wVOx9IEh0FH05qfHi94MPnySMffirMGrk_d1WpNeAZVBTm0&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="The Dogmother, LLC photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>The Dogmother, LLC</h1>
@@ -197,8 +196,9 @@
                     <a href="/groomers/peabody/" class="back-link">More pet groomers in Peabody</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of The Dogmother, LLC?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

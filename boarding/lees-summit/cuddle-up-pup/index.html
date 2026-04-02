@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJfV6tpjIcwYcRU166lmXHCxQ%2Fphotos%2FAU_ZVEGR5XZjNDiIrDeWtH7K7ouk7CAw5EuH4jmSuTbDVS5ymCSn8lr2f7t5xjW70hvtQYe2Qvd78zvC5sJw0iyDSKL0SnsWXI0-y5r64s_c3kVSH8fbodDGVmKFHAsu1HKUua2vENUbgYQUPZU1uT67vclTrZkoEBOdmYn8e2yKl8FjQ0DLB78Nz0CfTLq_pUXJL78N5CNEwk3S8iiRZz7YXCfhq4gq66mMHK56qsXo8BIDJL16cJnw_Trp_cSp0oLtUTCrNrYV3AlRMxMFRVXRKyUKolshy32qW0TGwjc0UGF4zw&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Cuddle Up Pup photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Cuddle Up Pup</h1>
@@ -199,8 +198,9 @@
                     <a href="/boarding/lees-summit/" class="back-link">More pet boarding in Lee&#39;s Summit</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Cuddle Up Pup?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -346,6 +346,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -356,10 +360,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -384,7 +384,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

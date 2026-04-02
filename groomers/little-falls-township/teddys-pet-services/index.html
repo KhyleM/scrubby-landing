@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJJfzvZNUBw4kRmRnl4pZ43sc%2Fphotos%2FAU_ZVEE4pCq1eLAOxyNV4srg7z55yY_qwMCGIk1HZEBktm4enKji6z-QH7hD9ipDGy0DsbYjkJpSRK5pXkwezEGWPbaI_uL00US0Tsv3yp4wLI6XuGO7JBLutmx1HhCjxANDkwEv6GVDGm_nZaWwK89Xa4j6IroWcFysRaiizRv-4dbmqXkR-hmbWUzi2314Y_IKHHeM5a9CuqIjj58pjuaBNbn964zgW6RVlT-RoIKMsCWRlbIs_afhS9h7fCFnDUKka7pPOjRne70Lxte8MCAeXKo5cJF2j6ZkRxkLN3s9eKp9Ryo9GoKXfP1cDavufaa6NNAAR0kRmko5c0mmm4M-JLJZRi-0k24xsmrfb0Ky1Y5OOanjZ59yo6c1qDNgnMGPnj2IG3x9sIck39TM3chdrg5XcXkATtHy9zQDkUseOSWxdzcrDnreJkG0oYsrwQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Teddys Pet Services photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Teddys Pet Services</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/little-falls-township/" class="back-link">More pet groomers in Little Falls Township</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Teddys Pet Services?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

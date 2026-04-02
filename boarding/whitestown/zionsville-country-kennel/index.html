@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJvfqgThVTE4gRvQVAeoxA0UE%2Fphotos%2FAU_ZVEEV1Bm64pXPlVzVZ3GKO_9Ytdj2bq_UVjckbhdcdPwGZhll5aonM0apm38ery2cdutAYma_pgZtT7rC0bLmR4wn-k8RzJYz_5PAWLgErdraf1DNXuFwFdnbzDylqt2ymVL6ICwvMPh78B1xX_mc7cKIo9nRrOj19ZSwqlRLLdgj4cFfO2eaaK6FwSQvwBbRbQplcMKpaPQNmRC9kRrBDLh8muLk0FOWs13avaEjtY7Aek_8m-jkZVL8PoZgtG4-AVgM1hpkj8zVd0jeNeUmzKXXqCNkWK_am4pYcq1Oc-HIwg&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Zionsville Country Kennel photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Zionsville Country Kennel</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/whitestown/" class="back-link">More pet boarding in Whitestown</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Zionsville Country Kennel?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

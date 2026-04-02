@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJfxA-P6qFVogR-1rM3Cibzo4%2Fphotos%2FAU_ZVEEAF3dl8ykmYY7R0fDLkE5uTBxr3Y6HTWYfsqc29lKgcQiScbrJXa5a6n7bw7KYezHLAlxT9AOgCBvVRlcv-xAgvSg5mKUPoggnMT7AEMKa8__WSzwLQezPknaw-5FUUNXT2xDLQOHSsqaBkIWBj1bZQHAtF0fXmsGHaUxAvGUa4BS-qwaAsYZa7Q8qrvDrpWOiRo1rwhrWQ1NlB_h-KXG4kg09N-6i2e6GrjjlAMKGx8ArBOn69cKNZJ3DcQgXKBUo7IGQjy97IHoKhzOGUEf8-XuZhoLmwRRSCbwvGO-qXoDeZgvusWKuv3bRGZxBHr6U8a-ZulkrJ-WFliqSl1V4L8Ptb-ddD82e910Eg5NWztOwUi2uSSGRLtRMzA2_oNdwnsMPEiaBHtb4yyFYRhGrwN-2h3F-aXGE9rM27-aSnaJ8adGj7ZtmJS4gLn8f&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Bowzee Wowzee Pet Boarding photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Bowzee Wowzee Pet Boarding</h1>
@@ -192,8 +191,9 @@
                     <a href="/boarding/fort-mill/" class="back-link">More pet boarding in Fort Mill</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Bowzee Wowzee Pet Boarding?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -339,6 +339,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -349,10 +353,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -377,7 +377,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

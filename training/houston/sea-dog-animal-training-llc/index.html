@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJD8K02-jXQIYReGdib2BL73w%2Fphotos%2FAU_ZVEFT1ze7I9bzSHPRBYPAPir_hYsrQty4AmS5xHG368yel8twMeyqPhmt9Bra2VpRLiFOGc-EkBeg1ryJQ1_QWvzbE3pesJJro_m2Sqxc-xUB_UPbR0NXUjsor8VOjVnpdI9ZZrjrWxBv2esv6ci4Db9AOTyCqr2l5nClTQoplH-f_RELLzVerK_HAxRv3B49gsKItlSnqcJzYUKxb9rIerH2EaKB3Z4X1H-PQ8qzQDPwFlT0UjJkE8fRmMCxek8taIsZwk7TzXEOpsV6Ahu5R-u4t3k5I85jMW6wn6Ngq0-tOsOD-nwol6KJ8GkQjl74BM_Wlr7szoch8K7usjY8ocrEta41mi_Crmy4ZEm2hmHrAjV-oCxeZAyCPCT8my0YFYIt1904M9De9UUgJuQ6FTITI5gPzoUJubp6ByNdKPsALNrMzg85yG5_qnoNgQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Sea Dog Animal Training, LLC photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Sea Dog Animal Training, LLC</h1>
@@ -197,8 +196,9 @@
                     <a href="/training/houston/" class="back-link">More dog trainers in Houston</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Sea Dog Animal Training, LLC?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

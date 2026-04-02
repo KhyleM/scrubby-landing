@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJO590xZ_BuokR7p1oXXK7z_k%2Fphotos%2FAU_ZVEEVgogkgely6tcG6s9FPAg-Y9Zyy31i1f261k1G_FxDN1RXAVnqL2XYe153j2uAnKCR-X3sJj3UCpDWbmR6MzYShL7ldcEp-uhLa9xjh-Thsq_bJxCv-nM9Ztl9fpuiggOvWwF5WdLmedhUSMYzBnxnMtK5L4kZLf8zAGGHzHhDSf73t1grzxaDYkqbQJCro2ofubLt79F__Tt_DVsmDZ00UNSZJi7GsgYGJOlCJHHTBea0fVi596RHI8ynQ4vAxiAtzFgFRhZnltJ3nQwbiXpHXmdZQYZbpi1TS-c_eP3qJFZI1xC12VWZiFv9Ol2SPaXjgXkdLxBlesYxjm5S6_KZ3zcBxbs8WTsbG6jktMFli-Hqwps5eNiIdKkOWA1hHwbInOMYxjug3qkuPhyg-9zXYYNvUATK3RsjRwRNBi5EYSY&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Strawbridge Animal Care photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Strawbridge Animal Care</h1>
@@ -201,8 +200,9 @@
                     <a href="/vets/virginia-beach/" class="back-link">More veterinarians in Virginia Beach</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Strawbridge Animal Care?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJkd_5wDrq3IARuSnNoa7U8ms%2Fphotos%2FAU_ZVEErILS7VW6YfC-mo1p2Qp-CF4VbnZi-Q42z9j8i8tIIa0RIU6Au44fTvHPTjU67ewwUTVIRJ0XXH9vzfvJEKWY_ySU5eKoWQEVPV6ZNhExaTVnIxQ63INa-AHx4u04QS6OZv1gUBaLvSFI_8tBk58wOZXtOHUF2Kdsz8h9qSyDKsVQZxndUgl-yaLsguusFG_vYULUnyu3C7rJcCsUTc76VzITuULVwy_0s5CJD6tnNZX2CiIqUB9Jnj2AbGgHlgQ9v0hA-wj3jNJLAV6KenV62VvjeSxQKEyGBJVvdZ8Yid_-qNU_FeJaxVxzid5_t-T7xc0rOyU3iaLHBmAcNyayem594el44rLWBEiw5tjoHeVx_1cVy2VyELqiDN2A89b2b4ESAU_t2ahi2WhpONxNwO_nVXVde7zdXxwXKbBi1Og&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="The Animal Doctors of Mission Viejo photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>The Animal Doctors of Mission Viejo</h1>
@@ -185,8 +184,9 @@
                     <a href="/vets/mission-viejo/" class="back-link">More veterinarians in Mission Viejo</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of The Animal Doctors of Mission Viejo?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -332,6 +332,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -342,10 +346,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -370,7 +370,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

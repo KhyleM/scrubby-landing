@@ -77,7 +77,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJlw5cJXaWbIcRdHXXs1T1JAM%2Fphotos%2FAU_ZVEEeMt_C0YRBE48OvLj5F1bPjmEeyJPEwb54RNYntDLIOHQED0g9t5yuA0wjFHIY1kfX5OvG30cRAscZFdB2X_xhjSWoKeQckCy07v_3qXTPcupUEMsQt__VaMx2FqMAWVBm3GZt6TbvLqceFh5f8x8MWeFe-dabXn31oYrOtw7MCtIt7ybgesaaZgDoRwL-2V2RJuXLiQ0YEqFTy0xLjoVtPOEYM2GqAuxuMLVSBqN4ovHmj1MrGiUbOQLkYnfBZpDySPoT1GD4l_l1tX_z5G7pS_v1iPz26HCwaeOvcBx2op96dNDbaarX6Hupx0_basOj7ygqjZTlrL6aybVvM7NHElKrKuVxbi_VWziOqgBTGIpPLo1J5cCaX0P1U86XxXOZHsrue0GAg-gJYCWkEzbOMSX2Jg4b_aYRsRdcwuJpRjuuNmZlsJ8ow4vvdK3M&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Positive Pup Training" loading="eager" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Positive Pup Training</h1>
@@ -181,8 +180,9 @@
                     <a href="/training/franktown/" class="back-link">More dog trainers in Franktown</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Positive Pup Training?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -328,6 +328,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -338,10 +342,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -366,7 +366,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

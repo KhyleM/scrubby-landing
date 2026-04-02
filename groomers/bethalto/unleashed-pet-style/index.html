@@ -78,7 +78,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJvcHXtedb34cRqP4E2y32tQg%2Fphotos%2FAU_ZVEE5lh4JKFabIaohCVoN16tVWqdD1_KrY6J2lBkL7dspMMolTmmCAp0VTbxFs3p3IdoZkQArPHsgjUqcduS-8wfGaSp-uHmVsTmAe05qDkgQFnVUBZizLXBgylc2vkEMQEn83a1uk1s4yeRKkJMKWcocMM0NMb13eTympOa0Q8IjkGL9BiVZpZ5pCDyLZgfN7BYm0OeZlxaYtwK3C97Kc30CPoZdsRxs1U62oSQBLqMpqCqQXKrV9j8-oTTbszAB3YomRdmIDXNsoH7bTwf1a8U80njmVTvxSbr3o8-D3XnKgPqZuyVXG3CnBY7dmuycMJWoC1PR3KP07BHztTIdKRMdbo64uJK4OoJ74KFl_Way01yw_abzNy1fR0fm-eocniF7OXsepFCL66eYAePhSRXjr1jXBpIRj_t7D_p0tunN67k&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Unleashed Pet Style photo 2" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Unleashed Pet Style</h1>
@@ -179,8 +178,9 @@
                     <a href="/groomers/bethalto/" class="back-link">More pet groomers in Bethalto</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Unleashed Pet Style?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -326,6 +326,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -336,10 +340,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -364,7 +364,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

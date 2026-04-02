@@ -79,7 +79,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJA4lS8hVG5okRxJcxP5wbTfE%2Fphotos%2FAU_ZVEEHjcvxJuoEuxC8bLm0tZoAHVlskzqRh6BNulN7iGvlKMN7Pdh0ABQB54fqHLaqRGDvUWtI16XtBzqZPc1BKpRiW17didMPVAwAF9xnr7UWus-C4het3oMGz3QDKAoocDoWknpXYV5xxNax1rxQa1MzxF0O6YL_VOxGOzP_io_UQMG06imNGRspv3AdIXir60tDA8RCN3ktZEIQkdRtCQ0f6ucIATPB7ra6Le8lO0k_ketBo6xw8Bvqku0tFJsNb6m8ln2wdvVoeieC-d5ZsYn5UGJ6RhneLdZQBE3jPu_50Ire_Ak2TlssAG5USHyVgs9TABDwhuJn9qswfgNaDC8XZrzi21KCfbR3b3LiI_5ZqxZHvZc6LWu0PRmGtbJHmxE4hQzBXlHX5nPbxHt89ndN_zN03DBnbnS3gUeuEVVrqw&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Paws-N-Heel Dog Training Center photo 3" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Paws-N-Heel Dog Training Center</h1>
@@ -183,8 +182,9 @@
                     <a href="/training/east-hampton/" class="back-link">More dog trainers in East Hampton</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Paws-N-Heel Dog Training Center?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -330,6 +330,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -340,10 +344,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -368,7 +368,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

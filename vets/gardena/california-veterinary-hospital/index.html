@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJueBDibfKwoAR6U915xTGEP4%2Fphotos%2FAU_ZVEGKaj1WoHAEgnR_kvlo59cLvj7uapD4SwY5MEdPPDAqf83RocNm3ylGu48Ne0_K_qwmw4SpihWqt5LtdFHulucw7B9vcJrO14nifDroY3fFVa-9BB3WJEgM4xVLY9JwOg3Tiie-V7KjbN6AkXN5Jv6XZJZ3wp8CzXhTCkslR9JlourEvId5gwlVw2vTWyhriUAf0-2-XeWXmFkE_k6eJKV0dq2hO14lSfQQQ5oIWJXUmtlbMnKqYcS24l4aHwP2OyEbWsG9OYqDDGuzr_V3M6icGUh1I3u4ZvsE8MuItYjkVsfVehzMOIPxf38q5LPkjOJOxhevB2gQK0ZNARzPsRsaCAXcUVSlFvpudGPhmMu-tyO5H2DY81cHUmrzOzbc0NWKba_L22suLIZGSYcLZiwsN0dUUHo7hm7FyouUFt8QpA&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="California Veterinary Hospital photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>California Veterinary Hospital</h1>
@@ -201,8 +200,9 @@
                     <a href="/vets/gardena/" class="back-link">More veterinarians in Gardena</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of California Veterinary Hospital?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

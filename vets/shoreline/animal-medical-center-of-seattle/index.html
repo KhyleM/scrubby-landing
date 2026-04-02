@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJR5DTXQ4RkFQRdtFBfo9jsik%2Fphotos%2FAU_ZVEGg0zJLGF5r3fQBZtN1tCMxL_4czb2tr3l8W37aXmgymDer8sZ_Kc6GmKwXJGufOqHSNo5XAE_fNz27mFc0yP2xP-xFq_lUhb7cHLRQ6Kdn-YnxlNwc5ld9Kh7dfAMB6JvbD0GQfVLvHnLSF-wHI1mJg3nSZ-Q-t_sOJp9OzI91mnUH6eozc20CZAkcpd4oVwsyGrfJ15GUTZgRijNAAi0m7_gS09gmMC6RNEQjDiOW345xvIzmN8z5-Ydg-Ahqo2ZT6R-VbLciM1keCOtsU5MWVbcW1fNUowI09IBYJrVljg&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Animal Medical Center of Seattle photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Animal Medical Center of Seattle</h1>
@@ -205,8 +204,9 @@
                     <a href="/vets/shoreline/" class="back-link">More veterinarians in Shoreline</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Animal Medical Center of Seattle?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -352,6 +352,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -362,10 +366,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -390,7 +390,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

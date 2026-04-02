@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJy0E7lTj3wokRLrqEO5OwxjA%2Fphotos%2FAU_ZVEEHNoOOVwoOzSL1_CNNuUoYuHBvCoEchk9RuxbaHI0OKnObDLZcL44iEtd-jhMeq-xI_ujbC2tVX1h5YyMM1KTRBR_0Sj8pjTd5HYLFL-QdPVvOiBp_B8UMLPhQQVsQrdzApIvYaQvVdncmuHq_5JIgteCPrAXpszV2vHJlR15lFyWZTdDN85zS9NwzMTQMcXPF293YHpUbjlrT2hg4SOc83IFa9TBujVVFrYOFe_o5QZRegIlhxe-FZ7RNb--bOgnot0dT8nHDmCXRSapOFf2LV59V_xd0EJGq8tk7aNx-xJj17h8zESi7_9mVbd5_TWFvitYNif95XsB0CCqTNhRfaE9x_w7ZkpM3mRKSrxJgsJoXmDZPD4AQjPgntaEx1fKywA6VZMZgZNAPsktdXZR9Bta7_tPQLF0V-r2TA9Vomsjog9OqA86KSwbGkyqW&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Best Friends Boarding &amp; Day Club photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Best Friends Boarding &amp; Day Club</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/new-york/" class="back-link">More pet boarding in New York</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Best Friends Boarding &amp; Day Club?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

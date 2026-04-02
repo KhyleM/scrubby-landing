@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJA6ca1vLzt4kRO47IaM6kWdE%2Fphotos%2FAU_ZVEFt7E_vr1AJoMhaP5pXU8tMf6tm23JfMscOgvVgNvhvWfEJOWIGUGhy7TBh-BMGzeyy32ZF_TEVIht31j-Q3smzjAoUXX8HOQ0YyL6OwC2DJN6VGAsvvemMIxxkbUab7a0EA4br1k3wvR3vmlsA3jvPpQdnWskhoQ87iSVcRQDIPyKPkOnR2Yn1e4s1vS7GYVseDGzMvRbdDjJPiSLlWdU60iyOpuPQpCzfOs9ltqBo33IkSC8y7XbgeOu0iO3hrGiAircJYgEziimJifwQI8ijQsLuwSmdUgd_XZ5Felppk424Pz4ExzL7DHDV4d-7MQm2A2ALAQcH3O6mCR4Tp3roPTE06EckT_MO3HCW9MrZNeT968G39gOE0OCHCc4uKW2I0PStbWCpIY3k55XuCwEm3MSl8xWY92AjSjsyZ27wwBNz&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Dirty Paws Dog Spa photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Dirty Paws Dog Spa</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/edgewater/" class="back-link">More pet groomers in Edgewater</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Dirty Paws Dog Spa?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

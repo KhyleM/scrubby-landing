@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJkW-KGEyXuokRNRvAS5KWK70%2Fphotos%2FATCDNfU14cjAaolBJKEQZTLOG9lc-H1Zrta39LmA-V_4K2_Sd6jSHrM3pA97-t8gDdWM0Yfd1A-fiBcKjGZ8NPyYXduvGq7wwnx_i1bhIq6DioehYxvLY5rUJRtyVL7OeuudpYBGuGulM8mM2FNUaYkFUr-1b8T0EMRdXyotHq3vteuQfyamJCr9ktNaFqV1A7LRMvegd9C0xXHhMuPWQQZdTTWNwcW4R5aJbPPys3CXxMuyh-EL2pslgRXZZUCaaXs142t10ECTy9mdd5nzXufvk6H8Tnz_LgRSAUuJWEIBnUXLvGEagQ23JhCGvnZSZtMx2fKODBCSIEOa5LFsd7TJDVdSIBrSwFz54jBgvREqQjoJZP8OXf-dDxV36k2sLCLfk56KfD12Kg5pOlDgZOSYmgvxaH0Wz--Q1KAQBeDhoVQUDkuNlpz1Jb6pwkTohQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Bayview Pet Salon photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Bayview Pet Salon</h1>
@@ -198,8 +197,9 @@
                     <a href="/groomers/norfolk/" class="back-link">More pet groomers in Norfolk</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Bayview Pet Salon?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -345,6 +345,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -355,10 +359,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -383,7 +383,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

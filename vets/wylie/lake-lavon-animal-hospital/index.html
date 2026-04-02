@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJT_WyBcgETIYR2WRzp30druw%2Fphotos%2FAU_ZVEEkgxHEQJKiM6XAtzTgHWL6u1xcqt_IMzloP2NbGKTmlWO64vDvbZyMMb7GqBqy4e3NBlLahesKV6ox5DmSU0VBDYUaeNrbKgh-qMFaWIBhGi3rnaaQ-NhWNUb-LIuDXzUjciyaq2ZWRE57Y8TQyeNbEZkAelSOBFlM9l1JHa_o6B_3UEDfSOVGisvl9XOHHq_JkkWa5G5nvPZpEUQW8rHdHp6bI32p52-TxCkmLIZ7N5LUAiHnf5cphEWYjA48AT2ha_l0ATZdK4g9hbZ0zaito-d2tuxaAghEchhNEXLRhFRo_FXuo3ukkBlezTHfGUz9w5SGsd_qtUNnz5NiMZJpW1nwqQhA0yGuzVq35rw-F19IXlJGC1zhagu9FvYi7Y5Ha2_JLjUOyUT8sgM12cRpqvyL6_JS0elI8qjR11I6vg&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Lake Lavon Animal Hospital photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Lake Lavon Animal Hospital</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/wylie/" class="back-link">More veterinarians in Wylie</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Lake Lavon Animal Hospital?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

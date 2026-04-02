@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJe0F29gOLj4ARVgWhKw4CjiY%2Fphotos%2FAU_ZVEGdzcW7OWZRw2jvZxKCRdEahGklSlzzBjpw4WZQI6itsCGWxYLKhhhwnKprr1aI8XH2VbI4mB2AKeZ9GXY5Ai41omm5RXnGKe9p01dqN4X44xZH_Qw5jM4gAAxdmLbwbVdKJmqcXMqUpjHQf_QBc8HRTh6JaddO0LFxSi_zRWFJk0TAIKB2NYOeJF0RqLh8xrxOQqhM1zahId2tasN3F2ME0vps-RVfyxlpehMvhl8r-T2gEGh9R_wrFWFzlBSnHhDq_eQNsOPaK57K1wk-EzAbVY8oY_oFwqb6w-f6EDrGGszz3ipyK879kygnzlK2EiRjQ8lFyhIbLY7Hg7xJhC4pD2e8qSe7T3kQHTfBwi6qbcZ9ysWeAX0e8iUlH93tO9K9R7aK1qVjYmDRQKMEcmoVCj_kq95UptAWc93VQA7GtQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Sexton Veterinary Clinic photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Sexton Veterinary Clinic</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/alamo/" class="back-link">More veterinarians in Alamo</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Sexton Veterinary Clinic?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

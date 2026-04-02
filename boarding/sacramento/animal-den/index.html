@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJeQ7vFdLamoARlRHY-rnWo5k%2Fphotos%2FAU_ZVEGI2uTNLcVdkHPt20KEiQMX6cFhnNjyQUdkFXck8t5ZGQAXftpK54JCIp0tFbR-aIsKBkx-YLpT2Eqwl16OBedQDE5g4HtVlua8XAnGTDiRjWTki0tW2PizlL_O8f9SeN6ZE1aTlKlDnzJTfZlOpSBPMf0oXxPjh45TNmP4npfUj99AXsh-KuGH4XTr2mwhJX4-uqboJZOE2eZDB7Vnjy5gpowAH60nNRBYKkUX9uNcIeSteSKe4gaasD53_LyGXFw_op99iLGh0pV6kkS5ycw3nHATTP7MlgBkj_BWEyLifWcb1zbWngRQl8ay9pgYSZghybNlKVuWKOBjaoLGYCDWFrjOleR0DdMOF1GBCO5trZnLPqlQvEQAUQlK5dJfAimiUdgUSaAzP0-zVWUpVaJCYTfGLdcVaZJGCMLHnacRUD3v5MleAA3FHsH_Hnch&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Animal Den photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Animal Den</h1>
@@ -199,8 +198,9 @@
                     <a href="/boarding/sacramento/" class="back-link">More pet boarding in Sacramento</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Animal Den?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -346,6 +346,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -356,10 +360,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -384,7 +384,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

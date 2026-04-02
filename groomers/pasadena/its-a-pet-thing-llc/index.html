@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJheJHhoj7t4kRaBc5MXlh21o%2Fphotos%2FAU_ZVEGj1gNHCNSIdYwgrGb7zU0cmBATw9uA3VMGrOoEI1oxULMS2k7msS92xh2ttiCdHBo3VDnFHiRVvxtOCk53JuQRUTeMjZzXsVdHk4A7eJt0dWxRTbUMkF6KU3_0ivTj4FN7lxh4bS6M3Is-bjfS3uEhoXds-gAP0XeSDEdCOTjWdztendV1h-cI054OqK0Ar6zYeWZRcnbM-k6UsagebAJocWK5tEScQBw41AZg1qbKeDPa0eIBqSEEqlCIB_HnSVskrNqXkp_o1ysJ1XMpZ9tjCZnXOLQzyvONZnu9b-gaxNmCPv9VAiISy_K0rWfHeWtoYULssHC09sLyW5OmMkHs0QyNHS1MPYSkdcg4KXjsEv0a13gaZT5RwtGbfJVYBDMGtb2MSoZ2O6RXT_PVaozboiOw-MuTdlUNVBEEF8_GbW4u&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Its A Pet Thing LLC photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Its A Pet Thing LLC</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/pasadena/" class="back-link">More pet groomers in Pasadena</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Its A Pet Thing LLC?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

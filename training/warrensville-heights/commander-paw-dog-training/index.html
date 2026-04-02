@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJbVSIlkaZQikRk7LUbL4jDjU%2Fphotos%2FAU_ZVEHJ8e6peubr1OcygVN1OSzjTTjYkayK5zGougFmS-qsHQvJ2ObojIUaxgTvj1Gy9R7iuPi9vfv0SeYAphGRPvLUbm2gRQeBKEn9MM6oDd6RbZSr0ES0vYOiT5CH__sEHEXFw-pOoDGlBNjuewO6Ta5x1L7dLbezv420CuhF8cVn5w7gtTefVRwJu4ewvH2aPF7SwTv6afJej2ZanxVgmcSX_WzNuYPwN05az63bK5fCUAWuWRh7dQgc7TnXgm9-Ni9wax39fQeq2wqYolnKGfoiJlvZeU58_IYMTdiRKGJ_t1pmrqNiSU7CYljxvSE4RMxhTwidfKmX8iwqJPRl76MdkeZtOPzaygW0F6XST5vLXmX2elXoy7xWWFVN-aCivQeIUYjYwutUA99SmbBZ8lpFFmooa4XMRWPVcPRknhM-OQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Commander Paw - Dog Training photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Commander Paw - Dog Training</h1>
@@ -197,8 +196,9 @@
                     <a href="/training/warrensville-heights/" class="back-link">More dog trainers in Warrensville Heights</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Commander Paw - Dog Training?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJU5BHumGrkVQRROUL99kQfjU%2Fphotos%2FAU_ZVEH4EwMOc7wlK-lMtTavfPrN431gKtbUafH99QySNOv0GR7g_lSJTPJcm4gLW8xsjdzNSqHxuPFspoDiU0w_Ea8o-7zlxXR9Q_ADttClIu3oHmjUTQJkEfEzWaUKLKB0jGeKC3qw996FcsTw5aIY6WsFdZhNe-X4lUjf4LqIeooMykspnoErP0VhPPM-atGBQ9-oJoo5VE4f0UFhbpfHJfxJYXjcIciCjKG20Bc5LCRINvS8NbYn4GEdAbeMu3UKELZTafQZomEZuExSgMT63vtfXqVKfB_Z2bTEg6Xp22XchRPdzN1eG8gqTkpMIpra_nXsRiXd69FaeOJGknlaG_eMIGDAcLm6zxF0c86X-dOnO21uBBJoT8RG2tVU_S3IFLijO-ly99vioUvfvyRQMKjq3PIMqUsaehG5NhK1SefA-T67A9lwh2WXn4AS4J7-&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Pampered Puppers Grooming Salon photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Pampered Puppers Grooming Salon</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/university-place/" class="back-link">More pet groomers in University Place</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Pampered Puppers Grooming Salon?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

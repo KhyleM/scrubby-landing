@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJLb3HRygB2YgRrCeB5pT9xrE%2Fphotos%2FAU_ZVEHe0bnuHFDtpEkmwONZkCU5PB74EEkEL_aGb-Jjx6rxrsW5XDuF8AGUYtrnkB5iv-m-OB3uZQ2iPvdt8EyY7tQ3K55uQe3gEX8-LI3Be0CGtkOo8WvEvpQUGv-Ig6XW7LiMMN_0tqoHTFTUAW-qXDj1guDljaTrzAQHxbaD-qM6TZqWRIWFk4wqgf6WchXTR9XRa5AjMHem6cxUgncc83cngm-uJlFdUvmzHJwk1QRz5EV0O0qKK728bqwhA7HFu9N8Mzwcascscs_zmyYqcSvU_MXh4UfnTQky7gxkvuc3VWUp5UBsQtWWhv0_lmpCqFKF8U24fXi11soohPMIISHcmGQawLpNPEIn0UYVHdG66uaoUa1yi4g5kWFOaeyIjTpjpwPHxQnU3YYksW3K3j1-rKLIv7y0RykESWAZFkfKesQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Salty Dog Grooming LLC photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Salty Dog Grooming LLC</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/fort-lauderdale/" class="back-link">More pet groomers in Fort Lauderdale</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Salty Dog Grooming LLC?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

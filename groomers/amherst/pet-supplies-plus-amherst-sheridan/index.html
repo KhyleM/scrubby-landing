@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJUc-wm1ty04kRuxLrnZD9Jbk%2Fphotos%2FAU_ZVEFXYAx5SzJYyTnag_LLnZbe9NmPj-AtEAyf42_gKFBDxBskt0bxXaYXm1E3Kxg1QgJtMy_fkZtXsejw9rCk_vtUencP8bs_FV6sG6kbp6uwm6m5_42rdAQkLOJRSdfZVhBkQwCs1HffPeoqALfBnsqVw86wj2FGPXffA2wV7jwFRGiIj5CDuxP6P1UtKEp-sh5LVcHHP_QgCKMbBqNHRnA6eS0ZVv7Ga8QGVix6e0x9BfPJ_Ehu4lwtNITBkCoVz05Nlr6WUQAyMye5k24JOT05-NrTtiaxsXlUsVw3bZWZTgbLCySZkOF4T6wxIQOV_x5VhUbJx_AZ8Bta3tfxotnwnG6pZbht8wwQWirTPWO59FvyN5MQnLxBHGXbAlhQu3GfKD1mZc5wh-WL8dDtA7gcz6373GkXMbAKvHu2JJZw4Q&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Pet Supplies Plus Amherst - Sheridan photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Pet Supplies Plus Amherst - Sheridan</h1>
@@ -205,8 +204,9 @@
                     <a href="/groomers/amherst/" class="back-link">More pet groomers in Amherst</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Pet Supplies Plus Amherst - Sheridan?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -352,6 +352,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -362,10 +366,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -390,7 +390,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

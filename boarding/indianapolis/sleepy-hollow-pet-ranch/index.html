@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJV4n26jBaa4gReZkrHuOYG_k%2Fphotos%2FAU_ZVEGJtjNA7_aGQRzM8HntQzSWOLZ_CnLjWFAhQpN_5akPwefKsAe2B0vsC4qEC8cEcH89d2PUxRq5IuLrPL343PQfkLkF0mPdhAeol7OQ-IIL0CVKPEIB1DUZlmTlK3QtENn4w0JMtrPB_BBWZ9i2ynmm6PK3Upg14ZampJrDkPT4sY0UUoCde3PkLC0jV3OC4zi6UhI-NqnN-UZj-9b97pCh7KIIRDajTmbAsp-6kZE3hs_EBT6d2mCSQz47OjPwPhQdRtzLqEqvC4R0ijnzNs14UCkTK3JqSR6-8_uqxTXOpUDLXliLrtnZb7EIB1zcVK9ie-__dRoscbzBOAoRHTSuolJh26o499dLKpRz7nm9AHTSgO9uDpWb637zYNNWFVkvFrAXxuBx__fWEhEMpq5SKDIWS1MxkqqsdcB_xD2urnf0fP3IYORN_ZDENXer&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Sleepy Hollow Pet Ranch photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Sleepy Hollow Pet Ranch</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/indianapolis/" class="back-link">More pet boarding in Indianapolis</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Sleepy Hollow Pet Ranch?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

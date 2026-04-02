@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJoR4T7vi_woARoQ5SjvAqPPQ%2Fphotos%2FAU_ZVEEMgod9RbOhEtu-A_cK_pMPpVUenmc85MRgX13MGcczzvJa8LJQFeftud-9MKEZ-r4zlzJ4YJ8YLfJChxrirEJ_PbVL3g7Sl29x2JgiIvgN84Pk5LjhdOQb7icGdZSPyR-tP__ODyalRuiktNxrnBCvwdmoQQmCEtRWwt09_UlifaRgbFw08KMvcNCtTjtI2_j_KENfI0mc_5vxDnQqohaQhdlgTf7p1StwqMlaooTL2-masdmYUz5s6iCLhXkpa63Jv_PYsM6eHIItkceXM_pfkDC2jCGDrHdbzrWQfQbTyoWB15BmlUcG4ONsZ3usRdWXz3cYspnfbPZ8E84G9lfPvsqXP1rZDO7uoBxYrJoRRSVnXgXAhioStzUwY_Gf3m94GDND0NC0Fyc2nIhYiODHQH7nPJuNmnCAnjO02E7ZyQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Pet Rush Inn photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Pet Rush Inn</h1>
@@ -197,8 +196,9 @@
                     <a href="/groomers/burbank/" class="back-link">More pet groomers in Burbank</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Pet Rush Inn?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

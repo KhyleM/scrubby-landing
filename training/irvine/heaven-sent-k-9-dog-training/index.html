@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJP8upaVjf3IARzyEogHLQkr8%2Fphotos%2FAU_ZVEFN2OpPhQY7fUotRUb-BYc6n-I9wqadKCG4K33A7vgqn_SHx1_sjbPOAbiXlyVEyxI3zFgmLMTjpWYa2NlSPtJsJWaYdnrgeAUiWy83cAwmF0vPGHL5qolKPeUUJpVbIXKAtFOsWICaMFtPRfyZ2VCwECxxlbUQp6CxEXYeKpTieK664wn46IsSQLQ-R5Jw57hBQJ9xct3uq4ciLXkTyuDsZZCdibL2Vw6kgQN5vSWAmGUyvJszChix_0-s6Nnrbsh9J_mYE2K-oj78sUcc5BhRdl4oVob5bKOIgPOgXbn6VqBXDYw1fG6BOaoV-Ns67RROO0ySr7WE568au90yQVj5dvW220mW1aJNq92kOzF0YzmGk1CgBBowFSva8IR0jyuHZzpwL2ftbQKxw2vTPrCVxb4BjzQSmxwrwJQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Heaven Sent K-9 Dog Training photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Heaven Sent K-9 Dog Training</h1>
@@ -197,8 +196,9 @@
                     <a href="/training/irvine/" class="back-link">More dog trainers in Irvine</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Heaven Sent K-9 Dog Training?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

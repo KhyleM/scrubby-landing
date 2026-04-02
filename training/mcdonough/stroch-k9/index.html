@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJCdXqoXtF9IgRzeBV_JaL5yo%2Fphotos%2FAU_ZVEGoZ4D35hxWTK4YkynuRTkz6JSsloUe69EjP3y8Y7ytZ8gBsbiwdIZjT26AXe8b_51nwvjtDFTf2JtFQA4eK8Ot12sCa8EcfcalCKNG7TVH9PTuKVG3gmK2fEOl9EWPLHFguYOBcoy10t2pgG61FiGE29jpseksvaTeoUyP7oOlfWAI4Kb7yP8QxT7eLwLUgnYYZHdslAXVimOwSlVygWd9PcHK3lYIoFWL6jfhqM5QX3y7nr00_CjJSHQbOXRUfk0u7oOADT-mFn-LZAqKelP3BOQKrk3qsFlFHJMXu6xKmdJ6DU6fp0Wa5oHgHp5K2zXJ4nIWFPOGmSFdp6KfPjB6zKALnhw3UX3cIliGiiW5lsJD4dFhWXTsxhc_Tbl4uul6knXXGg02fYU97mVelnnEWZQgbIf6WuC03VkjSVIL9Z4&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="St.Roch K9 photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>St.Roch K9</h1>
@@ -197,8 +196,9 @@
                     <a href="/training/mcdonough/" class="back-link">More dog trainers in McDonough</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of St.Roch K9?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ681zsgC7j4AR5VhlEWDxTJc%2Fphotos%2FAU_ZVEFILlPepAB9kw6yNeYjRgK7WhbhqSwfa6aU1vr_ggjoESLGq4z-Kb0GSAq_a9gCNNiwftfudMcYTK_IFa-N1mHZRG_3Zlx48y9iw1bYVOaAasFwy4pZYi79vJlkdV77G8xVHCM3nOsGjbmrv1phNCnuooTQa7Eqo-9T_Frl4CSSZ_qKGDG1RYs7lrJrcEq88RkHHET3X9vA3VpbYFEN1VZQRqy_CnqXo0GktGd4ivDvMf2m8NG1DfklKazpSLKmfkdBz1-iRnx6AJ8C5oOq5cv7CRMUV94c97-NrjPXwEs&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Girly&#39;s Pet Sitting photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Girly&#39;s Pet Sitting</h1>
@@ -195,8 +194,9 @@
                     <a href="/sitters/east-palo-alto/" class="back-link">More pet sitters in East Palo Alto</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Girly&#39;s Pet Sitting?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

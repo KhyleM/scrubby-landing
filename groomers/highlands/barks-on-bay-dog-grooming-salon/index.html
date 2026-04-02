@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJF30oUoA5wokRb0uLBNpyGF4%2Fphotos%2FAU_ZVEH_7lWuEXj1xNSdfwN4M3b20sGbOF_o7-p5BMb6485tzfrxt4OeSkTIqzPr6JP4fCLChR62cIidUEU_Ch-wc3fD8-s4Q5EQREGu9hUkRo7LaYpeYZs_TucfHeyErNJ1OUKZrd02HOhb1QQJXtNcEKM2A7VukIP8ifYIXdOAS_HpSXfrG67WyUmBvlx4b7KkmtYsqKuXHtdU8VSQj2SbEwwh5Xq_m-e8wuGVsxP1Jfvp_oOuQTzac4c4B68G30ZJUhRtI2pY-MSaz2dfrGwhg-40hzqqtD6ddND5-pQQJtOSqcHbRffgiG0MmEIOXcbwHeUP-qDeJnPzHL-y2eoTMmrAiRdw5mTJDSCbOwvwmrSg73zrM0ATHi4A_uXexIsjJC1FJWMqYTAZAicJTR7w0cioioKKGdzQMKts-thzaM4G8sgI&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Barks on Bay Dog Grooming Salon photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Barks on Bay Dog Grooming Salon</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/highlands/" class="back-link">More pet groomers in Highlands</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Barks on Bay Dog Grooming Salon?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

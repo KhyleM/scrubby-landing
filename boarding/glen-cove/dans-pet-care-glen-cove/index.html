@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJkYoe-tSFwokRYIXMzdmF3so%2Fphotos%2FAU_ZVEHaCfPdvQPSyKj2Tdq3doM6fkwBUYkYVpmzXGa12-Kr_7ldEIWLrCuaf6fHWEfi-sZognTaiOCWA_ywU6Y-aDiuv2O784Svsf7PEXvDCY4vPdffZp-Ol8qZPjE8XQynrN65aHzmMS3kkbvYQ3vTI78PPElupwH5mJVzMcIbuwdJZP7HClxIVGGjb8YXgGB8xJ5idKm2Bxtky6LaBhCqH966JksbSR-hETIgKLIC1cFM-TCDcJC_8zdb9xTCUhrOy2iimFFIG1RxHsXXE97PApg-32jrUU_TwOLDlzvRVaaROw&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Dan&#39;s Pet Care - Glen Cove photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Dan&#39;s Pet Care - Glen Cove</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/glen-cove/" class="back-link">More pet boarding in Glen Cove</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Dan&#39;s Pet Care - Glen Cove?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

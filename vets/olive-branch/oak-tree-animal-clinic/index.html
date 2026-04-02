@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJCTAjXJmSf4gRAh_3lWXV-14%2Fphotos%2FAU_ZVEG3EcB-AUprkgYC1788JCMDogtBBEyQPGMBE5dOiGjV6bClWIWbNCBsOuLAj78H-6jCp7D6N_89Gp1AwUklLkCQjDDAbkschDxKgO2GsqSTk5565iXyi-5HaZpt0w4VEtHbot79UxrmTSKfH4L6FoJSGWKfyeR7qgIZu0zaEic5D0j5kizS_cbfM0_t6sRQ23uxLjZndnaQ8TIQblxlA5_rM5tjAishux2vSZCKYrz6K5OX-87aPB6OztjwkvPrM9JM9AZqC-Mjoe6zj-Rv4eQUrUnhQY7dgk5dLSo7mryq3dSj0OInHlloqompUGC6krQm9iuFFSBlv0LyZ1gIh-O0lsUhfmAVVIS6TP5BIhSTf7UMeYBiQVZzrKgEbTKm8bc5mvb5idDp4DfonJSlGFF3R0jKuArUm18o_-Q7B9VafXWt767G_hNnA9pR489f&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Oak Tree Animal Clinic photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Oak Tree Animal Clinic</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/olive-branch/" class="back-link">More veterinarians in Olive Branch</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Oak Tree Animal Clinic?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

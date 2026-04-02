@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJIY0XxJBL3YARCg41ziMJHUs%2Fphotos%2FAU_ZVEFdRV2E65Bm1e42tp9PRth3fjldCZc_w7GC-b3Wa0BqFAhtlY6vGQx8yVlfA5LCE0trPrKwNjc_MJdmUM3Lahqe071UfAy85ySlkxNsMXMvKbXI6iJMSk9TywZNSnpTuy8taSDzI0Y8-kag7LUS1Hj3jTLIke4uI0I_MvfUmZWXFZWjis-VlrOeNmhrnJR08GfxXEgyKaIMgvfraHRxFkSRnSFS7QYg5r5cPmG0xBJerIP5uZ1vIhzEiny3ZyWOBJPH5owvdEbtCzIQx_gocZx0yiNsxJoskje48ONukiOZuKESIw0gGJ5eAhOmc8_bCVcBJ3BcQk3nZh20DtYuoxaqkeJo1ptIM1_EPmIzhOvenCBr_-c41ocVCub0dS71hl9ogaQYm5zVWO87EzIeACkQmA1FvoBQRPWah2JRC6yDlg&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Pet Food Express photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Pet Food Express</h1>
@@ -201,8 +200,9 @@
                     <a href="/training/rolling-hills-estates/" class="back-link">More dog trainers in Rolling Hills Estates</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Pet Food Express?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ7aWA9v9VQIgRH6h11ngw7Wo%2Fphotos%2FAU_ZVEGD5YTg6NfIuz50y5mujq56fjXhnhyM_mnXrM1AwAbwAcSAk3UF8QyWPk2UEcVC9CTwAEr85hZfFQG3ufbv9tzlZAsj9ABIp7ybonV__BPOnweYdlfFSV1bC_FdGo8m3fKRLj-7a5qg2h00sinlTuuG33Dd4b5XaBDFEx90ojENI4_nn1nHRQsweiy_toZ_fz78Em0n8a5b_cqHc9KJeWHFwkC3lPvAFM4ck2QC4ITOAsy4Dr22Vt9t-WZJLvzuQ1VCHJ1RhXpCeSsHdVercrZymAaAAtfPiYL6tRvaxQQzpd-heThI72gWzHKvg97W3cYwXKj2W29EDxO_7C9yZnto572Jxr9PFQif284_1L4yLpXeGabz_PJObU8-XjlClsHIwHq5L73jOVkO5nTqV6xTnINLyGYCVH_YEb4xdHwMhZhZSNLKui52cl57lJb9&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Tara&#39;s Pet Boutique - Mason photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Tara&#39;s Pet Boutique - Mason</h1>
@@ -198,8 +197,9 @@
                     <a href="/groomers/cincinnati/" class="back-link">More pet groomers in Cincinnati</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Tara&#39;s Pet Boutique - Mason?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -345,6 +345,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -355,10 +359,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -383,7 +383,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

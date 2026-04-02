@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJCRUeKDIxW4YRpbkYGy7-ZrI%2Fphotos%2FAU_ZVEEB7m0Qqr00b48Z8Lf1p_LdGD5J9Wt7pUP8oUJBGbNaiNgEYriyZllBfu8rtZ24q1OKtgQ3751uE3Gxt_9mdO21OFe0JK5rnHOyH_t0yaysDdv6MV024KAhcwQ9ErTBFqOabHsNDWjVJdHk7Ch07JnFoUy18VivFu-ieIRNRxT3AiYI9m5aqYEetP-Us95nyTsFSXhUiRxZmdHDk_46PejVaSDhhJww7tNQRkdmLjeDhaQdle_z-_LKUGJSgZ0khiIyMybrJmeiYtPh9yeRQqZpUKjC9EnsjswFSPsUSgnrWFxuLEg9b1kZ9wyhep_k-a87juodIeBQBZdQQl4nfaN3pyCd0Nw-DvW0yi-N56s3p1LAKB5yt2AdFCqbnhQi4X8rfDaQtvg3afUbiiJNOXHz3pvLk73DA42QrSeSjdNf3YNyDukRKKj-Jd3JkQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Lakeway Mobile Dog Grooming photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Lakeway Mobile Dog Grooming</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/austin/" class="back-link">More pet groomers in Austin</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Lakeway Mobile Dog Grooming?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

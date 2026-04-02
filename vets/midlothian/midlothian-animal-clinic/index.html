@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJY1JlihhusYkRcwWUdSjJcbg%2Fphotos%2FAU_ZVEG1oe0rh92OqS5kxdGMfkAKK_O1LHICDjFkwUxI48A0VkFgRoxGijAGhn2MFKFExENG6WCeweLDyJ_H0n5Zuy1hddZGoh-Qx4zJV6h824o2NTOJ4ES30sG8Y4uJxJP5AzHGhjbjYjsZGhAPxxGuo_JtJ62dyxkRHu9WxEsHR_vUiNd0T9UWr-bQJIDYUmfNe2oCuitvSL5GoEwWGEeGvbtNr8qG3xFjuHAMdvsh1TmcOF3aUj2fkiAq8NTbdVa9VXgzw1l_LZlGoD_FHC33oaqbHezKZYLznsLP-2Vqop4_9EHFLvQvE4xnNXV-PuNajQAW2F3ZdR5DxoO1sYgW9MhwCrsNWcU4Z4LilgRUYpVHWwN46a9S0hytx2-JWfQOojz_Tj2IhWPkOJtViVOqyq1y3R7EsWRoVF3EPRLv9baSlNqm&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Midlothian Animal Clinic photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Midlothian Animal Clinic</h1>
@@ -201,8 +200,9 @@
                     <a href="/vets/midlothian/" class="back-link">More veterinarians in Midlothian</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Midlothian Animal Clinic?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

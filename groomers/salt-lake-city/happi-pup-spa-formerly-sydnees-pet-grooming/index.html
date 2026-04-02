@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJP7Fo6ZuLUocRMANPkocJWMA%2Fphotos%2FAU_ZVEFrdGsSpFt9QWi6Z94JWgAImLgwY-6obY4dmNZ8xaUJqeQUd0hYoDMf7n6B_rok7IeJpzg-cpmcWnaG2NaUQ0oXAy4dXnGVpj-Qldr2MJfBTk3ZGFBTNjJHF7XiPFkWKsJAGEXEISwx4F4Prj3PcOLTm2V2f-qwxfkxxiwPFQG5ZbcQCb_xU2ajZZrw72_Ge20a_PKplK0jooTNbk9DTpmIpj5Mejqe2j8TS8VFG4jlakkLqfhrtyP_zbEyk4djR6-F94XL_UAX_W0UKonrn-qc5qfgXTY7pUiuimVWDirFs5nlq52qkhSpVerBLu9TXitWd5jIRsXjeXPuh1kDa2FaXs2IEaRBOLEL3pDjTLPZGhnmTgwvnyn8_EdmN58C0LaDO5NTc38_zoIZOOi3oCHdwqP1efOdlQbiHCG-Wb_e6gudyRS1bheNIrTmcwlh&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Happi Pup Spa (formerly Sydnees Pet Grooming) photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Happi Pup Spa (formerly Sydnees Pet Grooming)</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/salt-lake-city/" class="back-link">More pet groomers in Salt Lake City</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Happi Pup Spa (formerly Sydnees Pet Grooming)?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

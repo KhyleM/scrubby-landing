@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJBx-Tu-iJf4gRkD82APNJ72Q%2Fphotos%2FAU_ZVEHnD1oTl6cZJcJ9ZpvE1RYoQsSpj16b5zARhMiwnmjqJozZMNLKvzNw8jKCMLG5gux09MeJtRF3tomj32ZfkAZxbpddZeJsO09mY5Iq2DgwlppWKetxDuFLTUBIp3CSh3UOMUxjhuZzaoq2Tm0vX7ySUmBpE1Nm8JYYi81DciSofJRofuSMyHU_sX8ecfD8de-qeIT1YjjaD_6ZGkWHxwmLCz-SWlHgw0pWb9HEb-UkIv8vkYgvok4QC4jkiNJ_WWkgvD6wHTSYvb2MnmBWeUJ9Ypv9YdPUqmhIHVO9iIFzP2VIxlWA0V2Bbow3VdK69MfFeCRNl2RwjavsM0ceQf2_ju_pvgyODT9FqAdd5zKEhjaUs-Gh-7zKuAkSfzm55S5ji19VUAd-bmAye0ZYyMdr-_Icok-gHd5_aWJOz6RNjUdq&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Stateline Animal Clinic photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Stateline Animal Clinic</h1>
@@ -201,8 +200,9 @@
                     <a href="/vets/southaven/" class="back-link">More veterinarians in Southaven</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Stateline Animal Clinic?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

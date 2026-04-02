@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJdayTI9LxwokRKbgf1j7EaV4%2Fphotos%2FAU_ZVEG68dzs6LjeqoYwp680aCF_AAP6ecal5nn8XLvKdnLuF_L7sO4lFsOGBr8yUGZnarFTXLBmqZZgABT0eg-OHRXg6ksDFKZbxvZfROrqVUAJEGLM_-t2SOQyc0XW8jM9AnaVnBF8pf0g2omGE6gK_rIZqxwnYACsKfC4f_Rhqu2wyWViQES8OxMawMb6GA4BDKmpu_ElZrqjsia5rtcFwL_PIrxj4ubaDHx-tdrOxNPq9RezzFoGX43uNqdark4nBoK9uLqWAGkLPoVMDvUP9ls66FG9Tu2Ok5_AIBbEMeuTEg&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Peaceful Pups Dog Care, LLC photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Peaceful Pups Dog Care, LLC</h1>
@@ -197,8 +196,9 @@
                     <a href="/groomers/dumont/" class="back-link">More pet groomers in Dumont</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Peaceful Pups Dog Care, LLC?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

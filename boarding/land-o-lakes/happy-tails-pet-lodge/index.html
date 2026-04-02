@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJuXRu4h6lwogRj75DqwvJxMk%2Fphotos%2FAU_ZVEFhE8R6irhxb1CJtkmRpxYhKtXvkq6W6ogHDn-Oxpd8QMUr50ES79brrWD44EjNPA-dReoxlvi6325Kb1D9QRMZqNr0rw2gFEfZzwOxYpOA0dfa8xMX_psKeVIib3EKoD_duWbPZ_hMKPRhzq37qrdk6oEYJsyJrdKkLlQwgp76tH91llo454AdR3R9R1nIe8OIObfYj6cvQ8mUhOm909GfrWQ6hwzdx3ku5IGqn9onFr0s3ruj4vjCUHTJ0jtxMCW0l8VYOZkthbo7b_Q5pOp45pRqGr-b7bVemeT8RNyK0iIMtFSBKExq6blcFiTRfRmOw2g8apv9uHMXAycC52SSYj83x2AEAkMZTE-2XbdQ-Yz3grlNEWh0wa0D8sa5y8og8mGOYvFNgRO-2EvmMswOk-LdXpSfKyL1zSd_tEcF4ao&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Happy Tails Pet Lodge photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Happy Tails Pet Lodge</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/land-o-lakes/" class="back-link">More pet boarding in Land O&#39; Lakes</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Happy Tails Pet Lodge?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJz669s6RrO4gRU0pcG9wUGa4%2Fphotos%2FAU_ZVEG_NWN4S63m8WQJrt8QzeUD7K5TbdJpcIXPPqymso784ItdraJ-TKWXA2cTYS6wUDFntaN_nruulozF-QxWLx04W1tetpH4uIR7ApPjug7b7Ipl28qeua41PjlBn4_nzFkLbDJ2tVQQ4h1jBKbXWdRw5uflH_RYck8NY8t5F1O1o_prLnom2G547WZxesZk5EzQ9japo256b3jLWd2nuD22gfPvdlDZT_zK3_StgmFNuDecT4kRu8ES0xxoPqAqSTP1z_FEk6_po5lZuryKYDp85BLNgHZn8spLOMcOgpNzwYN_2DssSipiQKUl4hhcYlnpuHLuxXhEho7vjKO8UDvJueZiFuMeKWnbhn2acCVmu_vZr4wJjFMUgQK6F7hHTSf4L14SKnzUHKaxMhEM1qIl7sA-oDekD8RhQC49oMU0Bw&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Sandy Paws Grooming llc photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Sandy Paws Grooming llc</h1>
@@ -197,8 +196,9 @@
                     <a href="/groomers/newport/" class="back-link">More pet groomers in Newport</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Sandy Paws Grooming llc?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

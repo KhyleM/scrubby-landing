@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJWYYFDzc-ZIgRX-Q_rlRBHwI%2Fphotos%2FAU_ZVEEmUtBLIhvcwCjKaAV305PJeBM4cn2iO_lUVHPk7ai-p309GgEFrJW04BWAFGyaNDlU8tAsVJlJRMTjpVwO-AGKBZuNLUq26BafS8iQU4aEQnPHm768Se1nOxG7aLZmnBiKR0nb6PZoG1833KWv5AMxpOSuQMVXHan53sU105Wf1ZkS2PgbpRncX91Gx9jsB76CSjRUDK8L5jKZhfNnWfhBQUPHac4qZJoLQ7kS6P1X-hgxNY5ybrpRSLlyYLDRFX1aVacwvjihL71KU1Pf5m9_fMThB716mV0dtDDyRSNV_64K6tiOGQbii7iMqeME50SaiXgxq4LWFKtnP0hhCKFW0u0WghXGIgvMpKNXYALVga7iakz-COreWUWbxi93X0LQHqJo9v0buiw5tiXdGOnEyRLCYprfv2qxF-1go-j3AgoN&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Countryside Animal Hospital Pl photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Countryside Animal Hospital Pl</h1>
@@ -201,8 +200,9 @@
                     <a href="/vets/mt-juliet/" class="back-link">More veterinarians in Mt. Juliet</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Countryside Animal Hospital Pl?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

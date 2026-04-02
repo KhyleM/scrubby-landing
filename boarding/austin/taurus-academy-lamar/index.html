@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJmWPZNRm1RIYRVGADKnpcppw%2Fphotos%2FATCDNfU34RXlisUi_7xtPL6i4qmZYJhq1RRB-LWiMVlYJNPy2oXP5kB0ut1b1yaGh3foNuheF0u9yMON7z8hX6YuQXW-mTXxni6CwX6-F7_mRvh2cBf9Vj5RLilcjbKiIxFzGA8TDy4XLJEe5Ee5LQ6SuLBo5bJ-1OPHTVSWdyFbr_PHfQeIXQadyvjaI8A5EMIEJ7Z5VveXS8SdntiwSGfyyeM4RCfkUfd_wBIkUy1TGQ-AmRMHk1YuR2DSj30po6hm2MVRyJH54GXTrXtvWDDOALlqM9q4meq-CxNS1lwxLjXhkKPTVxC2zsNQLvJrXbeHnLNFYPuNnSJt5ss9hQqvRNqiBvqLaQTPBo4NDNptvseuhrRXsIlxqUDgtxfR_40FuQxe-zv0vyI1lW08-Y8I2rCleKTlX9IupEFn_pIlDN7AZIsrmTaBIRz0l6pImjyA&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Taurus Academy Lamar photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Taurus Academy Lamar</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/austin/" class="back-link">More pet boarding in Austin</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Taurus Academy Lamar?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJjRjyQUNm54gRP2piszYZs2s%2Fphotos%2FAU_ZVEFHJCbnuYffkHLLtM-899AKno_QdqBdQolK7s2GppaJzoSCj4mPIdB-f6sdualboRjziYuUkexFufpymoNskI1JF-WY8EiS1g9JxtVvzVI6DHFj-l0HNdwkh0POwo6v6iMVMIPwcro3hfgBD_TbyE1U_JoRhus9j-aTlLKeetP8-TVtyJoR-Q5_rHrpP0diGG-DZWe3ovw1kMAtf_Hg6Bbz2LVcW-dQ9Vt_b65kkhagNDe42jr4WHdkvDurApJBK8PDEwAUCFD2yDbLWOST4uSGoCqGrDp2aUQ1IL2xeDm8LjJ8XyR9LTCboT9ULb93AAThNcLTepIJOvMM9jolhXCht3jrC-3EleT0jsi_Z8pN-_RznC4-1ENoivOuSRo_etQ4tndodk2LO2gEpIDHmRhsQ3ZOW938-S4c5b0qr3wST0xw&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Veterinary Emergency Clinic of Central Florida | Orlando, FL photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Veterinary Emergency Clinic of Central Florida | Orlando, FL</h1>
@@ -201,8 +200,9 @@
                     <a href="/vets/orlando/" class="back-link">More veterinarians in Orlando</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Veterinary Emergency Clinic of Central Florida | Orlando, FL?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

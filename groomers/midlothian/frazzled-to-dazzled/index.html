@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ63QvE5FzsYkRry4udp1VyaU%2Fphotos%2FAU_ZVEFaGcjkgf5yV7Na8zHU9kpASbNiwABjoOf5DbZxFoO_rr5sfXRXhlOL818i-0GysKs9WxGg8amLJeaV4i4G2U16QNCTN8M-9sIOlY69poCq74OJYRnyMKpTK96B_NMmlj8jLYQZsqbYvUUum01zhmcUMDUEOu9Xv2fVPdaI6CC7f_d9nWzY3ZmUxKzL06KrkHlL_X4Vd1OITZ5aBULg5Jiwa9KRYasNww1GJqx4VkYcJAhJl7HgVg52P2NDt9itejdOST6yjjUvmGPCIQmkdqkyRLLsjrK3cOCKN_xNN8sG65dTIbfNLe_6x29593WlVvljdjO0OzGds6EERqgJekRd_9nRnaeAhG8gy-gaU18q_D0Ry0AHnicyMIqvZ1lHH7lJ5ABroYlERrbhw9_5WTXBbdPYb1FPLHrPYdBelNa4-oI7iZvn_THIwt9iIg&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Frazzled to Dazzled photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Frazzled to Dazzled</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/midlothian/" class="back-link">More pet groomers in Midlothian</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Frazzled to Dazzled?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

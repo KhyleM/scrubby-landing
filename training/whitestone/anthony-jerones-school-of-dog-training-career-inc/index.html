@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJP6Ax3Y2KwokRWRo7RjshM_A%2Fphotos%2FAU_ZVEHzFKYn_kge14Klh6KfCYjdI4F4c1rHWKa3F12E6jMGMqoUBRNGW7BfvS67YQAcTiQwuD6kNcWS4u1g2hB6JIof-hHkvb-M5fFd9F1fDnDkN5EP-KpISvvE9ZwrqHLkdUsdWEbMRXVBZPsl0J68S2bUUyFsW4IcfT2ZNP4oxMWqqxPnSsg7X59wzvQiJfnuODsHFyiToFeEjfik5FDO-sZhTk9G_yNzL3riIALhigDZYPlQTlpSHXvC_RTS-4N2-ufKCZIMA_R_B81ZG7FqcXGEY0dbYfZK-4R46jXW3F880iJWKvVaLHdme_S4drgin4__T0AlzPJX2JWM6iD-cLvMtkaqP5itEquToNaXpRJywAnX_5tY5DctEsC7Ut6h08855A0UiyBxz25YqRsCKlVUSy1YSQzaLfzG0Sioe-uFZw&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Anthony Jerone&#39;s School Of Dog Training &amp; Career Inc. photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Anthony Jerone&#39;s School Of Dog Training &amp; Career Inc.</h1>
@@ -185,8 +184,9 @@
                     <a href="/training/whitestone/" class="back-link">More dog trainers in Whitestone</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Anthony Jerone&#39;s School Of Dog Training &amp; Career Inc.?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -332,6 +332,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -342,10 +346,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -370,7 +370,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

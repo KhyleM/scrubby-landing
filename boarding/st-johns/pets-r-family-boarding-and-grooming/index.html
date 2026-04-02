@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJFx-MRuvT5YgRydTdSNyRiNc%2Fphotos%2FAU_ZVEEtHH6bpjAvdTF4XyYWAs8qisUHjiDXIyBTr5GT8UxWPvfafVoHdWXr1U89s_EWF-N6eYtA32YJ-YulMq54uGh3qM5T5mjp0fDfiBojPyTeROH69voqkOZbybH1--XNpBeChP4uyysQMTclIQXsgPRpst20h2kYs-bczod3mWGJ1Y9HB6NvWRD385tw1mJb4DVYeC7QhnpZd9Ikjw-fsZotZazX_KRESqtgVRIAhrjn74Lm7cRkTKzQX1kzTaaJtCBh3H7m6DwnujQJgfKn-n6mXm_b8mhKtJy-QAHTNUS_7Q&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Pets R Family Boarding and Grooming photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Pets R Family Boarding and Grooming</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/st-johns/" class="back-link">More pet boarding in St Johns</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Pets R Family Boarding and Grooming?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

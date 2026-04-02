@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJHej7HAb5NIgRnlwmbfM70Ys%2Fphotos%2FAU_ZVEHljHt03fWoxZ-UZSmLh_L-1tBVMfEiRwAFoLwZcTpzxTA_PlmbyMxEHtKqaaEsyNjIWC3s9DAjnRYRYcV5BLd_lJVQx2Oyx_Q1jqXr4txya6IhOtmuec1Gm03LObN7vLzELH-jzXKipL5Ard-0-go6AZi5psOEVN4URuHuYUkllPfqYyoHs84Q3n5LjuKvZ8E1jJ8Yj-zM3ZBWEVzGt_k5JPz7owkz7q6lZSC9h6ciPJ0pkE0QaB8tI0uXywGm99v2cDfouzq_qZU9ErrZjz1_loDHe2GPOSwpWZs11-wMqu20TZ6Y-RxrHhQPdBn2IJ5ccTnn_eCo3JLa0ylnooeI4vh2Rlqvso9oawbuGLwfiy7Hmzd7-lbVF0Na63HO7ULGluP7FUq8Hq5I9li4wB3vu5IOZxByMVV2d-RzKY4&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Xcel Canine Training Center Inc photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Xcel Canine Training Center Inc</h1>
@@ -185,8 +184,9 @@
                     <a href="/training/bethel-park/" class="back-link">More dog trainers in Bethel Park</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Xcel Canine Training Center Inc?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -332,6 +332,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -342,10 +346,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -370,7 +370,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJEwvC59OHVogRyVu7Pmt-Eok%2Fphotos%2FAU_ZVEEawhTB9fBWhBwd75nu4H__SJKF8qV8N607y4XhX-0nFLnrN2PNn2mubLXyT9FVX-2gvFuGb1H3u_ca2Ew_DzslLd7sLqUKLpI8bhOEaQkawvwcFFDB_yhI7QF8oB-vlyQQ94Wt6CVgs-q8yWURvXq3MudtY6j1-JA5nsjptniWyauIUQchwYdKFL6xvylIZzc6pyxPmsc9bCdV5yJUXFblR84bB5mgT1OGnh8i3cnTTjrFzmTg1Fr7-t1oRPEkS1MTTQE8SRXrMBEAAVhRXq00exlGSAOLMcUtv2tQQJctBNBe5UkQZj-L1Iq8ZFkqT6TbrKahOKjpwqL5sHRP_xc129iocUhS7YCAJxy5H3tvvF-Tp9zKbMKU3gzOb6eGsvyZBNcegJivB7sGoGyoZVlIE2D3XExGVGo4G_wFpR4ibw&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Carolina Veterinary Specialists Rock Hill photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Carolina Veterinary Specialists Rock Hill</h1>
@@ -201,8 +200,9 @@
                     <a href="/vets/rock-hill/" class="back-link">More veterinarians in Rock Hill</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Carolina Veterinary Specialists Rock Hill?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

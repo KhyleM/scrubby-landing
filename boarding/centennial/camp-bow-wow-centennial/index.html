@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJww3loeOFbIcRIiSE_V5WdoA%2Fphotos%2FAU_ZVEF7edP0zMoy15Z3I1hjnmQPDblYngbrKO1DNR9UO02U5hxaMybmJloSnSLE4m42JK8rb-fbnb1a8sxnUYCJe3HYmzXsR7L4gh8cw5rwKmMpsf7wQMug_-97NSGPWbDhaBbWkzoqsHZZBOcJfqK2nFWGn_IedOu-_bx9JKvJSsaxqi7UkuiQRtSdNWJBFK--KSbyRe4mYRZk0dx-4qvGhqY0RiUvOlmiZb3Cj5fk0J13p1CREdPNKMJOX_qVZ8i7MyiTvAO9aitwrr9mUum6uBywTj54SMWw-LBgoYaJnTk7OQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Camp Bow Wow Centennial photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Camp Bow Wow Centennial</h1>
@@ -203,8 +202,9 @@
                     <a href="/boarding/centennial/" class="back-link">More pet boarding in Centennial</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Camp Bow Wow Centennial?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -350,6 +350,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -360,10 +364,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -388,7 +388,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJKfaICKu5wogRbUpYJ8X3Ers%2Fphotos%2FAU_ZVEG2gR0BGY7__TGQqdFDMGPzP3Rmf-pWO_nPEXXzQTTLcSXGwNHsWNG78vtc4vHoLsEAbwHEDFDVn5XiYgzgYKO_jrjk_sMTaKcc_32JM3bTcnv5Rhf7C2EDHhKPwG27TmJCi1flcHnSbYsLT1ukLTqEp8SoeDilhoL-FhJ1QPuKSKtG_q6X_8-cjV84x3JDHII4iw7fJ6c6ewBwZi_K3K6jy-2CGFM_9tx3frUmBEpAMUql0uq9fIHt1ipVc7-uBX1KB4ZOSm9voXwLSZdIVYeDi9SQhb859xULm-_48MUzgZxa7jqmGTSrBdhEd0Xn7BQYjNoVo93vKaGeM95YmzrfFBcOzfd_qj-8eknkaTH8BmjTptZxxyyfKKsiFrIR26se6wp45Xev2QAjb2DRTDPHtk5XMKQcPJezFTN2LhEjD4dr2wQIck7zvLO3_QN1&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Sit Stay Splash - Self Dog Wash &amp; Grooming photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Sit Stay Splash - Self Dog Wash &amp; Grooming</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/lutz/" class="back-link">More pet groomers in Lutz</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Sit Stay Splash - Self Dog Wash &amp; Grooming?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

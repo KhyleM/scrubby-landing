@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJU8NdY4JoOIgRBtvcmhm1vEs%2Fphotos%2FAU_ZVEHQhcohcgEGk9Ik-nBcFcg8c_JzMoWFmd62imYe6LgGvsspW1ENUn7l7m_tqxyELFFbPS6XImKpKSDqLFd17zgtMwJISFYz5_o5Y0q5XGcSQ46J5D9S4h0os1kHatBH8hrVtg2D6aFNgvoQkM0sprCMDhCf9jY9Bb2wd2uQBCKhqiXir_oUuFLmudDjKpOpZPfWbXjFzfsp0JQX7K0Sxxk3KUlni8CJfMytzMtgjtzEZu5v8yhAhmPLtvrwrFB5axP4U38fJC8P8b8ZLnBvIHOFv9rcDDqKvDvhShHOcEMONgrRtLRn34wfdOW3Oz688Gpi3JyHOdzXeiHfGSKxb9SAI6eI82KTfOaf5Z339Ge83rGMd-8d3dQHDb-ACGOnmSigjCh76n6gnkj50fMfB8KiZvUAOvrmKtq8xO41ZJ5p_w&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Happy Hounds Spa, LLC photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Happy Hounds Spa, LLC</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/pataskala/" class="back-link">More pet groomers in Pataskala</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Happy Hounds Spa, LLC?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

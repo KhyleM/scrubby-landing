@@ -77,7 +77,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJQ3iQbTvDQYgRCBRX6TsimP4%2Fphotos%2FAU_ZVEG6sHdQUcVPUJrL75qeubjjeMOrD9sCfMeZM2VOKfiU5yNI8JjmtM76PySb0lEQAvdZD6kQjW4Ae9R_etvxU8FLU2zEqjakPaJYiMJc-lC7WJTZwHon9jpjQ9L1IxuTbppsve0xrcNinVhzR2ar7Vo3XY-ueBkrelDiESkAVKbrELssjlAXIJAK693nzEGQcAd3lamGglYsSAwSUpp8NTgu-_-gtDP7gUkL94DYETqOgINOFFHGux1VRDLPySoxMatudI4gac8UBfQtmX6nFgSUZMHgTHAw-bdgL6vxOOBOtN9MYd8LPumXffYrMcmM6Bu8Z8d9YfzCh2_GE0f0bU9nNHXK3PG7kKSugcnHQUDdHmUGLm3fnVocDEqaJ_cYn7JcgyCEWNtlZ5Sf3SNI96IN_idB7bVXanKvnp34FeiIylIW&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="River Valley Equine Services" loading="eager" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>River Valley Equine Services</h1>
@@ -193,8 +192,9 @@
                     <a href="/vets/burlington/" class="back-link">More veterinarians in Burlington</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of River Valley Equine Services?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -340,6 +340,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -350,10 +354,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -378,7 +378,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

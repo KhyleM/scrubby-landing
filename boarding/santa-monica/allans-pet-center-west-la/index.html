@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ1dDD5Om6woARAAh5wZXhTdw%2Fphotos%2FAU_ZVEHlYN0qrEpHNfUU-gglkSdHr48Vij45xetFntCkQ12PD_s8Inotob9kDuuGzoqMFYXIxN5BTJAb01GKmyPLwa_1rN_inVlPYXcpa8NA_meDb_uRr_pvWEHar1XYrHWSvy3Ktani5UucUgQGPeHG6qFIiZ6tpgC9ICWTFVPBZpEe-O7MlSStbK_kEhQDV_etqpIXoj5nlEcjvMiZXP9cYa0bbrdLqdrOimUbov2paIGBD5HStBJh9i-dVVoCczxmdV928E5ugX_K7xCTuywo9ZE6ESAfua3OGiZHBNJ55QGUsQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Allan&#39;s Pet Center - West LA photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Allan&#39;s Pet Center - West LA</h1>
@@ -199,8 +198,9 @@
                     <a href="/boarding/santa-monica/" class="back-link">More pet boarding in Santa Monica</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Allan&#39;s Pet Center - West LA?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -346,6 +346,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -356,10 +360,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -384,7 +384,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

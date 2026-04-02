@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ-YnEkJsAw4kRZflShzyxPb4%2Fphotos%2FAU_ZVEGnsw5V6y6hrF4MI6onMUtwt-aD3mVXVl2XGi2DSCHhmmnnQl8KZ65HCHOKdgjcY3WTqgAl2ieL2wbGgSS6oSPv-AMA_LbRKvT-EAKJjxdOYtTAn69jLY7IK6TFgyjMybFFttDPKVnNa1l1BRjuGZIrLEqJZFGFEfXJjKyWA-3m-CuYkJJ0R0OvWs7EJSx2aP6q8fU3OabdPLH1bHCni1xIqqWVTQaOym6JuJnWk3Rju7VqbyRC_HL3IsQVzaTamnazgYVRs9pTJs3VGbgajapenSSOuCcs_zVUVwXCiRivFe6-SvyENi0V0BHI38Rc7FlnMYh7Hma8xXc5tTGGxU9LIVsIWf7QYrZimTTNVvQbV6vug8WA78jpFJyuZYWcxjh-Nsf_x5aWTzJhRRXTyLqG_8LahIOG--jXwq6n47tE_M_6UIV7-gQpe4UtqmCN&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Veterinary Medical Center photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Veterinary Medical Center</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/caldwell/" class="back-link">More veterinarians in Caldwell</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Veterinary Medical Center?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

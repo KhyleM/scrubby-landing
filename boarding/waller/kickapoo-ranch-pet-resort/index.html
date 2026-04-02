@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ3-GFeSLSRoYRVdLvl2oOEP4%2Fphotos%2FAU_ZVEF-1Rr457dMofhDpFNRaPQJOw0ZjPDvhN0hXVdv3Yna4He5rUpSehbCvEpCQS3reesYFz1I0USkIlQTv2_k9CmEEjOG2JCXdgBrtQ6C-TxILmIckHQNHxFuC8D6945guK7Tad27dWtItsx6ShpAggRN3m1pK1TPtZj3VEH9FhwRf8xPoZUY98AAuUayjmceUYcu4rb1oLuC_M2QZEyb-cFuViRLvbIxXm9VLa6SDErx6QsdDPItCkpuZLIpIK-mXJ2GA9u4fXS5tPNy8WQ6iPgvxH3nfgUPkWLnRcalGtIPkErBMI1JKIG0xnLOwssc932g1v-USHeTZekvDJ-CaJE31_RRNuLIi0MfYfpUx3C6vnJ-pEV8YIwTzutlP7WP2JJy3RWMsmtG2yHy2PzuXgi8eqX2HtEvZs5DqHJbmCkwHGd8kSDKoieaH_21S1YQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Kickapoo Ranch Pet Resort photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Kickapoo Ranch Pet Resort</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/waller/" class="back-link">More pet boarding in Waller</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Kickapoo Ranch Pet Resort?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

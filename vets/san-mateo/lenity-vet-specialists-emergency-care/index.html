@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ3aK4QMKdj4AR6hBmyhlehyc%2Fphotos%2FAU_ZVEGpg_3YNMOhuWkwO1HYyR4AmQWCmRKQwva87-5HMHkI6z2miIyO15h9g4U_JuLr_h05ayPF8oqzJ6p64hxP4eo91dyEIrn3Ue1ghK79J5VGTpIum5zp_JZe04V1VOx9wFn4rf2lCZm03Ba5HnQXfDs6ZQK_hTxX5EU4Sv8xG5QcsX79qVFdO7hyBDXa-GUZwnnS_lW7XI5XFXbSmrvMmZTjuoN3J71Gj7KCiRr7qlZIBLHQoUdShBMwD6GtyEsaVJek6RuA88-F2BHFFI4DRXVc4zMKbiN4Vbqs_tXKuOhdYQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Lenity Vet Specialists + Emergency Care photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Lenity Vet Specialists + Emergency Care</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/san-mateo/" class="back-link">More veterinarians in San Mateo</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Lenity Vet Specialists + Emergency Care?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

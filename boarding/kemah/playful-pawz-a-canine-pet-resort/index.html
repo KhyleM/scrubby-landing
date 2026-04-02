@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJlTcA7dpiP4YRJ3NICpOPvNM%2Fphotos%2FAU_ZVEGUA_M-OIvadt49yKopVchMUAehvB6t2Hbd9LLnbXm46atcgeScBAPSyiCpoeuGXbLrX5kDbntIyXFzKCufHYm3BJqsQBPFKUGa8aT7mpbZXLLh2vKiEc4RoDh_E-fFM3OVPwNrNTGIAKHAZYOC3onzjF1gReXi0_FXe1z_ulAd5VHO5tZvtNiDMDjftpAowbLEEh-665AoWZfNzlyhZek4N5gJ1NQOldx6oWQWa4Q2BX__3_eDvFx9WUcA1ZlOCJzQnD5_630Es5zZmx1a3LqcNOmEJ2DDirOvjTXwTKq4KA&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Playful Pawz - A Canine Pet Resort photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Playful Pawz - A Canine Pet Resort</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/kemah/" class="back-link">More pet boarding in Kemah</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Playful Pawz - A Canine Pet Resort?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

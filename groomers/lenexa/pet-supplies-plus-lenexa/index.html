@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ6by6T6aUwIcRsoYMC5F_Hy0%2Fphotos%2FAU_ZVEENGTx7ZSP9yVqJJKMIPUVf8cAXTnmoirsuFwHopSUcRVujcMW44e_hvL1tHZgm2ILiZplNtEsIY4JD-Tn9WeJvchpr8jb52yEAQBilpfwQsmQgO9ifiP62YXKDnXhvlvW8JAG85rPj_xRXoc6B03CSJaf_RMvzfs9IhXRzNEuiUU4vokMg0NFzXkU5etFjhZmIKsJvJigSEg1rAw-3sVF5WMs-zGvxI75vo3f9ymaRKCVzp9EXF6M8Yul2SYkhrU4md4UglaqtG6-awTrUMKrcOISQ0EGU5wQoo4wvt8-tbrNNxghMLOep0X0bT6fcR3XA3L_JmDZkRfk8E9zJY6vetCkUPBnIIu_364f6CIBs-wCxZ3AZ4LJdncNyNaXMiNz56f87PJ-GV56Lpev7KYyEXUTxZsnvJI61cIqVsdFceCTi&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Pet Supplies Plus Lenexa photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Pet Supplies Plus Lenexa</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/lenexa/" class="back-link">More pet groomers in Lenexa</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Pet Supplies Plus Lenexa?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

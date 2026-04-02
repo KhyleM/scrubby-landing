@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJY153hw0HkFQRCJnGNlpeSZw%2Fphotos%2FAU_ZVEFMLBTEFkZArTcsYXkijg6hMgdVr5cD8r_o_BmtWtKrtcDpxs68H3bxf_DOCx_KFKlaBYmo0wz_lCYzjnHYCpx3HnbYM9znaRG88NcPuL8OyENGgMqLbq-dUL-40tIh-Ne_rXTgX1nbmSPUKP-e43x1arOOJ1dWkR40ntTL96F-NMWgPTB4lcHVIB7eJvDrZHZ1K6IAP30cXaB041D7AezP6_4jW2s8ZyU4CHPFQjUnBepVkH18cmEQfgrSGRKfkydPC6D2aSU-syUBcSXWhG_L-eE1uoMiAlZkik1NH84u83JaCNj4HMKfVeKOoQ-AMSmr_nBD4aEgYsu7gkdcPpTe4dZdBEEfW79MYn3du-O3FK45mPecoCwU_sGYU9L4Vvu9TP7Vi6ma86YCrh5bKsaXJvoPrcSnJkhnQpgefHiycg&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Classy Paws Dog Grooming photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Classy Paws Dog Grooming</h1>
@@ -198,8 +197,9 @@
                     <a href="/groomers/everett/" class="back-link">More pet groomers in Everett</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Classy Paws Dog Grooming?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -345,6 +345,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -355,10 +359,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -383,7 +383,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

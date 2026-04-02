@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ23IQY3rhwIcRBi8gANu28aU%2Fphotos%2FAU_ZVEF3XAxboPiKXxo5-1qrNnuFpoLuv58CJ4Grud9cwKPP4ae101CsS9Irj9Q7kxohGQY_MKXagc26jONKKbevO6HdMK3kj9-Kj091zgippAPmGXWWaLZe7silUy4Nyc-gzk84X2mXYw0rTpcY4zgQHQ2K0e9opc94SamkFY4nsSyv5qBpa1c7t4LFuKzCXFol9tkDxsWqddlWraaneMHySl98MOQtaJj_4B24kWutKu60aqwjQ9ap8GEYawpoUHwUUx3i9FQ7hz780r5CbBgguFaHyzTIP_p-nB4mZG3AFcY57Yxi7pO3hufaSYM34uDSHpoUYPGV3ajReelnh-n4418_gFrUFO9O4BG56oUM5e3ZC0i1Cb03ulixno7mKTM3aOuybGNF6ExPdQgW06MFmDsvSRZtFYqWT6YtXBDcx5U&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Kennedy&#39;s Animal Clinic photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Kennedy&#39;s Animal Clinic</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/raytown/" class="back-link">More veterinarians in Raytown</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Kennedy&#39;s Animal Clinic?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

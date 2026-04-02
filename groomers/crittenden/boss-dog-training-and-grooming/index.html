@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ5zwTfnyVQYgRitBY1C370fw%2Fphotos%2FAU_ZVEHDi6v5Hm1hQf8sfv4vr7R5aE4h2Vs94c5YaaoPWOHu3_4eIV-fhm7jb2mIIDh93xa3EY1JUPDNUDbHJ4Z0DjJXpZpgccZVsYLCEr_7bGOvZ0txX7kgQUBEXzFmtwW0rADwObbJ8-KhOKMmB5HUAE-mKbHuZxV-CIsW0qwrr1dQm40uGUB2478mhRusScy8KUlpr0eI6dg09dq1-Bf0fRUxGr3q2NyF7afiI0otSzYHJUMlLrg2YfJdgw9vjttKFwRH77kmsD8UDK3Nwgq-FobTSBy581Z7KoJOyEvGstpsMQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Boss Dog Training and Grooming photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Boss Dog Training and Grooming</h1>
@@ -182,8 +181,9 @@
                     <a href="/groomers/crittenden/" class="back-link">More pet groomers in Crittenden</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Boss Dog Training and Grooming?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -329,6 +329,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -339,10 +343,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -367,7 +367,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

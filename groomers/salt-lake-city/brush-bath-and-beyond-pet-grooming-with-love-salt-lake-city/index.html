@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ2ZwoSCj1UocRxj2wD3LX7ag%2Fphotos%2FAU_ZVEEHOvsryWRVsc_t6niDPjJ1FddMBAftjSxvfn_YMliLVRhWmTMNgZ4KmjKEDtxHWwI149CZz-e8hgxvHzBwMjglZh5rps1jdtUdhfGo4p92PN6lk8LKMICiA3GCpHhUdjOiRLBXrNucNFLyr5r_90qH8URAZ-G5N2JQ9Tyu07gc04vXBWk7pQnwjs0AAnilUJXOti7EAiO-Wge9izW8dZQqQvX9YJY3rbYZGlIA8S7Yt2BeT_LLta7CUhNzgCGgjspcw7r41wF1P1tJMZ_WR5YAGyHeYAwKVfw0xpFnd5v_g2GD2GIT9qOMLYJUvFKgf1KvVTz87jSUi4RiRO5Mfiu8JZuYaU350xk6vx8X-sQCReAeEV9eG9xolb854ITKFbCj_8prYk2xRlLN6Ks1fq1dc5VfAMORJz3x7iidbsASpk9sw4cLBtj0PkpKf6a2&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Brush Bath and Beyond - Pet grooming with love - Salt Lake City photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Brush Bath and Beyond - Pet grooming with love - Salt Lake City</h1>
@@ -205,8 +204,9 @@
                     <a href="/groomers/salt-lake-city/" class="back-link">More pet groomers in Salt Lake City</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Brush Bath and Beyond - Pet grooming with love - Salt Lake City?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -352,6 +352,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -362,10 +366,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -390,7 +390,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJI4s8bQDdMIgRg2bJ4WG1YyM%2Fphotos%2FAU_ZVEFExr3bP43XQRH8evSvHSlDG0cPjoj_lfkquPSQ9xW5J__sTB-KtqkdNmOntqnhHd54JcfmhX_17V_LUq1ls9Fl7ERgOGsK1vX8-YllcxI1M-vJ_oOCTDiReGJUGsGTm6zdBTp2d0_R0Ry0WO4moUk0IYBhurj7hVzoOvQNi8TpYNydxZTVrAE05r855MR0F6gVu7Eudfy2v3_PuWyJOMOpqzDPRgp5Dfdi0n21ZU7sAcIvDo_wPN45G7V2fBjV9QOB5yCzvQ3hYxelThFsp-woOzRluEk27s-9-PKtoD4LM5WKwzUxpmocO5BHW1XvyHbiF4Vs-54lM4hBNtfpz6vzOM-KhPp2XHyOZhw_SWQ5yUtSFdVPrkyr2biIBD3mBtZAmy-JdmXTOA3sPj2HV7bLV-EMqnKGVzzCAgO5v5VLSQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="For the love of dogs Boarding photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>For the love of dogs Boarding</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/richfield/" class="back-link">More pet boarding in Richfield</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of For the love of dogs Boarding?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

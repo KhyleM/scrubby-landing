@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJB0ZdanCFOIgRBKpQpwfY1iE%2Fphotos%2FAU_ZVEEIaeGiem6aOrSNtwNeFCWpyOCVRUPFKZqOu8q2fJncqWDYuwswifDJl7ICpA3yJHviY7XL38JKKg-JYKB9eFMWFSqwkU5E4nPMAGv8JbkRedKkLN53DLTOdSfLIUqDEL5hfU8tUi6E3rF-kP02ah-OOQW2d9SX4cvguP8OJIgjyDILJiHz91M8ztGwogzQjL8vUkq7teWKBcdWU0Js6DEHH5SJFT9cDCPaagf_S40wNioSM0rDLbY2E4gEfq0rRRHF9vbwsp70MlilgImOwmcc_gJV6b2cTTijTECGWRPyqgxAM9pY7ah44z8YiBG4zeFP8OgA0eHOchUqnjhS7CvpqbYXGxwtPfZRSFkECcTUfKwzO1C1-6bhH633nWcgPKtGij_w5bBj0Z3TESN-TIpys3eodyxQ33V5Sbp_HRy91uw8Mka2HS0SWfNILP1P&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Fairy Tails Pet Salon photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Fairy Tails Pet Salon</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/grove-city/" class="back-link">More pet groomers in Grove City</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Fairy Tails Pet Salon?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

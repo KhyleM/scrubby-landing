@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJixU_AAZja4cR4_NO8uJ4ahU%2Fphotos%2FAU_ZVEHdqhpAtwnmKLbjQyrSouZy52xH-E-ZSGHStfMjVtBqVRlDKQm2EIOZpwS32asFkn4n41S8soyRuRqzoytxaGb4HSQLC3HTAYxQOirru5qDA8Q2YEwkz6cE4xEq5V82Pb1TXncjuAFdyHNTTsy_tXCc338id7z6wrKSldkFurzWl9CzOFQS8d_kNMCSJPTAO5Y0STAPcSPJIPmea7OEMzVaAaLiJd_BoMExyualI5J-Cl7A48w0XskhrVXvvd50URyT1UYpg-YLFbhVMPyln4EaCT6h3vFecsTmVuniqLjwtLXo15yeI8fefMs-M-gKhAwGo4OIFjAfyXxFLtFPxcC1_EkmRaXAXv917SMGpRR7dEWXi5RlJH8_l8F_8k_zNj--L1tl-aVCQSWrLvfSdYSJ1PzOpJVaECljaq3NLs244A&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="A Dog&#39;s World photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>A Dog&#39;s World</h1>
@@ -199,8 +198,9 @@
                     <a href="/boarding/littleton/" class="back-link">More pet boarding in Littleton</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of A Dog&#39;s World?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -346,6 +346,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -356,10 +360,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -384,7 +384,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

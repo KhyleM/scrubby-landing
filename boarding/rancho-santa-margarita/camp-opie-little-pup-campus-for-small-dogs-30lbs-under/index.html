@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ9_j6iLrr3IARsiAZSmh__D8%2Fphotos%2FAU_ZVEFYxZ8Af09Xzz0SUCRu6QEiAHu4Q0ahpiWQX-mT1WrQ8Lt5GFoNXReCvywS-WyddmEK8700BMT2QV8dh9PUzgPQHl4j2xiyM7tlfPRnBFCDXBR-1V9m5--669c1A3RMNrsVZTPQlH8JCYu6OwrdKj85MPMwiqW320SYrl_4ewtBLqvxBC4-pjxF1tbAkimw2qEHV06wXOC0oHAWwfSlCkRSlazWjGkGkTLTbMnuHZhCcnlSYloovApcdAvVyOoSwpaUai-XavDElFucwbqJ-wOcrBs8EgSB8pyPLIZyy6n5Sg&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Camp Opie- Little Pup Campus (for small dogs 30lbs &amp; under) photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Camp Opie- Little Pup Campus (for small dogs 30lbs &amp; under)</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/rancho-santa-margarita/" class="back-link">More pet boarding in Rancho Santa Margarita</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Camp Opie- Little Pup Campus (for small dogs 30lbs &amp; under)?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

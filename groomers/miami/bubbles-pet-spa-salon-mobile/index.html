@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJY3YYkTnD2YgRijYzoXLZgkw%2Fphotos%2FAU_ZVEFFNpSxsr0xKqMVL97jApZillRj3bGYiZWcTDKNhU2pC1a3hCEXZ84fhwf-FqmuTLfS5lmVQflCpEvm1KFZS11chh3YgyZZJVsdsIp6MDeohoFeLSYYsPMwr2XUv6dEeDy2PPJgzj0R3gCh22EA5wkTkHXRs5Wqy8sRFgjPcSX256KRorE4uJhuy8633O46PRI7LaBaqlWyZ4e9zmpJ_ivpu9z8MszbAhTxvUfy0jWdMWgaAu_-sDgQkxngcIjQDnWbzSCmkO6tdyy6gYP_UzePuMwzaUPyWVisWA4MYsuGNdkn7FvbRFUEQG3LH2EivFNrUpZIalBX_dIHNOZV0yYvH-BijM8Hv80Sb4WJr45iON9MNWlFqC3sl9t5bPKCbw_UxBIAfodnWo-Q_ubVE9nElpzxwDaygqQgdzOY7uDTvcY2w3NwXYRgNULKXH6m&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Bubbles Pet Spa Salon - Mobile photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Bubbles Pet Spa Salon - Mobile</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/miami/" class="back-link">More pet groomers in Miami</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Bubbles Pet Spa Salon - Mobile?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJEdYQcvwXsocR2iFgZR0OviM%2Fphotos%2FAU_ZVEGEGBUvmauWFddZFUAeZ_NtTs04degK28RGz24X_hT6TaKFVmsssaIKaDw5wPsIc7NHkQfLw7my38Q3MvLNWy1LOzoPbHTHkAfYwTBu8jWhp3DLsV0rOqe7K9P5RwZR38P5onErX268mHRNyxZ4Rr1qb833m_bNO70wtNhrpCHcPfJl_tSHfaCs91ihkqMBg_9IlUapVlphlryCYsBl3C66wbEJ8Ug21dvddbnB9wFM_k4XYaeqiGyCxL_7N-xXEaSdu00s3ImVavSnMAYIKr2eQPB9BsRyZ-n_2jAGo8b1SF83MljZmZ1gFNzu0rl_7kts5BmTGrSXd7CZ8xqJRs8hiesbDvgYzi5zVdyyLDF2qMZq17kgKR-ApywcomHDUwUKLcwqZ_amHtWerLri1A9P3le0vRfdj8_31vDmP2SRSn8qg0RwZXdgMtp1SGqO&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="All Dogs Unleashed Dog Training OKC photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>All Dogs Unleashed Dog Training OKC</h1>
@@ -197,8 +196,9 @@
                     <a href="/training/oklahoma-city/" class="back-link">More dog trainers in Oklahoma City</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of All Dogs Unleashed Dog Training OKC?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

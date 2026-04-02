@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJDSqLEmtBlVQRhmyLqCwrZpw%2Fphotos%2FAU_ZVEF4CkM7OsSwa8Q7dIju4nS21KOYkYQNsefgHiHbafnU7k3hjJD0yv917VkTS1B6Pt3UAEUdZFaFlAZHf1JH8TQctEWxy7W6qB9mZhDfaBiC3ClfyYUs4E9zv5NHFDvK3ox1zvuVMUGE2sfWNhkAJSxSLeoQSYyJguu9Vsvy6hV0m6JLCiKP2iPe6wfv4xKAGRfej23aWSkdW5-sDYZX6wIJX3yk9bVe_VVIMYUFXyu8nON9ES6ToEiqm_Zkjy5sFpaPgqe7FkR25Za4AyEuU8tAuqBJlPO4s_iO8e7Yl8koUg&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Tail Wag-Inn Boarding Kennel photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Tail Wag-Inn Boarding Kennel</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/dundee/" class="back-link">More pet boarding in Dundee</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Tail Wag-Inn Boarding Kennel?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

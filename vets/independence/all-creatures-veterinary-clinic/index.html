@@ -78,7 +78,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJK-jc7yG8QYgR5sOsZ8IqE2w%2Fphotos%2FAU_ZVEEb1h0jQIn2S0UeFbm1l8-BpTAAsUtcmTR8uiv9ykSvof3BgREAUQfSAgrodWcd_bV4hgw2zFrkoFO6Wq-9p5RM7zpvSZtnVgMPEJRlr6fFAj_yt1A8DrnIFxVr_1vCFsLP0uJGQ2b5uiofGAjocI17b7sjUhVKzHN0pU9MW5Xwblhg0dyalxKSs-FvAstpNIPO6NVn1EaWfvSS07L0MvksnRV5bWforgH_IHpyjIo0O2MUYWevDsuenHMjaXta9trV8qaDDpZAFxekTBORPWFvG6P0FmpS-htxzleB8-ETlzsVhkCk4WCHr9wpX_L_ZFfNuwS--CWm_w7Xh3chjK-jmvU1I-0cxmX-Awako8dDZvr2G675-G9T-tx7kaTr55huC-FFxxsVyHg2g4PjjxMJdM6fzJBGkl8fyCMXYa_rEhgicHsF524_tWMApCP_&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="All Creatures Veterinary Clinic photo 2" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>All Creatures Veterinary Clinic</h1>
@@ -194,8 +193,9 @@
                     <a href="/vets/independence/" class="back-link">More veterinarians in Independence</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of All Creatures Veterinary Clinic?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -341,6 +341,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -351,10 +355,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -379,7 +379,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

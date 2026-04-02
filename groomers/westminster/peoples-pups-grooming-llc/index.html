@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJVVVp0_ZzbIcRH8-sHy0OVOs%2Fphotos%2FAU_ZVEG7YKHmargrz8DS_20g8M8Z8FNX8XJiYr3tbQacdYJdXeoNKBo2p_n4TGsrCHMjGD7Gp8PSMoidtpsWDjEiAduHWMF7PcFjAclVUr42lPlOSI9pVuBUlAKaLpadhwXvPZLwrVRZpEsJHzWXGod2J_b-sMSl76sfdfSf8h5VADCtoU8_RvivQUztExBtfJAX4-USvVz7QJ_yAIy5C01Grmx1K2BFnZPThmcLyFgnOhbqSs5kv5Zlav5CIMmKhh1KWGQvI8aUB7JtHBV2cXG1ITiQ0hppKYfcrM22iVCqEeyshEq3UfeYgd6NFL35Ji6hY2EQ2CQs7bPezAahUahTWQMMniH1BLLzlNZHAA0imHXg9jGirkVMk_roGR30OXOhoJfGDxKqHD75n9H9QK2S1wVhPpVZ8jnD4Q7QcuPkbW1vgT3TrCJbc4aI9Ou7T_mC&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="People&#39;s Pups Grooming, LLC photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>People&#39;s Pups Grooming, LLC</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/westminster/" class="back-link">More pet groomers in Westminster</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of People&#39;s Pups Grooming, LLC?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

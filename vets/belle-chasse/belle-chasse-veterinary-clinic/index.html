@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJvfhVHDsenogRq3ybx6LR6MM%2Fphotos%2FAU_ZVEGUkfFhZxQd33J9Fia3s3MPCf32ch-_axBNo8oPSi0jmMzv6T2-p32Yo2cAvhvMWO9BGDWNlxSmtAkMAKCYePHNuKhjeN7kujk2s3tyFSzm2TVU2RQJP_aanvi--CCsaGElfMQn5dD2aj-nNDPdErXYw31c8yaETEvFZhNHuXe6XGvNQElXZPzcEN-d8F3nEM13y2BP56n4bhTNlT98YSAn34vEzTaXwaiO6L1DEXCqnVVPR8s1W97e9yp8zD2o9MafUEsB5tIdTfv2aJw3yKSunmlUTOCi4ckbDR3eb8gZqKwMwhCk_zaz1rhGK8Xt5VfykVcuIVgtuLLsjIq9ziu8UpNJH-0kaSTa1hcqfqlMLczIQpfgjPy6Hbj6cRCWwUQAILYSKZzAv2I3v2vYJ_8b83oCVG1dqIS17SLh01YXJO78k9P1yvmDxSbdJPR6&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Belle Chasse Veterinary Clinic photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Belle Chasse Veterinary Clinic</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/belle-chasse/" class="back-link">More veterinarians in Belle Chasse</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Belle Chasse Veterinary Clinic?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

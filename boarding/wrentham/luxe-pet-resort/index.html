@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJvZg4FABl5IkRfxXBqyr9Vjw%2Fphotos%2FAU_ZVEGphLzwpql7nRX9QwzSdF0uIViR7JPS7Vo2FG-fAVRYdAb_tTwpBB95vQahkZs0DY3-J0f_qwuRYwSxZ2bdBTQBKGoTkUFfKlhCK12E5FX0miRcXf3G-AkWsh7DwwMNhaMSEjEeV3kiZi3-UJuI7B73ZGi8EGFkcKbSdidCcoOeWpLs4g0jx1rhQ3ls31NQPhtMj-lEpCrzrPYR0pMEXA1GIZSh4Eyy8SpkxZ-CnKJ6rUIz2GHc070lHNXDMxsR_2WV9ih8nqSSIPpUYgjAi_W-8KOwERx-Xv1faAHJXfN0KQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Luxe Pet Resort photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Luxe Pet Resort</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/wrentham/" class="back-link">More pet boarding in Wrentham</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Luxe Pet Resort?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

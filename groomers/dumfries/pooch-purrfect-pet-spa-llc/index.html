@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJmTqbM0X5tokRALRUdKeu2_g%2Fphotos%2FAU_ZVEHL6lpxA9IoLC58-ID8PzOMBBrzZ6ebCCI4tmP1gAAzj5qddTmo2tkslStQSMMTiZS8VG13UHAIsSxc9SXxsQyzphAsKD4pSumgSi696ZD-ZCADBrQHcqgudBA16mfXBvLxbVUjED078obbsRFjIFHsmSUhLySaw-UtMUCgIj8-7LbeBbHku0mJ2VxtFHNQNtGIm41LhOO6zkpEx9u0a01LYh8W5Xz6oLKHLai1yquM-bY0tsZ412UIEHwEsIbXDyFzfF_toaUqLcFPUREdGes2RKz1OIMUSUCiV4pW2sjZKpGU8fvsZprXjrxqqlxNjRg1vC3TEiRiWXGJJp_DY2fCy5XQuEK-KA3ZmX3Nfb7cHLipxpENdz6A7mQDV1hegxLxEg1hWY-3iqDJjVJF8k3HRQLqMbl4CfX3rV_8xt7KWOR_XfW0Jhvpxa2weQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Pooch Purrfect Pet Spa LLC photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Pooch Purrfect Pet Spa LLC</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/dumfries/" class="back-link">More pet groomers in Dumfries</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Pooch Purrfect Pet Spa LLC?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

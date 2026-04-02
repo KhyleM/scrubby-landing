@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJgfmdbg8xW4YRaMmfbHQitvQ%2Fphotos%2FAU_ZVEFCVLDE3_BNQsbsn6Zr1ISDnjGGzDw6pGMOJjsEvX4pz6_gbbUUkL8R-KH2Kv_58jGy3EYkYhBPNLkpBbdy4khJAMuft2cnMWf4to8SeI-ZaXQe7zyl08ZeanB39fnpxsO0loD8Amb17_xn_caIV8pwRFwmW0p4YldejXjStc99UxGgtoJVf-LqoTp6y1_GkCpYVe3P8rc91lIaM6ZBkBXc95UquhVVEp8DepoYgE1X2C6mfzUEsS8BtvqeRGD5waM67wR3hwDaxxrWLY2ZxGRdl-aMmWBR9d1bab11QGIL5n5Q-JVRLyECU3Vq0jl7iopbaSIjdm4Ug1s5b_fQH2WUIiif1ERuOjK0_TbhFyVOwQQ9pVRIO52XOoE5vCO9AleScwpolCcfjvBpuy5QKqZ4qvgL7baXU9QHFs0oF6lmP3wHYcOkadvpMYaJeqIo&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="All Dogs Unleashed Dog Training photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>All Dogs Unleashed Dog Training</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/austin/" class="back-link">More pet boarding in Austin</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of All Dogs Unleashed Dog Training?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

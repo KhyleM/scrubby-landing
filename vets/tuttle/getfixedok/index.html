@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJc4uDMjxzsocR_5nPdSG3BUc%2Fphotos%2FAU_ZVEFOqjw_umDo_ojChQdcJS-O2ye2MPJkGNTwT1Mt2CAy-IBqTJYoUGnQdtLDOrNkhAOfgtp2Q-h99NR3YU9PMjIo69iscYwiwGt3W-UxV29lYrmgXkQdhYY-LLajwuzE7RX1WB3WpPkvBhIhoS8X8pLZKDRpZfdflN3dGFbxEY4h8TfotbyEG3MoIt2LWvuqB_F0nP0RnCENF-jmK30oWDJZyJDLi1I7p5_HuT3omNDAS4zRqAjje4Qb_Vf0WluGSmeMonnwwX__m1MldYHf344Vv66WEUy6W9VDgQUMzhU_4rOzjVY3QaRL8bBE7gJvp0mSWg8xA7QwOa3Irz3dF9jxb8Cx1n4GNmcsooyLbKdQRghy08CiYSwgep2QGgBNsc5qbID9nUKDC0VU9DB9HDsIM955qNA2SjqZ1LRwlaT5fw&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="GetFixedOK photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>GetFixedOK</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/tuttle/" class="back-link">More veterinarians in Tuttle</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of GetFixedOK?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ2dNI-GNYkFQR1usohMNAr6Q%2Fphotos%2FAU_ZVEF0_uYUfiuq3lf3Ci6uaNFRaOsc737AtOOLBoF7DEQ6fDbT-60EhwLD2zLRElO6SW_O-Wok_ZIxY1npGIBgXbYu5x386NieSNnE4tBgBvD_-HXtWQdEIxhT0Wb0EL7uMH2r45LyvUUuzwHXpBIwQ7c64ZQUcjVjsrRgkYLcepjH8BOMwWK4T3aNtY8W3d_1fEjeHqkBRjAWKwJmc1s9ReQ1JxoG29vgNo_p1IUMuHZI233ZUVu5oSJKxKbG2ZOmGg37bxyrtOKooMBcSeTm7u-a9wqxHCjHfwHM9-yx6XGm-ULMzd9TiCbKt2CyKGxj64Xyhn-X5a2LhLqNtmx3oA71_0Ef_TVVKPDdEmzBdsKoVU9Pz33GL4B2a5R9qZTU1hCZbNTjMu5u2d-gAgbd6UvLpd650130eChDtgQgMmjJmQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Affordable Animal Emergency Clinic photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Affordable Animal Emergency Clinic</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/auburn/" class="back-link">More veterinarians in Auburn</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Affordable Animal Emergency Clinic?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

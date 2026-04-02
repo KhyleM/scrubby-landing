@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJP-U5Zelt44kRpALu5tr5_pM%2Fphotos%2FAU_ZVEG53SUnl0dTNAgNw0PCWig0V5YuLrcu1k6vqAq_HTB2MDH5ZXnIbw-B-dQtr3VUXj2M44Q-zCXaK2A1K3801CTuCm9vRKEOReidIUuv23OXPpeTucGB2MVjO9-Lax11qS5uMUmMXcnCFyKfT6FbKgHJh2m9-LhnvQbNU59DW1kUOxngo2ERLYS5dydJ3k4Xp6432SsG1LfScroKoSH8JBmDNVNu1-RR_UWBS3YZP1uFRDtXklESHILz9OR9EnCjcgHmR7cXxPuA-jOehwOWJGMxvf853iTrEtJOf0S8dIkKjBGqrnbOE6wO1-eLDrXabRa9BoWO3StKwka9fJJomIZ7ks28hhsvP8g-iT5FEV76ef1L5ptJPxWSLPEoY0m_g5YI-Sp_ZsROhc7fhE6cxJhxoGF1XdJHFqffR727fknmC7A7&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Oceanview Kennels photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Oceanview Kennels</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/revere/" class="back-link">More pet boarding in Revere</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Oceanview Kennels?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

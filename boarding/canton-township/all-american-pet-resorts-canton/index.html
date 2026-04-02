@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJrcMCX-tSO4gR0oJAO_f9ka0%2Fphotos%2FAU_ZVEHHXtSQCzpHk0QB4CHiqpm6sdgD_Mkr4kQmp5nY5azQdGYm-knZY5tWVfk1psA5qx0tI52P-9AIayHwBOCpmEJHBJ5oMt5IAeSCdEfIMMq2BFmyEIdx1q0awLPYhO77dEbU681z_G9kwsFYeVM_VHKiWf3dAD-pS1RIwxyzRTFjfdhy7IFdNyxWefIoUEm2RVBNh-4eXp6AoyUnXo9vQ77769Aa_r6D6FjeU3K6VC1U63jS5_NZJ0-wvbiOjm6sZYGYeEfkGdKizcEdap5duU9xNPIu_gbcoUTUMkBZvHvp5-l99053q1YRthUZBDRc6X3_vDy-ECp7SGatwCPLp2BGt83JNWSJEpwAetUYBNmD9dFa12P1TQFNTTztaW3_8rzlNsTFKIecJWjzeGYt-LqWPnzqiD4EaBXK5V5Obn872Q&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="All American Pet Resorts Canton photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>All American Pet Resorts Canton</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/canton-township/" class="back-link">More pet boarding in Canton Township</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of All American Pet Resorts Canton?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

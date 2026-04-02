@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ3QmeKyLruokRZVSeKiujIiU%2Fphotos%2FAU_ZVEFkoVRMLogf07dq9RsTHpDTpMkeYTtFspLDYXlwisUwt6HcVlm-XJA4qgnMuwJUBUs1CBOMzypNmBNoMPF4zcKtxzBzSuX9yxc31Id2EWCedOoK_nwuSpUDuQIC8dgUsDQlm6zkmgVLFeoKLb4zH69C0X7ele-ZU6Hs9XHRTPEA7yV2uYcCEKz7PD69Vy22jg0a-Fdc32kC_bSxuNmRyiuqE1hsFG5U7n4p3vM2Lss6Hemkcnujfz1hvOVUc9WllKx4gLnwE24gOMTqj5pEQPWz-F1VfSmMRyvSrHUkRR8-YtZryfcK9MFq_h40ecvzM1YqNpp-GNxmbuN_IN40Jxt_qlK55s9g1U4NZNupqozjX3Ri8MGkX0iaV-1OoiWDmBUtwT0XH8NWE-p1WendkcQ2AEIq8CZfXP7Jk03cDUyVOg&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="K9 Resorts Luxury Pet Hotel Virginia Beach photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>K9 Resorts Luxury Pet Hotel Virginia Beach</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/virginia-beach/" class="back-link">More pet boarding in Virginia Beach</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of K9 Resorts Luxury Pet Hotel Virginia Beach?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

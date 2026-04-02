@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJv6ZW5QppXIYRYPJfaFX9ETw%2Fphotos%2FAU_ZVEERrpgec6VQG5Zoeemj8-w3JPk1VjSdIVJQRK0QRn0wbJd8Nc5Omq0wmDxyuunempPyXrWR3YW5EipwG9-DQoVDB-g2EzjyfZQxO8uq0gXusC1a1h6XjPztyrE69gypgNjkr5Tn8NIu6HsSWvm3GFkFVII7bKZMS3SaHUmzb8kp3tYZE9cL2hL-c7DgjHPSr7MaVtyBD-Opl8t0Og_1yOP7tVq_BmbPWj8A1LxSaPsIDxkHlCZdR4Qlt718j8apTbbH7vAwFjNG8EvXVPfRe4BB4cnXpnU-tSHn9s7I85Xh8umdF30p9zxLM--joda-Ho3Z4k7mFedLKTKGTmNAE8ftAdSpyyVA-jyxi2d6A_jb8UiVfAr53B_2EEiRiIJnpsgoU87RCQ_d_rSptlC1ySUFS4vQRvXv_P7ni3nrLibkKNyHM5gYLSGq3_K3RecO&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="The Palms Pet Resort &amp; Spa photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>The Palms Pet Resort &amp; Spa</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/helotes/" class="back-link">More pet boarding in Helotes</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of The Palms Pet Resort &amp; Spa?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

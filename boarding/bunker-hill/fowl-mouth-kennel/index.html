@@ -78,7 +78,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJvxhnr5KKdYgRl99BB5U5YDI%2Fphotos%2FAU_ZVEGfgsDx0dTagbyl0jh7bIASGhHEvLlFiSbS41X3_qU0AEy67yb2T9VjV7PaethLCuC2wHzpkorsL83g-RbyC45uQlsgbyVuAMSc2bQe7cFVFLzvDxgIWdEyGKqFV7d1h_biXo3cZuABWdms0eB4AUi_jcQ9A3dumum-PAkgFnaldsQ1B8JVNaWGBVl0QQb6TCRfPMK6NaMxDm8CV8k5T2HOgjU4YXJsUOuU-kHB6q6sS_kOcb9UPtRfkxPOuwCzfpwH5WRxO1HUmFHU6zhxEMMcViYKegbgDGgF92FLaQ0WroAO6LostwuVtzG2CcLgZ_kdTFcm-olCjcpXYhuxAmJcVUSDudzDzujKbWAReYNtidKndyWU6OLM2oT25czlBIVgb69YrmMlD8cADylzL7LKNLKcz0Dm7OVkNRAAyFG73I30JWzx2Dqrwx8qjjG-&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Fowl Mouth Kennel photo 2" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Fowl Mouth Kennel</h1>
@@ -177,8 +176,9 @@
                     <a href="/boarding/bunker-hill/" class="back-link">More pet boarding in Bunker Hill</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Fowl Mouth Kennel?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -324,6 +324,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -334,10 +338,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -362,7 +362,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

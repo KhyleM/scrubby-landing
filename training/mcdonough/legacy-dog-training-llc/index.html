@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJFZWMw1ZP9IgRPeF-4Nunt8Y%2Fphotos%2FAU_ZVEGV5lewL-f38DkLBcFT-r0JlUZsTLGgPTBdf3Ygax4vwmcb3pp9Up_SQfwKCjBkrUSU3NuVUTE_09uGg2MFr7UcuECDe_S4QiBF9-ZN_1Gx0fjsUGqJhoSj94zO80dE16HFb_-vjDUTknquogFstyeUI2RFI-D6zHwRGDbevlVQ0CeKF-pI8Aknp2wSV49Kb0CI4gOBVAnH6VBbYaxNP64fyeDiINUN3NMH3f_aab3s4KcsQT_Iz0i_EA_MMimRimkwMTd8YsQm8N-WGaU3QXPpLAqB1zbRtUgnW9C0pXIkYBC7EElZ9YLMpki51gT3lNRkGszNx06gPS9BDIRkaOVda6qbrYY-xs0QDGapy-83a1zgcJ3LKI5vhNZN9WueozMsUc6_2vvarUHYUNIxxT-mcqhjEd-_PzhNSFRppWgkqk3P&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Legacy Dog Training LLC photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Legacy Dog Training LLC</h1>
@@ -197,8 +196,9 @@
                     <a href="/training/mcdonough/" class="back-link">More dog trainers in McDonough</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Legacy Dog Training LLC?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

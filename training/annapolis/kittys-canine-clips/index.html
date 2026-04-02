@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJB2GuN-r2t4kRU6PRKPcozyY%2Fphotos%2FAU_ZVEGt10lWYfSKtnvpmcYrNOEF1hCAELoPlRgYSx9md0HIf0Xrs3hiDpk1TRUwm-T2gFI875DaTn3_g93RaBaOhLmIY__LAUX6TuKk9K3fyS75LtUxfXY4z0QXPesVhYRJHUXSB_QYwXWG9hAYMLBSSvy13-8GKS3iX44YNNxxy0q9J5y1m6N9aIsUun7_VZjAx5oJdRWOxDYMp1Jk1Q9iBSdM3oeAKQo4AbG36TBINYjOwD6gIcJ4tkugS1heelRaOV4ixcQ6Ryz-t5Cb1uAhSEE5KEnr93eauT0UzPeKbh2KCQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Kitty&#39;s Canine Clips photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Kitty&#39;s Canine Clips</h1>
@@ -201,8 +200,9 @@
                     <a href="/training/annapolis/" class="back-link">More dog trainers in Annapolis</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Kitty&#39;s Canine Clips?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

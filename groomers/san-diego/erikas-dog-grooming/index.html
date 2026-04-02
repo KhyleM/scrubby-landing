@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJU6jrhbtP2YAR5Qh5ylT9XEk%2Fphotos%2FAU_ZVEFkDaEHgzW7d7A0Ruhuy39mM0fZITNxxHLUMM2sNcfnLwjbVwCNe-H2q-qid-OGFT0nzBNbj7bh5FiMN9p4iWC5nc2HEmk9tXLJRGE3Pt28GV3_eYVS9zOYJZWaWgYOWxclawpV02RSa_tE-lF60JOK_xyKNCnXmXv2qoZLqWgB0jt0cIype0uDYJnJ_WHvasXAEy9z6FE6EvQXF5AI5GQeR7OnrNNU2gxEA-tHGNbPrX4KC3ooRQwgggvLpbLHnQ-36UPqXQIjG5kokn6U9VAfDk0KsJtObw4hupKly4ZfUaTjJt_bLByq5VZEUeN8Nh3tZ2NLXKpN79g63rhY-JuyIoPZiYef6fSTgRYpxqcrox2tmo1XIhzQAqKaS9cNFlOOBi5ul6KFDXUgRLkFdt7ChIe4mpHoM60Pog3Z-1MhuYgOxsRXsVzKnAdlp5I-&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Erika&#39;s Dog Grooming photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Erika&#39;s Dog Grooming</h1>
@@ -198,8 +197,9 @@
                     <a href="/groomers/san-diego/" class="back-link">More pet groomers in San Diego</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Erika&#39;s Dog Grooming?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -345,6 +345,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -355,10 +359,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -383,7 +383,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJJa8Nwr2BUocRIY_g_-Bre8c%2Fphotos%2FAU_ZVEFChuNZSd-KWtrIEIk1pEeamKvn5OGYXp6IrVEjUIF78W2K_ecyphl-txyKRPZ6NrC8tmXepuRe8_RUOJkuUakmN45qj5Lk7Q7_W2HW0IduINcJNfYQSG6ViZj5RiQLu_te8FJOcaG7z1cMqdAxCJiee8f2kGgDPvwTQK53oQQuaz1OkZ14zmhGBP9mD0mwz1Oq9tA8VlwfZOl-9f6oJabobYcD96ypyI9XadVaqjH7XatoBufrbOPdRQHlj9h5P_Ycx2_yNNe5uu9nelsJjn5MqeuVo5DPMUJWN7ZPGE033j_O_7wuMhy99MtAqycEl-RnoKJEv2U4DXoeHEJgdu8YuaMem7U72ctQYwTkpFaGahc81MIAbv6-4Cj0PVGBatlIMuF7iJ_IUz12h0Ros3EhWzGrrzOV9Xs0cA5SGpYVUDU&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Pet Supplies Plus Lehi photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Pet Supplies Plus Lehi</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/lehi/" class="back-link">More pet groomers in Lehi</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Pet Supplies Plus Lehi?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

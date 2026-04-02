@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJnY99VbcDsocRPdPoej0aIzY%2Fphotos%2FAU_ZVEEWrm8TXOO52G7yv3TaJuIclmqZHHFTCFwZgtzgczX93xZ_3G-J-oqHEl9q2Fyoswre-SWu3X_MbXnNzdjTd30Lj3LKEa0xTwgoCZXmttXZoCGGeItcgcWccRWPqraCJpF6HBulHn6O3Lj5bLKx6mQQbnzxhbHxMpexEt037V6NnKnAeW6zxsRTDfrA7e7vZv8NYHsd3e2cv_MjB8zeBrpb4kNl0uYFTH5eHOgaU2ZjqdWtWPajgTCmAHO1JCD03cEucyz1OUtu-vGlrNGtrvQxC7o6iaWZp4atQKKNsvAvi-8e6s9qQy__7bNyxmxTKdjS3PPrxQQdyIybCO4T0efET0YDlhbgXhp_Kmg6U596K5J0KIxEvVGNSa7-3_PtVfTKCUkAaBGZGlCvVSc15ZzxgrpJokoUlJB0RiRXwMUk1dbL6yCh85_apR8ufYXZ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Temple of the Dog Grooming Salon LLC photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Temple of the Dog Grooming Salon LLC</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/oklahoma-city/" class="back-link">More pet groomers in Oklahoma City</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Temple of the Dog Grooming Salon LLC?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

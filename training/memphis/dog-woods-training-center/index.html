@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJN0bXUPOdf4gRUCp-aDTYLBk%2Fphotos%2FAU_ZVEFk88Xg7Kv7SOLUmYumaAD6AKuaS3tFMDxO3kVBSj7QVEvVDnC8xcDg5HWXXXmNE6h3ZaysjVeLrrjN5ewUH9oMLTigdQsNZ7Ubyfg-oZBJh1doByL5JREdnC2ZFRM4gAnGpChufscfJEFdkwIXMOd2xt7ZLpIJ9gftsBjq6d0RO6mngDnr-VhjY1i772iVJ2ffxrGR2e4eIOSzTFUU_Ovre3VdZeLEft3_bokQ4Eu8WvqDlCSpn4eBrR3US7choCqK-XCeIPkD_jsYOJSCKXlGkwpQUO5_2PX_9uIujHQzRoTx9an5jNCBmJezllU6d4m90dnip-mq_QwGxhnYmGmoGSnMMjqIQPGV2C5fqn6oqKOhFdVr1Wj5NoxyXfFsjGVX5WuWDhiQ-_CaxRz_1WOzuqoSgKe3uI5bBCPOFuDTGo2YCNGB4aW9S5uK2KiJ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Dog Woods Training Center photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Dog Woods Training Center</h1>
@@ -197,8 +196,9 @@
                     <a href="/training/memphis/" class="back-link">More dog trainers in Memphis</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Dog Woods Training Center?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJzVuy4yFHZIgR-y_SzMyDe-E%2Fphotos%2FAU_ZVEFymry_7u8DLqlKDJEV4R_z6qpOvvUHmKmSfIGxp5eHObV9shkIahPC9htZEQcG-2mpuXg0l0Tyy_3dLrmO6D-3hm4suWRHsiKNcs_0E97ow6mM-ivhmIIawXUmLtTwed_6x9xYQnU7oEoJFmbBc97eNOmMT9TD4v0sot7EfUi5J5l4aOfP9lcFWUusKBHANUW6Bb39NnWFYNtQsJwD3LBdgCs5yBMlJEwkqJrai_4LHvPtVBy8r3zXcSDD6dTe-mxsS01LQDkMQYFCuHODROobtIaedWcitF4lywAaguxhgGVt0zaQdwC0xuMjcDqRDoKvF5knT3DaoUdIaxQkZuQvYH6mWEvdsaDMDtLOgAgvw4I-DcMdscPzrfFlAB2L8pA0UvYX5RwC74__C2rf7fJOqCKcU7495Ll7SIWajw5dQ8XDkVd7TFHmRy5q-enu&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Hound Heelton photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Hound Heelton</h1>
@@ -197,8 +196,9 @@
                     <a href="/groomers/hendersonville/" class="back-link">More pet groomers in Hendersonville</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Hound Heelton?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

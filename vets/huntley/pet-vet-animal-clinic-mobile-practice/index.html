@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJxcvUrkUUD4gR9VRQJLDZlzo%2Fphotos%2FAU_ZVEEwA0_7H1TxLlZSVy_nEKSWftrxO08hpqxiD792tk6p19NMD5eZxLQSysHFt5GhbcG0HdFPkKIo6YNPoM5zN71s1c8z-_qi57xpnYKTmlbC3vk_a1QP4-MneUpavORUQ4yPWDgmHqWC0mILtgWzUO7P7EDIraxSEzjyIu2DMHBteXECfESxEMvy7IZP4ddfmVjcBR6MEdGTXHaOB0qkuWHdm-Zyjre3P0w1MsW57pcEaV6lfr4dC4EnJYItizXYvWPbw6Fi6h7CJT1b317EQEyQ_zituKd2u5gKstp5FXDRtesvlZ99TXBs6wv2cesRRe9F0Zzsf_hNu8lacWYeftj_gDvIrOeWiQylBPbDq0p-dcBKFzYrpT8UoihY5NISTcBCG_hWdaFWQyfmR7CmnlCYXaGLBh_ZpIDiK1ffwx7oYA&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Pet Vet Animal Clinic &amp; Mobile Practice photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Pet Vet Animal Clinic &amp; Mobile Practice</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/huntley/" class="back-link">More veterinarians in Huntley</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Pet Vet Animal Clinic &amp; Mobile Practice?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

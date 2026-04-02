@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJRZP5j4pHjoARbdJk99JR95I%2Fphotos%2FAU_ZVEFW6CUYD5cTBV71FeGv34DJS3Aove0Bi0kFzbbrkVMod-MJNIzpDHMlMH02J44HkaxVR6h_U6J0cO4IF4DHx1Rh5RWUZXGneNsHWOFF55AbySORTfCK1l_JePrQmd6UIjKkWkKOPR5bBAk6hXcadNfBA5v7qxnvVwH_m7ARICYt-qe_6_5c8x9DDtlsB3FI1PYi0nAdOBbesfgmBLcxGV9dx-1geNGG6iHRVlPimfJgoNsquQtWIjDLUkc0lJAfsCyt9jB5WHrvJfOlTWa9zYn56AGV1sDiYH5hvu0YhwDO8br04uwvCGYA14cWHBCp8nXg_L2yqTXvu6G-RpnbI5ktifSTb0uH7LuEZRCT_pGGQdGWtamYVljH2jVy9U_Ituo6EGY04ds6PXDBFkB-QjqmnNzuJW24D-_C_2GITH7KlN0k&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Dapper Dogs &amp; Divas photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Dapper Dogs &amp; Divas</h1>
@@ -197,8 +196,9 @@
                     <a href="/groomers/felton/" class="back-link">More pet groomers in Felton</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Dapper Dogs &amp; Divas?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -78,7 +78,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJkeVkBT5vsocRhBmqdpbE81c%2Fphotos%2FAU_ZVEHJQ-fAppXKeCUzLeML0G-2Mh1OG7Z6TUb_tgXqMl0-0MKtLHPI49k8NfBZSbP2hhbGzKa9Wf_8aMsft_AYpaR8qWrcpxeGnSZEpoBOZ04uf7knmuj4uT19k2oE0ysxs2A62xIaloRqT14OictfT1y-FDgyz19xc32NG8q-R9MGKzKqzKYqd9bb-332h-oEwsrlEOLfOq7pN2Rd8jpaRJTg0xrM0XT-Bg1FqZfuG3JUM5jYM4IlAm6L7qnXqqkyugy_oWJ7OfXAYdWzLlzjuEiMeXYjFVXxTsQ5LxIl7u38QnGP43ros8VUnYUtwwmWSzTK2FRRulsVP7pQVJ5djWcrNO9NgBgckD3ynPo6TPp-3pOuIxaT7_RYPf1ULl46-3z9e7xnysvqZcL2UwUcxar08e5lrfGGT6G85k4eTsHmcIRS&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Bow Wow Barn photo 2" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Bow Wow Barn</h1>
@@ -191,8 +190,9 @@
                     <a href="/groomers/newcastle/" class="back-link">More pet groomers in Newcastle</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Bow Wow Barn?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -338,6 +338,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -348,10 +352,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -376,7 +376,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

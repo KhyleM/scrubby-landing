@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJeRfHQBHDJIgR0qB54QwOjP4%2Fphotos%2FAU_ZVEHbTX8jaHHGArwVHfGrL7Si98q7Mk4Smp7TXKWAaLNf9-NNi0m45PDAwKnCO__bkTiUMNyVoW-1jYn5O9tyw07s88fEbUKjaY8E5YNeo_sCI2j14WcskqGdFndxWoGCkg5nnD65lrOEv6GNXyPybsXT0B8U6wMqBk3aDnGZ_TOHWvJFHwZo-m1MDZZ0mJ7VD96ZryJZnjQ1GzM4Vz5mEFoXk0Lz5gh5BcIv3lNhdLJp-FizwXTLEg2LdqqnKnt953GJZv3soWyc5MnqxJpKKex9_wGxefqQxq4jOaHSoiXUtI_-oeYDESdJylUn8-TtCgPw5q4OqTouwISH_zz44nQZo5JOmr-WUVwYa-IkUtCzRaDJeIHMgBRxntESzVFxOOW_QKKN8mY3st3c0p0tfCG8x4lY0BAnMReMSh5B1Vyp3lyyu8S0RI6QOjP_02kR&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Pawfect Pet Grooming photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Pawfect Pet Grooming</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/sterling-heights/" class="back-link">More pet groomers in Sterling Heights</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Pawfect Pet Grooming?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

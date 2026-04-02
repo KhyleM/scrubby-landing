@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJmdg_tNcnMYgR6zw08Vo58j8%2Fphotos%2FAU_ZVEGWCRbOOvQzUcnxIhaeEYM9vZGk426YloPJ2Fq7s6njRjisorz_AO7wjwqTqLGF3fvueNcffm0zvl5NHV-wd9p_DJ8q8gsklEPtySaRUuffvIJ2DzkE8rdIwzRZ6GOKRd0C6xlqMgrtmYxEcdJayItb1VYW3lz7GHfvq899zrur0qCXtXxwWSJjqENts7x3VGlHPg7h7uo3ybi-1ajxxn_OCJ0oSZ9vypxzBnN0tFzdm9BzBTsBVxh9fbxVGrea1hHKOnIQtIHWf7p598EJaYtW3wfn4oSX30ARNq1j0DZr0Q&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Smoochi Poochi pet grooming photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Smoochi Poochi pet grooming</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/cuyahoga-falls/" class="back-link">More pet groomers in Cuyahoga Falls</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Smoochi Poochi pet grooming?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

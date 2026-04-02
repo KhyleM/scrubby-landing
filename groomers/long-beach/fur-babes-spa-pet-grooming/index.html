@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ61jM658x3YAR_Q5vsxVKV1k%2Fphotos%2FAU_ZVEEubePAa0dD-PCgEr9KFgcH7aC46ZQWGsQ_D9pgpKYi3_ohE8qWZAbPPPCy6v-mjS6BmmOaG2aVHH6WKuzz_73ckWg5pYdq_jFWcaGcnQjsBwOJgD022vLjjXIc-MpvWwXnwCzut4RMDJiQfoCDMUoQJCn1ab8925uVYmAqfeHLwdQ__ayClfniyuf_o_JL6vjpvOkyNL563IZCRBiIrq1wjrB0Pa-9bttEuVMhRB1A8iYOQZRoCJjZGVkVWU8wNdWZpqpsPxX6MbJhHtkUqJ_LTPssRXOfIHTQtyVrjZmGM5-tBN7vxGCGHo6GR-m5TWiERnb7jL5f5r8dGTkUA6SBVX27i12miiTbQ3nNY0YJQfWQZxY5jv-e-8xVo5fbom1M_pHrjVUBNbL5q1MqqCdru8Xvx-tDjZgTLeAPbhhVLqih&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Für Babes Spa Pet Grooming photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Für Babes Spa Pet Grooming</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/long-beach/" class="back-link">More pet groomers in Long Beach</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Für Babes Spa Pet Grooming?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

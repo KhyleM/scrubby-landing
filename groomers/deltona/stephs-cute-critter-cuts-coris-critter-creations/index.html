@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ8SigBi0X54gR1J6EXZasbvM%2Fphotos%2FAU_ZVEHiKoKg2a2d3-Yo5rT4J-e_QmAaULvDAmv8Wd_XE_ZT9t4f_gS3f8moesJnwv3qG3WVg-dJE2ZDzE82XzA_jt97F2hc7ueLg3Srh5AXTosiSXxwnIjCgBAZDPl1YKJX85JCm4YZXExu-BGvrjCFgjyOXkbmAnajhZHScdt4xu0QDiLZOShjZOdVvzEKTKApujDFR4UuMDeD3SNMIIaQPympEzhawgUJdkipr0dQblHQxtW4s7AxLw1oYWNlF-y3rQudzDpT0t6Uw0ewH1zipERQ7NwDo5jeuacEk6HyndZj4jNqWhYTC7Ejwqy9fiLg3QolqzAHcy0wFC0PbqdtCUm4w4mZl-cq8NEnle6px1svu_8hg8hEGXQgVkFLZD-3tt0vOAG5TApmsgWfQMf0q2RF9XWqWIyPE_kQ_qdb19Vr3Bq0UJVDMsCxaLoHTKWa&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="STEPH’S CUTE CRITTER CUTS &amp; CORI’S CRITTER CREATIONS photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>STEPH’S CUTE CRITTER CUTS &amp; CORI’S CRITTER CREATIONS</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/deltona/" class="back-link">More pet groomers in Deltona</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of STEPH’S CUTE CRITTER CUTS &amp; CORI’S CRITTER CREATIONS?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

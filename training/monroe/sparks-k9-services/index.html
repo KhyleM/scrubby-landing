@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJBYBJCUummlQRLyQcFq8fFe0%2Fphotos%2FAU_ZVEFC4q2dYFM41BqlLo67uafHaTtr4di-I1LwCtAN6zqpuqOIT459YqitbVc_eJ9g_7thw6L3i5P0FDOkJzzE_YB0jCieh13SABcYXsx2OaZ9E3H1-iUf81Px2xy_My-VoCbHpdS6T11pxkxCs0seX4vkjNrtCxx07QIVNX0Cy_-5smX_zQZgktmfxeQNR5wy3RZqpo0xtp1AF0c_Y23eLb_oNVe9G7fMDqPgW-m1GanGbrTabf7qo69ISROvkeZzt0nCHxx5WzkflLMaodHXUhxaN-kINyepfr_5Zf6YODJNNyz5zBTFiqAll7lwMQP5kcM5sdvHfeVdDXutSddID4gkJNeuz-wacyjfyXPFmecbCpkTUdc5zfHYOmmSzVFdamqmSJ3VkKNH1_vCurVPvZOtBZ72s7EkRhjdNnjKCn4&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Sparks K9 Services photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Sparks K9 Services</h1>
@@ -185,8 +184,9 @@
                     <a href="/training/monroe/" class="back-link">More dog trainers in Monroe</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Sparks K9 Services?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -332,6 +332,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -342,10 +346,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -370,7 +370,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

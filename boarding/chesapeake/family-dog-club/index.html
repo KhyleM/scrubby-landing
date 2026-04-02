@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ-5cXGgq6uokRqP-erR0_t4s%2Fphotos%2FAU_ZVEH7GvuDEothvBmU-6ms5rTCnuiFPwa2Z4pyljpY4arfT47MHaQE8rHm6YtEIgaNucovTI4hwB4Ul4imoZeP4pix9tUoYCO_f3yizn21sTzuW8lfiw1fMbUrz7Z3_HTMvlUdG580qpUcmmfZMHt33PDAqEd0UDCxax09vici1FBcOe_IHHnpPpZv1gzeFbTzWRiK_k4R2npnlTG4mzB5PrX9T7s3L5mqxMZjOzlUUl-gGkmh0UCBs5Ou2P5sTkNeQH1HSpOVhPtSA_CFHShYuL0oW50og7dSqCQZuRRuQmGuiHA8CWek76pHBKiqtyf__GPQeDy4N9_xa7TAh-GZxj9uTSyLDLPXEplgOISJX2G6MYH1SXN_huCQV-x8lRiaGqPl2-HzwmvL44LhXzLj0I3PorBlYHNHXWwKgH6IcG8L5g58&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Family Dog Club photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Family Dog Club</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/chesapeake/" class="back-link">More pet boarding in Chesapeake</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Family Dog Club?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ23YBnFI9iYgRSAfHQgO4NjQ%2Fphotos%2FAU_ZVEFhiC2wnp-UlGmRbnTXju8BtsDgxYVN1cMeJUJGY-FXrXt2ddXaobOOeLBZWqWR-RvhrARMxcvtQCH1FF6JvgwodoF2XefDxNvqYJQDE9SQODbzQW6A_lazt6uwITtPM0O6ozJ_tBCY2mAUy6wIGGIEeTc_qMjJxAZPaHfLqCwVW0ZTwjy4BQnSI2oDHKenW7MCXM-JohgY-U-WXzGXqnc6BpiYRSaW_5GDDUkL9X5akyt2TvjX4Cmscn6k_T7eenmjlbD8eQzTm4P23ZBYgeERsZtv5ZtpQ8b5AGzZKHFshtV1_adFiCL5gbbsTpJqqpm2hprN4oDND8WYFwwS939JEtnuBz4tD7DfJ75LRPq9NLIALum32-S161FyakC3FWapJ8zRMR8nHceoc2dU2WVa_e9PRTavS9PfAOLS-zE&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="We Talk Dog photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>We Talk Dog</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/birmingham/" class="back-link">More pet boarding in Birmingham</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of We Talk Dog?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

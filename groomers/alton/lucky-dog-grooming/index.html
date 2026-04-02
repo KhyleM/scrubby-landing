@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJlSMXHpFE34cRuTK0otf6oio%2Fphotos%2FAU_ZVEF_MSu3thGt-3tVPQwQguIx4xF_gTXsh-El7-ThWyRcnEFO-AYqbvi35l3hZFfptgJjvrT_YN9SfT8C7E-IQvczah2LzD1CcfjQXJtujoxclTpoTJFi-mx7JrBOPaAVUkPLfTb0q6ajaORSK6kQhe3ElKrSNsjKozyi03RYtdV-8dGPVIugf5P9D1MFhgTH5Q__v6HYO1NTo8uibxmJRb4akTv0s_kvK-f5ramufEhYapUlii9VVApMAR300QqUkhmCHZgsBNgXZWpjs4xOrWEaSyDj2zy6QyZKboEf1Qh1K8sB3QFWdSo2oYMxZhUT-bp0vnbtgibl6tN3GLuNFOYAWwqyIsGDuw2ANEsLn7HZrEzSF4JJiWN05F6-CnVMczZCoX6PsJaKb38CIryGA4VAgVj0Wlb-kTcFcxjtn5hJbW6F&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Lucky Dog Grooming photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Lucky Dog Grooming</h1>
@@ -185,8 +184,9 @@
                     <a href="/groomers/alton/" class="back-link">More pet groomers in Alton</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Lucky Dog Grooming?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -332,6 +332,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -342,10 +346,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -370,7 +370,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

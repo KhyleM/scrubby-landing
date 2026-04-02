@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJH4zEeuilD4gRujBcrnMPXOw%2Fphotos%2FAU_ZVEH4Pd-SwZxYfmhROexVMLyDWUCCH5LH0k7jztCyqSlvzRd_UORBPiKkSowBJmjHL0H8CVHMZdbEEW2C6YcjA8EOeJy0nvi-GV-fH-E-AHidj-LzU_VPZMmvpdWIJf5SgQgY7Xj-WjFl7SyHXVbV5tDRjUp6p10AFI8TRYZrP9mftQAwZKxmccZBM7xKRzMMtVp1O4UWeyMMT-iJNvG1FkAHBC2BLhcbD77yvOGe84moVpywKaGmWqlyS68Ldo-95JSwxioaGNhWsl8rYgZFlNIK1iu1h8VlXFJRtNH23jomHWEFJJHhTClhH2MPU4dwatQUN1l0wNCXA2ihsJrvKpPyLVadhZXO6in5PRfl4kxp_q5INzqHpvkWaayUYhk4ytcLwhyHe-HWz1MKHT2WMg0Tev7EkFvia1BEcCNCZtQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Harper Animal Hospital photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Harper Animal Hospital</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/palatine/" class="back-link">More veterinarians in Palatine</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Harper Animal Hospital?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

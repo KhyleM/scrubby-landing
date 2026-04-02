@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ3yN3RzGHhYAR3pIo9TgXBKk%2Fphotos%2FAU_ZVEH6zHlKBpj1m__9m1SQSOr3B6s4Bkf-_tdEtJDeLgZPk50cLkkEJSvTYpxrnUlFDp_vn_wrOUjR5hnZRTPB37XW0ir5NrHiJqgwvuxoe2DW6yTtuT9vFFN2XBQuq4E6TKTzYPBgX2B-I6IELQPXVWv9-C1UxdPxP10GJJvU2D673O_1IocmndWgjSjqwD0mi0zhhOki3ggdq3We_Igx1hub179yleG-_S3yc0fkGC02Q7suHNUiSi2w1sBbMNzyk3p5y0ZVZRhC2r4jnpCE6YvjiIKNqe1nFJJB-EsFMThCxlB58r4vScKW7vybeoiIKCl7GnhgAfeLb8BY4EP74Jucjd88CYg0B9y7YeNvsndieXT-T-5QA69HZDTlrsjmvfOCR2hDlJco3HuQHSGe1e2chDVHA1KpSlzfTuAAHo3sqgi9&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Presidio Way Pet Hospital photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Presidio Way Pet Hospital</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/san-francisco/" class="back-link">More veterinarians in San Francisco</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Presidio Way Pet Hospital?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJyU4Qa9HJRIYRk1HuDkbPQcc%2Fphotos%2FAU_ZVEGZRZPnaOK2kxvDULZMJhAlFYPczj6IKeIJYhxgQUpOkJgB1gH_d8kd3XX9VIrd48vPv7B3N4jP8UI0LckUKjxTfO2FFJReODJUOrv9t_9qwpaw3j932sSZKS_cUyztq0Coh8XUC7iIQLBdlzBlTQqbvGfa51eGn_W1AmeL6dnrZikQul6pOR9Cqh2RnzmwDaxDl-osqQyYYwaoJ786Zq-Ifjy98cNlnqyUUc2-AoxLzuXEcMxQtMwwtFT4k5SNkVF75_CWonRc52Tb0Tpxzd0-6xCZL_XB1WQwkdn6sn807V9RrqXn6UYs7B_Ks8sX_Ek7V2Hn-1eA51oRnUZi_uzgSkbMe2q5uXsY51ui83_17OSXqSmwc6rkGLQ6unY3OQ7rv405ay8WJQk8LS4LAwqvQuWDhMWRN6Q5ppREff7U92jR&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Daily Zoomies photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Daily Zoomies</h1>
@@ -197,8 +196,9 @@
                     <a href="/groomers/austin/" class="back-link">More pet groomers in Austin</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Daily Zoomies?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

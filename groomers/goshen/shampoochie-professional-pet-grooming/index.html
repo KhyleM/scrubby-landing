@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJQ72_J-X9QIgRoCp3PvRlhdw%2Fphotos%2FAU_ZVEGg0x1zhKPzsOhHEyuqIGXdrNlxukiAg9q4C3VPpauMmx3I6GtckiJxdWJ3qt0DJZT0WpImys7zVp470KmC51ADTnBhtiulul8i5Qdt4kXgOjh2zZr3P622Og2RrueX9SS3AZviz6SDJOmFdEuX3UJj3p3Er4XBGeYJiAjtHTcuG1U-AXqn-DuVFTy9C8MU0CL21pEPF7SUFPnKCj1bbmEYzO5aiLExx7efAt3OmWaD1vDtGp9nIMjUXA_z4IHFkr6bo_kFSXiYCOeRjUngk05m433gPyatQpswEYG9SS4Dn__P4lvmgIDVmThnhu2a6LGdWPkvld5KhQimMeolyYWFrzURqcFUxvt18jhri5ZJBD7iY7mLMq6z_oTFB5LxLFYbBDiMOswVoHfnJWzFDhCFAb3aJrEGoKo7MSHXiGgjWw&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Shampoochie Professional Pet Grooming photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Shampoochie Professional Pet Grooming</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/goshen/" class="back-link">More pet groomers in Goshen</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Shampoochie Professional Pet Grooming?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

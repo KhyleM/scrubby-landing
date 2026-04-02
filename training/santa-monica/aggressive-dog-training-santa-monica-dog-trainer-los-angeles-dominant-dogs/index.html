@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ9e0wxJakwoARotWU9XFrQo8%2Fphotos%2FAU_ZVEEFPIvtYp17XhtWfJLoITxM3DUN2y34mGtS0Sw02_Yx0gb_xYKValuGqpz-3ax2CHbFqCQLQdbTYLpcgQu3kgx-TZ-GuUci3B-yzeoVe3fAlb5kRu8-CMXNc5zdRqSO2_HCqCVx27nYbpjd7BtNMKMVXPo08NPO1WDk0gr8FhnecvYX7RlLPiICIjA_YJX56qQijYUUjSTNWTMTzdSzRh0em4vwIupeoi85dSOZYQUbRKfbk7zaNUxQY2QlYXYtF2iWBk3DZj_pbydt_pByARSMAYP82AX_iI6HWnh6k50I2Q&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Aggressive Dog Training Santa Monica | Dog Trainer Los Angeles | Dominant Dogs photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Aggressive Dog Training Santa Monica | Dog Trainer Los Angeles | Dominant Dogs</h1>
@@ -197,8 +196,9 @@
                     <a href="/training/santa-monica/" class="back-link">More dog trainers in Santa Monica</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Aggressive Dog Training Santa Monica | Dog Trainer Los Angeles | Dominant Dogs?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

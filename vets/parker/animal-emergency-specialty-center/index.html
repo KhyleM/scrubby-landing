@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJkWpmWVmObIcRxQ_tPrr6CIg%2Fphotos%2FAU_ZVEHjr_-NXHbSX52z9nbmbJGUjKEU09_q8Q4AAykHHB7HX5wWqoh4eDGUPCsim_0zgWzky4y5Pda8ptiUTzjZGno3XR5mRl7Z0hF8PZIl3q1KZFRAWYlETdSn-xdHtxHIzdIX2letbidf73vmoWwpVeN9MdQcTMsHbVIu-HZYcv7FN3G1klyAy2l1e1hSjsBcauz3SHEnuxxd6CmYf2D0965--AjQtmhSiJ_W8h-hWY8kEo7gp1So35ZqZIGBHeYcDcgjN4fBm45FFm3KKzO-vah5a6hJDE5SQJEpQLkTdyDgq-_Lx7fgceUYVFXmIXxxt1s0m_JYjA2AKAE5wD9W50_WyAstrhghjFkG1KYES1JrN0QSz6P2w0wU6UHoi85KHdW4oasNgBV6DA7NmpYG1LvrY9v_SimoOab6MXMN1uM&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Animal Emergency &amp; Specialty Center photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Animal Emergency &amp; Specialty Center</h1>
@@ -205,8 +204,9 @@
                     <a href="/vets/parker/" class="back-link">More veterinarians in Parker</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Animal Emergency &amp; Specialty Center?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -352,6 +352,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -362,10 +366,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -390,7 +390,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJczL4aMxJ5IgRY4oBY93wexQ%2Fphotos%2FAU_ZVEGhdtphUbyufw0Zttc23ghMNfbvOztzNOM2NEqeixgS7qCrFcjOZqmwDAhYvUO6h7j0nYQG6yj-ACuJ9Mkipu40bd6ppy5d96NRV90HQQBMaOKFbFYOF4BSw2FAp9u7oGYfq2LGQ6_lvo87JVNzM4B83QmOTEeqWQMXlrR23Ln8DDE6QnTVQ-BMtDgY5QH2QUHOj1BOGOfFQnmWdplHlEFx7HqJR5chjy34QlrYxNkXyq7-dI_GysD4GrXQavNfFECHRAPeVig2_XI4uyiU5prxfbquCSDo8XcjVvxKdSFG7XMbjpy_SExUcmdyk_MrLEn7WFzQHjuG-qNLrI5pFiGpT3_couA9z1P1eDTd0hhcLuBgRAt9PbdYYsaskvreD9TqYSjXduMruM2UGm8YWwCR1JVmEpWufxQsSSzmaw&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="First Coast Veterinary Specialists &amp; Emergency photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>First Coast Veterinary Specialists &amp; Emergency</h1>
@@ -205,8 +204,9 @@
                     <a href="/vets/jacksonville-beach/" class="back-link">More veterinarians in Jacksonville Beach</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of First Coast Veterinary Specialists &amp; Emergency?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -352,6 +352,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -362,10 +366,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -390,7 +390,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJnyP3M9ONUocRkkJPyoxVXDE%2Fphotos%2FAU_ZVEEU90LM6TLcEyG11hoiUD1JmhjvFIe8ZAco9YvgRsR6JV2TWoSAX_Getiw6qEpgI5ulanXFEWl5K8D7qoOFAccz3U6HqB4BTTeqAQK5N3w-RzcShwGMEduAYPPoz-hR8qeWUHRGx1OEgFJ77d3PHoQaHW4H3R2lcD_772WaJdsb5keq4OTmk3X_p66OAUlV4-j3nhGX0A_5SipiF1_S8Cr6pBSovpwa-Bs8lix4GZ8rF27LFcUygukoqKxaZQZUd19z2IfVvGLXcP-XaXIgxBvdK0KeDia-vd0tbdWKIBil_lDAjqUn5QiPXohbn8aPtCqNvftB851CjRZ63liM8lrC1K2LEhZKAQQ5le7RJ4YW8MNWyjZQgiWKtp93JXNLGdYlVedWLqgylgk8uhiEekKEPspxHHWxX7RIIggkhwNlFgp27Y4i3vspIm_DPg&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Innovative K9 Academy photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Innovative K9 Academy</h1>
@@ -197,8 +196,9 @@
                     <a href="/training/salt-lake-city/" class="back-link">More dog trainers in Salt Lake City</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Innovative K9 Academy?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

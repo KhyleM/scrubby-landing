@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJZzZ10wnVxokRELPv0zKPlSI%2Fphotos%2FAU_ZVEEi4Y9O1gGmzRi0jA2csP7qvpiUpUHJslel7Buvr1uEUVnyd5Agmv0W-cEoX-oF7IgyhYeu_-9Kyt7V_01yiphmQ80p1h9C4UsgFJVz3bcg23Od7PozbOuUh21aWxiUky840DR5BcXCLprWMTgoEvBBluAGG6k1pluuZFrgSaZq4J95izhVM5_FX3wNnPJ3dk1-1wKcg1K23nOfNuEdkeElWedDc0cSEMiBtW-GATDibChXuEDBpUnmw8PcmQRWU4wPXpPbsnvA1a54eI65qGyj_eN20hBDpY1joQaK3n_uLSbH6qg1Bxwa29X-FabJMPR1wEydoRuZaRkJgTbeWf3Gq5OdjNYS042zpvoaAxehlKYYJzhMC-DvcefsPTUV0jUFdxbnkJSFlZFqrCVWcuLS2Tfq38TVFhaow3bO96g7MgR4km5tTdjmWUT3Kg&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="PRETTY UP YOUR PUP photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>PRETTY UP YOUR PUP</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/williamstown/" class="back-link">More pet groomers in Williamstown</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of PRETTY UP YOUR PUP?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

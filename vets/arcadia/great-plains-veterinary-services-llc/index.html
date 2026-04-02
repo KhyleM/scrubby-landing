@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ21RsJREnsocRUNXj5cGNL7U%2Fphotos%2FAU_ZVEHFFYTo0J1v0AnyTFSvkwZD48uPTlh89U2wlpuVPEzxVel0z7w0s9UhExI-R2QCMDrI3sKkfXhWbcmfundEjL6F1TVjYMWXqooPx5HjvaWfHS1FN1Bk3Q0dUDSKqvU70TcW1H6BqxjXIpiVryQLa13KKgKEkVhVMTT3_d1quYTU1vZLr4LC9QZz9TXwpc5AriQcyv09O-aaP15LDk6UC6pldK9BgTI0mxxknLZC1rSfuvMKe7rDhYJfmxJL6qni_aRjr7ngGvI2-ml95Igffy9EP5q5WMpMi6OPf3vt64F--w&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Great Plains Veterinary Services, LLC photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Great Plains Veterinary Services, LLC</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/arcadia/" class="back-link">More veterinarians in Arcadia</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Great Plains Veterinary Services, LLC?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJGRNUgBqtQYgRTLpRetm7mlU%2Fphotos%2FAU_ZVEGpA6NHKXILgIfffDKYdIpSMjZdgwn_AsLI78Sw4czo9Joh-gkCV5fiNauQOLG0Zg0If31anA_bm7C81JW5H9kKWPLhhAoyVB7VdKEcdfw0UGIn2Ty8vKBkkK9ZtKtIK2YuRzAAt1EeSAVIZbd2k2dhIoDR5n8p3--7aRQZYZC12GhHRwl3mNMmbKOLLYGvuJt-F_vFI44fj-hulrO_7sZosbDl4BMrYXs0qgrcmQWp6YCLbLZVcFGhWZPSoCUVITijaw3jG6PimDO86NNKn2YNJ5Uln8iN6wsEX4wqXY01LCqcwcBCDERrRIdur7QLnnJnzHxYuE8tPDMlj1DmO5be4f8wCMKJEYcIgxVIt-VTIRcf-to9JpNZaAhgYx1k_82sEG6rD9GJQ5TBoR4WCNxIS69BHtA_mFpxqhNyOxw&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="MedVet Cincinnati photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>MedVet Cincinnati</h1>
@@ -201,8 +200,9 @@
                     <a href="/vets/cincinnati/" class="back-link">More veterinarians in Cincinnati</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of MedVet Cincinnati?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

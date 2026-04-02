@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ1VssNXAaD4gRSHLsHSMyPY0%2Fphotos%2FAU_ZVEHajW3C1Pt8Um63VIDLLGlh3BEsop7VGIF4tZmaFbGm98qYxHkoZYs9kx9TK6pPeBC1ridtvI-eoTqZHzvrWTfhSr6htuxTgqbsbZS396t8u26bs6NojeEX8-Mx4QHYGCI1R17Tfw60st03QWnXdy2pLciY4ZvdiPHTGbGkxVnzcdym5dQFE4Wh30w00BNWQXn36Aw50hGDunigNCGcIEBSwyJGyw38ThA5eVALQsENfmaprnTofNm-rCPK70QSXw0fgzSE4NtN6pMcm-a25imzHVv_nl-o7My0f3ImMn2-W_4ODDk77hKr4aOH2XDmGqqEJ2aoJ7fGZpk8oCe-X2en2mSYg2cENeICNIBMWL7FwU5gCF7nteoRHGT1UorGHjlncop13FpIw0z6o0pKRxXmPuuULneRCCSGnamc8GY&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Heavenly Paws photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Heavenly Paws</h1>
@@ -182,8 +181,9 @@
                     <a href="/groomers/elgin/" class="back-link">More pet groomers in Elgin</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Heavenly Paws?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -329,6 +329,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -339,10 +343,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -367,7 +367,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

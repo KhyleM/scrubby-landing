@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJI4GPShxy04kRDKqvO0LL7Os%2Fphotos%2FAU_ZVEF8KpgNcp590HT0xYdmBWhn5EYCoaQnpnTRQhheffm-cO6l-C9IKWCIGu-gFjeAc3Y8x8P-x30hR61lZS6yuR53AoXyXXJ5q9hesUAGJVcKtzPlXoYLDqcpWV5P8YinKeA_1ZcVimw90x8mfKpqBlFrJxpuusP_Ygr9GSLrxBoyhjkUF44gFMYQ8VJiiQG7TEK6ktcNfRuBqjY-JYp6YqEczWC5Rkw6K-6-RDeCyMSekBYk5SlwS4b-Ct2Z5eiCIhJN5RvetMNcXXUr2cRyFeG6_UedLkb2e3-kA-fh7ZnItnDtVrIhLq0K5qP40eylxEeT67Re6-fjOeQoF_ScVjpBIKTflnetpCaEMPGbzmq8nQ_wuRX0MxuoQ7u3fuLzQzkT4NHG9oi1CWcEQLphUsvCvpLfU1eujnmPENTFvUMEDmVonNOInxRqVgI_3qCT&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Green Acres Veterinary Center photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Green Acres Veterinary Center</h1>
@@ -201,8 +200,9 @@
                     <a href="/vets/tonawanda/" class="back-link">More veterinarians in Tonawanda</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Green Acres Veterinary Center?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

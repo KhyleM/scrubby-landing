@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJVaPXs0PE5YgR9om0PDStGa0%2Fphotos%2FAU_ZVEHcYPx3vGXAt_tNvVe9oDw4CsH7saVlf1nw4MtjTrG59TNY7TwbPp7xQdqD_u9d1UEJW_luwNjPFY2KjCG6WtL7IyVyg4Pj35K5kJnfmwToiCG9PQeoEnKewzkJcOmkWH3aKuKmdQK2hrQsEx3ptzW93LaZn2ilaYsl8kAlqtNs7YrUc9r5CrQZsQ7a-lvu90iXzKRt3vaqVBhvvwLnIVQsokKVdwIfqNnWCh4sFg4y2svgCFfrIRkROgmMGmBMbkK5ZdwVSewix8aBHjbkVKmyh_jz7OlEZtk6yT1REzqtVB2oB9LBeT5zXv8Chyj-rSbO-kiL_Rz1H8HDboKvLvyLjOgE1yKlU7o2Q_8N-VvQ6AL-JHwX8ZzJtrce6fwiSDDivvdvQryycz7YzRkMnN6mINJaKWjj75ahTwILaJFZOXCM&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Clay County Humane Society photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Clay County Humane Society</h1>
@@ -201,8 +200,9 @@
                     <a href="/vets/orange-park/" class="back-link">More veterinarians in Orange Park</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Clay County Humane Society?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

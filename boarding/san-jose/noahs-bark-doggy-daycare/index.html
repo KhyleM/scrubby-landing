@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJhVrY6vXNj4ARJlfcX3RS6Dk%2Fphotos%2FAU_ZVEEjyNOQL2dQyPeMcdPSNCRUbYAaTrV0DhH4YVmYTnQp15H52cwmB1VQz1j7zwiLmbo00ji6JnIRg_boLZn5Vn_ogzIOMHwcN8Nt3irYBzDIhIFIlTPNIEqKv-xxLQ92d34F82qcZ-IykjgeDJeYBSk47zVV86g_BrwY2rIFqoTU0eJoepSTdOjD4OuOgC7VMA2KP-3zkN34fJqE1KvoTlSbrBdMcYjj4DyKsfBilotA8e_UhffFef_nEyyKeTwNALPC5MBMG9xHKwqZFaidiFK79lUjDvTpIEDcNyw-QOU08w&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Noah&#39;s Bark Doggy Daycare photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Noah&#39;s Bark Doggy Daycare</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/san-jose/" class="back-link">More pet boarding in San Jose</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Noah&#39;s Bark Doggy Daycare?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

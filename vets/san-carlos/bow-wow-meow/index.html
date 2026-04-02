@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ1XcUaBuij4ARy-A8ZWUQWXI%2Fphotos%2FAU_ZVEGCaqM-wj3KhXlTq8vYyneU50ylZPQ6den41735K843fbHhoxMCd9mck26bRAg3Z6jQw71m-lGK07pZ4-wqfhzMjqCFO42o25QLed0LPpFAKd23Eq79ED8uqtRehXAGFrTidYt3fIihdMX2Hc4AbMU04i2nvN1-Dg-TE8Pl7RGXChTBPH1m_jZbCc5PcoYt5EGWa-2erCiH0VYX5SJtvnD07GnY2tShKhBY--MCsNQ0rjZfLSHkdHZ_J9FnjEj73qoYTq8sJfeg9fDELqURfAXjP5u_vqNNWI8kJ05lH19dAUxFo9WyRMXmtTU22nUxV1zE15lzto0aRcdhWQ-yYOfHbPLy_KpC2SXrlrbQon23RfzN7aW0O-uMtwSl3IZYKomxbJlRAA13_EVUbMk5IS0c8XE7XzCTPCs4CgBFyg3y3g&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Bow Wow Meow photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Bow Wow Meow</h1>
@@ -201,8 +200,9 @@
                     <a href="/vets/san-carlos/" class="back-link">More veterinarians in San Carlos</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Bow Wow Meow?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

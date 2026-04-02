@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJyzBDeZ9tsocRPofqqKLB7eI%2Fphotos%2FAU_ZVEF4_3KkeLrcnwUTlgtiP9Ce4zvLgUfkq0kfSTiulAY8Ree33z6rpK7Z43d7mlAEnm9eJVeSYAEIE9tTqwp8eRlBzCaUoF7wTCaWam8wU3uw2-BWWiGEZSQiYXW9LLc5eVWC3ZngjUjDE8ZKELXJX7fPgjOZ6pO8wx8pYrExGqb1AdyNM9iierBO387KcNA9e0wwlEaDIiNnjLUyWL7_gr9TDnck1oR71T27lRSB5ESRY0n2w5zBa_IrI9T7RVnaZ8iMBaw9OZipN6D9156diT3xO9ZTzufnqEvux2oeSekS_053KIWF2BSr57LWs4B2750cf2ioIiIXtBghq3yVLydGSutyNtvZDZK_cOVc_kWah1EBfurUMzCHQo-qkL7SBW_TtPj-V_9sKSv0NpGykebjywViwkC-monSZEM00QyYJQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Megan&#39;s Dog Grooming photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Megan&#39;s Dog Grooming</h1>
@@ -198,8 +197,9 @@
                     <a href="/groomers/newcastle/" class="back-link">More pet groomers in Newcastle</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Megan&#39;s Dog Grooming?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -345,6 +345,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -355,10 +359,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -383,7 +383,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

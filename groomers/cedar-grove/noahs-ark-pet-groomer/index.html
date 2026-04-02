@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJTailmh8Bw4kRgqwEpdamNuE%2Fphotos%2FAU_ZVEHwMeLbaQ5M28u2B21NvrKP8Z8nnp3XCf26ZwwUm0_XHT77LJPv3HEfwAvy2P0J--9ko7TEwXGanx0SUPqg_cJ0zzdeVtGsiSsDud1nPT2FtLzQFBVg8SHeiP5uiwEb7mJcXpzpeSZjyDaJrbBvc7Frf7tuNk9mWAD5nG_DdSwSwm4JCoDCOW88mB4QB8mRWgnU9JUFCAbMKFYsTNrdXVp8oRzY5Ep9XhD1rNlRtV8m9IMlFyOpib8EpkQgC781qjlLwLvNK1je2YPHPGgtb27uI8ilsGHpel2eEKcjBF94Q8ynoOi0ta31gPrFq1-MbtAzwM4BWmPvUHU4g1Oo9VrR2lN6PylR-9yqZ-taYwLEblWi-bw7_zjMrslOodH2oTp5LrRXae7GhMM1zN6TN5H7DNtChsRzYu7ntHNVnt7GIiv2&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Noah’s Ark Pet Groomer photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Noah’s Ark Pet Groomer</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/cedar-grove/" class="back-link">More pet groomers in Cedar Grove</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Noah’s Ark Pet Groomer?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

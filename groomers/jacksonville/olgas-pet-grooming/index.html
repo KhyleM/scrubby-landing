@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJCe32KrnL5YgRsObyCL3y308%2Fphotos%2FAU_ZVEHrpu3oc4bWEUvIt4KORoXoqNx94ciuRw0LQEUi8bHNXrrvuQl6mVp6rAl4FXlovPi3mtkAQcvjgExziNj55so2THn5l7WhFf4PKUX0eaIX-0FoEz62p47XWg65r0Knsb4B2-1g6mVUPXTcUVKLn8hiv7dIjq3Lqu2xcAXvfxxh5_bcIriNI78_Rzsa3Ht-Q4rlDlhYTNnEelbkcZ0kxr1FPOiSe1co6hKxxgQih4wN_N_SwEzph3D7Lt5Z_L3a7604XxhT3TtZ6NMNZgeODYdm99Rf2ewmavUGV4xSuBdy7hoFQ3w2VM-lxuylyFEtwUgU1Tksqzgncv30edz7xvRO3I1sR_kPUUNqjXKLgEZroJuzj1lKY0lPuD3E0CDT23SYL9DxYSchMAekilxHhbWOZNAWwzOt4pjtXY5hAyMBHg&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Olga&#39;s Pet Grooming photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Olga&#39;s Pet Grooming</h1>
@@ -198,8 +197,9 @@
                     <a href="/groomers/jacksonville/" class="back-link">More pet groomers in Jacksonville</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Olga&#39;s Pet Grooming?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -345,6 +345,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -355,10 +359,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -383,7 +383,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

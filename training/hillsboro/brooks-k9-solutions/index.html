@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJcc4j7Gqb9YgR8G-jvz9N9S0%2Fphotos%2FAU_ZVEHfaluEsjfrdgcEDat6pGk3v0Acj2Jxbxd102bUTNtC5yQOsHPDXROhEgAgjQi_Bc87PoccMxyDW_7IAPUOWZUJI5lKBCZiSaBeKOWY4CkRRScXeXZusocP6gF1awi_-onsjJI-w_oWdm40uA6PVvB5BGf3axOJYbbEY9eTJXg92uaL84UiMY6hyWrkFnkWGV85LeKNKgnS0vmhh5M5vvVoOqs2tc1KA2aSeofCBDOAizf3eJwITkBbxx3dC3XgyblHtC5eeBElthgej_7-11SKUDE-Ugb4COZSQ29ebC2F-V3AfacQXlSVQTE6TpRB5v79A_aPraRzNHXnIOMpIKgsOCqO3lUL12UEtWB7LSpsYhwwVqoTz4FRTURHvUR9ypt5jxSNPR7N1Wrw1E6k_2E7IlDgETeVmhFDCVKhj-xfsvlw&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Brooks K9 Solutions photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Brooks K9 Solutions</h1>
@@ -197,8 +196,9 @@
                     <a href="/training/hillsboro/" class="back-link">More dog trainers in Hillsboro</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Brooks K9 Solutions?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJI8j9aLLjwogRWm1fe2GGcPI%2Fphotos%2FAU_ZVEF4sGT94HNQIqrqOKJ_zIBwxAn7Ma4GqXFzJhoy6OIirFk-1cfSmLJA5puJeJaiodKgJlkLH6ITZJEsul1zIySWC9YEvAh4jsCshnOPIHcvSWxm7Tw9ZObygVTrz_WasQYMdB7EYx-5gYqYYUBOTCKMq2tGcLiSsUR62Bs_IZokrxXknFmTkPqTuwvTZqICYy3mZCjeBMGJj4cFTSGro-Bkh5Sh80KeofGEfa9vfMEuTb3_Vg9TcDssHs443-doCQqsJJF_GhbWezOFWwCL5x_dGX8bNELWEyA3c9reKo9RUMdz09VeVVXstG3p4MRjYcH4JEj4JpImv3Sb6WU7p8fOn1p5B4TBBjbMGXaKh9XcQXtgp1Ecc9AuoEWGOcb-sIWF4rs74EOHh6EHgM-p1m3sqHSeCufnq7M2eaeaS8w&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Animal House Pet Center photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Animal House Pet Center</h1>
@@ -203,8 +202,9 @@
                     <a href="/boarding/st-petersburg/" class="back-link">More pet boarding in St. Petersburg</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Animal House Pet Center?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -350,6 +350,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -360,10 +364,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -388,7 +388,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

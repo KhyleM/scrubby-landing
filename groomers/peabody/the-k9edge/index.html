@@ -80,7 +80,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJjfK14pAR44kRsJSGZG6Q630%2Fphotos%2FAU_ZVEHnDTnAJPKyuvI5LjR8PVZ2arp1NCU-wlZ4jszL2aeT7_KFK8P94GFoI2PsYZXXR_HypYRhtr64WQ-zwN0S39kzYgXKzN6V44no32X1ts9Bs-7oNoZ-7xa9U7VH2WkFA6v_EzAaT-oUbK9hFZhJYdLBVJap4srLEvd9KUiTxsLPfmtKrtwfQB_m_meW0q1hj0A4IfTK7as1b2sI_Bowo3c_fYvhyPnzfMnEcdp7Ob9jrHIXErCq3uzl-w05Iqu7jCbw4jHOCctsU18gwmE4tQCZZpnlSec_Tz8kiXni201_OmAvRuBsxumIEPTJDgAemlu3h7sm0P5iv2tpXqcvOmHyGblkgKuCnIeXiB0g7h3emQ05qKEZo9KzvhIrqJbnfXKqbOcDYTiM5FmmT6cm78bqtWm4FmdLmJLil3Blg5E&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="The K9Edge photo 4" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>The K9Edge</h1>
@@ -196,8 +195,9 @@
                     <a href="/groomers/peabody/" class="back-link">More pet groomers in Peabody</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of The K9Edge?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -343,6 +343,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -353,10 +357,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -381,7 +381,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

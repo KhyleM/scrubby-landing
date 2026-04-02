@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJO65NanPD5YgRt41HtopWhxA%2Fphotos%2FAU_ZVEFJzpAG_hTEndFDXPwFiAKLiJEK1NXir1vzHCeJ_kEO9syzzNCemua_HVzJfcgkjleY5HJpMxTD5FuyRUOsBth3nGyK4bEXQ5En8u5y37yrnwngHyiWikZaD9G0X-Yp6RG9Z-I-AAS3Wi3Bum39nGM9eisPPzvJv4Up-At3sOqrxEr2ZmO3jSzqxm072P6Tp1FSnBDjzTxVRcWnOpu3IUJVT0_ixjcZ0berUXXeelMuR2RtzxIroFmxn76B1O-VpnKqDkMkboZxze-NVDvEye9lAGihbWclBJwj4ZwFG_iqFIK-Jm268_QUZNmrgFmLgyk26Nc5r9GtIRm_M6eESXsXdm_N5SBVouFGA5y6GJ0KW9YOq_YhOUfNblZMInPQNeM2oRo-Wp60BZBlB0h_MOvanoAjmefaBRVjFsxruiExDdAU&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Black Creek Pet Clinic at Poochies photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Black Creek Pet Clinic at Poochies</h1>
@@ -194,8 +193,9 @@
                     <a href="/vets/orange-park/" class="back-link">More veterinarians in Orange Park</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Black Creek Pet Clinic at Poochies?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -341,6 +341,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -351,10 +355,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -379,7 +379,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

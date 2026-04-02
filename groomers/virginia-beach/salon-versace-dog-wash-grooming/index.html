@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJP-gbsVvtuokRQsjF5li9UJw%2Fphotos%2FATCDNfXKznUnFT2Xo-NhomTHL-_XLDu7wbmWt8faGRPHmUK875ELc4wtSLeltn04NIkkLDGBS_UtvBPP6cAPVaBq6YhEC-JLfrQ4wEiCoaD1cY6lh70wQAeHblXH-wyFWQA-6Nf_z8lREel0f6vJDhPU9pVngpxpVxaJwUBJKc7CbfgKLc84rbCN-6-qR4f7YQRMbLm5aynqE6D4K2iU7Fo7KqxhsDJmGKrFd_KuydtqLzJ4hch6-YvHcWdZnBSqKNX1oHAK9z6btZNPA89z1ogO871iFXUXtrhp__WAIEqcF8jB-EmlG4dnvq-TC96fmdLq6PcZ2Cm0wbxq-sxWahpwVDWsxSaFDJhn9KYKchxiPoT1BAaFT2V_AdS4pPIDWPQz8fnQ-kYjivCu1idp6tbMo79nBXyZhsgJ9hBRZJswORSO5wY&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Salon Versace Dog Wash &amp; Grooming photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Salon Versace Dog Wash &amp; Grooming</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/virginia-beach/" class="back-link">More pet groomers in Virginia Beach</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Salon Versace Dog Wash &amp; Grooming?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

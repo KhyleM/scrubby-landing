@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJx0JWJwGRwoARgsCYKDAj1JQ%2Fphotos%2FAU_ZVEEy4_61EZ4axkmhSWL6Sj-8H9AmVUsIYtLY7b7oDJbCdCCDJBoma_6NboOD9wR_oh4YvoSyLmemmrXeTmSGErIHn2loxMJoLdUAXyLOlgVxxl9EpwMl-6HOAAmW4JJ5ORTiYcIRX7nWYzDDc-xl-oh9fRp2JPaYJg6O-ApG7M1fBsa7aj-1BPfDEXmJoyYJWooCyb9DNBchpdaOYWGE8j8mz2iJG5AYwkcdycBpX9CqV4t0uHsPJW_o9rRrG8CtRKZJh2eB602hzVjP6J46_ibOH9oCDX0XzPU7l-eblRYXpnEfNnc5rikH7Ysw6R8IGJtcbFsWNnnVfg3jLB0Wy58Dibc3xZljQPtn6mMfZKLgLtB071tZn20GT5QFiRLEioV8-MQKUvVZ8Tg-Aad0OoVJ0rMvL1GePXB1ax53A83yzLX2&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Wash My Dog LLC photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Wash My Dog LLC</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/sylmar/" class="back-link">More pet groomers in Sylmar</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Wash My Dog LLC?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

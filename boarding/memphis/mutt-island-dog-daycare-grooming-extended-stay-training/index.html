@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJNZluEI5-1YcRUpwHR8ihaog%2Fphotos%2FAU_ZVEGsR4AdNloXnIUGQff5Y5LCGUoRoV11tX_2eZfBx4aAu1N2-K9Vi2W8YD3flFUFTyW2ZphDNXn0rB6dc-nY5lEkB8lWq8c1wT5DX1kE6v1M_L0zf6woi4NsUyu4ieYAifvqzi_0Fvra4U2JelFY8PfBxaoPDatPiBZn5AdoRiJOVKCqryWElqGbVlgJ5dzCjhKCzR2RYLuVCVK_2v6vdZMqotHCubx485FkztudVXXLmk9MR4evpLfaRuTpnUFC9EVghoN7HxrYHJWUV_7ymokIB-D-1oKxp97ZR7pxDLplVPA8A6sKzfrqolyndTb8eXH2EG5yX-Cbmc8xH9zS15n9OL5vycxT_-Yra7-ezJ_ZVhL9ieXGJIxjSN21hReQa8PWH298u1cMN-C7Q9ZslfYp2ZlMLyJHaJk0uWSwo2ZmFg&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Mutt Island Dog Daycare, Grooming, Extended Stay &amp; Training photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Mutt Island Dog Daycare, Grooming, Extended Stay &amp; Training</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/memphis/" class="back-link">More pet boarding in Memphis</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Mutt Island Dog Daycare, Grooming, Extended Stay &amp; Training?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

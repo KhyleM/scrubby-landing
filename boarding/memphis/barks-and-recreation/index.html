@@ -78,7 +78,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJw8LJMY2Ef4gRnbGZR8_Fw2g%2Fphotos%2FAU_ZVEGGzlEf9YgHjBdQ6L3sNddzBPBtn5Z3KwmgKln7V62swKq9g9u41wJG31HfYbr5k6T9TUTJeqTOnQDjzEfc8n_wZ73xAHdJUGdNHguzPHG6I6WDi0KCbwCQNpXo8KD4taADQKsPfEA7FSIZikLYR5Qwr4wCYCHviYpe2AKsdj7KZAh5cIVPqANJXVmUOtOFW-VrCE68QOQz8xgOpBkhzzNiQCaIM-FRmHeUDC7kGE7unXuc3Y7jgaO9Xp0Y3CoXDoPS7GePpU-s-Qtuh_jrqFHbGxtUq16qyB1XUBdtPrgknUK5_jPzW9uaJn53ags4PIbRId_MCoU7-2zOxJY2Hnmu7OChCNbj22F1KDkBFhY6ImJPMHh6UcmUY7tBp5dQ9eDUt4vdUMz2iiCTIXlnE_6AMSLEpnFacAEzsTJrnzk&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Barks and Recreation photo 2" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Barks and Recreation</h1>
@@ -192,8 +191,9 @@
                     <a href="/boarding/memphis/" class="back-link">More pet boarding in Memphis</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Barks and Recreation?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -339,6 +339,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -349,10 +353,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -377,7 +377,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

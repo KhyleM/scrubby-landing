@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJgfNUkXTjsIkR_A0qQ5eJV7M%2Fphotos%2FAU_ZVEF52uyDpwg4IA973uSOLofucycDDoyi7UGWDj5ZhDcXcsYjk_WLMG_IYo5dMmYLMNwXM3DyaD0EQIjthbgx9AYiQu3H9LUnMvexSgopzduBOBPugCyB78yTOfJVLx46wIhyehccPCu_LEEJqGJRkStEAhOH5Qz0omKGAKxWMh-nLEbetfh3lBKLiE5yYA3Gd1eKGec5pb6Idv0i5o0D4CN99Afsxl11HLEFpNpM2TZgmrIB073sXV8QDe0zxm_FA3Pivm-wqWQZfINpnZm1i4E02x6vl-lXlKUpMxj9TiGmGT3nXsyPuUjuSGy_sYGuD4AevAGvZjswvQPn2TSNWklogStQlS1Oj-ABBmmzggRKSEF58O2Y_YvayxlJyy2Fpxcd9KRVvR3buussjxgN81uGnbjgwa5YL8NPOZLOMArm-omU&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Dog Dudes K9 Training photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Dog Dudes K9 Training</h1>
@@ -197,8 +196,9 @@
                     <a href="/training/quinton/" class="back-link">More dog trainers in Quinton</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Dog Dudes K9 Training?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJs9YGzH4Lf4gRe-sTQDrBxcw%2Fphotos%2FAU_ZVEEltf_wdCl0JQ3sQqBZmxMSzG-XiS_kcKvkMlnOHv_50_xLTUhd5IfW9j9XNPeHgUMYTXUn9GaXzSelV1Ayc5pdhkkN7zV2_vJR1wwC2UfZ6h3gxoAuWY7-Uh6hoBKM_OUQwe8z5oDwzULr4GxQQAskTOUtKSWtro5HSzhU2IJt2NnxxJSkLusbMIbRBL6nUmco6A0syETzM-yeXAv0LPHLi2iH1FWGeoJPfe7cZXtrFrvYLiBsRwvjaJ71stmQVzRwU5p1sxEIpo7Efc3h2ymV5AJmpUJBfv5uVjwj6bqd5P-StUAsNq9zorUv_SMI5YMIH6VaNZIH6LqGh-6xwIy9J6yXdm4yv-PRxRmu1OuhkUeEaxsMMhsTDOc-4KiS27akRzy9ApJ1oGvPGEVqlrCTVKaoqCAUKEIczJPle-CKNzU&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Arlington Animal Clinic photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Arlington Animal Clinic</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/arlington/" class="back-link">More veterinarians in Arlington</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Arlington Animal Clinic?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJbfTcLlQb04kRrbZppDcgb9o%2Fphotos%2FAU_ZVEHczcGVS6c-9WhkUtRW9uMyITLQl9cJ6a13vPSG2VLBH1OKppoIu3j8bu0Yd-gdL7ndkDpXFmb9Rd_JgZLVhqSxepBcIdz__8pQm-uAmyvMNjFvV2j6K_JUo2hEW5PWC7VcauvrNQ0u3dNx-3ZMi7mUwp_NadkBz2Rrf2inri9YSsRFFWDsyfiJdzTPm64aC_gmcTmZy-XPNEZ_3BPbb3f2Y5lSkWYLCc6lWSYeE3COLp_HPwz-TmVcj386qAzuSZh5n7xV5vvoVfUtVOGEJoRcg1gi0gzAvZi1FadqzvXPQvJRb7Bdez4GTAlZO4uPrJli7itb5Fn7iIQQYp91b8_ZrxRrsNDOMiTDSZy6QdMnWTLZzKwEY_Mh_inxzOYl_JTrkmznSBQFgMB9dWsxNaRJtYmQrN-uILVPZiQG5hM&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Fluffy Puppy Grooming Spa photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Fluffy Puppy Grooming Spa</h1>
@@ -197,8 +196,9 @@
                     <a href="/groomers/hamburg/" class="back-link">More pet groomers in Hamburg</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Fluffy Puppy Grooming Spa?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

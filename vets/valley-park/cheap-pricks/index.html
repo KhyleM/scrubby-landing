@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ8ZLz9erR2IcRqO1lGU1vtBY%2Fphotos%2FAU_ZVEHJffcuywICW2GGy6Yjw7s7QefSy6jUCud43MrbPTNFDECpCkSESXJyLQ5MlDYJbRuAJ3LV7abVz49lM91flM6w6DFly40eHV2AN3M2EowHw6dqlcdOAlrVYwx3PxY5YOC8BfA2H7USYxwxvfvMIXwa7E67JlkBdhbBmZUstMvpr3DRkDP8t17f3FBlszSv_7aOw49RWnhEvVw_LYb1bkDPOGCqTNHUyijCgawRmpnxtjWPKk_i2e0c9UOmDkUmD69twb1Wd2cLlOph_te4vUUhdiMPJQONdtBxILQR24bO4wN53-1Hj0sembKlxYJvlJtJr5uy1Uum-ePXEtIv754u6EOpbQxg8CJXUr4YPEQ37ipuz2prYqj6fpK-VcQxKYVbo5gDiwklGcJTv2vieGKsUeIMh8QGIHY_Z-Xm6V0&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Cheap Pricks photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Cheap Pricks</h1>
@@ -201,8 +200,9 @@
                     <a href="/vets/valley-park/" class="back-link">More veterinarians in Valley Park</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Cheap Pricks?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

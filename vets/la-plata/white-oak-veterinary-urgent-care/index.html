@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ7bP8U3EJt4kR75Ukfqx5FQI%2Fphotos%2FAU_ZVEFyDAN2CLdYMw2xZ7avUNaknWYdEak_fNvgYwU9CIcRlsgiCp25oh_Ohb9gX5vZp93zzSoNFlx4lInZlZlgGplt0wUhURYQJD1u-GfxVckOIrZ5UnDo239KtteDy0vEA8J5RP9A17DCsV7We9ZHtnP60vBQ8K33aN6yRmxjJtbD-N89sQUst1OrkLDqO9A12M0mJyYYL7qkEZ-YGN-6cyh8i308rwNL1jC6pyAJFvrIe7-fT5zmjde_PMEmjj4UnVVDdE-wcEPr4U1IzK4Ddt5SGfT376YeLrfsneLPrAke7t34wxjaOzMQ447DjhOWbKY-y7_zpJMJi4N52agsc4AABdboBASppU0LJGkCjjY2QbOOkBQOqpdC-D2LCM1mEXUKwHw4qewMdbVrzdYSeR2eXD7J_FAbDojzYbBJk85V9ZmGLAespRmAwv6S0-7k&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="White Oak Veterinary Urgent Care photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>White Oak Veterinary Urgent Care</h1>
@@ -185,8 +184,9 @@
                     <a href="/vets/la-plata/" class="back-link">More veterinarians in La Plata</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of White Oak Veterinary Urgent Care?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -332,6 +332,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -342,10 +346,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -370,7 +370,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

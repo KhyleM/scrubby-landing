@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJoU04qTIKsYkRIydVlKl83aw%2Fphotos%2FAU_ZVEGTh59OhNMMFncRxi14cgWmxmxoKuH2J-3TaW8gSQwd4sn3VJGBfNgmRTSoBYbewb7mBYh14hCP6iCkiYwbhvDi_UBo08APNJoARyuD1z2SQZ0DJdCKHQMbTE8kOorB_mGA2gucgwQOBB96fhYCt-IXcQXCK4OgEp60N7SjXs5-BkZeFAXvgon6Pw_q5epMHz1JCEBk9Hgh-YnjrErtfQR83t4V1KlOqT3HsVEqzOKKVpMqxWXmB39dKdbNAt0Ssdhe0jbWkDxPuEiwVq-5VK17QEzmxm1t8Fzu1sguy39AL4rRh9uNuyt8nzNbbCi_7i7eV62XmZ60oRu7bXSGYArLp6KxdkM1u_f6DZm_VAyuoYuuB9wJjrj6T0rE0FapuX000yPa5QgaGUDuHf8q-Rj4SmGgf1n6Qx6TgZ809fDhjw&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Chester Animal Clinic photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Chester Animal Clinic</h1>
@@ -201,8 +200,9 @@
                     <a href="/vets/chester/" class="back-link">More veterinarians in Chester</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Chester Animal Clinic?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

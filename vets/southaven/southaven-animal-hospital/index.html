@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJM5N-2F1i1YcRtv5M2B-a5g8%2Fphotos%2FAU_ZVEE4YJSxvftU0KBg4t48nWsZNJP-RgvexHQ8s8Xxn6ivO6niiqQM0WaMglYGPQleQlDdbNgBGm6VauD4UkNCMFKA-vxyrUbdDKcjzg1ED1nfR2p41su72l-7-Mj2DwrWO8mkWUJDJxhmDFnAcTcfd4InA3A_bE6FLrwu2Tb5634yT0rbrxxeaP9n6l_bySCkc9rmxVb8TycGjz3vYoXQtcvSXufzi-19gDYLfJs2HQfsDCu3WFsLeQqBBaN2A0B2GnDpN0SXmBXWVa4osySyxl23HAcjK4ZM8e7w40K_AB6bfBJ5OAJJnX7p5K0Sxzlt9eGuAyHHPg57PrQ94mm12P3ziQHKpFiWSohXql5eCj4V2RGAfavz6l786aQYtfWp0wljqWvNRZmywZf1hjm_d2NsSyzqYBty29Xb4-1pe4Kn_g&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Southaven Animal Hospital photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Southaven Animal Hospital</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/southaven/" class="back-link">More veterinarians in Southaven</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Southaven Animal Hospital?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

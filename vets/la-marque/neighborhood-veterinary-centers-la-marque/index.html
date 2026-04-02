@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJiX0zqLZ5P4YR_1PG1twYc48%2Fphotos%2FAU_ZVEG0TYjbeOUkvq8jcwmzUQJ3aMgu-5VIkCf6BK87qxPca5nzQ-EEmHqyINU9Q7C5nenWr0tGgN7l9jW2quyaY0sM1tyUKvnnSq05fhEWE4CQzmXb_lj46ZaBWNF8QZ5b_M3kwOQFVR-KlEI5SKoKFKGc3Hftes7_eXKHCPOKX3VtfAKogReijRpBZoOlUbpNNlpf0qfGyD75SsIi0J6joQmrJrkZlcGzWKj9x1Uf_fkodvUoDygqqZq1SGXqm_C6eKOjEq6CaWhZzHhUJlRf12yh11QpPnrDt9PPP_Eh-_fPI_H2KiMrhsZp425XWi87wJrgqwmux7PkIKveNDzsXYNLiCG8DMpw_6ZR0gBsTnStG4oSVaQ6olA3pR7y_xLH2cRpC7V8kRiQPPTj0O0Qw7CVV5Oq4LPTpS4wH2mhVDeG53BbYGjG-Ge-RjuTQQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Neighborhood Veterinary Centers - La Marque photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Neighborhood Veterinary Centers - La Marque</h1>
@@ -201,8 +200,9 @@
                     <a href="/vets/la-marque/" class="back-link">More veterinarians in La Marque</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Neighborhood Veterinary Centers - La Marque?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

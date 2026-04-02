@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJf7hK3awcw4kRTF7tknjeujs%2Fphotos%2FAU_ZVEHJir0DfN5KOk8qFFn_J9miX2qsdXJ65wy_gsW5S-5UzCuYOkQ3ZkRdQDAg1yY7DnVl8fg28YAANJoYqVACZZfZzntR8MU8dqwJip0PBIOf8UfedKVuPjfW_96wWslmarxT_WM4Uki6wj2k7yv9kdrbhGOZ968Jz7aIjPfc4c4ML-dYhyROpBVuKAWatCxOcZyXe7gi3nnlo8mM3z0Q338sCYbI-nkxtpSRXjavmE9HRx5YY4x9fC06jm02s7bnG-KEBYx79ntxZC7LbEihb0pve0mbkAbPeGNMDlmttEP2y-3uH0QrKtLz5EqKQ4Q_awIQTeX1ovRHws_U3fcalWXGPX3ElxJY6_ot3NuyTi6iomTUeDb-ab-UXRKbnPeRYBG47QBqBCMP4GCNwlxWjuejj0HBlIzqp5j7v9HR7B4&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Animal Care Center of North Jersey photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Animal Care Center of North Jersey</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/riverdale/" class="back-link">More veterinarians in Riverdale</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Animal Care Center of North Jersey?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

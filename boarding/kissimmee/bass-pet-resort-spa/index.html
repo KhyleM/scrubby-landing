@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ4RLzFLyD3YgRw20V9fLTtWs%2Fphotos%2FAU_ZVEFIRMtGOagx1Xf4EQ6b9gpI0L2kt39WY3uZTHfmVeY4QMWcg73hShSNzOCC_Zk_sASbCz6Hnkg5KSB6nLUb6rw8zwireWE3VBP0K2qnX-Uy6aXpDjgeSkLbTNzYUTG8XzPWgM2k84wdoQzE0fGXiVBVTq_aWibyftg0aR6ljSnSDDJxqSnh20EY3iB8ksANGM0Ab-mPqVPwlbNtqglk2zauZ3um1WI-T3FQKmpKj45mRbdj5GAl-0KRrnHym_ihkXlqmMALIpHuZ8_zNZLP2u5SwIxaAZnv5dfVy3gBQLmczyxcVmlhH9AjOMx2qFlxlJmEIGB5RBQwYf2aXrHDy9-2oSDLALBubifDIyZnNHavzeetz7AU4uXq-qE4AR94pr7gmVCizn5EBz8ogGIo5SytjrlC5f_TqdYwnYMFKCqUQelWIvUTw7BkrjUQJSPs&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Bass Pet Resort &amp; Spa photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Bass Pet Resort &amp; Spa</h1>
@@ -199,8 +198,9 @@
                     <a href="/boarding/kissimmee/" class="back-link">More pet boarding in Kissimmee</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Bass Pet Resort &amp; Spa?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -346,6 +346,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -356,10 +360,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -384,7 +384,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

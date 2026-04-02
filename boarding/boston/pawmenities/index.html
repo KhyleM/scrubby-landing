@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJm72U6WwZTy4R_NVaKH2Z8u8%2Fphotos%2FAU_ZVEGYhJ0VZkoI7dTPNs_CJRE6TMmT770gKEXxbSkSyIupdEiBMRz4BwzJoYLofc5-4kuJWr8uFJpP3oRyPtrbVgLqrfQ_XvaP0-ehkr_ZzmeLIW2SsV0CJYuDKjj1tzMYwpgy1_lhJebI6xvqKh-oY5e7u8FwTbDlFZb2PPCeLa3v7L4WlxqEhpeZ1n4OEahrdhaiVQDp0v7oqYVisGLPljSMoLWj-S8CDmqgfnAsGElb8mdMSiQrmvATXrRWmhtHXh15zrYZZ5F9UcLyznt72QBgVuXugkfR3VYDqIHPrXQnbPd5G76nV6V3FaEE5t0_nVFyv9bv7E0Oj4alWZhUWNyLf_INGiUNmvwpzx8fp1zxuzH8IIFPMSHhQF-Jj7fx6GjNV-048YdGp_wi2F7alm_r8jkiEU97OuNoDJbWa73xcg-HIJcmbaSF2KiXtw&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Pawmenities photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Pawmenities</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/boston/" class="back-link">More pet boarding in Boston</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Pawmenities?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

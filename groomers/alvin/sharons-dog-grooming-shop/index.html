@@ -79,7 +79,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJIciYRGCOQIYRWqbpFrHmDjc%2Fphotos%2FAU_ZVEETNmIgmTaHPB2pNAW3qa2hQ36XMwYd6V8_tzcDuUFpdpzyMva4yE9ChdQwPaCO8TGCKyvg_mNClBYRsb6OST6C_yyJU7xyM5Hueb2dzycVyUEOUbYGTF23BkJ6AmlnzG06iKHllXuMICZacfgIiGzMFr029XRKBScub14GDslhNcuV8IKbZQKq8dmcCsI146xJcNgaVNitAjYlFSDKlDpI8-QiCCzObvn3GpbHv-iKMdvg270R4LXpGQVDXJzMAoALLWPA63mjdWQsLoFw4REAkWHJnd1i90DFx-cPX1oQH8kX356mSshX8yuMTyiRPAIu-H8vFAkS3fEWhDsBb6JpDUDEbMKC8D5mbBhh4mtMKsHwYWxclP_bYG4L1KZpZbCuGttmZMDo-d2oenEiX6FRzFb5A0n2VGEUcEhqjaxCXG_q&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Sharon&#39;s Dog Grooming Shop photo 3" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Sharon&#39;s Dog Grooming Shop</h1>
@@ -195,8 +194,9 @@
                     <a href="/groomers/alvin/" class="back-link">More pet groomers in Alvin</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Sharon&#39;s Dog Grooming Shop?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

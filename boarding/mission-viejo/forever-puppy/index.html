@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJrfn9MRrp3IARAQRidAnqxvU%2Fphotos%2FAU_ZVEFJJDB0yhlniZbJQFTwUDxeocMd8UcOb0F70aHjXXLS7Pj7DD0jOB8ehC9VleyhpadOHOav01stj-4Pb0eRY_gkxzDcmT9GO3dJxCKBIURicQ32ba2KQGy4759AOWI8hPE2W7PPlDQrRSPFRg2hi5HymbmAGqGYJhJoY1gAiFSWMqwabDmQBp9oZLMvsKCOF7SVzvZ-YvTf6EeMV6qkodZbuGAx15Vt5_HENtLlzyg4goHD1YU1p4wamoe7ozWzJtVKtV3vx_Ml6Vc1LG9r1glF_C9nPNTZVxmFbI0yWmGyFrnuVfxvQCk1r-Uk85gdutI68p3oEY-021Tf7q68zS4PuN5B4Logl41WhicFARfsjep0E-XmrHKdsgRQGbHVvQLXMnV_z6u8JtZRAhA1kqR5vB7irQ0WhpkD_78i8YA&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Forever Puppy photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Forever Puppy</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/mission-viejo/" class="back-link">More pet boarding in Mission Viejo</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Forever Puppy?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

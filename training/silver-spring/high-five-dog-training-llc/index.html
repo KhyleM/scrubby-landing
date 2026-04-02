@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJa_wjvITFt4kRyOJg4U1WFpU%2Fphotos%2FAU_ZVEE4dfSEf-wFeCV2c3PBCsbduv6Nj687q5amZWf8xbjxVA87a8-VBsYlU6iiYDxlWwl6AQsI6M2IB6zw1l4z0HXUtR3C_WDwC3VLhnz35EZN9Q_w-2RSBHRbHWo4_oeVDkOVB91gLsf4kAaUZioDhtEbueYd7rLYY2dZuW8m1Xc25SIthU2CIlAX884HsgGI9IDOK6mEN2yfCujQvuZ_KCphyzwCPyxrej22IIJkqYBF2HHPsqBncPuc1IYYLwtmJYbVt1tfFqaXT4Bnae44ppviPEFNqrSLDckp0g4T7YAv5EPVlBPs0iEHVipa8QjeS_AvbmSZYHEoyhf7Ckiuc20ZVWzWo6FW27b1JTnuOw8oRcqeiWnutNzsX1naJFq6XWA3gwO6lc-RKJsd4WbhoadhPwfYILsVj-hhK6uraIM&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="High Five Dog Training, LLC photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>High Five Dog Training, LLC</h1>
@@ -197,8 +196,9 @@
                     <a href="/training/silver-spring/" class="back-link">More dog trainers in Silver Spring</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of High Five Dog Training, LLC?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

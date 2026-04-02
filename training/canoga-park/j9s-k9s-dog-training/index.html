@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJn5ADuOiawoARsIAxlyLEa00%2Fphotos%2FAU_ZVEFBRMywVKFH6cGBb66hAoRWRTCFNN-fmeGvgr8r7YUc_nSvw39URP-eGb_0uOaebfe_MuD2vFQcRmEEOP2ibpXJM53Cs_TARwieHG7QBhFoC0u3fIRTyaVbp0RnbUAEvcS2U6xd5NAKFVTAEjtHgtA7pVIYNicjKxpZtHBqJu1pDjFDrim5ygO13SDwp6mL4tO7het0wr7B9PmqkCal0lHjWBKPWhkzYPf67Nxh1E2RupuHsYN-SjpVm9OVOO0F9Da1WSgmmNv-a4Uuxjo4VOetwpp6VCuHdMZgWJ40mTSVhOIZz_9ckwYJXiSioc5efW6dPUIYUBrmoPwyaFVAODnc-v1n5u3fnA8gNMDSNLUyjhBkCZl-gwnD_3p22QdwBgqb2jQszkj3es2_RLLZxx9JUkf-qMhyJ2qyv7POKGA&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="J9&#39;s K9s Dog Training photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>J9&#39;s K9s Dog Training</h1>
@@ -185,8 +184,9 @@
                     <a href="/training/canoga-park/" class="back-link">More dog trainers in Canoga Park</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of J9&#39;s K9s Dog Training?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -332,6 +332,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -342,10 +346,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -370,7 +370,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

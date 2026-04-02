@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ___zFLX6t4kRg722sNgOHNs%2Fphotos%2FAU_ZVEFL09wwoxH5j3cf8Tyn2NLKnO_veGA0HIccYp_FrXwQDfbBdaXqy0gjTtESJRuXWMVUtpEIzxQUywRqg2AHwAsioFKJq1_1qmOFh3yCYM8h6fYclhawyLL53zpz2S9S6A9oScifRDt5PDriwALlUoh4mKHyCaj7d-Obth5KPtX2WeAz_P9fRWix3IYIZDVSUNB4jvkeU8TD2M1ndTPMzSEBcQdTWI-nn8CS6UUatJ-4XY6DrdeXmOJr1PYwOMUwc-sPxX8NJ7AbGOvaEPQPmLOKNio9OF9tuwDmdSE1C9-LtJUefuyR2_puImvf3G1hIOh676VIHvXvWTIJYXLn4iCARWMgdJsoDiSBB0TaR1oHeXz23cI-d-j61tYwLoetXEsOnhakRb2_o8VJl7w3xu8ebGg5B0Dxzig4ixS6nfvH2Q&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Domestic Pet Care photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Domestic Pet Care</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/millersville/" class="back-link">More pet boarding in Millersville</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Domestic Pet Care?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

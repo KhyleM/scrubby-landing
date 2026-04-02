@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJgQFiiD1z04kRX5Ss10UotkI%2Fphotos%2FAU_ZVEFgvozaEuV6JuC4DWNdZn6co9vigISca1y5UQrJmI50zaXvFSQIel5-NgCariAxYoRNYeQ16yWhsiovI6tJGZGuPMqp0F7eEwR_yacuT6CNBQgCDqVuin0g2fQ2gHhcTCzrYXmr9zDTLVPZ0OSPGX9GQizR2wX8rD1ohTYMVEiXmCUOojNJ0vb98GrYFdpP2iTeX19k4vt_Zo3L2OSEk7MUzdoxTtCSAZ_SdcyJRuFFR2kINCTlFWGCFt0oUuVEhWYDHVSKgequxj0jG4GkZVsGT_BhIxZNSRwjpYXbJCwyDIUslBQLysW4oYn-C56r5Dho-9dNusd7szmOr_AAdwBN0i7qKj3JzAMLtxNAmHPUsEggM4WhVo-HhX4n8oJuUEvHjp3yJDMIlKnapaDzeyfTK3ex7TIl0j-h2-inoHUqPgiY&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Dog Days of Buffalo - Harlem Road photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Dog Days of Buffalo - Harlem Road</h1>
@@ -197,8 +196,9 @@
                     <a href="/groomers/cheektowaga/" class="back-link">More pet groomers in Cheektowaga</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Dog Days of Buffalo - Harlem Road?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

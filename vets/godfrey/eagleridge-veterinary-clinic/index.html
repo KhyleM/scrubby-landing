@@ -80,7 +80,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJBa0GB3BB34cRP7rAvjvCZ_E%2Fphotos%2FAU_ZVEFWggNHHUnHN8ECZkqPkPRyq1z5UMo1q0_ZzPAMAAau4AJe177Vb9YzpPySK-IPGMETe5hQXZnrW5CUfJkr309MsxxKGk2DulvXFKVlmD4AT0CEpDa1WSOTexU7ukYwLE-wbZ-xyR3yn9j7G1r00OkzKKuI1FnBrliL1I0PQhQkPgnIK82YBkbXE9mp98Qp_9dsPxufEHlszPHHTWnHx9tYHOIr2-9AD7YZd70Nhnle4OgpXedcnm5siWxU-4p4Ru2fqJWWvF7PtUYGJwffU7y5d5gGDzOSaCZnR0hm-622yS1DJtUoHJH7IYwf83Be1v1YIaOtw9hDdvnx5So-UaDJmyX0rPYPzPoFMyhwC4eH-EC67cAfL_jBiY0WyhUtPQ9kRBvZp_IVvHanAXUUooM4a70b9lm1YTHJXXpQjG1qVT4&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Eagleridge Veterinary Clinic photo 4" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Eagleridge Veterinary Clinic</h1>
@@ -184,8 +183,9 @@
                     <a href="/vets/godfrey/" class="back-link">More veterinarians in Godfrey</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Eagleridge Veterinary Clinic?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -331,6 +331,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -341,10 +345,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -369,7 +369,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

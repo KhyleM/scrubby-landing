@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ03TZ_sc3kFQR0CveY3E4ekc%2Fphotos%2FAU_ZVEGfL-NzFiPQznrDvh16TVryY2VtR4tTPx9bhmy_oU7FUM5gl4kLnkmTkht6q6k9NBbbKcg8HAgNDG_hqxFjyoQoCRYDnnSdYdiWw9gjlm0sOGD0CxP6clPPKAOXZTaGhZpVrG-AIm6fzsLJrz7YK8AUrdIhJ2jibG6I_22KqwzHJe81lLepSH92qDJZ8VLXUFlY2nVVDi68vPAmK-w9uMovPdo1SQ_qg00LrHvoiskKq3nmlpQfqG5jCX3RzXOpxTh5_3nzLGv5zEYjA_n6eTGCtAP0QWmKsqaCN-PxPCP8V_A-WdGj7udlbrDJ4goeWBAbq617UN1FPn8Ia91vr0dvfoagdORmTU5mQtBCEjCe85fohRMncGj3DTQz_CmjvtYrp5KnuNqZTOEkPOxDViJiUD5bFozmiO-7Dy5Dw804_fw&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Puget Sound Veterinary Specialty &amp; Emergency photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Puget Sound Veterinary Specialty &amp; Emergency</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/gig-harbor/" class="back-link">More veterinarians in Gig Harbor</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Puget Sound Veterinary Specialty &amp; Emergency?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

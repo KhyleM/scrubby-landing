@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJU9IZCwi4MIgRSo6Jt49ZRQc%2Fphotos%2FAU_ZVEHA5htUeK6Q7HZmj2wvP3ylA1nsVZlrR5OHsksWLf3zaQJ_zn0Zact7mdfIxUEtMiYVC3Cp4duygmRUsUFiMTvOuG4RCPN2eE2mWTRMG3Q-ZyrZ-e6u1C7WAqaI2Jh2euRK4jAZ6h4NWA4Ib5VMrHNUwrz9UI5C8LRm8u_yz13iAdkboHq9xh9OOf8XTEKHZ1iV31j_GoA0azEblwNR6tPelbKIp5XJ8LYmW7XnPEsxpJwv9SXndwxuNkV4ftY2hP2ZQTez292uEFZlW-T3FnL79MES12IH1V8vLigZrPImIkFCqGhFtXKPP_lS11Pt1C-b1XhenMd9GeOC87T-fgb11bE-yrggTA7Ek6zHUS5LyTkSr-dv3bBjY0rNDsFWhKUL3RGC6zudaiAaOYkblh-z9okAi6wG_bX-bOJ0lZ9lOxZp&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Medina Creative Pet Play photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Medina Creative Pet Play</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/medina/" class="back-link">More pet boarding in Medina</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Medina Creative Pet Play?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

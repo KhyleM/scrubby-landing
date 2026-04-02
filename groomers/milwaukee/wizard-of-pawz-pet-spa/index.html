@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJmU1yGaIXBYgRtV2nC8Ml-Z8%2Fphotos%2FAU_ZVEFjZKrzldYo5hrbH24fPjBJ1ocMgfUX0kq40DWHersFNWRDFZ21lznSrbXn5hDKv-kKULV7XPDw8aZ_VWXOb2o3JXjlgqQSgw79QQGo3jsvMwkX-atcZ_wC5OHTgYG_X2ElaG9f5FIgszdFSntlJW3IDz6kUqvn3jUKhYw7slgF4z0QoMBZShJSRz5YUtKfL7eiR43ftsJ8KD_Ql5JI6fYdt_GJURNao1C4NznioLzb28P9Nh1yiyfH0LN6UxJ0glTvnNQL2j9h3-JQxF1x8t4gtaNAF3kQwsMBn1qc_EKjdQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Wizard of Pawz Pet Spa photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Wizard of Pawz Pet Spa</h1>
@@ -189,8 +188,9 @@
                     <a href="/groomers/milwaukee/" class="back-link">More pet groomers in Milwaukee</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Wizard of Pawz Pet Spa?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -336,6 +336,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -346,10 +350,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -374,7 +374,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

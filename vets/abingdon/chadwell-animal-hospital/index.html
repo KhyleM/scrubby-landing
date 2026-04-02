@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJU3OQvJjnx4kRysNGNZsaDo0%2Fphotos%2FAU_ZVEFTTprm29_pbivHP6xKdX6uSPd0nYOlp0SA2sOmwaI-K7hfhqfPKZI5cadr7BhlIngVhwEsBMd9eMMuSBa0ipG7Z2lWuLoTkzrLiSdmcxiHdJAiv_iNx93N5RbSB1AOBxVAQZRF-c2QMmkrUyVIa8gfJO_fgLu434kBQisbrHLZ2gJYwc1o19Gq5tuzgSzJldrPTyslv6sRmQ0taAg685YkACEI1gsPG-K2vesI90D6laUDYSWETrmFF3pu44jYB0UhzPIKvZoKevFp6Dp7CnOB58n7quojs6nPwk5J5Bvz7LbIDF0OH3spdgXVmhr0PmXd2QG4cDanTJtmtLNLX1ErXcSk4JeA_vP6fDvx_1oQVAuJOfopzpEv0f5CdZZORjXSthd7r4BUU76NS7HV4MHEJDICADlA-SyoGCxBcvCtChUU&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Chadwell Animal Hospital photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Chadwell Animal Hospital</h1>
@@ -201,8 +200,9 @@
                     <a href="/vets/abingdon/" class="back-link">More veterinarians in Abingdon</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Chadwell Animal Hospital?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

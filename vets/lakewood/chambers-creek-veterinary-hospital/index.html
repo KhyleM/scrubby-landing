@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJBbSF34gAkVQRQypb4TYSrvg%2Fphotos%2FAU_ZVEEc1twSHEQ1UQqofZDOZwxqGCDoWn9aifM56CiPYP_opqexDnz9IKoFBRb8-FWqAFKafAmJV7DUBs3j10dvUIsHPfPgjT88F_dLCxtvVODRTraKdfDGeggzxmPEiMp4w7BzMWdrZVqawd8j3mX0544kpdetLVLn9fMY-txX1lxmLqjdBxVDz3qDUy_kPyvcv0X_HBaGDkRyx-JFtq-yVKQV_FqTvjrkKJ183umy9OKBaY--_p46TXzPiviK_jOYUrRyrC9ZEgpkEav_Qfd3BkJSSbk56vXHI0P39wJXwTS6rnYfps_z7CENFabjHcIkujd9ELzanfzq7kLGPaxv424FFIAFTXHO4NnFdx4Ht-HOaVEwFycc2VezcVwHIO9AUNDVOgcoYzL3MZEhUyo9otT3oVapitNUMz8-4w9hicGRvIU&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Chambers Creek Veterinary Hospital photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Chambers Creek Veterinary Hospital</h1>
@@ -201,8 +200,9 @@
                     <a href="/vets/lakewood/" class="back-link">More veterinarians in Lakewood</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Chambers Creek Veterinary Hospital?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

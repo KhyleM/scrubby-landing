@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJl4pI2SEDU4cRbSmyVK0Gk30%2Fphotos%2FAU_ZVEGh1oK10dcafhT0L9y-KYm6th5T3kK0EtpZZjopskKhSPKkwtzvJmrrr8gkxJDQ_bc9lSbGZ-nypEDLECep_bXqRj-IBUPrpOTz8D35ItEbdBpizju1wCOdjSVy6c6BLVFkUHabEMeYNUmWVptuM5_RIsY20wBCH1-vGd_nIyMY3PfZBJUc61FgsCzGsiAQhbs9_ZNd9kdAzEFzk29pmhmCD7EI_uOiotr92Oxo8irExio5ieFVKITFBpLAvfBQ5k60O-bxCfzxCfm422lPmMYD78T4mu-K1TXNyIyQnXMprBRj1qevANEDY6_DxBzI2k8i5JCl2jycZILVj_W0LNUgkvwG7gQ8zJwsCVm2ozb7Drn6WaittUIhbq6zCf8yC9EN5bbgwMmpNSGkArX-LL2GdomeZ1bZTTrena2ozCVpVw&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Scenthound Syracuse photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Scenthound Syracuse</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/syracuse/" class="back-link">More pet groomers in Syracuse</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Scenthound Syracuse?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJQ2dx4sPTwoARhVzlF9_vzBg%2Fphotos%2FAU_ZVEG1n7ZNaTQgfI3ZD2-oWROPSFCMTDIvwH22X4gbwzDamOlSxnQdznXmfmQqY4TigtLCZiuMYSjegSknPGpl1HDQYYC6qdIqR-koUWZO8-aG9XnOJv5OKd5mC-Rq1VkaZOTVIIScbekCp0iT4-WKfA0Pa95Sf8lb5o7uNC6Plhic5ZLqwdgeYG-fx0poo41O45VfCvq6Mtm24Yj1CWxLxrph_8afyYqYX37dUFTJcY67GN31GWLMxblGCzH5nn4iQCBsu0D-8RSB4P0VciwWMzZwV2w4j1Xn-ZPMNEVfai_P2Lo-cXuBAgGt0EQwHVRWpRztpCrlAsId2jt3NJUj6H8Bs7I2TWFPmf8zv3kfGg0L5RYVvSOi8KvsqTsXkBT1hSJN5xpPmpLSrSRmc8_LYsrIlHvrj2l3-f5E7dDLn92qYJ4I&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Ambassador Long Beach Veterinary Hospital photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Ambassador Long Beach Veterinary Hospital</h1>
@@ -201,8 +200,9 @@
                     <a href="/vets/long-beach/" class="back-link">More veterinarians in Long Beach</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Ambassador Long Beach Veterinary Hospital?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

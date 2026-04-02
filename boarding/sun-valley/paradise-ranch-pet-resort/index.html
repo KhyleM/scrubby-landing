@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJj1ro12SUwoARie6CCQkHcOY%2Fphotos%2FAU_ZVEFmZbE6oyflCLkkN493EaA2-sx61adNMWYDlJBnuxHf01_86YtGH4p1F_4GaGJQjM4mHRAbDH3UFsrD3WM91-5tUVDYkh2WvHZqId0VwFY4P7L8JNmxenF_c_BN-2zaMJsU-muZhwaWtQ-plc-prgTEIzcbsRsy0SNxzPAOzU3RFxlUm1V-jZlRUiiTZSZtfoZVOCvh3QBHRZlQx6oiZUXX1gkjpXaDuXob2OZTwwA2Xh6K252pu2ecoeA8oZRLbZfCBwWwwb05Jm0ORl81QkTkbykRRfHSRgTzbcuW-MT6M24yOZ3_zaJg_B3jKjkotiXLviRTNKgI4WRYpvzmPEIqzCVm-9ROBFz2UOjfcj9U0qC1sOJ1QpilD-2WM84iwitbTzSxeaE1yj9c4BT44moRoKXITfUd9809z2HGBBAYXJk&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Paradise Ranch Pet Resort photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Paradise Ranch Pet Resort</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/sun-valley/" class="back-link">More pet boarding in Sun Valley</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Paradise Ranch Pet Resort?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJWdm6g2xVwIcRco0fMiDxsfo%2Fphotos%2FAU_ZVEF0RhZp2x9WYEuAzWgcPb7AMB-9Q1MolPK1XiGYYiM2-fVD8_LilPUt6V00JVGXLSqegbap6xPmYWfYzUoe_5MednPTjyjB2pdXLWm0wIZMZYESCOZGb9cPiyKv04Lyq2chZbXHlmXjUnu-lcPaGV9vIoM7lcitt8zD4lX2vRUoNWiqDJo8FKW3VBAmC-4ptrOEhjJ6KyTVFKt1azIb3cr4nSEAgY6Juge_NTIjHasfWghlq6Xp2uaNPiHOZuqA_Rr1QCVS1Buw3KcwVRjptXKQGoQYoNVTIIJ0VaSqKV8y9Fw2CrzUmZtSlX7K09COnpgxsM6NZrLjAFrTgo-3L2eaWFqWcm45V3kHEBgIm23RzDrhfrpwgv43TffCYpaeMBeyj4ItLGy7adFwrxT5i239ttfpeehsesn_AbjT2y9qBQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="EarthWise Pet Supply &amp; Grooming - Kansas City photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>EarthWise Pet Supply &amp; Grooming - Kansas City</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/kansas-city/" class="back-link">More pet groomers in Kansas City</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of EarthWise Pet Supply &amp; Grooming - Kansas City?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

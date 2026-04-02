@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJCa-WfSF104kREac0BOxu688%2Fphotos%2FAU_ZVEEYDrL68z5Y-z6Y7LKCzzzdwGQHtgD_dYbRuD_cWwjHQuweEdcLXJy3tBuA5CNGuGfvp8huoOk3qkPrpKMoY4L41t7-3Hjw1JKyRiWAYZJstKd8bX7oOIyvV_LawWwB6TB33R_6bVwVVfJbj7hURGieuafS8e6fP7sspisG2hDD5-gk2WHVXZQiE5HB57EeXJC9zD3TK6P8FLH3HjnRNmTm9C1jU6hxrexHQmjn9BOkRvEEFuhcW22Uoktelp7xeL0BeziTdO3_UHPXozOonxL2BerJUGE-EHUGSdFBKg9slv4eUQVh7ZwT5Qqss9cRDQ3pUcEnLZMns9zb006dEFPuZzjXgg4ITjr3-ZXpPF-pHGmr_Z610FcbP8eX0jvFdKoc7_pJQ6nxuosjCAgOFGE2imsB_qAs0fmjebqz4NaX3ZLSpo062upSpuHRUI07&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Fetch N&#39; Catch photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Fetch N&#39; Catch</h1>
@@ -199,8 +198,9 @@
                     <a href="/boarding/bowmansville/" class="back-link">More pet boarding in Bowmansville</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Fetch N&#39; Catch?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -346,6 +346,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -356,10 +360,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -384,7 +384,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

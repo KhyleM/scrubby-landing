@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJtTKBGwHR2IcR9gNHXX-rniQ%2Fphotos%2FAU_ZVEEfWaIJnqTpf6LaDHq-Gq5Ls6C2WUrFa5LdTCTTWlrYfRa7GkPOmJLOHuithSc-prHwzdxwj7UM5Hk_5zNDYbreBhkFQ1m0UAZDuPUquOMW5lD9NRcYWmbF5sIldefx3IyDfM1AgYwE2rcI3uTSyd8MBcTNnA2A8vjhXuvGgt0hcglrek64dqZWkPUqsS3vqTZ6ZyihCeCFaLwtHGKdnVGpbnJ6kF_CY0yIn-GB2s4zoDYv90OScYrd0qk4Sa8e45Zd9_cihgiYAXnY7DMwO4VVXC8X8C12CeaE5-axY-JapA&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Kurtz K-9&#39;s Dog Training photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Kurtz K-9&#39;s Dog Training</h1>
@@ -197,8 +196,9 @@
                     <a href="/training/ballwin/" class="back-link">More dog trainers in Ballwin</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Kurtz K-9&#39;s Dog Training?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

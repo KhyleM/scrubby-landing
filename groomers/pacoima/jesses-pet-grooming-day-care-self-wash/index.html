@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJB40IZrSRwoARTC6QbhjaaKM%2Fphotos%2FAU_ZVEEAEf-Y2k3OGaTKHGOrp9WoTXvXA3k0Rl6GF6MiWKK-p3pcXtKuDDm_PKqk4ZuqdFY3LKiFNw3KONv0qBN0VbSOo5uVLIKqQjRITuktVp4zy5jRAPk91Slm2C3xzKoUvqFxQjMzYxSFZep9j-RxBe2Sk1MuxPOEe9qcqM7x4ltk551sr1lc6LuoFNRN7cSknTq7-EX0hTN3jN2laIj7mY_Djel_acSOFLG1YJrwXOLrODc5dHqIOROPUU8NeLxIJXQUMD4yYDAT910P17Dns6fDrvD_OEa1PilnbKZ1EDdRGd2rGf3iYnxHmz4HC4Bljdm6ymdWoSocgj4JPgxZgnyd8QwHNpym-ETpJpbDRta1CUf49Zu0UO8akU6-85Uo9eIh0v6alu8ruKWsftgmRs6XJr0ViLDu8ZqzZd-DBTfXxunJH-09IfItR39RbA&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Jesse&#39;s Pet Grooming , Day Care &amp; Self Wash photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Jesse&#39;s Pet Grooming , Day Care &amp; Self Wash</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/pacoima/" class="back-link">More pet groomers in Pacoima</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Jesse&#39;s Pet Grooming , Day Care &amp; Self Wash?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

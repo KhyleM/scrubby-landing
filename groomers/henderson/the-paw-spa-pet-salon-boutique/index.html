@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJAY6P6fvNyIARLPVciRTxFKw%2Fphotos%2FAU_ZVEFTy3t6RXger8xTPb5-DuqAv8EJuQlNjus7UT7TLWa_eFjD8koE-QbkMkR6W-g58mI0nmIwhyv-cibg9NoQL8iUm29Oui7L6P9mrBUs0yiTfY060zq-D45elvjk-Ujv64Lfg6DzPXhtH0YVJ9LB5_qu82j20AOxHmpxKXACQWAos32cfWBi6x6n3IQ9nNdiGP9drqtfE4hFL7nAkQ9iOSmoHjy6IMnQj8xLfhLPJ3hF_phofqRhnMiZVfUnSUMQX53EWu_FVgiVTwkIT0gR9IpsOVPYaHsBh1qzuvhpxaEajzxARukTlusgfqOhsDUUqVtn4RUx_yzC0iWZ__men_t78-CqGYto3WzVTVz4MacBC2lnrM6KSkJ374YVAEO-f0UVE-4NLn5k0Fz-cRMYDcnCLEXwcrB-4TqS7V8IgR9dnpEi&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="The Paw Spa Pet Salon &amp; Boutique photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>The Paw Spa Pet Salon &amp; Boutique</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/henderson/" class="back-link">More pet groomers in Henderson</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of The Paw Spa Pet Salon &amp; Boutique?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

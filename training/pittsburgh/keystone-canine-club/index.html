@@ -80,7 +80,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJw02cIGv6NIgRjr6DCB6JB3U%2Fphotos%2FAU_ZVEEFoN-8D7EAOE0ONQpj7duvqrrfzQKk0slgyRTYHnOhiKNhHQHJkq-AtwB66YTrIgw9PO7s4zW13zOq3Hby-Rhm3v05-uLW10rteHDqTSaocoAFRQU2RMheIlOLXpiHZsIRl7vLCQ75X3WtDxVYp1vatNxDb-8hEUKr3FWW8UgkEltIToon6KH_a-KnNesT5I_TM9fU7Hg26Nm_mN3SgyHgH_E8bE31Dxr3lm8zvUvdEFUM1GjEcGaUDkILXD0K42XhkhhXw_uR5NudLfLLPXjBHmN18THGHMS9Q89n4uYrhmqakRUzmJ8LbKk81P16T9yQUAIcJFV5WyriuuoIqBsRMRhIxwntQOv5BR24GdH2PcInovZ82qOKsz-WA7aDlkA25GffLbBWDkSAg19tzlsbkLOp8CD2I98USbGCzE9wEw&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Keystone Canine Club photo 4" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Keystone Canine Club</h1>
@@ -196,8 +195,9 @@
                     <a href="/training/pittsburgh/" class="back-link">More dog trainers in Pittsburgh</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Keystone Canine Club?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -343,6 +343,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -353,10 +357,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -381,7 +381,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

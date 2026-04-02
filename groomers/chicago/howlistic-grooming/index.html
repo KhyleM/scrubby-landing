@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ9RFWH_AsDogR3VpPyU_WrWw%2Fphotos%2FAU_ZVEENSZR5J50XL6HyGYR-zAc1bTqkXFbZsn4F8TXbRMKDB8wktNqWlszOKPzahsUOLEeuNIo4UbsjrMz7ZkrtLuJcZfgrai9rE_Q_2V_UTNi-BYloEExnqZlhPgO7fWv8yFpblRmaY2AJgI72JNzQEhznTyCr_dDz1KaIDujvJErF1v7moNvq25Gw8PWqODnYwMOWdA5DCxnqQ9eUOIgPvzAR-UBxhMriSFznnGaObqA6wPtL34d-WN36BevpGgwL--9j3R7ZLQyqwBNLoDxKhCcuENqkgDwNMQqXRemg8Wy8AtT9ZNbK4tLrAAMNH1jsJLnMRK2X4rfJdTlQycuTGf8YqI1Kx2UzG6l7-pHe2C-CD7aQhPSYfqjsCNAUoLwpgUM7bSFD8TMAWt1vHfZ940R-akP_xK_tUdjQprdtgQk6OQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Howlistic Grooming photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Howlistic Grooming</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/chicago/" class="back-link">More pet groomers in Chicago</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Howlistic Grooming?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJl2uQpL7ywokR5yl2NAgMBcA%2Fphotos%2FAU_ZVEGuDPj2f0RP9_WnTNLdtp4u5DMuf3akMeeTvc_mfNwomLcQq3ZnB0C50sXLrOor_NHKMzlHqkE_srINtDVmSG_-7qMj6k6M0v2RJgbyxhpBTsmR270HZGhmXMKwKCNIZv_VDKCpUTnyej1wySXiSQFTXt1zLFEHxYLSU7W4M4lkFW-rF-cCeEj1EHMg4E0xV-NHAEXx5iro6TkqZsZ7Y85EvymFdwSejLDSLz5Ud6IDn0X2vBwlWK_Mtr0YM_D638eQv1-avlhO37jRafYQsVNQde-s2nUVVgIGMHp0Xc0shbX-6V-QWwoR7AK4X6a_oBmjqz9V9JK0R9D3TGFhvB7xmqwzjqDpmDOkC2-RLpBTLxBwfLi0nzXzJrQrWSwulJqkGlUj6qHpquRHQAGn_NhLpCnPyX0e9eYR7v_5NGeOPjKV&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Dog Mom Petcare &amp; Grooming photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Dog Mom Petcare &amp; Grooming</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/yonkers/" class="back-link">More pet groomers in Yonkers</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Dog Mom Petcare &amp; Grooming?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

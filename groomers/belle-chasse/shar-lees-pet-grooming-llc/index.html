@@ -80,7 +80,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJDUQ1BKegIIYR2dDJQKTG_Kc%2Fphotos%2FAU_ZVEEbKa7Oap4gx0kPoY0VdJd7CGZoXDhMJ_kolz4EhPAIjxH7TvuEFeiDMX72HW0DnzMx61FnaXNyYXHdz8F6VxViQovXfdkOfLxuxPscwFdrrN0eU2CzwnXh8NgRsXOFkyyhigIZ4uNRjoFJdjP5jKZIj3gIvI2EDStzV0JGcJtXPguKXl4S0nKs1NqYljbJW7COhA85lPeQ8dxg-Ddv-JE-JgwFg-yeueZ-O8bx2y_Ee6xZxD14_tc3MpfMwxXZzwfDiXO73YRPuExELtHF2n1siEQQz8LUYovZpFmMs_BKB8UMkWYWoIaKI7A58GhccO5OE4MNgyapA_KY9Iu2lkbsSbXhqhSQn1hUl3pDLRG5E4PZJDV808Cwyap1QuWinWlXXJ4k_DGZ_h9QL8pLnDACswkuczfE6ztlEPONotRdW7Tc&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Shar-Lee&#39;s Pet Grooming LLC photo 4" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Shar-Lee&#39;s Pet Grooming LLC</h1>
@@ -200,8 +199,9 @@
                     <a href="/groomers/belle-chasse/" class="back-link">More pet groomers in Belle Chasse</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Shar-Lee&#39;s Pet Grooming LLC?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -347,6 +347,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -357,10 +361,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -385,7 +385,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

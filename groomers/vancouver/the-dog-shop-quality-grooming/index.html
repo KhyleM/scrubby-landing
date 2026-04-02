@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJK_JE0Cq7lVQR-AFwJuWYRik%2Fphotos%2FAU_ZVEHn6pyCgqiScVFLoUH5U3LILxV8sy9Yx-GsxNOoJzBMSVmU0xVQSPQ12qthMWj_zX84Cy5tCbuxwy1Uie_9NP-BHUmdg-xMB4Q5_cZfuCFmZDNqJ2l-oTJN2CkPKreXRZgqw3w-Km5AvVW1zXM0z9BV7O2-ziTIKh_ZDxG-8GZeeRy9QTNcCmKPlB7CuDnRmrp8VGzTCXVYGpnaGysRzZunJNuLI1qUKovkC48jKkEmoAc8a9V1hplVQEAmgGNVgYvsoQfnw-_3l5QvuWuAlxPgFeg8uTVhH0e8NBVUXrT6cCW6GKED1AeBzoIvf-OOkNzAdbbbcE688HoVCSO_8gjDMxZ4jmiCaY9hQhwzSWv3dG-7PzlEEbkLTU_YXYQb-Ti6vuLlPFWxZxJEuoYXWvWLAr12i-YKa1TMFRbDnM0dJlX5&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="The Dog Shop - Quality Grooming photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>The Dog Shop - Quality Grooming</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/vancouver/" class="back-link">More pet groomers in Vancouver</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of The Dog Shop - Quality Grooming?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

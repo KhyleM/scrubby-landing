@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJLfy2G9-QOIgRfA0Rt_NcIwE%2Fphotos%2FAU_ZVEECXw-5ejDeVneLAZQuvj-2jgPRgtKyQy5wacoY25zlgbDtqSJCO4Nlh0iuMtV1thbrjp4_bOCuJaqQUkDF8SyTsnpmFZ5gk4fmGBXhUM907H7CCuQQGJgvY4inhUeLRp0O-7_8x9jW1wFA2xpkoDp8XaoCUiWr-sTj9p1Bnv73-g-0rSoWmsfR7AFcOSeTxqsN8mDnrUBljCulFWskHczDi-HybgJ86ZLgr42lWTnbWoilHXYQ9R4dIbxDSH06I16rhc6qmmdvhd1au_YFR5qnBafP0Y_hBG4rhMClTQF80CeCMa8izAEAEIvbHjpVZJD2gNURg9FteiOUtkMErr99kJkP3eUD9PTzmNSHI-G9FRDr34KZa_rGxrbRGx8TjtekemPhLtCUzf-TUeKPwJzfhDu6k8cGxnAaIL0ULj5Bf-M&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="PetSmart photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>PetSmart</h1>
@@ -205,8 +204,9 @@
                     <a href="/groomers/columbus/" class="back-link">More pet groomers in Columbus</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of PetSmart?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -352,6 +352,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -362,10 +366,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -390,7 +390,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

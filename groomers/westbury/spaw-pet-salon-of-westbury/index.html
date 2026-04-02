@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJafshmGuHwokRs4LJ3Q5AiSo%2Fphotos%2FAU_ZVEFocp1rd5OsD3q6iZ1lvnxRKHWxo2dE_kChsN4CZk6EqSHxr3sV2a_XS-Gpj9W36GJSsVhy37-aXVLj5cN0YtPnmkbbmjFC1IBQcLl9agSSjc432_zOgWP_p5f4zilU2hEe_1VyBh4t9CZ9uJrbw9ZK72wdqmiTVWO-imXI3_6G3c0ekN_d32nAjScWAYhhw4uMfp3jdKBuLAL5lulEs1Izsk1H76C1fi90sJ0yZvFLF7rMQDBV7D8PxVc2sG_W8G5XARZUr1u_00i91l7LIg_AmdYLpbHzJZ7WpfFwfWGK2Q&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Spaw Pet Salon of Westbury photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Spaw Pet Salon of Westbury</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/westbury/" class="back-link">More pet groomers in Westbury</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Spaw Pet Salon of Westbury?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

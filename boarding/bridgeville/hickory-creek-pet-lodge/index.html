@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJm7CnQQZXNIgRiokZifyMmKQ%2Fphotos%2FAU_ZVEGHfDFl9Ji6rlADdejXD2ptwxcRNRP1SzNXHjz_D04TWMmvN_1KBIJbiQh9Is_u9EvcUMahj7_B40IaeCH3h-hXkkxFmjnIMlxHHan3Vh3CFsjbP7qi2gqHSXILDD9u9qWf34Ifn6vrWxA4s_sOVNkZ12sbotRYUVCLO2jC7B4L9jsn0JwdCgYaARaDpPpjNYaq-GLj9hvAUWEvDzZyMyC7zXKWgKLAwJ7sCZb1xp_WM4e-bP4wlXdrTr4EeFaOY4aLlzS6cLG8qMwY1b4E3hoqtAzYbYRWNgxoAQWGvt_H-0LGgJO31U09WjApjN6VQeHqye3kdZ4uALEkeGyLtuIWe8xdsrxTp3UByYkXGJJN-GY0N4CfQX1fAJRQg3C-K_Y2QqbCIyk1vcFjvGL6Puh7Yr7IbSK81UWeoJZheoxwJNXj&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Hickory Creek Pet Lodge photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Hickory Creek Pet Lodge</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/bridgeville/" class="back-link">More pet boarding in Bridgeville</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Hickory Creek Pet Lodge?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

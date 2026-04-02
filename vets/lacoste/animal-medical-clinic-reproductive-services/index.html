@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ1wplR8BHXIYR0B4sEeBdl0Q%2Fphotos%2FAU_ZVEFcq4NV7cWFpFkQnWZVxAwAexeiwkulbsAh-oMvs03chZ6Fc6PgOanyiegIXtUPC4lKcTZvQgco1Mc9jtW-lGYYIRdGdeGhC-Kzz-0BagDUhol0JrfVLrT2QIAVPAsfSPl372t0FMDl0AFIKrSl6Y8BkuGpmpGD2-2Tn2xcCJ2yfIOHvMJYaapSgT6Q6JMjWcqV7KMZRQKLAbY78-chNSFU3gKoqr_Aa3zsfc8HNA0iE8kLwEDZE-dZ26qR3e-KmKbw35VQmTfSq34oudV9F2EpDy3sE-6zPu18VmhbroJrX2Qv9ggFRTSM-jJMPB5HmZPweyoOaIKBly3KmrfL5KiIy-h-3nIU2h2SWLcjC487XLXFIImOpQ21j6U3PZL4FCKyOZOkHLSqmlxBbfsuaey2C9V_PyV6AQm8daQouYeGr3Yn&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Animal Medical Clinic Reproductive Services photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Animal Medical Clinic Reproductive Services</h1>
@@ -194,8 +193,9 @@
                     <a href="/vets/lacoste/" class="back-link">More veterinarians in Lacoste</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Animal Medical Clinic Reproductive Services?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -341,6 +341,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -351,10 +355,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -379,7 +379,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJgSi2qU1F9ocRXCEa3LvbL7o%2Fphotos%2FAU_ZVEGbpehEzlkr9r1fNqJxTQ26KSbV246JMBlzjVmgWlNqykWXIjOdO-3D_VqxZPXPmNgU5c0UxfDFkvGXLMI5cb-ufosOmtXDSoR37ZnjVZa4rU64vf5urlu9kIJ0vk2p5O3lP2oNBAdStCX61nlx8tqhKPs5k7FwEMuoZArCSh99g7Qxm9RtE6uGXP6OwlIW0LwawkZXuC28mmmmy7OWd83FkxS37sjBACF7wWbmvIbz-zVO5gSlzrMQyf7NyybloXepb4ZnaZZ0kQvxaFbelizR4036mCsXIwPIhz5lzXTkBQYdpddW5RmSfBkoDTKHcoBAZbKMOsoU077Z2R13_HNkw8r7B9R_Qkc4egl6QQ6gHrzq8j_Wg2kL4mZ98Q-AbhV0P2fNg2AgZjQlidEAz6Uzktx50KLlvu-xVnupjZ_4Ysw&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Tails We Win Dog Training photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Tails We Win Dog Training</h1>
@@ -185,8 +184,9 @@
                     <a href="/training/burnsville/" class="back-link">More dog trainers in Burnsville</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Tails We Win Dog Training?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -332,6 +332,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -342,10 +346,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -370,7 +370,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

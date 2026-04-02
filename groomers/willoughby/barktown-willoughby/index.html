@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJiTTeWtupMYgR7Zyr6vcys9Y%2Fphotos%2FAU_ZVEG30BvuuerVgcekM_tfB1vXR3BJ6dASSDiXk2PVu4qWcAlnsr4Ntc6EZ80gp-Xb0qGBCAlBQXYndFpZkGnmc-mSese6LBUz3mBjNFkYYRXT4dPJ7mjs_0qNyrjsnT2yQAb4OoHwwxTqzaQQoyPkH92XWyvPUKc3nT6z9YM9yeWQ1GOL_yoRq4EXGBCVRGb-w-fcY9MI5P2zVwzS7yfu6okPS3UUE2F-tykw8VDmq5VfHFwCvra3HFV1m21Ujjh92Q7KiJrXlL_dVF-VGm-YJ3yle1c1pyPzbPdgPDPHwdAn278yBJoZXTnk-uriL2ndxjVHSX5AyoQRlrhOfh7lVkkRPmyYSlu9YUvqDEVEEZP73GoUWG2-4V3x-6cS4kf4WnZz6z5QTOXySc3UxVh522fp4adAqbAolYDfzHKGg_LlgQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Barktown Willoughby photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Barktown Willoughby</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/willoughby/" class="back-link">More pet groomers in Willoughby</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Barktown Willoughby?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -77,7 +77,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJTfsPHEz2wokRG4WW8bOECR0%2Fphotos%2FAU_ZVEGVJO1smq79ZhmeRzYhxLJCyc6xK8N8cEtXw9EwIdpZaCGobkbO1PyQZpEZeqFdBtZ_tLqrbIG34BZoMfr8scBRhliOBZdKF67x2o5BLHHQ4RyI11YvHUvvApuoik_T_oBs0HShIIA_EQh1_9NVcxRrfcsc6nnjjkDeSHfxmR2tv7fLoxKCafxTLLRny2Qe9S3CA4-NWCN9AFSRMfKiZEfk6gD6xeELY06xHUtRwjw7p8uzua9EnijBmOg1JomacdVtAZep_k_-FSS3-5bY5u-da6c94Id05NUKjevSj_qHx1tRFC5LR9CXYsevhceIk-vKqrYp64UaCSyBnN9is996fU6qyjl0bdfQpRhXvUtwulL1a8UD3g_Rr69gQBMJFFs7uuvsU0XPk2PCdDIpToTjuYcrjLxOpOdsGukpw4DKlaXX&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="River Pet Resort &amp; Rehab" loading="eager" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>River Pet Resort &amp; Rehab</h1>
@@ -191,8 +190,9 @@
                     <a href="/boarding/edgewater/" class="back-link">More pet boarding in Edgewater</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of River Pet Resort &amp; Rehab?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -338,6 +338,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -348,10 +352,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -376,7 +376,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

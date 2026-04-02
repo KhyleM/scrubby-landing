@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJM1umSF4bD4gROyPic3QM6lM%2Fphotos%2FAU_ZVEHCy_59zAo4lRBOY1tU1JnriuEVGGV2u5FIOuYcZ-ASZe-wpoclmaR6bIujjwYa3IXNA6mbD6SigvXYNu1Hi8ebYK5FLNFrS8dhWjdm71z2oL6OoQ5BK5mdtgW_7rjY4RY4716WPFDfRaZfik3UeElwpyEi32t2o5sLVfSxgMZZcYn_oadKZVOyXABVE3uBeq-ntzFUMHMKZ1W-AGPyuAFKoO1AFqRyiRwXJrYBmD5eMHO9h3XyLuE4SwdKGBsazmkai4ock8GCDVNT-oVzMCi6YWbKfSaubUITR2QkzJW1Ag&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Woofbeach Sands photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Woofbeach Sands</h1>
@@ -199,8 +198,9 @@
                     <a href="/boarding/south-elgin/" class="back-link">More pet boarding in South Elgin</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Woofbeach Sands?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -346,6 +346,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -356,10 +360,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -384,7 +384,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

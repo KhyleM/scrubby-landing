@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJWWUusR_NRIYRKhFspenVd5o%2Fphotos%2FAU_ZVEGy7R8I2ddRNduiS64qsn0Qo4pF5XP7a6L5rYt-93ZRLmNz8ukIgbQv2u-jdB2aroYXq3_1mN6X6Kab3-lKzhGF61o2_MQxFDaOM_5zf1Ek-1uKfq3kJ340aarwfUshK8HbNZJMSW73IS9UZD7Bon-pAts8TVAWXThToPzl23s0BS013Hb4KY-WhXteB3KUw_BMfnzIyyCBLGWebo_ObAB9fsVE4Y4lrosUor_-CrOH6kQNBqQ9nBOa_SRWoIO-NMbM1KYZ4mNaunKnnH9GPF89INVEjqf1-PvBxDG65oXN-P47eoSC-0vLCErXTeicTeXAPpbOI9qEbFVkGzejatLJCQkfFTuLVp281Sj2h34FhL-2GDZAjCTnpwHZXcQ95kYn7xd333tNNcPHoqB2vVVjrZAxeTh-5WggegvXeIGeRWA&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Taurus Academy McNeil photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Taurus Academy McNeil</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/austin/" class="back-link">More pet boarding in Austin</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Taurus Academy McNeil?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

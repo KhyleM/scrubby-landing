@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ10t2BK3HwoARZexI3z2OW10%2Fphotos%2FAU_ZVEELDj0txXl-I6m0LfrQB8gjl-2p0aVa3UQlaQVxf1_KSDFSwxYuEKS7QaxLx8H8ceUR0FZ18Gs5a__KWR8-YzAsg5fKJVYjkMrSeNp9f-QiWQ3Qbp0LqCC5rkXNjIYbkq1V6OpPDE5sE7Ygr24WcPMmOJTze_PMbr057VLHYE7Dqr4SiuaJy79BiWN1PKNV9m81cpPxOW3f8pjHOUcHpe7aG0TVdGo9vr3czKJ58NAFBfm9R8k8mVxNEDbSdQFZ5IdDZuyBk8aX1JpHo5POmRtzVmCZ6UTKxSoiLXauEwoB55cfQpxoISrH0D1nNaMomIphEXKNIuJs1J7txbhMf_NSsVWekilI-1olGQAynRzTptVotAyEgcuJSAxqx8MlIlE3tek7YIpGZwXUakNPFRifCQJdfvKc6FT1sv02qjCvmXqhrlmRL3rBn1QFMwts&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Doggie Land Pet Services photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Doggie Land Pet Services</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/los-angeles/" class="back-link">More pet groomers in Los Angeles</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Doggie Land Pet Services?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

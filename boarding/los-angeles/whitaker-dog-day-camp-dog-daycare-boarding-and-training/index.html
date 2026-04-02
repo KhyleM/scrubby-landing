@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJve1oasqVwoAR7j6sHzbiQ88%2Fphotos%2FAU_ZVEG6ht3DjHX3abYb7ajwpQBMqlh7I_DAPjSM5l2B2qIhkUb42fHxdi9Ea-yqI8AYrOWnnDCjuNd61qNI4aASd-j1Ttn8eNEKP0YzGELSosGd4wuPHHUOG9CF7q_CDAAXOg21PhTmE8DwaLhHTMpEOsd2rkvpbm4bcxGazSZtcmPHhFcQy7N2WKexu8FrVbPw7wwkqAXMww-9FQqpTVwvqqeIhv7xeF7Dxw6P6GJIHbjRVp5kPlrd8jKApnW-zviAPQSZ3LtnQI7OQ7hGBjkOy3jTX9pwSCnHZxyL1gzSw2pH4A&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Whitaker Dog Day Camp - Dog Daycare, Boarding and Training photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Whitaker Dog Day Camp - Dog Daycare, Boarding and Training</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/los-angeles/" class="back-link">More pet boarding in Los Angeles</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Whitaker Dog Day Camp - Dog Daycare, Boarding and Training?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

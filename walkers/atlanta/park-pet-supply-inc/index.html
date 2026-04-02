@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJTyFlnlsB9YgRNPp7NnEPQPg%2Fphotos%2FAU_ZVEGYb-t-KG4T5TpKhfHGZcQRIgs0uR-zOcBQUFJ99ExZFNFql5kG_az-rzV99n3K1g9CxyD_ndCahDkxhAvWt7okk7RvYS6mAf8R4iRQrbiGZMyN1YdT2CHfkPwbqbTJe2wFj0UCFzj5VJBcOQS63gc8tqhF_LM7mV4F1RnnGfUb3a-M9_tpQ_JlppNyr-FkIknO_0RDQkbCr5v4pDa5y5I2R1ChV9-HU08lmjSxbNtcMIShbPx5MoJeYfAhte_qDQ46ZzPNqLdtXBY2VXrkrfD4aczCoD45Cuy3mR0YbOu712GdSw5U-v_CEb6htRIwitIy04ABRQ76fq3RHVLSwHyxd2DDu_5cLm5LceNVQNFI5CKlR8naaZSg6ym0V6XRNN5yyNxEkP2WT-BtOtZvIzThoWqlXxXpO9eLTutHvoo&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Park Pet Supply Inc photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Park Pet Supply Inc</h1>
@@ -200,8 +199,9 @@
                     <a href="/walkers/atlanta/" class="back-link">More dog walkers in Atlanta</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Park Pet Supply Inc?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -347,6 +347,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -357,10 +361,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -385,7 +385,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

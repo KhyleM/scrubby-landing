@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ8VPuRd4I04kRYju-3x8ir14%2Fphotos%2FAU_ZVEFhnnUiqwQ_6y-LXygfOvVNvA-EyDwlKbh-xEou-moObAvjqVPmNipgw2YRSh0HpuB1I8NGMceCB9WmJBpsWOzoeBM-OMkmlEi5-RUl6sSB2a5ejtFpoR2CKF1VoTNUmyk0xOA7lTwX6pNcbX0GhjVOndiIrh_DPLrsEUzuFljPDe5wa9k0N2sGuXL4UqK1UftJwXMhvrX1Vid5C2nRbuYjMIcYq4gLUJxVWlGFWTbvnKWfp_sgPdNLOKx8TMrMmXxki8czMQAw9OjEcHVF9PvtUJt5EwjaJW7J20yEGKmm1MA-5rWXBNDB-YKps-dEo6KpqmEbFGcM2RU-Ga6_q6qfxZIzmMJBLq3XU7309lZkH5lBSDMyljOjjnDv9HP_2y25S6Px2y4q_ckvYfYVMuaRJf6vW20aVsvJ_l6RBVeSQhj8&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="La De Da Pet Spa photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>La De Da Pet Spa</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/orchard-park/" class="back-link">More pet boarding in Orchard Park</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of La De Da Pet Spa?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

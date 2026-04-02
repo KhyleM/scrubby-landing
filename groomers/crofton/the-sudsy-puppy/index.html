@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJP7lBo87vt4kR3yzn0y265Eo%2Fphotos%2FAU_ZVEHPyyNAiIkztRwLWGrKmbpLo9QtGNcU72VbCRAs7_dI3sFyerYLqhJS-NA5sKUxRiV62A4chog11YnG9pRAllBaGOLETmK7gYYBx2gvSS5OTH_B8SPAzWgSF7VPo3o36dxzYN7JaeYddpywV1O4RdvTh_JZuqDTvUC68wXZb564pmgpd-PC_u8iQJm6bHJoTASiQEhPacb613iYwi2468sFBSqhOemct-hvrBGXyyyhalBYOqdXQvXb01-YKqxM07olSkDRdIHjh3G1-8akbF6zKLGPgeCS-hG_Jxu1bRJ5UON5aNIGOUoFV_U4oRc4zsUUccPQJNRgUXEoZjkSRd6y8Js-yGgfQ39EyRRjspuWeTFxBJuI6jIojEqt1ZT3xye-RL0LftZND6mhF2V1_v7OWDJPnGMEJwlvm9D62zwMXyoPt-MpYVtP2MO8ZBCU&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="The Sudsy Puppy photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>The Sudsy Puppy</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/crofton/" class="back-link">More pet groomers in Crofton</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of The Sudsy Puppy?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

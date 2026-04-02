@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ99Mo_c0nMYgRJfDhsYHbbxM%2Fphotos%2FAU_ZVEGm2RtCvOd3H2WZRNNESX2i8tGKEnXSpqKO3-DQGfU2rp4ZdcXgKipT1zSxddY1piF_9EmNxPDif2ImCXv1ujG7aUmdr8cth8rol9KAmsPHQkwcyAiFiYp5I4kbgzhbOliaQD4MjfhW2073Rlik1nxgFf3Fha6ifdd8ocuGNXeorg9T8ka4ZrhYvWaqhPvvn0tXmfUlykSeb0FoS5jqJ31IJn5LHKfvLxE9oddIWtN2UYl06Ujy1fkL632LAGe9WMBue2foX0greDCosvJ4yNKOVMd4a7g7OtWUL4qc0VCLkYYagN1atheU2MA0GJACzij9_nds8nVugRw3ROJI_kARB75EYO2cpZ7CGbZM0Pc7YTiZq4vzUeLNh-o1vUhKvD8YCopd5R6AB5FfAuchtDnS08nZ2-fNBHPuTkVAy9upaipj0ErRzdvuN7uXKw&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Megan&#39;s Dog Grooming LLC photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Megan&#39;s Dog Grooming LLC</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/stow/" class="back-link">More pet groomers in Stow</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Megan&#39;s Dog Grooming LLC?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

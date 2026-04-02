@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJj0kDhl2ahYARf60lnA4rXrw%2Fphotos%2FATCDNfUH65g02iSBFASl-RCI3oAhqSoze8Vawvqx2MHzBwqKhM62PY-G3-RJBazwVsONnzddn_1b532IlJIHK0Jmo9lV4DTOpo7jk7cUK-CglmaV8GMFC49047U6vbDwhSLCd1ehqOj4GR-lxW0fsTjFp2jxk091U5yX7g9ZGBk3ymi0yqgPEYk_gUzDKdmL975EzZzUu-ZFwzV9MF4xv7Vbi8hGq_3jxoDLwBj7O35ucVR7DZOVLU9_LG_l0wGvbM_6T5eRr0ow3dRGxScBlLvxqZnVfEznKMKUIDwUfvmlVuA81A&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Little Buddhas Dog Walking &amp; Pet Sitting photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Little Buddhas Dog Walking &amp; Pet Sitting</h1>
@@ -193,8 +192,9 @@
                     <a href="/sitters/san-francisco/" class="back-link">More pet sitters in San Francisco</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Little Buddhas Dog Walking &amp; Pet Sitting?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -340,6 +340,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -350,10 +354,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -378,7 +378,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

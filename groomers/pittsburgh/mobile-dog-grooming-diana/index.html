@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJC3HzmMr5NIgRLTIW9QvdGbA%2Fphotos%2FAU_ZVEGeuZeI04bqBDW2Eo9zjAGQvm0posiYie9BkaCUigeVz6i1q5XNckrLm8kR7tB9--mpoOL906leT3_5eAwR2McmF-CQGb4_Z9VHnWIpJlZUU1rJ1Rx8aVUpP9az0_NfMnvl9yHxCb23QbL9JSzEwpZz9-94Gc0QZYasVgB4ZmbW8TPu1QBxHIQfKYe3D4cSmyR6t8FITD-rDPA3rcP3Y_lYAQwRmmgmEL5taTmr3Cg4Qle_-Fn_B4W27LX5GqQguBTW-k2VkkQRFd63XuU175C8thMZBK9uWrdiXeYxNbh0bRRYmH1mb9MTmsGUP9MG7Lohq_3QT_3QyxNAQTgw2OPW3FjpVsJ6OkQSWXefTstEHMbRYSxUd9f7F_sefii8hWeWqGpBxxKIccZ3wQ_CmzdGPzxXp9nkIA5QcmLa1LOl0g&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Mobile Dog Grooming DIANA photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Mobile Dog Grooming DIANA</h1>
@@ -197,8 +196,9 @@
                     <a href="/groomers/pittsburgh/" class="back-link">More pet groomers in Pittsburgh</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Mobile Dog Grooming DIANA?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

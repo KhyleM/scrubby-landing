@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJr56Up0k_XIYRUM_sDFxYf7U%2Fphotos%2FAU_ZVEFr18h47eaow5_NFyz_ocJhxd-nukZ85tLbmR2nyXHImH9Om6HuH1350KmkGMNl5cm_47vqHE4lRuwKW-imyd__S6BaijwF8hMx3cRyGMX6G0f3AoDdbiykwISfYRbZ-fqqaDndAudAlKPjA9qtpuy_0a1uH0kHX9kfEHtz824_wgwn4-k_M6WWj3RTVjpGCHeibqRLz6yMpaD-wfnIx-IjiWUDHx5-Qh11gogJdx9m1lawdjr4lQ8QOBqV-ELqAQV-5QdIVq6xyp93gnBlTGwMcE2zTMwKpXCXlOawDTFC60wzwCNFKhvFUCmcNjJGROkD-3EiJReDlm6HvP_LlIHenPwQCM6oxeZeKnujaMo2wdWTS59vFBHWiWT61-XQ767XF_Mv4YnHyKduM3mYdwopmYzlxMk2OCUVGAXI97taB-Z4&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Heart of Texas Dog Ranch photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Heart of Texas Dog Ranch</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/castroville/" class="back-link">More pet boarding in Castroville</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Heart of Texas Dog Ranch?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJr8-dbU5_a4cRkz8V5MWe2oI%2Fphotos%2FAU_ZVEEGj5A0Y3H0zFZjvm4dDGyhzh3BI6PsLJAHKZLKLurzbKQgl7YKGZPMIYMO71YcF2uEfhg3pDX5vfTwfRVFGw8L3k1KGzmUwt5E1a52AxoMbFSKa6__z2nCWCHLvSsU7PcJROGbZL7LOBI4TnN77hlIvo2n6n9d6fBP6vuh0hke7GuwyJM1RGB_vmNWWf4SxCnTRuipetE2IL4UsIyIl4jC9sehoH7UsnvQPByghcbsSt9Yn36F9WnGbUwMxhhwW_EQiIQxjWNiwJ-YoBO8Uo3GTxlcdRGIzVw_1mjgS6YLBA&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Barkingham Pawlace photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Barkingham Pawlace</h1>
@@ -192,8 +191,9 @@
                     <a href="/boarding/littleton/" class="back-link">More pet boarding in Littleton</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Barkingham Pawlace?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -339,6 +339,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -349,10 +353,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -377,7 +377,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

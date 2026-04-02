@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJn6FteZNqs1IRm9SQnSMNSAM%2Fphotos%2FAU_ZVEFuzejmy28STvDbR9y3cm1-D9JRHHMLwPns3HufAy6_bKyGG-KXZ039FzHxeQXj-YZiS4JeT_FmDA0r4iw62ioaBdtOZsKn6GXrr-RImU48cDsV4q4Ae00WdLLobqv8ys8IWRqTyvK8RSpIkJZmBxlYHWOFI67SlXutLwjrABOB7HzLpM2NZucHJJO_RbeTB92Me6Il9VpwIPTizhobHerYlPFzatXqekMYxTlwRVO7geY5J188ePm3LiMlqWHVXZDjiDEPcRQfWbUbLTk4SiLOJmTrB_6iNVHQoM0UCVMmnghPX5Ucp68lBgiKtQ-hEs3u8jIxT-KR2ci65GYY0lJdG_zDrJMaJ8xDCz7kVaCpNdCgkRzd0kdKmqn5ZpOwrs7FeiWUXNvLUxj0E8zaqY6VAG94eF3V40d3Bgm_lr2riA&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Armstrong Ranch Kennels photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Armstrong Ranch Kennels</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/ramsey/" class="back-link">More pet boarding in Ramsey</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Armstrong Ranch Kennels?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

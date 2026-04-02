@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJw6_Cp_EEiYgRdzCW35PJFAs%2Fphotos%2FAU_ZVEEIDTVty6mgGAg_77Igg1d2JUyT532W9nYP8UXG9f7-IAAFNAai4ON8hM4I4M8R0IQESN1AUk8FGkCwS28oFCg4rhIQNyTxEtFSjm-oG3pewQSWOvdQalAT-kiH_f2eZu1KSb5AWkqa0kg6RKVb7Np4fEqaJG6Qz-eHlI9R5QFEA_lhNuJh8ikzBttRNuTyhVZU9qsplvpNFUtDGfQLf-CTJh-voN13O1t1TRzLYt4ndVvJwHMOdE4vX71oF0kgMFm8MfXkZ0K8dAmqAQPiszXy11gd16fQd36fX3-BPGDlJvGhvpYDScdjk4qGzFZy_RA6FnepSAvxtCHqWdWUTh3YE56IGQ9-GD2bALclrB5pQ4yY6UXTFKXCgw7k8EHGS4pcUD1JHfLKn1q11T-Wb3Hl3ZZ8K4tDmHSCiZgXapI-Rw&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Doggies Choice Grooming Salon photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Doggies Choice Grooming Salon</h1>
@@ -197,8 +196,9 @@
                     <a href="/groomers/fultondale/" class="back-link">More pet groomers in Fultondale</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Doggies Choice Grooming Salon?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

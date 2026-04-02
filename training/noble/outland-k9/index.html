@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJSeA-TN1VsocRo4jJYswumNM%2Fphotos%2FAU_ZVEFER1ReY_2eYw1YGwPnZ8n7PkUfriWQhFx4TgAa4txCMHe1Q_IUhj1nQ1WoDkZB1eSaguZQFTYLZxdwmqNHNqAk5nDuVuNs9A9GageksWxe81uGaeyyLgqNV8wZaTohwfR81O0W9N7di0ByeKasB03GfU6PWlc8KSQkZ43i6mZirbFRGGEu2rJGwDpzIjTTW-BelzM7enaUQDhAm-3uClZs9_aupoBgyuCqv55qST3ixt70CDEj4MzfTQsiqKZUJSCHPSyC-2V957el97TPEd5Efp5tceMRIpAqPHYSlxDB6hFiu-SzGWWxpk0a7BHZIPGKOBfjTFyie9besr0escCSa3rbvD5HJ2csBynZSBXnSJsiRylUABXdOGK5E-c3Qxi3AyIIcSOr0Uql0e8-VV4Y3eXYfnebHjE9iDa0-OLNDi_cKxzXutYmaHOx2hIP&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Outland K9 photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Outland K9</h1>
@@ -185,8 +184,9 @@
                     <a href="/training/noble/" class="back-link">More dog trainers in Noble</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Outland K9?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -332,6 +332,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -342,10 +346,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -370,7 +370,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

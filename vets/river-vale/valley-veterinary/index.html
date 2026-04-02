@@ -79,7 +79,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJGYgglwrvwokRC8kuPuO_wag%2Fphotos%2FAU_ZVEHTL93UtZ59jVIO3saK-VjYbzcSigbigB_FoI-ut0MwGHBzCfjjtN6QVjQ8LWUfpU4glo5GD9PnOEZMCwdsIxg0A5Upj9AJldCBBIZmLUs4FaeOsekq3SMXgi49vn6c6w_5uVtGOtj3zSOFEjxhjuRsP5pz4BgG7QM3LuVQ7QcjAmDu7mCKyRLixnnU809CNxGw9hmE-ydb3fqeezHYVDW_Kfxtc4zm8QLQWzEzC6CYJhFGJmHpPSRwwDR4RNc3VX8Bb-IqOw3Hn6inMn6Zgrk15z65Dcw9Dtkjh08anFaQlljmrIjhHbQnbmpk3NisZZ_O7W-UTz9d-mGOdG4kt-nCU4O-osJHNMrWaUm8MuNoRaT3hhs8dZIo7jXKQ9R3G-CwEmvXmCB1JPjjMF1J_qQ1odxKAdVl-5LaFy8Qr9WKpg&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Valley Veterinary photo 3" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Valley Veterinary</h1>
@@ -195,8 +194,9 @@
                     <a href="/vets/river-vale/" class="back-link">More veterinarians in River Vale</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Valley Veterinary?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

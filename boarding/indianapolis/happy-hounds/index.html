@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ5wqX9Y1da4gRYDAXHnG6Af0%2Fphotos%2FAU_ZVEF1WojSRktx6BBDJueE0vwhdaWyIz7wQMUo4y-cSPi_E2b_LoN4j5enZpKqcU-u7dPHbv3plrEFo05vrihqkvpf-u7Rw2_BW9r_YJ6kdqej1nTM_zI_Ilq9grk4YmfMmO10KHSY16Qsj5LTSRLfrRuQU8S1wCFb3Sofo3RsZNmYC5pCTWvesVh-gz5hycPrduiQUPBa5yoL_Z3X_HPhnP0SIEh-pcBWj9hWae693Vf5zRy977XtQRXbRh-pv0AiIbtRK6lqUcFVOWPB8U-8W2LIXbiuTxOAqbmjVZ-k5CE3Jf4yiI3FWapm1DbbUV0eLcutqLFbZr9TKPNjD4ZRKLZo3s_tNDB2t1Ls2LpojXNKwfCnU3LTB_7kUNGhsTL1jHE7MIC8DcT0yt27fZgoHE3qu2kad3_EHjdfripAsCi4xjw9JdycRmKoAQ1cEO7p&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Happy Hounds photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Happy Hounds</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/indianapolis/" class="back-link">More pet boarding in Indianapolis</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Happy Hounds?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

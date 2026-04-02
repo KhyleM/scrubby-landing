@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJvffKjjJ8j4ARy94C0Fr8N_A%2Fphotos%2FAU_ZVEGor5CYuQ-0MxCcOSZLdZGhbpJRPnwqtEdvit_rvtjUnSOHoWe7o2dxo4LXmysSrDPNNvCB9hQp7EWJdpAeqjylJAIAs9BsRGDQQQTc1AJxkNdTY2kbv7ZcvAiYJJKzrDF9s5qN1OvjF2dQJuHZfuolPk4lZ-17AQp-Jz-4s8gjq9rcCcstSdhbH-azdKtlSutQUEXn8dDQLo3HdGoBjZPOYzFTCt7uvJ7_h0vmKeD6GgzfJ5dROeDO0prJOEh_zFQGO7MXExVWiuKzmJwoyuKLw6Xmpdech8ySw5AcHzLoFQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Sniff and Go: BetteR+ Dog Walks photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Sniff and Go: BetteR+ Dog Walks</h1>
@@ -193,8 +192,9 @@
                     <a href="/walkers/san-francisco/" class="back-link">More dog walkers in San Francisco</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Sniff and Go: BetteR+ Dog Walks?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -340,6 +340,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -350,10 +354,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -378,7 +378,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

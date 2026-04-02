@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ4-oZZlllO4gR-BPNVFRiLyI%2Fphotos%2FAU_ZVEFBBiGwC2OdvHdauyPqChCE5EOpnt6wSu5xCmMTyeVjdkIFhs2QEsgJ90eGBdH_A8zX-IlQjMmz9MOJFZM5RZSvvj835LRjlz_yeeZpGMpZBpx_imsHANRWpFMfBOkJDCgjRD0NNgdlAVPwUiiJrwaMVn2cUMzDTiJ_W06Z49E6IRrW1Z1T53_UgK-hT23IjMJfEI-kbLOIIk7sBO3ib6ulAGyO2p89luIWCNnV22zvJ7Psm-JBe6qji8-XKw8pPzOvbuz0T-81NgY5kxWAn75V4JEUo909lFa6bPnJz2GUwLKvG27C_OEdyR2J_G_aRRtH4svfRhi9hxayuDzkqFIXar97_hXc9It2YbWSdQ4KVo54wER71tN8a-r0PVRfrDb4MAqDox89olj448oKl7Fwc24nKQS5vJnyQt8C_3clBvad&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Suburban Animal Clinic of Monroe photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Suburban Animal Clinic of Monroe</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/monroe/" class="back-link">More veterinarians in Monroe</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Suburban Animal Clinic of Monroe?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

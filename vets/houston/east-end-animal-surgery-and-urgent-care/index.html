@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJURC6rmO-QIYRiz2GCVQQi6k%2Fphotos%2FAU_ZVEF9a4mvDaLha-0shvzwqxnzx5RVV1mX0ct8Cgm1zC9ToIKPXSkHux5KQ5sk5d-uoVBV4pvTjMnvL0SAZiptIZs8RVSmr6e_A0jtACkfJTTVwJv_-47E9D1WghYt3XwxcaJ6QOzUxZFuaJx7X0zf0R2QrIllusHKGPzK5oL0ACc5i9dPvulPHPleAlGu1i753seRi2WbsD8b_goEfxEO_KYOWjPb0yxUz5nqo64JqMLq2J9icSbipX0IE9Ytpe_aNqfKQvofdoqp6mNH4S9tJz8iefVnE_d3NhmrS9BDDxwBU4ejp8y3DIqSjJGHdBGQhi-HXY5EpKqOqpWvynPQG9UaUcNjqK1WMZ035Ch_9MSNbnGAIlBf_3M-65Vrg75K5fYbwjxhoWOCUkg5zrAUOohAjMeFRDiuM335xKiwMoE-rzCs&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="East End Animal Surgery and Urgent Care photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>East End Animal Surgery and Urgent Care</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/houston/" class="back-link">More veterinarians in Houston</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of East End Animal Surgery and Urgent Care?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

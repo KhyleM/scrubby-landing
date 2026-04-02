@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJpTK0uJ-MEYgRRy8AkYJxZJI%2Fphotos%2FAU_ZVEFoWpW6rGEb1sDM4kWN9hpxXWxUuwYxQJUUfxRKHVnfKgubKKGAFOdu6-Yenzv9VXy21_QqOd7L0oM_TyJHU5YmEOGMoLh4WSVSF31eZeBodksC8RBAyjCxxjy1e8VqY31SfivltVwF02CHNDP2rltDyggphbL38DBk0couOv3squo5QAdIYq6QVUZu2qRqf-Q7cTjoGdb7ixMLI9-0E_wAn78zcbILyBmU1OtI6-s90YbCY-ecUmvBqYEhRAQn0r31QGwLzVzvOKyIbJ0HYlclXPXNPeTkAZ2SF13IsPAQBv8cmTZSaTimqZG-mg0EjXBH-AaWHx2mEK5LvlmYvazmoPN7RG08JdRyvZN26ldJ9sUnMUbVle9Kx9jobiOTi60iheUnXJsgkEJ3u_jSzrX8dXOgG8yJQl4Sw0BlCo5pJ_4g&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Animal Medical Center of Hebron photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Animal Medical Center of Hebron</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/hebron/" class="back-link">More veterinarians in Hebron</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Animal Medical Center of Hebron?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

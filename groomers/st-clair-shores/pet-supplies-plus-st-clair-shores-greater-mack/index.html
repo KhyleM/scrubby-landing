@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJt7d4ryIoJYgRqAcWLE1jkT4%2Fphotos%2FAU_ZVEG_x8_HiS2TNNrp4298X3P-2UwVcz11pJtTweAyDczwUdNP5x5yFvxHMDgIzTXWgaNGygpekDn-MiMFyBr-m8rIWt9-ljU2qu80tl2f6O5ouJJX_KOh0fWol6VF6HSOlz6UX3ETEJgQbrtciv4VAsVAyZrbNh3eaMP5KKHlpD5hYkqMSq1_V8kfX9_UHZ8gZuiiiqbZZ7kf20FhHsLjKU05yi_dL3pY2eBgz5BtmVM9TlXUTqTR2Fcc_GF_3VdR6mgc_v1FsVmkLRK5Ze6UTaffr9_8jHCGEUrungqVFANzWTbmsu98T5N1gICyTP0bwxhwzt7MEU57SqUewjbczdDgddIfZPIoM6_uKoNbQuIdjp59sNz0Gcn6zemEuBi3-6QSNMciELyo9awVSJ7wLoGE5V_vfzSIJ6YPZdJlyY1cH8a3&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Pet Supplies Plus St. Clair Shores - Greater Mack photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Pet Supplies Plus St. Clair Shores - Greater Mack</h1>
@@ -205,8 +204,9 @@
                     <a href="/groomers/st-clair-shores/" class="back-link">More pet groomers in St Clair Shores</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Pet Supplies Plus St. Clair Shores - Greater Mack?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -352,6 +352,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -362,10 +366,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -390,7 +390,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

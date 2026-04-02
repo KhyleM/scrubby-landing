@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ3b5h4LQZZIgR86FTQvYQhMc%2Fphotos%2FAU_ZVEHdfVZ17wYsQl9uQ36dZ_wG6osTTu_WYP94osY3mIpiYNdfmXSYOzOX5fajqvU13SLO8MDS5ywfDNtEz2nsFr9kfoxFn7bF37wcweJKUoO8b-VZlGDYF_NLdDa97s3Pe-CBrlG-0Zn0hynN5NF94_Eth6-w-6-3-iP0CKTyzx2x0s3ova5Ri-1ScySeRpbfmVHCZNKNRP9GqYk1Hzul_9BYrUnJjtDErxouqGPSKgp3zWjs2O8KKFcdj2_XGgMa7TYwyH-hv9ccGpLp5XNJXQn-tQSG8nz9jJzQDVeKA60mef_84s9ncQwwh5l8xozuNMlAYOYATmhxPlK-3iGhWX7bOjZ1JAgzJGBS9abAydS3iIuM2ce-K2NJbxUOWaRS3hYY8FFzjUSAP_Dg88mZDQrq4VfmmXbF-FlBTKw1S9DFtzrMbb7w9iMyUVDdpb1A&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Wilson County K9 photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Wilson County K9</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/lebanon/" class="back-link">More pet boarding in Lebanon</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Wilson County K9?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJjVTiVF-vaYgRfSsVBSCHZiE%2Fphotos%2FAU_ZVEFl9TCqMXAF7XrXgMU1uC0jnY8KVzX43ZX57sDPDUs7bb__sXgXqTVbeu_K57WDv1a-2Vvx-oIpaq7YUl_CPvvD2RQRLswuqUveKgDkawGncIcttjTmuLgXux2TNNcFFWS0ZN_v63upKxhLSi6sMJpzt7p7A-N0-SBrCECzjolXoBr5CuxYO2U8XfwUz3pnQXXGkP-kF7Kow2J4ODhmu0zBuirE9yOeeAyQdo7H6ujr6ulay8kNXBfV06LiUT_klsFZ7MuOmGSd_hvcyDa4tQUJx0QoAgICLdayi8VdkLPjcYdnUFJM2pFVqIrSX7XfBR9Q0r9oA9Dq_s3AgqO_3Wpsg_0kGvTSHBHfRfScN3Sh9VWcFHD791dw7p342O0zHdwebt4ICDu4RFu9z43hug84_9c2hTrL1Gz6xdFNF8YNlcoZEbUk-5ly9cdnlg&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Elk Creek Animal Hospital of Bullitt County photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Elk Creek Animal Hospital of Bullitt County</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/mt-washington/" class="back-link">More veterinarians in Mt Washington</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Elk Creek Animal Hospital of Bullitt County?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

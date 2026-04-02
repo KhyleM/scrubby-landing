@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJJZ0qczQR54gR8S3QoZFdDMI%2Fphotos%2FAU_ZVEEbckidxKqrsbbG7bmGGVzYcjF11qOwqVIxt3vRXrfhFJSQONZ5lnNpEY86ZMAYIBhktbDMMYuokRMAOoJzrJfvcGWS4I5kmUOo_338_TPl7Jq2SjVBAaI68mji4iA0wZHDgiYcitGqq0xptkO0ajBKUtwtQlYasFqyegsm1ncOru67nAHEAwJSfYSqGMg0LxpI9Xd2BVQNmIJ8U_cW74VGHCjc5dCqNpdOZDiR1x0imq_9Uo3z7lYHdMtQpgpnWKuZBJeQCLI6crGKjVUu-47IyfiLkOTNt-GgOZI0FX9qwg&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Love 2 Groom Pet Salon photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Love 2 Groom Pet Salon</h1>
@@ -198,8 +197,9 @@
                     <a href="/groomers/orange-city/" class="back-link">More pet groomers in Orange City</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Love 2 Groom Pet Salon?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -345,6 +345,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -355,10 +359,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -383,7 +383,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

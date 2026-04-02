@@ -80,7 +80,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJWScAUPl1a4cRIvQiK_DfKdw%2Fphotos%2FAU_ZVEFrF_P9WyK4e7Ylev-s7HEngbAYpkUvC4B5p9AnbtjbAILpv_OYgErK6VZuKDhj98JW_96BhDyCBqKsFA4-YwT0jfVwtpSZItnibbbYdjf6dhLP94JN_Txy_luwA-ZfhNCYWBG3KBTuVLgIjrTVoAnPpX1ZJszrK2v9vGeZ85VUAMYHIqZzT2dwkW7ZJxTKXkBgQW58PLt8t4xujfeZdTYITjKHKJVw2zA6QNcS0Vpm7t7WjRC-Ol8JHU8vCHhmY8lby5ikLW3iiQv82lTb_WYXtDhy1gkny8NuswEHxUeF_FhDs9v8qi-_noj2WieI2p_pCMl06CFTvXRUBoCFm5kBrosmpr6ajHxAqocKcYoPBeOHX9y6A5dVorsRJOFQ1RTi5ObHR7LAz4F4IHxG8y_9_VEeKcdnrsbfGaBkP_HhdA&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Mountain Parks Pet Lodge photo 4" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Mountain Parks Pet Lodge</h1>
@@ -194,8 +193,9 @@
                     <a href="/boarding/evergreen/" class="back-link">More pet boarding in Evergreen</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Mountain Parks Pet Lodge?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -341,6 +341,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -351,10 +355,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -379,7 +379,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

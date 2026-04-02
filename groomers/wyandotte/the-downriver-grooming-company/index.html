@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJlQDcaDQ3O4gROJODpGaPGDs%2Fphotos%2FAU_ZVEE1zQEvj4fLdoezlIGn9lm5A39Qq24ovbJfpdXLLqDlmSno-Cv6GpL7F4ckpDUYtvKpYuZ7tfbHxYMIZy5F9nhmLViLZ6p8yfEkNfel80njNr-nB_1izr2nkntr6LELc55SBFeeurutdNpR9GFPWnq9bve-rT8Z5OGrqBVrE_lBIt9BQ90z_1x2CAIzqt7YEdQrmRP2vqBVthGZlFGgOAr-BC5AcLysVZvzeqwxptwwWzkRiGoffk6EYQqw59QTpfDBxjRd6THEucr7QdFOHnaQ0gfmhhtoi2dgGqgINDQ2Ii7XAfnJ2bO4gY2JIkNTQQZMWzYh4lkcng3Y830v2_PWmumqULMaJTosADSQA-xiYYYcN4PUIASY8tfcJHuuvB_lSHr5km3dByz-Lo8HmRXCl7DNd_USCxKGWmctM_9wBFGG8PEhcnZS7uweLrP8&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="The Downriver Grooming Company photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>The Downriver Grooming Company</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/wyandotte/" class="back-link">More pet groomers in Wyandotte</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of The Downriver Grooming Company?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

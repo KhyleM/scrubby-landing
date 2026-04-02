@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJG2tiyJvFmoAR_CTKloPrpJk%2Fphotos%2FAU_ZVEGeegxo-IOdY7Yxd2CR7KWpcsHpZW8XPT-ocPlER6oDiHFvsQ130xC2CL0ulMFmxttGEdUxtckYpjw0R4fenul-rOJMFog4zodV9adTmsgXY_aZOiDo2A8uQxMgH4ccd-r9G2O9vvfYVK0ne1Itgt-1mC8es9ieSMvi1w5xRNBapg89U6srdfe1xhMw5YL-7iMUoDmE1jdUDtO5FOvMJAd07bc5Jtxtw74LJn0UFR4anNdIBT6kridj4R-IUKN7hHjnF-p4k2PKvAJzdjhLk0K4YpnRvzm4Aicf8wqzKejnF-T8SqmuIfaulx7uwdbXhk0f2E4my753Fclp4v2EG8hkso6hTjw0HVD3WLLi9ZshvCQ4M5QYu84jWDr4X8kKcl05fzuJiBebjJoL3JmUzml-X5HQ6143sY22urErgit97YGHKikxWxV8ANC6Gw4G&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Fur-nando&#39;s Groom Room photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Fur-nando&#39;s Groom Room</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/sacramento/" class="back-link">More pet groomers in Sacramento</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Fur-nando&#39;s Groom Room?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

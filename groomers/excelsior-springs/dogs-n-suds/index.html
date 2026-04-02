@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJI9Qia5mvwYcR3-AFWp5krX0%2Fphotos%2FAU_ZVEGdh8-69eU5f5xgYOyAORqoySPjNc1cAndsqZY5WRkOn3u4Je6R2O1Y-rVnXHEDbffd6wUQxFpWtOUyMFiA2EotyYuvNHqg21jZ21Xbh3eWSz85pJ72NwuC8pn3pZhwm_I3o3HLUtZMpFvm4of4WruwceLFkuOptEAMLL0y86xDMC1Lhtn2QA-Xpk153StfJ_8FzA10j5f30LIUypq6iyQGXlxYcjxdqNzQCUV-lEs6dDEsBspsZ9UOwMC4rWc9EGfo4DaIU5q6_lk9mmDy8U_UzxpHpkUqbajTG7yHCozXNXwHP6pC-CxwozCiTDjxOKP1Sr2xR-SGsTJRVeTt4941oDoHs8g9sfWUM_1iwD58p7e6F7Ea80DPO4UtQ6zgPTj31SD5lRbsGjMJrDPfguPqfnZ259bSi2P9CpgcKRU98saazOOR1DJZV1G2Yh3n&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Dogs N Suds photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Dogs N Suds</h1>
@@ -185,8 +184,9 @@
                     <a href="/groomers/excelsior-springs/" class="back-link">More pet groomers in Excelsior Springs</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Dogs N Suds?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -332,6 +332,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -342,10 +346,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -370,7 +370,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

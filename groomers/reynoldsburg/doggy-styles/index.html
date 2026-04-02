@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJj_c4_oxkOIgRFSnbeYLVksU%2Fphotos%2FAU_ZVEHzIBV4Sb0ePxU7W1p3XyESGBG6eLryyWhA-IshPf4r9p86IrqJsrLo6W8CvSbTW3Wyvippii-2UjCcjg1h2rYE4guqTPbfpjySprseL6nlOWOShIzgq9BbaT3XnoSKwreogXt5KBf4pThaRSw8lRPjOk9QG8ZThS9ebv9fuDpyWtLQtJZtXs8xEn6f202RXWk2nzzYBwPOp0aEpndKIwyL__KTZdviPVqA7rYjqqqS1-nNVDG1uAnq3KGOX_FBZANXT9lzP_1A8M5vfLFwt-hBFFVzaEmgQqVYNlQGX0x5oHEe7YzdcpaT6Jh4CngVsrd62kFy44FKjI_etr9etzUQNUY9bXMo7SamYutRJjAG_foSGoZuxyV2gW6P3TUHVUQd81nOEVsWFKraWc4hHkQqFE7btIbNh1ri8hjB1TRP_g&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Doggy Styles photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Doggy Styles</h1>
@@ -189,8 +188,9 @@
                     <a href="/groomers/reynoldsburg/" class="back-link">More pet groomers in Reynoldsburg</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Doggy Styles?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -336,6 +336,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -346,10 +350,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -374,7 +374,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

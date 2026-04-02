@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJKa1OhlXWxokRd8DPJ12qwWY%2Fphotos%2FAU_ZVEFaQYQGYv3rqr27lMmlVlqjL3Bg_XEGY5aWmdmJUkGL3xfVMQxPhyQ2wN0IUW9cpod9nZBAK-db93dU5Wq3zUQV-XLVf1Fn4ZDtBseobfzl1xatIOr9aKfAOjSr-YEQq9wMEzs3MSYq9N68gNiQF8yypwAYytbzUKjJBh6nQAbVevcHTjJcrV4i-UX67ffxx3y8-PeV5vAxKAHPXBGin8jNSUCNYJw_IAb-qD9jzYKvFfTHTE3LcZMQESY7RkaRJS5l0glWk1ylJn-hE-S9rZTUdhNN9tcZ51T0H2ZaBP46AQydHv2pT-D95kzYvS1l3fgvtHKGjvIi1SMbbyeU6t0I2oegBLFHzXgUqHkjchlAuJ76vxsBUxi8G2-zXw_veFD63VCXhAwAMnGC3pJXmocpIdTH7sHXfycXWBXWMAssPX0&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Peachtree Canine Hotel photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Peachtree Canine Hotel</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/glassboro/" class="back-link">More pet boarding in Glassboro</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Peachtree Canine Hotel?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

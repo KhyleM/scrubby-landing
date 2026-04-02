@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJJ_56lDD7wokR8xUOOPocRn0%2Fphotos%2FAU_ZVEG2-oqkb0Lb471it6oEqdMDs039yxou7T5ZGobQQalJfU-GjgcmJRRdxrI4FISMwzBymTRcptmBBUn5HiI_OTPK5QJ0Tnp0m87t2Neunh01LzWH0M4NMv94u6tK6C4AWE7XY2Jg3ODXZ6Yht95pqqCj46ORE4z07APw2Zk-vNvBnoUuqxbdMX-b2Ojybyb67Nn072w4ONsITbhiqClJg3McRk7I5dqrSZ-zGKRAyEbNS5EVBbmTa4GtXx72xO2Tu8J24dKRaGSOjgaHx6pMmloizYuQYiHHP_aVgFUBV2_2ZDkHL_4VYpO_WPdgzyY8ds4tnJ4Aqt5Tm-o6Nr8PGniE5-jB3dgnf0QXmUVwf-FFlzAbMNRAgmWQQjPnCv-XpDOe9F-CO6VofNrDf4eOSGfk-aD4gwcSPQWh-IPTWm4SCINjjTylPSQBUzZfknd7&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Manor Crest Kennel photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Manor Crest Kennel</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/paramus/" class="back-link">More pet boarding in Paramus</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Manor Crest Kennel?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

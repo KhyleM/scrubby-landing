@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ4ZUm5c1s54gRJ_90OtmNvc8%2Fphotos%2FAU_ZVEHH2K5H4JRfoiS8SDHIjU9ZVtY7iZLgxq1IQlPXL9261lQ7w6ZwXkFnobEU-7hsA3pa3AQ92tB822lVHoqIht5tBwPmLAzZW6HkMYfSTRHK10VbpP2IuDGmfbwq9eGW2vIPGQYBO-4fHGzUeJj8bVk4K5CpoKzhaN47kBSvDPO2qJj_01BYp1_KYJSx36B-khvsVWEtr1OIkJZdMP5NagfW7ctTdL-SIjPUSiwXbLGhfZ1rolfc_EFRW1rP3-Xx3XPUhs1tMoXuySYdy4KguplSh-ccmD8Dh3IOUtwe6AsDKnaSULaTZ4oSBVqm-FqYp9RaFNs94OABDfX1naTB1CPgt7WJLrny7zCBiznDSempL8eeALHQ0_Yao18GwWZ8N2CaKTByLGcKjjvFOcGtAf1cz2JtGgjrC5AscypngcSTUof1&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Pet Supplies Plus Sanford photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Pet Supplies Plus Sanford</h1>
@@ -205,8 +204,9 @@
                     <a href="/groomers/sanford/" class="back-link">More pet groomers in Sanford</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Pet Supplies Plus Sanford?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -352,6 +352,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -362,10 +366,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -390,7 +390,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

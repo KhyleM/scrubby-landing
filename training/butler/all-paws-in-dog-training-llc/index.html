@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJgYeYIm0DBYgRvaatKhtpfPo%2Fphotos%2FAU_ZVEEBrda9hpdHzo4buW4ra0ZnbLp9vDsuKA3778DdEtE56HQRPw4BA69EdzNBr_DeY3Onq2fm_RP8gjlzK6VZ5Eq-o5EbHc2lg2oZcvZ_s5YiNtYDnJVvVykWMfsIxswH13Sm9dgBRyQv4lbb8-f_J0RofSjajRToDVghcSAOfay4R0KPlp6j-fHZtFjSb0Ag0rLQRfM0ZjWeFhZuwSGAEIfAm3TxK9Hb3eMQihjD86oqMrwiccobmM2cU1xyqf9VqSKhlzAJ-vyoDHIPeDmaGXOzkjoYsbyjjvTRSbJVSHMg3L4lLxdq1yaxNxkONb0HsNtbPz2FqR1tKaKoTWxCmbQSmqnwrFhbOpTpflHfbaz0pdk5VCkU3kAsiqyKN_1_GFFHgaucApEddPj6NruFxQqjEnJtvjfYbmsWalphhwQsUCyPpf6bhEeI1Bl2zQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="All Paws In Dog Training LLC photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>All Paws In Dog Training LLC</h1>
@@ -197,8 +196,9 @@
                     <a href="/training/butler/" class="back-link">More dog trainers in Butler</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of All Paws In Dog Training LLC?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

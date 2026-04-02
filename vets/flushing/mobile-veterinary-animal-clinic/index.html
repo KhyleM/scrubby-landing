@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJUaj3ihtewokRjilnycm8eLM%2Fphotos%2FAU_ZVEFA0QYdyNd9WSYDXyghZD7C5D2Kbdd34-Hro7XEhfTcR_x2MniReGhv3jj2GdgmEqsF9GqEy8rFxSX2_FDrymmFe3C9s5Cg2-In-rafllcjGaA9AMNK38CR7WnZY7s7YU0CZ6Mh3WwL48yptQ_SFO083ssgKLeiD6a1I8dqMgegFOChDamNH5RKcIPVMwPU9QeigHlEkfqHXcnmFHJjuHFoPc0W5Cg9arLh6Ec35-TwX5umnmhqCZDHhbyx98OmY0up2lqCQ3eYO6-EejhNTFmVqj--5QvP_gPgheErE-k6NmC5wNedKE-hyXQVzywvuUs8TaqCAX020RGMzVO6-lKU5w166Jpx4FZqdDdcAhbzQY-0Nly6mqkxT0NzJ1iitctdxZZB13_M3JentvXunK-M-PKLHqWY9cvH8YQLVFO7Dw&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Mobile Veterinary Animal Clinic photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Mobile Veterinary Animal Clinic</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/flushing/" class="back-link">More veterinarians in Flushing</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Mobile Veterinary Animal Clinic?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

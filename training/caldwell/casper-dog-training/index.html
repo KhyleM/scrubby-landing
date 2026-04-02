@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJo-C6pBaqw4kRbkzGDeEpQes%2Fphotos%2FAU_ZVEGl-Z-hSBgFBRucuGFJBS9zRmq2vC4awQKxiE_ZCyc8IUkpVtB_X_lEU6SXi14x8EtIGo2ktqgRuT1d4VL5QujRU49EosbQtndlFI5EGfwxs5xEdsBw5aejJWABr5wX4EIUhOtVxgWH11W7T09zr4l9AzQX0e94tnMnP6louDqpXFjoGtWzhQcsZoGuuFWLcHzkhFnClAJW4-0NFROL_C0M3mfcDoN9hcEBPZW1H6GgZyr6g0mIs-73C6_9ztHlygPquDmlamaMD1_iKFmObZ_OenF1SIYXEzKYYE26gqCF1YW54cN-sZMGatDJCiThPntaX_tgBpjBMS8BSeZspBXgHRvi1A2bsYGEvsjOUQxs63CRQfXTl_w0y3xxgXkolVMhFs3JkFnMDcaANzXzlI4uxCMfAx-sztRESfxghVN2D78cHQbwamFPR3f_4opW&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Casper Dog Training photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Casper Dog Training</h1>
@@ -197,8 +196,9 @@
                     <a href="/training/caldwell/" class="back-link">More dog trainers in Caldwell</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Casper Dog Training?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

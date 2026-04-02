@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJE_pJsF26woARfn_99pwbN50%2Fphotos%2FAU_ZVEEkAXKxF40ksAu2yi8I85CCdHCgKatal_i5YaM6spiN0mfq36E6BhbdenFnvxDc6UKFlqOpRDu8O3eZTGTWd_cUmdDVuxepuCmtCzT12NxsoM5vbbGrj6TrmzjfmPPVh9XilM7ohHKvH4zZXKRb8kyggwdBqwo3T1aP1xcQcOUXuzoIlS4MGObruqO_Bj_ZYLuXc57uW_dcePdqjrraOCeK5YEwxO1262f7E3dNhKHS1Q_QWozqj0t_Ae-mi9_QDcmFYgBmta4gU6DZ2RTlkYGOzX9t9VU2l0aOksCXEO8irlDrlM68Yq7B28y7QOcpofzAprcMw_UalIQsiMNDK7pgHMNAhB79bqwR2ReRwfObhEl4ITGu17HQLhPkNKZ95g1J_jBxjreAnh4Hefp30HqbU-qXt9Mvs6CPVpSWImZFeFmC&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Centinela Feed &amp; Pet Supplies photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Centinela Feed &amp; Pet Supplies</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/los-angeles/" class="back-link">More pet groomers in Los Angeles</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Centinela Feed &amp; Pet Supplies?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

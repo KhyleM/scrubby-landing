@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJf48vpCtZ34cRbs5ojkKRVZE%2Fphotos%2FAU_ZVEFPj5q4TlwNaL6Eilel5CaFU54Qb15m1H-W2PKaAkDK9T2ojfqWK1UxVXwwmt9_u9HkbBScBbowyod-NSRkBDtjQjAMRKmFNmtxvNf8bQGLE4iR4h420eCqJu6vd6AEIuNA9ykOFNTAo1u5KMMtAJiaU6GfwHK2XCWMTYtobmKy6AFcrFw2Ye8Ueg_exiEAGivLKJnDVxKjR87HYVPCWjdTcQ_CENs57aaY5Iz6Ui0FqXMVk4vxFnbhNgapIHYf6KA6TrBJPNSMqWTN6mpsYzcbPh4heznK8l88U0b7Qq5vTZJ-bo89wJXw6G1fGRUedurn6dE5xZx6XPdkzxehazm8CMWKli1c2_Tm53HG29mnST8X5m8qfGICh0_dskWjKOqguLuVn8onWHpEGJN_fEWDIyz79fCVL8DDa3zGtgE&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Cristy&#39;s pet grooming photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Cristy&#39;s pet grooming</h1>
@@ -197,8 +196,9 @@
                     <a href="/groomers/bethalto/" class="back-link">More pet groomers in Bethalto</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Cristy&#39;s pet grooming?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

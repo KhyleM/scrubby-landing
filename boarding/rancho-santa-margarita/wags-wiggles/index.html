@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJJdlZ3Zfr3IARynub3sIxWdU%2Fphotos%2FAU_ZVEHlzRD2LCoaM4Yv0lu73A3FUOF6E7pEKgFOBoMupdFpNKQVk_hpLlq5I28XpfiJB6w7sZUl-1qDsU2DOen2PK7QlkWCy2oiBU0T5YPQfozXGHAHSMLYorT1b1l3ATPrAV1KxtxfTos5C3Swo2jfHswKysG8VnfMyisSux9hLiqi1iB1AoUQZmCrZqo2od4T5aH2ND7Cy_gwO9Mg7cNiIgRgEYUPymLvPLlSOSLN4BrsmEnNKIos4M8Bg3hdOSGhCbHzPSHfyr7B-no-0glLR0Q9GDGOVaFAkV0W7Xqfqp6SKfNGFN5mF6x0D7oAC6HvcruGOjNoYQObENrn8a9UNbCqN1yY02uimi8UWZ6tAgFA69IlOKCT-1iLCtg7YMLGI9mQWWwxN9c4vC8zDca89Ckvskg0PDHmU_5lOhag1oCQebkzxfHROwOMai3YvAN4&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Wags &amp; Wiggles photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Wags &amp; Wiggles</h1>
@@ -199,8 +198,9 @@
                     <a href="/boarding/rancho-santa-margarita/" class="back-link">More pet boarding in Rancho Santa Margarita</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Wags &amp; Wiggles?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -346,6 +346,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -356,10 +360,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -384,7 +384,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

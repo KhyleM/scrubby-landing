@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJCd_w1AHI54kRMl3BeCS_7xo%2Fphotos%2FAU_ZVEE_djCgzsMPlT_vEyWHh7yhtxa7EeZ_kTkSEDm9EZIDMhV0o1HBdgnP3cSFTOEaV0D6mTmUos0lh7cGKYCBIxbpeQILXDxX-AB02QdneXIaRI42wWJzI40BM7YzU88A_YfJ2YmL2IFPne1n1urWnab2Njlxmyz7lPKuDpr4SuAm6Booe5vZUqU8NBOSGOAXLiyScjeG1eSwG4Rgfxmo4xYLLHpnn0ZP48P5-2BrJ7PtOHMyxC92Q0DKOCW5jLLLXOyvtyAHDPgQ74G-cuSySi6vL3jaTDBr12DAKaqt8-e3QERjVJ1MFBYe_bBdeTfLxy6s1NytWO3Ki8SpCtAyIOGNbfpyws2lqplK4l3HoeEVNxV_4aalTjahE_s7lyFIVhcnO4Aa38NPdHG9wrHV7RLNn_iPepAHegmZ1VNw4k1m-w&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Apple Valley Veterinarians, LLC photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Apple Valley Veterinarians, LLC</h1>
@@ -194,8 +193,9 @@
                     <a href="/vets/plantsville/" class="back-link">More veterinarians in Plantsville</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Apple Valley Veterinarians, LLC?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -341,6 +341,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -351,10 +355,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -379,7 +379,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

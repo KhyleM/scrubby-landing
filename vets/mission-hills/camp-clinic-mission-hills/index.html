@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ2dejlhuXwoARULz4_HpCmWs%2Fphotos%2FAU_ZVEFP0QjbvzVVN7E7fzqhntCE1CyAB-v8s5SawTw9yGwVJpiy63ne0RC4yRuUZDDCkYbuOt8SYGBfK_-4uPdfVfZzasqgy0D4miw6aH4FsLWRkRFDq1hdVzS40xm_a9T8f_czhzf6qaO_PdRObqOLVFxe8srtW-sqlxN1pbZYCiBCIht4XGA0FURWPHAd2N4BTKd1_n6Q05Amiu_XaLv5DzGZH3N0iDruSuVy-zi4ILjycrtcMYLUx2BkV0BS2XJ0_Jm_Q-2q1eSOYwLOcEM2tQXzWb9l9Ru52SxGWl7d9RGoNeJiWbGoeig8eQcNEGenjN7lTQfYnb5g-r3xWV3AbyDOD97xGIkiwDwxfG1W-vHBVAzx9izIBbpAS9qWdgb2Bz95EIkKO25rdPb1NVRwaJL9r0AltrU6aVDUSJlfktO0M0g&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="CAMP Clinic Mission Hills photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>CAMP Clinic Mission Hills</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/mission-hills/" class="back-link">More veterinarians in Mission Hills</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of CAMP Clinic Mission Hills?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

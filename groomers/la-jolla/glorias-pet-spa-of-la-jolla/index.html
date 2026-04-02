@@ -79,7 +79,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJD9v3ROMD3IARlJdJJIcBq5k%2Fphotos%2FAU_ZVEEim0O8LGxQTQPRPeIPntw_cLPu-eRVCjmaAu2QwnQO9-9SSkmbalxbenj8VyhdcqnOhGjfc6r0wSdyGDCRss7SSq1irAzTcmxIMJe8l-bIDuzIY58_jXbb5VV2b9KqL9k3hRiKTJBzutCTgPoCn_TqZXZ1OcdTF-JEzvoAxRj1hzNXRH5jyymxoi2J0u4ED4UZLp5ispk07Iji9UR4h5Z3pNR7z6eO2_dcPbu7lIDOsaBJuteEuB1dcBXkvJjxjZnndoEYa1Kb9HrIy4Nokv7LE31ohvBljoME99FSpamA-s7hhl8AUC8sGHuAV7x261yhG0KAmRPv8CxxqUpzJo6__25uHIFWVATXOVXWuSCdTEID2P-qohVEZ12kc3mpTXAsxV5o3VITPL18wn6ZQr24603PGsrsjAPG83iqFhfCb4g&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Gloria&#39;s Pet Spa of La Jolla photo 3" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Gloria&#39;s Pet Spa of La Jolla</h1>
@@ -180,8 +179,9 @@
                     <a href="/groomers/la-jolla/" class="back-link">More pet groomers in La Jolla</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Gloria&#39;s Pet Spa of La Jolla?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -327,6 +327,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -337,10 +341,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -365,7 +365,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

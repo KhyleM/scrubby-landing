@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJc6p_jlmzRIYReFI_oJ-sPco%2Fphotos%2FAU_ZVEGt4jwEoIHqUbaHSrcKkC7M3IalcTksc1MG-x8KeeADzY4WsCBccubaVesp8Q4k2mjs3YhhlKlvhg6c6lAALlm0vVHZ51P6577axR4PZ5OHwgqtTP0bVrZAQ01VjN190-3Y2lzicKFexOhozokfL7RbeSNe0cib1nN5b9INPnZEzNMONJGECHQI87E-y4hZW_U5TsNGdr-5L9phAOTi2Z-9kRefpVwbklGg-A1FxzBZdeJ7NKTldMbtVPK6yKZQ8u6xpbiNOYJJBKI2n85Z3rnivKDQXuJ_oO4AG5NubYK1b4wbhlA_fK_MTgDgiaRJw01KI5I7NhNU33g-PEIVmU_rcQGnqcCl7oTVbIfT6m4x8pqjzlvt5Q9cUe8UT6-5HKi2qRU5KMYxncsZqWr960jq8p_cJUD8XUMXBgqNV3Q0KSgkKuhuEU5iNHHOsmyH&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Walk! ATX Pet Care photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Walk! ATX Pet Care</h1>
@@ -190,8 +189,9 @@
                     <a href="/walkers/austin/" class="back-link">More dog walkers in Austin</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Walk! ATX Pet Care?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -337,6 +337,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -347,10 +351,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -375,7 +375,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

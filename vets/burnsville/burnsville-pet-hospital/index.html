@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ5T7E0Wk69ocRQBN1ZtJGQ5o%2Fphotos%2FAU_ZVEFKFOLBR3Dt0uQC36jRX6VC-YkDAtgOuaeXky8whs58YnrSPN3ND89bUHAM009rNxTw8pDZgG4QxDp0KTY4IViKzl-fGAiMZiom9y7lS6s_8fcbHKPi6NZFOCMgABYL8gUXiOwd5FO6sRok9uJtwdhLdLk1Ieg-JEDFKQtUtfew-VeC8Px2_brqHdpZAhZg9PDeUXld6yMy50XmFfUbya7MGlH2b8IG3C4GH-uB2_1OncUowGd9MR0GH2f42o5pXTKLidCETY2hWUJAoRRt5bRVGXR71TE4OKRU6fwro0OMApmoLELnEO-C-DnPZoLx7ln8UabRqipFaHPi77igv511U_ZiDqfZDi_IB_vKopJiZQLqZv8Nf3x2prckF7-s31-nMH4l_iDxoDtEME_ANOdu_Yq7rYAZGPTJ2LIFcgzn0A&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Burnsville Pet Hospital photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Burnsville Pet Hospital</h1>
@@ -201,8 +200,9 @@
                     <a href="/vets/burnsville/" class="back-link">More veterinarians in Burnsville</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Burnsville Pet Hospital?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

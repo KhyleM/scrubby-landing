@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJwxxXy820woARm6yENzUo8OI%2Fphotos%2FAU_ZVEEVd3nZTl3Y8EVxtNy1_ANTsH40pRuL0AV9Sac_mwcZxEyuDlCqA4RJ4M-WwdOpQuq5MBCzj5kjnEcS_zRSyBnIpwHQ6aiMxMjNm8cPPJViFLBhzJ04S0m3CFJvkZ3NrrN2MAJEbMgIl1jD_7K4MVC5chcZAsMuD1-s2WPGZAsU4xGbSgx5Yw1gvMxfquCI9D7oIBbyOrhDw1c0HBsGRpe6gd7VlfUeIPmp2eIL0q6Aj13zYb75P3ZRgdmo6bkdT-FGzqq5qn6-JZYYAe4X3vTYun7kExJvUfXn1fyuY2XIZ6XJ6tJ-ZDLh4lx0Xkm-4keIE1GUHEc_W2EgaMJLNPVYdxer_Iyt9V4rJ5P36RUqQdlP2k_SvEn2ShLn5ht2knaIFN-cYim_WdeG0UJrpJnMNzQN15zDbi3F9O1Nq_Jj9k9j&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Lovely Dog Beauty Salon photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Lovely Dog Beauty Salon</h1>
@@ -198,8 +197,9 @@
                     <a href="/groomers/torrance/" class="back-link">More pet groomers in Torrance</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Lovely Dog Beauty Salon?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -345,6 +345,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -355,10 +359,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -383,7 +383,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

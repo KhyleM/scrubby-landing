@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJa3Civ2QCwYcRilBXh-PcEns%2Fphotos%2FAU_ZVEGzYolKhuhmQPEf0uJf2CtfaUk_SfUzmeVdFK538tEkD_3Zhk8dFxajTA5ZcMNE1g9VkdngkPQ2lCb8EOannmYtuneE2y5JgwGkpIom6sCvEAE7gufogMYkweYlh6wGW4qy_OHoHa1tCjaiDEUA-xq1oPop8yOl1QbYEu1slJUITOicpUo7c_-ZRS0ZjLFc1xFLWitLv6RUgRwNNeSxtiKcPJPAzAnjJyjHsYJkL7s-sOC8Wf3HDaY0F9XyMwQWYo6L7vag0pP8gUAVLIGGJrANEa6eNUM4h24hRldK5ktiUD_9f7t6Sb_PKfKSmc5wUfni6Z8u2q19VXF55sMsDWLluKZzpjZHt8FV4SO8tEZHH_6tiylVH3CUJW_7et8e8cQO4y2dCrug1txR7jXjLplQWZvh0qDXoapg-KBkEA0Bv3Z0&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Animal Clinic of Susquehanna photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Animal Clinic of Susquehanna</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/independence/" class="back-link">More veterinarians in Independence</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Animal Clinic of Susquehanna?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

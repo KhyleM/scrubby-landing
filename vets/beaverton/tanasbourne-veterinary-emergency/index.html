@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJn9EvFGUPlVQRaqIfCHdQyJU%2Fphotos%2FAU_ZVEFWcgfNMhv67Qt4gpbHC1ssBEiOT1BGHC73U3473ozVniC9KEdfiN_cDKFhgiqcQaGdjo8pMkw5pFnbGC5-3uilKwm_7ccKKDcO65VMh5j9FUe4CGLeRDz1nzzg-PHtLf2xtoq4634YvkRHGcUslpumbLah-m-JFcbtZvt_hHwPmPQJJWGW8bqoMiiEd6aZLMdH09jqT7MQ7_tL8Oerojz_NLLva-JPVf8Uj_t_BiEDp3iw5dNrP1iLxp5z1EA5GLnM0ECXwGsLcgKoXFG2jK5fjcU2Urxa4LRXIG8B_aq9gTLbhaONP4GbwyqDOLjqwldhz52YX68skptvQ4pMwERc5PTlCWRYctIgd-DFbuBqHPnn6gFjXYhVMcXys07qX4pvRnmkvze4fEiibe4vPFiqjOYqVrAscYJlVaUO5ema71Ut&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Tanasbourne Veterinary Emergency photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Tanasbourne Veterinary Emergency</h1>
@@ -205,8 +204,9 @@
                     <a href="/vets/beaverton/" class="back-link">More veterinarians in Beaverton</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Tanasbourne Veterinary Emergency?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -352,6 +352,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -362,10 +366,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -390,7 +390,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

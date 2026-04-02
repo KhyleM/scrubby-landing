@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJUeZXedJh5IkRvNqNTQV3XXc%2Fphotos%2FAU_ZVEF2VkVgLAiuzJQ6ki-ITP_j85vUo4ZNLXdq3nEkxxRml2PbXqmu58FCzMwJn6fkdbOt1r4FiguVZNSohWHhXZcHiWuy6IW9SVKImSsz9UP0jPU9WuBkcCZ4v20QxHd7gVS26THHfQCchDKnn_nHp6tQm8fm-Y9tGF46-ETPw3ACAk3DPfR6-L30ajc1hUQsHwu_ozu00itWiUkJJo52B6EOIJy5Xu8S7-s1uT4w3CaXuUHG6GFwOH8_uyp7WmHbrOGGkDdAEgQ2D80_IxHeFyxWN1R18Nbof8knK86EXwZZ8dm520HuO8rU3gFuQMy2BZod5B3V2BKy1u7T0arEwknUamvXD8Yq22EByz6W-OmtN5xT0kCvl-gYXVgMN8QkWt02f_bpzUH2KOv8bLPBrzjOT6Hxm1-fv_zHTzO95B4v_g&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Norton Animal Hospital photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Norton Animal Hospital</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/norton/" class="back-link">More veterinarians in Norton</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Norton Animal Hospital?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

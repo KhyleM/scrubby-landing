@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJfUvrZyb3wokRynL5xDyrXog%2Fphotos%2FAU_ZVEFbw0qDrHL42q5sz9yKjC8B9bMn3Kj0ARlOOrWQliAuOuuHtfbpEabl4FOamIn0pvkQJ6Llgt3ToSY_Npm6RvP7bFTC50BdsJu_Sp7j6sda193c9SpnanlHFMRC5lfS4zkqy4tOd-4c0h7u7MhdahNtwQHKBN9gH1ChVZ6ldVHU4H8z_cBlfwXH33Ai2b3RYjtix5ZKSOZJEnOH13butLJ6ZwpgsLvD3OEzoG-JuZBBbfNlGFgkvDodv_mMwRFE5xMU0CUoTxXGB8Dnkx5B1fg2-g_eeu4slJOigggTpE4VtB6Kni1hw82bgNimAOdAl8dJmAzirmOImjkH-s8uRiHdk65RBUFRcp12ZFPm3KxwFKf48ARDxEMTSD-3r8kRAh6A6OxIfHlQ7xxTmqnv518cY2DTD0Ew_sYM978TSgVQuOzt&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Pooch Parlor photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Pooch Parlor</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/leonia/" class="back-link">More pet groomers in Leonia</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Pooch Parlor?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ38tyugQPD4gRNHcvoS9b7RY%2Fphotos%2FAU_ZVEHTunxVx7WkRWIBtTA4z4r-D57eBUdfcfurwJdv-hFHbB0P3KExj9arPfJQ1PHn3vz-Si0J1nh_qafSwVBC32KLy87_yTtGLr8tY92o1SIpZZQ9EFA7Jm0d3Ovwxs3eTSimZpq2W2JIUrIHYEIk3JF_JQZSmNu-72bp7atvEPj5fcz9SRnrhRHw6YBJMVzFZX4BJlgxQY85ZSatMv8LUVjkeeFsuK4OJ64ol7fQZpYgO46U6M8_BjH6cKGOVjeyDHoFvppObhH9Sp2jMrurqu3wDSR0Io1Nv7j_vOsDc37unYBhEVQCOBNCtz-GfYxRxsbp7MlH2Bs_nBy6NTK5xTn6iI3Y_q5gRXmxWT82EqRUtefGnP961SOobzoRhexao7sMYuV2BHidF0nSUCDO6Q7DzJTj9UMTCHHTlulTxZXcga1m&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Scoo-B-Do&#39;s photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Scoo-B-Do&#39;s</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/west-dundee/" class="back-link">More pet groomers in West Dundee</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Scoo-B-Do&#39;s?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

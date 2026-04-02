@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJa8exdHbnwokRQ_f0uQD6RWo%2Fphotos%2FAU_ZVEE8lE4_hBJe3aqtrnX3TGkAQ-rWHsLzJ1DT0bPxSobZAlv_lZjrF7wekDlt8L7cnP-lxfFOIwvsLry_Uw6ih17mZTbh2Nc_EEWeVdmiMYhzR5-BjemE_Uw4H2X2QYv2JBlulWGcNh4iypIy1nTP6aChxpYdaKqLYqcJfwl_u70Hsi9EUKLFpl6x8Klp5LuYD74y_lp3IbSB9Y-ez_EyYCZUDMoEKKCM_Mkv92IK7qMgO2DGOg8kX1R3vbsuh63du2kyQQFSFzVpu6PZ2FnDMnWbndVQkAYHy4p45dULpj50ktmH4ELD2niszsGLjhP-bNIwq3xFwAFNiWm3OwIWz0T1rpEwsUUNs9lCAiLQvxK3AmGj9XVzjO_3Qd8W5PgmIw_i9kJy-0n8j_23_PdCPQVboWU68SXUFXuQCsLhDqOWZxPC&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Spring Valley Animal Hospital photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Spring Valley Animal Hospital</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/monsey/" class="back-link">More veterinarians in Monsey</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Spring Valley Animal Hospital?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

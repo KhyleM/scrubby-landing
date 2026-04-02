@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ0f_OSELLxokRD9VWMYMyBsU%2Fphotos%2FAU_ZVEGRKlaFwkhkpG3VHE8ExoFOv0We6hY6xfeoA2HcavOkX3IdG5ZpRpNsFwcRDAfknbFLIfV_u-SdE30FF4yeVOrbM5UcXod8J7KKLj47acYOeHh72MCGTtXjVK133xWQqBAOWm0kCckte5nSbec6tI2okFafskE5s1lMCPloBKFz-iYwalwMiGqfzOa5ydelZ9CJKBvZOA_M2iLTyISvrKj20uHbCTSW4LCCyAGQvlA3aHZN3Qvc8WjjSFi3smJlZX5_iiHqI9yoTIEHdUUWGok0EmA3Af-9hDP8vt00fZGlxeuD61UtzG38VP9r7Wr0IQMci4jpHROmCjoRngEt1mMPKXoK-PGIoCMfy1nR_l6kYS4n4567F44ljH4y3mC5g46fA-2yXdzCuyTx7NB64-ms6wKc2wiWghMBAVXSr1oLnA&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Red Bank Veterinary Hospital - Mt. Laurel photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Red Bank Veterinary Hospital - Mt. Laurel</h1>
@@ -201,8 +200,9 @@
                     <a href="/vets/mt-laurel-township/" class="back-link">More veterinarians in Mt Laurel Township</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Red Bank Veterinary Hospital - Mt. Laurel?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

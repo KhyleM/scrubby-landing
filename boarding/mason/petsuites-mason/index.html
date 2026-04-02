@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJx1NX8_b3QIgRt8ZPMFJtLr4%2Fphotos%2FAU_ZVEHnW9q-CB8hGEJ3Xjxe4DFfUAQz7fKQSZMl7SmMHUsliJeOQMuqcBEtOyT6x-TJ_LRF6JshKhRP-J6nRxd_E6IQ5FLIh0wvoDSFukhXI9bpLfwfg8bPssRq7VlWsUXhqRS81mpUOWO02BbcFzFpAbe5XbrfzpJilr2zrMNQqi67lKJoJAZ7tN6OF4zq1oHqPfgVWIjRzEhzKPPtgDBI_UlDXfW3FfAT5KqVW5O4dOX216hroTip86GYiwD0Z-Oo9f0l_fMyDeGjFqyPuNCop0ALBpd8YUFrOAYzyLp-RYvWWWOEYZy_3dMO_Zx381e-NGN30otZ_FfIxonKek3X5R7kpHOYlypddilheZYOFOtyIdvzRABSgi6cwGF-jnjdFEkPFdF0L31O9VA4_c_kCzSLRM4gOrL8Fgi8UUqcx7AUBa4SmDoBS4_pwRxRkRvP&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="PetSuites Mason photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>PetSuites Mason</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/mason/" class="back-link">More pet boarding in Mason</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of PetSuites Mason?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

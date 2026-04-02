@@ -78,7 +78,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ9QMdQsWPwoAR7HJ401j2gXI%2Fphotos%2FAU_ZVEEZCPbADP92nCJruT5tJ4RCEQfP9pYTAp0BK-T7mNOYyX3uYfdJtbiwdyOWPETpol-SCmySH1rWdU6R0mIRpo_8g4NhXN1oBKYpaibgU1iTcp9vHTl0fPC389edQAzMtz20EUdcZVgBDn40x3QpTa2Gfb7k7gaV2nx213rcIqqk70WJ73xjjo2Tin2utXa_F2vePmTnoa20wQuOloy857k5srfmU6L6vMVz51c0NyPmfGTMsdUFAR0x3CRnaxOO57WRFRYg0LSlfgz7pzn9KPyhvu8XIAs-wN3FFmf0iIle36mJ9wSM4r0S1z2RvB0oXqI4EYfviWvi36vf9l6wws97KhYuD6s9t4uU9YM3z6iTYFsEEKpg_6IA3H917m33vI3OX61q7gtcQJODqZvWsVPg9DSIegexyKACFGNEwSUA5to&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Jim Canino Dog Training photo 2" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Jim Canino Dog Training</h1>
@@ -192,8 +191,9 @@
                     <a href="/boarding/sylmar/" class="back-link">More pet boarding in Sylmar</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Jim Canino Dog Training?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -339,6 +339,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -349,10 +353,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -377,7 +377,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

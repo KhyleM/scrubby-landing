@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJMw2S_UXrwIcRsgBmc_au86k%2Fphotos%2FAU_ZVEHKjGZXg9PLUl_JxohoswhBmMwOlqmhyPRuX8LKCjLEyDRugg-8wtAmWFSvAE1tBSysTOfqa4V33ILS-r79e52UYynocdv_NTYKaQZKoFvWv4kNUXDY7zf3ozODeAA15XNEtbAX6d10qUPDKDIwc0_Lai8lcc0hKxhQXYcC_EDCLW1TDbyqBuMvptbCHAkinqvkNE9xp1lGY2WkldTL0MlLBNgpZ4ZhFoVCXIw6wkvnylKq3sOGvytwYP9XjbVgiTYzvWM-4RrAaqnofQ4x4283JWzKMyUd6wefUyp5QzDyJucbsinlrp9aNGTqtsokd_hlF6qP4x6TcwNra7sv7K8XwNHG82pZn5Fe1YpSZ3O_e60T4Nm7omktx0s1K6kxcdvp1Gb9bREEn3I51O-zKtewdkXQn3rt_Vb8EPtGw0zHBM-uHGAYvnWAKGiIF0Q6&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="KC Dawgz Dog Training Academy photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>KC Dawgz Dog Training Academy</h1>
@@ -197,8 +196,9 @@
                     <a href="/training/overland-park/" class="back-link">More dog trainers in Overland Park</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of KC Dawgz Dog Training Academy?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJiVm_OKjzwokR_8xuV0bFDiE%2Fphotos%2FAU_ZVEHg0PBq5WtPbmUQ6M7trAaOtsTUI84ovuNs2I-hVh6ixP9NUlKiedhZxPEkWzpl4_UCNUNwEn-nHWZxaMwf_iY1pmIAiNZrdpOoN6yREodQYcnfcdJWj7wgtGU6MY1nMX6qUbQt08Is0hqpJgptqIAQskS4iSlyGrC6hBfHk3chS9YIAyhlcrpvZOVb_3zg9fuAEC8826uzVj2GJZkWLk7ToFTg5evDTKE2XF052etEio-umF1woxV3RpgX-I-OMM_xrFtcaPLd71MbYyB0qrDrvNEX6BWc_o7t7CoF3HZHoZLsqGDSspDxpf2JDJBhSCM4NoufXAiZsTy-vBLVU9IfhAXxNtPcQwqmtgEUvXe21h5cYAFCHwRv-sppXZdusoIEPNGEqE9dDfVHecljoZ5GAb378gHxRbW1uL2C0JQFCQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Your Pet’s Paradise photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Your Pet’s Paradise</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/yonkers/" class="back-link">More pet groomers in Yonkers</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Your Pet’s Paradise?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

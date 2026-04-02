@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJF2G_xHn2t4kR2_ma5D3m78s%2Fphotos%2FAU_ZVEF1I45wjl5HdhTP69i_V3dba3dl1hXmv0WURXwlsRBUUETSEenNUF4A507631KgZ89jK8fMJte44Jt_8JUxgp2u6zD8h0XCz39KnTkF8uBvTUdFnSGS4yUAy4FNxTI6qkaeq_Foc0LX9pegurxmRDDx8Qe5FYh2JX7pffoKpsDib42R0hwX9zL0_Sh2nFg4loIeODFoUSnkbdyF9oL7r4MGU7QFvDi6vPPTzhq5_Q3oglDSE_FxXqdFuU-MUfMkowyG-_oT_bGvRYz-1cfQjVrmjKDalaYHmnfbOslczoDNOa2RNaFgVPNoqIVc3jJypd96P8kou92ysUXSsM5ohAEwAFGT1HfXJJ5DqjSUcKeJr5YWc5rxSge3ss3h2b5gzZM6gC0Tph2BaDk9VQGM9Ic03sNzOgfMO9XG60ogfT912Rri&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Leah&#39;s Dog Salon photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Leah&#39;s Dog Salon</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/annapolis/" class="back-link">More pet groomers in Annapolis</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Leah&#39;s Dog Salon?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

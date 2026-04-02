@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJq6o6yhITBYgR47cG1XBUxYI%2Fphotos%2FAU_ZVEHHjNmPukzUWBIWCxKF_7QiOOsEacXDGdtPYPJRfqHKSSTXuzhpg11cocSjC3B8Tn60q3CeyL1gUmXXf931nLbdDxE0sYaWGBKHEZuY9jAoDL31TH8Ovk2XyXOnM27qlchK2r1m3djryBGoUcwvTJ2X-GSDRCR3wLTRtN2FvXy2ZDHLrga39h57XObuLwktu3CmmIda1z7SrIzO6G8iMrgclKXf3j9s54EBeglD3CpqX8jjFME-Z8Z6LWOQlQj61yd7FX3t0Ygu1vKmG1uZTUE5fc8dm_i2lUhDUJJ1mPp2DHkq9-B_UNQSW80mMb8w9Mq74Pms5CoBgyRwvkK6u8f8ZnD8paspMkK6t1LpzC8O3UnxSpToiJGPRJE4uJfcxQF_qEms8h8z_83mMyvIHp2NpK7h1Jw9wqUp7NaQDXJYRUvx&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Fido Fitness Doggie Daycare photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Fido Fitness Doggie Daycare</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/franklin/" class="back-link">More pet boarding in Franklin</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Fido Fitness Doggie Daycare?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJT7H7vG0JkFQR4-JkXJ_UAlY%2Fphotos%2FAU_ZVEEiE9XY7lRy-UurqFUefvpu-97PcohJgjW_ZSrqWw5Nt7kIOrE5dR4UXzV90kJ-YQiVizkbanUEBVNdW9SXbSNWZBglhB2goMLj4Q7_YWYjggBhJ9UVE_RsHIeL1oAZIChYpG2_rpglhY8lYd0-A38rlciFhZWKwwr14vlhE_SJW60O3g0YaTwz98mL_Kj7lEV4nOCbnh7-Jms6Qh479mPWk7x2_6z1XYk8_JfI990djsfxi6IKveGwO71w10mx712Nv5o96RFiPNLgW4_1IlfcQfGGqjiSshRyHvja4w4OH53Atp1XXJGTJJ7nye8Oq4wbgAr8BMSaiSH5Lue3gS_qjELYLzoo6FIzDMVPcW9pZvETz7e3Xd4gfwv8pSNwkcswVu-VKprQ1xymKfFY6UyC8HUVGzBe55WljIxZFns3vng&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Roscoe&#39;s Ranch photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Roscoe&#39;s Ranch</h1>
@@ -183,8 +182,9 @@
                     <a href="/boarding/snohomish/" class="back-link">More pet boarding in Snohomish</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Roscoe&#39;s Ranch?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -330,6 +330,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -340,10 +344,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -368,7 +368,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJNZFWu0g5s1IRc7g-3ifRQnY%2Fphotos%2FAU_ZVEH_TJGhYl3Y0obWqDkOVhb9UGE5xHBEI4EWMhqIWXkFHALjInh3MQmVrbII5Le5mSPCc-qG_kvK7YM8Ac2dwj0OCURaSNn6hDX41P3tcKlfxcui3ZSgoWGqXexCr_bX2-BHUcUiO1rGTWKI4Esk9LvLSWh8HzjWPh_Hv4V6uEYj5IMN8gQ0AN6no3IrRIHnBv6dqbtRnWTtWuz2ZbLJWjKXaP0HCDMUYgA-9ef733ak6DW803nJZMfqnPh2Fwo4T9em8bL0xYPXQcRYcHX9Gg6mHClWowQHKPU7Yink0yB6ixbkVxDzqURWmCJf3JqQQh7sUmoVZkuwIZFfDgnYq7nTYQ3IZ2PB_1wl27IXieblVs1plpwMpIhjfZMmw6bynu_8Novhr7zUJexosNDf-a9pqs6QO5Wmriuu86B9amlNug&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Furry Tails Grooming Salon photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Furry Tails Grooming Salon</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/champlin/" class="back-link">More pet groomers in Champlin</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Furry Tails Grooming Salon?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

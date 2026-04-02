@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJjYnCB-UEw4kRcFTXqofPyTs%2Fphotos%2FAU_ZVEEvcDOCygNK7u3z9bt8t3ma62RdXM2D7fgK4xvhkj6q-6lsR8PR0IswdKIeiAqnGrPU-keIBfY-a-yGYqKe2Zq88d8kZP7gQLURrg0BggG0LH31qfCIGMUK59-dldl_Anm_np5lCpRrXN6auDiiO_r7tPQLZym63HLnNdZF6tj5kyWRUOx2dAULIm-YKbY0BmGtjDvHe8H0buSfMQB3FQEJKyrw1zu6yMB5NJP2MSKUJXcsDmVFFikZbUdS5nJk2G1wvPDqnFNYxOmmQq0fvwfdCzxkSWjwrvdf_-RVw31xoQ9EFGSpxOFJtw2YEvZwEHNhak3pBju-wbGv1vlUHytda-QLUDYSxslW3yMGV4uMyJAMXB-xwwjHGXcuC0onN06sJEJSbqm1CGtqZ-V0xZZklqkx8cQSUVwU4uYIozfkRQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="4 the paws llc. photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>4 the paws llc.</h1>
@@ -198,8 +197,9 @@
                     <a href="/groomers/kinnelon/" class="back-link">More pet groomers in Kinnelon</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of 4 the paws llc.?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -345,6 +345,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -355,10 +359,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -383,7 +383,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

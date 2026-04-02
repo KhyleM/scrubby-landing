@@ -79,7 +79,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJT_JoogrvwokRRg_iZVGOuRk%2Fphotos%2FAU_ZVEHBN6ZLJEjKXm9sadKXb0KAqOzlXa-OJp6oblm4LedT-V_h6r8RDBH-GpxX25N-JU8x4m0VsJaM8t1pDTRgfmQHU2Aal2HLx2Js1wTdOLeVTTxZr5FCIZG4-xn3abDkSZpcRUuE_433LbqyXvIPA9ebTUC0X2WI6LHIJS3zwjtOGVroahNJcAb2-BEZFSKugH6wbBFNMRklgBKwlfBzpgG6MQjmCB-imwDzOsATaXZqqgV-jq4f5H81Kn9eW1rAdCaIoMJ3SzdVHKj15d2054eUghcvORCN-I5zEYZdv0HmpsHML9lhgP3BElzKcFvF7f_VpQM0YHtG0llNv5Hjpiwdi_TJGQPWX4laxb2Sjj1BIM3Bz3PRS2Cy6ooE2IC3iRNx_CRSMX-KucU10EcKs0mApIfoJdrj_B1H3ghaEi-b6Q&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Puppy Cuts photo 3" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Puppy Cuts</h1>
@@ -183,8 +182,9 @@
                     <a href="/groomers/river-vale/" class="back-link">More pet groomers in River Vale</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Puppy Cuts?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -330,6 +330,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -340,10 +344,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -368,7 +368,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

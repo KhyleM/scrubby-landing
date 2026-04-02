@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJnfAACd_eJIgRJlv9vSoee78%2Fphotos%2FAU_ZVEFdjeM3UcqruDJJscUXVwVKVK0EE2qGbtb5xtnDeV6VI_LIYTi0o_4CAcWw8Xnia5POYtAHYSHuHQTWeRwGb0Jwya-L20pFnfBbly2PcHEgouFdnO_Oy8JMUjrBKG0kGHczgqg9Yf7RcdBa_7WTt5sjXD4F0CVhuF0YPJBQpUY_WnJhrJfOtDBW4o55XDu2nXgnRnvIhwWlGoP9L0zTpgr30ptX_ZvGsuBZja5t0ozXNtbbeCC_DXdMEqTQrNp0p6vCdBF7-dFbQTaZrLaTv8wMNZIgzZGwLY8mnbBWen-U8Kcd_4sdTk5-BAYD88qZSGgLCR9ehOxxbaj3WjJ0uU4voJYbUZspCAdmrWa8oWLQLBbFlom6OhNkBjh9T2Mawn8AUnnivy7w6YaQtH60aJr_EwS0nwIM-3t0x-IT_QaSsw&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Animal Activity Center, Inc. photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Animal Activity Center, Inc.</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/clinton-township/" class="back-link">More pet boarding in Clinton Township</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Animal Activity Center, Inc.?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

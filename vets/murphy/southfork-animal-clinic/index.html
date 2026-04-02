@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ5eimhFUbTIYRPc14MQ_uaF4%2Fphotos%2FAU_ZVEEB5rMuSuYfRDovilnD5y7vTcTd16mm62X37FI-GVtP0zP_MHn44D9ZhqZXfg1PkTt2QJONie31y6QiCGvTkELuN1T8lbEZme7w4O9WSjuebClTcIKn6MtzyhldrCTvqEmblzf0TBg0Ik_Oi6vtQExumIsRYt_of0lqVJ3MvV3RGVStLGFAgIHac1aEp6zBMsD8K82giw9JZOHoDapkTDoUAt3F5s9u1vXEKLxNkb3llJg8MNUaQUvvek1LxczSw_YkzMGBB3jz8vifvCy_a6mYCHtt-Kt4MQIMGjUPvD5nKrXzfEBSt5_2Qa9t9fNi2rlZnW4ii1Nwx54pd1TazwhzNL29QUZzDOTe7KB5pxO_j22O81Ag6iFqKj3S-BOSa4XgC0lKymdi3EazglIPoJ1KqRItJInyZmFAu_Y8hEQeki-hjiUYmSVMz6_17-_P&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Southfork Animal Clinic photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Southfork Animal Clinic</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/murphy/" class="back-link">More veterinarians in Murphy</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Southfork Animal Clinic?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

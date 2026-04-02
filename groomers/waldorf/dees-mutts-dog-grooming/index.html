@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJTXs1cCmht4kR6HZoJta-Q4s%2Fphotos%2FAU_ZVEEorG0p95ZgH-L6KJ-kmGgJZxSlumlobp8upR6HubvPQaFONcNNngD-ydxU9ES0BYn1BOy9GS1KvKWS8zXC2FwQ7hB4F0OZ_3bn89E7LNt2k4F1Wg1r9C6ibjUyTSogRNNudgRnfsTRflS9m9pVu34hWINYJWf1Ge_XPpPsRz4tGPUoCJHYx1MtgHEYUe5Oxz6EnDDsqqC1KZ777XPheg2qrI5Pm6oM-d-WQ_azxd_1CAwpZSi985OlE8b7XP4iGmjmZbBRLsaAwBWuMANTfCt2dadMMdzneUmeJB8UNRGJnw&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Dees Mutts Dog Grooming photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Dees Mutts Dog Grooming</h1>
@@ -198,8 +197,9 @@
                     <a href="/groomers/waldorf/" class="back-link">More pet groomers in Waldorf</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Dees Mutts Dog Grooming?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -345,6 +345,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -355,10 +359,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -383,7 +383,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

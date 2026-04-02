@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ93t_AhNY34cR-xiul6WTf0Q%2Fphotos%2FAU_ZVEEJ7ggnvTTgQDnBlOiVtArJl-g1DpW91q166fCAG-LkpclyhMCuO-bhoAvPU9kviT6fjusE8Fd22jCdnLZ7s-F2R0KWxZaORZMOPbiskAhKcurt5Y_Y1ZFgFazVKjN0X49_cyQse5kKcRF1uymnlg9795ON_3uzg_hmVS2tpmbj4wfxGXfc2J_ULMLlJ_Isbt5-3kYQGMxoOSJNgydy6naJ9k2qaDVlowd4qdPY5MP9YHLNNA5k-t1VKxMY4r5xV78rRz-QSbH0dbz68CpYyoBS3RPu4tNWIhoElgEo6XyqKQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="LaBest Pet Resort and Spa photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>LaBest Pet Resort and Spa</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/edwardsville/" class="back-link">More pet boarding in Edwardsville</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of LaBest Pet Resort and Spa?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

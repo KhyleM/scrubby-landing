@@ -77,7 +77,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJtf9JDK_05IkRUm6VopnJDrI%2Fphotos%2FAU_ZVEHdSeFCYQp9wY82L4Y0L_g1pjGBfQmSnu1AachPRmM1aX2U2oU0IWwIJlycgKAY4Tm6-YRFygNV34LjCrrwfjRjBaETTT3we5OMH_4PVcXed1or8DcrY_SjjlxFO7PXTjaMPSeTQFoDfvaDiG_yld0LYcmRCJLVKaXwM825JoKHaUJSU0GlpfA-aYq7DzPDgpuZwBsagQEhsQhBCwoDqnbC0O3ByFSqhPeq3FGaazRKMgKd-reOUVAQn_FovmWlrHk3knkiltbG6XVTJkG4ONIveHT_2pfVjgvIa_-H-USNBsrG0F1CTmDFOgVLazCNJKI3b58lwZrhP5PUTTmENkWt9C18fbU2OnslsQo94DVPbfW2busm5Vda4aiQpRXPPIHR3qhhuiW0dHnP1W5LFW70xMLyP6-aiAu54sK4UUBHjQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Taunton Small Animal Clinic" loading="eager" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Taunton Small Animal Clinic</h1>
@@ -178,8 +177,9 @@
                     <a href="/vets/taunton/" class="back-link">More veterinarians in Taunton</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Taunton Small Animal Clinic?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -325,6 +325,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -335,10 +339,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -363,7 +363,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ6U_ljYO-MIgRygVdRCpgxFI%2Fphotos%2FAU_ZVEHDaeb56c6A0XJn7rZ6hHJteBXMwDcFiFUZjrvrQiHi8k6XXJ7mEQlfJdwoAb5EBNwyKWeRPODxKr6rQlrF95e5p1T-Fd4HORi5BXKMvLyc4euWc0ZwKStv6ns8seX9X4VRWPnL6jNr35xr7sIxS-eUduaHShQVzei9d-KcXwVtBs-Z0KTpobZCtykRE6u67yiunUTU04whZrZ3Tx8w_f5d_v5Ua-6BWyz2B9N1xFcteetnMXZhp8naZ74j368lJtoT7MI_rf3WubFm6ZVY4dlY-u8tZd9kocAaf69-NNnK5w&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Misty Meadow Farm Dog Grooming &amp; Animal Care photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Misty Meadow Farm Dog Grooming &amp; Animal Care</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/valley-city/" class="back-link">More pet boarding in Valley City</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Misty Meadow Farm Dog Grooming &amp; Animal Care?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

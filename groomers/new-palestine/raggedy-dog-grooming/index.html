@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ3Uow8kk4a4gRicJi30yojn4%2Fphotos%2FAU_ZVEEmcv4zM9R5y_3B6_281-p0NtrnRwkQtxbwY_bl7TGj_GDU2XfUNMpH-SZ8C5XQllb8OcURgade1N9bRdKX73uem8SaFZLPniQKYA-HnB-SHVBG20TOYltK5r4tzpjdzBRxBPAOdeeQigqJ7rI1bPhQNQVCub6K5Gp7ki2HxapEZ1ps6Xm4kLIuthpIk9OyfjG157GVsxJbXGPRyAyS0sArwNFqEV2ZsxCwjoKuMmKhZzTPGNE_gu6SpkDmiIazuYVbLZY9CwK-bgfdO7oCEY6UOV-pn0sdPwoXMkSiVtv2NWUw0luNHyTgIxAEAKLVTVEqSLUXTgueC5Z6uWAvoMtv4hWyjnPp-G3zdy54KWjhHqUa2P-r2XqRxvgso-lrwNB0ntI1mbuWTnZESHAACPvfsZWCDo7B87dBoWaU_AlR9A&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Raggedy Dog Grooming photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Raggedy Dog Grooming</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/new-palestine/" class="back-link">More pet groomers in New Palestine</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Raggedy Dog Grooming?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

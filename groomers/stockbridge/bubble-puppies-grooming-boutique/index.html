@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJGXnqZ49X9IgRyFAp_F0oFCc%2Fphotos%2FAU_ZVEFcoY8jVb7yNcH_MzH7McEjcTi5zlzWeQzD7T_1kk3NLXWFD8ObEu1S9FfulQZIao5qCxu-Aac6Z1ZYThDvdEHC1Y-UgrkGvmA21HYk3qQWcCN6i8J5idlP98BKvifqzZBAcu-BfNzZqASuwyGE2Bx_04uvX2ZaN5KsdomNTqsgSAopjKgKXoMR7ssIRkVy7pTA-BvJBUmz8RCbViB6oySWF5WYjBydGKrcYEdFM0YBJhl59yCIDjsZtCH4wxWGANYg7wfK3qq_JVkoz9gjoWmE4DQCnNioVR7qg72Zb3vCswZljMNrUuqf66ax8TzI2OYJhSRWmGHfdG38KWkTzl6tF808jF-_corHBoyTQ_wxnbavexWcvQnQmlJJ05Gbe7cAgpH4VGLFbQ5y1yi4K2tOeD7xR8NA4mQMCnMBXSgjXg&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Bubble Puppies Grooming Boutique photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Bubble Puppies Grooming Boutique</h1>
@@ -198,8 +197,9 @@
                     <a href="/groomers/stockbridge/" class="back-link">More pet groomers in Stockbridge</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Bubble Puppies Grooming Boutique?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -345,6 +345,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -355,10 +359,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -383,7 +383,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJXZ3MEGPR3IARn5VDLKPGSoM%2Fphotos%2FAU_ZVEFVrZUT2MkiiEH3wRSez8Ui1ljwu6iuYLZ055-tKY_umPnKZR52LhgWd1x2xUeiLZtqBwdQQ207Vi22xKNCxpfhh50DNZ03M_gv1CYSDafZQkc5ZjwLjmXCVjoa7y5RIQEglHLyyOGhEXyvxrMRzavCL7eDalx02TdCRv0csKLHhtoBhqA0kyY7EepJpYpbS0QcvQYOiftii1VRl01hz-7BBxusa9E47IM0f1FGE7GMnh0LZReBTVumjss0tGRwx8ZrghwTWBUPKoirsNf85-pSfiHHlvbOD_ejJqsGfPDl8uymPs-eIpXkEcHVEoO6lCDilM3GnSP7vHn7otbRnDap84nxEHZTUsY49WRpRDesZpLfg5rvdggY3GCI5n6RZjxxLdAJMJM7gmvhO-CZFqh6QvwZ4INWSPeft6_u2AVgc155&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Veterinary Emergency Group photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Veterinary Emergency Group</h1>
@@ -201,8 +200,9 @@
                     <a href="/vets/anaheim/" class="back-link">More veterinarians in Anaheim</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Veterinary Emergency Group?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

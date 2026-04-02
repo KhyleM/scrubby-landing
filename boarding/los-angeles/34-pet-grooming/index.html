@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJs3kCMJe3woARgBVVdOT_aQo%2Fphotos%2FAU_ZVEH-daMdjSmdDLsndL7hoz-JyNdGH2UdVu9sszRN2jAA7VPn2FbXXeNx--kJuemN-vHEzCocEUD_1NWty6k_A-XOIeoZiw2rF7OfcrQ10hIeSWj1J-WrFgTbwfN-8pNhpw8X34OiFpgB5aEcItFcN_2RzHKdFE5PUpnuqxmZIisYL5IZ7VI-vHX4-F9BH__N2RGulyITEEjq8LRQG9elx4Dq-BXHqhahdQfhwj7gK6w3OOW0D4nlqkwE9OKotxLbCEo6neBQLOSGbUHvpXVN7zwxaMziYg6G3f87HkELonlyd-zYBSkrRuFvZe8Fz4D1xg34WUbQMhtBjyjlV0vK_PLNM7PvHK6exHFpHSVXLX8IZdesDKZFtrb1hkMYZzFwZKwQ37ZlmcmL08Kv3BDyfRvdPZM8CuPTBc8pIjHf2_7f8g&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="34 PET GROOMING photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>34 PET GROOMING</h1>
@@ -196,8 +195,9 @@
                     <a href="/boarding/los-angeles/" class="back-link">More pet boarding in Los Angeles</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of 34 PET GROOMING?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -343,6 +343,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -353,10 +357,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -381,7 +381,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ__8rksqV5IkRCAuVaX2iTQ0%2Fphotos%2FAU_ZVEFqy2dWS2FqweuD23pW-WA3mD78YsHETzC0k2TaL4QtSh-vRHcYW2xJ8qGKbuRl8jJIUkuJvQV0D0Tp1iNbTCc6g_S6pYRC6JPidA0dRjF4LLDqOO0YYGxmFV9iihax4cDCWffL1VOGss7zgohKGWT0cCMOH-wQMLS3Ra7dMBX-6wHs0V6qPBLbAj4VMU1mV4UVt8byk0FLHcues5W5YfeTDAv46SNe1m9q_-2KRmY6EMZN32NEgdssyXtF3EzvK9br5YXKE6gM6TrlJ4W5Q-Vv6GNRzJwPiAzv9CmGw9_P7-0IiIpaU_DPyeFZqYa276s0IjNMo3BhZOB5mMoJ0rov4f2sqSLnqLIVduo-2UpwBpUbT3jXIJLLY2zXEAn9bScS4GM_fsVvSSACt0LGHy4KJ6AladcJct1X8UGqi_A&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Riptide K9 photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Riptide K9</h1>
@@ -197,8 +196,9 @@
                     <a href="/training/middleborough/" class="back-link">More dog trainers in Middleborough</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Riptide K9?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

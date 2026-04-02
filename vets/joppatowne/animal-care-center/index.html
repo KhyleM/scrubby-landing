@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJXylSFLvmx4kRwWV9nDr1uaQ%2Fphotos%2FAU_ZVEEhrYPxjHXBWjxWF4ubTijP5xi0UVY-XfstCQsQ4x-llH10xj8koT5iOIu-vZpSxqEGxsBOieGpiOWFtN2NBbWS8Ug3X1dS_fE4WUco0urOFd3Wh3qCck0pGThKv1X76RgbSWMacE4R95i8igKqfPKqFe0ob41AhHIBjPGxPoTzQ1MlTXeFTnIG9PCuy4ZoJ5mtbfGOXO6ow7eHOnM-cqWcEvxuB3cTReARh5Z5PnYudFFCj2YfeTC5QVobrX6KuFLUG8tTnRHdXPqLSh2_BwHqNcomjrH9TzVnYNOthxmUomQaQQr7Vw-pGy3MJey-jcvGywbFCFlG41zM9MyXeETSMLWmlzBrIYgM7wkxbkscu6buiQYzYv5uLtE2Bgf_IPAbV8QIsL03hvy_FayfOFv7Q3wA3tsh8_PXrWB7-SoJF70&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Animal Care Center photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Animal Care Center</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/joppatowne/" class="back-link">More veterinarians in Joppatowne</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Animal Care Center?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

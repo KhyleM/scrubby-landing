@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJtU1_B4pt04kR47D8Q2msD4A%2Fphotos%2FAU_ZVEGG2FCMflaSyvwbzWIyS-bc-1hMqYEu62fzACGviVV-jMmDROoTJf1cBJWlMS-pRukV1E9ksH1l016l0q_JP6dBrux7-JelVF-QM8qhaBIXfn5vLaY2BooULX0l6S3G4jhGUYQE2IxIQj817ECDuj7NGz5rNIR47HgUt5dQmo-rJGtq2fqf30OkrE7Er-WVkOQHNpmwQ9UT4pNHavlNgUHqMCVUD0jq5eR42gxGEOfWGX7MT9l1G5MsOr8y5kV4KrVAuGUvh_g8gPCPPFky4JdCePKI2uMhM6bMJ4mznzmjoyb2kDexUV-tlbJGlAjKf7dTp1uYbeVm12lK1Af6r0xlm48v9jBTUVcyW3yeRXTgLUWSOm7A2H9Ii9w1xPcXZ8l96kT-yCAqfM73CQ_ttkIPNcHPfFqB0YRO49SvpDCThXz3uOVPYEwklGr8JU_E&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Bubbles and Barks Pet Salon photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Bubbles and Barks Pet Salon</h1>
@@ -194,8 +193,9 @@
                     <a href="/groomers/tonawanda/" class="back-link">More pet groomers in Tonawanda</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Bubbles and Barks Pet Salon?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -341,6 +341,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -351,10 +355,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -379,7 +379,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

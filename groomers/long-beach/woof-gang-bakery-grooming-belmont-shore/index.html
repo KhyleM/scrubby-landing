@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJNw8D9G0x3YAR89rJa2qv97I%2Fphotos%2FAU_ZVEGs6ylo9lxwwzrZwoNpsHQAKrP1cT-VBKxRDOvQzAXJaG944JSuh1Q4sd6abnOY3MUP1CDamjknZykuaEg3gLaK1sabZX0QXv6Fz-wlEri8ZnTMcqYtR7ZiROQv3AjpD4alTXmrjM_vAj1ZBrpy4YEbZYI1UkgRrbE7HpYb7zinCHjPE84vFfWgqhcUeNsB64JN2OoehN76bSidW68YPqXCZLvpQ7tDhp0i9HFqQmBUuVXAjgMFU4NEIJ-_Tzu9Q0eE-p3rue4tld8BcajJuEbLNFepA1Ux8FzFiatOKHQ-fFyJ9eQPmTYzvE0XtAlTP1VIRhV1TeDhn9hY6NcKM7HDqip7P8xl-Ghcur8EmwVWFbbnuo3mRh4qGSa5nFgO4nQsus58kv0gOxj-4qYHkblcNj6UlvybMZzLgS_xIgJS7it1X2AuVvjjT9D4ee2Z&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Woof Gang Bakery &amp; Grooming Belmont Shore photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Woof Gang Bakery &amp; Grooming Belmont Shore</h1>
@@ -197,8 +196,9 @@
                     <a href="/groomers/long-beach/" class="back-link">More pet groomers in Long Beach</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Woof Gang Bakery &amp; Grooming Belmont Shore?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

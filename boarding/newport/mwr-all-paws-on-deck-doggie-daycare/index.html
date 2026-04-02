@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJwXtmfQWp5YkRgo3rvG9ga_E%2Fphotos%2FAU_ZVEFj2QJbie3cm-aE9HDKh3bo6kAAtEEzONLbhrtAOR2UyKrFVFVD5GBy2Tz8KPp32xUui9oDrIYA2n56BleM_Y7zngVLae-j6fuDvsCXOPlEp6Z3zlRdEoxEFc0RLqihIzxRwGROk2eJ0w98h4UfxYlaGeQk-NTKsWtcbH9_EWuo7y1oXU38WWPj7SOl1BMqae6yzaDlzVo0E8dQ66AkNHIGoBqXALTcmo8BDa7p5WuDzHs6o46vZpBSzN90zOM3QHMmPkjAgX--T-PgUjz6dBrEBR_EKoSysOBK1bwfW5pSmQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="MWR All Paws On Deck Doggie Daycare photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>MWR All Paws On Deck Doggie Daycare</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/newport/" class="back-link">More pet boarding in Newport</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of MWR All Paws On Deck Doggie Daycare?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

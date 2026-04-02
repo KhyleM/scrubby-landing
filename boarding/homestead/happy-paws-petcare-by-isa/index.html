@@ -80,7 +80,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJDa8UPbvd2YgR-EMxCsPmxtg%2Fphotos%2FAU_ZVEFhNuZMDNMqiVwQq2iAvva053-VWuItjEKYwMzdswkKakbdrMMwcfhALs1Mtw27qHOapBRP6TBE4DukdIJNEl7CpTnNU0rH-cEzRDKXop7w_gXfpReLF7ZqFAL_wpD-pPp_jugyzxbkJUBtf2QkaDQj3to7qKo7e15yY1EsEDSWpvvLRbtgk2ZzVDMhjefDLYqUzViPjB2HsFQdAEtc8w75IstF6PT_DWQdtvsa8PjzN1-2ABPiV7ZhB9AFyQXZAf4ZzBs0Dz-m-KrZ6mgxrAWo6-11nqOq-YOTkWxw20t59pu3ftOncD8iSKcihidi9iDyeQepvgIwuaDT5u163oA2I7tMov7yie40m1CjknemiT609NFvRNmFV9BdBkqBtIDrUZe4zCkBzVZHZsJ4KaAyFlJ2ZFZdtn4guFmTZK0&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Happy paws petcare by Isa photo 4" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Happy paws petcare by Isa</h1>
@@ -191,8 +190,9 @@
                     <a href="/boarding/homestead/" class="back-link">More pet boarding in Homestead</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Happy paws petcare by Isa?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -338,6 +338,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -348,10 +352,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -376,7 +376,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

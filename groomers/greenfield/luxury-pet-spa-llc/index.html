@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ04rNOLcPBYgR2lPq3yU1hgA%2Fphotos%2FAU_ZVEFXKQfme0609FjX2TqCdIm8-8VcIoKpgIfe2fEYGSiz_ZEC9Eam-N1u6fHKOW4SZWV-9I7ZCx7_8KCx8PpU97Lpi6Ju_0pwyZVTqfWF4j-tUhD83Cgaqupck5bJkau2eHzhwCUzV8rfloTsN1PnTAbqEc0AFommFLoR3tq4_6Q4CYniYnbX6stLByEvidDw2OQlgL9uHHxdmGZ63XtQCpIUMlleiQzhMcJnj9rimorWD6h43o6pTU6sm702_0Mirf72xvx-VWllsbIl0E_ATmyatTNfW9HLsClAdHiSNtBu-b_GyrznKOV7oBkKOnUuzq54MqQnujs09NRUPPpKFeKpTacRPl38igOVlMov31cnunMyr8ep8av_dD-hUQScu5Z8THur9DILcfIC8Vx_9OsziUG5SBUDoS3EVXhvyZmxvA&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Luxury Pet Spa, LLC photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Luxury Pet Spa, LLC</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/greenfield/" class="back-link">More pet groomers in Greenfield</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Luxury Pet Spa, LLC?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

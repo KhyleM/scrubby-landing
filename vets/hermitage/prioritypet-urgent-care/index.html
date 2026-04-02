@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJQQxpUXNBZIgRe6zMjw-h6vo%2Fphotos%2FAU_ZVEHWH1Hwmikm_BaKaPUS3wV4fhkkoub6Wak9KeptWVW0-0azyt38YzICS94vWsj0j9gYp2asL2sEkjHGkDhUGu3PNYiPxeuQJOJ59OrVKI0KA2DWHKrAJo9fVbjfFpMMM9SlIVMjVQFsh7emmlHlw9E69Lao-zyn7b71tWYmsP35MbxTeUD1CE-Hcuk5IGsbQrZZXTE0cEdK12PY7Y-nw9UMo2XYsSGVvZIvoRf1ylcwpQiqsjLd6nk9jEAYJOaMcm5xaRArRGhvqBrQH77_BbuKJtmKWPKsaEaYbKgswNYggogCBgFh3pfoc_0no4XV8z6PVEJU3tqD0pJxyQPXw8LyDU2p-mrPIL1Sn4YvybMAarBw8_AZwcNcOXm5zA_ZN3j5mwALQkTX2KrFcd5h9_Bh7rt_0vM5p7lBE4kcZ_maEO-aOVIQ0LbsKu5EWUaI&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="PriorityPet Urgent Care photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>PriorityPet Urgent Care</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/hermitage/" class="back-link">More veterinarians in Hermitage</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of PriorityPet Urgent Care?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

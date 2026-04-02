@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJzwKQAlm0e68RP9Nf9O64FHQ%2Fphotos%2FAU_ZVEF6RggLw8JQGZY4NT7LA7CF3Ai7MJmNAJ7pPJJ1LB4v-dTFQLd0lUzyG0Xq5eeRnl7mSDiBrX-aGfGbhlodzok2MwCK_FOuIaitvh1Vn0NJsRQWUijBUsTt4YkkWk_tpA1etZQQxK3nDXOaZq81vojLRxLT6hvG-sqXKsTH-7GuzRnhlxr1DTGoJxzu-KZ7O3kkvWVYk19QXdg9iNk9CtaWrJ6Sywy3mz94pbyiF0-AuTORqsj3XR1yAMwrWHjVxuz8UYwl1m1RWhFwiS6DhOK4HeAgt-AfhVbA4ZrZJqgbBueoOmBPiBGG4z_OWleOatRkxsn4IMNiSAherNb_QS4Wg7wzmfzJ54-jEk3CDkM2FE-Ido5ZNMrCrjcURLZjq4-9fwkZXo2KIxrrxiAMkDkwx8exKABjSDD0dFFKdqZ4ZCawRUCxT-QIgBAanQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="The Bark Park photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>The Bark Park</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/birmingham/" class="back-link">More pet boarding in Birmingham</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of The Bark Park?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

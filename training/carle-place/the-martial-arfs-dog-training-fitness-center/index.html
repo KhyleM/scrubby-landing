@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJd959VI-HwokRVuWHoBuw_xc%2Fphotos%2FAU_ZVEFyUXbtJRnB6sKO7_g1raP_H92afS99On_LGYf9XuLSrjE1h6qkJTplUffbI0BbQOUtkmLNMoCCu60yTHSQsHfEhSIVgUGxTWDeFlv5Sg2588NzwXOFR3QqNhSKfMrDCxhgqRaBHqySruDo4DCfagwHgBzxtA93xjFBZ8xt7v5_x8NH-2o8imce87XSNzChd4Dd28OwMtMNbJyrzMfNjEo7u3zyQST9oyAhL4s0ha9YdgeSLGNUOHzMm4l6zwWAQZH4RzFZLo6LL8CbZTwtNtuP_-kH489GjJ6mwd9v2m1LeqCz6pSSpzLXNBxB9umh0Z6JQRwCD_mFe8D8uIMjSePDL2elbICT-0OiIRJT68f7v6IiH6ZZClh_ZGWWbplw5pg7B6KwfwMO9sbtpnJDeZLuNA6fdRTirrIEyUlkLb54avw&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="The Martial ARFS Dog Training &amp; Fitness Center photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>The Martial ARFS Dog Training &amp; Fitness Center</h1>
@@ -197,8 +196,9 @@
                     <a href="/training/carle-place/" class="back-link">More dog trainers in Carle Place</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of The Martial ARFS Dog Training &amp; Fitness Center?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

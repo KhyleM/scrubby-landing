@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJL4GmifEnJYgRhb7tvokROYg%2Fphotos%2FAU_ZVEFH0sVnzEdBgKzeZylGn8IZWh60rj_6v0GjN_DfdRFtPcO2XHdXHme9JvemlVs7cqlG7pjK_hRh-_xLeAT1uheH5oVgKH7okPQ3zCUNEXKGAKDKlozqmzICIH04Nr5LNSCZ87lVXq7Q7gu5gkW1ta-8YJ04H9k48CQOi9R3EpQ6Q9undnCfWRVIZKTXp5dyDrM5nkxOFjlgokO4GNKmuCtVixiJbr9LeYntQ9LoSBjiBwCRzTRFiqJH9ZKRPE8otEgzWvBS3VDdN9SiD4aV8-Kreige6YUt2GwadmDIKQjzZqakygY9Euuy2NMkHXdvGpwORSdj0Xj7H6AmbGVktzJqc0AMHxpZo2Q55nObbRCVs6OibB2HE-Y96A9mB4xzFUsjWwJGKWKDmmgMCDo8XGz3YDQCFzpI446VWpWWmq6A9wUdPMmE8PZGtam0rapf&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Dapper Dog Wash photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Dapper Dog Wash</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/st-clair-shores/" class="back-link">More pet groomers in St Clair Shores</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Dapper Dog Wash?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

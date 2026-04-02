@@ -77,7 +77,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJU5GghIpzlVQRxk3oI80iZ6M%2Fphotos%2FAU_ZVEEjMi-kFf_TTrIxKG1Cs_u_mBIyCi3IeXvnAUhhYhQA0mGIgl3dtiiq7ArK3pS3kWGtyCQOxeOtjd9Q3FaGOoZHYhpYgtL0KRGRlfidEnRr6Ikzxfv-g3Ep_qlIc4VarcgZ0SHKYTtzP9tMDoNZ6uWbN_JGpSFAuLNDM7eQwRa7Ho0N5jSY6IVH7E3AlCl03CpWyP4RGNV1vS1HGeUj8zWY0Y7oM5PnuoyyDZVkPh1lapRQwKe7icUBVV3vE2I9b7ryBwpx5EvE6VXyhyy8WP_tLfquIXHijsG2YaC7ll8AYXWjaK4JJn1ngFm28m26cZrHk-hk4L3WHGe6K8vYK-2Xyw_Rl6jFHsrVXTllAMi7-0kREbbcOdzdTQSvgUL-yRBS_Ut7Ak_wGsWDINmCW-yOr1x7zj7jz6ELklqyzTbUVadv16aBy_a3wLIDsBtp&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Doggie School Bus" loading="eager" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Doggie School Bus</h1>
@@ -190,8 +189,9 @@
                     <a href="/groomers/aurora/" class="back-link">More pet groomers in Aurora</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Doggie School Bus?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -337,6 +337,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -347,10 +351,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -375,7 +375,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

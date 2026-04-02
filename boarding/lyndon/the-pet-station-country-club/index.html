@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJRd2ZhN11aYgRjR-Dwn_pWyU%2Fphotos%2FAU_ZVEG85hSaeJvlvczgFrjOoXi1wRpz6YlR4XOMu_ze1bvU8GrL-nT7-Bk8G3RFcawuXIzhl1rEjcxuhKH8k3Y9-mokQkjVkxk1_D2uO0tb_84awGNQrwegjmdkHQZKg0EyUw6iDlmmaMziD4GWXmQEeC-Lp9OzHJ7ozxNp7LYR053qCiFfAYeW8LurcYNoX_liLmuvhWEv_PeROFCpU0_FYq7ovL8CoDG-9tHbO5r9VERf3avdQ2j6fxiCThkoJDF5C78fyze3n7tY_eJVgny1LZAq_KP8D-0Gs1jQh-aoJbvm3Z5Pr_VjxA8gYBMFDtvEQtJhpDZgeXsWIOlwlFDx4_DyTarJlJ287q_4ICnnKPiZh68VQuz55Vjx4r_oTi14_Oy0bame9OajMKNYPgK_C2QU_pItTFAFGvHQsl_6AhDF5w&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="The Pet Station Country Club photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>The Pet Station Country Club</h1>
@@ -199,8 +198,9 @@
                     <a href="/boarding/lyndon/" class="back-link">More pet boarding in Lyndon</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of The Pet Station Country Club?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -346,6 +346,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -356,10 +360,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -384,7 +384,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

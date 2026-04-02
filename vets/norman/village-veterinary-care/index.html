@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJsUYRwm5psocRwi7ZdehFyOE%2Fphotos%2FAU_ZVEG-GjIY2rdo0g0ywUQeuR6lwLXuhQlwY120CO5l88nUYyN8EoslB1f5QpVkhMZJuWDr8_DT3AGxFvTRstj981mJWHKoLXy2bKrerAp5IuGfY7m_NjhDZSP6H2JhP4dsluSX7tigCLr2oS-z7nhOqpXemi_KrEnBLPmce3RP-337yM_IND98sJzDl51p5Mgi6djrqCVRMX4b2Krs39AKUSPAUEigpr9AfA74d3yO93GzM1rbLisGo_TAg0yPFp5DOIAw4jyuRZGjcitPV1IUYakwxpkeK4I1YHSHWNlTl7zKvecc09uANPHyQUBZqZhmq_IsD89flYRpzB8q40qIU1nD64_r6ZR4Rr_ydfzhiC0VH7LTebNwzlG9PLB4271oKFxhWwJZW6vGO5PyxdYEimf4J8S8Nor8SgqEXWof7CM&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Village Veterinary Care photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Village Veterinary Care</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/norman/" class="back-link">More veterinarians in Norman</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Village Veterinary Care?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

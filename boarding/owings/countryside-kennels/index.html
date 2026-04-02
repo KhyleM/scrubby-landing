@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ-5VEnIqFt4kR_i_epnZrWeQ%2Fphotos%2FAU_ZVEH97x6VtyD9WCC-HKSLqnTmMiNw3O8Q_zLCBp4z1OddwxNx2F5rIHLWe1tmh7fIfZWvZEs6jbhz0zAyQRbbFQ1LS7MfSgB_Nma9ZWhaZgmOrKC_aG9nVKGqkZJkqMa6GES2jM9D58IhfXqWTL9mnepnZ-Ydc3ngS0NOt5RNEh8Qc3f_xukrhH3Y9n8JXuxDLO9Lt8T0qqsYDkh3a_b6H6-Ohz4hAqnfuSSec7pXE3C9WyU1MQ2QrOJDHYI4uNzE23sqqIzmWk4bwacG6LlpTpl2t4gtwWwboKcsVjkdDcv7Eil0-J4-VrxmpZt5Xbim0JGastI7F_Z6cNn9u6nndQO6ZgIKi4C94AsRJpd15a4FZ-EyIMwiZ1XIArpuh7na5VShcDdHitcukvN8G-fnEedUIUo41lPv_CWIWDXC9NdNLcU&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Countryside Kennels photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Countryside Kennels</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/owings/" class="back-link">More pet boarding in Owings</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Countryside Kennels?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

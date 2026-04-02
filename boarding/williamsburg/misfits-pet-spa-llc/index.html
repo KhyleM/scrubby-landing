@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJFQ5cRxEdQYgRynJUlRqU0nI%2Fphotos%2FAU_ZVEHnLot8nT4NFWEdaXrZ3svFzUaxrdTZKkdDdRwU-pcCALcdjs2tS10xJbR6SEgMhFQU9SYhIfPalxS7KFm5QnqnCZ4hx6qogq5RiZ23fNX5ZVrhYsJkZZsNykSkZAhDzd3K_-ZbjEwi7U0nMgSGbw0j05gn9G9iN3RekqMMUJo015IeFw1h2YTAj_MG-yKx_YNCmK0Ur72V0t3YFuVuN7gPLp9-P3Bs7jlx0aCBQ5GFo4BSXAwodQA_pvEG6bDy8-J-QZR5bBpwfpKpcwPChjAglstWYUNom3WSFj2_gN8K6v8dWILc6wfaJU1xIWhwrTVbeiPxJyHAUDb78yHwD2AzxTNPDsnS9UJkI31LJeakOgzLYmakqfVpu_ek5rvslwDJ5jiZ9Lgb7W0he4DMUvE6gHPEg85M0onBXUqVjzkLkg&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Misfits Pet Spa LLC photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Misfits Pet Spa LLC</h1>
@@ -199,8 +198,9 @@
                     <a href="/boarding/williamsburg/" class="back-link">More pet boarding in Williamsburg</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Misfits Pet Spa LLC?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -346,6 +346,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -356,10 +360,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -384,7 +384,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJYY0-SUEfsocR7hI1yxuRvLg%2Fphotos%2FAU_ZVEG_SSyclSnSEEcN0oRViw7xZwuXlbt9yPYm_P7D6ylnudXWSlIURPuQ-lrfOqIwK9NDeaAjyOtJOypzok-nPpsUxdypThIT4WdYv1SggSPzZ3g2ujqHNquuho1kOPb0VJnWYgFHGP7GD-iS5go42mmNum-j-9rqzWAL-TqtLa_KMRZ2zvwg27nJl2lnkkI7vkCw-OXhRNAvLkTW-m-41J0qOqJFYUMrnXRv8oiYeByiRchK42vmBpIhYRCChYtJjm8jHte4Z2R7siZB8HytuT-s5iD7xI5Xu2w0ogFMiDAc2smbS4iFI4UplPc9mLkSfFsi0o6KBma_xqckYnrbVRIvvNtFGDVFuBGFVEA5IRqYu7CGDjWO357PpXJw-L7puIp36etVUFuR0MdMg03gznJU9GaJvI1ncImtKjP-GIybjA&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Fur Sure Pet Salon photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Fur Sure Pet Salon</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/edmond/" class="back-link">More pet groomers in Edmond</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Fur Sure Pet Salon?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

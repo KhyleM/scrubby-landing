@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJDbNtz68E04kRDnD_slLv7Yk%2Fphotos%2FAU_ZVEEF4Re60QgOj7Yh_ENCVv2iLvflpTVamJD6rtAn3fOrFRjZSQkmSlas2BTislr0hXm69taNHgoX68jIV9o1VPkDBkvX8VTY5xhaIlzKZ91ws6VyRNX_L2X-jCF2ZdvzajHnd_AsyKiELgdSTMQpqDr9anrAKbIJt5uPx-CtV48DMw51hZ-0_9idetABvdkpaLGgyFSlSgApAhX9_UYHlU5fqqvyp_3k3D5sgOsXK7BvSmohB7erzv_yQwNB4xxeZBR1Z3mJexSeJ5pHCwPQNRjwscQr9YCVu58v0ql7ObN_PLLn4eT12eFtUBeWKqhRM3FESSfXgOHgkPYKz6W9zOXE6DPNEi48KnJeavZzr7NOl8cnX-lHyK_gJ22dOR_8l25UUVUHncqSXaJxrKDjvRFdtik3RcfOxR9JhHUNbeijrHjH&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="The Cat&#39;s Pajamas Feline Hotel photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>The Cat&#39;s Pajamas Feline Hotel</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/hamburg/" class="back-link">More pet boarding in Hamburg</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of The Cat&#39;s Pajamas Feline Hotel?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

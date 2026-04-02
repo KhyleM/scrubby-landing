@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJNyASXK0RaYgR19l8Uky9RVk%2Fphotos%2FAU_ZVEH8TWN_MWm4AIAlI0BqER1ZxueCIR1HITZ1IvVFaivylkdlyzJx4nJt8L6059DSUi88vhv6cBAyL9JB0IzSN0mUMdBExEbo3oKFLjqQvY2AmZRkLOrx0ZCHHYdIzg70HjiNxpCKB6sXDUoDBWUOlWccQWla_8cRvmRYjd4affyX0toVpCQfjkvAWpO_aYFMazQD16bWzFhCwMxRy-sP-XFo6DMTZgNDFRvdbfwAal8x6yjV7nXr5Ci9q9aVZhIjTvh-72tB_BpEGxPbHj4qbAe-AzjGgrTi9enRMZORsWnYVzs7OBRiKbOEHdXQkpeCPEhkJ43WOP1ElZTXu8WBY8CBKJ5Wmf80qNS8tmcSX5hittq93DS8oOxDRr5R-_3TYw14ubTw-yFm16XsukwV_rqHNmybmJ-ml-1Lb7TimWL9fAaVJA6XE1UIlDk_xQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Brandy&#39;s Pampered Pets photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Brandy&#39;s Pampered Pets</h1>
@@ -198,8 +197,9 @@
                     <a href="/groomers/louisville/" class="back-link">More pet groomers in Louisville</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Brandy&#39;s Pampered Pets?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -345,6 +345,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -355,10 +359,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -383,7 +383,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

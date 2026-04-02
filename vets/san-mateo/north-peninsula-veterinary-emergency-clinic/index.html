@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ4T7JFNedj4ARPob5UtJgH-4%2Fphotos%2FAU_ZVEE3MhJyyWauGa5rUISospp0ne0vfzyq5OtzISj-uBIA5quCsamVyswWU8ZeDFTmKvm5s261B_LluKgXScG1G4HkHs3zbkYSQT-ls4YjvJXrU_IQga-sY1dEqKNKpiqXnMypRb2tsWZNeS4EksK7P21aDnJNNYZw4jFi2J-y_3WxF_iiSoezfNrTpsVaMEFVeYbdnpGKdoLuLtEzler0k0RlF5cjl-6-HayyoxFw0WLvybZdLU-EakW754cXeAxykQh2DqMn-Y1PE994yTT2FTn3qax-chWMe6lsQlv59sqYqutWXr093NEGpnTkHvADqzmsHP3j9tHvMTYQG1j7yx8e8k1ix3-MmLfL79m0QJo1-tk7sXyNSV1ROdJRp3IsGX1yrStFPsCaLtGY6GXbzQ0G48O_yeOobJvmq4ION02_s6PxhRsG01E0gzV_Mg&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="North Peninsula Veterinary Emergency Clinic photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>North Peninsula Veterinary Emergency Clinic</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/san-mateo/" class="back-link">More veterinarians in San Mateo</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of North Peninsula Veterinary Emergency Clinic?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

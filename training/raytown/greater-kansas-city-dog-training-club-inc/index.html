@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJz28CY5PjwIcRhUSHPFq1UH4%2Fphotos%2FAU_ZVEFJwlIf5zm4nfyXtJDrQSAz39plmnvyGBhMX3FDccZHMyvGA-QEypFqb2sGrN4930O97KM8G_hlOe_QUYR7eO8GWZC8GV7T5--p5doCNGExE7n9GM4LqUlh11sKfCDpXC2324bMmBqto9FTdTg8l76IAGkcmo5irG5O7RGeupRZ2ZMhyM7nf8CQM9hcVHfzL70fy_SMYd5OVLF88SD__b-bGXvKhsyU3pvCK6lu8MyRQXlMSVZWwV4-H88gWNcV46HcdjuwfK36oFnG8Joox9KN7ABnRa0JTf7eiyhFBP_Z_w&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Greater Kansas City Dog Training Club Inc photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Greater Kansas City Dog Training Club Inc</h1>
@@ -185,8 +184,9 @@
                     <a href="/training/raytown/" class="back-link">More dog trainers in Raytown</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Greater Kansas City Dog Training Club Inc?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -332,6 +332,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -342,10 +346,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -370,7 +370,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

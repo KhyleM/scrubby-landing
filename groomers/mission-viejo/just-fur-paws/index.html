@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJP1jcFU3p3IAR7xOXDDW1tsc%2Fphotos%2FAU_ZVEFbAx_87s-WhlJZ-Kv72Y5Yyc34EAnGbpzhI3KXm3ouhMIwsQp_6qeNltMkhjnKX5xwVXspY3p3XoXPZD4GLACMnISmYGQfVVrruLhTZ3jWOyf5KRPKQNBUgTOXJc15KJU3bby4Ygk244OnxXmkHHCXJWQEp7O3aq-WXl5ohOObCOvYGflS-yf-ITnYoNJ7CdJ0djGjVDc0E_RD4FztFP7qruus1iBq8L2y4oCkjEOpuimdqL1XdarzTiNQ9m064p2SpYllU7czMyU41iA3_nZUmtIMFRS9t5ocgPAsi7_Q4GDp0QivPvDPvo3bI8IwL9JshVbaYsWMUcROtCu2vc1Esb_xJ8CVGTb5285UswHx5cTxS3fFR-pOUahL7-jidVY-JTAfW3-I1EjyVp6kSUSw9VQLwlgC6pXmX4Mdp9W9G9ztxDnRC73dg_6OvNhb&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Just Fur Paws photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Just Fur Paws</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/mission-viejo/" class="back-link">More pet groomers in Mission Viejo</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Just Fur Paws?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

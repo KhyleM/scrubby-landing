@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJA75TM0pDa4gRYD3UjE-V330%2Fphotos%2FAU_ZVEFq_AgeO3NEk1EZ-PGisOGvF1tT7mQhpevOK05kG1WDxx_8cc27m-sdgbLs5WgjU8iOgs-iN3LVdTJRzkhSQD2X1d-8dLWu77zlCerWpeAwVwRS1TdBrVJ4oovb1k3gTzvVvFDwSmRYBXVk-q2L44PihZ6rlZ1Qc4sZmUdmWDETJzQfv2G06w4hno6TXYdrFuV3ACEdP-MYPWi2QZVM-_4zYBNdBdrWSdQYunsqLU_ea7xFEsFMileaa5GRlPZI6IotHwTKyQtPh4RVHYmVBu5k6y8vaO_9WUK5ZgSV_yDMsL0LjVO6xa5sU8VaZ1ABaJqHOwWhFdCWfFAJKV4vRs0JQsyk3AfM9LCPaZEsXKJ6idpDcA4NtANDnt4hTbbrVqs8AwNziKjUpCPbA4O1J1K9UrFCpCkQNgGYSBHP15d59on3uCq0p5N70LpFag&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Veterinary Specialty &amp; Emergency Care South - Open 24 Hours photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Veterinary Specialty &amp; Emergency Care South - Open 24 Hours</h1>
@@ -201,8 +200,9 @@
                     <a href="/vets/indianapolis/" class="back-link">More veterinarians in Indianapolis</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Veterinary Specialty &amp; Emergency Care South - Open 24 Hours?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

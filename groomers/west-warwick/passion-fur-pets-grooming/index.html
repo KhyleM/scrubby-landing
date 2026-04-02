@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ_59Lj29L5IkRV6L-6lQgxbE%2Fphotos%2FAU_ZVEEpv71xSnnulxaewtsBb6I3s-iRo8Dzi_McrUNtdR1qPGMRb4SflHb_3VRBUk-ncdJcwzwZ-uDeUyzNU5fLXHIsIOl0xrX1Yd8_pThQCK6bOophX3lbO3W71MsoaVHba2mooES-HNS6szatqvmT6DO4hvbE0oJ4x4YnOec773ZZARgL5SF3MLNm4BY-hfh3K24vWN3amvHNEH7MNbdK9yIHE2vZqyRB6H4BBW8n1A2gsdvv0crvY62yNbX1tPF9eQnKd9AyoaObG6BD0X5D_TPQwpqt9B9G-qJmVSWP5sg3KydNy5S1iampyBeKUhqGtejkaPh2lyD0pLchfOCA8K3tqLcTqlwgEkXpBCKjkjokma3XX7QukHPMwFIUk054mZPMqkfRIolqL5r374kfQdY5UewKGl8Pi6v4cjEdhuMziBBYOjU5BsuYkf2NYS_h&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Passion Fur Pets Grooming photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Passion Fur Pets Grooming</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/west-warwick/" class="back-link">More pet groomers in West Warwick</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Passion Fur Pets Grooming?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

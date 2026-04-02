@@ -78,7 +78,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJMaHHWTOpMYgRvezvL_LAQ1o%2Fphotos%2FAU_ZVEGMsjoOHxSJrUvxGmS7o9RL2dPgslnty3tZzmrYyfpqpaVSo-T1T8QI8QMV_tuLGzzDEAL2FUl1cDhfLebuxvBwGLJZSiHHWE-hj5y4-_Zj3xSWrjd_o6MldypfNFTn-LSUOdsv7ruG3ZcQ5sxOQTAycJMQHvPjY2-qIzzBFnoCiUhgFqf2cTCIJt4wEmobQ5S1o2Y67hPcMY4Wga-g1tgz-NgzdZ6NIvNF72j-pDFEVpnAbnsdAxnILlGN9SXqoZm7cbUFzCrM4UNycCwN8gDQvKPv-aoz51ruKTanZb-MVt2DNuR1tKaPnb1vDr8rnn5ekeR7c-qwF4bVTmVi3AALoOi5skpb51JvBORDxZiU60V5hpc5jMvsBlXOrQxjJy10cFA53oLaD6faxtdlwrtRaAU2Y0WEAE4dxTx-TJcAbA&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Just Grooming LLC photo 2" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Just Grooming LLC</h1>
@@ -191,8 +190,9 @@
                     <a href="/groomers/willoughby/" class="back-link">More pet groomers in Willoughby</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Just Grooming LLC?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -338,6 +338,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -348,10 +352,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -376,7 +376,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

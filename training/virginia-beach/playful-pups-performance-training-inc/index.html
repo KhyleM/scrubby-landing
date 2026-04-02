@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJxROkl0DAuokR5Ef-u29E3iA%2Fphotos%2FAU_ZVEEdcwjymuttcCQAhsiQTRhZsUoUsl-Nk2JVBxcfGAqnP_0ezWK8ir7R0yUa92CxAQHUDXGs9KVEenxdYR4fadgqvQgk3tWiU2X5yZ-XTwxXIo_pTKS6-sgKBATeOEUYPT55XGGsHDH8zE9AamTsmkYL0fPvMqdX4j8pW8OdPBlE46fRC3Ei9oOsrspePuc5NEyQnLor-AIr7CS56yKrmYRkw5rUMxKgY8RE4mjrR44uMoZzRyhLBG4zCMn_Dzd3Si1GWq_lJg9T7ApmWUIoq1HSEq9HzZQkfIFDne344fffff6aa2UhVV9Doak84gg3VvHJg2LMvunaI0yzYDlA8KciRtyc68tU1GilC5TB_spKkyIfmEu6ExO3HXwsU9o7Kv-rWUwWdovOIctttVKRrscfozF7ee8PbXSKjwErAr-whAvim4YnAtqO3u3PsQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Playful Pups &amp; Performance Training, Inc. photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Playful Pups &amp; Performance Training, Inc.</h1>
@@ -197,8 +196,9 @@
                     <a href="/training/virginia-beach/" class="back-link">More dog trainers in Virginia Beach</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Playful Pups &amp; Performance Training, Inc.?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

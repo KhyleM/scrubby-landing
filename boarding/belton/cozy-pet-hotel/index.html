@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJeRuZyDDdwIcR5sN901OyFpg%2Fphotos%2FAU_ZVEGQsXRZk30ATjd2wvoLyI8I5pd14VAoYr0KjnVHAl6iYNuF7YHWZ5F2wcoUVtxDd4L7ZM-J1-yIHOOL6IM5NJtM9veAgdaShMkAJnAMcQkadwfVU-Hp-YqVAFqM7USK64EvHb8sEUSELWvSuULrEw6maQk5HG5FMhwY9bj44t8pI0Dk2pG9wY89G5q0vyVdfkZwE5CELThbT6yEH2R71oBV6vjNZcbIe_Y3x0t_v4Qi4qw45PgwbLV1f6iNYH87juKG0c6ihfc5hPxyg5AbHlMHVAJy1Cfns0Ea1mb5VwteyQULkZ81mmjd1dn8XLjOsu6d-BiTxB1He7rNvK9UD4COov_iCKA7HCSnxFZq--6fANc4GnIXNJih5S6rOjr4gt7ARrPtndwWgNsWgbjaeLGqilJbwOe9zpNW66nsMlbM11rfLmKenmWIEzSP5ROC&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Cozy Pet Hotel photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Cozy Pet Hotel</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/belton/" class="back-link">More pet boarding in Belton</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Cozy Pet Hotel?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

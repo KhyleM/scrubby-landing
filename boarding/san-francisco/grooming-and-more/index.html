@@ -77,7 +77,6 @@
                     <img src="https://places.googleapis.com/v1/places/ChIJV_fnlI-HhYARVhF_wFx1-kY/photos/ATCDNfUvvfGGSZ7igIb4MROQbVMCsGk_KxVTgFiiozjb4LMDcHZDWhD9zlO8Uc1IBvrzgvXuJo8TnKHLTU6wign75qVAcfId7VIHQwSgAE-Jig3L9CqPjNvbqEfIPVV6wlUMGF3DZaCVteTUPUC8xT1_q7pypqmjuZBqS8t6MkjstzelyIEv4wwsP48wAEHy82d-gNX5Wc3hz2jHteIcoUuqNpWusXY1brcPJAi0Vmq21LtvuehcoZxf8oJSNn2tATqLvLudyC0xZTqtv7ZZtXoQTTDyz98EbWdJ1brtKL-RtpBHrg/media?maxHeightPx=400&maxWidthPx=400&key=AIzaSyCpmbfD6svBtJL5OpHfeph6xPVzLlf7F-g" alt="Grooming and More" loading="eager" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Grooming and More</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/san-francisco/" class="back-link">More pet boarding in San Francisco</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Grooming and More?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

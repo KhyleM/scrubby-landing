@@ -80,7 +80,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJpaRvHG5VNIgRexHIwf17370%2Fphotos%2FAU_ZVEGLJn-uED7azF_Kjgz7Ksru480iLwvPzr7ddQtrg1Zs9m1xZOcGCSZXzvBSOHOnZykMreF_gNlfz89EpAuBdGzi1ouI_WzCtzp8IxgHMEVuHAzVf5RpUIMTgLg1JClmKzMgpDPEB2GwYKmEMMGcl1w2hGBy_p_OCBEtStt-f6ipprzy2ImElKAx8Pt4GJ_F4pHx8bSqNUHa_MXrW3aD0u7nINOhnhEJigdWARHY2b7Kva1qMlfmn8AjL6FByPsGHUU4m57dHnOGyk3bJ9u2DtXRDpqxJUwryvAvJ5vZK46S8BzDI-xwbwbJevlZPTFqynRsmPDTM8er5tn52FXtWPMOZarO6HNywp3XW_yeZRk7aelxwL87D-jqrHz8qTrKSxLvc8imSgUibGnquirWqTk__lFfaMJfFI-7Br-7xEq5Uw&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Delucas Canine Country Club photo 4" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Delucas Canine Country Club</h1>
@@ -194,8 +193,9 @@
                     <a href="/boarding/mcmurray/" class="back-link">More pet boarding in McMurray</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Delucas Canine Country Club?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -341,6 +341,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -351,10 +355,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -379,7 +379,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

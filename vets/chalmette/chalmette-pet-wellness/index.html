@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJm6oGoeQcnogRH-yuwDdm-Ak%2Fphotos%2FAU_ZVEGdpa6NOp9Rqpwmg308PwLorV0hwJ_fBV4v-nDEXX9b1oSw58N_wKh6Pjts4HiqZe3PZ92E6eMKuZUBIw1d2vNcH8pacTbX2-ndFjO9tjIY3ywC1bZMRQfQrE5jTJef6jLDR-usmCeEMDXtF4enu6lecEKOZuhVCCBUveKh1GU-M83F4jiiiKVKcm_fqwmCyUc2slmyf66ANoMWqQP9Lqckxd8Ld1LsVGDQx0TW9ZV06OAHt7nwtXoEjq0B0sMN2sndZ5GRy-CBsGWq2b9SwV1eGQMRPzoBAt2LIm2zYHwrPqR5tC0p6be429e5rYL8w8gwGClELLJ_pINxtJWZTmzZH_doWa0gAICrBwq9yGXOvLA08xkGj1nKLI-eHAP4wO73Immmqjpej2YZZC3pX0HMiKs63W-UVAesydz6adOOnrxX&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="CHALMETTE PET WELLNESS photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>CHALMETTE PET WELLNESS</h1>
@@ -194,8 +193,9 @@
                     <a href="/vets/chalmette/" class="back-link">More veterinarians in Chalmette</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of CHALMETTE PET WELLNESS?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -341,6 +341,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -351,10 +355,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -379,7 +379,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

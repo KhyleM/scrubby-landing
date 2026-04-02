@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJoSP_Gtv7wokRl4H5lViO0E0%2Fphotos%2FAU_ZVEEMESdI2EEZqQ20AW-MpbQsg-pPqrEl8xB_ZRX-qEr1DrRuNJoX6n35pWxi2uc_okmx55q5yNscNZXZjZHDUpkvgcnH_PJtP43isejKlDcZ0yPVQ_UHaoX1aJBXhfHdShMfzC2vbyCgJLgpfqPlY7vfZnv9PjAdnii9Zl59gvEtCwBVxDC55-anMjDdbK5s_P3gc10k5afg0ora5FJzRycciQd6wcUuFmlW1SDUkLc7seSZLajS6P2SyXhe5ndsFrsjyh-Svf-R7KZwxkAZkcB5xBqFouHoMz-o9wg5nQRYNakyVumn1c9Oq54d4tAn4MlOgCk-Pgq4NbBaS-QuxsPUekzkaQHYJMi3yTQoQFqxJcO0sCuqf-pm0SNlORC59XVdw8n5_DR74g6q6iNOGuhasj821CzU-bTn48pOTxLZRQaHyhgTbW2tc34jqEiS&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Hounds Town - Bergen photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Hounds Town - Bergen</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/lodi/" class="back-link">More pet boarding in Lodi</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Hounds Town - Bergen?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

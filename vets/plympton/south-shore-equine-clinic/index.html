@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJTzXtesuX5IkR6oG9ZwQ5rlM%2Fphotos%2FAU_ZVEGJmVpK9vIWJkF6IDLvWWiCsFh7DT02WFdVNI_rd9V-VfYeVKSVq7yTVv4sRgwuJgmNuAhOAIZOyhgQjdcZ4mqAMg6a2wa3NrlExIW-5kj8rtLFn3iTFC0b5XhUeieFZgg5kgaNzfBwuP7jYOgjtf1F9XMECaKJhTDNjXM7zDIdDAEwpfhpubVbkUs6sh6ELJLFnXgqutypRx6CZHGgg358q1TpK5RxyhhdHHQTPqpb6I97l4JOEsBAw_ozHUNa2pJZxg5nUzmC-W5P39WHny2ohHicxVL3O9Ly_m--CF9-oMI8RWw4CuqgOKpGfHI5F6ukHGwPeHyQMmPCSXFES464gQ4XKo9tkWavcFNIuF6ZKBnGHwUAgz6l9_USN0OJPJYb8flKWeTaK3Obhzb9350i4rJB78KU9RGy7TZ-Sq11t6EN&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="South Shore Equine Clinic photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>South Shore Equine Clinic</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/plympton/" class="back-link">More veterinarians in Plympton</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of South Shore Equine Clinic?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

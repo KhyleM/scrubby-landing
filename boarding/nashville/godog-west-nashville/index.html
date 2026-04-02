@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJvW7XoQKJZIgRTx3eltVjbeM%2Fphotos%2FAU_ZVEFYuxpmL5GaqmTI7Ep8CqX-ENj-xX0gCYe1R1pzAR9kt3I5XgxS4CUwZcNZmV5psAleRXkq8m7aWl3kcjRebm7A_0VS5cFuP1GZk-ZnyDNQM233U-TTRiA2vsMvPjj2kpdoil4QxLnWAWLWPl1yneYdM1Didtd-rhkaa7TEZb7n6wAKCN5-TjefT45L1dC15tCRqkMaz8whvRpQtb4pVmQLaZk__d_E5PDFIXwbUWDRveja1qhqZ1UZLEazYVp03Rlf3QoRzc5EN9kNgadkvTu1OYPxRyAQ3y4ZfWgGp91CrP6QzO19l0U2FOkV6YlS1ESXIH-nkcrYZuhWEpbhdiKftLbKiOY7YWeOrDRCjgPTN_QpwjZqKcnkn8kXD1wAhWeD6U4EH9XWf1rhFe9asAk0UyQ3Mmh8HOXJynL0Izg&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="GoDog West Nashville photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>GoDog West Nashville</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/nashville/" class="back-link">More pet boarding in Nashville</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of GoDog West Nashville?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

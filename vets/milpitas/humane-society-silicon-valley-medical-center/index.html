@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJPV2LgcbOj4ARGo_g0FloIII%2Fphotos%2FAU_ZVEErGx3jPBJUY3EC-G9NfztDrp7RwHh1XEzl2P6yk0grApMHxmtKv9RFaj4HFqeqFBh1rfEKUMaUD5B7TvhjO-1b--eDNK-zxWbsvmk0kv50WGVq3cN9tifaW1sOqDgRTLOFhujf3NiI7Kfhuf87OLaTjIZK0-hm9yEwYoMF5_mOCT6jZa-sEnVkVVW6MCj8NB5A4Q3A7WuCjSl0yfa3NGDSNNigiLYCt-wPWt1zUPThrwFFfl1IPahARW8Nb-guystKsxMLdYyVlg4oclvN-CtixNcL3yaZEZaH5Spi9b3O-X7oeOs9im-vE4fTUqrmYsy1JNS7aqDHTnaA4R6tirqo5Vrw8JggXncAqf21tY7apx73czNF4CyVJC6Uu-pobVn1j0oHNTfrrNgiyopiMBfmYqoG3Ddct3MfRTFVwEE&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Humane Society Silicon Valley Medical Center photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Humane Society Silicon Valley Medical Center</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/milpitas/" class="back-link">More veterinarians in Milpitas</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Humane Society Silicon Valley Medical Center?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

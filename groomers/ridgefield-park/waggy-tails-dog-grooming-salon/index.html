@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ2WXD0GD3wokRq0THO1k5kOA%2Fphotos%2FAU_ZVEFUzvxu6blYJDQEVAyWuoMkTYTRzrPuekPCIAgsXUv-awMvvVePhRgIZWV-e6OZITW36kym53N8GG97yrgwj89qzO9W4JfZWskgCOsvhXWbi2P_nKh8XO-i60KClqdfU6PTeLCqTzUyAzuEDNcvYzKbv2cdyjBMn9CXsVYW8WQ3JXCReQmBUk69sNo1d4GdUxWHmgZ2BKKIbEA69r4TW_Ta5xBQbQg-DFRAavM3vvub3mJKwcGiYfvJY-qhHqhb7EWHWIld-zDaehFCdA3eXK0CGYh2lhERRyZDCL0YvMZsy2mDtlMmDl0nIARH_HxOHAKYO8zVx00VIdML_miVoZ6jnsgy_MumNaqecCqKL9cHgv22-vWHAxL_V1KGd3Ccm0df_OnPm7CtaQpy9UxuymeQgmapkqXZ5y_pVmZASQ_JYPU71seq2OnMsHb53tMb&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Waggy Tails Dog Grooming Salon photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Waggy Tails Dog Grooming Salon</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/ridgefield-park/" class="back-link">More pet groomers in Ridgefield Park</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Waggy Tails Dog Grooming Salon?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

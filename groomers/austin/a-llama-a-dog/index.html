@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ8zf9MXC1RIYRtPsl_KRrg4s%2Fphotos%2FATCDNfUl2F-rp_4C-41T6TXypiIqsiP43yUIwqDatTaX_cYkHqBr-RhlBCUoctpZtfu01ybbQ7M0AreYDhn9G4qOsNSepBjAKYYc6gXWX4lMMfhizLhjRvy5hABKiTR__F6HOPhPTbHWpMDY9Ahq05HOr3rHl_hbz_tel8FQt1ql5AhmVese758GFYRt2NGDO2cRcqBH7c5QACyMiR-A94NCEIFkpjcOuxfbkhgE22XLwtlsmbpkqsYDroHhPVmziBhjDc345DnyVOY_vV-bfYDXGoVZ6XyPlsSjr82A0vWkKM0BlDkw8vFD5j1POZ8UJLn3Oqf60TTQjMWm6e8SStxL_7NLs9R1mmavpCAfAa8KdyqcaJqN1phrcJFf0_LGtOj-dPB7v6U2AOt3UNgJR-dxMXlTOOvURHC38p0YFH5EQAV36nI&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="A Llama &amp; a Dog photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>A Llama &amp; a Dog</h1>
@@ -179,8 +178,9 @@
                     <a href="/groomers/austin/" class="back-link">More pet groomers in Austin</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of A Llama &amp; a Dog?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -326,6 +326,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -336,10 +340,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -364,7 +364,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

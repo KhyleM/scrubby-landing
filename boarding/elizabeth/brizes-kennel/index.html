@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJb-ZiwgLjNIgRQ8l5EDgh3Yo%2Fphotos%2FAU_ZVEEWf97XyBCHd46J2ZhXY78v09-wgxGfxIxX-hbKEB1_808rmfX1gKsm4ZPahy4mnLC_Qktyq3VEGm611j8-WxYx-LquW6suORAyfWnDOHgmOcmzntFO4SHBGWfSFsCErzKGJqOmT7k0sRfVq9IPeDsUw7l_z8dMqlCIAC17JcVp2sw4OWtkk3pK1Pk835-zUD7cfnrpSYPnBNNCrMk5GcsNRo1RvE9LxBkZL3cLLYi2LCmBSH_Sf5lHfN702ZZW72jTSDkBi7Q49XdpSTISWMXTdcXsI-4oRU7bmk4fLh9LkjyV-3CMQ911qxMRVB1l5ObduFh7pLq_LpAEbNS4XqR-3pyCcfmwWktT36eUcjh7sivpKrPDr2AQxDwnup9OkfNPL3sEwePxO6hu9ED4u69NbbH4bD0V2TVHQYh35mf9ZTg4Esm_y5SHDDxPow&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Brizes Kennel photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Brizes Kennel</h1>
@@ -183,8 +182,9 @@
                     <a href="/boarding/elizabeth/" class="back-link">More pet boarding in Elizabeth</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Brizes Kennel?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -330,6 +330,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -340,10 +344,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -368,7 +368,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJLxdIKXuDVogRQwueINUShb4%2Fphotos%2FAU_ZVEHIcMTiqjkFmbaX1k5TnTl0JZ8CjJ619HMB_TL6CfrBZmDo-5_aJZ0efG4-UVprSBWL4PmkaG9_jjJzOQR8-ushP4w8DPX_rwG8SxucvJn23FuqHansnNRTVdMMj1BaVCtzl4MI-B4M5oYN9DZam7D6mVXYQKDPxnv7A7LVPaXvFeGpgbBLRvK_gN7cvdwcUVkwgFirXFXEX1bmW6xHSzUxIe2UZfDHFCKXj8UnIiVzc9Qlb4CTNIc9Ykm47gvs0ZRzQlaIQwGGvhFyjibftM5RRXQEQ8rGtmEddsOJkbgqxZvJmaKoExmJQVTPf94DSySJLiu2nvUSVyo341wHVfJU0Iul4N3Xy41PISV24X42hMGZ3vyV70QDsOMxklxO3hUrAETeZMnWH0VOPhdZ05QIudzh9FSH_sMTJI8W0tXy-JIfun9RX2a9QNWjPcBx&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Pet Paradise Ballantyne photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Pet Paradise Ballantyne</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/indian-land/" class="back-link">More pet boarding in Indian Land</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Pet Paradise Ballantyne?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJIQu-76V2sYkRHQ6ZQa8b88Q%2Fphotos%2FAU_ZVEFyzwbmFbKoN7KH6sBTC0bpDXkNUcXFLS22YZKHrEw43fFTgCpGMTVw5JDCncQ31sQEA0uOvtfH_F3XYu2Fl6Fmj8pdg2j7pycOHLxztIBhE5KcMkvqWEYdiLCzzjwW_N1qVvgViIzZnx0MC8m4HydCeDQj1nLVGz-1WLAo92-x8Dh-auaZliVZ_CcxOggj1uDYvWXXvp2-QeYeBj60VaGW7-4JZBG0j4zu5-OQP1nhq_NR9BD63XvXSMI0CQPp17b2V0bbtMnviopdAL44UwXG0oN-jaHu-0GZ-41Jqvb9rQTP8ylN2Mh1BZiB7fC-qN3imjO62VfQLjYf4WwMn-UXBeSu4keqqXjE7muUW8hz4_jriMKIEDD-zPNH7uEbKVx9xzFVODbDBg3TltdWTnIEa4x44DOgHkrKKXDOOeE&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Brandt Veterinary Services photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Brandt Veterinary Services</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/midlothian/" class="back-link">More veterinarians in Midlothian</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Brandt Veterinary Services?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJU1QhElsXsocRHtifxp4ecs8%2Fphotos%2FAU_ZVEHdzMw4bfaCcixPuWOmN6UOR6o237YC7IPnAy30jJd2ZncP8cn41wAa_f6Mnq1-MWMxhXEHxEaPWu4QSNVZxgyQdoJnKYEFXt5sy5x_gsS5i2aBWk1igLTidMNSgsccAQp0RjnMl1zZFGbx-AwKnCuLdfq2x6m4jfm2nHB41fzBf5BPCkFIs6kr07ACGCLofEUwKRPYjUU-LJmvDZ_C-Vbb83Xq5O8QKdL1Osglg53ImYB-V_wbvcvCXKnIHoN0Go_rCef_s0qKvcTsMy5rXPbpGYqJEod3CWrp36UWcnkC2NUzNS8dgTIx_ZaJ-gaLxkMbdBOLvqvCfWJ1XFaZA5QslAZYr6I0OCb-XojamDusaQTOcn8gG1QSpkOw5lOmaf1blwAIuOJBg0BIkmuM2lWnbq7qOO768waI_dTW-JRsp5s_kkl9PsRj7Q8jwXD0&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Doggie Depot OKC photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Doggie Depot OKC</h1>
@@ -192,8 +191,9 @@
                     <a href="/boarding/oklahoma-city/" class="back-link">More pet boarding in Oklahoma City</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Doggie Depot OKC?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -339,6 +339,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -349,10 +353,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -377,7 +377,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

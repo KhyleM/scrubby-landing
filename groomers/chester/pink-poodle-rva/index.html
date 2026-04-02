@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJE32qngULsYkRwhtMxHvJh2s%2Fphotos%2FAU_ZVEEIw8ct6DEegtx_wX5UGfDUjrYsb0dUVz-3GQBAdNR1iBxAN-r46HmhPhlnl8f_lBDlHDf44F1XLAeK_Rjn-79XFZqUs0Bpbk8llpMTbBviYcbNMw2V2oeLv62HwJQHw2DOIaeeq3AJY1UIV5UEl956t9PpRTFtEub6UGLyhnwfrcMj3wxdOlRwv_rX75rng2odC1Tey4JrvAmoYNW8EPse8Q3oG2RfkvEdhA8x-n0X1Jstg4tX7c7Q0rSqQUjzJO1bdiLC7dguRuXYhXuIQRaezu1W_dprK1bi_sjaZNMs3tRNlrMOF_u1BrxHzbgdFW16ZcU239xKoCm62CXF2z1hWFqIdNnyY8zjzQeI-mHkrQVxCQ2jEHxPkCV4AADFpHXBGPsNRkxIN9QjpznAsDns6WoWZQkuMy4zz6NjpzovH23wHjzB_rd8FmGBmmUw&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Pink Poodle RVA photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Pink Poodle RVA</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/chester/" class="back-link">More pet groomers in Chester</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Pink Poodle RVA?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

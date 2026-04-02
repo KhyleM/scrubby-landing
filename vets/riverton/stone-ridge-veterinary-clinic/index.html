@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJZcCRJ2GGUocRgDwFc9kcRjs%2Fphotos%2FAU_ZVEE2Ffv5n0xXOz_GHXLCCL2iAINyyzBOKJsMhYthlA7r2Mi8oiWhr6hzAstn_iAL2PKgFi05S4LyUxgnVHFyBSBiD3ikplDM60DcgiEJiuVWba3SDn7WPi0HOfph-hNB1D_xYkGNUk9FGOgskzpsRKoZxsHkutEWR38IucVgA1fODX3R5YPQ4UjEv_wfN_BTSiZIrRcwWTWEetuCJSFBliyNQWBo-tjIVRN01yGqhj6m1KUh5Zs8NNtx0ulz3EJYmwPXW-VEtsp-Qlz81iuFDOKx_9b3_biCmIu6RyCkr7NC0ZbNhTCBxriMljVjBReZEtOjYfrVF4kMaIIHLX5fs8V4pvyRtw6JeDUk9etxenx6GKhpERG23yQGhQ9ZzLxvG7ImdkpLjELlr61P1SxEC4csBhoi26MClYAqx3d9qsDKFw&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Stone Ridge Veterinary Clinic photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Stone Ridge Veterinary Clinic</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/riverton/" class="back-link">More veterinarians in Riverton</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Stone Ridge Veterinary Clinic?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

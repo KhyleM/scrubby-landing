@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ0yqcxBrI54kRF3M-UAqonqU%2Fphotos%2FAU_ZVEG-9ySUfMIuRgUfuhkKcmNj1x17QTuB1bbIi8k6DFkqw6FaQANUppEvhRkq8jIFzhv0fs0bP8qRks04UJ1VvVx1RAZgA2Bmxn69CxgmrWfC5frj4OIdAenQbcJUONMsaBdSzgSN_d-mA_7yNT4CljqN3HizsDS5dxgTRmZRYCtaBDYG62-X37j8u_O_3vqCMkHydoPFmUn3-sGa-xL_-vXsscmfKSSPpYUCD3MW7OtHo7IrjNIPNe8WyoatFd4sO64VP7R6Pc6OZ9b5SbksPyYeL02QtWUXeQ-IebE9AD6QNarL8koVbxUCecTwnWVc-He3rG8bcKeP68uyVHU7To8IF1QbgXkNAD11JvxwK53k9TepSxTnVBmmN6y01rBtD8i7nv6y9VKgkxruBEWFCDOYAR0p4vCexk4kB_IMnzcYc9mm&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Fur Babies Self Service Dog Wash,LLC &amp; Dog Grooming photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Fur Babies Self Service Dog Wash,LLC &amp; Dog Grooming</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/southington/" class="back-link">More pet groomers in Southington</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Fur Babies Self Service Dog Wash,LLC &amp; Dog Grooming?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

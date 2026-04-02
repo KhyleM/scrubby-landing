@@ -77,7 +77,6 @@
                     <img src="https://places.googleapis.com/v1/places/ChIJ8Zh3nV17GkYRIyfnlX8FmUE/photos/ATCDNfWYdkoVBEqWnf6Kd6O8BGojLpo9Nw6WFAO7tO9vyNPYKKD5YgM3x6JfA8GIfbaj5Ue1pnQvY_Z4ipePfuLKodGFhzhZww9GmNSpXhbQNQm30u_CuxkF1gRlNzM9WUFIzYjYMeayFtrRrfWUFigYYwAECweHe3z6IH5QeeDQs8Linad1l744S-YOlOx0Fv1LVlS4QCo6ddWppFRhIX1jEp9BXACc5mg2KIF6ZhZ3Cwh8ZZHEBNxaQ_ZBtOo_p9KQ1WudyuOxMFej92VNHLTFVh1diWsWVTaXsb3kKsRcT_7ykw/media?maxHeightPx=400&maxWidthPx=400&key=AIzaSyCpmbfD6svBtJL5OpHfeph6xPVzLlf7F-g" alt="Mascotas" loading="eager" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Mascotas</h1>
@@ -197,8 +196,9 @@
                     <a href="/groomers/san-francisco/" class="back-link">More pet groomers in San Francisco</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Mascotas?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

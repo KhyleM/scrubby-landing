@@ -79,7 +79,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJzQKUaDPzOIgRcMdEIBcGl3k%2Fphotos%2FAU_ZVEFF-nH8JGsnoPVvL_bm1PXELMlGEK7MVQ5CQuy-aIDAhBqzCpNgwSYH9QMrUTjXcxj6iFZoAdha05Xegs96tG5gHB-BIhRP-G4-wfNpqSrWj2XuLLXOznk1KF19Oo1Jg-8jutnJ--zzjOD4PlMNxDwA8gryblNEPgRn9c7D_2CmAJgbsJW1qg4tn_Dc1EucvzWkbraEGnzC8rHCcxSAy5aQEPb33ZRY5HIV7LJwkFH-W9PYvyca-QhGZS8f9YajM7ttgGSXxeWWbAGXrnkP-KeLQh6xiyq-ZhZmFnJ42vlYdataYGPdvlqIYpWnUbNARXMGqBBEr-WOPR9Fz7Texzf1RUErGnsDEdHUDWDPExSNilaUlXN_6WFC3jGwW6Ix8Nk4WFnUC5fUkmdnYKBwFcogfg6EarahExlcAth0554&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Central Ohio K9 photo 3" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Central Ohio K9</h1>
@@ -195,8 +194,9 @@
                     <a href="/training/johnstown/" class="back-link">More dog trainers in Johnstown</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Central Ohio K9?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

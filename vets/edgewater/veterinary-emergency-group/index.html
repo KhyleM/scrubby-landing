@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJE_V1HlKHa4cRjP7dhE1sVVk%2Fphotos%2FAU_ZVEEAMzIdGzltW2w26Vq4yff-ur63En3IilSezP9kAR_c1Ks19mOg3nRa_uc5Hs09pDI_dGBg7kNnzUve3UYevMU4gHEWqKuP90N6AWJIVc3C8Gqclr6qf7mifS-tiAvQefE2zv_Sfgfc1kDkxrxy9CiT1J8WlxeLJCarQu2sJZOXK1pAdW-CrJYbJwe8qWVAbr8Ibb6BPTOnKFH_1e8sPXytU9DJCGit_QknM1uml36HM0fipOhodHQT1GumoKqX5GwaZf8nlykGnuLzT8a0saKv_zN79IINgMFzui1VkP-z7KBQmcYvsZTx4d7icXSCOCHb-S0_NxGSeb3fEAR2qBTpf7t_y0I3CAxo-GncMLsq3xj83s7ia9xscjST50-W19a6E4x3N8v35Xbq4rZv_RJ9yfcC9-WVQdTOisUjDB-RPV7HMNHTx-O1_jvlgA&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Veterinary Emergency Group photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Veterinary Emergency Group</h1>
@@ -205,8 +204,9 @@
                     <a href="/vets/edgewater/" class="back-link">More veterinarians in Edgewater</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Veterinary Emergency Group?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -352,6 +352,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -362,10 +366,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -390,7 +390,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

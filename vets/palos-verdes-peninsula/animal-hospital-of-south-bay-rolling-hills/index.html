@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ_____2NJ3YARkpHeCGlPPDc%2Fphotos%2FAU_ZVEGQesv6xHMGCG3a0ESc6hYRMoJVpOzdQ0Apus43WvTjU-iskkE8x7K-fjVts0Fo5S3kq4JwrRxNbjsmUOpcK4ePXcVtjYDowMDwGH1QihT80i13hzri8D4TIHGjtwRVCck_TNZ7gDi0oxH0CgdFzmmCgu_3f0m45mxrMedlVFU8jOlm_J36DvyY6lsIcqrHjn4R3qjFRIkIFXfjdfmFgw_JoRFDLbn-PpXIM2maRXVY5FT1-rmF6onU0hXmIPUD960hS4bu15koB4QIkk4klWLAtInVCg-h3X-YXKCstbVu7OPaNKP13Ug-r33JaNkTbL2dJV3mk73R6uCWDs7Az6pOSsfQOxTqQF48MakMbBrqFVTX-oZEFX5vAfBk4Lv1UU1Q5TJDaQJaocQCqU5uwioCkml1aq2WEsZ0xfngGZH4-Q&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Animal Hospital of South Bay - Rolling Hills photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Animal Hospital of South Bay - Rolling Hills</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/palos-verdes-peninsula/" class="back-link">More veterinarians in Palos Verdes Peninsula</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Animal Hospital of South Bay - Rolling Hills?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

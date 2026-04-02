@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJbyrPOMwOTE4Rk1pAY0le17M%2Fphotos%2FAU_ZVEFYNjfjLBVKkIXsoKfMC9O1Ua1aUE0iUnVMm3aJTSq1chDzyvkuYqWbdANDHLXLf0urFRgL2vtmrmcsFGg-_QtAZe6YuBjkJe_QwHzvyCywWS1ivuapqALrmmT1hIGKn-uDxO3Nelwp7Z7A9Dq7ocxUhYeedrugxpO5aCJIToDagZozGsjaBXiGCiMmdRNQk-ZOLX_OMGsBJFEGxJkOA_eMyLZWbSZpziwDMiDJQJq1-x6LrshT2I_OLd-rrZubELEwULp-NTrCb9fWUyNdHXU7oflmZyREqGqBZztULrMykPzlgUc4T9fwnu8-orcHCzPnv7nUXdVDjCrNsOsXRHY8SOHgIC_5xhhObknk7You6HKE3Qi2AoYvahOi7K_KmncuKWZlvJaMzvYspnFeaAECu_s1EPz7cUHc42W6tpV70_HJXmXGYs37IoMznw&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Sunset Mobile Grooming photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Sunset Mobile Grooming</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/winnetka/" class="back-link">More pet groomers in Winnetka</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Sunset Mobile Grooming?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

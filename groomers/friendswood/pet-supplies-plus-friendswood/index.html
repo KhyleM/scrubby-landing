@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ5zd9P6mbQIYRNqE4g2h9irg%2Fphotos%2FAU_ZVEH8k28QsKuThCzYhEDIdNU3NYNaeHNmBTF6-bQKelyifbk-e7WreCXMBwR-Ht0zoou1OgWODQ2sqfkNWaIdykW5BrhjYs6WjetAOkb5faCOoEY9_F1LrO2zrSLfVSci5xtNX3imKWl1tPXM-2gWBHjh31yXsxT7trgLHY8D7YN4tZ8d1zeLNXCrSMHhcLEXePLr5QgW2dtBK2yvqbjYw9KerfkaP5g1e8YidswpK61F77SnjZK3RifnDqa_7pD5kpkaJ2imyDlD_EhZHvZdgXFMODhDUqOcAd0t540I8FcAzoSf0b6cacL7NwEZzL3H5Gum8xWs1NHhseq8ZQoaHpeSI2WH1lf2BAvm_v9WN3swuLJOjP3iXErpZ3O1km3-fk8De6F05oAMRVCHoB4cdQjbdjyH09y8QPvvi6UCqWEXdQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Pet Supplies Plus Friendswood photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Pet Supplies Plus Friendswood</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/friendswood/" class="back-link">More pet groomers in Friendswood</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Pet Supplies Plus Friendswood?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

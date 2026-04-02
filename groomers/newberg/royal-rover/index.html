@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ0WROjdFrlVQR7K8RxtCERZQ%2Fphotos%2FAU_ZVEHkx0QcRAnQ0E1XP4fyy2no5j05fj04gvvXVXpOf9LSZdcDIa2pIFDdvrv-HRXReYMxIUqX5YvU7C72oYyW2ljjgdAXQ_PcgoCw49ag__IEjfPpX3DG3ppEhc4tEG0cjWGQ6S-hJRnxX-fult9aAkpJYg6f-V8Z2hex8xW7glS2mGVdnmj6bhvdpoSbU48L7wsgH2K1l0zqOgqnWxjLP3I3LYUmggu1iuU-d3CWz6arnUFm3yUCSG3cx320jPrHEntvTFQDQUUoTR0F_gQidhYkBleqaCqO6O1VLEbekGn3xgaZV4FxaIiEpvyS_s4sd-tzW6J7zAd0wBHjA7FXyhUBvwLD0nEGd7ChU7MnHEG4dNL1iynbDGjyO1ZG34E9J6MUWWnZQeUCuJobD6mgcHsLgnNdHu3XeYZpDUJMHbpcjOT6&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Royal Rover photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Royal Rover</h1>
@@ -185,8 +184,9 @@
                     <a href="/groomers/newberg/" class="back-link">More pet groomers in Newberg</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Royal Rover?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -332,6 +332,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -342,10 +346,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -370,7 +370,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

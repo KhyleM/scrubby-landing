@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJRzI6purv3IARWl6pnfjsJJw%2Fphotos%2FAU_ZVEGXRBCdRgsZVgCCibePiNxdAdb7lMXIhXn_fB4UjsrvKSSZ8F7xdWRDv4jxEkXeTll2onXagG6X9YU8X7i7Mk_IBbEzk-PHrJhzFI2ff_73KfLS6-pL1-T25m7kgFULOWCtb1YF-eVvddxe6AAT6oKWoEBzDV_SP3f0zWkv9XUfpxKIf3SoSQtTk3ht0kJJ07l3I4uw1x2NVvBPNLaz3ZE54lTlIN2Gy_X44cIVT7gC6-r2JNlD5eASwXxAjiNWpTaOu1QbBMb75U3ZkvMjVVQpej9Fa04D9TSEWc3CdJhCy164Tf-xTM5l3-2QADG9ZeKA0pXnXwehbWs0H36s942FXIXdMwx_5o362yBtSekgV7y6On7RWh_CwxApsfCBe13n9PF4JGrc5ItEQVBullcGxs1J2i1qj1GGdH5WxePlvelY0zLnzkmKF1gXg6qn&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Forbes Grooming photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Forbes Grooming</h1>
@@ -197,8 +196,9 @@
                     <a href="/groomers/laguna-niguel/" class="back-link">More pet groomers in Laguna Niguel</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Forbes Grooming?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

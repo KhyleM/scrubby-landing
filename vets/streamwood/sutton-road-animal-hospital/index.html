@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJEfrx9xwHD4gRld-z-w87h24%2Fphotos%2FAU_ZVEH8ZIxk6Jv9Pf97ehovUK9t9t1sfFwtrkAkekrJ6vNEeIUAzoR-d8TLaIIaaBnyiOABN8lLIIWgnyf3Vkz88oCrYxvTBAqxXz9-f2oU2BRuujKfJtsWeTRgnj1ejDz9NH_qa0nGFuvbbyK8IoTnT7-PL2vu1xENfqTeh7UWCglB85yAVPO4AekSvzgj3Zf0BCFPq33x3Y7j1q26QZ7D0wVp-oYvHJEfQt2KSXB6zJyWED6hLjLB8rgvO3N4I2ndztku695nIPKBveHHsZLfktbQjMlyZOxSMHDq49s5z8tMN6QkU1FWKecqWak_Wcr5PmUe9Nmo1ZnKuJO3l_SAzPl7q74Lr38C7AWjRUmOe0tWkcs34Fen4EzFBGxzSXoeaICKjYdZTjf9rVBZ6sQB9SQ0XIf0VLQgBRhPfVp49NQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Sutton Road Animal Hospital photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Sutton Road Animal Hospital</h1>
@@ -201,8 +200,9 @@
                     <a href="/vets/streamwood/" class="back-link">More veterinarians in Streamwood</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Sutton Road Animal Hospital?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

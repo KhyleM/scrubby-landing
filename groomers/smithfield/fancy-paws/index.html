@@ -79,7 +79,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJd24sp6ByrIkReEeDN8jR49g%2Fphotos%2FAU_ZVEF56zxAPQTKotYCI7PEdmd0vs7ZB3YdFOc3wjIX13ClQduXZXNpUU71eoxtXMRSjPLit69iSNqLhC8jbnWWW3WPMwKj7jKl6biAbaB6r2WBn7g3hfGBktCNxGPBLyqDQnZQ8jleUxW7-vE9MvaYv-CyRjEK64uTfCQjoZI-SbHnhnPcUULz3RQSOGI5Q9GSFHRrF8GorBWnF7--TWBMBW_cxIkJv-c6I1A1iY8LYBteVh5v5-AWytm_uew93oYuiAY6vEuHyV11IiJsqpbZR16CyU8mgzKAo4XiQqts5Dr3NZMhc6NlofyiSNEARdFggFbafWzIM0tdRWwrurybYhjOgdBvE2Ap2Y8jfdIYVN6nB_wXO4S19FxeJokvZTkHqiE1L5nJsaq6AMxfo4ypwrgG2s0vG-3z6vwYHwIiLxPN7ms&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Fancy Paws photo 3" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Fancy Paws</h1>
@@ -195,8 +194,9 @@
                     <a href="/groomers/smithfield/" class="back-link">More pet groomers in Smithfield</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Fancy Paws?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ23pzUrgcw4kRMQrZI04CTyQ%2Fphotos%2FAU_ZVEFSFfHCVTtHxtw5lDXEx478WEU-jx7u39hth5F-pBIZ7hZRBItZWG1P9dwB_KyY6gPM7W2EJcSkLxPRnFe_N1CCc3wsVXfEsOhlXpHff1kMmAUNiTqdZQlat3EUj6GVDqq44_nqoGINEmqEc52XZ7sYthPDnfN78MxHaNTPeF54oqDXbXPniIRzh8HpUItAR4HTp21ndbf3eq0LcduipjiDJ-nqD-mIIqmXqRj1vnFnuI-C_n5ix9Y5FmGR7msh6iaZiPvbaV5Cj7kEjI6OU3NaE2tJWzyAW7KbJcX5GBMUSqlp1ALm45Ns4TMt42r7tmooqRpE_qB1xXOihgahS7InZXGPM0EiU1ZMhWAhM0bTy2cuKRIdM_R3BtAEuRygY419NwwBV1b66esJniwORQIh-_B_Iu3je9r1X_Pr31dKLwl2&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Priceless Pets photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Priceless Pets</h1>
@@ -198,8 +197,9 @@
                     <a href="/groomers/pompton-plains/" class="back-link">More pet groomers in Pompton Plains</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Priceless Pets?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -345,6 +345,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -355,10 +359,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -383,7 +383,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

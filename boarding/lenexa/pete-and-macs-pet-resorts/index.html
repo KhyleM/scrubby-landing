@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJAYsvNVPrwIcRjcRSj2lC_ns%2Fphotos%2FAU_ZVEGy6LX25XKXnzeTtz0opP66XtJIRqCcmol1zYKfNOHZ_vUlAPpmchtMaksgWO0hAcio5plC9CZZNqW86AhF5xU5yCoDpgf4AJ8fWOstG4hDk65_SWdiJvOvWCouJtyf59-rUjLEU_q5yRkFT5TRiIdFdZ7N2ztAzaX5KYCz3TS4-21ST3ysenX0jQpVZQTMuh8o49pLIBmDmST-UiNsIdefg2UgH8WC-7fe2EGn4sj31dV9ETTkC0nKdG_M0KXBdOkF0RJkljDdFXFRihQQvoxeNPH93-J9yeHQDwOzwVY0KVTPsWcAfp8qtiqlpYgrltOtcj4X9kXQk80VQPsYiwSrH2dIuvdECewLwTomO5HGppfvKbC0bB6MziCoIQgFebIdw90oCrD-RBLfAdPB7G7zdqjsaa4H3lTo_FcnAR6TiM2B&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Pete and Mac&#39;s Pet Resorts photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Pete and Mac&#39;s Pet Resorts</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/lenexa/" class="back-link">More pet boarding in Lenexa</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Pete and Mac&#39;s Pet Resorts?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

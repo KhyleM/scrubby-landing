@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJCbl9HGhbG08RK9wFL4DCNus%2Fphotos%2FAU_ZVEFrLaEy_j0UfX3jclYhKdtbc75hNSyNt0skFf6DICr8tak1d-FR_9Q31YNz4ziFXPjz9o4N8khGGnT0rR7tulBR7mBqhuKlvpGfTrqyDn_RApEnN4N01TAYEBtpe5m93EyRGPn9p-ENS2UgTOnPWIFy3U33XxI1mAC2PfWwlsNpJx0Bxzma0jk11RE72x5DdJhOMYdTBB6lNfh07GzTMPbUUPl-s3tBJmGuKVIM9gnYrkBnNgL9eVEWjWmeSuSZjfDAVEoPjLm576Uc5tryDA-pxu3_J_2Dni4X4ekxLc9WPdtCAulbhrrBfBMy7T65PRHq6gnZPd4Y-ahVXVZK_kGSqGwUFXiV433B24r0wKiT2A3eU3QqVawh2P2mrXBuU7mWxnKKELlpF_po4CQj-E5ZwO2Ce-1s1JV6wY-cxdlM0A&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Kara&#39;s Dog House photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Kara&#39;s Dog House</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/snohomish/" class="back-link">More pet boarding in Snohomish</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Kara&#39;s Dog House?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

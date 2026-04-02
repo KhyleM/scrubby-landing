@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJMXNqTrzRyIAR2vyI-LMxrEc%2Fphotos%2FAU_ZVEHXME5Pt5SYXjh_K5bgbQaq_Ts1vcNChwPPeTJwDiEC1WGjVm6U42gJFwL2aGH4grXGzizpiytBGkJ9RCTr8OqeKjMBui_AwB-rTdjusI-su61opZ7p2EA3SW7SIDD0Uy96k0X3k4NPo9qNG8LN4f0blsnC5WB14OVXLSAXbmpj2UkDz1k4WKc2nd8W7es3bc4g2mu9geT6u08MOpbzE4EXESn7W2zTSbfH_1WU1TMOk7_hpL_pgTYcGilzbiuFM_7rc1X6Fo2ml93H0fVuiQ9YSpBF4yc-f_hGiY8td3JhIVqc_0juAF1UbO4hJePqooss7bT8SJB5L1Fya_7zk9qyzDDrfisDnkNlIDSTkh50mifqiAUi2MDZ1OsYOGRztRhiV0_M9lHxk7uTh08T4S3JqaBM6X0Sia52mPJhiXEYkA&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Valley Ranch Animal Hospital photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Valley Ranch Animal Hospital</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/henderson/" class="back-link">More veterinarians in Henderson</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Valley Ranch Animal Hospital?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

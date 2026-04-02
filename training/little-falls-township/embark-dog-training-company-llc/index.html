@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJT7sikO0Bw4kRe3Lqr8tYpa0%2Fphotos%2FAU_ZVEG4cOg7Tq0AeDD9Oz_krYo4aPtOPMGeK2EZ96oWhcLqZdsPmnWUy2qT5XXqnhqOPo7RlJ6gDla3TXH2aAzk_OYjSFkHMfb4MvX8C2cMWvIXnKMCA2xBljVXDOhhWao2vr8MQehUBlRavYOSVvsLszn2BOouKmaJPicQo0kHtUeef-66fDAsd3LxqDSGhPzsWzNrWLRsDHJ2vQ9m1iSW98-Pi5Fzl6K5FLLeG9tdFxctg-8CuhMxNcs36FceyB48DrtPkfCLF4Jm3soaiG0Wc-Iz0F0fwzS7tSLCTHiRz_bUPn-H_sCGu03x1vX0hHuQX-pM0Q6Aqm9F6GN3dwyJFooiFQW91TfHtQZqScweu2lM4gbwqEcOrkng0AByUzhkqDQ11LVlCIP1QFSNzGbIagiS7o6i5TkpsWnTKfWwZDHMIITi&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Embark Dog Training Company LLC photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Embark Dog Training Company LLC</h1>
@@ -191,8 +190,9 @@
                     <a href="/training/little-falls-township/" class="back-link">More dog trainers in Little Falls Township</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Embark Dog Training Company LLC?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -338,6 +338,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -348,10 +352,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -376,7 +376,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

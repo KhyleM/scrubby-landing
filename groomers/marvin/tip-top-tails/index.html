@@ -78,7 +78,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJf6nuSsopVIgRLSCHHLBJ9HM%2Fphotos%2FAU_ZVEHzi5rknT4vNDh37sNds8Fc0gaA_HDSnTLtevaFQ-JwmXPEktnLJZOsX04lb1puCS3EOz4qWSphU9TO-sUOHDrjzYaNEyFLnSWblsGB8LpUidOXH7QsRY1Ht5ablyWStOplT3EYnBNp0LIXwqZ0ux_xFfBUFGUYc3lwIAMKdZoOcvlgwWFMkYbbWntGAwJ0stI8azVB0myFw-iXBtaBWALLKfyTe9eKR7Ic8nNpcbnhzC14cM_ZTv5k9S6QuHViAXcx0NKOu6uE8G0k4-r2V-EOfPH2GA0Wo7sgdwyOFXjq61z2KdAZuPoYK_-oBNJWmO4-qIzQ9OmDAq03ObLo9mXYDgCwWn5AfdEY6USUtwg58gjRVXWaU-2KwTlTMoagpgDdBXy2l2hIHi-XooNhT8KdVgdTNYPzqxHKR95H2QpMWvSw&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Tip Top Tails photo 2" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Tip Top Tails</h1>
@@ -198,8 +197,9 @@
                     <a href="/groomers/marvin/" class="back-link">More pet groomers in Marvin</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Tip Top Tails?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -345,6 +345,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -355,10 +359,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -383,7 +383,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

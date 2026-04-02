@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ1cX5faf5EYgRBfyAACea_-4%2Fphotos%2FAU_ZVEEj2uIka2nZ_mhz9qn3UexJrAsX26jTtzqunKee1lSO9SaybQduXNjnZx-rLsKoh-uIXu-oejBahN6gr5j5_uIZNbjgoKFMZXebL6rEJ9p7jkl7ITES-8zIc1XFegrFdm34ZMv9dyI8EE1rIHHwLzu7Jcidy33sUii1F7ifkmGNn3qUWa7G3a5xeLxnYMmVW4X5f0w1ez76Efn4U9HsoAUupgPbl2_gVBB6I2acxL-z6h1PZqdlA3x-zL_5t5-A7wSnjDm4hTfmUTU5N23ulTpRx5SN8fN83zF_SvYBARP7d36DHUgGlfK83XXnHzZyZGanGrfa_VgOn-jmM0FZVgMTEac-MO_OfEO1aCgCDxzfUhURQcCpYKyyuYt-ZFaHu5oHgnA3GaoRBipZFT9A23ApHcn_DP6ftQpPMc1BREZR1g&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Lowell Animal Hospital photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Lowell Animal Hospital</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/lowell/" class="back-link">More veterinarians in Lowell</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Lowell Animal Hospital?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

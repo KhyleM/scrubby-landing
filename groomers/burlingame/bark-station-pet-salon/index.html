@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJSaIFGu6dj4ARf9E95vgH5a4%2Fphotos%2FAU_ZVEH6aA-jP9wxzrryxT2oJTV2n12VfwZM56aaTuF2Z0gALbM3Jv03njmIug7lzzvpqKXQUA3ZoeA0iip3ZjKx21p2hkBsvHHVSFTHAFubTXRDTN6Et3X-5NxGGL6LWYusUBf5JZPG0Z2vIrm1LlyLT75FRY7BiCnKfLwABOiAJ5VTLaxoN_rozFMYGY7XIbD2WXvRl5e8lKZZjwaMXeiEWzVrhVOVkGkacF06-Ym5YRRqP7p3qfPjjt5QU7cDpaMRBRpFGV64I9WFqeK94qCx5YlaPPoZKyAbh2Ye-AkVRwVtv2uxEzXx5DMkOwaW6e0F6_wpnjIERGzK5PSRSjoti1dR6YQz5vtK9JOEhCSxAwHV5vK-juDB0qvUlfCa2RnuSFk1BtFcPw-vRWiXEdVlozrEXz_mJsXcKfWdgFK6jEI23T_1R0NLHAQ2QYGejeVK&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Bark Station Pet Salon photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Bark Station Pet Salon</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/burlingame/" class="back-link">More pet groomers in Burlingame</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Bark Station Pet Salon?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

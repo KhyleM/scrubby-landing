@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJgYNAHCrO5YgR5rybSHqCvAA%2Fphotos%2FAU_ZVEED4jdr4-MngHU2a3knjudYG-S_UacJE6w9Doaj3D5tkLgTuZBby973PrIatGIoSAJeGSDfKu6UZdADrt_E2KDyO5pda2ssO88sHSFWyZTneNLNPPpxMXkKYUskv3TjPkj1MqCLSSEKCbCUApXwAlCoxo_fqoOCSU3jk9C74GZHyZTJI9lz4B3QTY2iHyUgDhc7RA0x5Lqlgm7fmeyc6wF-oZyfiwoJD8AMw7goQ-3QDVIFVrUHva0LVFLGayHBVCUbPwqPvEkD0fJCSzS9ZZgAwDYmuXeb-K3Gkw04yHkAvkEHeEpgjTeCiI5dvqqGSvri6j7n5m4ouEqlYlWZM9uYZvU790ths9dFuQQ4j1m3Ia_J5vjg_nVXkRzGiVTXj8X6VXNqSN7VxP6SFaP3JGmP-WzUgd_njWcLbedHrKZC2xmm&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="River City K9 photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>River City K9</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/green-cove-springs/" class="back-link">More pet boarding in Green Cove Springs</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of River City K9?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

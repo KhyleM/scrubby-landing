@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJlTVoGDZZNIgRvrVN6Hf1Pa8%2Fphotos%2FAU_ZVEFFcB1uhhb9msIg_nxR58X3K0NusNeVwlCGjJweVW7VOdPIZEtUBxU2KbatYNtHnoQpJo9S9aBKsyHx0SD-GhA5Cbiy98EaXio--dK60pLqxKcoRLTrJv7qiA74YCuTt_9pstu9m7xYJK5RG6jWJYCthRB9Zak-Q73R6yzRcbU4tFDMv6KuMR9w6XPEOuqRViev9A0Z9FvwuTQzU9-FGIjkJTuR7meVM-p6ryZu0TYlkXVcD1RXrLO-kyRsRENP1OlA9pLo4DF8utUOYBSdVXV6Lo9v2UXiiSjLYy87xKTD6vXsu4wjDOieTQI1xfK3Y8lNYIRkVmwk43s8pzWJ-cGfu_dK0sEP8BZxXNckHZV0jYtrLyczHlIZwqxmZP930bSf-9WQnEZR-7eTk0niZ7FyQBLvmZW1BbUuXqzLSs7sCQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Petland Robinson photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Petland Robinson</h1>
@@ -205,8 +204,9 @@
                     <a href="/groomers/pittsburgh/" class="back-link">More pet groomers in Pittsburgh</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Petland Robinson?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -352,6 +352,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -362,10 +366,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -390,7 +390,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

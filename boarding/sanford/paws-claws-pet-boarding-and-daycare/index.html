@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJqWAw1YcT54gRpQTt2A0Z6m0%2Fphotos%2FAU_ZVEHKiivw38AsDkkdZ6X4HqoaotvnKt_tayKVJv4tXeaJ7892qVVJz7SNRiUmdFbZ_KyoA1Pkwv1HNTN5lVl4Od_8l2_YBa-eiUc3od41XiKY1eqA1olVGuzVeqZqZT1vMHAQHy2mdi_Ekt9NYhNP-ugKX1nhkc4uXrFjwMYPINXkooWGIwb7kJ4a6tUNZLi-FZP2MmF0VuVjMjOjME7WQX5Uiue2v7jDK-1jB0JOiqt5m4-cOlE-sZfrIS_FuoO4NuAVJrAWyupiAaQWp1b3kLWGlNW7z3cePGP0_WnVwGE4wj6Pj-qh1lf2mL8DTJH9Tmyd4urtisQHzs-8Q7c73PeYu6c3OffZHRD5mTp1zt1oViiONWGUNIV0HLO3Tmkty_YZGpCnLyN5xRR2b4wx3by4v1bMTyeG5t9V-8-hBypklUJCNeua47umuoT0v_Lf&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Paws &amp; Claws Pet Boarding and Daycare photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Paws &amp; Claws Pet Boarding and Daycare</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/sanford/" class="back-link">More pet boarding in Sanford</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Paws &amp; Claws Pet Boarding and Daycare?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

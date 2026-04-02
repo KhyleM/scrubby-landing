@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJwdYIkFcYMYgRp0K1ijsfL50%2Fphotos%2FAU_ZVEHRMiza80H6qXqF4E_sZnBrFTaHyH2tL7tY6Q6hfnqRDReIgBYh50yqRKDMsJ5qg2xC3RLuryU04riYupwWSXbz4L2HVexFziJeP_1uEuobCdY7mmCVBNg7SQWOzGNn98QYOMfH5NlTGGCBo2cXfWsuYQo8yza9e3b5Xyw07_-zk4e9k2dLro9AgSB42NrQPIO71-sJkrhp2lJcE342bq27iMc-AGFaI1byrCiGryt4BNhbubN0vAgHogZCGNNknDXupkraTlu8Bm_ZwAqIIw6oVa4fMqC2R4ccJETQmdJxXY35WmzjTolxK-Tqv1moSp0-bLnxh1F7iQv28FhzasX8bpaGKkt29cLLyJefDdMFvKxDaju86pAmoP2z04eLUaiGd1m3yzt4a-J3CUEN3YkctUQjMJu0vGuAJZnN8vAqylIn&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Aurora Kennel &amp; Cat Nap Inn photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Aurora Kennel &amp; Cat Nap Inn</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/aurora/" class="back-link">More pet boarding in Aurora</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Aurora Kennel &amp; Cat Nap Inn?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

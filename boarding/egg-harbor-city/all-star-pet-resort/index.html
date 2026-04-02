@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ26J8o6vgwIkRO35nXb3OBwM%2Fphotos%2FAU_ZVEH1yrhoM1QnhW1tIovtV7TxbVMnPNZjjLx1_SAby8Wp8vpg4j1c-e6n0MMrygM1kkhETckOmy1zZ87k2iBJkN_RHualGN1euaucLywyc8Ar8UnuXBIF6fDYADuRKyyK1X6NjSsYx9qcSvNmWSwvWVRDU9LRlZXERMgFg-i39iFj-TBu3dJIm_IqdkUKVfznhQuRoFdlPQi6JrOi2NEREAGU68Ck0J_A3z2-LM_Q2Ig281PyL09w32jmtPw550LS8NXpH9JitPOCWSr8XKc2LDYFDkp8cYt7PTcQ7IzxI9ePMEvsvlfUXn1O62DD9N5sCDSVcTzfBOh4_zfTmFTf4uHftUthe3mH4Z_PeB6JcVnlPTD0shl0NBNIqDcqXZ9lZOGVzcNr1wg0Ah3Bhsr0vuUtc9bIldl7Afbd5n29ff_nvg&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="All Star Pet Resort photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>All Star Pet Resort</h1>
@@ -199,8 +198,9 @@
                     <a href="/boarding/egg-harbor-city/" class="back-link">More pet boarding in Egg Harbor City</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of All Star Pet Resort?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -346,6 +346,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -356,10 +360,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -384,7 +384,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

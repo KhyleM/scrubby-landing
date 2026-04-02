@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJo800pKf4wokRzKIGC-gCWfk%2Fphotos%2FAU_ZVEEdwNZ-KDYA0g4G-ISjb6vIi76QB9MkEZ1K0AQwSNk94y3jJ3iKfuKJYB1_K0fW5cxQw1n0z_jY82FWOINSi2qfgOSt9tMRsIvX-45VvTcuw5q85gG8tKfEG0wBSxBzNjEYU0IMQumlpuRKLTK1BtZA33snoH7SNXSO4RtKgsJOT8NT71zQu_Ylm21IB7xTRroFOPbVb7UtiHJAkB3DpS7a0n8NgmABjtJXQElcsj4ijK3lFtjWFVorDrBcEtuDYuI7kmo7Q20pFBZ4nU1NsFuJas-3JhUMt6JSkW75IOvysxS9WxEMXDgIjhvTXKfLukfey0rvKNoBV6m7vQ_Kc1En_WiFHXEbT3u1ixzkFrLZhP8JPfWCWMFK5rmod-wjoZyv7kmKqRT6He_OqcIw8NLzyQQw0Uf1lw8GEGmy6yYcBv4&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="VCA Rutherford Animal Hospital photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>VCA Rutherford Animal Hospital</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/rutherford/" class="back-link">More veterinarians in Rutherford</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of VCA Rutherford Animal Hospital?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

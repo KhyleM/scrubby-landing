@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJw1k5wx8CdogR_hnwuoWeeVY%2Fphotos%2FAU_ZVEEKCl-j5u6oh5Eoz64QdQdllrLrDeImItfYGed-bfdbIdbf9nVOow1QI30meouJpQf7wbmcbK2TvuwKoxHwehKBtQL5XOAb4WxCMWcYeW36a64vdj5P9iwlfCqj9NyNl_HYf0tLBQF3BsVr1k4penDCF_QmH06XULtdqrJltBXjJpyVapTENdhZdread2tOF2SVm6vVzKNyNXpUXHJH6v0o60MJm7_oODzgFExtsNenzQyx-8macUey5_AKR3w94X2LG-nkPcddxlgZGO1WqK8WrJM0oKt0thCS4trS2wPFS8sAxjWfIzo5Kf4EKT5we-z2PCtqCVjbhGV_-NF8RfG_z8UmgPhqY3qfj6i8e3IQfPTNBZ-2DpnQZkxpToN3pWJEdQ6jcpDBWQxsers1f3nslz0phcmU0Oqo6yPIo9C5OVbJv-8-mUwyQ5Wrvg&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Lucky Dog Barks and Recreation photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Lucky Dog Barks and Recreation</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/swansea/" class="back-link">More pet boarding in Swansea</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Lucky Dog Barks and Recreation?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

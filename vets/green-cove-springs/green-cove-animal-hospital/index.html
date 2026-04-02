@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ6yKw-W3a5YgRRm3Q65Q7t6k%2Fphotos%2FAU_ZVEHrylAzPFAvTn_6Rpa7UIYYtfN6siLrM2LySU_AHuPNpUn6VHdec1T2_sHQXVXeDm-yBWWD88-4tYl8lo6_riismdE197uXanzxgGQeAdfKRkeLzbywz4zGv7c7seJWSXU-E2ZuDzhSK3TG61SAr7KxdwPez-bhIZUGNGivmG4YIV348nV2DD3-KmIAAht_gfs5f4Xvulc4ron9-71GKnGpfZ2363ACX8Y748qPjpzLFHhF3enNh656KtqG38KfSb5XR3FJ9cIj3wefS7SHEaZ_RIUvOe4-9UdKUro4C-6FbipeLCyC7j0qoooIUDydUYO3h9lDkCeNeqbDDomqvXW7gv0VlanzroP4E738dnjGaQymLI7N4-tavrMv6ZArQnsXAo0Z7W0VQfAQKKj9lvXOVwukPzdJUpDamBraswZH3jrhgJfkWdnFonTXWXPf&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Green Cove Animal Hospital photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Green Cove Animal Hospital</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/green-cove-springs/" class="back-link">More veterinarians in Green Cove Springs</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Green Cove Animal Hospital?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJsVlOit2Gb0AR6MAkUhrucnI%2Fphotos%2FAU_ZVEEnSoVIsyldyzrOcyBrZgekaNgcGiOZHlMK-tkt6Hw2mX3sJywJD4yurnfB1UDRCRLUvre5fP6VdaPB5Sq5d7azcNUZ2NkKS3rDu5MV0NQLY2ZOG7e1kpJul5O08bfmdGJQHkSSl8xmSmlOPNAd19SqfibPyHb0RuDk58uBNuVuoSxSciER2lIJssFiLjtHbwooUT8uXeNhW_AijhogfnAkSr2MBCp6I8JwkUnlo1xLUw3qGnQPq_M1G5ZSAeT_nM53z0WmAh_yx9L3OXW-1_V-G3p3Pac75BV3S_ltgzUR5YikdcUihcCKA6z9VcD5hUNNMrJafDaoO4L77Kn_vb7GE3VnO8w4lIoSZfws1xdovh0Lmp52gVgA5dUhwpdcorRj11wXObC_C50k3Q7kaWwQgF1RY8pv0E9dK06T9CaMWVeQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Head to Tails photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Head to Tails</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/hightstown/" class="back-link">More pet groomers in Hightstown</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Head to Tails?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

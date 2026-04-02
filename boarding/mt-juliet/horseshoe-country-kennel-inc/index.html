@@ -79,7 +79,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJR5eiBQ4VZIgRzEVp0QI1NgE%2Fphotos%2FAU_ZVEH2ccbHIA8WQSZRPVGW4BAtDsbmNQ60fAg6i_r8EpG9x5WJSI7Si_obfAdJC5r3NlFQMm4gTxXRCgySgGUm44XHg5WnSMcD29zoFUjDrG7w8sHFXbdRVkLQxYTSO5U86VSICFnkanbNDgPVehAn1yMtQ1xjfmTTL-YLPWweoQkpKHcacP5qzr5uCm886wsOkXRuNAFIjrGdEZu69A2QBvvGlwSwiNlAqOlTuNtX_ys_8-J-YENXNldr2KI9BlfNHN033NLmjMBu4GwOocdBHyOwBJop2G6eRlcQgmleLzH7Av9XpVqVOrXC2Mx7DZNfhbXHHCFufcPWlgt3JFzmTNZRcXUDAM3FwFqLKDH7igRyXnmUeXxIQ-s6WjN5HIM4DTQn-VMirb4bDnouDO3hE-7FCKBXNJLGjixi_euoCAF8ox6X&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Horseshoe Country Kennel Inc. photo 3" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Horseshoe Country Kennel Inc.</h1>
@@ -193,8 +192,9 @@
                     <a href="/boarding/mt-juliet/" class="back-link">More pet boarding in Mt. Juliet</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Horseshoe Country Kennel Inc.?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -340,6 +340,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -350,10 +354,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -378,7 +378,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

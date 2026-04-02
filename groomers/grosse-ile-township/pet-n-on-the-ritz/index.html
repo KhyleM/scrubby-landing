@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ0Wx22r87O4gRRekroAEDHP8%2Fphotos%2FAU_ZVEGUoi6FrGKttvSxzQVtIU7QVXxkaOW1K5y2KVX6R2tvn7h8USZ3b-4oZZXHtjybfDDw5x-VdFQNynn2x-q0-CwjwCdj78Nkh6Mf89sGO0NNUcwSeIvK--dgpwSWbkl5KNWn-FwXY7c95fS93MeHJqLn2LbI_RRQWWbML-MQLHxAweJ1sez60gIcXzfEVIhHTsYf6tSv2eZdzPcRc2hOreAZjAWbU1lJNyROcwvq-qqVdV3IblZalEQT1pcW-vwxpiinoBBYcfRIZZZKYogjHktkGqWsoum8iA7gj4wrzRnWEpi-hFiux2iM656HKMVwL3yikrZq1SU4BQuZyYJMUEfWlQYucDA6ruXrBWEERLOkusxyPygU4OorcCqtMu9Xu4DqvSVU_GMbGLEAd-6AbgCi7OxoNoOP2zhD6pJBvhsm1QmdWZUUUirhnNJYDlYD&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Pet-N-On-The-Ritz photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Pet-N-On-The-Ritz</h1>
@@ -194,8 +193,9 @@
                     <a href="/groomers/grosse-ile-township/" class="back-link">More pet groomers in Grosse Ile Township</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Pet-N-On-The-Ritz?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -341,6 +341,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -351,10 +355,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -379,7 +379,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

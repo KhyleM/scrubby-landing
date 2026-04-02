@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ83ryTrLSwoARKmHl4357kik%2Fphotos%2FAU_ZVEHpVpP0Q2NHHLR39yVsSzMH8PmifS4EPO2v1adXbrfU-TvoBh5xUShC-GbcNfpIuKnCLWFLxV3KbbN6_luftE_xvrKiBFJMRzKRQhUOI1qKNjNAG9iJjcH_hWdnCSpOYClvrk9lwV9IXlQ77_Yi8dfa1WO-Z6185FinO0Jpfy8fr3p2eha-ybBFKegQexhs_SaBNoC_lziSYrZfbPCR1z7Z1kp4qOjIXjrBF_856KoHxWW6sgGvFQdUiCk8mXL6IWAl2Cy7o32D0BlOCaXocFbF_cFXkMGMDtVhOZSQLHesSMmvnzJn36UvmUpYYbB25PTTpM62JM91HOnwkj1daa-biXPpsRauY0OhXHtqj8axwATlxjehhrmY1aGvx383w4MIduoJ6MxFyNdQB6dSjD2pxYYl3jA024TMr6Yx1MM8LWVjSJzIMx_t9oU6HHJM&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Crossroads Animal Emergency (Norwalk), A Thrive Pet Healthcare Partner photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Crossroads Animal Emergency (Norwalk), A Thrive Pet Healthcare Partner</h1>
@@ -201,8 +200,9 @@
                     <a href="/vets/norwalk/" class="back-link">More veterinarians in Norwalk</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Crossroads Animal Emergency (Norwalk), A Thrive Pet Healthcare Partner?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

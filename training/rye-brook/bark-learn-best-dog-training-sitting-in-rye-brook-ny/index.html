@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJFTtSFD-XwokRLc3e-Qn0oYk%2Fphotos%2FAU_ZVEGhtqI5UEGjuLae-4x65O5K9XA1rGr997v8jRd8XZ8JMoEr2eOWY-dPVW-jAMNFvFMtv0YPv_po8GmOvkhAfVHDtRnvPRvsfcIShOxAxCUf43J445oMIPCRO-jGYNSiBnH3xrbJtKGH31AOnqQYjcTGXbSz9Qna6urKRLj-VOIFT3UKJtchgHsMOO25oXY2ZlaQFHYrRyFEw1PFZ5vAQjXy1OBiTmLKGh2VptTDqUFeNUUDVTI1lHoSO1p1EX8HC4DJN0t3vZ9G9WQs7ZKmclkA-MWPESEJwugAQH53fzkm-VGHn_ekYrTcOJNBAJNsA1gHmvFqGc8Ljra5XvcjjNHclI6luKP20n59CGwG4m2rYdutzByQiUqIFiTZnUKRkD_RGE0s0FkSWDamLLQDtdu0kwmcY56dr1V9-vces8zboTj0&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Bark &amp; Learn - Best Dog Training &amp; Sitting in Rye Brook, NY photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Bark &amp; Learn - Best Dog Training &amp; Sitting in Rye Brook, NY</h1>
@@ -197,8 +196,9 @@
                     <a href="/training/rye-brook/" class="back-link">More dog trainers in Rye Brook</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Bark &amp; Learn - Best Dog Training &amp; Sitting in Rye Brook, NY?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

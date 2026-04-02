@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ-47vVZ5DK4cRQcyyxZW_ARU%2Fphotos%2FAU_ZVEFq8USOQo-kJ4kK1Nhs9nRgs1-ss_Oag-tBe9G6_nH5VE8VSgMtmzKeePscM-XurIONCfpXFUkP06L3bsEFTmWqPDb8PfW7ZLXsvkdYA4tlhbDoyed0C_5fYNiOmD_lYTqkL-F9t5quhdrzul1NRpDsatTig3mkq1TU21TJLTpydrnC595vK3YfMzOvf3yFD65yW0PCBizY2Yq0bchU55baO0l6pqAb2baoAsOW9KfxSEJvyaPXwrTeGnqCKHdiJ2NEvYdF5XyOwbHINLUfWRHvFTKYXY0DN4w7HYnCdOcounHRLE7jdJeOdKpSD7DBTeN277xRATRA9Xk21WrFa95aXAQTPfrNSHimYqPjQWgU0tzMwN8OFmtwL7X7aZWqZ0JpSwn1Y1myX9JD1m7fPpIl0LO0jDY5yBH2qpwJdYMm83pe&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Pratt&#39;s Pets - El Mirage photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Pratt&#39;s Pets - El Mirage</h1>
@@ -203,8 +202,9 @@
                     <a href="/boarding/el-mirage/" class="back-link">More pet boarding in El Mirage</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Pratt&#39;s Pets - El Mirage?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -350,6 +350,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -360,10 +364,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -388,7 +388,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJJ4T-Bc9dKocRCKNQp33fn3c%2Fphotos%2FAU_ZVEFTIVTcqZ6CIP3LLZ6DBU6JkjI6MXn6qFQ_rrZuN3DmwQGHKhV7Woyua77jxw_rRpOPONN5E5LxMoM3MB8mb8C_xMKyfoBmUJyIm8QcqSz0MEFXX17Y2jLEdI4aTQFNqq9n8msO69V1GAg31qSIJa-rurtx8cpcxOkyvkgutF2a6w6IYZky-vuCcBjaimaSu4NdAQNIUgWC42I42CJx2DTULK_zzKGFoRsbL6OEYet_VoblVsWXatJE4Ma6TbGoLTylUyB5rF0thKQjdu_yJf5FhMsUqaI-r6pANp4rqb1GQMXkV6q4_TTtQNmmvZvrsy3JWpt_ExwrwLO6PWqcoHXksNbIN08Ng2g5vE9QtjhQTlnBi9kgc3uu-HBgBCheEKc9dGnb8o4yexrA6l7MtnsmXLD9MvFicH8ZA0aGmtoW_hXieJeJD9x-1BFwl5BG&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Paw Ranch AZ photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Paw Ranch AZ</h1>
@@ -192,8 +191,9 @@
                     <a href="/boarding/casa-grande/" class="back-link">More pet boarding in Casa Grande</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Paw Ranch AZ?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -339,6 +339,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -349,10 +353,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -377,7 +377,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

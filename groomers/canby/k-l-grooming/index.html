@@ -77,7 +77,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJM4VqqZJllVQRHn56eidXy3I%2Fphotos%2FAU_ZVEHwhxi9SwH8E9BbQF7atmmGFAOaeWdwyB23-DeKeEyCAWrbyJMUBvtX_29jdSu2rzl-EUyEKTFXyIgdHwCjSz2V-DPIPk6957u1VciVbR_lrBHlW5yS4152CRtIKqiYnUXLAMdmwlbQjaIKa4cr1hYH2xhPucp0P6XxjPjXWgDa8jcZg3UNiLHHaKDZLANcmiObsZEuocIarf4SfmSOfGb0PQb9ms5qREpWutNINg3A9uF2QzDZuxL3wdROov4FsAapBlAdwpZX6szS7z_Omp2gbQoFy_RP8cU2T_jV3uIe1WTwKXoBuShnV7Gnzuy5f-JgGPG8A5HpJfAF1HvN5-xhsUTHJkg0JMNcUSu29k4k_8lAc8EFmpAZ5M04sF9SiMKaXvpLwJt_XISk3bSX5Dkq6_Ux0uPShNj-84dngIuaFA&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="K &amp; L Grooming" loading="eager" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>K &amp; L Grooming</h1>
@@ -178,8 +177,9 @@
                     <a href="/groomers/canby/" class="back-link">More pet groomers in Canby</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of K &amp; L Grooming?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -325,6 +325,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -335,10 +339,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -363,7 +363,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

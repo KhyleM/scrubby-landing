@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJubKjK4OHa4cRaaaQlzwYPm0%2Fphotos%2FAU_ZVEEkxoQNHtp2heBOYMkr4gI1Ad9AiPh3Qrpy4DUt4YfEv8EVFHgCvhO-1-yGFXnHY__svJRa4Unpn7ZNyGzSzJ_W6CZAjC9y3ruElS-gFWUQk3bx3LQ3BYU1Z7sItB1ADrfJ5Pd6PevdSvfWvfE7BLuG_t5aiGh2IbCLla5vHlYqajwqrYnsPCe8u7h3xeknLS64hs-KmvYo6JoL4eQwMDjGdqoHlfxmXErliSbrZio9J8jpotY8WzmcEsjbA8NcuJnlDLZ9yNR3Jq6Cc4Bm3OwlRGgu1pHtMi7_l70XltSe9lgSUfFCxaTFwtkxmzshOQX7qdTBaVbr4Dr8NhxgXjbcPA6if353gx16_89eDynNDnv-VvRKmF4LGkNJQp4X11HQCw9WlkH2NXLPqfSVVfnU9zok4K_sYiuiaSXfAdOLQLhJ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Planned Pethood International photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Planned Pethood International</h1>
@@ -201,8 +200,9 @@
                     <a href="/vets/conifer/" class="back-link">More veterinarians in Conifer</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Planned Pethood International?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

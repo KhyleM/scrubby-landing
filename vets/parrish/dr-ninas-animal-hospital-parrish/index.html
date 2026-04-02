@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJpR_pvukkw4gRP9KYQX6x4yg%2Fphotos%2FAU_ZVEE0g4x5A5mBaXeOCWrbmn5GvpNR5xQh102K-Y3XW3DPVgLQxL4fBGbpc-QXMBVki3qSzAuQAjmiuw1g57WJo0GTzeloR5X43I4r2T_BsALih8CBV2TqR3nQGbQrFa0HVqqTzF_3eN8-lnhxa_0ytu84aGZbMYr0ifDmwS9yH59LAZfclGUfUa-4dtDD8b4dMR4nel3rtzJGOrr4Wm67t0nsGSRStiJzRlqINEVWpkwhW7CVBHR5dOK7PXLAGVjmxxmWmMhXl7etQjVP7PrpqE2Rr7cYtsE1KFRiWutPzkczSkq9A4OMzZ-kzHofGi7FWNeU5y3NPU49phJRPpH-6hHrXD94nogQ7NpwIe9aL2PcCY6ZczwjNL0xR17xy_huZ45HUEbMD0VdTQZC-3zCspX1OoqzXpzn_tokpzV9jvYr2Noo&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Dr. Nina&#39;s Animal Hospital Parrish photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Dr. Nina&#39;s Animal Hospital Parrish</h1>
@@ -201,8 +200,9 @@
                     <a href="/vets/parrish/" class="back-link">More veterinarians in Parrish</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Dr. Nina&#39;s Animal Hospital Parrish?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ31hAGAt_j4AROo5MNTdU4sY%2Fphotos%2FATCDNfVgDbNF3Rb-NdmtlFJazzi5fjcTAMpgrPvMKuSH5swQkumaVGyFOpFqnQ8P89pqwuIpTpOgbE1syC3tDSnjC65_wT7jQqDdGN454KcMnbGbFJa59RBhD2koQZpz-fP2Uj0RYLFYM4F140pl6oWjX4lWEq-VLyuCBIC5XHBzVHBY19MnKQQ40TQG1UGuQd1NenGyL5Bt-EktDyWRV969Uv-IavKz7MWbsbd9VPgjrvkWF2PMtEXzF90BEEaWI0dho4oZA45vdQXtFgS59p0b-2EzSXQ6Te4UorjIdD2FPFHgjso96UOS3ahGRajBmgCO0rf5PW_xqVBSg6qvDmxpLLa0ThYCkDgVOFHUZFX02_xEt0ODx7wUnhF2e_BGY1-Wo25g-Eh3E79yBKfiwtR6KZLUOYoznMGHQ7TdK8C72Bwvj-XA&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="FUReverFUN Dog Care Services photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>FUReverFUN Dog Care Services</h1>
@@ -195,8 +194,9 @@
                     <a href="/groomers/san-francisco/" class="back-link">More pet groomers in San Francisco</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of FUReverFUN Dog Care Services?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

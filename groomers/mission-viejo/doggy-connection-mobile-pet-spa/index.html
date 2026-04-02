@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ_____zvp3IAR2P7XFXBIqOo%2Fphotos%2FAU_ZVEH8AFWCY0jx8iXZMw2dXLs6TJEb9CvLKJS6utRryEHcUCUW87uG5UKPfTCU5nGj6g0q7iskF5H5V1onRCh4JmPvlU3_JI_6ZGjcxP595JlXATwQnlXZB98ymewXYiQTrrwoA_Lze5LVSF8xiWsDqKFJK6NC-LjOuGvQQknAwAGNB_2AVQ0F0sLdEIS9kzf9-Q2ZXr1Oo8Ll2ff-52LJfplmlvH3_wWX8ffPzqAuxoSwvoz6nqzEyNFH-WyDLvfbt44Mor78dzw0HUg7h6TXR132QZAsiZtQh6ErFDu3WqkDKQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Doggy Connection Mobile Pet Spa photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Doggy Connection Mobile Pet Spa</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/mission-viejo/" class="back-link">More pet groomers in Mission Viejo</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Doggy Connection Mobile Pet Spa?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

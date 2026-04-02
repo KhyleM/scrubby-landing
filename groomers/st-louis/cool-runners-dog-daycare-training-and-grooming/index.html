@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJTbOYk9bH2IcRnj0kbZDLqOs%2Fphotos%2FAU_ZVEGwIo6o0WwM4saOobCrmenkDqExsZUw6D6K_4hop8VyZFnqCl5tYYAAB2tIkmYe2K0vTBdiGtBk7BE91qxTwl5coZSuJuKLEXOiQoXn6UF7iEWE0zuK1A37joe_iSOjCihPJ1P4jTg8_5KCkdrQqITmHzon1hupSbFqHfN-X5_rvDDKvJlWbRvlsz0gdD4lyjZ0b4FeL-w_YFRmDDSzguVPUmXR6HyPyzvpG-087CouPT_9X5tpXnsw9mK5jWkijr4y-EnPPseizxwhWQuT8Bhsn77hfxdLeZtbyd-JgEk2AzrzBmQ1rc4JIRRpFpcLjOQNjjv8G5zoaq4q3gjvw9vWrkrwATPOXlx1G1BrX-dmbVf064oFzrQcSwnQOxS14tZvp3yz7eARmkA5Mjr6PF6-Odbo9QXQbxgcPwdiazvssoROS6I_MjWRcOlsgn4t&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Cool Runners Dog Daycare, Training, and Grooming photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Cool Runners Dog Daycare, Training, and Grooming</h1>
@@ -197,8 +196,9 @@
                     <a href="/groomers/st-louis/" class="back-link">More pet groomers in St. Louis</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Cool Runners Dog Daycare, Training, and Grooming?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

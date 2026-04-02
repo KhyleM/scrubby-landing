@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJx8IcMboDw4kROvzlyWi59w0%2Fphotos%2FAU_ZVEE8GwBOKb3VbLKRcruYS3Ep8lXfnfJwZ1BGgq8CkIuhYBmTmbUCNsv6vp6z2l9eYJhgWpqtw3iF8bMQrq61P61-_balueEVdtGVs2vPsV9yMj7rZhm0GHdW4LbOAA1-Nhn74-eCNiRQFKvYvH1KKgGZpLceVuNtUA7mwdIxqQV2QOcmejU3MU4DmwQvnppnAFarrVr85rb5HeRXsy2WcA6mKp7huOJVXz-4a2DjMEHM8vVhUhgMVfo5A1-ZkZxiGJj1lyyY_3Xveu4vip3tlU7txmlm-hlzoZXDr2Y0oOwnr-tEabbwjU3zaQ5i951kxTC2WdQUc9z1SqzAS1e2YOAEfdPZOj1OsQYWHtZEopMC37qaTtmqy8Qqhx9Euj78AGuyKOkjVbmbaS6x0SBvlCUSv8oIRCH0dAsqv6hes3ttQMDaqQoXN4uSUtABK_T8&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Grateful Dogs Grooming &amp; Daycare photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Grateful Dogs Grooming &amp; Daycare</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/wayne/" class="back-link">More pet groomers in Wayne</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Grateful Dogs Grooming &amp; Daycare?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

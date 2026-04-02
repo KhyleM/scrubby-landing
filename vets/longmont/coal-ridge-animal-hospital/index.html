@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJxeXvs0wPbIcRqErI5u3-1hU%2Fphotos%2FAU_ZVEHj2mVgQ5wQ6eUMOVFRT273jJvHdj8Ys0AK_y22t7sZiysfjhDtO-QSi-vVDcP3AtbC5UeTjJODVD40z-DxtKjI56L7g6_fcC80gpjHXbUgmeixJPWqYq85Tu9QRfSV4D-gsveZakH-GqRILSs2_B4HwzYNscwMoXmMoocoZDl8MN4wmFAQMuTvjKSc-GOcSVoR1eWR1LwAjcNrUoRXrgP09O9AkZHchsPeggUdZSsx1v9g4dSvtb6AwFMdOc8IGRa4aDPfnO8-2l1vymR83nGOXRVksjaHwyNHOuIHIdQpIKCBLtZ3biDrHY9JEihxvHRuuFFGcdB08mB-Wl0JTsaiGx0chbqHIpCyFQkxx6QjvmjV4LL8KYFXPY4wXfb3Cr8cMakDZDqam2KlqV7qRDHPzgogrg0niH00N7E4xYxJWQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Coal Ridge Animal Hospital photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Coal Ridge Animal Hospital</h1>
@@ -201,8 +200,9 @@
                     <a href="/vets/longmont/" class="back-link">More veterinarians in Longmont</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Coal Ridge Animal Hospital?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

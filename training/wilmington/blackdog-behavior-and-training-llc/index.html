@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJBxXULlj9xokR3S65T3Gi-w0%2Fphotos%2FAU_ZVEEvlQZFz_0ifwxAkVhSZEJadrfeftwjDItgBOI0_w6wnQR5RtP9Roa5IUftf6Wr5ToeslLeWSmmeABOGDMO4WOATwOBrJUklHnY2xF4fAZzMOhTRbbMJAPIi4IRkZxSvy4bubXzvHAGAKc7nyV0_j9LYe11z4AfJqzq5joKZ5x1zwJxTwy89KPzDwKk9rhSmlycjsioXEGfa5prl3EBVoPubpTQHj1dreRASkx7P8WHhJhnHZwHt4waais03cQa25-cVC73xxbAUGyyS6Teq4xhbFhhPRafFszSYY7pq2bzzIlR3SKmr8_2AQaI3uTDfKcy49SaPEY2UERdz2tZG65-J1JOkKVW6h8Sogatb3gY-BdAP2NhXb51dDoENt7_0437MKlOVgO1DcRNDxFVD3OD7_eSKARaMKYh99vBG03cXU4_y_QXe7JmqadWAcsu&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="BlackDog Behavior and Training, LLC photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>BlackDog Behavior and Training, LLC</h1>
@@ -197,8 +196,9 @@
                     <a href="/training/wilmington/" class="back-link">More dog trainers in Wilmington</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of BlackDog Behavior and Training, LLC?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

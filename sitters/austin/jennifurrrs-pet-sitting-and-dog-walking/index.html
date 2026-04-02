@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJb5p9EZBMW4YR4XVmLP0W0Y0%2Fphotos%2FATCDNfXm_G1PUvNwAo0SuoMzRAC7mlleqgQRyJ6BW1YcTrKPs_uuaApLsTEjrCUiRH1rxGhn_q7zXbWYPgsV48W-6zPD-4fiSj1irmzi5GqBIo1kAphavN61K25XQG80VaKBWZBamj-3kB3E-5zOYPSe-E9kLUnvFEwc-uhBhRJ8UmYfzB7zd6wTRY4aLSRM6mynskLgjuyzEnalGYZHMJby5lw2s7aifr6fJw-61fpm2YY39dPU8Nw730Q2Cp6OE_D3S52JCE_6bTrWj1znod2N9ZF5j3eBM57j_zOSwXGlKJVzEa1QuZt9TsMWYjb_bc_Sy5ILXcmM0AnSzFfPC9AVE5GOY0bWqaGlOSQiWuyd4W5BQSeTwxO03pyTqlpSpmOuU81F4HGCLGOE48Td2KV9QuqSawK4mZNAylJLLgGUQCfQkYPZw1QQ_X6Wznh3hw&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="JenniFurrr’s Pet Sitting and Dog Walking photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>JenniFurrr’s Pet Sitting and Dog Walking</h1>
@@ -189,8 +188,9 @@
                     <a href="/sitters/austin/" class="back-link">More pet sitters in Austin</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of JenniFurrr’s Pet Sitting and Dog Walking?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -336,6 +336,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -346,10 +350,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -374,7 +374,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJQRziX-ZylVQRnCtg9ednmUE%2Fphotos%2FAU_ZVEHdVS_EX0QxZbj4BGCRAvK-5yRLyh8106SXa0SVZlgnm9x-CTn8TL_1Ol8G1uD_3aQKyVyYAW69Rb2RG7De9BezMMgF0-afpVZm8BuTwiVdp1IXK7i4i805LB9LQGfr_fy2W4y-XkUvyw86B-TwMC9oMK1KGflCQIt5LU4IoAde5mbNjDfOW7aKJEKj1usiJDhK-dEmn5EOyWlZBGt37EVDqhX5QNOGFvx2z46JjNfg4LRHTrJdjDoh2H87emtJ962yX-AVQd2LRiGPqXaNnoi_XYiVX9jz4mQmswKvPMpDLbho4IDgo34aURIp961n201Q9cv12Bmq2HhlT0hIGi4j0crNcZGyXiIWTd19TKGmqkrhQ7J0jTx5iLklMbhlK0gX04N32EoMZYa7z3IXwVN9n7vQrH8YG2d6eQXxRaKLXg&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="The Scooby Shack photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>The Scooby Shack</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/lake-oswego/" class="back-link">More pet boarding in Lake Oswego</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of The Scooby Shack?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

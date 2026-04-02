@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJK7mYGT7GQYgRpkbV6Q-XCcg%2Fphotos%2FAU_ZVEHhISDiadQmnpxkvXubHJCW9e19WVEK0bDr23h6gR3i2j4ZGICFpLKYW51xGKTrAgXmFqpQvjjd3Y7gyHMa9zY_Su2D0wcKtqP7ZAN_6ipUyCDHy6rxKdLhDA8lZgQZlFs8IyIBTZtylOzGi4vLeZKP5eSULptG8qMsBfxOx2QhV4u51g_aLNPdpQG__8Cd94qD8ysBXDqd6sCQ7wLtftou5J-9AXY_k6VDMmOwI7VcYvn-x_K-SfJ6TsVc82vAlaZe13yZvCDc3qHuohSAQGS8Gz7vmQ_AF47WcwKB9HcMSc4OGhx_7_e_uMFScWr0Aa9EUUVQ6Gbc0N9WjSPscs9JTeRIml1INe-tv8MSOlHtRdJC2cEsfVs5MhCEjZterk1q9zYcW9BgE2Q-zqeT5KmKGkCu5qI5XPNWrQWEII8gs7shUPx59kIzxfZDQWUN&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Doggie Paddles LLC photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Doggie Paddles LLC</h1>
@@ -199,8 +198,9 @@
                     <a href="/boarding/florence/" class="back-link">More pet boarding in Florence</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Doggie Paddles LLC?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -346,6 +346,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -356,10 +360,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -384,7 +384,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJP30WV8jLXYYRfprteiKq4j0%2Fphotos%2FAU_ZVEGyY2AQiNAH6eYN9P1qhMUAyHR353_PI6l5r3lFY70mmjVwVOaePkiUWxhCZLI2a5Xe7HGvQy0zZl7-Nnsq_7_El3yDsmjKtNjLxBVq6NZdgt2tXlSxhcdnSfyNZQ63WPrgMA6-QPCV2eH3hZZHlBVOQRaGk_Ku2d-S1Ft7_eCoJ1nybniBIY4W_mfeg6pCnw0EYiiw9yJM1qPlw2DIpNyGQARH8GLLk2LxkqTxyNL2nLeIPYy3sj9YO89FZ8CcbhJ_4XaOLERtm8BXXWmNvd6Z_op4bIM94vo_HMiFSZhhX4Eo1KAHQvW5-Q659uFMlxT-8WNdYaK9EtelfCeb5sVlaXTE3eAzsPP_mi8UQ9-P4Uu7ExflSclB9dLwxAS-BGwZPmKrUBGoYmSAzHMcRxNw4ivdCCv3pPFi3x19OMVnIxNL3sMoQ0pq7NlWvA9s&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Lone Star State K9 LLC photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Lone Star State K9 LLC</h1>
@@ -197,8 +196,9 @@
                     <a href="/training/devine/" class="back-link">More dog trainers in Devine</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Lone Star State K9 LLC?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

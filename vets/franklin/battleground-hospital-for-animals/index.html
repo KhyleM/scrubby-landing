@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJnxEXWi9_ZIgRC4Y7ZsOKlm8%2Fphotos%2FAU_ZVEGFVkEz6Y6BOVnQ-2j0u8UzfcPPU7BqhhtseMsyO_ZCtukyGwXgqu8hEP0-2hX3cokKl8yDC08bvodNoON1hHv6bUWrk77ghIzyBC2tC6uIOGEjvoY7LfIAhTv8es-QmIv657EbkBVEhZUDBquz6K9-Nj1geK7hxd5eOl7voWobK5n5ZP_mSfzVrSHJ_I2T1kBeRdYteFY8qa1OM7vA6Vhca-CKonEOcswl7j67U6-7Kak6bVI26PYL0mkOdPxZHdoQCyZBw9Ls9xSHfqa0l9cWI6Ba3bRf16AHispPhfA&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Battleground Hospital for Animals photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Battleground Hospital for Animals</h1>
@@ -205,8 +204,9 @@
                     <a href="/vets/franklin/" class="back-link">More veterinarians in Franklin</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Battleground Hospital for Animals?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -352,6 +352,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -362,10 +366,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -390,7 +390,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

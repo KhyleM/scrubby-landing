@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJa2M82LVb2YARzduRZ4PBnQo%2Fphotos%2FAU_ZVEHgz4_T6or4231axAX0oFKjPM0tOWjniwogLMUeZDagsN_qNLxY1TkAG3KWwxFNj6CNOAjRv2k_xSYqQkKLDww1W3NKKzjtCy4BfKoHINV4wXjpVBFTfdL1a-6ej2QqB7LHahHdu1SokDyRUyK9oU5SODYcqskB0ZyGRaTyCHK2x8WllsmYCGTChQ1D8w2aH3h0r5QENXZUIghSg3A_-Ad0sGvFZa45wDzCNl7ktpKy0t2cGY_wo2syFZjahLluHADnquGcwmIT4AXA4SRrYr8YlqlZ9fH2qProZ3jIThX7c0RREAYQslMeGfHo_v4sebFUXyTUJzwxmbaDBh_GrrLJrag5IDtQrAGUoY4apQxNTkfUP3BmOISwtpYtGy302MRL1rt8gJU-oPym_EfI67lHVldF6BI-QUUJFe6n8YVeFGkuxfJi-obfa3V4fdwS&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Animal Care Clinic photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Animal Care Clinic</h1>
@@ -201,8 +200,9 @@
                     <a href="/vets/el-cajon/" class="back-link">More veterinarians in El Cajon</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Animal Care Clinic?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

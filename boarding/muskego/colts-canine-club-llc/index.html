@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ502t_90LBYgRhTcpBXtE5_0%2Fphotos%2FAU_ZVEGKIrUsf8Dq7RWwdWWYOgObDuqePeAAgZZ1Kv9ewT2yPHzVyaS7oU24a8xYvE6C_TWCEqnF0jWCYyIajS-CL1HuR_SXXE6LPIEhu99ATTxyFZ_PR3GBFG-nlr8sZN8P8pMMTdXSAuGiAMqiyUx6rSbYfc6EUoHPkhoDmLvAzClfHPityMZRT510zLFsUD3qrFVlciY3WA6WU-sg0dUmsjFpzKA5KMNfDZorDJjKCOAXc_jp1V0mh35YPYAOkiL0zMGUmE8WRX1NeaaMwW03ogRhL1OYxVjm1H49UlLf7yFZ4ul6Ek16Ms1I2e7kh_oYewuCgT1AY__vBvu9YDgYNVjPezfQd82QScEMhuU0YaHeAd6-iXbxXDmjQ8Cex9A13KfAY_ZgJDQTFXetylpV_OPso11AbMWQxM501NwGOn51ntQo&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Colt&#39;s Canine Club, LLC photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Colt&#39;s Canine Club, LLC</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/muskego/" class="back-link">More pet boarding in Muskego</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Colt&#39;s Canine Club, LLC?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

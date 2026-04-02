@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ9U7csx1U5IkRgwR5qg3NudQ%2Fphotos%2FAU_ZVEF_uakhuuU0eXotGrEtLFCRfUXh2naWgphmID_J8GjqTx71FeXF6pt4ex2SDA4XA28In5XHbK1-R8eUW-8ZQjEPXJ298hyglhSWFEUTcDt6E4Gvhx5oQiHlesTQvj_Hf4J8hYVVqPSE-axa8pTLEt4BfFX_MaZVs2DDZouxNhXNtbHaPSCMLuekujcS7Hh_zrjScG5epKjQ-GjSHdkRp0dzieylMMJX5Asuy1n_qDqWrB5SIQ358Gp2fbrv567sTUH2Gn_9HJXcJONVrzBRAXYOQCt_tSElYa4Pbq_TVlZ3dw&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="East Bay Kennels Ltd photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>East Bay Kennels Ltd</h1>
@@ -192,8 +191,9 @@
                     <a href="/boarding/bristol/" class="back-link">More pet boarding in Bristol</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of East Bay Kennels Ltd?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -339,6 +339,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -349,10 +353,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -377,7 +377,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ37ejBGhQQIgRMY7yt29S_SM%2Fphotos%2FAU_ZVEHmnyJK8FhRjNs62LCW59ZN81UQmr4AnH5aBLmsyHbripvussAK7rBAXh8H3BhB8nzteZs6iQg-_YkyY1HmTaHs6etTFBZTHdL0UXrMItNIHpB5CiC5P3rhulp_L670eOu2OefyNJqQFFF1LvB_veonVJh4SNITldc47Zcj2JaDDldfISWOQ1uxO6HCmGg4MUnqh7fLtb8otCzshMCLUl9t9h_xer_tslHqgCkaD2EnAWh950zZ4xSiaB1VdfbDmkRnoepTtPfYyBF-K_ZJ9WyUmUXphu0_qv_OjZaXOTnAlbMO3XD7rGViyZQx_n_rsSPsbJ_-IZPb89uexgWBEqWAlFN-ZmK-YXwNScN-u1qoWrKdEwYVo77HjRJgOt1cTPzJcNLjpXS4HSrii9WnCgG4OMacN9a1lPYV6lLDpUnZS-LV8-LscRj0bRDu9Rwg&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="West Chester Dog Training photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>West Chester Dog Training</h1>
@@ -197,8 +196,9 @@
                     <a href="/training/west-chester-township/" class="back-link">More dog trainers in West Chester Township</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of West Chester Dog Training?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

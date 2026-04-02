@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJq6Cwyeqz5YkRwKBPhUtDzDg%2Fphotos%2FAU_ZVEEoIwYSmkW2TUVO2ss5G1xGihFczHpQZm_tul_2qfs5txoQp4LUNhgrHHhWxR3v-zY24_vCOQ_HMqFtIxl-hPb7-zxs7RfrMJFguHAl2bL1QcZsbyWPfI7hqQI6WqZVBHk7xTyQCVR-FQhCYmfhCJL2KOTxyBSqv_mS67s9grjUnpCup2FmTzE-yA2p06MfyROFURhYjVEGr14snpsdIGXyE9eWxXzEDJ6aEkkozbGlc_Gm8cC8jHezwrCijHy4sWS0He8jW-FG1t8OoQCmWYFZDvWxflvkb2Bopr-94pdPuSOtgpoYxUrHwdZRZfS5aWhQ_WSn5Eb-xcJ9_7xok0ZekvlJPgnQuhctNTHjAyc9Zc3VpFljRFacjOcDhADxy7CPjFXy1PtazU0It7kYJleqc32t1fAAQOyz7qCOoQBp0g&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Furry Friends Pet Grooming photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Furry Friends Pet Grooming</h1>
@@ -194,8 +193,9 @@
                     <a href="/groomers/north-kingstown/" class="back-link">More pet groomers in North Kingstown</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Furry Friends Pet Grooming?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -341,6 +341,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -351,10 +355,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -379,7 +379,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

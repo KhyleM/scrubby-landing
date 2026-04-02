@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJrSM4PHPm3IARGzHIraesVl4%2Fphotos%2FAU_ZVEEZBirINZl8Tu12Y8jikZ85xqTiWuwVy_pr0tAdnWGFLJ7I77qv4OQop1sY45ryMkkrQ5bJXeVAekAAaRci0F2OrQlmLtcL8uemqEIZk6glL1IDy2vPWcoNcXNW22aMWOcHCwzOUE6oPQbPebeUVQoe6Z3Rl4BwqHcK3MZC03qpPrnyKHq3RDexqnm2U3tKJhqgZGLhYYNdem2aeMgByEZF79hUUiL7gR98x7PuK9lk3HharrNVxq69zvuArEoSeM2FPCcsFnf2UxJSM9TJZS3O3OzwL-PjIZL9KKy7zASaDT2MyOg3m9NMSAD_MhkNIZ8VuH6SzOYbejs-vi4woxLiKCmi4uDkiI56DlwH69gsihXSudlPxGLt0r5tipmYifdaN5Zeh_182BTvPUG727sfdHQ6-h1_6xLidYoxavmyOt18oVWMg-8JcLqXSA&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Dog Ranch Bed &amp; Biscuit photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Dog Ranch Bed &amp; Biscuit</h1>
@@ -197,8 +196,9 @@
                     <a href="/groomers/laguna-beach/" class="back-link">More pet groomers in Laguna Beach</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Dog Ranch Bed &amp; Biscuit?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

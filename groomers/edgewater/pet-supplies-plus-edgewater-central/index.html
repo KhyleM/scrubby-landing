@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ17BqSv3zt4kRI0AXxSZZNnA%2Fphotos%2FAU_ZVEHr5vmGNPzhVUZOaTqhmi6nStyC1RQboUWcdTGMufKhMEG1UJqmeWFOmVaPV1tNH2EwrbINFCR6jXF9jW89TxngksvDZ4w8cajQruTnh6qLnxbLJRH3oqPdLF2VybTLXsOIhazZKx9xQEBLqr4PxBkvvBlPJLOnlHXj-tWNVYxX6Xxd-8BKNu7VpTq0p4t6kay8Uon5ORGImRVL86gswsN8i2Mnk6eT43GiGlsJF-YigvSDIbghP97-Vgb1tZb0jqeqtGrTTMYho1AYhQsnF4ftkqYyouSI3taMVpTxphuuDWcFFb-VsRIsFWbHOvGc0QoD0ishVW0RFtmw_8GU_Ww7oIAHto96lhXlhgAk-q1xc28mld7O4neVpDtwH_YkFTeISgb5szvRB01zXY94hEPsqQqFig0uMKZXDq_ZGYs&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Pet Supplies Plus Edgewater Central photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Pet Supplies Plus Edgewater Central</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/edgewater/" class="back-link">More pet groomers in Edgewater</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Pet Supplies Plus Edgewater Central?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

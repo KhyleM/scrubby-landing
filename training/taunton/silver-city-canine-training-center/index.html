@@ -78,7 +78,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJmSa7Hw-L5IkRmU8aY-C5khk%2Fphotos%2FAU_ZVEGruTs6ftKnWVH0X-HO3K0LsQ4UviPCykkIV8mpgXkueUyauBIUqeG3atSRN9ACqJWK9A567eEjU57csAfsSRi5c9CDFt0QfNw-bogJePoQBz2oXMmcYIyosHqhSHOqTatfh-UtgDC6VIXnwId3ZrjKAkpqPLQl19rJUaRgE-Crh1C6TLwNHvcWiJMZpgBRIXpd22HBOey-nb7uGQIBTDj18_IRCtWpy-l8UoCDQvQiEcdz5n_2LWZuHOdKMJ9KSbrF5YNPr_xix447NbxbSNq2T9fpDpIDrlHh8tudtXjrKLUAQXU0qbPnicobB8JnfZrIyByT1uRv56wuYnuBtpRaLHvnPhAHriu9zI_mAl6qCnScozVFduJzZWN9sje9-8Le5j8I8NxHzNarEWhB2GmU837Gwo9tB8BqrWv3Id83LQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Silver City Canine Training Center photo 2" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Silver City Canine Training Center</h1>
@@ -182,8 +181,9 @@
                     <a href="/training/taunton/" class="back-link">More dog trainers in Taunton</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Silver City Canine Training Center?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -329,6 +329,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -339,10 +343,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -367,7 +367,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

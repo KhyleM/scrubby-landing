@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJY0tXSBUN44kRDg8R6uFV0Ao%2Fphotos%2FAU_ZVEFMJbU6I-AXb_JL-o_YVIF7vHACrV3c5Y2bRoGJXA-sEo_LsOmMZwLWexOCQPIGN-ntrw18yd00MIGaCTSsBMzpi_PJUpqZDIKimW0MZjjYUWNDMH2tqsslkNtevYQPH9-RedBqNVMmybjSNjg_EQyMJzFt3V3Z5sDzMxkAIR2T-vaEiXTFGZCnQHHRp_rroPu-7I9q6K7Di911AOEYRMjgiJQfhQ_Rrq1SF_yHGE2IiKo161x6qU1mkhFiV5LstU2VD1pY20ufAjZ1IVaVUa4tLkhv4a9_fxdmm_ulmTfzfYgbgHdTpO_V78dAmbsXb0GxejQ8KbOBTx0WYbcIDt6jLRzV63_97tMCSwvjUnm9V6JHsdLgE96-EUai5eiRDc0mwQi6Sh08sqYTpyixkh9e1hwT8e9hhK-1F50muAJ06YcvYmFxeu0w5100kcx9&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Pawmenities - North Shore photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Pawmenities - North Shore</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/lynnfield/" class="back-link">More pet boarding in Lynnfield</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Pawmenities - North Shore?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

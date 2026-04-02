@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ2xYJJ0N0lVQRs9T09sEXH8c%2Fphotos%2FAU_ZVEEQ5syY9kWHxJD5XMteOCLh56cghTF9CZFGjYgVLfX-4kmn5oXg02nBmdHEtLSTVvYG98rJN5Ft66FSKb60zJIYkCFgqXN5D-UeNZ0ro7ofQCDTo9VQG41Cxm_bCTNvs3d8pe8-jZQL4r3BBamkHo0QAJAljW4UXXn5w0xVN5rhKy-WP541GMGw54pCAWIZ-VI2ugYZDJyaaVOjRxEPC4GWSUTjo9_yk1N2YXLbopdmqQ5JucsRCq6hv_xJSOo7NnJEIezPHECmyoV2YcLx7rZ6v7yOiKpzw_6j-8EP0feoOA&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Pawz Play N Stay photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Pawz Play N Stay</h1>
@@ -194,8 +193,9 @@
                     <a href="/groomers/milwaukie/" class="back-link">More pet groomers in Milwaukie</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Pawz Play N Stay?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -341,6 +341,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -351,10 +355,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -379,7 +379,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJh7GBPTz75okRpR2bAFC2kBQ%2Fphotos%2FAU_ZVEGWXbJLjtN1DMMbFOTaxgPr4mpBNpMkq7-mOYSe--VMNneTVy-8tyQlHgmd0muC95xbHisYvYnqZZ-wr3DyC1ifPd3PBY3PC87qb54pbj5szDfzNiXCiJXdY1I-dVs4squC-G2X91xyh6JXFQ8sB5T4rAstyjzR92lvUk2qfq4ijM0vS2zCMEdP4P1iT15NPCKG7W9_jX89QGFNBLT8h7_aqKKUxgxj2fkdUneJX5zv81DXBMtnR0L6k6j13nOelHw5mp8I2lr2tGTn7_WtPsh0rwAW49jLRQsSBznD1dkllIsU9_9M8Rk0iwZQGoRPIvJyq65q2Su55F78e38N5WpdvNixV03Sekn-eGwA6zVx9q4wXK-mLa44MGCdwMrjllgNF_8Dg1IDYc3Ac94D7MMnEmI9UWZnavDTvlNReCi_4mOagiFHuakM5SfnVA&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="For The Love Of Annie - Pet Care By Jackie photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>For The Love Of Annie - Pet Care By Jackie</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/broad-brook/" class="back-link">More pet boarding in Broad Brook</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of For The Love Of Annie - Pet Care By Jackie?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

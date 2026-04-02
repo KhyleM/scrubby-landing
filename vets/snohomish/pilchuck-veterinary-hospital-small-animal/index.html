@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJydNRmFKomlQRn4CMv4yf9ro%2Fphotos%2FAU_ZVEGeBaE8aqJx9ZPxxs2LrMSkFLX3nTAfDyhu5rWNGPK1NcW_ZN3HOk6ZdJi4BfE6_j4FjZM2l8R3deAacO6cJBDWszFG_zzswGZEUZPUG73hYxr1CEUU8JaRnlmFG_VK0QxQ5asBHxIovp6RAt-3vxpqDXD8U1knvWMR8JPGTBDYY0cpRRs5JeIMOjvF9GGj45TDn0E1Wz4N8L6n3H5Ahjwrz-chFu9pZf6s5YDBh8efRcoW6anf3cWdl2RH1MH2_uyxhrHfhdSRJxZUmKnsvzQnRnTbtmU0c8h5CA1x6tiWuw&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Pilchuck Veterinary Hospital - Small Animal photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Pilchuck Veterinary Hospital - Small Animal</h1>
@@ -201,8 +200,9 @@
                     <a href="/vets/snohomish/" class="back-link">More veterinarians in Snohomish</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Pilchuck Veterinary Hospital - Small Animal?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

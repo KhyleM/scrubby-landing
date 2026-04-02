@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJqRqq6I2OOIgRR2fjhG4gjOk%2Fphotos%2FAU_ZVEHCECcbMbXfj7zMAdFdc06lclCkTzk8b8L2AmXwEko3d053WzX-zcjHDsOfendOpvf3FUC4G_Y1oob8af7__Lsiof1NXNFLiD_xQuLo4J5pZv9EBtfD2njUGxNrbMa9OEtTr_fAPtukp4L6olwAWH0Cf95GpCA2dTXTl2fMn0kbn2DVAjykzEZ-55fcWAt_KJLCONcm4u_N7ACzl8SWdDAxH9OBbAz-_YDDlps2hPjC4ctCHrF83G7g3fYrFzk_hySEsAdifBTf4HrtGRgnVmgKfwgCNqPMJL7pmZ7_VCs6XrK6x662v1Q0HXaSr632b5OVjYewrjF7aGir1iCg3bz-Sv6lQMBLUk9Lf6gfV894sA0OBK7VpA2bHuNM5MCGCsOED0xMFa9WpCycBWVgL9LxFQTBKseIM2Pn6Nw-2bAehwbR&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="The Ohio State University Veterinary Medical Center photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>The Ohio State University Veterinary Medical Center</h1>
@@ -201,8 +200,9 @@
                     <a href="/vets/columbus/" class="back-link">More veterinarians in Columbus</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of The Ohio State University Veterinary Medical Center?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ2V_AyeRtsocRjskYrsQtWIM%2Fphotos%2FAU_ZVEGmbHn-JeQf11PHlVcVkPB2iEEq-Fym7QQzc7u5FeLH1514b_j8Dn6kj_F_KryLrI6r-QxdrJ7SWhyx8kv42aU73RnICVzNpqc6qoJz04tygj2maEYipigl2nK8giRpC_CUU3WJyPqoI37O-qy6DLw5-ItdybpPG2ZYzw3quaXDLy-_S60MQaNazoRXRT6enPPH5DEAN2_PEc-ocUQEJX9XaoKllcRICDI6NfjGr9Rte6FethlpF6PQnKFtEa8mjeNXeh0itx3wHuxdb8G1yd7vzL3uC3Ya4WiSMKgh5fKMe_o89Fp8BZ_o2ATS5g4l85e5uroWaieNNzcebenzlGpHGEtiJjoPjQk95-KT3cjQigMooHpsi8jfyJ7e4XbwBKjI1lysvaJ--yuoI5jNem3h2Krep93TDvuqIQpeKZ350w&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Newcastle Animal Hospital photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Newcastle Animal Hospital</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/newcastle/" class="back-link">More veterinarians in Newcastle</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Newcastle Animal Hospital?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJfyHLyxibVogRG5AvWMQgQbs%2Fphotos%2FAU_ZVEEtzJX2n25ccKP1CF_z-fCHV0HlVVjgTj_dvDcILKxLFp_cBSqzH7zE7ujix11hTdbQ4AQW7SijpkONzc4oVVH4rI09dBwcLyxoK2eHOiqKn8tH7gfrld4VClmSsaJuSZgvW6F-C4GSbNtcOqTXxSLJInEFkxcW2beCXkab60zcA5TAuUfmTNhV868A09avbPf_nAn9TjpYsC32mSET71IbWqAdY-uXzo-u7vCMuHscvzZKkN4mlhyp4dzWHQR0z0RkhyJt-O5HN_1VtGlTA1xCiFRP5P7rpvRq92C3voOQBQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="The Dashing Dog Parlour, LLC photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>The Dashing Dog Parlour, LLC</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/fort-mill/" class="back-link">More pet groomers in Fort Mill</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of The Dashing Dog Parlour, LLC?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

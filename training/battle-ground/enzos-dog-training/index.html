@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ0Whx36S1lVQRZuzmjrviM4w%2Fphotos%2FAU_ZVEGUI_hx2CGhJabkSDs5czS0jtZEkbBwa-SBUUnWzyyLwR3mtjcS2rhKTgRc0Z8gkkjWMrOqaPj_6Z8c4G9hoB6mpITrouk1BucqFymplaHbjESaY31IaeBA83S3ae81_c_erLLIiOcP27XDqn3KTkWn3akFSTGh208RuhHhvCGghOx_V9bw-O-KvMXAlhnVo1bdIpcKD1ceRq1wia8bD5zAynBf3LjNyhy7LDH9UP12OsJ4mLkhZfFRrKaqe7ZfeSErTa8Z_1u-ntoYUJ9ELr_vR3NzTiQpwu1hYkhZmCk5-5Z5eC2PXY5RoOK4knA9lmraPpeZA2D41VoLY3E5WJui77xRo4Wqpn36giPUAixkdoHjM-DZ77SZAoI6lKP6VoM3QgxXmu03efWGwRGU66sOk4REe9-vY3lBmTvGnGAaUz_5ZB8l9rQpeSeIKuSy&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Enzos Dog Training photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Enzos Dog Training</h1>
@@ -197,8 +196,9 @@
                     <a href="/training/battle-ground/" class="back-link">More dog trainers in Battle Ground</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Enzos Dog Training?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

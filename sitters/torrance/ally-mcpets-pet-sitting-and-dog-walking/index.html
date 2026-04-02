@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJmQEaGpy0woARIAK1y76lcfQ%2Fphotos%2FAU_ZVEHLhzkLP_HM2KSa6UMKJgBd8LAcQTuq1jFErlSC8G2Y9zXj1P5M0oor8UHq0GW9gSvDMIx11Na-ffRKG41OvgFNuBv2X2dU6rFvcCDdHlVl_AH98wUsP_NJB3MRZbVSRuLe3YLbtYDsqLjEcr5FH3qZRJ9xCjLYvw2OFeC2XB7R7YR2WtkCkzHGPZawY_3RR6v6OBnwHK0aL3RkuDS_dZmGl84Rh5rpsar8oyLWDIkqLeRqIgMNeFTmFuWGKzGeC3pwHoF3_3sNPj7TRgu363xL-3kmqChE0NQ0t9sQVxIjTQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Ally McPets Pet Sitting and Dog Walking photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Ally McPets Pet Sitting and Dog Walking</h1>
@@ -195,8 +194,9 @@
                     <a href="/sitters/torrance/" class="back-link">More pet sitters in Torrance</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Ally McPets Pet Sitting and Dog Walking?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -78,7 +78,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJl7TPX1KU9IgRaUfAiaSLWWI%2Fphotos%2FAU_ZVEE9fJ3sqaSGAs1phx0FSkFYOzK2Q4LGGtdhzfh6oVzTi-DvmDuMAxiM_Rl0nmc1T8nsv0y8s2OhTEcF8CIJJpMtulBzAJjakvzoMlBov0Np3sof2vpmywtxvMw3-cWSZ1vxZu0RpZy2fl3BbiCgSdWbYhk6Mgs_E1PRQdsoypB8BzVrqgjmgu1Ph23YpzbkoX7OJrntiKV495FIia0EP8cZ52Y3hYMnWjkAXP47G0-Rb0DFUKon3SWi7YmagtB9Pq2pSCDq5zgtccZcHL7n7sp5WPeB30IFsB7dxIsWP8pz6rDQtp3Z2Iz0Wt2J5Tq81ZfuOtXNbK4V18vVmfLnvmaD9zJivJW264qTjGMdSxESEvHkXG_wJ8H40NznJAS7bDD04HYEMXzybKTnITQNRSPEV-uA61Efv88umn4zfDZNuKIFL4QsVi-RpRKqyjxP&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Bubble Room Grooming photo 2" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Bubble Room Grooming</h1>
@@ -191,8 +190,9 @@
                     <a href="/groomers/senoia/" class="back-link">More pet groomers in Senoia</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Bubble Room Grooming?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -338,6 +338,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -348,10 +352,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -376,7 +376,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

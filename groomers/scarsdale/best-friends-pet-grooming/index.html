@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJw2QEC2iTwokRAKfaR056QYc%2Fphotos%2FAU_ZVEE1naMaF2sknBDiVUEaofbFRmSQ2oV8VlVZ95R2WReYpB_SYDmlTe6Q-v2wrQqSFg1vmeCyGO1p5Kb5lx97MhlB3jyIJzogoT3zhRyvEAo9EQ9bHaLIaL8bek1yN-w16iEK3LM3s9BonyvG3Z_XX8nl1abuI81nxTAtswkR7DEjTYOps8kTiFHkoziSCQZgY3l2CemgVr0CbgR5wHFgdpjjP-4d14zSIyCC8Pw-DWQR95bkYDRozpGCJDUeoPgn9dAC3l4j-_5KrdEsCNB2W3tpG8mQ43-bWZzkCzVBkXbZvIdSTXAe6cSRYMDll9wg9fKM3jtZ2mW2gS_k7AE23W8CFZLv15vtT-pU7zslMojAhQpceG7fBbMlNciYAJ9XmFNVJZxN3donAXC1RbVq3eqBWfkKwzTr90Q4zogiTdVNdbgKC-izfz1uMvbmLtp3&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Best Friends Pet Grooming photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Best Friends Pet Grooming</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/scarsdale/" class="back-link">More pet groomers in Scarsdale</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Best Friends Pet Grooming?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

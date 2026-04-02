@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJc4-WRSS3woARhy7IZSYT-7A%2Fphotos%2FAU_ZVEHNTlTvzifwkiczE3OaZoThuuAfi-ydZGNTxijOfNfSbq84iOO-m3v60Z5eU9SZD8QYVCCJDcnxczb3_0wRUtWXU-Wwd1wIFmo1IXT9kHQ5orpE-csl9gPfGK5RQh_J-rXPN87aQSinqJKnPrIqunMgxMkyC1ThbSN8r9arEMPWuMFC80D7ZGVNmS5atWrHhhqvQEf6XueaHfUYXXGjORlMHuKitC8YzB6Z7SRAR_hi-FILf9QQAclzp7jaxoBrezugcKHqcFQNahjs5fSVsr0M6gHLywI-nAHl6i2tAl_NhPr6wMX6Mak5IedGj_0HzzRrv3JFZ2rpfSE24coceYfUpxKOv5_OrbcABpNhOqJPUDksiJkQcTq1euS6KJ2a52eHGs2fSFdo-0gAZBIXQnfks-VjiftBD6qisT47iMs48teTxXyjHi0CkxlvfXl-&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="South Park Doggie - Waterland (LAX) photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>South Park Doggie - Waterland (LAX)</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/inglewood/" class="back-link">More pet boarding in Inglewood</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of South Park Doggie - Waterland (LAX)?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

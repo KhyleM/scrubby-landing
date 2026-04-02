@@ -80,7 +80,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJt2FAJ780joARZbZPo3-Vh78%2Fphotos%2FAU_ZVEFBXHUDWrlI4H1YGVZxZgEazcDzcgdDebgsdSIdGWPEmzMRtHdMSj87buodOhYaJ9Erc3al-CPnyWy2tv5iM0WSnLKGOSvu4RNlVEjiMYD_s6pj5Tnto5Ny40-huu1aezWkHkJt57p7ziiHKn9dq6YPCeyqrg4g11n0iJYWJOsaIra8H8_WXk4kbuLl3j3Av__-PEibIWQu5iGki1yKEwzbWYBkRC5NIozlGImhZruUfN7Hy2sDqkjcvwXR_-1282E58bcD8B_7Ls8u0BLYleF5wqoiqKLkqIseAR6rxn0Toj8vnCy6FwZjAnTw0Dm2Cs6HjuCW-24X3CH6-M7lW-vM2nC1UXi9CEyalEkl7wdemh4jY8pclsYUFbaqlrCNxLIfBXtq6DbZgCBN96oVWtNZnnfSiOiBJxZnhm-9twC_Vg&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Bay Area Dog Training photo 4" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Bay Area Dog Training</h1>
@@ -196,8 +195,9 @@
                     <a href="/training/san-jose/" class="back-link">More dog trainers in San Jose</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Bay Area Dog Training?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -343,6 +343,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -353,10 +357,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -381,7 +381,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

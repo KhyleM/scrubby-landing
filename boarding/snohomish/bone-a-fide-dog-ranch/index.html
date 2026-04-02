@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJG-GsA_MIkFQRgS0Sc1IFuaI%2Fphotos%2FAU_ZVEHGwTcaEmfo_SPn4dH0DNRh2uJGrswQB_-xns2yK2mKKt6QtFZhl6szYX35c45x9QEMDx8fRurd0kZVTKtHJV7nNSfQN-oS2085i2MSklGsUlYC8I0EXmfWUtWV11pcpx7ddkbppF3K9Mj6CT8ICbJWnaJwINJRdfA9x85ITYDWQLTa7xCffGvbpLrDu-WaD1tkF3fuibEtdQF3zWhGP0QENfu7GT9JbPD2KQUceQxGWIsaiwLtGy7x1l-prACg2qzlYpuMLCCNVjiAAE9FvoOusnc-0Vn6nFmAZm9fZcp2KcRRPCJZ6AcwE7nG5qHuGQ7y4yPBOmJjWt7T1I6Z47-jYRAEUGCxgy6IUz5GH0UEkpTIghad-1iRcdwTOK5JYThkKEQ-PyT4OQhlPJcbwDzFSjkpEX0LsjWTIpQ1T6r0TLY&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Bone-A-Fide Dog Ranch photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Bone-A-Fide Dog Ranch</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/snohomish/" class="back-link">More pet boarding in Snohomish</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Bone-A-Fide Dog Ranch?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

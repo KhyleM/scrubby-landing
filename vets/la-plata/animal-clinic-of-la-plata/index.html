@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ8a2e3sUIt4kRLHQvpwRK-yU%2Fphotos%2FAU_ZVEFgeky7aWDggqAntNWBBfXG2PbcfagDPH_gq4wCCdFH9cMAaZAof0eHBOb9q4b12mExz0LfpAU3SoYv3ugSLrpY8DyEV0zXsU77iFzWeyeJmOeAV7HKduV9hrFh5QpxToqrf8BM3tfgfRlnoo7fy5h5sOR5pwdQho09Rr3w9ZwcBlSYe2ZbFL_ZnEs_2766s-VdmuOxv9qmXdZ232OsmnECx8YdeMu2ntg3XVy6oC_djHcdDxg0in80Zwi0HXn5WFoDwefRfpk6B9rDhI3utujgKIqPdOn5b8S0FUCTgsksx9tefJ2Ku_utkmci_8TpzcROKYdrnfUI1QDhaIom92ikPIUF15cm2NpuKsTcNhi59fxqoal9JMPoF2Bx48z7nkhjFzP_Ig-XtCCk-QNlj6AiwncJnUWgndP8Y2WQPQ_Z6i_S&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Animal Clinic of La Plata photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Animal Clinic of La Plata</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/la-plata/" class="back-link">More veterinarians in La Plata</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Animal Clinic of La Plata?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

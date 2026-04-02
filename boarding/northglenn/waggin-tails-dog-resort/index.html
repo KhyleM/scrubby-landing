@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJgTQuGBF1bIcR6zUccvh7Who%2Fphotos%2FAU_ZVEGliK-2FMC-QuyI7Gq0YUFo35ZQgqOdNMmzG3ffdhy_J_XNJzVC9vGJ9bTx_QRKK3r6jQFJnYp7ZqhWusv5rbgkZSg6zAV3aHqguz-POw9bkz3nDaqezy3IzF7yaG3OslQPyRGt5SJ-CSqyE1yN6wBjKa3RtB7I3KaLav5J0euHcWbSNyhjLxzNUVlI2uH5Sje4Z5KJWo0lJJCFCzBg76vgjVCNfBY6khb5ZdolzT59uYFaq7z8Gm4OWE4H52LYzNJ01cHE3mas-YqNc2G2q1Ew7ilhJ7p3Iau33c1u50tQgiC8kXZ601ioGh4TCBJqgmJP7ek_kyped-hIqoszhQBpIGDSbNFlko9mEqbbt8AwtwmjDVUtq2ItSwrDov5fK6qWZCgkAvYzXAmSI2yVza6gbOV1iK-dUtg4kJVrzr9z3iaVaKKJUwoAsH34XUD_&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Waggin&#39; Tails Dog Resort photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Waggin&#39; Tails Dog Resort</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/northglenn/" class="back-link">More pet boarding in Northglenn</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Waggin&#39; Tails Dog Resort?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

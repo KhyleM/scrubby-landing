@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJq9ax-3Dz3IARiq_0L2kr3Zg%2Fphotos%2FAU_ZVEEui35iXoDQd2QRCSAJ8xUEKvxcqO6p9W-F6sGH3UsYULTR3fxK5B4nKWNHV5dItf8A6lNdOm386PqkBVviKRCDf2NUIpBEYYerdu6JgYH5OualWnLrVyqbsLWzzp70IrVHrEoltDOT_u4UtyactcGxbMFNlaL49JcN1JhJypidmcJCWJYrKSI-kSYHjxH7uWlI44QeiXaFtPwBzLy9E37r8o61xySWsMcUvW3K1V5ZTlhxbb1qHjaTLfUxJgKW6SXeREXGl_yKSd5XKOcRavkQzPcVB8eDADW11n9OS_3usgfyLyn-NkyD3gTy5kly_kYqxUwMvEkzLmMzfbGo0y9RzDo4qwDANwR--bRuDdSte0Dj_U7BjnSj8TchSel25vlGx9LAY-lVwyg2VUjbZYGgjRsulsbdwWBL7o2IDON30T9QllpDU6esyEdkjA&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Paws Pet Resort photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Paws Pet Resort</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/san-clemente/" class="back-link">More pet boarding in San Clemente</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Paws Pet Resort?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

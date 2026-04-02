@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ2ehPGb6ZbIcRXXUFHs1AyPY%2Fphotos%2FAU_ZVEGy08QqeV6pB6YJ2fdGXJdJI9SqedYSqd2x3lelCe-f0UWHHjT-8Xa0r6tqD_9h2SoNilsT4KDR112zfoG-2zxgOVbi1m8NDvwhIxP7eO70LRLmQoIY13Q7wzeCKbHc0nGKUIazL1K1YR4FFnqe_WunCqwOhHKybBL3ma5_DS5vjhxaSWAyU4JZjjYjdW7Mz_-vkhmf6VHgI0yYYlZv6lDdWGH29VabIqGzgoUosfY2BgUrKqHDVQI825Y3_XoiSViSZ7oZJB81XnZVrLlpQixUG-9bzS81Q4EEoqB0Ir7Y67I9CBnyWLTVVoGTJ2WLQ1KJqjpnZFI3US0vIBGPxGKa9HQbN88hcVhz0N0yCLkTP0TYYM1Xow9PpUps75dJG3Cp7TM-1d7FXELz4bKJYtvstJ4eB5KNWlotqJawa1UuhHfq&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Animal Care Center of Castle Pines photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Animal Care Center of Castle Pines</h1>
@@ -201,8 +200,9 @@
                     <a href="/vets/castle-rock/" class="back-link">More veterinarians in Castle Rock</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Animal Care Center of Castle Pines?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJPzlp5qTJt4kRxMZcyzPnRVk%2Fphotos%2FAU_ZVEErRW6QvcgnPi4QKE-Flbe5TWOhaSFAbRLXKifReaGh4oltkBVKGgb0HVQWAhwCcazwIxUTDLOvH2u7TQ7n_EpuDqCQUBlV3SkEpnOgRXJmeM7Ub8GP-3neAWq8tro09QN0B9ZR9QR0-y52nFERSjsHO1mWxtt7muKcCY3nvbFoZp98t5H9d_-8JTQ80F0tqGi2HmZgIGMIzhJZ1S3o2MNffEdF-bu1JS93z06B07HZco6847QU9OmPAopGERIdNs4r_KvLZY1WGXt2q6XbANSpCNUtbKe-2T1-FJX5TvSScQTwKVrgKtey2cd4y8SRgSFS3pgoe0kk-qKB-1lq_VpjQoPtCblPLG6xZkiwIislxHUiHYyHmGY72fZJlhtSCvJhcKRPb2Crugtp6pr-qX-u-Z970Ha-Ac498cXmphd9_W3kU7ZOAXIc3KejHDke&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="GROOM! Salon photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>GROOM! Salon</h1>
@@ -205,8 +204,9 @@
                     <a href="/groomers/silver-spring/" class="back-link">More pet groomers in Silver Spring</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of GROOM! Salon?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -352,6 +352,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -362,10 +366,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -390,7 +390,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

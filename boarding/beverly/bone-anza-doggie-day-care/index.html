@@ -79,7 +79,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJKQXWiyAU44kRoV5z7ePhXxw%2Fphotos%2FAU_ZVEHQBFVXGnDA2859oDF4w0mzy_W5SxwfHeyYNky304-SiOBvKQ421in0aJCjkwKmY6xCmN1qEaZ6jTYSyCvIB8z6PD3xCNyaudto3CFInejbwUsfvLDM16D2zptoRpwJamFUKxhhvrknOqmAG0TRJgTQbHy-yZtBZTQO03kFMRMkoEp1jkLYoHQ9GYdaO7o3zzisUcBb63RonMVPx06aB0M3CXiemT6IZKZ4xFQLKIfvLn51nRRUnRPLCHi2_7g_nP8vgzvZk7qJe5Zrzw04TVhV2VoOvG2Qb_6hTS_QrsPt2cFL_A94_BitV3H3ZHv9oUgZ5qixELUn0C_sSQb-Mc5fb16-9mUFb5QHXgfaFHDsMSZQDMpfnSR1tL1BCZWfYmZiOts2Vvd41Xa83hQd9Ft_ECvZWfZslekcJvBT2gvaCw8o&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Bone-Anza Doggie Day Care photo 3" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Bone-Anza Doggie Day Care</h1>
@@ -190,8 +189,9 @@
                     <a href="/boarding/beverly/" class="back-link">More pet boarding in Beverly</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Bone-Anza Doggie Day Care?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -337,6 +337,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -347,10 +351,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -375,7 +375,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

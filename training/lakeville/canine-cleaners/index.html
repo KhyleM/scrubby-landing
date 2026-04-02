@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ9Vg1JptH9ocRkyfouAsU7OQ%2Fphotos%2FAU_ZVEFRSUDrhNMIyko_XrfaypvZa7QwPhPGHqLmpOaX2UR1UETmdFIOQ5lqt7UbmMfCcQCw2ibdAryeHwD5_acYXpTas0Fx3Q6XAEEVYXbDCJVcvJ4jPq0fTMJ8oKSPe1n8ChxceN3VS1Oic_3nvsDhEpCzqoZcURAr7rUfvGeJoc8EGN_yLWKQ4hsyvTPvQBP69yecjFpwJm2qQ7gaXoc_-8Fa0_k6j2PK3TuNzWQsyaNP3Nh_24RtrlEBedJgc_K4-Lc3WeB_rIf4xE2Sqa24z9-hKHS4gNlPiluDPEo0AkkUwmaA-JVDY0dmCHMakfSilrQmytOONhIrZiEYhuEgEyhxzhtEDvDwqDXTgSC0WLVMRo9E6UjQDik9lnFGZKj_M3-AThIrdOTQCZ4jtpL4xul2kwRx2s1ektM4NX6vQHtbiw&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Canine Cleaners photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Canine Cleaners</h1>
@@ -201,8 +200,9 @@
                     <a href="/training/lakeville/" class="back-link">More dog trainers in Lakeville</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Canine Cleaners?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

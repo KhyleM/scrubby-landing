@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJOy2GlyBhDogRbwdBwphB6Pc%2Fphotos%2FAU_ZVEFx3wgW2tNCkxEVv5C4IyDC7tRMdo7VeOmiuFRy86GjaP6TQT7QIZlAYB3IaRCLOOAlHDYK3CX1sKj4kV7rs7mzNMUOZIdT8leA4z46aFwTDPqBRVB8-J_0KH17MWV6db9RXGwd_B8i5rc0vbpAYm_oIWyGYg4t0-nB7exVAgtHSdY9IrHSd-Q0L9H94bsE-oJ3brP3nmL6q6bUK77zwz94n3YrabOzyrWppy8VZkATMVe70CbbxlnzEV3wTG51GPWjtH-nS__C-j7oQFDnIZhB4e9mFqcHmxolggm0v7iXcqRHlnpgeOeke3Ib5zq0NNTkDLDDRMD0_cN3r_rgJ_9aVlrFabwAEIFrPxssEVb3welY8mJUs_4MOype6XZt5OFQYZEic5-m6GdkFoC_6kOOntmp-127wC45iO81tk7YdA&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Blooming Tails photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Blooming Tails</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/crest-hill/" class="back-link">More pet groomers in Crest Hill</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Blooming Tails?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJMW1Kdtl004kRxxBCZHdwHeA%2Fphotos%2FAU_ZVEGb5xyiWvUEYNa4u8eE7pk9FTmCRxRJ0h1T9RZA-F3Ul9Hmn4-RUi-zy9WEQV3vvzFz2pVdqAWKXbXuKb6pP5c899eSqNLB4msV91jBwJ7tz6ClDizGsfCsPBrecll_3JV42QnSIKvM9VAIsoRqHhv4oh5QROtmj9gfdm1avPGCRyFE0PEkKFvUt4EP6huklPbrF8u53NOOJVqvqRPXBUNKTQKQ2BPIxMp4O88QG5kz4Y7ijLO3rEakGQ3KeYaGTJ4fM0WVBdKkYDS93UJBm_q7j8ufVO0ysLIbYiLLz69RYr0hkhyXjJjo3UD4Nkdqw-4ZbAVzSSdnzXDpcilCdDnY0BFvin7LjibvrVHURU-cg-SAMsbhZ1zXWwG8_MI0G5tBK2vK96KxylV_Nd1eFdIY4E4Ym6wDeVct8McDC28sGQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="BluePearl Pet Hospital photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>BluePearl Pet Hospital</h1>
@@ -201,8 +200,9 @@
                     <a href="/vets/buffalo/" class="back-link">More veterinarians in Buffalo</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of BluePearl Pet Hospital?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

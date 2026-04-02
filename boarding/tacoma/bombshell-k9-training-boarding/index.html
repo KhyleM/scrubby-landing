@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJm2iIlxOgISoRFFJ5jzZ4WZw%2Fphotos%2FAU_ZVEE_suyIuvXX4AakdwMA-Hi_f6q356JSrOuW1s835ZOZArC9p1-Tmp2D8Npf0GUbR9W0OIU1eqFjhr5OVjZJh9Fh7_bvM3U2oITr9lWrBJW8Pko_yn5SMAafMzM8IztR6dqemtfSZtrXFwehthOp9eqe5acr1MUrJPRr6aRZrdl9Z0Io6rk08mte6K9Aeq4orIh27N8TptR6Mond-ZoAqgRYaYqT2EgCVb0R48OcKO0L1LwA1imdj4KRSRTGpwJbZgV_hMySPK2hzZpFN487vcSGoXQGTzVEkH2NaGPt3esBaYpWKcCs7xzP4YZWk9sA70m1hGmDZkadXFV9VjN4Q9obbB-gX3nW8wyNuDLes3__JcxUtffb_qFL-LvIZ0Yvwm1AIr9oZ9e5WtHvPmDYx2dn-wF1YApHqE3PP9_TgH-BgvbuxfohatwpJf75-3Pp&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="BOMBSHELL K9 Training &amp; Boarding photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>BOMBSHELL K9 Training &amp; Boarding</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/tacoma/" class="back-link">More pet boarding in Tacoma</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of BOMBSHELL K9 Training &amp; Boarding?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

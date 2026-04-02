@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ91pGftYzsocR_ETKk1wHYIU%2Fphotos%2FAU_ZVEGUp5MIH9Rbo79dqfwdBpdv6mXNbiwuPLpa-dXrOsBoMJqei9ACt531oYI9R17ZInuniS8tu9ZsKPb1yf2tGBzcM5vtek6TjYmmx94faxEqFv4-WLD9THqf2sILpk91pZzXiih-39amxxDaOrFGv1uv-YRzqvo1tW0DHSC7XidcwxyawWAUSXbKV0jkuuO0Ew3uhoomdxtPEIXWoKwWih1zJMV-zYF6Ijw30DXWyUghtguXpSE51blcpHwyHfvl1tEnY8TzhLgCF_jKigtIuy3Jnht6qRP_qPmPP0od-kcHJVq--Z72mVh6HgLFEAcGXaK_uup50Q8L4ArKemLdZJNltHvYeC_8tm4Xqtmqs2OHQ4WW4hzVQUZYyDymduQjAhNjmMvV7C0cWtVGbELg3HOAqOxQ6yxtEH0NhH2MZTL2iA&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Harrah Veterinary Associates photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Harrah Veterinary Associates</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/harrah/" class="back-link">More veterinarians in Harrah</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Harrah Veterinary Associates?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

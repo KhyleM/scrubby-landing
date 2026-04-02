@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJF7Lvz8EJ04kRSbOvs1yukCo%2Fphotos%2FAU_ZVEHoiLuH3BT7ez_1Ag-UqK0xb0sflXcxs9d1uroqGgjnF0VdyGLPltbWfy_00-wQ-PJr4J6hV9hoMypV6dZwZzv8Bs_rCemCHffoxa7YRtiAnoshw_6ozVDd6BKMEBKcjbLPPzb1VvY8WvFiwg22nwFuURuE2_hdJVMDjwRDFWPbf_iJ0Lery3V-d9qZNRqzK-nXS8SaqxZcVFh8Czu1-y6yCu7BlqOvmj0mgshguakgAVqwyyv96d_SjxxuL-9rcLlq25jmK5b2apxNYR8Ifc5hqxjOGsu8lykq2f0Fo2k8_hNLsWUmJQrg3qptwRmVs7iDUegad1eYNtvC8-JsiXf48b1755ZPViNjVrvlygpjeE-78lbTuSIyQg1hEWdroVX9XZ2BpjfPVmFzvA0wXi_Wqh80C8sEmtsfdqmITWvedw&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Waynewood Kennels photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Waynewood Kennels</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/elma/" class="back-link">More pet boarding in Elma</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Waynewood Kennels?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

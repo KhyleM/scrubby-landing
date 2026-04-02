@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJQZEG-f96j4ARwvSrLCL1JUg%2Fphotos%2FAU_ZVEH0z_NvJbpn9glgdweV6Rwmsfusz2ZN3VWeQ0kdhPbHRJqDCmXc2o8fq95ZcZn2FhivOAv2rpuRO-_j0BvnPAHu3WAlNOJ-PSZdGHD_RUhI9GUy6kDVtAzVAQOcGXOyj5jmsk_o5NpoQPt2IQ0ejk5lwX3bnxQdhePffz15-Ll_k5KUCQ1jitxEFLRDLef_8ROeSivsmFb4BfMf5RzWw-uPoTIprOYmBXoAKSYg0NQbW84KsYOKDIm6-tgPatRiz-LqGryYzZJeSGA1KdmfgudaDG9RTkPMpfupM55Smu-BhaVC9o3UNf8v9v2WgVYkcqKQavt07SzIkdeOfi9S8x1HIruvTERGtX_U11Zct8xTUDamZhx89CIzb2JcqBaa3fxLOieMBoCnDBw8RotIugsyvcaPg8y-Waz3-YbEBEUg_05TedU2JNMQWC-47w&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Coastal Holistic photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Coastal Holistic</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/pacifica/" class="back-link">More veterinarians in Pacifica</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Coastal Holistic?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

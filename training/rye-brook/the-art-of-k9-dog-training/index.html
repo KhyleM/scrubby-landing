@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ_SeIwKPswokRyPGcz_fIjPM%2Fphotos%2FAU_ZVEFWwaJGR3HzpaGMk8jCrfeTje6vfr30igVWIzHGjDT5wQH4PGtS3xskX38UpTsA8lEvnNWRfg6Bk_6foTJOyMM9lfdgIXD7oHBIg5QEiBbZ3MK1LQQbt9atnttEYKnApW3nkzlKPesUPbBWGss_qXwHPwO7m4rWQN-EYzU1cyetogruW0q776mH2huBjgbq4VEG2AGAoQhNA3S6cDmqZZdrB4pY6PKtnUjKjAFl7Q-L8y7qh8-BGc7qgQWnhKL3vIezMPkLUKBHona_lXC6KWTvZgam55QuHqWxztF7HtwfEOJm9xm5y3vMbSKedvVshUzdyQbjlCsJeOweXF9hpkeJOmOhWOP95lT3w4jnZxp43TOI2XLjqU0CgFh0ePhNT8Dwe2GgUXUkb1Q23KUF3Df8eqISZq9TvsMp2fFP0oEJweghhsFPNSbSz6nfHD9H&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="The Art Of K9 Dog Training photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>The Art Of K9 Dog Training</h1>
@@ -197,8 +196,9 @@
                     <a href="/training/rye-brook/" class="back-link">More dog trainers in Rye Brook</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of The Art Of K9 Dog Training?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ26lduNYw9ocRMgwYYch2gZc%2Fphotos%2FAU_ZVEFIJx5F6VNJbdlT53LUuJatxL2C8ZlgIuCOMVOTzerdjlEl9y0ZULcHSl_wcJwMuEX3-6MIfuxk8mlrKxmrqNfaoG5v3gUgcmawtq8dsaH3nNLCJeL7BasDXv9KKZGUWeJcnxkWfWUKC3JwznM49o9Ti94nUcS_yN7bn3YpG8Zp7PyaTVNLiwTtMjfQdCdFtQVRXcvInsl4INbptWvKbbTP31Y9iDiRcwxjgBs6gjiZ2O92wKGhr4bUG5w0V1G_PW9jD9L-QL199enRAfmWn49vb9f05GfRirY2CBG5CHi2n3NvVp_Y7wnfmCI2BscLOA5GRcoZ4wxkeisPimlY_K2oS4lZJf66oqTm_8FrRtZnY5xIbc5SR5nCY223HVM1YIAUniiXGzFiYVboRTkzuVSQVXPil8ZH5659y-DkAgqt5Q&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="South Metro Animal Emergency Care photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>South Metro Animal Emergency Care</h1>
@@ -201,8 +200,9 @@
                     <a href="/vets/apple-valley/" class="back-link">More veterinarians in Apple Valley</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of South Metro Animal Emergency Care?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

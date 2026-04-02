@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ7V8jOltR2YARj4QFE1vNjnk%2Fphotos%2FAU_ZVEF3ixDCpKcKJodGJbb6EN99NSu1Cs50YyEXtBAafO4p1F6M0JFxKRRWYkRhOAYIFeuOCTCNokhfI-Vf0ihOutJdOE7JCbnEdeFM2jegw5LVpCWeCqhvUaGWYyxIGfKUUrJNBy00KvczBFj7LYKX0RPCARGpVJQOILPq8_q9nw4R6HShpq-e9doCcFzro8wEhRVe-H0f0iWuDdHC1CDcI3a_DSDm-oV5HVtoM6k9TLOBqQs7iNVSi8Mjsre9MnkkPYx_-D9bS-Y4YPGQSGnPrW5UgipzohiLA2oT-NwzBFK8agu3fK8naDKJXEHaavpzhIzAMxGe50guYfD7kRpdi9WvdRbhL5b1dqVm9CjQsinqsG5Z9l1vgoz7mz169bPRiqw1TPFYowsMA4L0zULPz-dmEovPpRkV3PizZGq8SIsMng&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Lorenzo’s Dog Training Team - Texas photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Lorenzo’s Dog Training Team - Texas</h1>
@@ -197,8 +196,9 @@
                     <a href="/training/castroville/" class="back-link">More dog trainers in Castroville</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Lorenzo’s Dog Training Team - Texas?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

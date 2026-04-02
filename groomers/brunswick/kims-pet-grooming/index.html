@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ47fZ1z7HMIgRRxR9Ow2yaZM%2Fphotos%2FAU_ZVEGF7fvjpGMHo65q-dQEdNJajYPiS5-LYtm6ZeagJeWjgDII9Hq3P3zfH2wYH-_R58nbPCr62dBNjt77U8lqaHULyKC2mRh6drZUI6RKBUo3VdAvtRlPWbzLycLare6NT2hf3reDnoGbuIL4gNF8yeTWnF1P8XITzev9_MXkMc_GUH37piFAUFNHsy9uvIl2n0WdA7mbeQBbZ8LhBFlMUC-pR5PFKOgLKA4k_g0jZ4vxT3E3ts-J_1l8c7wJBE5JWbTxpGijTWTA0raC0qEEwvWvtxKRKSmeDtvpdJVHIcvLB0I1UZ6aK9yREyUtvERAZsuqulgiCj_4_T6-13fn1zXL_es2eBZTrJaog2N6qoOz45L_ussAzgK_RLa8Q9eR2IqYi_mb1Y2EN485agCVx5uORi7VB9eTCd_SEqbBuG7Qc_yp&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Kim&#39;s Pet Grooming photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Kim&#39;s Pet Grooming</h1>
@@ -182,8 +181,9 @@
                     <a href="/groomers/brunswick/" class="back-link">More pet groomers in Brunswick</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Kim&#39;s Pet Grooming?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -329,6 +329,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -339,10 +343,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -367,7 +367,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

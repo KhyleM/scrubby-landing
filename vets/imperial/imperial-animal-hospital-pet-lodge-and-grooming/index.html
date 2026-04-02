@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJk2wz47bD2IcRO9BB1d-XliA%2Fphotos%2FAU_ZVEFgxApS8J-_8Qbvphj5Wh82alnKz5ywUQZ52zkDkZvh6-IyC-TGLPVt14_GOub9o6Z0nG-hRaXB2tA5R_7W5ZGVTChrDHpFPpfMxKQ-SXyOKkGvu-j4uOI4CvqgYW1unMYaVBrv1N5maJP5tIo_nRfp5y8AM0YQ6YSN9Xb8quLFmaIMRohi5W9KhG2E_GRwpiiVO5SADx74VXb2ebdi_iQyBTd1QuUNgl73TqdqX1215Y5rYSL7U8ZHT4NNN9T1Wftyf1S1Y4n4lxBTLa8lHQ4XLOgfZ3bMfGblJ2BSOnRDFw-7Mh1BvWBmcUf_bASsTBuau-lwgX7jtGi-0Vo3QDJy_unGlEurav_nQXTlAhBAi89gpBhK-hNRjwro8_jVUL0sHyf6xhoTYQXoBdFwDF5Q2SQPaowunYxeSh_BCWUrn83m1O0NmktO9wVXT3e1&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Imperial Animal Hospital Pet Lodge and Grooming photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Imperial Animal Hospital Pet Lodge and Grooming</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/imperial/" class="back-link">More veterinarians in Imperial</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Imperial Animal Hospital Pet Lodge and Grooming?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

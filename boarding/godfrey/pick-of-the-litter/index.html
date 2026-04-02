@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJW5dc64hC34cR11oeqz6kQ-s%2Fphotos%2FAU_ZVEHRLZcSzSIP0PS6bEKRv9XkjJiTt7eAb4L8G6HdZdhxzBSVnS0cZGOtz73sPTNZGn0ypL1w2rBV-N2STMocTD3U0x1uNBznG5hCMc6SpNOjyMJk1lm-xk244tUjrGnYOe_qo3qzB3C5C3nRw4i3CwqhStC4sTG17WSrsEdjP1PbrrDWsLFPFs286q86eyDEZQ3EPnjOGn73CdZ3waliS6_xIMBGJAHrF3-IMTg182Ms5Ap_DKMFrKmBSZhqCem5pCWeRWQDfffHnhW6SoZgFLa_xekPLipuOk8fQDbk0L4QFgBqresdcZX4JGQPNiEYkwhnrQuT7srgn5U0sJxIEz-zeHiMrBzyF7WMMPR1RiOwBeB2pcqR3rTJ8QVF-bY8W_yMVc79X0VWqMbjyu50CE7R9eucJ4sjpK-2G4QBZP-D3QI&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Pick of the Litter photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Pick of the Litter</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/godfrey/" class="back-link">More pet boarding in Godfrey</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Pick of the Litter?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -77,7 +77,6 @@
                     <img src="https://places.googleapis.com/v1/places/ChIJTVxFS-qAhYAR3j2CRPDLBY8/photos/ATCDNfXcdzsY2UWY9W4HY_j9rgQqfIONrFZDfk_Vp1gVE-8CLK7Ii7Sbpz-Q1J_TZodur80wpqHlXRcUaYso9xFjmVHnU4_LIFjYXpcOAxpviZSdEXWN5gD8-MO0UDcdfS9eDhns1VMazATGrZxDZ_mWcebtruigd11fqU_0wzNCsP9VIlS2JWGIiMCYuAA_oLL6EKUqRVVOyaZZBZqqAax5HJwu_Fwdzpg8Th2OosY6wKH2F3L1zzcos8nsTyxTVrjv5PHjmv4ROGIySkuQV2_pFSYB-eMyMcVGpuef-DZHUXTzyfcuN3wElfOkvL5qZyq2tJhbVDEyYCMleFxcYL8r81P3efZ3RQBxdGZjJgjVrLNpPLynE5mVrC8iii7WuSRBESacasRJ-UOZkM1yPc2ix1tN0pHJSLT5M7F1v_qLTLH-JEj4/media?maxHeightPx=400&maxWidthPx=400&key=AIzaSyCpmbfD6svBtJL5OpHfeph6xPVzLlf7F-g" alt="WAGS" loading="eager" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>WAGS</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/san-francisco/" class="back-link">More pet groomers in San Francisco</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of WAGS?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

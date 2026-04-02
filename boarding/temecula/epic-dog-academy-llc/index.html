@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJWZfGl7J524ARW0YNXnGbt_Y%2Fphotos%2FAU_ZVEHaqe_2O1-s92rxdLs4ATkWBVIBQ8CMa4SNTYCl6MSE5StGk_MjODHMA6s7gEzSJK9hcwOFj757PnTWmvElsUYE-2KUv6AKSEqpkZJ_79KpiwVsSzEOe7oxwSAM3sp-uFBxMUJ_VuShaaykITUu6T_smNkuovTX08V_BzorC_djCUQxB3yvRIBhQoTvJyGYtQklRR7y4rOonHZEu8gsw_nDb7aLndNAE--kD6fMaTMuyIB77-rNi_06pepc9mflGlDqJdH3oQvX3jJUy5Qmp-zcsqZQt_jiV-SSv3eo3CHyMTxH5JuVHXMPyeYQ-sPZSWecX5j_eoyeQG1t7wc0W5Pe7Q9pk6SkApguzo4k4IdrYR_hvLPvPw8lYoeGbvZ0pvnNS1sFSr5AukLxEkTgNp9BexVMc-senLJN9x-4-GBlJmwnJwdqhJVnsjh9liwV&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Epic Dog Academy LLC photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Epic Dog Academy LLC</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/temecula/" class="back-link">More pet boarding in Temecula</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Epic Dog Academy LLC?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ8Ym2k5xvlVQRzxC_jXImoGM%2Fphotos%2FAU_ZVEFsjEhy7qF7HD0lCY540VPtzssqzVqKkQ7TPQnviR3m_eGt3SMQE69_J2j8VIQPNyygHq_4ofLQTrUSJGy5ENgItOd_FnHN65i9oUeA9h8OQHAH-3cO8v7s99vr3U9lH1yJr9zQgW0necZD1l49BM--hIAWc6OfPZY0hdyTom3pBAhi5AbYxm99zh9TNPfP0Uj80itw5XbgOcl0cicl2nM9HBbLkYB7_E0-4ek1aoz7qYfsTCgPGm3IGxxhXzSoIZeTIugR-6iJ8hRtbtjwKia4p0nAvnKn0gGMFldyYDpfCcVfRgQ013t2udfB0is03BIKz-_laEOZLLzcE4byISD56eAq-ZPofrpGVCcZ9xii6LvM0HmnQsmayHjl8ne8AIFiIGfCoy_X_OSvxUzhX8WDYElBsW0NYzTXswnrRfEhRN2nyqg5g6U5CuRl8S4l&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Alex Dog Grooming photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Alex Dog Grooming</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/wilsonville/" class="back-link">More pet groomers in Wilsonville</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Alex Dog Grooming?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

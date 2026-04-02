@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJVfIfASIf04kRumpOrZuM5Wg%2Fphotos%2FAU_ZVEFRmRx7gPX-oNX2IayM_mzgQQuqoujRYHPPeau6aup-lcs2cXozG4S1M1zlSwhqCFaEh3qgkUxB0WvxfWrzG0QBUOePdjwrJAwi_x7FLQ05XYpkWSs9y_r48fXX7i-0oiR88exporSZp-PyKiBfv_XwiM4ZQ7l8m5ePHpCp4QaSUs4AtP-SaGBcxT_9_6T7NPUevZ_sqyW1sQ6YqvrGbhN-0ebuo8U0rMauu0iBeub-llms3rCcrIC4v-NxeJikmdlFPjWJxI83rona0J3-lkDCKdpAR19iYG4kGIXRiZ7B5sou3tK8LVPUXGDBi4E0U7Zh-Qd83i74desgSIdzSheOfF0jDwnmHX9iHcetcS4u3IOAvYvFYDFdlybV4vu1z1yaTgZRAFwxygLb_HGCSqaOwhOaW2Izr-NnRo-cTWxxAg&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Happy Paws Grooming Salon photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Happy Paws Grooming Salon</h1>
@@ -197,8 +196,9 @@
                     <a href="/groomers/derby/" class="back-link">More pet groomers in Derby</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Happy Paws Grooming Salon?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

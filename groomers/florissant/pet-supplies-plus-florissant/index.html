@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJsw2THbc334cRVPryFAK2UwE%2Fphotos%2FAU_ZVEE6tnOwBhY9wDQzdW6DdBZQaobySB0e2I7d6Pet3IQd6JwXRFNG95dr4xcIdnfEIhPByR4dLz72BdSGxUmGjC2026mON7gVhTyIeVBQYuVpkFp8Uu6r2XRN1EvkjWqgu-wBX5d7AjWbONsCfUhGrvMjuuR9qVl0x1l1p99JfnUFHpNoXR79bKersVIeRH31TnAqfGcWNpxQJIG-0e_94JQsNrZB0VDiwX8yBsUL9py9XgRsCRYfE_aWLa-ZvtMcmLMhF4ru6JfLUuT-h_1Ik3EpW38OaPoFjqZSyKQBzfx8V4L8X4hvGl5NrY822lO83xiEXcEuhvuC8w0LNMrjo_PLkq4rup6uzA1-uM9nbEZv21nEuaOJoO_HRh-7vJKRTcsefNL-3HGtrGySu6myA1r-yanzUYe2GObh1hr26eg11d2N&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Pet Supplies Plus Florissant photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Pet Supplies Plus Florissant</h1>
@@ -205,8 +204,9 @@
                     <a href="/groomers/florissant/" class="back-link">More pet groomers in Florissant</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Pet Supplies Plus Florissant?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -352,6 +352,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -362,10 +366,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -390,7 +390,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

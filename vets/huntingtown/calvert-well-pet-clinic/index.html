@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ_7EJHvuCt4kR2aRk2rhU380%2Fphotos%2FAU_ZVEG4NPfkZCQnpUDPuDN_TIgtN9LKghK8hSloSqznHM9PMds6MN6nlKtB4ToIourN8EPZKzi0TM_V3hcwxRhZ6cmGEowZK2Xnjo4PIS9mZTGM19GEKB8QIVjJFV6ru-9YovoS94XB0k0C9gzHxhgCi4pB_kl-u1xSM0ASIEr7_SmTrqDvEdxUnq2i_c0uEOeG7Rs6dx0fpvh4HoJcoHTx4G8oelpTgeoFcOa3FD2AH1lnisDZbgDq3cQB5F6eaCCs-D7clAs1LKIhIRN0UnG_jTWAjkMRH9jOx8EI3J4injSsxPrwXWFCuMyr7YlJGipdRoboz0yGCxAoGVByDwky9aa5cgwhBnXewgcvMjS4Dan4n9KkuvCY7hh30jBTmRuePbt6OURj8mB427s9c3aeX4koFH49kf2nmhhspwqLz4oi8xCU&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Calvert Well Pet Clinic photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Calvert Well Pet Clinic</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/huntingtown/" class="back-link">More veterinarians in Huntingtown</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Calvert Well Pet Clinic?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

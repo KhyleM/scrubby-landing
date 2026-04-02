@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJm0_8AuJVwokR-eqcNglLQZ0%2Fphotos%2FAU_ZVEGmakIYQ9QbDGWexXphLjbPU-ABno2BCPBWAj-rD7uaSAOHgoJVycCCgvQyto_xwu5MwDWvznzZGwieHSRgPDWmISaKXsyvQPb1M8uWRol7w2zQQ8uHClxQ97X8lTcomjKUZ_x8cQO2swz7Wh-Kosj7ITYDCWdvoO07ZzF7ibjZyOMDC0wMgRJes2cykLmzDt7frHuCUFTyb81AzcQcapbWpjj38I4310A_3LHAcKybRgQ-3z8y1kFHv2chzp27f7xH9m_dcLmlnb40Svmb554WU2x7PgFEh99ZG4S_yGu1vP2reVqudvKkF7gItaOPjAvh9Xdd5Eehp3qTgjX8ZcNeslwUIS5-Cz98T7wVdYTpab2U9BzX_h6Lm9nudx4vqt7XUurSW6zePhQatAFr6LqMuY9T3WIUjClZkKMKassp4w&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="VEG ER for Pets photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>VEG ER for Pets</h1>
@@ -205,8 +204,9 @@
                     <a href="/vets/clifton/" class="back-link">More veterinarians in Clifton</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of VEG ER for Pets?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -352,6 +352,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -362,10 +366,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -390,7 +390,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

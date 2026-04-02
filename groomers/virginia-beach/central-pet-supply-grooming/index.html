@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ_-gBu9e_uokRlFHfNC5biNw%2Fphotos%2FATCDNfXXtyAKT8WObgPmSRoi18ZsV969mhkTxbb9IG6bcI9H6oJHj6-I9NtgdHlc7_Iux8t3NrzUIxt9bkXi__r6lgZFrK5fz0NRXmf8ahIPuaYvuzVm-ef6bkOTHbeEcXav37fBUqsEpfQIol_ICQzAi02DFHDT8v_omjoSsh1hYVsQMPN3iXlouvjvlcqUMi6meLRv29Qfm7r7xVcbnakaU2zc0J_STqge_JghtIlSy02Pn2-7po811cIeIYgFUkWyoLsPWYwI9e_ASjAR46TVOwMG65JYnALA3JqEhW-4hQtrAeDuAGl8jm2vBbon5gUquu8i5xrsu_On6ym2rUvYtFRHbGkzENgPX38UbvjyEhjms54OVtLWBkhnxgKHnX4R1Wn06qke-eRWEoDKzMMTPoLvcTquSbp00cJ2trq22pMKrPSbVsLG0XZvNvyXrMB9&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Central Pet Supply &amp; Grooming photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Central Pet Supply &amp; Grooming</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/virginia-beach/" class="back-link">More pet groomers in Virginia Beach</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Central Pet Supply &amp; Grooming?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

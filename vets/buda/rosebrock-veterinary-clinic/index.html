@@ -78,7 +78,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJGRWN3yJTW4YRZ5fJgClFgqY%2Fphotos%2FATCDNfXnu9tBAyxh42Z8XNueoUq9iTzXZPmnK9Xwt2MzJZUHGD4Cb1BatYWQckM0ZCh52e6ClnCbcNVw8xgbD_4K41FgZ1dp4nL5iOBxuAKlzda-sZos6tqt2XMQ1jNoB7fMLaPf1iY88w2cxb_xEXeToZtIJB9NwjzwCQ1E7i0T8X3-8OCpcSrgDAcIUwaBfD-sChF4n3cuJvpLu31BlcogKQwFvyXOWHJAk_G6I-9pithoy6Xj69siklElgiAPNFK6hanpWOwMdLfhzX9afwd_WFy0CKwKCLNCCvGclxsMM_3Z0r796Ba0U9HmYPNqZII7bE-WxYA3uiqxcTMbYMR_Lta9Ge8LqPsKHRgGvRU_lui6G2qxD1mzcb6mIBIvvkxCedsNhoRBEyJ1yEQ9BPO6Ok78vhhNXI28NV3RgrcHcG2d6Arp8QySpIfJ2c1jyA&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Rosebrock Veterinary Clinic photo 2" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Rosebrock Veterinary Clinic</h1>
@@ -194,8 +193,9 @@
                     <a href="/vets/buda/" class="back-link">More veterinarians in Buda</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Rosebrock Veterinary Clinic?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -341,6 +341,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -351,10 +355,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -379,7 +379,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -78,7 +78,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJN-OWzxTjwIcRt6tdYhSPo_E%2Fphotos%2FAU_ZVEHuWN73B66lvazRdRsN0dU06OSFGlL66pEa1YvFD9fizEHVSsGrlZlk1WHox6roHsfag9pL4R9YCP__9HsCuNbSdMRaeUylizdwWNbvpOWch7WXXGpYdN4GInOfMxzB4JK91MPCAZq8_R3PYh8bl3EOBbec6PZv47RNmwf2d0eFz9xZN3zueG5LJl_EvJPAJcKD5G-wQm7Zame-Q3dvsbJfsggnzmuXk5kF_nmDBeLMSjE3R4yI8OzAnNQXwF5gMvfwP48mPF_zQ41DRi8bxdRcGIPH9AtQYWEO7qgKcNHY71RTEYaB2mvYKGRfaOYSlF0sJxjyLit2VRs1_r_w6m6_FP4pGDD-4YjyE0ht4T5QvN96kicYTB6v6U5GTyTsaA6-SpeuyB4IGBOeOZHYjCPYK_4KqZhslXProquOLmLoQ9AI&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Laurel Pet Resort photo 2" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Laurel Pet Resort</h1>
@@ -192,8 +191,9 @@
                     <a href="/boarding/raytown/" class="back-link">More pet boarding in Raytown</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Laurel Pet Resort?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -339,6 +339,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -349,10 +353,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -377,7 +377,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

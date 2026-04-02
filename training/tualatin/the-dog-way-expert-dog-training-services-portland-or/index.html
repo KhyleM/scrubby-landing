@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJa3d1S75tlVQRySY2U2BFoWQ%2Fphotos%2FAU_ZVEGKE8Pioxwc-uvoyUF_3C79DP_WB0Pgo82f-0GBE0CR59EuM_Ki3PJX9xUO8pfbXTGI3XcHAIKaZd1hPXsBVc5jJDrs15Fyp5qh1IIaZ0HO2rulYPcsMtjbB1q5pBtD4a11SmUe-5yE5C_gni02GsUM-cUrVlKS35T_7eqZtGiZG4wc6Sft02fmzL1f-fcY3XwwjD9Nq3D1fk0QTf-BYYU8RUfTYGiJ8dBt-1kb2tsuFUBkSvghlNC2Udn3x36C-c38Dkj9rkJGYLmyZ2UkMwlP0OXWt34u4RtTbKxB34fjhtMM4Su6dsel3WWeU2cEs61kacd8icpmE2cCH5dVK11Xx5mAjs8NvNqgXY5APAoNtXalfGFk8a1uHj9J8V4fJtUWDJaNcB-knsQVPepxgHEZEWV4Gum5gKpoOQzHbgV_E5F2&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="The Dog Way - Expert Dog Training Services, Portland OR photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>The Dog Way - Expert Dog Training Services, Portland OR</h1>
@@ -197,8 +196,9 @@
                     <a href="/training/tualatin/" class="back-link">More dog trainers in Tualatin</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of The Dog Way - Expert Dog Training Services, Portland OR?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJHzN1WAEBw4kR0DNT4M2nOX4%2Fphotos%2FAU_ZVEEwkQRp011UaRp1VmuUUvqAJJ8z0m7M7Jby3fd4V_Ye1fdo3raHiY_BigJcw8KwFAphJD3VYqrnHXfZIUXWr5pzr0DFgU9lVli57N5nvJpkEX903qbAjrgn2a1Pymz4UGzDh-KLmKMX2z1lwKU3I1jEOSPkzPX6PQaYOh6bUHfZMiFMo8NhVN4APY-Qd6DjLaWmjnX56n8opQwq7ODiOTTwWf4EHUU0BFc0ndye_9sTgGJK9qWUfFQQWitaR52gYeVyaNBEMoV0T7nwgM_gBac_P1HJU4ohrVCpaUqDpjmzMcY6ehoLgeTnNmxJfFzveTr7JCZVisWt_bP3t5JejneFm_n57qMwugofSHzFqfVh6pBWsA5ZJjKqAFQ9_M8jWtcy6kBspcewS_HJzeMbcLUCi3aEbvt9r5OXpgXtlJK2PA&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="All Creatures Great &amp; Small Animal Hospital photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>All Creatures Great &amp; Small Animal Hospital</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/fairfield/" class="back-link">More veterinarians in Fairfield</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of All Creatures Great &amp; Small Animal Hospital?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

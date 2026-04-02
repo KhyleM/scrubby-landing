@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJJ-eA02mqMYgRxRyf1-2Uhjw%2Fphotos%2FAU_ZVEFrYJeC_PT7wNfH32B_Sp2ywjUagyzB8ftqXRfYN2Txmm93uPvHpYscjdPf1YiFfQPW79wTUcRGPT3c2EWua6hiP_Uy0KekAUeg6CTSL8rKrxMr7UgJXl0WFAoeEzKsfzM8DUgmNkPWV87XyDY--_ElnJiO-DRCbzXQduHNFtXBRNSaHP-jp6iO-9xYPS4i7zCuDoQV1ixKjoC0tONYFaNK6bJTMD2mO5bhf3oOd2TtmnTmZgb6BvvEkKS8Ro-h3Q6m99g9R6Kby3Lg3CvqkAZpkdN7L1HaaLgIpRFC4IOxoprRm-en7liud5kl_Ky3CUSSKOaR6iFG29zaS7Nq1S9dFIs2aVEKsoGLL7I7Ni_xfvzJ2d61FmSt2OXHpMpC1dVgk0Rlx4vaytbAcYXhkBn1BqmpHbdvMJh6s3RtdXLqO4IOchWtUXRq35OXQg&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="The Doggie Spa photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>The Doggie Spa</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/mentor-on-the-lake/" class="back-link">More pet groomers in Mentor-On-The-Lake</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of The Doggie Spa?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

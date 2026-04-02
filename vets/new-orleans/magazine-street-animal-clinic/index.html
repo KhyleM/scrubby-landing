@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ_3SCKDSkIIYRWUsIStfvEFI%2Fphotos%2FAU_ZVEHmUAWmPndiQhbI7mG8VRwmXI0O0eNOqTJ6vSRLtcua11A20Peks84vowmvw_IfCrx3arsq5uAY7fDUcM4c_6rNDsn-ZiuHIXzvSi_yd6cbr8bxxi0EBJM14jWN3Jr2AfkaHAQVVqGqpTV4rZSmrTl5N_N4NAybd9j2jA5FZXysDSGl1Z4tEfib8TZ1Zk8lx8vE2qyEZoVmQvuCBZjFYid13wd8AjWYNmcp-2tUiAOctTTwrLkSL1a4FjzSHgQIsVvGOAGswFOwZ0Vo5CjLgeo1CStlAVYIEekFMvdTFpj0suKSNYo2rGPTtHkRc6I_bkdRKCsSoTGgTaoRd5ryxxe6k8tA-7a_t2wPSPuKj4Wprv5uTTaTmLLsTDoJJS-7NcmS9lNeBqasi2yEFUtGkpKsbtjT85eiZ7gw52pAm8DtwJ1n&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Magazine Street Animal Clinic photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Magazine Street Animal Clinic</h1>
@@ -201,8 +200,9 @@
                     <a href="/vets/new-orleans/" class="back-link">More veterinarians in New Orleans</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Magazine Street Animal Clinic?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

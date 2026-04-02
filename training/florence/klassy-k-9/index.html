@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJIeqNxOTGQYgRiSivU5Dkenw%2Fphotos%2FAU_ZVEEiZMCtB6BFJgbTpz1jEkggHOc_z-prp9NAJeTGr5QjvJo1S-a4PhYxfhT4BfA7aB1u2OK-ZH6pt_gK7wU20UVx4gpTURB3iWqX8jFOTm7pp-DK9x5N6_4jtpAHxBBslUloJt8WiZHA-OQ5Eo5umCYXOAbSMntMlPpvKVJV_YH9BeTs1bYXQg44vTYrNip6P1VvzgaS0aWDhePPTN3IcJt4CYus8VyD62u0qPc1QIQJ8DzXpuqB0f7VJ5fyyozYXcMxY1Kszql_CyEP_ZU92O7Bq3_Rp2o8fNpY-zj0GKTGol-GvrSanBdMs1ftiW3vuExSbcG3iSpxOVxh0aOGWYufBe9kUK3c8OZp05o7mA6SgLCMfA0UQXvlB0E3eQlczZvbEuyGgpdMTav8oPtG3KfHpeBvTwX9BkI9I7ouKQXw7Q&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Klassy K-9 photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Klassy K-9</h1>
@@ -201,8 +200,9 @@
                     <a href="/training/florence/" class="back-link">More dog trainers in Florence</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Klassy K-9?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

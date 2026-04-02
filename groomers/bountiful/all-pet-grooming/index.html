@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ371sqan3UocRbxIlRzgUsos%2Fphotos%2FAU_ZVEHacbPQg_Jr1kfdYO5OVbsGz04mLTmTSv7VkIKtOypr5Ln3_xHcPCMpvaxhWMJg0r6uWgmB1ngw43NS5nWrOCIMofs1re-_q-NSOCBgNuZeK00IjgBFJoM75tujF-89XwBgYSHJezo4nQ51w5iYdv7tP0UtoAwufbdYtbdMICfuWODtq1Yo4_RonGZDNm2Ja0vyev4xvcYMdWruh7mI34GEI47dRGv4DVwBkJqs-j0_qBNkiOL9XEDMiw4FN4naD06eLfdklf-pWoMCGySYVF4EQayO6lEoaC_BlQasCrPXXTFxo4Sf5Dn5yXxNrDAg7Q0xOWBt0JuXS-JP9EtP5qG5sGZIBznONa07shSW3-iCH6YRTizHky7Xa_U4L6NH_sAuwyc3W8DLtFmywAN82kKqrro-m6l4kv7TFgFHqhAFF1tuY0Q7zwCQIBagLQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="All Pet Grooming photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>All Pet Grooming</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/bountiful/" class="back-link">More pet groomers in Bountiful</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of All Pet Grooming?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

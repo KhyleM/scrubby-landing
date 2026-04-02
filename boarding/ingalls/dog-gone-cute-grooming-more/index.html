@@ -78,7 +78,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJj_-4rkLLFIgRqGQ1gkqZ2Ho%2Fphotos%2FAU_ZVEFn5CdcYScSuXv14F89VBWXJdE-0zBe7WKVUIBNCD0Qn6zIcZlhXb0sujhye4tjJVREo4stNDZpxaRrmBWlhPwRu_aVs-Cwxpks0_CJcOTQ6-Flce8jh8G5f6QvjPddpq-YH1y7QkSwApSBZA3YG2VxFxnUITuJ-T04a_j7N5MXODESkVmUPG9x21FKP1bmxJSN9_fHYhbEE6psGvExXySPqwwDglu8KCCED3rLLWA3hqX8XxKEU_CiHSgw8rAYoLmXaCM4EBoyzmznqcdu1SqDhK01TJlBccOC9x_qo2-YYJMBkVbMlYphOq8yE2hxJ80Iz90OOyTMwyUXKURrDSMvilGGyrlHp_YrUwc0QeRpv0fERU9qX9rHBF-uYQT8fiVUjg4ooFAGOAH5J7BcCIm1F-XJqX6cVtYwQRuNH9k5P0HL&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Dog Gone Cute Grooming &amp; More photo 2" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Dog Gone Cute Grooming &amp; More</h1>
@@ -189,8 +188,9 @@
                     <a href="/boarding/ingalls/" class="back-link">More pet boarding in Ingalls</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Dog Gone Cute Grooming &amp; More?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -336,6 +336,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -346,10 +350,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -374,7 +374,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

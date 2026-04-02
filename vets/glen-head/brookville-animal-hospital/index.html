@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJbYth_8iFwokRNOThbnGOFGs%2Fphotos%2FAU_ZVEFpbaJ26ViP4_gI2wPz62JD0yag_edl7ZMRAQqBsnVwWSTx95czVY1wCqDa2BG6TawIRfvvhn7NTkN4ElrMYyDpEuiA1xQUNN-SkEL20yi3qTfhBMjSrUE0asUBThg_sjqEZzBYwmYR659AP39ELTgrw6eBg3O4g5IK4C5TpBX6HrtUSRS6JFz7n0HJRNbDVH5I15e2mM8YwP3ndaYzDG-uM4zYfOijGcvE0ey5IipwFN8VU1Umi3KICr44AmDGXVvLppBwNgJvdiDzAWC8I1Q37P3ARujEEe1kP-LxdUoat1TQ-AejQ3h_pUs6AqRiMh3fiEmlapY9RjSPIVCAjSe6ZpCh2BG4NKBr7xmZD_x0AYVYA4i2AnkuOMQTzpuN2zsfxQIxh7kmLwLXMIIS92Idpe2YJW0_9QRMvPC9ZUo&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Brookville Animal Hospital photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Brookville Animal Hospital</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/glen-head/" class="back-link">More veterinarians in Glen Head</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Brookville Animal Hospital?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

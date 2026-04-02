@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ9as-bPo59ocRiyDyFENVj9E%2Fphotos%2FAU_ZVEHheEC22b8uSly98ASlNg_MdtHzIIUJEA1fQjjWFaRe0RdVmR2H1fcSPG863l-MWYzgbSJ9U8oOb0Qgd62ZSwvD-blocP696bp5IFyE6veg8mEoO9bdhPziGSAbA27AZ9K2Vp6H35D1rn45oKFBI2HkP-iWfIOan5DF3DNDYDnYtHxftasBwb-1PLI1_iYKwqrYT-sDrHC50R-S6zL_VKCu7Ticdf4KohQjEtiDwMWedPn43sWpbxjC2JPQOnQeDKT_prOUWRYG7ISSeu9vdQYjGO68208QhKtz-_PZTq83ZYo75E3v6wfQ0WAUPBgwzFbUz_iM1phLHKB1R8W_blwj9PszKWERTgzrovO1600WLRrg1h2tnZA6V27_q5Wxf7zwfSQOO0vj2m35eBAyILofut9jSz0eED6E6lylOYA2hlDzc65Vbi2f8MC7-w&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="PetSuites Lakeville photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>PetSuites Lakeville</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/lakeville/" class="back-link">More pet boarding in Lakeville</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of PetSuites Lakeville?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

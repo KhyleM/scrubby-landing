@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJr-bM1eS32YgRfynNoyVlUdc%2Fphotos%2FAU_ZVEHo-nS6ZybhUC9ZL-K9HywVrJfkEjah--DOJMA8siU_vspHPPOvZF4zY0GKOhXQqeg1qpR-bhnOGHdf2wdJMKhh24gMxtTZMu4w5Ug2sIHzJgXpmSjp0q_Xy8TD3RQPC42PY0hJNniJuwNj-ueD22Tg0Y3cj_M8OwyvGc3r2lIYZs_pW9pSFgrZQ6tOAmWdUPZ9vXZ40QrPdkzxMotxBvoEYPb8T5mPaHQk-M7pHUfaOz-q8yxD7j4ju4d7xOx3WsmBqk61c8k21uZkFoyByWf8mF6H0ZQK7vvXJgi7kAdL4vDDRKFtVnUmaZ48ZCs-848ymZKOHWIsaMrHNZlSQDCQuVRA0wCxqCYABRBLIb1Zl5XBiCr66nyG4C5R_TSLRZK9OivXUL2aGgvQRjtJa3qS8AI3e3g6hLKkby8qMrZN7A&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Dog Days of Brickell photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Dog Days of Brickell</h1>
@@ -197,8 +196,9 @@
                     <a href="/groomers/miami/" class="back-link">More pet groomers in Miami</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Dog Days of Brickell?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

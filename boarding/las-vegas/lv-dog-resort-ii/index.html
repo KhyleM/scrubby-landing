@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJR2jCvMPRyIARJa5qcu91Tb8%2Fphotos%2FAU_ZVEHQtuUV-s_epYB65HZb36P6d4oiis2tAFqkh9cfcLRpGH7syCgiGWCr6agpMwJxeL0BuTciyzALi_Q_6C3p2YnXecirqcYDkSyoL_4VcUwHZaK3jrc4nd3jO1K-i_0o_O_cewFKilNROvO5roeWFUlnAU9IwoL9kntLYzoyvGBN8HB3efg8p5cIabqlQkPu6X6iLFDhqnLJqwci1H6jMrLqFe5TjqIdgznygc8dO4EYb6xOM4iiL0wWbiIxDjFyQUZXhr6-ez4OylDZbOoubGftKBVya5axTo5WupdGLwbqgMawP6FjZSUIJGbBK2ZxOn7HCIBUu1VSu0ZI5tsPjfGXANg-e6fV6bxLCuR05sVwdftzCzNQ-NnruPA2Nc5D8VTlDnG8d8zmB83wV2Q6luIZ8slYjCfYyfrxrg81V79HG39d&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="LV Dog Resort II photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>LV Dog Resort II</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/las-vegas/" class="back-link">More pet boarding in Las Vegas</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of LV Dog Resort II?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJJb8Qsz3VyIAR4PS0wTfbnec%2Fphotos%2FAU_ZVEFFaq6b6_nFdh-imnzlOt8gpM05PsQjeXwOJINS7oxeG-junEa4HJV-ip4ybwauT0q03hmy2sORRIJ0h8i8JwXaPVlIjINmTTUqGZH-HzoGvoQPgjmigjzT9oar0UZHl1PyFrEIqGY8Rav0aiT108pcuaGrAVh4Q41PUBwYNKBiW40zas7D8K7DJsH5ZGvzeI62j8mo4yXrEJrwUAuISJEc8Ojvpo5n_g4PDaTsn0tMfWeLYgf4qLV5Mh8fN8ZzhMz0fsGdZXmMChYZMOlgt3kD_M8nWcNUqnO4n9g2dH26Ux68oRJIkQY6mylOcHxBdcYfBcCkKYz4KjiZ9YRIUoexrHiHYQd-HIvnpZy02qII-ubSzSfjoInnAp9zZVxjYxhT_uHhS9KIvlSBv0JU3UH_jPD2yy4J0lwwAQwuFc9rDNvYKCUsaJytFEyuoGyG&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Spoiled Paws photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Spoiled Paws</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/henderson/" class="back-link">More pet groomers in Henderson</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Spoiled Paws?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

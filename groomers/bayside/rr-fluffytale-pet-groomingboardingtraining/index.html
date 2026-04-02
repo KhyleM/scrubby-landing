@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJP9Ya5XFhwokR1bOnCHgMPaI%2Fphotos%2FAU_ZVEGbxQDc5bXXeafBiNZ3-FnpYoYvoAausyt7PfSF5hEQVDvStNiNyFI4wJ6aCRb7pugasHit0yjM7rwLmpHT5gdMD77_pBSVZupr44ddY7eHaPu5TShE_q3YQLYFGXKfppas-3m6SJBIhYw4yJ7GTZWjtGL1kTosKClaK3E9YTBOIwgyJiLDxrVoa62Xpw0dZ9kaJmhA7KRNfOKfuadiXPTT_cqCTZtWOxwmApzufk_i2GFCeOSWWxjQ-0SG4IqoVjsU3IrDVrEUUGXeeAVoTG9UEsefqdG61cQhFpuCwVZ1shhvBNKiLonoF6YY-iIjvuYyaY678y02iILCV6h97JWba-bqpeJepI6X_iu94-XXTyachM1K1UNF37BZYc_FxyiudRUQQFnTIfU-j5oCmePw2KIuOVjUEP12eHQkFPXfh5J4UJ0N_ghiz3JAM3tF&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="RR Fluffytale Pet Grooming/Boarding/Training photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>RR Fluffytale Pet Grooming/Boarding/Training</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/bayside/" class="back-link">More pet groomers in Bayside</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of RR Fluffytale Pet Grooming/Boarding/Training?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

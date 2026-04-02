@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJIX0mmDdd5IkRKyyFKw_EkJM%2Fphotos%2FAU_ZVEHcXdjcy7uIb_K5Tx11XoMev2ZKp74jx9SjuShiBIK1cum8caZeCOLCQQWb4BmCJyOLj70lcTewrhDhi4Cy88yGaCxSytwu_9CtJv9ziyQKtM94vbRFHR0a3Zu7c-IjBCd31KXKFR_6PNwcscdK3H3P9rsQ4qXoSmpurvP0afAmxGUEbYLDXro6_0-ev-ldoU0MKu-CcB03G9S-6we8qotx1WvV_tiVkDyr9xtOLoP2D2iBrhg3OYE7bwSamQQ-4CA4ldAJSHFy_nCycFou2aHFgl33T2rbsXq-IXVc1dk7k_0NxEwH-WYOpSfkFIugJ89-GftgLJHqGpRRF8W6CCTIrd_EiERsU89EjKk5zek781BGEm73-toouXOWgOrI8K-G9CHV1m5SjDd7qNE933ic0MTU4dN0iQ4WhNis91DdUSmo2BgARmtZTpRzvcWQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Greggerson’s K9 Care photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Greggerson’s K9 Care</h1>
@@ -197,8 +196,9 @@
                     <a href="/training/attleboro/" class="back-link">More dog trainers in Attleboro</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Greggerson’s K9 Care?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

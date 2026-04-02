@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJN1XQ5aqTOIgRMBn7r_31XKA%2Fphotos%2FAU_ZVEEfkSHZ4U1LFwzfV4-4N6EnlbrCpnAPljUKlcJ78cNAnTsvkm96oD7s8qCmI96MMW8mnupNttrfJ_3ehbr480hltT9jLblvueWchdo1DQi-a0dBEKs9b_Eedgl5ocOVeozKVbH80pPUAX_51YDMvpFhMau_i54x77k98oeo4ARFJMczx7bCYthbSiA0hc7RyWpXuXInQhk9iMRbyWeSKcob8YkEKqVV3FzhfE9Q2InBab2BFeeTt5RX4FmsaKOv9EZ5HzvzXNYvY5Oyn2iJ5X6fYv3RI15jv9gZHqIXJqWsmg&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Kim&#39;s Relaxing Pup&#39;s Castle LLC photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Kim&#39;s Relaxing Pup&#39;s Castle LLC</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/hilliard/" class="back-link">More pet boarding in Hilliard</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Kim&#39;s Relaxing Pup&#39;s Castle LLC?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

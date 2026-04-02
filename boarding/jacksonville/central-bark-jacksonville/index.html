@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJS5FfrBe35YgR_kiqELh-YeI%2Fphotos%2FAU_ZVEG7JAPCP-4VEFV8xRSIO0IuNccPQnp_g0-E-8ALCH6xEU1UCGvgnKuYXaeQAMDZF1MhQG_tr7PL865EwqIG64q4n_g0v43pnOTIv34KrZcEWV600zDsRMtetLNycfQknEIbg1n4lQ6gDNHhQ75GgY5XCsOrDdbZmrbhRG9pxAgmJ2FpZfT97mFMTyjth3Sg_QUVNAmPZZ2X2poKfzW0-q3KcMDkRL-6yvC8dfgmVf-eVK-RqkFIljIVorGTnN79IWQAUg9eaqt1osAw3zAiiEX3_bdJmaPHCAOk1S26wEjOSPhnG7jePTigX8sBjLJX1TkwjRudsQtVKOM_kn1tnGJ3vDNwJ27ll-jRbVt8k8_ld2jIGIjqEk1hjhaz8xpnZX_SolXgmPJzHwvzFzspLEJjKoSYXZQV4GUfEY3dOrs&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Central Bark Jacksonville photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Central Bark Jacksonville</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/jacksonville/" class="back-link">More pet boarding in Jacksonville</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Central Bark Jacksonville?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

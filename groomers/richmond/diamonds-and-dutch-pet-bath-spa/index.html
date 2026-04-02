@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJUTYyXX4XsYkRxT-pOIehaVc%2Fphotos%2FAU_ZVEHfeP1HJAMFnodTUIBaRxIX0tun3b8dB0Fd2f2zS_JlE3DDhrkVgPDrWf8h3VMztJx_j1bwXseLVQ3EJRpI6G9SgmmfB36mgomSsLZhWO0iImh3BHtR7ZqkndnQF921azx697pbt1ztxroYamjJZqjbO_e6gRE9p2XUdnPO-F1mSab4qPrZMRy-6HfqzxdE-zjCOQyXHejla-9ZbOTqj0PlBt8rhwMKgVcHhnWUzKEFx-pc-iOpj07NBubuDhcqz3Xqtz_DXkNpl8vTdwXrHIKEYgFC5OalaSMG1lUPp3YWnSOwuJoqoN4KG5wYvPhMKV4L8oX31w4lSCFtmdMz0IEz_q5SN716C_AS-Ku4RqwI5yslg2LUojvbudXE7g4sppTdurrn3a1ns8Uz4fxsSzZrzxrHx1a4qMeZgfuTOkwDDQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Diamonds and Dutch Pet Bath &amp; Spa photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Diamonds and Dutch Pet Bath &amp; Spa</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/richmond/" class="back-link">More pet groomers in Richmond</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Diamonds and Dutch Pet Bath &amp; Spa?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

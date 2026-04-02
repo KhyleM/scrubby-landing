@@ -78,7 +78,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJWVFcQG3jwIcRRjI0CUjoXg0%2Fphotos%2FAU_ZVEGVvyGkjO4cI0x19BQzNjs652Wm4KS0geg4Sinm4VnWPOVfI81L63yJRj-T63QY6bpFVbmlvNvHtoJtLyjj-B62JNnVhwv5KeKIYG1tVyM2YbJTpNLfT33Mawqq1r2sAV9teoAAKH38q2a018d6Sj0HNwL45ZC02_IAzVlWOyabuzrPnzy4QzBsdAI9Gsu5e01P2Esme5yc2I6qU-qGoMoINYQb4TBcFY4_A1YcHW7feWIUU3cmWYvUQmIJZJ8SoSlE89HZWRx_LidANKJfpoPerSuDwDuZ-6KTyVjzkz8Lumj_-44CDkJM1JKtKXxDA-dCdWoNV16gaMtzEvQjFk6XR38HF4orsii9rAVTZiXbjifWLM_IMOnDuWBRLe2f7m4k2vh7bRSJGMbWINM_bxiwt7GrAuWhH4iLkgxLgovVlAmZ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Country Kennels photo 2" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Country Kennels</h1>
@@ -192,8 +191,9 @@
                     <a href="/boarding/kansas-city/" class="back-link">More pet boarding in Kansas City</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Country Kennels?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -339,6 +339,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -349,10 +353,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -377,7 +377,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

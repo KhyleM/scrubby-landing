@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJDUgWJ3ShwokRHpkndRC2pLA%2Fphotos%2FAU_ZVEHP_DAArJ0tNZeHZRwW-yUVdMFoBj-hOR_MGwZ7j0K2AUwMrygDF7NLg2fsQflYHkxRiA9Hx3fZDID59tEDvlcXuKaBfBuNDRkiDvqEBWubC-dwiPFyMAC3Ik7WtkxN-IGWa6uJD-q06PHvA2hrVmekAVVir9x0W-UJlHr82KBLMlVp8N2Wo7cCQ3zAOSZWSVIgMcJP1NaEkFpmPrfhXo1WdetABBkrv-sityYCMQjHvyJqwJ1_ibYh6S4VnRebq4gM0upmDPjy6jbLRwijqHe6HH_VMLN6VeZd0SRWmlz9fFcnVSCiJ8BiRyjjnGgyC5F-06EEueVZizD5TAef93uvKaPl9X8WC4HpbNFswZ_9SwWUgaj2QucHCG0j6ha9Vc8wXD59cKi82n29vCYLQMoPOn7IxuZMTMgbm4JCixYZQJ7q&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Pawfect Companions photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Pawfect Companions</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/stamford/" class="back-link">More pet boarding in Stamford</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Pawfect Companions?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJUZTGDLh-ZIgRV9c6gYvrxsU%2Fphotos%2FAU_ZVEEBAyvBXxtoI9AcIIShhTDb8rgo0bI0qIgxQ1oOMkVp9_gGbCEE8i2wEYWzW560IFEHfGKVUBWuPctPOwF1bpPHx14iWmQwwoJJUDbBXJr4ANL8eU_7cUgTYWWwNreIdFevQqLFzXfy4TzrzoHyOua6ht3PCceTIeYDOkoueFvJwsqIort5K-XgY3XiBZYSRHD9WD9Xf1qtNoc1ywlkzCRARWwyQ7lUdeS6_kY-VMYJPickYsehMeQOyHe_5HtNQiooyLs4iPi3gCd5phOE-l-dRg576V6OiwQrSTfhkgpwLnmUOoKKPeGv7HMv72O1SNvvZQ_HJ1zCYXN5wYmB4gpHkvvW6jS9-xeB8elUOaTnKBkkoHy_eTNEakghOktxPqP1Z2bK69b8LZiLuT7yRA2nQ85f2QUB6dPvZluTET8m0o2VGiCucOImeZpR8PVu&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="My Second Home photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>My Second Home</h1>
@@ -199,8 +198,9 @@
                     <a href="/boarding/franklin/" class="back-link">More pet boarding in Franklin</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of My Second Home?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -346,6 +346,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -356,10 +360,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -384,7 +384,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJfaog5OrvEYgRlXH0fiu0Pog%2Fphotos%2FAU_ZVEFVTY5iudF9sOJJNjTZ2i4lQwoTfcPQ3btnYy5vah1OyrV37wqqwgMpWU1BBgiM2FMs-QE3_YbPYQ2ghmNddA5Bam7TdIfTt5QYAhqyMXT4HxUYwl8kBU9y0I5zTbBT_ON2mp2JPY7GdOJR0_l1A7cOn5qZjxzFzjjCOq7L7We6ze3CkuDD98Tr-TO9-q64RqfTcGSNMxeBHYD1vY84chUXFi5DPjh_6pcyEiujfWkAzrIfbi0BMMH6H4itZ5Tkrb2mXD8eLsECUnIITKZ2vU2VEpV0Wb9GalZqNybcXw7_cappm_calq5sMQ6HCskXf-z7uaVvhNYjgO5DC_OqIdrN5ETrD8Iw0usphhpSBDAGvKLX64VPeG5W3vqaRmUjGbhGj4MVuq_16JbbmzuDSK0G5LFHje_6AfemkQJT250&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Crown Point Animal Hospital photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Crown Point Animal Hospital</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/crown-point/" class="back-link">More veterinarians in Crown Point</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Crown Point Animal Hospital?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

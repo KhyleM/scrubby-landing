@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJXWVgulPb5YgRLgR-9Lqy7n4%2Fphotos%2FAU_ZVEFasSsSdlcmJlSGqH6Z6-0LvtMXCQIpjsuh2NEq2_0PNH3Wi_FpJNXEi-nDZD7P4InWGYNPGyknqB5s1QhkOo4MHcPGzC1ePTRXH8o0c3J7c7rW20kVvfNF8UP1Kk6izy8FObkWnZ-yHGWuG6-D0uUMtgEQV9KNohvGpGS5WhJcHF8j2OgTDtnHI9OJc7_cmuAldc0tUL0rQjKQGu6oVxjzW00GJypv0uCMVr8iD4W34Ieas2Fp9YYu-Ij8y2-ptQB8WC1Llv3FW1qKuKGFJ0MnF1dH57lnPdvLtL3bwS5LQjY06eKb318KN3LljiCYjzFrltdx2QIpwhX0r-A1L6BowJWpNphq6nsmdmfDLmIFCzUq_pIFDZPz9pXdDHMCBIUIl6fQqzVHXZ3tFT6eJQau4ECm23Yim4WGRyJGet5dlnDNSRT_vdGh7uElkg8t&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="NewDay Veterinary Care Fleming Island photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>NewDay Veterinary Care Fleming Island</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/fleming-island/" class="back-link">More veterinarians in Fleming Island</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of NewDay Veterinary Care Fleming Island?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

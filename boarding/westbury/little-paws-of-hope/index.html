@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJUa1zm6KAwokR0Z11Y6PMOYQ%2Fphotos%2FAU_ZVEGNDPAgUgDpjwE94CQ-rXCiNuJZZVQcrTJqRhhFA4bujSt7Rc_zdSsCWYTzjY0x9M7kcFtRMen9I7UGST86aDocE-VV2bwWiHKrUzu_JQrQijy_rlSloUG6_NSSPGoF7HbaRtV5txpVZMdx40czMNhw8GSU05PrdCGTz1iILl01NVpOmZAecH0vl2tm_yuc8RQD11UX90yTldsV4ZmfZg5UqihzMyntLJd_lNKz6iyCiVNRGgZXzGhwOAq2zhsl6AbjYzjM77djDi1lmdWFNCHw5pxePOS9eLsaWB1AaEeSRhy215-jql6cdqN1RXyIFEWLaIib7FHEXtaStTGGnOwvW0XktLmxI7FlIYmZChTEEq1rbRaRwRwJCFORl9InDKeDKhtzfy8f89jTkCBCtYT9q5gwKrRXJ92BhANR3YohXOe6Tv03yJke5PxMqQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Little Paws Of Hope photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Little Paws Of Hope</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/westbury/" class="back-link">More pet boarding in Westbury</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Little Paws Of Hope?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

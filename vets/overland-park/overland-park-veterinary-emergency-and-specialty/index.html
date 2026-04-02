@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJgcF7HmLBwIcRKO6W37fD7hk%2Fphotos%2FAU_ZVEEvy848mJ-gLVdW36zgTDGgNzuNtixqU_61kOeNQh4JPSminGugvj2IMtkxQved5gzwgWQKibesqDV5Wh09VtFs0Sh8Wu8LNR7oGmkqXlDaFo2Umd_Qrom1ddkYSMFrvTOpmIQnwkYfM22NybcGtoDUBsEcEcSbarEL-OV2R2lhL8JkjFUgHqFHykWpvaQCbYgq1tVtnR_Ukq0Ag4xQhy_MzOX38PP2jFYiJEci9mgAikjJgLiO0ysEN5dJ8csIu8-yI1hOrKB04ZJjVq4PWzXr2KRJQ6MgS3U04M8JqUZCPeGlqGIchIJNxwqnP4zs4DMwsahwR4KlI1Uk6vG1OlicROyP_VRbJsRjlh0dX5vW2v10lqCpHNaYhYoAJAFh8cPmK-mw9toRcn2v3vawPaPc2lVbJxbvAlFAm_W3gplecJ0U&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Overland Park Veterinary Emergency and Specialty photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Overland Park Veterinary Emergency and Specialty</h1>
@@ -201,8 +200,9 @@
                     <a href="/vets/overland-park/" class="back-link">More veterinarians in Overland Park</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Overland Park Veterinary Emergency and Specialty?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

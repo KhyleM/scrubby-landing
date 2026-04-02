@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJjx-Zj_sRlVQRRo93p5ZqJ24%2Fphotos%2FAU_ZVEGuHEOfXkTdekMbl8lm31GRTUi1c636vgkpx94yNWwQQ185d6WjAuUcNKpMLNsfVtCZaQFQCHdVd6FFb78AELMPEuwEK_Ou4hZ4sgy1Tc2o_01V5ZElQnxHPS2swqXNi_D5yDYVeev81Cy1fgcdJyatajZd15lU2VNYVpBkdANEYuuBxSj405IW5l3eTEyJL2Pb0MUTCJT3pT4OwuyS1BQNGAjr8aT24nBlbrkjfJZuL6xnfHlIyOwFjKfRaPrIBGtVViLvYTjsBucWgtY-TC8WDCc2hPz6HW8CRjmv1BxvJwRFCMxhl7qznqKT4am7aqZ8fEkrV_QiCpFiAO4SAfl1GC-RSdeZYZanz7Xyuhek4b9z8i3L9OmwV7seKU6V_kgU7mPlKxyH-0sUH09kskdUXJpC0q0tcPTCR8gJ21eW-g3ceRCvArtw8mfUX93P&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="CMK Pet Hotel &amp; Daycare(Cooper Mountain Kennel) photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>CMK Pet Hotel &amp; Daycare(Cooper Mountain Kennel)</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/beaverton/" class="back-link">More pet boarding in Beaverton</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of CMK Pet Hotel &amp; Daycare(Cooper Mountain Kennel)?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

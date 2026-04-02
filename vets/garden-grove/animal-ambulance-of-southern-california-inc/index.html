@@ -78,7 +78,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ17HyoRvY3IARTNjNUKFvIwQ%2Fphotos%2FAU_ZVEFpcdbGx-SZHRrwlfbG1kUK-abr1e20VqmQfBymGnuwUYFw_vkVGZV4C0XLvoMwqBxbnoOJIMcCvUsL8B6y2jNrgqDQXyMDFhQhrZtlB-GyieZdmj3jHUqSZ3mHmXxo6hy8WxVubEzpAxapPtYSdmskMhxldYROM58bagDfZP_y7xes9LbgBlqlUslf6MW92C5Te8BocDS1tI2O7jTM8w1tP98cjk6kd5WwLLgrkcG95XQTM10LFMn7MbDgAb_nbZPOZ4M52-d50Eb4uA9JyWSMy2EI7Q31ZXxslp4mZcM92Em9q_qxl4lMhysd0dZRutagrGBNwwhDgka6ZLfcCd1u8IoxOg8o-Uj2dWebZfCEAqvMehg3z2qmDRPK6RZsAHbOc11U4-mDs12EobMFAAfvELly8OhiVtVcCT30SOYd8nOk&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Animal Ambulance of Southern California Inc. photo 2" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Animal Ambulance of Southern California Inc.</h1>
@@ -198,8 +197,9 @@
                     <a href="/vets/garden-grove/" class="back-link">More veterinarians in Garden Grove</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Animal Ambulance of Southern California Inc.?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -345,6 +345,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -355,10 +359,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -383,7 +383,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

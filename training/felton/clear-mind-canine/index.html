@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJe9eQ3UtBjoARUtzli1bROmM%2Fphotos%2FAU_ZVEGVqqT8Fj_ldMmP04U8JzhlAsmphYh_F_gO_IOO6GJQT-NoLhh_Qni3kt5Jnzfq5XPNQ7Ej8kz1I8pxQ9eyrQgqrl9woaDerQFD_2gTJyuCJGRHJ9_gSxPqeA_Ox1NYfndWT6pBL7H7o9tpEBZALQACiMhJTLUmmRcUefiKSCIWyJbtOwsS_ScmCDtQPhQl8JBjJ2AMvr-TEp_b8mJojaB_uSvfCKtpyUaYbMQh462mZWpWpe8_RldFCU_Ov-4E_C4dWNg-MeORPASvJ43OTRXcdqmZGBwrKdOkSbYP2_XmUJ4ZyYW2iCCrSMZGf6AtamVCK3FzIJYarYMeUgQttwif7yMc7vei8p_mrHRUcirfdhMFRhOml7dYrCx4BEdDNhqh9RdUukqfcKH4p7ERKrAKpVDerloolnVzEJ33Crg&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Clear Mind Canine photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Clear Mind Canine</h1>
@@ -197,8 +196,9 @@
                     <a href="/training/felton/" class="back-link">More dog trainers in Felton</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Clear Mind Canine?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

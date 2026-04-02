@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJUzwcpTEx9ocRQrw-9iT3aAw%2Fphotos%2FAU_ZVEGyQ9kz2igU6boPZrASBJW2ptgCRE3kGSd7h9YZo4rmSaZrNW8fkgbjxpKW3iUedRadE_yIDNTR9oL5b-fBif5Jfsvbe0wghWz9rkzl_4Sy0MxVyuqzfIKRhNDPppdNgtAlePm5EqwimfN5-xT5f0bfrQzP3RIjjMYld31i2EUPWVALdeStHikP7jdIp-Wx8QLXJkZusidZOn_xnvAV-AuZkKbSOQniWTqt--bVQGMqfcHIJK5mkA_svsZeDAy-9wdEbjZCoSWt2dhHevSYa5CLC2oM4Q3-8ClaoRS1OJV7jQ5t8G2kmN0B5VDvHY0lM0ItFQhUBJ6t2ruAblq4pvJHWguoe4K5Hez5ZfjOsxAfg681FL1KRDSq2xwbVfKFJ5zBM7-MxErGf5p8YH6nJXIbv1-3U_1rk32zAMYcXvlcRck&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Dog Day Getaway photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Dog Day Getaway</h1>
@@ -199,8 +198,9 @@
                     <a href="/boarding/apple-valley/" class="back-link">More pet boarding in Apple Valley</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Dog Day Getaway?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -346,6 +346,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -356,10 +360,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -384,7 +384,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

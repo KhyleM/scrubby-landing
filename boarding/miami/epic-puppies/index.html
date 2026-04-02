@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJL54JI5-52YgRlkH93YoEqKI%2Fphotos%2FAU_ZVEHPUlWicGRoXVPrv4pArufWN5yK2GUMEY7mItOKwubpjzbKzJBZsTkR7QRw6hoXms0q7Nk9ZnYUdl0gp3bbx-ekj6zeQo8eIDhESI73RvnpPqAo2NFAG_q9yeEYXOvqIq-efoYK10flvubfjeIpug0R6C7VEalMXSa9ZSKtVmIT944oOrJPYGyHagoTdE26whWcR-ISUXMi6s7xM5OOjzIGTwd5di705iH0WYf1LI8GPGZK_F5L91GrjhuqGVk0bMmzcJ0VF5RZCz5Sh-mSui45nw6bdArAUKjbkHzt3YyCmM5AoNE65JV2gqq8UuZYaoCzsxh3dStPGbpE0R31uH9C3-qaAt3ufRxgw5ogazXD0dJNgOG3DJ7GDWLoRX8XhCe16Doq82C3fjJQdqKqUbB_4aGhlegG7aZyKGffBewDb130&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Epic Puppies photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Epic Puppies</h1>
@@ -199,8 +198,9 @@
                     <a href="/boarding/miami/" class="back-link">More pet boarding in Miami</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Epic Puppies?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -346,6 +346,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -356,10 +360,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -384,7 +384,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

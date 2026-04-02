@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJjfmDmuudiYgRqZpsithG3Wg%2Fphotos%2FAU_ZVEFStCIprPFf5GW-juO_e_ZT5icUxF6cxLSMZvGo_y6ZQUt4brZedTRLRyW2jlDOrEo4smGaVnqUZ70RWnvyEDrRALpQz9DSE2tdghTqSZM9HrkQ9F3KouomwCvA8vMjZdyxAOCELTycOR2-5W5diOPhEpU8zbGa_qcG0xSHbqpY0BEC6KZ2oBIj_R32AobZzTG0OO_uYJwSXd6YiqOjRDsPkJ4xQMRqDBC-WEW11mid520ppkpB4_uiR6_PrtPC-J23rKwAig1BmMOSyrDeCeG7_ztcPWwiHfBOoUG_ue9eHgwYdM8mMIPSfEbiPHzkjCQhK-XtqEfCcouNS00dL-LJ1_Os08eQTYZCjFFbyCqJT_Aby6u3U7joZnlhQQWoVTy8AJt6aVvRC_ZBv2GhDgvcQ9lVixpnzwX2pdNh6_0rAr5r&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Doggone pet spa photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Doggone pet spa</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/springville/" class="back-link">More pet groomers in Springville</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Doggone pet spa?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

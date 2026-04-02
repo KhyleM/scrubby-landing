@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJI08qEkg4a4gRSkx91pURdX4%2Fphotos%2FAU_ZVEHCzLRjhNPRoas1c6o95X2C7xhqyWEzU7cEKbnxXVnXdK8_AUYPe4iJr7MXNUY1zHHM2ubAc9mA1G7vTQ5zPpLGwn3Uityq3PKx04xh6CT8TPKVIYZ_JgUReCqjNDeVgRBkPifsTm9jaUSXfKKZ5IV2_a6F3W9sgFnXcpx-2MGNjOo2NRzsCBgB5sCUgaeq2UPC6w7epX3tLGLIKBflRA--i-hZD2tFW0kKOp2ILQFO26-oaq0enjg6jlb5t1YpupnLySU7e5eXykZ1KAjEKdNHdLjcXU-YBOx3pO-JOalpjMXRTOOBvVXTXjaooeRtRxXl0T6gWcsOmZz_JptSsJadR140YDYH-CujkkZGvaswb4zjEIjCQ2EhUCrMPy0dQC6at7TaTXe7bkAqgdmn021JV9QtAImr8uspM7md-xlIAw&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="New Palestine Veterinary Clinic photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>New Palestine Veterinary Clinic</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/new-palestine/" class="back-link">More veterinarians in New Palestine</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of New Palestine Veterinary Clinic?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJfxJJ_oz3wokRSrqobxTnqaQ%2Fphotos%2FAU_ZVEHeeagtOZ75LlJOklPXsRuAHjx9pM-Qnxldat1cznroklTed6U1NDdsrGjA-Ca-bOkqZIskP7HzLm5Y3LUR00AoWE65Ed-vOH4RH3u8EL0qSvZDSsNyyHzlTG4eGJlO1rn_3-96WWyHvsFx79nMQnceY8zkKpET_zmG9tm7K8oEt7GngcCTkOdNN_4iA_J6l49Gr378Twob41dlD56a-N80lcMxXM5m5jleKRTJHw2x_xABwXJekYchGTl3Bsema2XqWeVlqEbIe-s5qCiceFTg-KjPNrLHT3iv8QoWLdFYgGiqBnFiAE8N-io4lrlYu7jAwP4GEBcDmIJ1OIiEmjzeNfHHkBp3bbQLA-tdg0iIej4s1P_ZGtTayN0E47z_zO5ayJyu6fF5mw_BiOqTxivdr_4gxlzOFEt0a5u461YiKZaptVUuiIxu_hFZ_Q&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="J&#39;s Doggy Spa photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>J&#39;s Doggy Spa</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/fort-lee/" class="back-link">More pet groomers in Fort Lee</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of J&#39;s Doggy Spa?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJZ7s2KGMfJYgRgxX8eLs7aTo%2Fphotos%2FAU_ZVEH1guGIXEqzm3aQwkQfOdJ4fYn3WbNMP6GWUie5Ds2aWNPoHYArcTvaIeKq0K2gGLXA76pi7X9HRKCmn9DQ2cMPBviTbcP--bR-ob_PLXMB0csv6Wnimov7npkwgYS3oPNXXJjeFoaSCpfyo4OwXq6NDgiYNwTkyZTWKkt7cehADPYC7fZONmlN0jhOS8nd--L9UO7iiU-2E5TxyM_PGK1YUfeEcUDdVYH_SRjpuxDh5u207YxHiUUCWqNEbza1KX5BOVGdqX93Vl34-yn25vP0gvlOgXSug7ylpuimN2tDyk9Vy0pNVetddGuYUQhPv28RDVrrUI310ECqif4_B_LfPPL0gfZQy5qNZu0eeHe2X6Y1s4tM52p5dwOXIpa1kf7WiV6L1UBT_2FgyQvor8mjub-zJttZ13cT_yjDtq1bsBk&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="North Gratiot Veterinary Hospital photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>North Gratiot Veterinary Hospital</h1>
@@ -197,8 +196,9 @@
                     <a href="/vets/chesterfield/" class="back-link">More veterinarians in Chesterfield</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of North Gratiot Veterinary Hospital?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

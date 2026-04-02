@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJMXukyG43s1IR5AMNwQcuxG0%2Fphotos%2FAU_ZVEFDzslvuv3-5m2Z8Z5ZrmVHX-2Udm9I1yLGEx_6WJuTEim-AjgQt0SzWt4S16nOXsPIhfY3WCtgWSu1RS8tiiv-6Bz20iW2XiXGFqRjInUcwC9pVIA09C5dC2sSuMzGTbwsrUuCaXIOvOvdPk3ZnvUJqs2EsNtiAko_mkT9filLa4iOMCeN5F_kcDrSpAu98Z07WPQNS2KatjxjlWrXVqzTuj6L-SiZYEEZoXdF88Pw24BQTJl2cFaDDTWQX-3JWvFz_3J1BT1XJzVD4s9jU3grwXJ-UTmPBPE4aJM9kRvYlA&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Mutt Nuts photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Mutt Nuts</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/brooklyn-park/" class="back-link">More pet boarding in Brooklyn Park</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Mutt Nuts?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

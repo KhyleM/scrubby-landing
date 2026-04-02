@@ -77,7 +77,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJqaUg8LAaw4kRQHdwfTx4YNE%2Fphotos%2FAU_ZVEE_KWU90UqISVIt7PP2yjyscLX-zVe0pMWbvrk2oWGPYf4_J4IUPi1WoHvFkrkQ6GQ4kdOEkUUMXQkmSWuFiMfVoCBKMp_pdwgJ5RoKcEMGkvMTXiUQATMfoYg-NRaiZ8DyLVtSFh2L9IKYutTeorZ_9k5SjUWmT7eCoH6STMMi23YRdK4QQfUA0DamHRR-LsSxU0-hcb7cRYb3wM-rRbK2af8P21T4-bnzjppLl45BqhHIgsVeOKOp8-wVUmJex96ReUA920m86yLEvuzAeZmaFEc65bZenCATe0eM3qfuyOdyRq9XmtQElvY59I_WoT5VPyIRlhk5X_Y5_lLyH7gMKnq5opG84riuEuvzMREaXVGIr6g3MEFER1DqGbK4iGhbsjsPyVku3IW--c6_oL_-T0ndihzLd3eVbvOsuNY&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Wittenhaus Kennels" loading="eager" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Wittenhaus Kennels</h1>
@@ -179,8 +178,9 @@
                     <a href="/boarding/west-milford/" class="back-link">More pet boarding in West Milford</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Wittenhaus Kennels?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -326,6 +326,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -336,10 +340,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -364,7 +364,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -79,7 +79,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ_ZLpUSNVNIgRp5jy2rK-KKw%2Fphotos%2FAU_ZVEFET1YlFPnn0QBw-1_qmpQQge13qFMS_V9NgZjr3a8sYF-0CqBilQnSjZ2eKBh6B5hD-yG_zuNIlkRIzmrPEHEmajcrgTbLcotTVNMKCrswbdpUlOdEIPbjR4Mwqa_vG-o1KlXnGlp4MPYrVur7xhjwC0Sko9oulFi1WJqT6VS8htIAp02IN9egqAkoZIvePrRL7DSGMHBxLidGC1MrYXUYOdDo-MPwMJTVsuJTZ7fGsvvDnEgGSElK_kso8Zv88PwsaJSOcKWkuCqMvZhETECZLbfxT_EEQAr3_HPKiTELnA&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Hot Diggity Dog Grooming photo 3" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Hot Diggity Dog Grooming</h1>
@@ -183,8 +182,9 @@
                     <a href="/groomers/canonsburg/" class="back-link">More pet groomers in Canonsburg</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Hot Diggity Dog Grooming?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -330,6 +330,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -340,10 +344,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -368,7 +368,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

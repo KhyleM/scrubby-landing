@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJwwYlOCawIIYRuWSKPOkWX1E%2Fphotos%2FAU_ZVEFgJSV3PDKZXokADtn_fBXBZEJToqL8G6kn_SZZAReaZm9fE5GZRwFV2nHRywO9rJYvMMPSUEGR9v4SghboBGnggJOXYbEyNYiosNok1oWj80C81SLBafdoSJXsx1JLBU8a_34VBSHvuVfmIdaL5w2J3SDxq0-GvlYpnJ6i6jiCtIdZMGwC_7VfYmITpA9Q8crWUYMI5FCW51kOn2suXsaGH3GLPNrQwAb6cmVSJ32a_eq20H2LDDzi1j_qHEeF4CZHvxS7rwwsvFjI3441VWdOVMjeSfc6q1jZ7SQQEjOAivEvD3edmY7FtxsObuYXkqdFG54Tjm4KQp2OHd1zlc_yrlwNhLy4u8xt0wx57Xx9ymiRU56veXGswffR4rm-RBf3mPgYlJxROtfOU3W8cRbyjKvpbX40b_YJ4IyZT_v3fQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Fur de Leash Mobile Grooming photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Fur de Leash Mobile Grooming</h1>
@@ -196,8 +195,9 @@
                     <a href="/boarding/metairie/" class="back-link">More pet boarding in Metairie</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Fur de Leash Mobile Grooming?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -343,6 +343,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -353,10 +357,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -381,7 +381,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJta3fjH2NXIYRU5e9pby2fB8%2Fphotos%2FAU_ZVEG0eR3mgaNOgBcyRqDtTXI9qdvlFoBxHGeVCtknnEAmANnMe-XZygBrIq9THu8zZ9btFBWRooOdFyT2mYYQ9KYu7A8AysBNGHluesT-xrAE2kbdR0T-Q55HzlOQ70fk2826vacsJY77g_ZeglZA0Limpk0szHx5LgI8exKj8c41NBzV0lfeEa1nzwlYRDgkMLphVD0Wyjn-gsuxatasdBfsc0XRptt9AX8qUAtjpvZ0aQD62Eier2UmSuUMDSJt5CEQUZeSWQyE4pI14dhI0TCu5H-533crIp8vffBBkGThFcazhca8ZG2i2Kwpyrej80T2EKEYQTXoiQy8e4hD7WvTdpERqGVRpzQ8lRcOXaZxAUqwXRmPcEy70KUnkXofDXwB8VEJt_B6Piek-_K0yhqMqWlRWZT3JJ37RgL2pkpImCmt&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="BEAST TO BEAUTY DOG GROOMING LLC photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>BEAST TO BEAUTY DOG GROOMING LLC</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/live-oak/" class="back-link">More pet groomers in Live Oak</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of BEAST TO BEAUTY DOG GROOMING LLC?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

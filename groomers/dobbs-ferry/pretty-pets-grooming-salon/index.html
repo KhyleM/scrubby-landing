@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJx4_KtnbrwokR31dxg0g5xN4%2Fphotos%2FAU_ZVEG6AqFGhXaTjr5WnP-N-2CEXz9u-cUHM9kQLdeSuklNlTQONyT0gC9iaZDC86JyWWTr-N75qi1VlPF0I3ZjDwImGQzRkFOapiC8wkSqNkqG--HYqAeMXjZlM5I7CZZOUAGm_i6zl_ELA7Q1rDBD3xT9FNbUfcWal54Z0LEeCh0ls_knLDJKNsISItKYrwT9lNaYdM-aBoS-RyeXOv1DJjZDxC18lnfa8oUVR0w-hikwLxR4vdq26ArnEcTmtuhXWBf1_ug1fk06vmIL8OwqAYvUOFjhblaGV9Qz9TPmA3woZdXW708upSpPr1g7NkONPhKsjvI7FToLgf-pk7WD-EjdUNlUA2JLgbKA84M-g0pG-XhXp4XZtzrv4iI9F78TvYn32XbIkLfYl3Kct6lQciBtcX-sC8XnWPHcU38i5n601jtA&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Pretty Pets Grooming Salon photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Pretty Pets Grooming Salon</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/dobbs-ferry/" class="back-link">More pet groomers in Dobbs Ferry</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Pretty Pets Grooming Salon?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

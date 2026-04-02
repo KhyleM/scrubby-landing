@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJjVxJN1gz9ocRK80Tnx7S5e0%2Fphotos%2FAU_ZVEE_6vzHXfCRnS6w2dBMdA0Q2QutBhDe_rftoIA5cZS9khlC0W2T-f_Cbcy4mpj_uMAv4QRxaL126iNfKhg7ydDk9tcHN0rvQ2kFtxaSwjQgz1cNX2VFp-sZJOkNm_r0mUbfxjDYJioUEQ_B1OxmmyU554E52FnwhT4DqqDvnsPCXNdzW2In70_tyJc_GgEfMsKH6bct5ZJY8JRmZtYYAJa-hSIlITY9H5VVZNjxg2dcXTlgSL_7bETjCevrf7TDSxEeIPERG3B-x6LGhJ6LM1pAGLJ4clqVt7MXqPGBJhdaJNzI4yo922cTGiEAIdAhWnqWxwFnnXNnvy7FtcPal7GC8TrkgJHWjPKs30ZNt6uYKF2FGorTTyOPB0etjrQLMQ47Or_UOml43K2_RJio-QnJSuL6D-OarXIq1SMRivE&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="The Groom Room LLC photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>The Groom Room LLC</h1>
@@ -194,8 +193,9 @@
                     <a href="/groomers/rosemount/" class="back-link">More pet groomers in Rosemount</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of The Groom Room LLC?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -341,6 +341,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -351,10 +355,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -379,7 +379,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

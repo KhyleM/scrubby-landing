@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJV33BkjwLlVQRhMmb15TmSws%2Fphotos%2FAU_ZVEFo965QI45c_5LGLOPKnMJmWBC9bLSjyE7Z-LpB--uv0xbAIQJJMZZ1BBxHGW-J8v9vYrM487SwKVYA1At_vcKghWMpjRVmzS4K5eM0WYG1Rmkm97EJYE3NRThZ4MpMoy5JUshLjtPDyP12Pq2Shj07MwPTUrIQNafm_F0Co-0xTr4CwRqzNg5Qul2LhR4-73QCZreBWv50kSVy_x0J0w6UibZnKYXSwTK8E9ntIoKQjeSUPgCUGhYaciOXnw0cjTWBswunpaXZkaMZDJdPHjgL4_pJbZHoD74OU9ARxCR4VQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Holly Hearts Animals: Dog boarding + Pet sitting photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Holly Hearts Animals: Dog boarding + Pet sitting</h1>
@@ -192,8 +191,9 @@
                     <a href="/boarding/portland/" class="back-link">More pet boarding in Portland</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Holly Hearts Animals: Dog boarding + Pet sitting?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -339,6 +339,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -349,10 +353,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -377,7 +377,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

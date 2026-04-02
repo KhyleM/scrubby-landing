@@ -80,7 +80,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ960tFKt1t4kR8m0sLncP-Cg%2Fphotos%2FAU_ZVEHcTEh51T5S9zpgM-YLjIt5wGlBioTTEkMSJickTx3vKQDGNxqKXdgDCiNC-tY15b9V63ApQAFTzLnij2ojciJwRh7kRu4x8kgSnyMnINVVA5Fdmmq8EPrGQ54KhyIjpGHSG8bOOrxXghkNnDcl-u8zi6vdR2AZQudnlnXhByc86Jr8X4rG4zzPW5bjbzQS8tQJYjX6QrDJxfKidH9rKXwpkvReMYSmTrd-HfgmwKScx48G1tdATyumG_3FTiZJsIMAvoEQLkQGAo5-jjYeSxYApnfl53h7gb-T32judP9E9l5KLj68aNiGFxZEG8XcFPcF3orWF63OCxaWai3gf7VCjOebcKOtyFDrTFR6-XpKSdNo9og8SpAKSyTI9Mwd4AVJosFntmbX-_0jD0FtUUTQieA0J7N8OSfFbCIhYcYX4W9GH7L4ghXFeFn7naJT&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Teagues Run Veterinary Care LLC photo 4" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Teagues Run Veterinary Care LLC</h1>
@@ -196,8 +195,9 @@
                     <a href="/vets/charlotte-hall/" class="back-link">More veterinarians in Charlotte Hall</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Teagues Run Veterinary Care LLC?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -343,6 +343,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -353,10 +357,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -381,7 +381,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

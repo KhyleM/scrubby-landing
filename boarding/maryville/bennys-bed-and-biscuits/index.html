@@ -80,7 +80,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJFdU5XUr_dYgRp7d9gYAJdhI%2Fphotos%2FAU_ZVEGtkBoi7g4OExrG3sUzwcO6eZibD_mgP45uA8OA7FamqmMQ2bLaLUU-ak2UnVHKNa2VruyLq2nOOi8bfGoAtEwfe2F7GBYGcZREhh45sUU6ovyyjaNbLJ2mGYK1IbOzt63E3JnyWvXt_yw68Du14od0mpEtcK58Hhr73uRzyVTJkA81FVkk30QBZIOVbRBn5sAQ42NtOngMOz-H7khegjIiEzwiSrm53UiIfVJwGqycmiCcrl2jdhGaMQ9wvpN6TlCLoR-uJ12t_KL40xTPdqYpsMnTcK9FS_0V4Nb6vR-56nxBKlRDtx6VCoIaL_mPfF0ptLZKJlyE5zxROuCOKG009N4c5t5hMTxKp5nQku9lj1pE9fBQLK48Sfk8-_JnUO5OHEAqggcTzo7LlGRRmAjd-M49dgIeL3wmAV0RZpz1aNU&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Benny&#39;s Bed and Biscuits photo 4" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Benny&#39;s Bed and Biscuits</h1>
@@ -194,8 +193,9 @@
                     <a href="/boarding/maryville/" class="back-link">More pet boarding in Maryville</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Benny&#39;s Bed and Biscuits?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -341,6 +341,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -351,10 +355,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -379,7 +379,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ3at9OxnTQIYRDGh5IsW0CMw%2Fphotos%2FAU_ZVEFbD0-poUc3to0lB3TZfZCTzBJVshyLPIIfMHFmIcXl3sY6zeS7Mh4QYLZ1XcpLqKOiSJ2hOM13X5hd0uZFyuz3u1n7TvCcjvzf3VGizxUVYeKn04yAySGli1EOX2EP_3nwQQLagqBSA5Smh6YZYer4jLC6O1L4MWli_H2gLxgE-2NeWsGA-6JonyG8WBtG773t5Tb9dvCOzqxUlT1BTsQtjLKMh-vD-KQQlhCX5zQ8VHmvfppPmkbETLlv8zPUYzFYKZbRrJ1HmVzz_72BgvE7iaBoq-Wdlbm-gXlTwVJ1Hm03T0MR429ziFGzDfO4QPFIMwl2XDXF2TlV9wEX3UohdsmPcXt3I8y5d0V1WnJVkqb5xqp_btTQAhgEb1ktgzSFCAVvR_bORj1hDkbZN1RhqU3C64DNoqZn8RkDR_piSfbK&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Cypress Falls Pet Resort &amp; Spa photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Cypress Falls Pet Resort &amp; Spa</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/tomball/" class="back-link">More pet boarding in Tomball</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Cypress Falls Pet Resort &amp; Spa?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -16,7 +16,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/seo-pages.css">
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Dr. Gary Wilson","url":"https://scrubby.app/vets/ennis/dr-gary-wilson/","address":{"@type":"PostalAddress","streetAddress":"3101 N Kaufman St","addressLocality":"Ennis","addressRegion":"TX","postalCode":"75119","addressCountry":"US"},"telephone":"(972) 875-2647","sameAs":"http://ennisvetclinic.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":3},"geo":{"@type":"GeoCoordinates","latitude":32.3573353,"longitude":-96.6330987},"additionalType":"VeterinaryCare"}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Dr. Gary Wilson","url":"https://scrubby.app/vets/ennis/dr-gary-wilson/","address":{"@type":"PostalAddress","streetAddress":"3101 N Kaufman St","addressLocality":"Ennis","addressRegion":"TX","postalCode":"75119","addressCountry":"US"},"aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":3},"geo":{"@type":"GeoCoordinates","latitude":32.3573353,"longitude":-96.6330987},"additionalType":"VeterinaryCare"}</script>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054455651"></script>
     <script>
@@ -75,7 +75,6 @@
 
             
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Dr. Gary Wilson</h1>
@@ -93,14 +92,8 @@
                             <span class="info-label">Address</span>
                             <a href="https://www.google.com/maps/search/?api=1&query=3101%20N%20Kaufman%20St%2C%20Ennis%2C%20TX%2075119%2C%20USA" target="_blank" rel="noopener">3101 N Kaufman St, Ennis, TX 75119, USA</a>
                         </div>
-                        <div class="info-row">
-                            <span class="info-label">Phone</span>
-                            <a href="tel:(972) 875-2647">(972) 875-2647</a>
-                        </div>
-                        <div class="info-row">
-                            <span class="info-label">Website</span>
-                            <a href="http://ennisvetclinic.com/" target="_blank" rel="noopener nofollow">ennisvetclinic.com</a>
-                        </div>
+                        
+                        
                     </div>
 
                     
@@ -179,8 +172,9 @@
                     <a href="/vets/ennis/" class="back-link">More veterinarians in Ennis</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Dr. Gary Wilson?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -326,6 +320,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -336,10 +334,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -364,7 +358,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

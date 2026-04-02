@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJg8Bv2rDBuokRtBAXtSMkdbU%2Fphotos%2FAU_ZVEF8kuXcT5pkX70CoFUrmffT-ApGuYA-DKqnafAKL4WR3ADb0i0qIrEG1cE_5x2iBOUzT6ewxq87AMeCR8yUHLwfqbP7BWpLvVx0uW6apqjhlxhqA4qF0avuKhc6PL3Qd-dVxZAuICxVQ_zVMR2M8MZE6hRAI6Y2oFviSsMl0WcklGonchn8qoOBbzoONpTgJ_lFqGmS2IrIzYCK3PzLLzQKouMgYd_mzcut0Rva1CeLfbvPWtTYxgZtfor63gV6XuUod9w-abT-5fUtqloF8P_Q_PsyLsWkvtlE3z2503hlWVeGF6D8sGHdjTYHOC4rXQtaH98lgv5q-c3i-bJJNPIT55yz84l-67hRJv079JpDqqfxmz-TcafTgpOdkmqNYpfvmILF_ToB5Kq5wjea1VDr2ZYSPY5TaoBmhHOZPw6tQw&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Pet Supplies Plus East Virginia Beach photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Pet Supplies Plus East Virginia Beach</h1>
@@ -205,8 +204,9 @@
                     <a href="/groomers/virginia-beach/" class="back-link">More pet groomers in Virginia Beach</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Pet Supplies Plus East Virginia Beach?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -352,6 +352,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -362,10 +366,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -390,7 +390,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

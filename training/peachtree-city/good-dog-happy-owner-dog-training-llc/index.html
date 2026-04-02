@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ28MGktvH9IgRMb1oakzPARk%2Fphotos%2FAU_ZVEHy6RjuZbiTsibWkgYiPlUJsWZ_SS_Qh3fYJkVVDS53UwtYP6nDMRZA7EsAq0zV2fB3MKtcygE_e_aqQZ6gakftBGkEICwuFG1EXHumaUM2bJ4TttBXO4S0unECbot6geQO6kjvK3bearh4bpReDSq1jp0zHyzEVrvNAG-4x3D9VcaUnHORTBREyOiY5_WoR5-LPZh3aRUOZQ3BX7ei2r9ve_dg7hCuekEtmO-DTpQtHxfwrsUqIym969xwb8YdELrz_XOLQMKG-tYMEO1PhdnK3ElysBTrLrv1FC_pgDaxDA&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Good Dog Happy Owner Dog Training, LLC. photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Good Dog Happy Owner Dog Training, LLC.</h1>
@@ -197,8 +196,9 @@
                     <a href="/training/peachtree-city/" class="back-link">More dog trainers in Peachtree City</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Good Dog Happy Owner Dog Training, LLC.?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

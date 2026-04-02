@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJu7BwyRUFaYgR6MfZ6VN4ynQ%2Fphotos%2FAU_ZVEGdznn0n4GzLjZTzY2nmvL79U4OG3plF7PnW4IvF6GggGmF3MYlhe8tf5HUYOIVlgoDtRE507BtOITeCl4kGldXNU0XnfEU5b3l2cIfq7CyBLiQ_multvI7xdibrP0489Sm_nghazbRUNP3IQuQOkVKmOGot6zc88pHtvojm84zZ5h6dqU2r9IkkHALnns5z4aIMdrIZITMW2WtRrMS00xGzlFQYmwvpObzng8Mozw9u8MlRu58Q_zS68dF-WVYqJ2s5J4EBSVfR2iBmCcP55rzZpAllKwJ1jc3Anw8fGUGdYC2JsAZLrwf5cLSjaLQRldNyurXfiPSIMsocSSF1WqR_QPtRp1FQ3LVRrlydCns3-MBiVzZ5ezeFVFmzFMKzZTKfBvbjy-_rqk7yQqKEc-05gvX2M0iGeP8ScYklVR76q7Qzg14ynZIIDxJ6V1X&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Dog Training Camp USA photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Dog Training Camp USA</h1>
@@ -197,8 +196,9 @@
                     <a href="/training/shepherdsville/" class="back-link">More dog trainers in Shepherdsville</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Dog Training Camp USA?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

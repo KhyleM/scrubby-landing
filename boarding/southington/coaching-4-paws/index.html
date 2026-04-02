@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJN4B4-qnD54kRcKFL1_828nM%2Fphotos%2FAU_ZVEFbUZIFRIHItRWTt3rOj3ZYcHg4j1AucswBTA2JGqbIJqr06fJh6qtSnFqxFOZixT6kgRpplu2_ADv-Y1TgaqJVibDNQtetzjK-2MC8yzgI3_kejuHXmNOR5R14cwuqE4uZUM7HiJne57-6uRxowLbdLPWNdIiSdDYsv7cfYVEICPZbUyu-E7DYt7X0HlvV4nsyf6zAvxJSU8a9hFoNRvPXd5Kf2MZ6jjJKKke8VsyfsYDbss2hQBKOoRPx3n5ntg4X2cel5CJifNRgXUyXVpzx7H7-8Pa3AVtPNRg0-2CV9eHkT1Jp1-DTKXeaJ_3BTBE1YIDio-NwexbxA94sfZIt9s5JVcDvJ1oIJlrSJWmI-6tsmnx1CCyABp50LwS1GL_3erk6WwS3BWZ1avaT3awLFCJsy6UPHrW40UqI8QaoDoz2gRfs92sP6F9CUg_y&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Coaching 4 paws photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Coaching 4 paws</h1>
@@ -195,8 +194,9 @@
                     <a href="/boarding/southington/" class="back-link">More pet boarding in Southington</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Coaching 4 paws?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -342,6 +342,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -352,10 +356,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -380,7 +380,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

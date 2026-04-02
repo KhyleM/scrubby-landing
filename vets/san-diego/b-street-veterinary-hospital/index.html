@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJI0hV4HxT2YARkyocsr-EunE%2Fphotos%2FAU_ZVEHquU5VGPM8cOJea6D8J1BBVZlfp-DCyvzS5Yu8jJldLyWFIPhQxbL-uYIBOlnioqOvIdY3tMcvNyKRSDpMVrMW9wfv4REB8-Xb54b2s6mCiLbH14rFPFRcD3qBLjHPMLRXWNPKpgX7zfij4jnyfipNau0B7J_dsbI1oY7whFU1xBWokQUcZWc3ThDc1UedPIMJg-iTPdyy8tZGU7BC1OGFywRb8KRfk6yt8fMJ1drrSiAII6iOKE0OKFWRLo96gMpqCcm4sBrmrD64hHhjmshv8i5_hnWznc96M-QiQJ-1eR9zAc2nPL0k1Uzy0pre0R_v2CRgbkVK9x1I2lSO8OiYqVqU20TNLg3ZYSBdErVBVw9qh9jMr1taQ6Esb3DvLcTK3iox_OlIejaed83S0LmxUoi3kE8AGyXP51ZHcN4&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="B Street Veterinary Hospital photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>B Street Veterinary Hospital</h1>
@@ -201,8 +200,9 @@
                     <a href="/vets/san-diego/" class="back-link">More veterinarians in San Diego</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of B Street Veterinary Hospital?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

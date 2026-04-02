@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJB3iIt8IfwYcRAgRonPhCfHI%2Fphotos%2FAU_ZVEE-5Gxwi1BiSm83ax15pWtcdugk91vu4h4XxXA48Mxp9-ML93hnh-DqTKD--ZWBGEh515qsFBEG5moAvSAM7_ppeBWiS1LcHzg45twgWj-uBo_cI73DcLAbfIgkVBUDD6Y8xcxLDkEx1Vka1K4Mkk7qz8RRb-QULDUwEUWTAWP8jniH273eFERh8LG27-X5sgL53--GOeXGeinrzYLB2t4eK55of76guDvfxFLQPtIqbJADsJLqiE5hCauMy2K7Jgep5c23s6xzqQ0PaMwwb8vupHCRgTFP06uD27Y9asOEIs5AwEna2SUcZ1kD4qVAqt3Czo1aspEGZilPMMAuCrV5RMePCoQFJAqokCeRoVfJEyn5bbrCk70L5rd2BqtUcwjPa94XYxHVp3ZqCjrhnpAGUJhiK7iATkBGb4Tjp90&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Summit Pet Care photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Summit Pet Care</h1>
@@ -199,8 +198,9 @@
                     <a href="/boarding/lees-summit/" class="back-link">More pet boarding in Lee&#39;s Summit</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Summit Pet Care?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -346,6 +346,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -356,10 +360,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -384,7 +384,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

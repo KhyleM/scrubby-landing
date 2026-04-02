@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ-xDf6Vgz3YARQklP3qI0WYs%2Fphotos%2FAU_ZVEEk0qgA_WGPbWeFrjllPJ6aR2X-sc8UlatcdTOe9Tjq0oTEI0iItfDa1qtu0_IPpz4KyR7v7oXhbQOGMFt3tIG0wR7cFU6VuSnmyxb-ZZJAEJfdu0X_SqpBHZ2ugf6eKjIewD6inMSsAqCRYjxMByMIUVKSkJ2EpYLNbxwo0IEqg0K88oegJ1vOHoBf8RzPua9k9gPnIDNcrdFk-4jzh-D4i_6KDr5dnEWengjBDq6WcL7J6PlwlcQZyV6c0Gaxa-VOIiYsxNusSXagsdkwS8-hb8-_ROrBZqN12dSWYhAABe_GqLRA6Uh8Kyw5pgfUysfXmfPsNS4qjjV5ry-P2JrzY-TkLEYvPAkThiStO9O6FI5mILKyERpAw7agbBCSYvbpDwKDk9u7sN7KOy9qqEUu8IMkjAQhN06mOGZqIpBJx0jKnqiwLFBd7KgFyA&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="K9Klipper photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>K9Klipper</h1>
@@ -201,8 +200,9 @@
                     <a href="/groomers/long-beach/" class="back-link">More pet groomers in Long Beach</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of K9Klipper?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

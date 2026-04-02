@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJtaoucl0cNYgRZyEPkEr0bmE%2Fphotos%2FAU_ZVEHwtA0L9GxCsYpAY0uOC-wHNEEj4CZVHrgiBqi3kNTAkGMH1OOOp7_1gcu_WODWR9l5n8NE5tpOwvsl98Bod_uLadXE_NZLT5qdRnO30pfDWCemu2xogYoHBs1vOAODqafl0lWcLhmTiM544H6HOT5cR0dklQ_Tu-oEHo2KIfWCiTAPMRz_Q774z_RXDuoupndi_wZn2GpgYzeRUrCx5bXHteLb_Noxs-wHpHQDpV-bc3cGAh0jJQt-TVfiBp0Q1v-DwuHXU3p1_C-g-5EGFosewTLNePYykqiOw4VTcotebgua3qld_HFysujBm1om9ML3eqsj5JRGK_gAZNoip2e6EoEK3dDGDZtryoMqxgQIuwTCYZ3a0vPU9CLpYyM_l2k2WEvKIO0hYwOZ3ioibeLY5AGzlVbSHh1na4anqKJemkI&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Doggie Spa photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Doggie Spa</h1>
@@ -197,8 +196,9 @@
                     <a href="/groomers/belle-vernon/" class="back-link">More pet groomers in Belle Vernon</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Doggie Spa?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

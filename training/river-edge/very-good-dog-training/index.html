@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJASmteoH7wokRhAgvBRv9XEA%2Fphotos%2FAU_ZVEGD2G0ClUwCZbydYXcdRll7XHEL_3mUOMhPgbA9SO8XCsR5aMpLmB_oa7L4Ph8oRhP5KBEP90ufBOEO8rSkcaKaMuojhARaAuvFPU_gG3TAR2rVGv7Pw_oETtcYvxig9p4lpFzoq9VLFof3DDHxe-CdxgeZt4tYs1XDdHbs4Q-WUxguS9olDABbcpF5hcgLXDTecG15vWk1XhfAArvNdnf-yZPKSMFwZyNlbm0blDCjYW6ecI_Zy7B2-F8nWYBCYbGimrfUURzpOa4pUHFa8Y4-lvdxvSJHYkhoIWc3n_4sGv2-lgUL295VnqDHN43YTfBprO8B4EoJSd1kAgdtGLEWI2l7cGcayFWHkJe9f-sAGY1az2FKPoyvJiQXhryLDcWQJRIciL3BfJAuC3u3vu_FCQpyjSUsf22KZvqmJ5nNiYoT&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Very Good Dog Training photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Very Good Dog Training</h1>
@@ -194,8 +193,9 @@
                     <a href="/training/river-edge/" class="back-link">More dog trainers in River Edge</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Very Good Dog Training?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -341,6 +341,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -351,10 +355,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -379,7 +379,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJQxwXU_fBJIgRDvr7vr9ZtDk%2Fphotos%2FAU_ZVEEmrJQxCHYIpaFJ6bQ4W_Ojfp5a1l-6R5Vc3EGj-hfRGfSTiteXIz4W2qKDQIDnGBeO_ER5L5-CDXEBXMtafV3MEnFMwZK3K2iRRQjbSvcD9-bcRWGnn4KnfPRc5NlibC3q3fQIGuF1mUVtxx4Yd0wPUZyKeu6Bn1ZoYX3xVC3ys7wKxg1xrcdna0T-YCnPir8yHfzyRsFKPXBuSOescOaJfYWfgHEI-XvFg85i6VOEVle4ncQBXAATwHFbvexJJUYHRLL6GYl3E-zK0dniW1mfuCQoWcHX3grr-0zpFlTBog&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Sit Means Sit Dog Training Detroit photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Sit Means Sit Dog Training Detroit</h1>
@@ -197,8 +196,9 @@
                     <a href="/training/rochester-hills/" class="back-link">More dog trainers in Rochester Hills</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Sit Means Sit Dog Training Detroit?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

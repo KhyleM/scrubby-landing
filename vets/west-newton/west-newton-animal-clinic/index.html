@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJE8XFsmvgNIgR9XeD4lhIcyc%2Fphotos%2FAU_ZVEHvWuma3VQ4iSN1e1benXqhnPq96MQdtG2ioD4J3IHeqoy8DtrVLZP00i7UG8fps9UgjAZM5ifMUEhncMFsRpc04WniBB0KplfdP26xhn_CFctvJ5oupdFe-EVEDd5uXCzam6VbQGS7LAr6BbB8AEvrHVVEFcTVPI6SRFWvMpfK4P-IaPX7N5LAfsVKCls7PwgJIHgv8Xff-00acgl1sf0mlk8mzgzdtyO__DjaZrQeLUyoq7hx3XheLPnvxifZh6iHInZeZcO8WOaOvq6yBSJ3-ViRfi8bP_xCYGlEiL2lSmTh8n8KfmcVdIK-UPspbv3h0XBNpmC2ZDo6JyeD9e6Ch7sOSeSqNNFq5kAwiypfc8UZZcvAA9lvtJUog0sL8h92BkqIB85y8hvNIWc6ZUJ1L3urQhQN9M4olFa2xqutRzCe&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="West Newton Animal Clinic photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>West Newton Animal Clinic</h1>
@@ -201,8 +200,9 @@
                     <a href="/vets/west-newton/" class="back-link">More veterinarians in West Newton</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of West Newton Animal Clinic?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

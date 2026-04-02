@@ -78,7 +78,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJnXJEScTpwokRqh5uullav1w%2Fphotos%2FAU_ZVEFTVaHXIlrCpNnKlNKvg0f2lD8f_CxYBwIEVXdLDr6qmB_Y461Iw1yS54hLqps35a_USAB00rGYKdJZSrBDctoRejFLMFFF2DF2vALrXyRbKH-6PWH1CWAcsrnD8RwWtQHgqrind6taWAsY0yx1-rTexyYuVaY_7W_ZBYe_Z1kJQ5HIF4AJSlMEiw5dad3lUdmkI3BQgF8CTw0ogW4EGz94itaE15KbDAGljiWSgAXarWxz-RoVeR_A67T9QPOhCyg9MwNSLjiRJWbwBEFB0vYfET2eqrjHg0KE6FkgsRYqTAx5k19pqzdYgkRy5EN6gGha4lqQA4NvMjgvPDGOMt8kPqtBE91euSbMmS0FxqsLLwGJpbsv3oAqmluIOSowgugLZJwisvmy4JvfumVLWGxtebHiAuGtR1KgvhYOvQn2vAsq&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Little Angels Pet Salon photo 2" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Little Angels Pet Salon</h1>
@@ -179,8 +178,9 @@
                     <a href="/groomers/west-nyack/" class="back-link">More pet groomers in West Nyack</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Little Angels Pet Salon?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -326,6 +326,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -336,10 +340,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -364,7 +364,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

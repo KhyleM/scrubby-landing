@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJicdqG3fRxokRjFUThkKZBv0%2Fphotos%2FAU_ZVEGjBK5pmEqymUgfI1cNnLz35RuF0iMWLl3zDjy9Io4m7OM9qWkO1qJfYeXDuf3091hAEauL6FViZ8hMuFBdKgNb5KYcudIzAxT38yURgH4oOG1nW08t_g8t887YwQx_ttlOUXGGNBdu-TcXBsEtoYEEqGVi4x7FWDiwV-cWjxNdLptbF9l0lexzXNtD2KARXaIIsjVn_oX8I8qOYG5jzFOHsKbi_bjJBKOM49xTkgGYZMKVU8dVWufLbo4Ko6AY5JCf5E_5HdHP6XYq3lJ2vH7RO1yBJVLOoNtEd9o1QqGudNud403TCxHujLaQwYhqpdViJ0dCFt6fehVWUSDu4dPK6aHsFd0WRUGaIHylGkuBx8TdzM6Zq_yN5zB4n0cQz5rniYUC_cagkcPPfVIUrkXiYl9S4OmsA1FUT1goOK9IZPBbFTGH6PEJYlWKfm8v&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Fetch Family Pet Resort photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Fetch Family Pet Resort</h1>
@@ -199,8 +198,9 @@
                     <a href="/boarding/sewell/" class="back-link">More pet boarding in Sewell</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Fetch Family Pet Resort?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -346,6 +346,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -356,10 +360,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -384,7 +384,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

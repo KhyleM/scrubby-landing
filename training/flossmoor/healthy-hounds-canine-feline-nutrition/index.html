@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJ2Z9xbTYYDogR7B2wdj4vFOc%2Fphotos%2FAU_ZVEEW9WZ5RfEZb2S9SgfbwW0Is6U8h9NJcFVMVJjXM6QQujD-bP6i3C4WczF8WTZtiIZ1fh3tkwOFFjjYd51FxfapfcVS9Y8fN1PlNfIW-ndaCyDWC33RJORVWzOi4j69l9HCC-9DJNINrGqcaLuMrAxmEuYjsdIqE0RiM16PbKyaxIwQkpe6BS_Ud_XUEqwHHoO_RwHjlOOP3q5dUVFUMPa7suHQyReAUn4lo_uNHjdWxaGd7epwaDEQTo4CZtpiFqhtCCHZSqPAKEkJDZJWaoP2bbCXNxmaK5me_8nWVuiXFQ&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Healthy Hounds Canine &amp; Feline Nutrition photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Healthy Hounds Canine &amp; Feline Nutrition</h1>
@@ -201,8 +200,9 @@
                     <a href="/training/flossmoor/" class="back-link">More dog trainers in Flossmoor</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Healthy Hounds Canine &amp; Feline Nutrition?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -348,6 +348,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -358,10 +362,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -386,7 +386,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 

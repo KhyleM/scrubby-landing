@@ -81,7 +81,6 @@
                     <img src="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJqVCP5Nj8t4kRTy9u1D6U4zw%2Fphotos%2FAU_ZVEH2Z_FyOXn2ZT39AuwudF2E-1RgXjvdqeZcDWWnJFhp0rBoEpxuzNjl1aSD1iCB_kM1DeKDpoHAMve0LzYiVo5yp3fmBgHc_CWXkhjCRyGpMCsqXXi6gQcYQ4I-2UEYxM2PCQ8VcexrFtr1D97LY1Pdg8W3U-GNTj0HpOQeFB_YlgJKM28Lfcn8ragHY40P43U5oaztHyOz2VLuhZZ0BwQYG7bc6CgNREa1wMcaTosbEsPxmM-B1ExRg6gjHGGtPfdbFTGTDWFWXWpYvi2ThQPAD0_Il_wCUQfwT_U-WOMnYhIqKBKBVMJbAOT72487-ea6z_USalWQ7kbqmGUUQNAuj3j7WbOYeHIGQjK5k2Ja1uKjakINAefzQrNpVT3Yf-us2quOrv8g59lpEZeduc1EIDA2BLwqcGcdKX4pz60PgA&maxWidth=800&maxHeight=600&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso" alt="Furkids Pet Grooming photo 5" loading="lazy" class="gallery-img">
             </div>
 
-            
             <div class="detail-layout">
                 <div class="detail-main">
                     <h1>Furkids Pet Grooming</h1>
@@ -197,8 +196,9 @@
                     <a href="/groomers/glen-burnie/" class="back-link">More pet groomers in Glen Burnie</a>
                 </aside>
             </div>
-        
-<div class="claim-banner" id="claimBanner">
+
+            
+            <div class="claim-banner" id="claimBanner">
                 <div class="claim-banner-content">
                     <h3>Are you the owner of Furkids Pet Grooming?</h3>
                     <p>Claim your free listing to update your info, respond to bookings, and reach more pet owners.</p>
@@ -344,6 +344,10 @@
 
       var formLoadTime = Date.now();
 
+      // Set min date to today
+      var dateInput = form.querySelector('input[type="date"]');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
       var notesField = document.getElementById('notesField');
@@ -354,10 +358,6 @@
           notesField.focus();
         });
       }
-
-      // Set min date to today
-      var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
@@ -382,7 +382,6 @@
         if (Date.now() - formLoadTime < 3000) {
           form.hidden = true;
           successEl.hidden = false;
-            if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18054455651/submit_lead_form' }); }
           return;
         }
 
