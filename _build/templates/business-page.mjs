@@ -89,7 +89,7 @@ ${renderNavbar()}
                     ${renderPaymentOptions(paymentOpts)}
 
                     <section class="detail-cta" id="book">
-                        <h2>Book Appointment</h2>
+                        <h2>Book at ${escapeHtml(listing.business_name)}</h2>
                         <form id="bookingForm" class="booking-form">
                             <input type="hidden" name="listing_id" value="${listing.id}">
                             <div style="position:absolute;left:-9999px;"><input type="text" name="website" tabindex="-1" autocomplete="off"></div>
@@ -98,7 +98,7 @@ ${renderNavbar()}
                                 <input name="email" type="email" placeholder="Email" required>
                             </div>
                             <div class="form-row">
-                                <input name="phone" type="tel" placeholder="Phone (optional)">
+                                <input name="phone" type="tel" placeholder="Phone (so we can confirm your booking)">
                                 ${renderSubServiceOptions(service)}
                             </div>
                             <div class="form-row">
@@ -113,7 +113,7 @@ ${renderNavbar()}
                             <div class="form-row">
                                 <input name="breed" placeholder="Breed (e.g. Golden Retriever)">
                             </div>
-                            <label class="form-label">Preferred appointment date &amp; time</label>
+                            <label class="form-label">When would you like to go?</label>
                             <div class="form-row">
                                 <input name="preferred_date" type="date">
                                 <select name="preferred_time_window">
@@ -123,14 +123,15 @@ ${renderNavbar()}
                                     <option value="evening">Evening (4pm - 7pm)</option>
                                 </select>
                             </div>
-                            <textarea name="notes" placeholder="Anything we should know? (e.g. vaccination records, special needs)" rows="2"></textarea>
-                            <button type="submit" class="btn-primary-large booking-submit">Book Now</button>
-                            <p class="cta-sub">100% free. No account needed.</p>
+                            <a href="javascript:void(0)" class="add-note-toggle" id="addNoteToggle">Add a note</a>
+                            <textarea name="notes" id="notesField" placeholder="Vaccination records, special needs, or anything else we should know" rows="2" hidden></textarea>
+                            <button type="submit" class="btn-primary-large booking-submit">Request to Book</button>
+                            <p class="cta-sub">You'll receive confirmation within 24 hours</p>
                         </form>
                         <div id="bookingSuccess" class="booking-success" hidden>
                             <div class="success-icon">&#10003;</div>
-                            <h3>Appointment Requested!</h3>
-                            <p>We'll confirm your booking at ${escapeHtml(listing.business_name)} and email you the details within 24 hours.</p>
+                            <h3>You're all set!</h3>
+                            <p>We're confirming your appointment at ${escapeHtml(listing.business_name)} and will email you the details shortly.</p>
                         </div>
                         <div id="bookingError" class="booking-error" hidden></div>
                     </section>
@@ -221,6 +222,17 @@ ${renderFooter(SERVICE_TYPES)}
       // Set min date to today
       var dateInput = form.querySelector('input[type="date"]');
       if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
+      // Toggle notes field
+      var noteToggle = document.getElementById('addNoteToggle');
+      var notesField = document.getElementById('notesField');
+      if (noteToggle && notesField) {
+        noteToggle.addEventListener('click', function() {
+          notesField.hidden = false;
+          noteToggle.hidden = true;
+          notesField.focus();
+        });
+      }
 
       // Show/hide "Other" text input for service type
       var serviceSelect = document.getElementById('serviceTypeSelect');
