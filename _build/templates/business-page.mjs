@@ -144,6 +144,15 @@ ${renderNavbar()}
             </div>
 
             ${renderClaimBanner(listing)}
+
+            <section class="related-articles">
+                <h2>Pet Care Tips from the Scrubby Blog</h2>
+                <div class="related-articles-list">
+                    ${serviceSlug === 'groomers' ? `<a href="/blog/how-often-groom-your-dog/">How Often Should You Really Groom Your Dog? A Breed-by-Breed Guide</a>` : ''}
+                    <a href="/blog/first-time-dog-owner-checklist/">First-Time Dog Owner? Here's Your Complete Care Checklist</a>
+                    <a href="/blog/why-scrubby-is-free/">Why Scrubby Will Always Be Free for Pet Parents</a>
+                </div>
+            </section>
         </div>
     </main>
 
