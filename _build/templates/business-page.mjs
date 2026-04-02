@@ -11,13 +11,15 @@ import {
  */
 function renderSubServiceOptions(service) {
   if (!service.subServices || service.subServices.length === 0) return '';
-  const options = service.subServices.map(s =>
+  const options = service.subServices.filter(s => s !== 'Other').map(s =>
     `<option value="${escapeHtml(s)}">${escapeHtml(s)}</option>`
   ).join('\n                                    ');
-  return `<select name="service_type" required>
-                                    <option value="">What do you need?</option>
+  return `<select name="service_type" id="serviceTypeSelect">
+                                    <option value="">What do you need? (optional)</option>
                                     ${options}
-                                </select>`;
+                                    <option value="other">Other</option>
+                                </select>
+                                <input type="text" name="service_type_other" id="serviceTypeOther" placeholder="What service do you need?" style="display:none;">`;
 }
 
 export function renderBusinessPage({ listing, serviceSlug, cityName, stateAbbrev, citySlug }) {
@@ -214,17 +216,45 @@ ${renderFooter(SERVICE_TYPES)}
       var errorEl = document.getElementById('bookingError');
       var endpoint = '${BOOKING_API_URL}/functions/v1/seo-booking-submit';
 
+      var formLoadTime = Date.now();
+
       // Set min date to today
       var dateInput = form.querySelector('input[type="date"]');
       if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 
+      // Show/hide "Other" text input for service type
+      var serviceSelect = document.getElementById('serviceTypeSelect');
+      var serviceOther = document.getElementById('serviceTypeOther');
+      if (serviceSelect && serviceOther) {
+        serviceSelect.addEventListener('change', function() {
+          if (serviceSelect.value === 'other') {
+            serviceOther.style.display = '';
+            serviceOther.focus();
+          } else {
+            serviceOther.style.display = 'none';
+            serviceOther.value = '';
+          }
+        });
+      }
+
       form.addEventListener('submit', function(e) {
         e.preventDefault();
         errorEl.hidden = true;
+
+        // Reject submissions faster than 3 seconds (likely bot)
+        if (Date.now() - formLoadTime < 3000) {
+          form.hidden = true;
+          successEl.hidden = false;
+          return;
+        }
+
         btn.disabled = true;
         btn.textContent = 'Submitting...';
 
         var fd = new FormData(form);
+        var serviceType = fd.get('service_type');
+        if (serviceType === 'other') serviceType = fd.get('service_type_other') || '${service.singular.toLowerCase()}';
+        if (!serviceType) serviceType = '${service.singular.toLowerCase()}';
         var payload = {
           listing_id: fd.get('listing_id'),
           name: fd.get('name'),
@@ -233,7 +263,7 @@ ${renderFooter(SERVICE_TYPES)}
           pet_name: fd.get('pet_name') || undefined,
           pet_type: fd.get('pet_type') || undefined,
           breed: fd.get('breed') || undefined,
-          service_type: fd.get('service_type'),
+          service_type: serviceType,
           preferred_date: fd.get('preferred_date') || undefined,
           preferred_time_window: fd.get('preferred_time_window') || undefined,
           notes: fd.get('notes') || undefined,
