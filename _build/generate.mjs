@@ -378,6 +378,7 @@ function renderServiceIndex(serviceSlug, cities) {
     <meta property="og:description" content="${desc}">
     <meta property="og:url" content="${SITE_URL}/${serviceSlug}/">
     <meta property="og:type" content="website">
+    <meta name="apple-itunes-app" content="app-id=6753985366">
     <link rel="icon" type="image/png" href="/favicon.png">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/styles.css">

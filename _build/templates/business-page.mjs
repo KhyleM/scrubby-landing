@@ -132,6 +132,12 @@ ${renderNavbar()}
                             <div class="success-icon">&#10003;</div>
                             <h3>You're all set!</h3>
                             <p>We're confirming your appointment at ${escapeHtml(listing.business_name)} and will email you the details shortly.</p>
+                            <div class="app-store-cta">
+                                <p>Track your appointment, manage your pet's profile, and book again — all in the Scrubby app.</p>
+                                <a href="https://apps.apple.com/app/id6753985366" class="app-store-badge" target="_blank" rel="noopener">
+                                    <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83" alt="Download on the App Store" height="44">
+                                </a>
+                            </div>
                         </div>
                         <div id="bookingError" class="booking-error" hidden></div>
                     </section>
