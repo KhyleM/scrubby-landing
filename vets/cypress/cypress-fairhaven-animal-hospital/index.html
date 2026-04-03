@@ -306,6 +306,11 @@
       var claimError = document.getElementById('claimError');
       var claimEndpoint = 'https://anltnskudvrymdqoubez.supabase.co/functions/v1/seo-claim-request';
 
+      // Auto-open claim form when linked from outreach (?claim=auto)
+      if (claimBtn && new URLSearchParams(window.location.search).get('claim') === 'auto') {
+        claimBtn.click();
+      }
+
       if (claimBtn && claimForm) {
         claimBtn.addEventListener('click', function() {
           claimBtn.hidden = true;

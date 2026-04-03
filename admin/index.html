@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Scrubby Admin</title>
+  <link rel="icon" href="/images/scrubby-logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --primary: #4ECDC4;
+      --primary-dark: #3db8b0;
+      --bg: #f5f7fb;
+      --card: #fff;
+      --text: #0f172a;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+      --radius: 12px;
+      --shadow: 0 1px 3px rgba(0,0,0,.08);
+      --shadow-lg: 0 8px 24px rgba(0,0,0,.1);
+    }
+    body {
+      font-family: 'Poppins', -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    /* ── Login ── */
+    .login-wrap {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+    .login-card {
+      width: min(92vw, 400px);
+      background: var(--card);
+      border-radius: 24px;
+      box-shadow: var(--shadow-lg);
+      padding: 2.5rem;
+      text-align: center;
+    }
+    .login-card img { height: 48px; margin-bottom: 1.5rem; }
+    .login-card h1 { font-size: 1.25rem; margin-bottom: 1.5rem; font-weight: 600; }
+    .login-card input {
+      width: 100%;
+      padding: .75rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: .95rem;
+      margin-bottom: .75rem;
+      outline: none;
+      transition: border-color .15s;
+    }
+    .login-card input:focus { border-color: var(--primary); }
+    .login-card .btn {
+      width: 100%;
+      padding: .85rem;
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: .5rem;
+      transition: background .15s;
+    }
+    .login-card .btn:hover { background: var(--primary-dark); }
+    .login-card .btn:disabled { opacity: .6; cursor: not-allowed; }
+    .login-error {
+      color: #dc2626;
+      font-size: .85rem;
+      margin-top: .75rem;
+      display: none;
+    }
+
+    /* ── Top Bar ── */
+    .topbar {
+      background: var(--card);
+      border-bottom: 1px solid var(--border);
+      padding: .75rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .topbar-left { display: flex; align-items: center; gap: .75rem; }
+    .topbar-left img { height: 32px; }
+    .topbar-left h1 { font-size: 1.1rem; font-weight: 600; }
+    .topbar .btn-ghost {
+      background: none;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: .5rem 1rem;
+      font-family: inherit;
+      font-size: .85rem;
+      cursor: pointer;
+      color: var(--text-muted);
+      transition: all .15s;
+    }
+    .topbar .btn-ghost:hover { border-color: var(--text-muted); color: var(--text); }
+
+    /* ── Layout ── */
+    .dashboard { max-width: 1200px; margin: 0 auto; padding: 1.5rem; display: none; }
+
+    /* ── Stats ── */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .stat-card {
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 1.25rem;
+    }
+    .stat-card .stat-label { font-size: .8rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: .05em; font-weight: 500; }
+    .stat-card .stat-value { font-size: 2rem; font-weight: 700; margin-top: .25rem; }
+    .stat-card .stat-sub { font-size: .8rem; color: var(--text-muted); margin-top: .25rem; }
+
+    /* ── Tabs ── */
+    .tab-bar {
+      display: flex;
+      gap: .25rem;
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: .35rem;
+      margin-bottom: 1.5rem;
+    }
+    .tab-btn {
+      flex: 1;
+      padding: .65rem 1rem;
+      border: none;
+      background: none;
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: .9rem;
+      font-weight: 500;
+      cursor: pointer;
+      color: var(--text-muted);
+      transition: all .15s;
+    }
+    .tab-btn.active { background: var(--primary); color: #fff; }
+    .tab-btn:not(.active):hover { background: var(--bg); }
+
+    /* ── Filter Bar ── */
+    .filter-bar {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+    }
+    .filter-bar select, .filter-bar input {
+      padding: .5rem .75rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: .85rem;
+      outline: none;
+      background: var(--card);
+    }
+    .filter-bar select:focus, .filter-bar input:focus { border-color: var(--primary); }
+    .filter-bar input { flex: 1; min-width: 200px; }
+    .filter-bar .count { font-size: .85rem; color: var(--text-muted); margin-left: auto; }
+
+    /* ── Table ── */
+    .admin-table-wrap {
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow-x: auto;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: .875rem;
+    }
+    th {
+      text-align: left;
+      padding: .75rem 1rem;
+      background: var(--bg);
+      font-weight: 600;
+      font-size: .8rem;
+      text-transform: uppercase;
+      letter-spacing: .03em;
+      color: var(--text-muted);
+      white-space: nowrap;
+      border-bottom: 1px solid var(--border);
+    }
+    td {
+      padding: .75rem 1rem;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background: #f8fafc; }
+
+    /* ── Status Badge ── */
+    .badge {
+      display: inline-block;
+      padding: .2rem .6rem;
+      border-radius: 99px;
+      font-size: .75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .03em;
+      white-space: nowrap;
+    }
+    .badge-new       { background: #dbeafe; color: #1d4ed8; }
+    .badge-pending    { background: #dbeafe; color: #1d4ed8; }
+    .badge-contacted  { background: #fef3c7; color: #92400e; }
+    .badge-confirmed  { background: #d1fae5; color: #065f46; }
+    .badge-verified   { background: #d1fae5; color: #065f46; }
+    .badge-completed  { background: #e2e8f0; color: #475569; }
+    .badge-cancelled  { background: #fee2e2; color: #991b1b; }
+    .badge-rejected   { background: #fee2e2; color: #991b1b; }
+
+    /* ── Inline Edit ── */
+    .inline-select {
+      padding: .3rem .5rem;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: .8rem;
+      background: var(--card);
+      cursor: pointer;
+    }
+    .inline-select:focus { border-color: var(--primary); outline: none; }
+    .notes-input {
+      width: 100%;
+      min-width: 150px;
+      padding: .35rem .5rem;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: .8rem;
+      resize: vertical;
+    }
+    .notes-input:focus { border-color: var(--primary); outline: none; }
+    .btn-save {
+      padding: .3rem .7rem;
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: .75rem;
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: opacity .15s;
+    }
+    .btn-save:hover { opacity: .85; }
+    .btn-save:disabled { opacity: .5; cursor: not-allowed; }
+    .save-ok { color: #059669; font-size: .75rem; margin-left: .35rem; }
+
+    /* ── Detail cell ── */
+    .detail-line { font-size: .8rem; color: var(--text-muted); }
+    .customer-name { font-weight: 600; }
+    .business-link { color: var(--primary); text-decoration: none; }
+    .business-link:hover { text-decoration: underline; }
+
+    /* ── Outreach ── */
+    .outreach-card {
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 1.25rem;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .outreach-info { flex: 1; min-width: 200px; }
+    .outreach-info .biz-name { font-weight: 600; }
+    .outreach-info .biz-meta { font-size: .8rem; color: var(--text-muted); }
+    .btn-outline {
+      padding: .45rem .85rem;
+      border: 1px solid var(--primary);
+      color: var(--primary);
+      background: none;
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: .8rem;
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all .15s;
+    }
+    .btn-outline:hover { background: var(--primary); color: #fff; }
+    .copied-msg { font-size: .75rem; color: #059669; margin-left: .5rem; }
+
+    /* ── Empty state ── */
+    .empty-state {
+      text-align: center;
+      padding: 3rem 1rem;
+      color: var(--text-muted);
+    }
+    .empty-state p { font-size: .95rem; }
+
+    /* ── Loading ── */
+    .loading { text-align: center; padding: 2rem; color: var(--text-muted); }
+
+    /* ── Responsive ── */
+    @media (max-width: 768px) {
+      .dashboard { padding: 1rem; }
+      .stats-grid { grid-template-columns: 1fr 1fr; }
+      .topbar { padding: .75rem 1rem; }
+    }
+    @media (max-width: 480px) {
+      .stats-grid { grid-template-columns: 1fr; }
+    }
+
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+  </style>
+</head>
+<body>
+
+<!-- ── Login Screen ── -->
+<div id="loginScreen" class="login-wrap">
+  <div class="login-card">
+    <img src="/images/scrubby-logo.png" alt="Scrubby">
+    <h1>Admin Dashboard</h1>
+    <form id="loginForm">
+      <input type="email" id="loginEmail" placeholder="Email" required>
+      <input type="password" id="loginPassword" placeholder="Password" required>
+      <button type="submit" class="btn" id="loginBtn">Sign In</button>
+    </form>
+    <p class="login-error" id="loginError"></p>
+  </div>
+</div>
+
+<!-- ── Dashboard ── -->
+<div id="dashboardWrap" style="display:none;">
+  <div class="topbar">
+    <div class="topbar-left">
+      <img src="/images/scrubby-logo.png" alt="Scrubby">
+      <h1>Admin</h1>
+    </div>
+    <button class="btn-ghost" id="signOutBtn">Sign Out</button>
+  </div>
+
+  <div class="dashboard" id="dashboard">
+    <!-- Stats -->
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-label">Bookings This Week</div>
+        <div class="stat-value" id="statBookingsWeek">-</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Pending Bookings</div>
+        <div class="stat-value" id="statBookingsPending">-</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Pending Claims</div>
+        <div class="stat-value" id="statClaimsPending">-</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Total Bookings</div>
+        <div class="stat-value" id="statBookingsTotal">-</div>
+      </div>
+    </div>
+
+    <!-- Tabs -->
+    <div class="tab-bar">
+      <button class="tab-btn active" data-tab="bookings">Bookings</button>
+      <button class="tab-btn" data-tab="claims">Claims</button>
+      <button class="tab-btn" data-tab="outreach">Outreach</button>
+    </div>
+
+    <!-- Bookings Tab -->
+    <div class="tab-panel active" id="tab-bookings">
+      <div class="filter-bar">
+        <select id="bookingStatusFilter">
+          <option value="all">All statuses</option>
+          <option value="submitted" selected>Submitted</option>
+          <option value="contacted">Contacted</option>
+          <option value="confirmed">Confirmed</option>
+          <option value="completed">Completed</option>
+          <option value="declined">Declined</option>
+          <option value="no_response">No Response</option>
+          <option value="cancelled">Cancelled</option>
+        </select>
+        <span class="count" id="bookingCount"></span>
+      </div>
+      <div class="admin-table-wrap">
+        <div class="loading" id="bookingsLoading">Loading...</div>
+        <table id="bookingsTable" style="display:none;">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Customer</th>
+              <th>Business</th>
+              <th>Service</th>
+              <th>Preferred Date</th>
+              <th>Status</th>
+              <th>Notes</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="bookingsBody"></tbody>
+        </table>
+        <div class="empty-state" id="bookingsEmpty" style="display:none;">
+          <p>No booking requests found.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Claims Tab -->
+    <div class="tab-panel" id="tab-claims">
+      <div class="filter-bar">
+        <select id="claimStatusFilter">
+          <option value="all">All statuses</option>
+          <option value="pending" selected>Pending</option>
+          <option value="contacted">Contacted</option>
+          <option value="verified">Verified</option>
+          <option value="rejected">Rejected</option>
+        </select>
+        <span class="count" id="claimCount"></span>
+      </div>
+      <div class="admin-table-wrap">
+        <div class="loading" id="claimsLoading">Loading...</div>
+        <table id="claimsTable" style="display:none;">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Owner</th>
+              <th>Business</th>
+              <th>Role</th>
+              <th>Status</th>
+              <th>Notes</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="claimsBody"></tbody>
+        </table>
+        <div class="empty-state" id="claimsEmpty" style="display:none;">
+          <p>No claim requests found.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Outreach Tab -->
+    <div class="tab-panel" id="tab-outreach">
+      <div class="filter-bar">
+        <input type="text" id="outreachSearch" placeholder="Search businesses by name...">
+        <select id="outreachServiceFilter">
+          <option value="">All services</option>
+          <option value="groomers">Groomers</option>
+          <option value="vets">Vets</option>
+          <option value="boarding">Boarding</option>
+          <option value="training">Training</option>
+          <option value="walkers">Walkers</option>
+          <option value="sitters">Sitters</option>
+        </select>
+      </div>
+      <div id="outreachResults">
+        <div class="empty-state"><p>Search for a business to generate an outreach link.</p></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function() {
+  // ── Config ──
+  var SUPABASE_URL = 'https://anltnskudvrymdqoubez.supabase.co';
+  var SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso';
+
+  var sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+  // ── Elements ──
+  var loginScreen = document.getElementById('loginScreen');
+  var dashboardWrap = document.getElementById('dashboardWrap');
+  var dashboard = document.getElementById('dashboard');
+  var loginForm = document.getElementById('loginForm');
+  var loginError = document.getElementById('loginError');
+  var loginBtn = document.getElementById('loginBtn');
+
+  // ── Auth ──
+  async function checkAuth() {
+    var { data } = await sb.auth.getSession();
+    if (!data.session) { showLogin(); return; }
+    var { data: admin } = await sb.from('admin_users').select('id').eq('user_id', data.session.user.id).single();
+    if (!admin) {
+      loginError.textContent = 'You do not have admin access.';
+      loginError.style.display = 'block';
+      await sb.auth.signOut();
+      showLogin();
+      return;
+    }
+    showDashboard();
+  }
+
+  function showLogin() {
+    loginScreen.style.display = '';
+    dashboardWrap.style.display = 'none';
+  }
+
+  function showDashboard() {
+    loginScreen.style.display = 'none';
+    dashboardWrap.style.display = '';
+    dashboard.style.display = 'block';
+    loadStats();
+    loadBookings();
+  }
+
+  loginForm.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    loginError.style.display = 'none';
+    loginBtn.disabled = true;
+    loginBtn.textContent = 'Signing in...';
+    var email = document.getElementById('loginEmail').value;
+    var password = document.getElementById('loginPassword').value;
+    var { error } = await sb.auth.signInWithPassword({ email: email, password: password });
+    if (error) {
+      loginError.textContent = error.message;
+      loginError.style.display = 'block';
+      loginBtn.disabled = false;
+      loginBtn.textContent = 'Sign In';
+      return;
+    }
+    await checkAuth();
+  });
+
+  document.getElementById('signOutBtn').addEventListener('click', async function() {
+    await sb.auth.signOut();
+    showLogin();
+  });
+
+  // ── Stats ──
+  async function loadStats() {
+    var weekAgo = new Date();
+    weekAgo.setDate(weekAgo.getDate() - 7);
+    var weekStr = weekAgo.toISOString();
+
+    var [bWeek, bPending, bTotal, cPending] = await Promise.all([
+      sb.from('concierge_bookings').select('id', { count: 'exact', head: true }).eq('source', 'seo').gte('created_at', weekStr),
+      sb.from('concierge_bookings').select('id', { count: 'exact', head: true }).eq('source', 'seo').in('status', ['submitted']),
+      sb.from('concierge_bookings').select('id', { count: 'exact', head: true }).eq('source', 'seo'),
+      sb.from('claim_requests').select('id', { count: 'exact', head: true }).eq('status', 'pending'),
+    ]);
+
+    document.getElementById('statBookingsWeek').textContent = bWeek.count || 0;
+    document.getElementById('statBookingsPending').textContent = bPending.count || 0;
+    document.getElementById('statBookingsTotal').textContent = bTotal.count || 0;
+    document.getElementById('statClaimsPending').textContent = cPending.count || 0;
+  }
+
+  // ── Bookings ──
+  async function loadBookings() {
+    var filter = document.getElementById('bookingStatusFilter').value;
+    var loading = document.getElementById('bookingsLoading');
+    var table = document.getElementById('bookingsTable');
+    var empty = document.getElementById('bookingsEmpty');
+    var body = document.getElementById('bookingsBody');
+    var countEl = document.getElementById('bookingCount');
+
+    loading.style.display = '';
+    table.style.display = 'none';
+    empty.style.display = 'none';
+
+    var query = sb.from('concierge_bookings').select('*, unclaimed_listings(business_name, address)').eq('source', 'seo').order('created_at', { ascending: false }).limit(200);
+    if (filter !== 'all') query = query.eq('status', filter);
+    var { data, error } = await query;
+
+    loading.style.display = 'none';
+    if (error || !data || data.length === 0) {
+      empty.style.display = '';
+      countEl.textContent = '0 results';
+      return;
+    }
+
+    countEl.textContent = data.length + ' result' + (data.length !== 1 ? 's' : '');
+    body.innerHTML = data.map(renderBookingRow).join('');
+    table.style.display = '';
+  }
+
+  function renderBookingRow(b) {
+    var created = new Date(b.created_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' });
+    var prefDate = b.preferred_date ? new Date(b.preferred_date + 'T12:00:00').toLocaleDateString('en-US', { month: 'short', day: 'numeric' }) : '-';
+    var timeWindow = b.preferred_time_window || '';
+    var petInfo = [b.guest_pet_name, b.guest_pet_type, b.guest_pet_breed].filter(Boolean).join(' · ');
+    var bizName = (b.unclaimed_listings && b.unclaimed_listings.business_name) || 'Unknown';
+
+    return '<tr data-id="' + b.id + '">' +
+      '<td>' + created + '</td>' +
+      '<td><span class="customer-name">' + esc(b.guest_name) + '</span>' +
+        '<div class="detail-line">' + esc(b.guest_email) + '</div>' +
+        (b.guest_phone ? '<div class="detail-line">' + esc(b.guest_phone) + '</div>' : '') +
+        (petInfo ? '<div class="detail-line">' + esc(petInfo) + '</div>' : '') +
+      '</td>' +
+      '<td>' + esc(bizName) + '</td>' +
+      '<td>' + esc(b.service_type || '-') + '</td>' +
+      '<td>' + prefDate + (timeWindow ? '<div class="detail-line">' + esc(timeWindow) + '</div>' : '') + '</td>' +
+      '<td><select class="inline-select booking-status" data-id="' + b.id + '">' +
+        statusOptions(['submitted','contacted','confirmed','completed','declined','no_response','cancelled'], b.status) +
+      '</select></td>' +
+      '<td><textarea class="notes-input booking-notes" data-id="' + b.id + '" rows="1">' + esc(b.confirmed_notes || '') + '</textarea></td>' +
+      '<td><button class="btn-save booking-save" data-id="' + b.id + '">Save</button></td>' +
+    '</tr>';
+  }
+
+  document.getElementById('bookingStatusFilter').addEventListener('change', loadBookings);
+
+  document.getElementById('bookingsBody').addEventListener('click', async function(e) {
+    var btn = e.target.closest('.booking-save');
+    if (!btn) return;
+    var id = btn.dataset.id;
+    var row = btn.closest('tr');
+    var status = row.querySelector('.booking-status').value;
+    var notes = row.querySelector('.booking-notes').value;
+    btn.disabled = true;
+    btn.textContent = '...';
+
+    var { error } = await sb.from('concierge_bookings').update({ status: status, confirmed_notes: notes }).eq('id', id);
+    btn.disabled = false;
+    if (error) {
+      btn.textContent = 'Error';
+      return;
+    }
+    btn.textContent = 'Saved!';
+    setTimeout(function() { btn.textContent = 'Save'; }, 1500);
+    loadStats();
+  });
+
+  // ── Claims ──
+  async function loadClaims() {
+    var filter = document.getElementById('claimStatusFilter').value;
+    var loading = document.getElementById('claimsLoading');
+    var table = document.getElementById('claimsTable');
+    var empty = document.getElementById('claimsEmpty');
+    var body = document.getElementById('claimsBody');
+    var countEl = document.getElementById('claimCount');
+
+    loading.style.display = '';
+    table.style.display = 'none';
+    empty.style.display = 'none';
+
+    var query = sb.from('claim_requests').select('*').order('created_at', { ascending: false }).limit(200);
+    if (filter !== 'all') query = query.eq('status', filter);
+    var { data, error } = await query;
+
+    loading.style.display = 'none';
+    if (error || !data || data.length === 0) {
+      empty.style.display = '';
+      countEl.textContent = '0 results';
+      return;
+    }
+
+    countEl.textContent = data.length + ' result' + (data.length !== 1 ? 's' : '');
+    body.innerHTML = data.map(renderClaimRow).join('');
+    table.style.display = '';
+  }
+
+  function renderClaimRow(c) {
+    var created = new Date(c.created_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' });
+    // Build a Google Maps link for lookup
+    var mapsLink = 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(c.google_place_id || '');
+
+    return '<tr data-id="' + c.id + '">' +
+      '<td>' + created + '</td>' +
+      '<td><span class="customer-name">' + esc(c.owner_name) + '</span>' +
+        '<div class="detail-line">' + esc(c.owner_email) + '</div>' +
+        (c.owner_phone ? '<div class="detail-line">' + esc(c.owner_phone) + '</div>' : '') +
+      '</td>' +
+      '<td>' + esc(c.google_place_id || 'N/A') + '</td>' +
+      '<td>' + esc(c.owner_role || '-') + '</td>' +
+      '<td><select class="inline-select claim-status" data-id="' + c.id + '">' +
+        statusOptions(['pending','contacted','verified','rejected'], c.status) +
+      '</select></td>' +
+      '<td><textarea class="notes-input claim-notes" data-id="' + c.id + '" rows="1">' + esc(c.notes || '') + '</textarea></td>' +
+      '<td><button class="btn-save claim-save" data-id="' + c.id + '">Save</button></td>' +
+    '</tr>';
+  }
+
+  document.getElementById('claimStatusFilter').addEventListener('change', loadClaims);
+
+  document.getElementById('claimsBody').addEventListener('click', async function(e) {
+    var btn = e.target.closest('.claim-save');
+    if (!btn) return;
+    var id = btn.dataset.id;
+    var row = btn.closest('tr');
+    var status = row.querySelector('.claim-status').value;
+    var notes = row.querySelector('.claim-notes').value;
+    btn.disabled = true;
+    btn.textContent = '...';
+
+    var { error } = await sb.from('claim_requests').update({ status: status, notes: notes }).eq('id', id);
+    btn.disabled = false;
+    if (error) {
+      btn.textContent = 'Error';
+      return;
+    }
+    btn.textContent = 'Saved!';
+    setTimeout(function() { btn.textContent = 'Save'; }, 1500);
+    loadStats();
+  });
+
+  // ── Outreach ──
+  var outreachTimeout = null;
+  var outreachSearch = document.getElementById('outreachSearch');
+  var outreachServiceFilter = document.getElementById('outreachServiceFilter');
+  var outreachResults = document.getElementById('outreachResults');
+
+  function triggerOutreachSearch() {
+    clearTimeout(outreachTimeout);
+    outreachTimeout = setTimeout(loadOutreach, 400);
+  }
+
+  outreachSearch.addEventListener('input', triggerOutreachSearch);
+  outreachServiceFilter.addEventListener('change', triggerOutreachSearch);
+
+  async function loadOutreach() {
+    var q = outreachSearch.value.trim();
+    if (q.length < 2) {
+      outreachResults.innerHTML = '<div class="empty-state"><p>Search for a business to generate an outreach link.</p></div>';
+      return;
+    }
+
+    outreachResults.innerHTML = '<div class="loading">Searching...</div>';
+
+    var query = sb.from('unclaimed_listings')
+      .select('id, business_name, address, google_place_id, primary_type, rating, review_count')
+      .ilike('business_name', '%' + q + '%')
+      .is('claimed_provider_id', null)
+      .order('review_count', { ascending: false })
+      .limit(20);
+
+    var { data, error } = await query;
+
+    if (error || !data || data.length === 0) {
+      outreachResults.innerHTML = '<div class="empty-state"><p>No unclaimed businesses found matching "' + esc(q) + '".</p></div>';
+      return;
+    }
+
+    outreachResults.innerHTML = data.map(function(listing) {
+      var slug = slugify(listing.business_name);
+      var citySlug = extractCitySlug(listing.address);
+      var serviceSlug = typeToService(listing.primary_type);
+      var claimUrl = 'https://scrubby.app/' + serviceSlug + '/' + citySlug + '/' + slug + '/?claim=auto';
+      var stars = listing.rating ? listing.rating + ' stars' : '';
+      var reviews = listing.review_count ? listing.review_count + ' reviews' : '';
+      var meta = [listing.address, stars, reviews].filter(Boolean).join(' · ');
+
+      return '<div class="outreach-card">' +
+        '<div class="outreach-info">' +
+          '<div class="biz-name">' + esc(listing.business_name) + '</div>' +
+          '<div class="biz-meta">' + esc(meta) + '</div>' +
+        '</div>' +
+        '<button class="btn-outline copy-link" data-url="' + esc(claimUrl) + '">Copy Claim Link</button>' +
+      '</div>';
+    }).join('');
+  }
+
+  outreachResults.addEventListener('click', function(e) {
+    var btn = e.target.closest('.copy-link');
+    if (!btn) return;
+    var url = btn.dataset.url;
+    navigator.clipboard.writeText(url).then(function() {
+      btn.textContent = 'Copied!';
+      setTimeout(function() { btn.textContent = 'Copy Claim Link'; }, 2000);
+    });
+  });
+
+  // ── Tabs ──
+  document.querySelectorAll('.tab-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('.tab-btn').forEach(function(b) { b.classList.remove('active'); });
+      document.querySelectorAll('.tab-panel').forEach(function(p) { p.classList.remove('active'); });
+      btn.classList.add('active');
+      document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+
+      if (btn.dataset.tab === 'claims') loadClaims();
+      if (btn.dataset.tab === 'bookings') loadBookings();
+    });
+  });
+
+  // ── Helpers ──
+  function statusOptions(statuses, current) {
+    return statuses.map(function(s) {
+      return '<option value="' + s + '"' + (s === current ? ' selected' : '') + '>' +
+        s.charAt(0).toUpperCase() + s.slice(1) + '</option>';
+    }).join('');
+  }
+
+  function esc(str) {
+    if (!str) return '';
+    var el = document.createElement('span');
+    el.textContent = str;
+    return el.innerHTML;
+  }
+
+  function slugify(name) {
+    return (name || '').toLowerCase()
+      .replace(/['']/g, '')
+      .replace(/&/g, 'and')
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/^-|-$/g, '');
+  }
+
+  function extractCitySlug(address) {
+    if (!address) return 'unknown';
+    // Try to extract city from address like "123 Main St, Austin, TX 78701"
+    var parts = address.split(',');
+    if (parts.length >= 2) {
+      var city = parts[parts.length - 2].trim();
+      return slugify(city);
+    }
+    return 'unknown';
+  }
+
+  var typeServiceMap = {
+    pet_groomer: 'groomers',
+    veterinary_care: 'vets',
+    animal_hospital: 'vets',
+    pet_boarding: 'boarding',
+    dog_day_care_center: 'boarding',
+    kennel: 'boarding',
+    dog_trainer: 'training',
+    dog_walker: 'walkers',
+    pet_sitter: 'sitters',
+  };
+
+  function typeToService(primaryType) {
+    return typeServiceMap[primaryType] || 'groomers';
+  }
+
+  // ── Init ──
+  checkAuth();
+})();
+</script>
+</body>
+</html>
