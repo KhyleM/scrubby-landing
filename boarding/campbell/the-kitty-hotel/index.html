@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Kitty Hotel - Pet Boarding in Campbell, CA | Scrubby</title>
-    <meta name="description" content="The Kitty Hotel is a pet boarding located at 2020 S Bascom Ave # B in Campbell, CA. Rated 4.9 stars based on 67 reviews. Open Monday through Saturday.">
+    <title>The Kitty Hotel - Pet Boarding in Campbell, TX | Scrubby</title>
+    <meta name="description" content="The Kitty Hotel is a pet boarding located at 2020 S Bascom Ave # B in Campbell, TX. Rated 4.9 stars based on 67 reviews. Open Monday through Saturday.">
     <link rel="canonical" href="https://scrubby.app/boarding/campbell/the-kitty-hotel/">
-    <meta property="og:title" content="The Kitty Hotel - Pet Boarding in Campbell, CA | Scrubby">
-    <meta property="og:description" content="The Kitty Hotel is a pet boarding located at 2020 S Bascom Ave # B in Campbell, CA. Rated 4.9 stars based on 67 reviews. Open Monday through Saturday.">
+    <meta property="og:title" content="The Kitty Hotel - Pet Boarding in Campbell, TX | Scrubby">
+    <meta property="og:description" content="The Kitty Hotel is a pet boarding located at 2020 S Bascom Ave # B in Campbell, TX. Rated 4.9 stars based on 67 reviews. Open Monday through Saturday.">
     <meta property="og:image" content="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJQyR5l-k0joARN5P23FBI3jI%2Fphotos%2FAU_ZVEEv3JlEbA1Mkg2DhLrR_u2BBkT_sL05bUC8MU3LbUYBhLC32L4xVuLBspJMOWKaDE3EtRpymwSD1vBV_G1POI1_xQVz1n2FCiHW35Qrym-PQ2fbWUcpSEP0ruEKiXBZRqH5aBjXyVzkGBlE-7eYVV6xukL4_FYnvkPS4G2TCuFWmDcuMyZCLYPjRdfOXPN9TeNbkXJAYaezflUcCPbyM9JXtb4eMdS7ywCGSuLqx98PtKC_vHZlK2Aw-nVhbfIpA0VKaKmlDzjk7RogyKA--HnlrHpfXvtMgNTDMmTZ3jFTX4sO0S_YX_BqO411FE2gjTE4qwFT9hEr7ZtlqTYBwfFyuknbbqHI5U6w6RGVyGwzVgNlwxLik5PCgUVAaMvQDdeadlwL984EIXG5XMLCvEOZeAGSQo4NIu_hkqdvHlDX2w&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso">
     <meta property="og:url" content="https://scrubby.app/boarding/campbell/the-kitty-hotel/">
     <meta property="og:type" content="website">
@@ -92,7 +92,7 @@
                         
                     </div>
 
-                    <p class="detail-description">The Kitty Hotel is a pet boarding located at 2020 S Bascom Ave # B in Campbell, CA. Rated 4.9 stars based on 67 reviews. Open Monday through Saturday.</p>
+                    <p class="detail-description">The Kitty Hotel is a pet boarding located at 2020 S Bascom Ave # B in Campbell, TX. Rated 4.9 stars based on 67 reviews. Open Monday through Saturday.</p>
 
                     <div class="detail-info">
                         <div class="info-row">
@@ -117,8 +117,8 @@
                         <tr><td>Tuesday: 9:00 AM – 5:00 PM</td></tr>
                         <tr><td>Wednesday: 9:00 AM – 5:00 PM</td></tr>
                         <tr><td>Thursday: 9:00 AM – 5:00 PM</td></tr>
-                        <tr class="today"><td>Friday: 9:00 AM – 5:00 PM</td></tr>
-                        <tr><td>Saturday: 9:00 AM – 12:00 PM</td></tr>
+                        <tr><td>Friday: 9:00 AM – 5:00 PM</td></tr>
+                        <tr class="today"><td>Saturday: 9:00 AM – 12:00 PM</td></tr>
                         <tr><td>Sunday: Closed</td></tr>
                         </table>
                     </section>
@@ -363,9 +363,13 @@
 
       var formLoadTime = Date.now();
 
-      // Set min date to today
+      // Set min date to 2 days from now (lead time for booking)
       var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+      if (dateInput) {
+        var minDate = new Date();
+        minDate.setDate(minDate.getDate() + 2);
+        dateInput.min = minDate.toISOString().split('T')[0];
+      }
 
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');

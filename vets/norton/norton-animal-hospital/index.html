@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Norton Animal Hospital - Veterinarian in Norton, MA | Scrubby</title>
-    <meta name="description" content="Norton Animal Hospital is a veterinarian located at 147 W Main St in Norton, MA. Rated 4.7 stars based on 262 reviews. Open Monday through Saturday.">
+    <title>Norton Animal Hospital - Veterinarian in Norton, OH | Scrubby</title>
+    <meta name="description" content="Norton Animal Hospital is a veterinarian located at 147 W Main St in Norton, OH. Rated 4.7 stars based on 262 reviews. Open Monday through Saturday.">
     <link rel="canonical" href="https://scrubby.app/vets/norton/norton-animal-hospital/">
-    <meta property="og:title" content="Norton Animal Hospital - Veterinarian in Norton, MA | Scrubby">
-    <meta property="og:description" content="Norton Animal Hospital is a veterinarian located at 147 W Main St in Norton, MA. Rated 4.7 stars based on 262 reviews. Open Monday through Saturday.">
+    <meta property="og:title" content="Norton Animal Hospital - Veterinarian in Norton, OH | Scrubby">
+    <meta property="og:description" content="Norton Animal Hospital is a veterinarian located at 147 W Main St in Norton, OH. Rated 4.7 stars based on 262 reviews. Open Monday through Saturday.">
     <meta property="og:image" content="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJUeZXedJh5IkRvNqNTQV3XXc%2Fphotos%2FAU_ZVEGk70KmF3xj_iDJ7mMpvoKwet05IQP8-GDHx0yYiwfnb1gcKudikFESoJD5Eq9qHHlUXD_MvLbtvnVggLYeqXRlCE4fWZDBYyopoa3igRuvyoRMfo1LdPtVMr6FrkFyBQrh2WIleslS337t-lnLBGqq_ci7HNwfb_IHrS7qrV6qXKP6LqwOxPNNynvT7jbjz2WqrT6ZcFlDY-6vxEhySOpi1RMuTKeFiesPu6RBxV3I-3FVqL9bWKCuncacWWWO4murk70CqrxsYoX9D9ngu5VJcVkqGIj9BTicHs_A518ZMvzZRsz2BPv-AX224bfAgfR3s0Fp3oRwiuynAMTRhU6CpvPJkycDSUN897J7XetPXJ61m2JQApm58S7vZCPTlUanRnXxvT2xf6HrxWouHh26qvOUuQgqVahask1PyxAgq4TC&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso">
     <meta property="og:url" content="https://scrubby.app/vets/norton/norton-animal-hospital/">
     <meta property="og:type" content="website">
@@ -92,7 +92,7 @@
                         
                     </div>
 
-                    <p class="detail-description">Norton Animal Hospital is a veterinarian located at 147 W Main St in Norton, MA. Rated 4.7 stars based on 262 reviews. Open Monday through Saturday.</p>
+                    <p class="detail-description">Norton Animal Hospital is a veterinarian located at 147 W Main St in Norton, OH. Rated 4.7 stars based on 262 reviews. Open Monday through Saturday.</p>
 
                     <div class="detail-info">
                         <div class="info-row">
@@ -117,8 +117,8 @@
                         <tr><td>Tuesday: 7:30 AM – 7:30 PM</td></tr>
                         <tr><td>Wednesday: 7:30 AM – 6:00 PM</td></tr>
                         <tr><td>Thursday: 7:30 AM – 6:00 PM</td></tr>
-                        <tr class="today"><td>Friday: 7:30 AM – 6:00 PM</td></tr>
-                        <tr><td>Saturday: 8:00 AM – 1:00 PM</td></tr>
+                        <tr><td>Friday: 7:30 AM – 6:00 PM</td></tr>
+                        <tr class="today"><td>Saturday: 8:00 AM – 1:00 PM</td></tr>
                         <tr><td>Sunday: Closed</td></tr>
                         </table>
                     </section>
@@ -365,9 +365,13 @@
 
       var formLoadTime = Date.now();
 
-      // Set min date to today
+      // Set min date to 2 days from now (lead time for booking)
       var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+      if (dateInput) {
+        var minDate = new Date();
+        minDate.setDate(minDate.getDate() + 2);
+        dateInput.min = minDate.toISOString().split('T')[0];
+      }
 
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');

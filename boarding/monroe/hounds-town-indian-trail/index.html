@@ -117,8 +117,8 @@
                         <tr><td>Tuesday: 6:30 AM – 7:00 PM</td></tr>
                         <tr><td>Wednesday: 6:30 AM – 7:00 PM</td></tr>
                         <tr><td>Thursday: 6:30 AM – 7:00 PM</td></tr>
-                        <tr class="today"><td>Friday: 6:30 AM – 7:00 PM</td></tr>
-                        <tr><td>Saturday: 8:00 AM – 4:00 PM</td></tr>
+                        <tr><td>Friday: 6:30 AM – 7:00 PM</td></tr>
+                        <tr class="today"><td>Saturday: 8:00 AM – 4:00 PM</td></tr>
                         <tr><td>Sunday: 11:00 AM – 1:00 PM</td></tr>
                         </table>
                     </section>
@@ -363,9 +363,13 @@
 
       var formLoadTime = Date.now();
 
-      // Set min date to today
+      // Set min date to 2 days from now (lead time for booking)
       var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+      if (dateInput) {
+        var minDate = new Date();
+        minDate.setDate(minDate.getDate() + 2);
+        dateInput.min = minDate.toISOString().split('T')[0];
+      }
 
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');

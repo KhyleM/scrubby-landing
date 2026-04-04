@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sweet Doggies - Pet Boarding in Sunnyvale, CA | Scrubby</title>
-    <meta name="description" content="Sweet Doggies is a pet boarding located at 910 E California Ave in Sunnyvale, CA. Rated 4.8 stars based on 124 reviews. Open 7 days a week, 7:00 AM – 7:00 PM.">
+    <title>Sweet Doggies - Pet Boarding in Sunnyvale, TX | Scrubby</title>
+    <meta name="description" content="Sweet Doggies is a pet boarding located at 910 E California Ave in Sunnyvale, TX. Rated 4.8 stars based on 124 reviews. Open 7 days a week, 7:00 AM – 7:00 PM.">
     <link rel="canonical" href="https://scrubby.app/boarding/sunnyvale/sweet-doggies/">
-    <meta property="og:title" content="Sweet Doggies - Pet Boarding in Sunnyvale, CA | Scrubby">
-    <meta property="og:description" content="Sweet Doggies is a pet boarding located at 910 E California Ave in Sunnyvale, CA. Rated 4.8 stars based on 124 reviews. Open 7 days a week, 7:00 AM – 7:00 PM.">
+    <meta property="og:title" content="Sweet Doggies - Pet Boarding in Sunnyvale, TX | Scrubby">
+    <meta property="og:description" content="Sweet Doggies is a pet boarding located at 910 E California Ave in Sunnyvale, TX. Rated 4.8 stars based on 124 reviews. Open 7 days a week, 7:00 AM – 7:00 PM.">
     <meta property="og:image" content="https://anltnskudvrymdqoubez.supabase.co/functions/v1/places-photo?ref=places%2FChIJddLEhRa2j4ARj77SCR94zVc%2Fphotos%2FAU_ZVEFBYX3VEpBpV8rFhr1t1uL20zxI1grgEinYljI1WjiibANFiMziIrpkpkXbnBiyHnrtG4eW9UTiqHxPPIAgkr-a9Fxgga5-5r_T7WRHEo-ZL2We1tjgx3PqQSuYvbce0Asufi_1PiT0127rosLAk-PWTNV0jBOvSHwp-u0DuNbz7cD5cNhg8hbeAymSOrQ1gtH0G4rSAYaIGgWtJTu3CZsdQMYWCsL7IU1k97ULEiMUqyTj20NJaWLDZoEsiapMspia3_OMsL6m6nhkRaWm4VCCwwfi7yombnEsFaz16yDWfC7AEpFItSgswunj2SHfhdf1mA5TSTixn5aEcy7GiETg4twR-yaHzlKWEYn9ZSYIJVJM0bbnfP-438q-W1eyRSEIpwrcUGmAdk_4dS6yUaq6r5K1FfenoIXFsY4dFr8HUg&maxWidth=600&maxHeight=400&apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFubHRuc2t1ZHZyeW1kcW91YmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4Mjc3ODQsImV4cCI6MjA3MjQwMzc4NH0.CkEa3_GsHT0yoRdVBoiyNk0p6CMQXv1PhzLxL08GAso">
     <meta property="og:url" content="https://scrubby.app/boarding/sunnyvale/sweet-doggies/">
     <meta property="og:type" content="website">
@@ -92,7 +92,7 @@
                         
                     </div>
 
-                    <p class="detail-description">Sweet Doggies is a pet boarding located at 910 E California Ave in Sunnyvale, CA. Rated 4.8 stars based on 124 reviews. Open 7 days a week, 7:00 AM – 7:00 PM.</p>
+                    <p class="detail-description">Sweet Doggies is a pet boarding located at 910 E California Ave in Sunnyvale, TX. Rated 4.8 stars based on 124 reviews. Open 7 days a week, 7:00 AM – 7:00 PM.</p>
 
                     <div class="detail-info">
                         <div class="info-row">
@@ -111,8 +111,8 @@
                         <tr><td>Tuesday: 7:00 AM – 7:00 PM</td></tr>
                         <tr><td>Wednesday: 7:00 AM – 7:00 PM</td></tr>
                         <tr><td>Thursday: 7:00 AM – 7:00 PM</td></tr>
-                        <tr class="today"><td>Friday: 7:00 AM – 7:00 PM</td></tr>
-                        <tr><td>Saturday: 7:00 AM – 7:00 PM</td></tr>
+                        <tr><td>Friday: 7:00 AM – 7:00 PM</td></tr>
+                        <tr class="today"><td>Saturday: 7:00 AM – 7:00 PM</td></tr>
                         <tr><td>Sunday: 7:00 AM – 7:00 PM</td></tr>
                         </table>
                     </section>
@@ -361,9 +361,13 @@
 
       var formLoadTime = Date.now();
 
-      // Set min date to today
+      // Set min date to 2 days from now (lead time for booking)
       var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+      if (dateInput) {
+        var minDate = new Date();
+        minDate.setDate(minDate.getDate() + 2);
+        dateInput.min = minDate.toISOString().split('T')[0];
+      }
 
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');

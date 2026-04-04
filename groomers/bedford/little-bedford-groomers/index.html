@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Little Bedford Groomers - Pet Groomer in Bedford, NY | Scrubby</title>
-    <meta name="description" content="Little Bedford Groomers is a pet groomer located at 410 Old Post Rd in Bedford, NY. Rated 5 stars based on 30 reviews.">
+    <title>Little Bedford Groomers - Pet Groomer in Bedford, TX | Scrubby</title>
+    <meta name="description" content="Little Bedford Groomers is a pet groomer located at 410 Old Post Rd in Bedford, TX. Rated 5 stars based on 30 reviews.">
     <link rel="canonical" href="https://scrubby.app/groomers/bedford/little-bedford-groomers/">
-    <meta property="og:title" content="Little Bedford Groomers - Pet Groomer in Bedford, NY | Scrubby">
-    <meta property="og:description" content="Little Bedford Groomers is a pet groomer located at 410 Old Post Rd in Bedford, NY. Rated 5 stars based on 30 reviews.">
+    <meta property="og:title" content="Little Bedford Groomers - Pet Groomer in Bedford, TX | Scrubby">
+    <meta property="og:description" content="Little Bedford Groomers is a pet groomer located at 410 Old Post Rd in Bedford, TX. Rated 5 stars based on 30 reviews.">
     <meta property="og:image" content="https://scrubby.app/images/scrubby_logo_full.png">
     <meta property="og:url" content="https://scrubby.app/groomers/bedford/little-bedford-groomers/">
     <meta property="og:type" content="website">
@@ -86,7 +86,7 @@
                         
                     </div>
 
-                    <p class="detail-description">Little Bedford Groomers is a pet groomer located at 410 Old Post Rd in Bedford, NY. Rated 5 stars based on 30 reviews.</p>
+                    <p class="detail-description">Little Bedford Groomers is a pet groomer located at 410 Old Post Rd in Bedford, TX. Rated 5 stars based on 30 reviews.</p>
 
                     <div class="detail-info">
                         <div class="info-row">
@@ -341,9 +341,13 @@
 
       var formLoadTime = Date.now();
 
-      // Set min date to today
+      // Set min date to 2 days from now (lead time for booking)
       var dateInput = form.querySelector('input[type="date"]');
-      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+      if (dateInput) {
+        var minDate = new Date();
+        minDate.setDate(minDate.getDate() + 2);
+        dateInput.min = minDate.toISOString().split('T')[0];
+      }
 
       // Toggle notes field
       var noteToggle = document.getElementById('addNoteToggle');
