@@ -1,0 +1,287 @@
+/* Pet-store landing theme additions.
+   Uses the base palette from styles.css; only adds layout for the
+   iPad mockup, pricing cards, and the honest comparison table. */
+
+/* ---- iPad mockup (hero) ---------------------------------------- */
+.ipad-mockup {
+    position: relative;
+    width: 100%;
+    max-width: 520px;
+    margin: 0 auto;
+    aspect-ratio: 4 / 3;
+    background: #0F172A;
+    border-radius: 18px;
+    padding: 14px;
+    box-shadow: 0 30px 60px -20px rgba(15, 23, 42, 0.35),
+                0 10px 25px -10px rgba(15, 23, 42, 0.2);
+}
+
+.ipad-screen {
+    width: 100%;
+    height: 100%;
+    background: #F8FAFC;
+    border-radius: 6px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ipad-screenshot {
+    max-width: 60%;
+    max-height: 60%;
+    object-fit: contain;
+    opacity: 0.45; /* Placeholder feel until real screenshot lands */
+}
+
+.ipad-stand {
+    position: absolute;
+    left: 50%;
+    bottom: -32px;
+    transform: translateX(-50%);
+    width: 38%;
+    height: 32px;
+    background: linear-gradient(180deg, #CBD5E1 0%, #94A3B8 100%);
+    border-radius: 0 0 12px 12px;
+}
+
+.ipad-stand::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -8px;
+    transform: translateX(-50%);
+    width: 70%;
+    height: 8px;
+    background: #94A3B8;
+    border-radius: 0 0 50% 50% / 0 0 100% 100%;
+}
+
+/* ---- Pricing grid ---------------------------------------------- */
+.pricing-section {
+    padding: 80px 0;
+    background: #FFFFFF;
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    align-items: stretch;
+    margin-top: 40px;
+}
+
+.pricing-card {
+    position: relative;
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 14px;
+    padding: 32px 24px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.pricing-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px -20px rgba(15, 23, 42, 0.2);
+}
+
+.pricing-card-featured {
+    border-color: transparent;
+    background: linear-gradient(180deg, #F8FAFF 0%, #FFFFFF 100%);
+    box-shadow: 0 0 0 2px var(--primary-color, #4F46E5),
+                0 18px 40px -20px rgba(79, 70, 229, 0.35);
+}
+
+.pricing-badge {
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--primary-color, #4F46E5);
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    padding: 6px 14px;
+    border-radius: 999px;
+    text-transform: uppercase;
+}
+
+.pricing-tier {
+    font-size: 16px;
+    font-weight: 600;
+    color: #475569;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.pricing-amount {
+    font-size: 48px;
+    font-weight: 700;
+    color: #0F172A;
+    margin-top: 8px;
+}
+
+.pricing-amount span {
+    font-size: 18px;
+    font-weight: 400;
+    color: #64748B;
+    margin-left: 4px;
+}
+
+.pricing-blurb {
+    margin-top: 12px;
+    color: #475569;
+    font-size: 15px;
+    line-height: 1.5;
+    min-height: 66px;
+}
+
+.pricing-features {
+    list-style: none;
+    padding: 0;
+    margin: 24px 0 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+}
+
+.pricing-features li {
+    position: relative;
+    padding-left: 26px;
+    color: #334155;
+    font-size: 15px;
+    line-height: 1.45;
+}
+
+.pricing-features li::before {
+    content: "\2713";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #16A34A;
+    font-weight: 700;
+}
+
+.pricing-cta {
+    width: 100%;
+    text-align: center;
+}
+
+.pricing-footnote {
+    margin-top: 28px;
+    text-align: center;
+    color: #64748B;
+    font-size: 14px;
+}
+
+.coming-soon-pill {
+    display: inline-block;
+    margin-left: 6px;
+    padding: 1px 8px;
+    font-size: 11px;
+    font-weight: 600;
+    color: #B45309;
+    background: #FEF3C7;
+    border-radius: 999px;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+}
+
+/* ---- Honest comparison table ----------------------------------- */
+.compare-section {
+    padding: 80px 0;
+    background: #F8FAFC;
+}
+
+.compare-table-wrap {
+    margin-top: 32px;
+    overflow-x: auto;
+    border-radius: 14px;
+    box-shadow: 0 10px 30px -15px rgba(15, 23, 42, 0.15);
+    background: #FFFFFF;
+}
+
+.compare-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 720px;
+}
+
+.compare-table th,
+.compare-table td {
+    padding: 16px 18px;
+    text-align: left;
+    border-bottom: 1px solid #E2E8F0;
+    font-size: 15px;
+    color: #1F2937;
+    vertical-align: top;
+}
+
+.compare-table thead th {
+    background: #0F172A;
+    color: #F8FAFC;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.03em;
+}
+
+.compare-table thead th:first-child {
+    background: #0F172A;
+}
+
+.compare-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.compare-table tbody td:first-child {
+    font-weight: 600;
+    color: #0F172A;
+    background: #F8FAFC;
+}
+
+.compare-table td.cell-win {
+    color: #166534;
+    background: #DCFCE7;
+    font-weight: 600;
+}
+
+.compare-table td.cell-loss {
+    color: #92400E;
+    background: #FEF3C7;
+    font-weight: 500;
+}
+
+.compare-footnote {
+    margin-top: 24px;
+    text-align: center;
+    color: #475569;
+    font-size: 15px;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ---- Mobile ----------------------------------------------------- */
+@media (max-width: 900px) {
+    .pricing-grid {
+        grid-template-columns: 1fr;
+    }
+    .ipad-mockup {
+        max-width: 360px;
+    }
+}
+
+@media (max-width: 640px) {
+    .pricing-amount {
+        font-size: 40px;
+    }
+    .compare-table th,
+    .compare-table td {
+        padding: 12px 14px;
+        font-size: 14px;
+    }
+}
